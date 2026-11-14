@@ -1,0 +1,8 @@
+---
+interface Props { title?: string; items: string[]; }
+const { title = 'Persyaratan peserta', items } = Astro.props;
+---
+<section class="training-requirements" aria-labelledby="training-requirements-title">
+  <h2 class="training-requirements__title" id="training-requirements-title">{title}</h2>
+  <ul class="training-requirements__list">{items.map((item) => <li class="training-requirements__item"><span class="training-requirements__check" aria-hidden="true">✓</span><span>{item}</span></li>)}</ul>
+</section>
