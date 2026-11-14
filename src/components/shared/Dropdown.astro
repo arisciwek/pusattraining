@@ -1,0 +1,5 @@
+---
+interface Props { label: string; items: { label: string; href: string }[]; }
+const { label, items } = Astro.props;
+---
+<details class="dropdown"><summary class="dropdown__trigger">{label}<span class="dropdown__chevron" aria-hidden="true">⌄</span></summary><ul class="dropdown__menu">{items.map((item) => <li class="dropdown__item"><a class="dropdown__link" href={item.href}>{item.label}</a></li>)}</ul></details>
