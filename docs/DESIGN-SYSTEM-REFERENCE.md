@@ -40,6 +40,19 @@ Membangun situs pusat yang menggabungkan berbagai program training dan jadwal da
 
 Satu Training dapat memiliki banyak Schedule. Jadwal tidak ditanam sebagai teks statis di dalam TrainingCard.
 
+## Audit parity terhadap repositori internal
+
+Audit dilakukan terhadap struktur aktual `arisciwek/confinedspace` dan `arisciwek/damkar`. Cakupan yang diadopsi untuk Pusattraining meliputi:
+
+- Shared content blocks: FAQ, benefits, reasons, gallery, image panel, comparison table, stats, testimonials, timeline, checklist, note, documents, glossary, source links, contact panel, dan CTA.
+- Editorial: article card/grid, latest articles, related articles, dan navigasi artikel sebelumnya.
+- Training: program grid, syllabus, requirements, facts, materi list, serta tabs.
+- Schedule: status batch, month heading, filter, table, calendar, card dan list.
+- Block infrastructure: kontrak `PageBlock`, registry, dan `BlockRenderer.astro` untuk komposisi halaman berbasis data.
+- Interaksi: mobile menu, native details/dropdown/dialog, serta tabs dengan dukungan keyboard.
+
+Komponen-komponen tersebut telah dibuat sebagai fondasi di branch `feat/training-design-system`. Status detail dan daftar file ada di `docs/COMPONENT-BLOCK-INVENTORY.md`.
+
 ## Aturan komponen
 
 - components/shared/: elemen lintas halaman tanpa pengetahuan domain training.
