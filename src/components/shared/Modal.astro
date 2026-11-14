@@ -1,0 +1,15 @@
+---
+interface Props { id: string; title: string; triggerLabel: string; }
+const { id, title, triggerLabel } = Astro.props;
+---
+<div class="modal" data-modal-root><button class="modal__trigger" type="button" aria-haspopup="dialog" aria-controls={id} data-modal-open>{triggerLabel}</button><dialog class="modal__dialog" id={id} aria-labelledby={`${id}-title`}><div class="modal__header"><h2 class="modal__title" id={`${id}-title`}>{title}</h2><button class="modal__close" type="button" aria-label="Tutup dialog" data-modal-close>×</button></div><div class="modal__body"><slot /></div></dialog></div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-modal-root]').forEach((root) => {
+    const dialog = root.querySelector<HTMLDialogElement>('dialog');
+    const open = root.querySelector<HTMLButtonElement>('[data-modal-open]');
+    const close = root.querySelector<HTMLButtonElement>('[data-modal-close]');
+    open?.addEventListener('click', () => dialog?.showModal());
+    close?.addEventListener('click', () => dialog?.close());
+    dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+  });
+</script>
