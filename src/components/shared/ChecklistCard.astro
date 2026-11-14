@@ -1,0 +1,5 @@
+---
+interface Props { title: string; description?: string; items: string[]; }
+const { title, description, items } = Astro.props;
+---
+<section class="checklist-card" aria-labelledby="checklist-card-title"><h2 class="checklist-card__title" id="checklist-card-title">{title}</h2>{description && <p class="checklist-card__description">{description}</p>}<ul class="checklist-card__list">{items.map((item) => <li class="checklist-card__item"><span class="checklist-card__check" aria-hidden="true">✓</span>{item}</li>)}</ul></section>
