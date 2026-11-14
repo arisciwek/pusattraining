@@ -1,0 +1,11 @@
+---
+import Button from './Button.astro';
+interface Props { title: string; description?: string; actionLabel?: string; actionHref?: string; }
+const { title, description, actionLabel, actionHref } = Astro.props;
+---
+<div class="empty-state" role="status">
+  <span class="empty-state__icon" aria-hidden="true">◎</span>
+  <h3 class="empty-state__title">{title}</h3>
+  {description && <p class="empty-state__description">{description}</p>}
+  {actionLabel && actionHref && <Button href={actionHref} variant="secondary">{actionLabel}</Button>}
+</div>
