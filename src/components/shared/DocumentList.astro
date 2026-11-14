@@ -1,0 +1,5 @@
+---
+interface Props { title?: string; items: { label: string; description?: string; href: string; fileType?: string }[]; }
+const { title = 'Dokumen pendukung', items } = Astro.props;
+---
+<section class="document-list" aria-labelledby="document-list-title"><h2 class="document-list__title" id="document-list-title">{title}</h2><ul class="document-list__items">{items.map((item) => <li class="document-list__item"><span class="document-list__icon" aria-hidden="true">↳</span><div class="document-list__body"><a class="document-list__link" href={item.href}>{item.label}</a>{item.description && <p class="document-list__description">{item.description}</p>}</div>{item.fileType && <span class="document-list__type">{item.fileType}</span>}</li>)}</ul></section>
