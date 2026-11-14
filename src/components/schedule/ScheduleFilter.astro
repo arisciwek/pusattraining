@@ -1,0 +1,5 @@
+---
+interface Props { action?: string; months?: { value: string; label: string }[]; categories?: { value: string; label: string }[]; }
+const { action = '/jadwal/', months = [], categories = [] } = Astro.props;
+---
+<form class="schedule-filter" action={action} method="get"><label class="schedule-filter__field"><span class="schedule-filter__label">Bulan</span><select class="schedule-filter__select" name="bulan"><option value="">Semua bulan</option>{months.map((item) => <option value={item.value}>{item.label}</option>)}</select></label><label class="schedule-filter__field"><span class="schedule-filter__label">Kategori</span><select class="schedule-filter__select" name="kategori"><option value="">Semua kategori</option>{categories.map((item) => <option value={item.value}>{item.label}</option>)}</select></label><button class="schedule-filter__submit" type="submit">Terapkan filter</button></form>
