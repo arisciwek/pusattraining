@@ -1,0 +1,5 @@
+---
+interface Props { title?: string; description?: string; programs: { title: string; description: string; href: string; category?: string; }[]; }
+const { title = 'Program pelatihan', description, programs } = Astro.props;
+---
+<section class="program-grid" aria-labelledby="program-grid-title"><header class="program-grid__header"><h2 class="program-grid__title" id="program-grid-title">{title}</h2>{description && <p class="program-grid__description">{description}</p>}</header><div class="program-grid__items">{programs.map((program, index) => <article class="program-grid__item"><span class="program-grid__index">{String(index + 1).padStart(2, '0')}</span>{program.category && <p class="program-grid__category">{program.category}</p>}<h3 class="program-grid__item-title"><a href={program.href}>{program.title}</a></h3><p class="program-grid__item-description">{program.description}</p><a class="program-grid__link" href={program.href}>Lihat program <span aria-hidden="true">↗</span></a></article>)}</div></section>
