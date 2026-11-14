@@ -1,0 +1,5 @@
+---
+interface Props { title?: string; facts: { label: string; value: string }[]; }
+const { title = 'Informasi pelatihan', facts } = Astro.props;
+---
+<dl class="training-facts" aria-label={title}>{facts.map((fact) => <div class="training-facts__item"><dt class="training-facts__label">{fact.label}</dt><dd class="training-facts__value">{fact.value}</dd></div>)}</dl>
