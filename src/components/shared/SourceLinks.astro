@@ -1,0 +1,5 @@
+---
+interface Props { title?: string; items: { label: string; href: string; publisher?: string }[]; }
+const { title = 'Referensi', items } = Astro.props;
+---
+<section class="source-links" aria-labelledby="source-links-title"><h2 class="source-links__title" id="source-links-title">{title}</h2><ol class="source-links__list">{items.map((item) => <li class="source-links__item"><a class="source-links__link" href={item.href} target="_blank" rel="noopener noreferrer">{item.label}<span aria-hidden="true">↗</span></a>{item.publisher && <span class="source-links__publisher">{item.publisher}</span>}</li>)}</ol></section>
