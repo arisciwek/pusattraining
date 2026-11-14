@@ -1,0 +1,5 @@
+---
+interface Props { title?: string; description: string; facts: { label: string; value: string }[]; }
+const { title = 'Informasi jadwal', description, facts } = Astro.props;
+---
+<section class="schedule-overview" aria-labelledby="schedule-overview-title"><div class="schedule-overview__intro"><p class="schedule-overview__eyebrow">Informasi pelaksanaan</p><h2 class="schedule-overview__title" id="schedule-overview-title">{title}</h2><p class="schedule-overview__description">{description}</p></div><dl class="schedule-overview__facts">{facts.map((fact) => <div class="schedule-overview__fact"><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl></section>
