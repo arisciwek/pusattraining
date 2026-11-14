@@ -128,6 +128,10 @@ From Damkar:
 - Dedicated components for training/program detail, tabs, learning materials and schedule presentation.
 - Progressive enhancement for interactive controls; semantic HTML remains useful without JavaScript where practical.
 
+## Styling layer
+
+File `src/styles/components.css` menyediakan visual layer berbasis Tailwind `@apply` untuk komponen dan block baru. Import file ini setelah entry stylesheet Tailwind dari global stylesheet aplikasi ketika scaffold Astro dibuat. Markup tetap mempertahankan semantic class BEM agar struktur mudah diaudit dan styling konsisten.
+
 ## Still to implement / integrate
 
 - [ ] Astro application scaffold and package scripts.
