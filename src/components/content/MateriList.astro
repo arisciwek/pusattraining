@@ -1,0 +1,7 @@
+---
+interface Props { items: string[]; limit?: number; }
+const { items, limit } = Astro.props;
+const visibleItems = limit ? items.slice(0, limit) : items;
+---
+<ul class="materi-list">{visibleItems.map((item, index) => <li class="materi-list__item"><span class="materi-list__number">{String(index + 1).padStart(2, '0')}</span><span class="materi-list__text">{item}</span></li>)}</ul>
+{limit && items.length > limit && <p class="materi-list__more">+{items.length - limit} materi lainnya</p>}
