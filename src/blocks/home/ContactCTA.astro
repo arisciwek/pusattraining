@@ -1,0 +1,6 @@
+---
+import CtaBlock from '../../components/shared/CtaBlock.astro';
+interface Props { title: string; description: string; actionLabel: string; actionHref: string; }
+const props = Astro.props;
+---
+<CtaBlock {...props} eyebrow="Mulai langkah berikutnya" />
