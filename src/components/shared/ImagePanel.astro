@@ -1,0 +1,5 @@
+---
+interface Props { src: string; alt: string; caption?: string; ratio?: 'wide' | 'square' | 'portrait'; }
+const { src, alt, caption, ratio = 'wide' } = Astro.props;
+---
+<figure class:list={['image-panel', `image-panel--${ratio}`]}><img class="image-panel__image" src={src} alt={alt} loading="lazy" decoding="async" />{caption && <figcaption class="image-panel__caption">{caption}</figcaption>}</figure>
