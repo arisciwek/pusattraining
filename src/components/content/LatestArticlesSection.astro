@@ -1,0 +1,6 @@
+---
+import ArticleGrid from './ArticleGrid.astro';
+interface Props { articles: { title: string; description: string; href: string; category?: string; date?: Date | string; image?: string; }[]; title?: string; description?: string; }
+const { articles, title = 'Wawasan & artikel', description = 'Informasi dan panduan untuk mendukung pengembangan kompetensi.' } = Astro.props;
+---
+<ArticleGrid title={title} description={description} articles={articles} />
