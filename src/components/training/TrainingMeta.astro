@@ -1,0 +1,28 @@
+---
+interface Props {
+  credential?: string;
+  duration?: string;
+  delivery?: string;
+  organizer?: string;
+  class?: string;
+}
+
+const { credential, duration, delivery, organizer, class: className = '' } = Astro.props;
+const items = [
+  credential && { label: 'Sertifikasi', value: credential },
+  duration && { label: 'Durasi', value: duration },
+  delivery && { label: 'Metode', value: delivery },
+  organizer && { label: 'Penyelenggara', value: organizer },
+].filter(Boolean) as { label: string; value: string }[];
+---
+
+{items.length > 0 && (
+  <dl class={['training-meta flex flex-wrap gap-x-4 gap-y-2 text-sm', className].filter(Boolean).join(' ')}>
+    {items.map((item) => (
+      <div class="training-meta__item flex flex-wrap items-baseline gap-1.5">
+        <dt class="training-meta__label text-slate-500">{item.label}</dt>
+        <dd class="training-meta__value font-semibold text-slate-800">{item.value}</dd>
+      </div>
+    ))}
+  </dl>
+)}
