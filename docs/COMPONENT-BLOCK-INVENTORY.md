@@ -1,110 +1,152 @@
 # Component & Block Inventory
 
-Status: planned inventory for the first implementation pass.
+Status: implemented component and block foundation on `feat/training-design-system`. This inventory records the reusable patterns audited from `confinedspace` and `damkar`, then adapted for the Pusattraining portal and its Wahana Totalita-inspired visual direction.
+
+> This branch currently contains the component layer and block contracts. It is not yet a complete runnable Astro application: the repository still needs its Astro project scaffold, content collections, global styles/tokens, and route integration before a full build can be run.
 
 ## Shared components
 
-| Component | Responsibility | Key props / behavior |
+| Component | Responsibility | Status |
 |---|---|---|
-| SiteHeader | Brand, primary navigation, search/CTA | navigation items, active path; mobile menu |
-| SiteFooter | Footer navigation and organization summary | link groups, contact, legal text |
-| Container | Consistent page width and horizontal gutters | as, size |
-| Button | Consistent links and buttons | href/type, variant, size |
-| Breadcrumb | Hierarchical navigation | items |
-| SectionHeading | Section eyebrow, title, description, action | eyebrow, title, description, link |
-| SearchField | Accessible search input | label, name, value, placeholder |
-| EmptyState | No-result and no-schedule states | title, description, action |
-| Pagination | Navigable result pages | current page, total pages, base URL |
+| Container | Consistent page width and horizontal gutters | Implemented |
+| Button | Consistent links and actions | Implemented |
+| SectionHeading | Section eyebrow, title, description and action | Implemented |
+| Breadcrumb | Hierarchical navigation | Implemented |
+| SiteHeader | Brand, primary navigation and responsive menu | Implemented |
+| SiteFooter | Footer navigation and organization summary | Implemented |
+| Badge | Small status/category label | Implemented |
+| SearchField | Accessible search input | Implemented |
+| EmptyState | No-result and no-schedule states | Implemented |
+| Pagination | Navigable result pages | Implemented |
+| FaqBlock | Expandable question and answer list | Implemented |
+| BenefitsBlock | Benefit/value proposition grid | Implemented |
+| ReasonsBlock | Reasons / differentiator list | Implemented |
+| GalleryBlock | Responsive image gallery | Implemented |
+| ImagePanel | Single editorial image with caption | Implemented |
+| StatsGrid | Key metrics and proof points | Implemented |
+| TestimonialGrid | Participant testimonials | Implemented |
+| ComparisonTable | Responsive accessible comparison table | Implemented |
+| ProcessTimeline | Ordered process / registration steps | Implemented |
+| ChecklistCard | Checklist of requirements or preparation | Implemented |
+| DocumentList | Supporting document/download links | Implemented |
+| GlossaryBlock | Term and definition list | Implemented |
+| NoteBlock | Info, warning and success callout | Implemented |
+| SourceLinks | External references and source links | Implemented |
+| ContactPanel | Contact channels and actions | Implemented |
+| CtaBlock | Reusable conversion section | Implemented |
+| Dropdown | Native disclosure menu | Implemented |
+| Modal | Native dialog with open/close controls | Implemented |
+| ArticleRelatedArticles | Related article teaser grid | Implemented |
+| ArticlePreviousArticles | Previous article navigation | Implemented |
 
 ## Training components
 
-| Component | Responsibility |
-|---|---|
-| TrainingCard | Summary card for one training program |
-| TrainingMeta | Certification, duration, method, organizer metadata |
-| TrainingCategoryChip | Category link / filter affordance |
-| TrainingGrid | Responsive collection of TrainingCard |
-| TrainingSearch | Search and category controls |
-| TrainingSyllabus | Structured curriculum / topics |
-| TrainingRequirementList | Participant prerequisites |
-| TrainingFactList | Audience, outcome, duration, delivery methods |
+| Component | Responsibility | Status |
+|---|---|---|
+| TrainingMeta | Certification, duration, method and organizer metadata | Implemented |
+| TrainingCard | Summary card for one training program | Implemented |
+| TrainingGrid | Responsive collection of TrainingCard | Implemented |
+| TrainingCategoryChip | Category link / filter affordance | Implemented |
+| TrainingSyllabus | Structured curriculum and topics | Implemented |
+| TrainingRequirementList | Participant prerequisites | Implemented |
+| TrainingFactList | Audience, outcome, duration and delivery facts | Implemented |
+| ProgramGrid | Catalog-style grid of training programs | Implemented |
+| MateriList | Compact numbered list of course material | Implemented |
+| DetailTabs | Accessible tabbed information panels | Implemented |
 
 ## Schedule components
 
-| Component | Responsibility |
-|---|---|
-| ScheduleCard | One concrete batch |
-| ScheduleMeta | Date, method, location, duration, price/status |
-| ScheduleList | Responsive collection of batches |
-| ScheduleTable | Dense desktop schedule listing with mobile alternative |
-| ScheduleMonthHeading | Month/year title and navigation |
-| ScheduleFilter | Month, category, delivery mode filters |
-| ScheduleStatus | Available, limited, closed, completed status |
+| Component | Responsibility | Status |
+|---|---|---|
+| ScheduleMeta | Date, method, location, duration and status metadata | Implemented |
+| ScheduleCard | One concrete batch | Implemented |
+| ScheduleList | Responsive collection of batches | Implemented |
+| ScheduleStatus | Open, limited, closed and completed states | Implemented |
+| ScheduleMonthHeading | Month/year title and previous/next navigation | Implemented |
+| ScheduleFilter | Month and category filter form | Implemented |
+| ScheduleTable | Dense schedule listing with semantic table markup | Implemented |
+| ScheduleCalendar | Month calendar grid with linked schedule entries | Implemented |
 
-## Page blocks
+## Content components
 
-### Home
+| Component | Responsibility | Status |
+|---|---|---|
+| ArticleCard | Editorial teaser card | Implemented |
+| ArticleGrid | Responsive article listing | Implemented |
+| LatestArticlesSection | Latest editorial content section | Implemented |
+
+## Block architecture
+
+The renderer is intentionally data-driven. A page can provide an ordered `PageBlock[]` configuration and `BlockRenderer.astro` resolves each known type through `registry.ts`. Add a new block type only after its component and props contract exist.
+
+Current block types:
+- `program-grid`
+- `benefits`
+- `reasons`
+- `faq`
+- `gallery`
+- `timeline`
+- `stats`
+- `cta`
+- `testimonials`
+
+### Home blocks
+
 - HomeHero
 - TrustSignals
 - TrainingCategoryOverview
 - FeaturedTraining
-- TrainingSearchBlock
 - UpcomingSchedule
 - WhyChooseUs
-- ClientLogos
-- TrainingGallery
 - LatestArticles
-- FrequentlyAskedQuestions
 - ContactCTA
 
-### Training index
-- TrainingPageHero
-- TrainingCategoryNav
-- TrainingCatalog
-- TrainingCatalogCTA
+### Training blocks
 
-### Training detail
-- TrainingDetailHero
 - TrainingOverview
-- TrainingAudience
-- TrainingSyllabusBlock
-- TrainingRequirements
-- TrainingFacilities
-- RelatedSchedules
 - RelatedTraining
-- TrainingFAQ
+- Training syllabus and requirements components
+- ProgramGrid / DetailTabs
 
-### Schedule index
-- SchedulePageHero
+### Schedule blocks
+
+- ScheduleOverview
 - ScheduleCalendar
-- ScheduleFilters
-- ScheduleResults
-- ScheduleCTA
+- ScheduleFilter
+- ScheduleTable
+- ScheduleList
 
-### Schedule detail (optional route)
-- ScheduleDetailHero
-- ScheduleInformation
-- ScheduleRegistration
-- ScheduleRelatedTraining
+## Patterns carried forward from the reference repositories
 
-## Initial implementation order
+From Confinedspace:
+- Reusable content blocks for FAQ, gallery, tables, notes, checklists, process timelines, stats, testimonials, glossary and source references.
+- Related and previous article navigation.
+- Clear separation between shared components and page/domain blocks.
 
-1. Design tokens and global base styles.
-2. Container, Button, SectionHeading, Breadcrumb, SearchField.
-3. SiteHeader and SiteFooter.
-4. TrainingMeta, TrainingCard, TrainingGrid.
-5. ScheduleMeta, ScheduleCard, ScheduleList.
-6. Home blocks.
-7. Training catalog/detail blocks.
-8. Schedule index/detail blocks.
-9. Interaction scripts and responsive/accessibility pass.
+From Damkar:
+- A typed block contract and registry-driven renderer.
+- Dedicated components for training/program detail, tabs, learning materials and schedule presentation.
+- Progressive enhancement for interactive controls; semantic HTML remains useful without JavaScript where practical.
+
+## Still to implement / integrate
+
+- [ ] Astro application scaffold and package scripts.
+- [ ] Global Tailwind setup, design tokens and responsive component styling.
+- [ ] Content collection schemas for training, schedules, articles and categories.
+- [ ] Search/filter behavior connected to real content data.
+- [ ] Page layouts and route integration for home, training catalog, training detail, schedule index/month and schedule detail.
+- [ ] JSON-LD, metadata, sitemap and robots configuration.
+- [ ] Full keyboard, responsive and reduced-motion QA.
+- [ ] Production build and link validation after the scaffold is in place.
 
 ## Naming and markup rules
 
 - Component filenames use PascalCase.
-- Block directories group by page/domain.
-- Use semantic classes prefixed by role, for example site-header, training-card, schedule-card, section-heading.
+- Block directories group by page/domain; reusable primitives live in `components/shared`.
+- Use semantic classes prefixed by role, for example `site-header__nav`, `training-card__title`, `schedule-calendar__day`.
 - Use links for navigation and buttons for actions.
-- Keep dates machine-readable with time elements and ISO datetime values.
+- Keep dates machine-readable with `time` elements and ISO datetime values.
 - Cards should not contain nested interactive controls inside a wrapping anchor. Use a clear primary link plus separate action links.
-- All repeated collections use stable IDs/slugs as keys in data mapping.
+- Use semantic landmarks and accessible names; interactive controls must expose state with ARIA where appropriate.
+- Repeated collections should use stable IDs/slugs in their source data.
+- Keep visual styling in Tailwind/global design tokens; do not add a second CSS framework.
