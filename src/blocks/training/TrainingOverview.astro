@@ -1,0 +1,5 @@
+---
+interface Props { title?: string; description: string; highlights?: string[]; }
+const { title = 'Tentang program ini', description, highlights = [] } = Astro.props;
+---
+<section class="training-overview" aria-labelledby="training-overview-title"><div class="training-overview__main"><p class="training-overview__eyebrow">Gambaran program</p><h2 class="training-overview__title" id="training-overview-title">{title}</h2><div class="training-overview__description"><p>{description}</p></div></div>{highlights.length > 0 && <ul class="training-overview__highlights">{highlights.map((item) => <li class="training-overview__highlight"><span aria-hidden="true">↗</span>{item}</li>)}</ul>}</section>
