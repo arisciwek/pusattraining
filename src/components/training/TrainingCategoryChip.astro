@@ -1,0 +1,5 @@
+---
+interface Props { href?: string; active?: boolean; }
+const { href, active = false } = Astro.props;
+---
+{href ? <a class:list={['training-category-chip', { 'training-category-chip--active': active }]} href={href}><slot /></a> : <span class="training-category-chip"><slot /></span>}
