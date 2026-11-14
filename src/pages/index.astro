@@ -1,0 +1,89 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Container from '../components/shared/Container.astro';
+import Button from '../components/shared/Button.astro';
+import HomeHero from '../blocks/home/HomeHero.astro';
+import TrainingCategoryOverview from '../blocks/home/TrainingCategoryOverview.astro';
+import UpcomingSchedule from '../blocks/home/UpcomingSchedule.astro';
+import WhyChooseUs from '../blocks/home/WhyChooseUs.astro';
+
+const categories = [
+  { title: 'Keselamatan & Kesehatan Kerja', description: 'Program kompetensi keselamatan kerja, pengendalian risiko, dan kepatuhan K3.', href: '/training/?kategori=k3' },
+  { title: 'Sertifikasi & Kompetensi', description: 'Informasi pelatihan dan sertifikasi untuk pengembangan kompetensi profesional.', href: '/training/?kategori=sertifikasi' },
+  { title: 'Teknik & Operasional', description: 'Pelatihan teknis, pemeliharaan, inspeksi, dan keterampilan operasional.', href: '/training/?kategori=teknik' },
+  { title: 'Lingkungan & Energi', description: 'Program terkait pengelolaan lingkungan, energi, dan keberlanjutan.', href: '/training/?kategori=lingkungan' },
+];
+
+const benefits = [
+  { title: 'Informasi terpusat', description: 'Jelajahi beragam program dan jadwal pelatihan melalui satu portal.' },
+  { title: 'Mudah dibandingkan', description: 'Pahami bidang, metode, durasi, dan informasi penting sebelum memilih.' },
+  { title: 'Jadwal lebih terarah', description: 'Temukan informasi batch berdasarkan waktu dan bidang pelatihan.' },
+];
+---
+<SiteLayout
+  title="Pusattraining — Temukan Program dan Jadwal Training"
+  description="Portal informasi program pengembangan kompetensi dan jadwal training dari berbagai bidang dan penyelenggara."
+>
+  <HomeHero
+    eyebrow="PORTAL INFORMASI PELATIHAN"
+    title="Temukan training yang tepat untuk langkah profesional berikutnya."
+    description="Jelajahi program pengembangan kompetensi, pahami informasi pelatihan, dan temukan jadwal dari berbagai bidang dalam satu tempat."
+    primaryLabel="Jelajahi program"
+    primaryHref="/training/"
+    secondaryLabel="Lihat jadwal"
+    secondaryHref="/jadwal/"
+    proofPoints={['Beragam bidang pengembangan kompetensi', 'Informasi program yang mudah dipahami', 'Jadwal pelatihan dalam satu portal']}
+  />
+
+  <section class="home-introduction py-12 sm:py-16">
+    <Container>
+      <div class="home-introduction__panel grid gap-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-9 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div class="home-introduction__content max-w-3xl">
+          <p class="home-introduction__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">PUSAT INFORMASI TRAINING</p>
+          <h2 class="home-introduction__title mt-3 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">Satu portal untuk menjelajahi berbagai kebutuhan pelatihan.</h2>
+          <p class="home-introduction__description mt-3 text-sm leading-7 text-slate-600 sm:text-base">Pusattraining membantu pengunjung menemukan informasi program, memahami gambaran pelatihan, dan menelusuri jadwal yang diterbitkan oleh penyelenggara.</p>
+        </div>
+        <Button href="/tentang/" variant="outline">Tentang portal <span aria-hidden="true">→</span></Button>
+      </div>
+    </Container>
+  </section>
+
+  <section class="home-categories py-12 sm:py-16">
+    <Container>
+      <div class="home-categories__header mb-7 max-w-3xl">
+        <p class="home-categories__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">JELAJAHI BERDASARKAN BIDANG</p>
+        <h2 class="home-categories__title mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">Bidang pelatihan</h2>
+        <p class="home-categories__description mt-3 text-base leading-7 text-slate-600">Mulai pencarian dari bidang kompetensi yang paling sesuai dengan kebutuhan Anda.</p>
+      </div>
+      <TrainingCategoryOverview categories={categories} />
+    </Container>
+  </section>
+
+  <section class="home-benefits bg-slate-50 py-12 sm:py-16">
+    <Container>
+      <WhyChooseUs
+        title="Dirancang untuk memudahkan pencarian training"
+        description="Informasi disusun agar pengunjung dapat menelusuri program dengan lebih terarah."
+        items={benefits}
+      />
+    </Container>
+  </section>
+
+  <UpcomingSchedule items={[]} />
+
+  <section class="home-contact py-12 sm:py-16">
+    <Container>
+      <div class="home-contact__panel flex flex-col gap-6 rounded-3xl bg-slate-950 p-7 text-white sm:p-10 lg:flex-row lg:items-center lg:justify-between">
+        <div class="home-contact__content max-w-2xl">
+          <p class="home-contact__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-300">BUTUH INFORMASI?</p>
+          <h2 class="home-contact__title mt-3 text-2xl font-black tracking-tight sm:text-3xl">Mulai dari program yang ingin Anda temukan.</h2>
+          <p class="home-contact__description mt-3 text-sm leading-7 text-slate-300">Telusuri katalog atau hubungi tim Pusattraining untuk informasi lebih lanjut mengenai portal.</p>
+        </div>
+        <div class="home-contact__actions flex flex-wrap gap-3">
+          <Button href="/training/" variant="secondary">Lihat katalog <span aria-hidden="true">→</span></Button>
+          <Button href="/kontak/" variant="outline" class="border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white">Hubungi kami</Button>
+        </div>
+      </div>
+    </Container>
+  </section>
+</SiteLayout>
