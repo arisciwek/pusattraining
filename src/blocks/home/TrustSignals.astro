@@ -1,0 +1,5 @@
+---
+interface Props { items: { value: string; label: string }[]; }
+const { items } = Astro.props;
+---
+<section class="trust-signals" aria-label="Keunggulan penyelenggara"><div class="trust-signals__items">{items.map((item) => <div class="trust-signals__item"><strong class="trust-signals__value">{item.value}</strong><span class="trust-signals__label">{item.label}</span></div>)}</div></section>
