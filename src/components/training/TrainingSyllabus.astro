@@ -1,0 +1,8 @@
+---
+interface Props { title?: string; items: { title: string; description?: string; duration?: string }[]; }
+const { title = 'Materi pelatihan', items } = Astro.props;
+---
+<section class="training-syllabus" aria-labelledby="training-syllabus-title">
+  <h2 class="training-syllabus__title" id="training-syllabus-title">{title}</h2>
+  <ol class="training-syllabus__list">{items.map((item, index) => <li class="training-syllabus__item"><span class="training-syllabus__number">{String(index + 1).padStart(2, '0')}</span><div class="training-syllabus__content"><h3 class="training-syllabus__item-title">{item.title}</h3>{item.description && <p class="training-syllabus__description">{item.description}</p>}</div>{item.duration && <span class="training-syllabus__duration">{item.duration}</span>}</li>)}</ol>
+</section>
