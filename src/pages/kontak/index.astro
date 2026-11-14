@@ -1,0 +1,21 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import Breadcrumb from '../../components/shared/Breadcrumb.astro';
+import EmptyState from '../../components/shared/EmptyState.astro';
+---
+<SiteLayout title="Kontak Pusattraining" description="Informasi kontak dan pertanyaan mengenai portal Pusattraining.">
+  <section class="contact-page py-12 sm:py-16">
+    <Container>
+      <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Kontak' }]} />
+      <header class="contact-page__header mt-8 max-w-3xl">
+        <p class="contact-page__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">HUBUNGI KAMI</p>
+        <h1 class="contact-page__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Ada yang ingin ditanyakan?</h1>
+        <p class="contact-page__description mt-4 text-base leading-8 text-slate-600">Kanal komunikasi resmi akan ditampilkan setelah informasi kontak portal ditetapkan.</p>
+      </header>
+      <div class="contact-page__content mt-10">
+        <EmptyState title="Informasi kontak segera tersedia" description="Halaman ini sudah disiapkan. Detail email, nomor telepon, dan kanal komunikasi akan ditambahkan setelah dikonfirmasi." />
+      </div>
+    </Container>
+  </section>
+</SiteLayout>
