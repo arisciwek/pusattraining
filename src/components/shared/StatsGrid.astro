@@ -1,0 +1,5 @@
+---
+interface Props { items: { value: string; label: string; note?: string }[]; }
+const { items } = Astro.props;
+---
+<dl class="stats-grid">{items.map((item) => <div class="stats-grid__item"><dd class="stats-grid__value">{item.value}</dd><dt class="stats-grid__label">{item.label}</dt>{item.note && <p class="stats-grid__note">{item.note}</p>}</div>)}</dl>
