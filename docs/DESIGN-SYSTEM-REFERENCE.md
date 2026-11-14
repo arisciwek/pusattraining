@@ -64,10 +64,13 @@ Komponen-komponen tersebut telah dibuat sebagai fondasi di branch `feat/training
 - Hindari satu komponen raksasa yang mengatur seluruh halaman.
 - Jangan membuat variasi visual dengan duplikasi markup; gunakan props/variant yang terkontrol.
 
-## Arah visual awal
+## Arah visual dan warna
 
 - Nuansa: corporate training directory, profesional, tepercaya, modern, dan mudah dipindai.
-- Warna: gunakan neutral slate/stone sebagai dasar; satu warna brand utama dan satu aksen untuk CTA/status. Nilai final ditetapkan pada tahap token setelah audit visual lengkap.
+- Palet ditetapkan sebagai deep slate + warm amber: slate untuk fondasi, teks, dan struktur; amber untuk CTA dan highlight; putih/slate terang untuk ruang konten.
+- Status memakai emerald (tersedia), amber/orange (perhatian), rose (ditutup/gagal), sky (informasi), dan slate (netral).
+- Rincian skala, nilai HEX, pemetaan komponen, serta aturan kontras ada di `docs/COLOR-SYSTEM.md`.
+- Token CSS berada di `src/styles/tokens.css`; import file tersebut sebelum `components.css` pada entry stylesheet global saat scaffold Astro dibuat.
 - Tipografi: sans-serif kontemporer; skala heading kontras, body nyaman dibaca, metadata lebih kecil namun tetap terbaca.
 - Grid: container terpusat dengan lebar maksimum konsisten; cards memakai grid responsif.
 - Foto: dokumentasi training nyata atau aset berlisensi/diizinkan. Jangan hotlink atau mengambil aset milik situs referensi.
