@@ -1,0 +1,41 @@
+---
+import Button from '../shared/Button.astro';
+import ScheduleMeta from './ScheduleMeta.astro';
+
+interface Props {
+  trainingTitle: string;
+  trainingHref: string;
+  startDate: string;
+  endDate?: string;
+  mode?: string;
+  location?: string;
+  duration?: string;
+  price?: string;
+  status?: 'available' | 'limited' | 'closed' | 'completed';
+  registrationHref?: string;
+  organizer?: string;
+  class?: string;
+}
+
+const {
+  trainingTitle, trainingHref, startDate, endDate, mode, location,
+  duration, price, status = 'available', registrationHref,
+  organizer, class: className = '',
+} = Astro.props;
+---
+
+<article class={['schedule-card grid gap-5 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center', className].filter(Boolean).join(' ')}>
+  <div class="schedule-card__main min-w-0">
+    {organizer && <p class="schedule-card__organizer mb-2 text-xs font-bold uppercase tracking-[0.14em] text-amber-700">{organizer}</p>}
+    <h3 class="schedule-card__title text-lg font-bold leading-snug text-slate-950 sm:text-xl">
+      <a class="schedule-card__title-link hover:text-amber-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900" href={trainingHref}>{trainingTitle}</a>
+    </h3>
+    <div class="schedule-card__details mt-4">
+      <ScheduleMeta startDate={startDate} endDate={endDate} mode={mode} location={location} duration={duration} price={price} status={status} />
+    </div>
+  </div>
+  <div class="schedule-card__actions flex flex-wrap items-center gap-3 lg:justify-end">
+    <Button href={trainingHref} variant="outline" size="sm">Detail</Button>
+    {registrationHref && <Button href={registrationHref} variant="primary" size="sm" target="_blank">Daftar <span aria-hidden="true">↗</span></Button>}
+  </div>
+</article>
