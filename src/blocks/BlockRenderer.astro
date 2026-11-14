@@ -1,0 +1,11 @@
+---
+import { blockRegistry } from './registry';
+import type { PageBlock } from './types';
+interface Props { blocks: PageBlock[]; }
+const { blocks } = Astro.props;
+---
+<div class="page-blocks">{blocks.map((block) => {
+  const Component = blockRegistry[block.type] as typeof blockRegistry[PageBlock['type']];
+  const { type: _type, ...props } = block;
+  return <Component {...props} />;
+})}</div>
