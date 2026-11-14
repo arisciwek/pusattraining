@@ -1,0 +1,6 @@
+---
+import ArticleGrid from '../content/ArticleGrid.astro';
+interface Props { articles: { title: string; description: string; href: string; category?: string; date?: Date | string; image?: string; }[]; title?: string; }
+const { articles, title = 'Artikel terkait' } = Astro.props;
+---
+{articles.length > 0 && <ArticleGrid title={title} articles={articles} />}
