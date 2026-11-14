@@ -1,0 +1,5 @@
+---
+interface Props { title?: string; items: { quote: string; name: string; role?: string; organization?: string }[]; }
+const { title = 'Cerita peserta', items } = Astro.props;
+---
+<section class="testimonial-grid" aria-labelledby="testimonial-grid-title"><h2 class="testimonial-grid__title" id="testimonial-grid-title">{title}</h2><div class="testimonial-grid__items">{items.map((item) => <figure class="testimonial-grid__item"><blockquote class="testimonial-grid__quote">“{item.quote}”</blockquote><figcaption class="testimonial-grid__person"><span class="testimonial-grid__name">{item.name}</span>{item.role && <span class="testimonial-grid__role">{item.role}</span>}{item.organization && <span class="testimonial-grid__organization">{item.organization}</span>}</figcaption></figure>)}</div></section>
