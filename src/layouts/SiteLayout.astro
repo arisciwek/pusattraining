@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/shared/SiteHeader.astro';
+import SiteFooter from '../components/shared/SiteFooter.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalURL?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = 'Pusattraining — Pusat Informasi Training',
+  description = 'Temukan program pengembangan kompetensi dan jadwal training dari berbagai penyelenggara dalam satu portal.',
+  canonicalURL,
+  noindex = false,
+} = Astro.props;
+
+const pageTitle = title.includes('Pusattraining') ? title : `${title} | Pusattraining`;
+const canonical = canonicalURL ?? (Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined);
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#020617" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pusattraining" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <title>{pageTitle}</title>
+    <slot name="head" />
+  </head>
+  <body class="site-body flex min-h-screen flex-col">
+    <SiteHeader />
+    <main class="site-main flex-1">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
