@@ -1,0 +1,5 @@
+---
+interface Props { month: string; year: number; previousHref?: string; nextHref?: string; }
+const { month, year, previousHref, nextHref } = Astro.props;
+---
+<header class="schedule-month-heading"><div class="schedule-month-heading__title-group"><p class="schedule-month-heading__eyebrow">Kalender pelatihan</p><h2 class="schedule-month-heading__title">{month} <span>{year}</span></h2></div><nav class="schedule-month-heading__navigation" aria-label="Navigasi bulan">{previousHref ? <a class="schedule-month-heading__link" href={previousHref} rel="prev" aria-label="Bulan sebelumnya">←</a> : <span class="schedule-month-heading__link schedule-month-heading__link--disabled" aria-hidden="true">←</span>}{nextHref ? <a class="schedule-month-heading__link" href={nextHref} rel="next" aria-label="Bulan berikutnya">→</a> : <span class="schedule-month-heading__link schedule-month-heading__link--disabled" aria-hidden="true">→</span>}</nav></header>
