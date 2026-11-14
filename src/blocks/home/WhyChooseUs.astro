@@ -1,0 +1,6 @@
+---
+import BenefitsBlock from '../../components/shared/BenefitsBlock.astro';
+interface Props { title?: string; description?: string; items: { title: string; description: string; icon?: string }[]; }
+const { title = 'Mengapa memilih kami', description, items } = Astro.props;
+---
+<BenefitsBlock title={title} description={description} items={items} />
