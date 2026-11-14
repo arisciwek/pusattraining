@@ -1,0 +1,15 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Container from '../components/shared/Container.astro';
+import Button from '../components/shared/Button.astro';
+---
+<SiteLayout title="Halaman tidak ditemukan" description="Halaman yang Anda cari tidak tersedia." noindex>
+  <section class="error-page py-24 sm:py-32">
+    <Container class="error-page__inner text-center">
+      <p class="error-page__code text-sm font-black uppercase tracking-[0.2em] text-amber-700">404</p>
+      <h1 class="error-page__title mt-4 text-4xl font-black tracking-tight text-slate-950">Halaman tidak ditemukan</h1>
+      <p class="error-page__description mx-auto mt-4 max-w-xl text-base leading-7 text-slate-600">Tautan mungkin sudah berubah atau halaman yang Anda cari belum tersedia.</p>
+      <Button href="/" class="mt-8">Kembali ke beranda</Button>
+    </Container>
+  </section>
+</SiteLayout>
