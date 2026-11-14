@@ -2,7 +2,7 @@
 
 ## Keputusan teknis
 
-- Framework: Astro 6.
+- Framework: Astro 7.4.0 (disamakan dengan Damkar dan Confinedspace).
 - Styling: Tailwind CSS 4 melalui `@tailwindcss/vite`.
 - Bahasa: TypeScript dengan konfigurasi strict Astro.
 - Rendering: static-first; belum memasang adapter server karena kebutuhan deployment belum ditentukan.
@@ -34,7 +34,7 @@ npm run build
 npm run dev
 ```
 
-Gunakan Node.js 22.12.0 atau lebih baru. `npm install` akan membuat `package-lock.json` sesuai versi dependency yang ter-resolve di lingkungan lokal. Simpan file lock tersebut pada commit berikutnya agar instalasi berikutnya reproducible.
+Gunakan Node.js 22.22.0 atau lebih baru. Versi proyek dicatat pada file `.nvmrc`. `npm install` akan membuat `package-lock.json` sesuai versi dependency yang ter-resolve di lingkungan lokal. Simpan `package-lock.json` ke repository setelah dependency berhasil di-resolve agar instalasi berikutnya reproducible. Branch ini belum menyertakan lockfile karena proses instalasi dependency tidak dapat dijalankan dari lingkungan kerja saat ini.
 
 ## Status verifikasi
 
