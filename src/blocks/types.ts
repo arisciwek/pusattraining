@@ -21,6 +21,7 @@ export interface TrainingDetailIntroBlock {
 }
 export interface TrainingSummaryBlock {
   type: 'training-summary';
+  id?: string;
   eyebrow?: string;
   items: { label: string; value: string; detail?: string }[];
 }
@@ -52,6 +53,7 @@ export interface TrainingCtaBlock {
 }
 export interface TrainingScheduleListBlock {
   type: 'training-schedule-list';
+  id?: string;
   eyebrow?: string;
   title: string;
   allLabel?: string;
