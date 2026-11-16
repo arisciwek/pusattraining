@@ -42,6 +42,8 @@ const siteCopy = data.sites?.main;
 const title = getScheduleTitle(schedule);
 const description = getScheduleDescription(schedule);
 const month = getScheduleMonth(data);
+const [monthYear, monthNumber] = month.split('-').map(Number);
+const monthLabel = new Intl.DateTimeFormat('id-ID', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(monthYear, monthNumber - 1, 1)));
 const dateLabel = data.dateLabel;
 const registrationUrl = siteCopy?.registrationUrl;
 const eventStatus = data.status === 'scheduled' || data.status === 'ongoing'
@@ -95,7 +97,7 @@ const safeEventJsonLd = JSON.stringify(eventJsonLd).replace(/</g, '\\u003c');
       <Breadcrumb items={[
         { label: 'Beranda', href: '/' },
         { label: 'Jadwal Training', href: '/jadwal/' },
-        { label: month, href: `/jadwal/${month}/` },
+        { label: monthLabel, href: `/jadwal/${month}/` },
         { label: training.data.title, href: `/pelatihan/${training.data.slug}/` },
         { label: title },
       ]} />
