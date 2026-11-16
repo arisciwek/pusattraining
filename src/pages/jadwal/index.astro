@@ -1,8 +1,28 @@
 ---
+import { getCollection } from 'astro:content';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import Container from '../../components/shared/Container.astro';
 import Breadcrumb from '../../components/shared/Breadcrumb.astro';
 import EmptyState from '../../components/shared/EmptyState.astro';
+import ScheduleCard from '../../components/schedule/ScheduleCard.astro';
+import { getScheduleMonth, isMainSiteSchedule } from '../../lib/schedule-utils';
+import { validateContentRelations } from '../../lib/validate-content';
+
+await validateContentRelations();
+const [allSchedules, trainings] = await Promise.all([
+  getCollection('schedules', isMainSiteSchedule),
+  getCollection('trainings', ({ data }) => !data.draft),
+]);
+const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
+const schedules = allSchedules
+  .filter((schedule) => trainingsById.has(schedule.data.trainingId))
+  .sort((a, b) => Date.parse(b.data.startDate) - Date.parse(a.data.startDate));
+const latestSchedules = schedules.slice(0, 6);
+const archiveMonths = [...new Set(schedules.map((schedule) => getScheduleMonth(schedule.data)))].sort().reverse();
+const monthLabel = (value: string) => {
+  const [year, month] = value.split('-').map(Number);
+  return new Intl.DateTimeFormat('id-ID', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(year, month - 1, 1)));
+};
 ---
 <SiteLayout title="Jadwal Training" description="Temukan jadwal pelaksanaan training dari berbagai bidang dan penyelenggara.">
   <section class="schedule-index py-12 sm:py-16">
@@ -13,9 +33,42 @@ import EmptyState from '../../components/shared/EmptyState.astro';
         <h1 class="schedule-index__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Jadwal training</h1>
         <p class="schedule-index__description mt-4 text-base leading-8 text-slate-600">Telusuri informasi batch training berdasarkan tanggal, bidang, dan penyelenggara.</p>
       </header>
-      <div class="schedule-index__content mt-10">
-        <EmptyState title="Belum ada jadwal yang dipublikasikan" description="Jadwal training akan muncul di halaman ini setelah data batch tersedia." actionLabel="Kembali ke beranda" actionHref="/" />
-      </div>
+
+      {schedules.length > 0 ? (
+        <>
+          <section class="schedule-index__latest mt-12">
+            <div class="schedule-index__section-heading flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p class="schedule-index__section-eyebrow text-xs font-bold uppercase tracking-[0.14em] text-amber-700">UPDATE TERBARU</p>
+                <h2 class="schedule-index__section-title mt-2 text-2xl font-bold tracking-tight text-slate-950">Jadwal yang dipublikasikan</h2>
+              </div>
+              <p class="schedule-index__total text-sm text-slate-500">{schedules.length} batch tersedia</p>
+            </div>
+            <div class="schedule-index__grid mt-6 grid gap-5 lg:grid-cols-2">
+              {latestSchedules.map((schedule) => {
+                const training = trainingsById.get(schedule.data.trainingId)!;
+                return <ScheduleCard schedule={schedule} trainingSlug={training.data.slug} trainingTitle={training.data.title} />;
+              })}
+            </div>
+          </section>
+          {archiveMonths.length > 0 && (
+            <nav class="schedule-index__archive mt-14 border-t border-slate-200 pt-8" aria-label="Arsip jadwal per bulan">
+              <h2 class="schedule-index__archive-title text-xl font-bold text-slate-950">Arsip jadwal</h2>
+              <ul class="schedule-index__archive-list mt-5 flex flex-wrap gap-3">
+                {archiveMonths.map((month) => (
+                  <li>
+                    <a class="schedule-index__archive-link inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-amber-400 hover:text-amber-700" href={`/jadwal/${month}/`}>{monthLabel(month)} <span class="ml-2 text-slate-400" aria-hidden="true">→</span></a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+        </>
+      ) : (
+        <div class="schedule-index__content mt-10">
+          <EmptyState title="Belum ada jadwal yang dipublikasikan" description="Jadwal training akan muncul di halaman ini setelah data batch tersedia." actionLabel="Lihat program training" actionHref="/pelatihan/" />
+        </div>
+      )}
     </Container>
   </section>
 </SiteLayout>
