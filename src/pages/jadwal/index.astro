@@ -29,7 +29,7 @@ const now = new Date();
 const upcomingSchedules = schedules
   .filter((schedule) => {
     const startDate = schedule.data.startDate;
-    if (/^\\d{4}-\\d{2}-\\d{2}$/.test(startDate)) {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(startDate)) {
       const todayInScheduleTimezone = new Intl.DateTimeFormat('en-CA', {
         timeZone: schedule.data.timezone,
         year: 'numeric',
