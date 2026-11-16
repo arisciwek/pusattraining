@@ -31,6 +31,7 @@ export async function validateContentRelations(): Promise<void> {
 
   assertUnique(allEntries.map(({ data }) => String(data.id)), 'content id');
   assertUnique(allEntries.map(({ data }) => data.ulid), 'content ulid');
+  assertUnique(pages.map(({ data }) => data.slug), 'slug halaman');
   assertUnique(
     [...pages.filter(({ data }) => data.pageType === 'category').map(({ data }) => data.slug),
       ...trainings.map(({ data }) => data.slug)],
