@@ -1,8 +1,9 @@
 # Audit Kontrak Schedule dan Routing — Pusattraining
 
-**Branch:** `fix/schedule-contract-audit`  
+**Branch audit awal:** `fix/schedule-contract-audit`  
+**Branch tindak lanjut:** `fix/schedule-archive-audit`  
 **Acuan:** `docs/FRONTMATTER-SCHEDULE-CONTRACT.md` dan `docs/CONTENT-DRIVEN-PAGE-ARCHITECTURE.md`  
-**Status:** audit schema selesai; routing schedule dan fixture data belum diimplementasikan.
+**Status:** schema dan routing portal sudah diimplementasikan; audit build terbaru dan fixture validasi masih diperlukan.
 
 ## 1. Hasil pemeriksaan schema
 
@@ -43,7 +44,7 @@ Tidak ada nama field atau enum kontrak yang diganti.
 1. Daftar nilai `publisherId` yang sah belum tersedia sebagai registry terpusat. Schema sementara menerima string non-kosong; validasi allowlist baru boleh diterapkan setelah daftar ID publisher disepakati.
 2. Struktur folder kanonis `schedules/<YYYY>/<training-slug>/<schedule-slug>.md` kini diperiksa oleh validator lintas collection. Pemeriksaan ini akan aktif ketika record schedule ditambahkan.
 3. Belum ada fixture schedule untuk menguji semua lifecycle status dan variasi field opsional.
-4. Belum ada halaman arsip bulanan dan detail schedule di route Astro.
+4. Route arsip bulanan `/jadwal/<YYYY-MM>/` dan detail `/jadwal/<YYYY-MM>/<training-slug>/<schedule-slug>/` sudah tersedia. Indeks jadwal dan kartu batch pada halaman training juga sudah terhubung.
 5. Belum ada data schedule faktual. Jangan membuat data dummy untuk sekadar mengisi halaman.
 6. `registrationUrl` divalidasi sebagai URL absolut. URL pendaftaran harus berasal dari sumber yang benar, bukan ditebak.
 
