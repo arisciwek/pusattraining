@@ -11,7 +11,8 @@
     "check": "astro sync && tsc --noEmit",
     "build": "npm run check && astro build",
     "preview": "astro preview",
-    "schedules:discover": "node scripts/discover-schedules.mjs"
+    "schedules:discover": "node scripts/discover-schedules.mjs",
+    "test:schedules:discover": "node --test scripts/discover-schedules.test.mjs"
   },
   "overrides": {
     "astro": "7.4.0",
