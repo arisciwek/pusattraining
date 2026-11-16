@@ -37,7 +37,7 @@ const monthLabel = (value: string) => {
 <SiteLayout title={page.data.title} description={page.data.description}>
   <section class="schedule-index py-12 sm:py-16">
     <Container>
-      <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Jadwal Training' }]} />
+      <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: page.data.title }]} />
       <header class="schedule-index__header mt-8 max-w-3xl">
         {pageBlock.eyebrow && <p class="schedule-index__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">{pageBlock.eyebrow}</p>}
         <h1 class="schedule-index__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">{page.data.title}</h1>
@@ -49,7 +49,7 @@ const monthLabel = (value: string) => {
           <section class="schedule-index__latest mt-12">
             <div class="schedule-index__section-heading flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p class="schedule-index__section-eyebrow text-xs font-bold uppercase tracking-[0.14em] text-amber-700">URUTAN PELAKSANAAN</p>
+                {pageBlock.sectionEyebrow && <p class="schedule-index__section-eyebrow text-xs font-bold uppercase tracking-[0.14em] text-amber-700">{pageBlock.sectionEyebrow}</p>}
                 <h2 class="schedule-index__section-title mt-2 text-2xl font-bold tracking-tight text-slate-950">{pageBlock.latestTitle}</h2>
               </div>
               <p class="schedule-index__total text-sm text-slate-500">{schedules.length} batch tersedia</p>
