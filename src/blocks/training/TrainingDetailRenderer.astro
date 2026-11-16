@@ -16,9 +16,11 @@ interface Props {
   description: string;
   schedules: ScheduleEntry[];
   trainingSlug: string;
+  image?: string;
+  imageAlt?: string;
 }
 
-const { blocks, title, description, schedules, trainingSlug } = Astro.props;
+const { blocks, title, description, schedules, trainingSlug, image, imageAlt = title } = Astro.props;
 
 function slugifySectionTitle(value: string): string {
   return value
@@ -41,6 +43,11 @@ const navigationItems = contentBlocks.flatMap((block) => {
 });
 ---
 <div class="training-detail-renderer">
+  {image && (
+    <div class="training-detail-renderer__hero mb-10 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+      <img class="training-detail-renderer__image h-full w-full object-cover" src={image} alt={imageAlt} loading="lazy" decoding="async" />
+    </div>
+  )}
   {introBlocks.map((block) => {
     if (block.type !== 'training-detail-intro') return null;
     return (

@@ -48,6 +48,8 @@ const categoryTrainingCards = relatedTrainings.map((training) => ({
   title: training.data.title,
   description: training.data.description,
   href: `/pelatihan/${training.data.slug}/`,
+  image: training.data.image,
+  imageAlt: training.data.title,
 }));
 ---
 <SiteLayout title={title} description={description}>
@@ -76,6 +78,8 @@ const categoryTrainingCards = relatedTrainings.map((training) => ({
             description={description}
             schedules={relatedSchedules}
             trainingSlug={entry.data.slug}
+            image={entry.data.image}
+            imageAlt={title}
           />
         </div>
       )}
