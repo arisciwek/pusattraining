@@ -23,4 +23,7 @@ registration:
 delivery:
   mode: 'offline'
   attendanceMode: 'offline'
+sites:
+  main:
+    enabled: true
 ---
