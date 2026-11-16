@@ -21,14 +21,4 @@ blocks:
     title: Jadwal pelatihan
     allLabel: Semua jadwal
     emptyMessage: "Belum ada batch yang dipublikasikan untuk program ini. Jadwal akan ditampilkan setelah data penyelenggaraan tersedia."
-blocks:
-  - type: training-detail-intro
-    eyebrow: PROGRAM PELATIHAN
-    noticeTitle: Informasi program
-    noticeDescription: "Rincian materi, persyaratan, metode, dan skema pelaksanaan program ini akan dilengkapi setelah verifikasi dokumen sumber."
-  - type: training-schedule-list
-    eyebrow: BATCH TERSEDIA
-    title: Jadwal pelatihan
-    allLabel: Semua jadwal
-    emptyMessage: "Belum ada batch yang dipublikasikan untuk program ini. Jadwal akan ditampilkan setelah data penyelenggaraan tersedia."
 ---
