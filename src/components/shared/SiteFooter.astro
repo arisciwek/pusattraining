@@ -17,7 +17,6 @@ interface Props {
   description?: string;
   groups?: LinkGroup[];
   email?: string;
-  phone?: string;
   copyrightName?: string;
 }
 
@@ -29,7 +28,6 @@ const {
     { title: 'Informasi', links: [{ label: 'Tentang Kami', href: '/tentang/' }, { label: 'Kontak', href: '/kontak/' }] },
   ],
   email,
-  phone = CONTACT_PHONE_DISPLAY,
   copyrightName = 'Pusattraining',
 } = Astro.props;
 ---
@@ -39,10 +37,10 @@ const {
     <div class="site-footer__identity max-w-sm">
       <a class="site-footer__brand text-2xl font-black tracking-tight text-white" href="/">{brand}<span class="text-amber-400" aria-hidden="true">.</span></a>
       <p class="site-footer__description mt-4 text-sm leading-7 text-slate-400">{description}</p>
-      {(email || phone) && (
+      {true && (
         <address class="site-footer__contact mt-6 space-y-2 not-italic text-sm">
           {email && <p><a class="hover:text-white" href={'mailto:' + email}>{email}</a></p>}
-          {phone && <p><span class="site-footer__contact-person">{CONTACT_PERSON}: </span><a class="hover:text-white" href={CONTACT_TEL_HREF}>{phone}</a></p>}
+          <p><span class="site-footer__contact-person">{CONTACT_PERSON}: </span><a class="hover:text-white" href={CONTACT_TEL_HREF}>{CONTACT_PHONE_DISPLAY}</a></p>
           <p><a class="site-footer__whatsapp text-amber-300 hover:text-white" href={getContactWhatsAppHref()} target="_blank" rel="noopener noreferrer">WhatsApp Tiara <span aria-hidden="true">↗</span></a></p>
         </address>
       )}
