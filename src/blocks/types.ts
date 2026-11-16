@@ -19,6 +19,37 @@ export interface TrainingDetailIntroBlock {
   noticeTitle: string;
   noticeDescription: string;
 }
+export interface TrainingSummaryBlock {
+  type: 'training-summary';
+  eyebrow?: string;
+  items: { label: string; value: string; detail?: string }[];
+}
+export interface TrainingContentSectionBlock {
+  type: 'training-content-section';
+  id?: string;
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  items: { title: string; description?: string }[];
+}
+export interface TrainingFaqBlock {
+  type: 'training-faq';
+  id?: string;
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  items: { question: string; answer: string }[];
+}
+export interface TrainingCtaBlock {
+  type: 'training-cta';
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  actionLabel: string;
+  actionHref: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
 export interface TrainingScheduleListBlock {
   type: 'training-schedule-list';
   eyebrow?: string;
@@ -26,7 +57,13 @@ export interface TrainingScheduleListBlock {
   allLabel?: string;
   emptyMessage: string;
 }
-export type TrainingDetailBlock = TrainingDetailIntroBlock | TrainingScheduleListBlock;
+export type TrainingDetailBlock =
+  | TrainingDetailIntroBlock
+  | TrainingSummaryBlock
+  | TrainingContentSectionBlock
+  | TrainingFaqBlock
+  | TrainingCtaBlock
+  | TrainingScheduleListBlock;
 
 export interface HomeHeroBlock {
   type: 'home-hero';
