@@ -6,9 +6,7 @@ import Breadcrumb from '../../components/shared/Breadcrumb.astro';
 import EmptyState from '../../components/shared/EmptyState.astro';
 import ScheduleCard from '../../components/schedule/ScheduleCard.astro';
 import {
-  formatScheduleDate,
   getScheduleMonth,
-  getScheduleTitle,
   isMainSiteSchedule,
 } from '../../lib/schedule-utils';
 import { validateContentRelations } from '../../lib/validate-content';
@@ -20,10 +18,11 @@ export async function getStaticPaths() {
     getCollection('trainings', ({ data }) => !data.draft),
   ]);
   const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
-  const months = [...new Set(schedules.map((schedule) => getScheduleMonth(schedule.data)))].sort().reverse();
+  const publishedSchedules = schedules.filter((schedule) => trainingsById.has(schedule.data.trainingId));
+  const months = [...new Set(publishedSchedules.map((schedule) => getScheduleMonth(schedule.data)))].sort().reverse();
 
   return months.map((month) => {
-    const monthSchedules = schedules
+    const monthSchedules = publishedSchedules
       .filter((schedule) => getScheduleMonth(schedule.data) === month)
       .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate));
 
