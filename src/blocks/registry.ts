@@ -9,11 +9,13 @@ import TestimonialGrid from '../components/shared/TestimonialGrid.astro';
 import ProgramGrid from '../components/content/ProgramGrid.astro';
 import TrainingCatalog from './training/TrainingCatalog.astro';
 import TrainingCategoryPage from './training/TrainingCategoryPage.astro';
+import ScheduleIndexBlock from './schedule/ScheduleIndexBlock.astro';
 import type { PageBlock } from './types';
 
 export const blockRegistry = {
   'training-category': TrainingCategoryPage,
   'training-catalog': TrainingCatalog,
+  'schedule-index': ScheduleIndexBlock,
   'program-grid': ProgramGrid,
   benefits: BenefitsBlock,
   reasons: ReasonsBlock,
