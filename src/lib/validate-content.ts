@@ -40,6 +40,23 @@ export async function validateContentRelations(): Promise<void> {
 
   const allEntries = [...pages, ...trainings, ...schedules, ...articles];
 
+  // HeroTraining renders this value inside p.hero-training__summary.
+  // Keep the official training name visible in every rendered hero summary.
+  for (const training of trainings) {
+    if (!training.data.hero) continue;
+
+    const summary = training.data.hero.description ?? training.data.description;
+    const trainingName = training.data.title.trim();
+    const normalizedSummary = summary.normalize('NFKC').toLocaleLowerCase('id-ID');
+    const normalizedName = trainingName.normalize('NFKC').toLocaleLowerCase('id-ID');
+
+    if (!normalizedSummary.includes(normalizedName)) {
+      throw new Error(
+        `Hero summary untuk training "${training.data.trainingId}" harus menyebut nama pelatihan "${trainingName}" secara utuh.`,
+      );
+    }
+  }
+
   assertUnique(allEntries.map(({ data }) => String(data.id)), 'content id');
   assertUnique(allEntries.map(({ data }) => data.ulid), 'content ulid');
   assertUnique(pages.map(({ data }) => data.slug), 'slug halaman');

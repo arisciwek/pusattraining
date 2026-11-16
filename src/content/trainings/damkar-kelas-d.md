@@ -16,7 +16,7 @@ hero:
   imageAlt: Peserta pelatihan Pemadam Kebakaran saat praktik pemadaman api
   eyebrow: JENJANG 1 DARI 4 · PROGRAM SERTIFIKASI
   certBadge: KEMNAKER RI
-  description: "Program pembinaan Petugas Pemadam (Kelas D) dengan pembelajaran teori dan praktik untuk memahami pencegahan kebakaran, sarana proteksi, dan prosedur darurat di tempat kerja. Program sumber diselenggarakan bersama PT Betracom Gemilang Nusa."
+  description: "Pelatihan Pemadam Kebakaran Kelas D adalah program pembinaan Petugas Pemadam dengan pembelajaran teori dan praktik untuk memahami pencegahan kebakaran, sarana proteksi, dan prosedur darurat di tempat kerja. Program sumber diselenggarakan bersama PT Betracom Gemilang Nusa."
   deliveryMode: mixed
   ctaLabel: Lihat jadwal dan pendaftaran
   ctaHref: "#pendaftaran"
