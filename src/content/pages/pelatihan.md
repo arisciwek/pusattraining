@@ -16,4 +16,6 @@ blocks:
     title: Jelajahi kategori pelatihan
     description: Temukan rumpun kompetensi dan telusuri program pelatihan berdasarkan bidang yang dibutuhkan.
     emptyMessage: Kategori pelatihan sedang disiapkan.
+    categoryTitle: Pilih bidang kompetensi
+    categoryDescription: Telusuri kategori untuk menemukan program pelatihan yang sesuai dengan kebutuhan kompetensi dan pekerjaan.
 ---
