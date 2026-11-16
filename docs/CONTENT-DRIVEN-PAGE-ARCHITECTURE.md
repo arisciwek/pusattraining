@@ -17,6 +17,11 @@ Pusattraining menggunakan pendekatan **content-driven**:
 
 ## 2. Struktur direktori kanonis
 
+Halaman indeks jadwal portal (`/jadwal/`) juga merupakan entri pada collection `pages`, yaitu `src/content/pages/jadwal.md`. Metadata SEO halaman berasal dari frontmatter; block `schedule-index` mengatur copy bagian daftar, arsip, dan empty state. Route Astro hanya mengambil data schedule/training dan merendernya.
+
+Halaman arsip bulanan (`/jadwal/<YYYY-MM>/`) dan detail (`/jadwal/<YYYY-MM>/<training-slug>/<schedule-slug>/`) dibangkitkan dari collection `schedules`; konten faktual detail berasal dari frontmatter schedule dan relasi ke master training. Keduanya tidak membutuhkan file halaman duplikat per bulan atau per batch.
+
+
 ```text
 src/content/
 ├── pages/
