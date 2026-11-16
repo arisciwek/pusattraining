@@ -8,6 +8,16 @@ import ScheduleCard from '../../components/schedule/ScheduleCard.astro';
 import { getScheduleMonth, isMainSiteSchedule } from '../../lib/schedule-utils';
 import { validateContentRelations } from '../../lib/validate-content';
 
+const page = (await getCollection('pages', ({ data }) =>
+  data.slug === 'jadwal' && !data.draft
+))[0];
+
+if (!page) throw new Error('Konten halaman Jadwal (slug: jadwal) tidak ditemukan.');
+
+const pageBlock = page.data.blocks.find((block) => block.type === 'schedule-index');
+
+if (!pageBlock) throw new Error('Block schedule-index belum dikonfigurasi pada src/content/pages/jadwal.md.');
+
 await validateContentRelations();
 const [allSchedules, trainings] = await Promise.all([
   getCollection('schedules', isMainSiteSchedule),
@@ -24,14 +34,14 @@ const monthLabel = (value: string) => {
   return new Intl.DateTimeFormat('id-ID', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(year, month - 1, 1)));
 };
 ---
-<SiteLayout title="Jadwal Training" description="Temukan jadwal pelaksanaan training dari berbagai bidang dan penyelenggara.">
+<SiteLayout title={page.data.title} description={page.data.description}>
   <section class="schedule-index py-12 sm:py-16">
     <Container>
       <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Jadwal Training' }]} />
       <header class="schedule-index__header mt-8 max-w-3xl">
-        <p class="schedule-index__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">KALENDER PELATIHAN</p>
-        <h1 class="schedule-index__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Jadwal training</h1>
-        <p class="schedule-index__description mt-4 text-base leading-8 text-slate-600">Telusuri informasi batch training berdasarkan tanggal, bidang, dan penyelenggara.</p>
+        {pageBlock.eyebrow && <p class="schedule-index__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">{pageBlock.eyebrow}</p>}
+        <h1 class="schedule-index__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">{page.data.title}</h1>
+        <p class="schedule-index__description mt-4 text-base leading-8 text-slate-600">{page.data.description}</p>
       </header>
 
       {schedules.length > 0 ? (
@@ -40,7 +50,7 @@ const monthLabel = (value: string) => {
             <div class="schedule-index__section-heading flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p class="schedule-index__section-eyebrow text-xs font-bold uppercase tracking-[0.14em] text-amber-700">URUTAN PELAKSANAAN</p>
-                <h2 class="schedule-index__section-title mt-2 text-2xl font-bold tracking-tight text-slate-950">Jadwal yang dipublikasikan</h2>
+                <h2 class="schedule-index__section-title mt-2 text-2xl font-bold tracking-tight text-slate-950">{pageBlock.latestTitle}</h2>
               </div>
               <p class="schedule-index__total text-sm text-slate-500">{schedules.length} batch tersedia</p>
             </div>
@@ -53,7 +63,7 @@ const monthLabel = (value: string) => {
           </section>
           {archiveMonths.length > 0 && (
             <nav class="schedule-index__archive mt-14 border-t border-slate-200 pt-8" aria-label="Arsip jadwal per bulan">
-              <h2 class="schedule-index__archive-title text-xl font-bold text-slate-950">Arsip jadwal</h2>
+              <h2 class="schedule-index__archive-title text-xl font-bold text-slate-950">{pageBlock.archiveTitle}</h2>
               <ul class="schedule-index__archive-list mt-5 flex flex-wrap gap-3">
                 {archiveMonths.map((month) => (
                   <li>
@@ -66,7 +76,7 @@ const monthLabel = (value: string) => {
         </>
       ) : (
         <div class="schedule-index__content mt-10">
-          <EmptyState title="Belum ada jadwal yang dipublikasikan" description="Jadwal training akan muncul di halaman ini setelah data batch tersedia." actionLabel="Lihat program training" actionHref="/pelatihan/" />
+          <EmptyState title={pageBlock.emptyTitle} description={pageBlock.emptyDescription} actionLabel={pageBlock.emptyActionLabel} actionHref="/pelatihan/" />
         </div>
       )}
     </Container>
