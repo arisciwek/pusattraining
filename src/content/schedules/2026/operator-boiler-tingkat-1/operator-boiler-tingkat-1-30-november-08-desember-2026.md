@@ -22,7 +22,7 @@ delivery:
   attendanceMode: mixed
 venue:
   name: "Training Center Jakarta Timur / Bandung (konfirmasi penyelenggara)"
-countryCode: "ID"
+  countryCode: "ID"
 sites:
   main:
     enabled: true
