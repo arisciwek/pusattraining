@@ -293,3 +293,62 @@ Jangan mengubah butir di atas menjadi klaim publik sampai ada dokumen atau konfi
 6. K3 Ruang Terbatas — JDIH Kemnaker, [Permenaker Nomor 11 Tahun 2023](https://jdih.kemnaker.go.id/peraturan/detail/2412/peraturan-menteri-nomor-11-tahun-2023).
 
 **Peringatan verifikasi:** referensi regulasi di atas adalah landasan penyusunan konten awal. Sebelum publikasi final, periksa naskah lengkap, status berlaku, perubahan/pencabutan, dan kesesuaian dengan skema pembinaan yang benar-benar diselenggarakan.
+
+
+## 9. Audit ulang terhadap konten situs sumber (17 November 2026)
+
+Audit ulang ini menggunakan URL asli yang tercatat dalam `docs/INVENTARIS-URL-SITEMAP.csv`, bukan hanya menebak URL dari nama training. Hasilnya: beberapa data yang sebelumnya ditandai “perlu konfirmasi” ternyata memang sudah dipublikasikan pada halaman sumber. Data tersebut harus dipindahkan ke frontmatter dengan atribusi sumber dan tanggal pemeriksaan.
+
+### 9.1 Matriks sumber asli per halaman
+
+| Halaman Astro | URL sumber yang ditemukan di sitemap | Data faktual yang tersedia di sumber | Tindak lanjut konten |
+|---|---|---|---|
+| Ahli K3 Umum | [/ahli-k3/ahli-k3-umum/](https://pusattrainingk3.com/ahli-k3/ahli-k3-umum/) | Durasi 12 hari/120 JP; blended (11 hari online + 1 hari evaluasi offline); biaya Rp6.000.000/peserta; daftar dokumen; materi dasar, inti, penunjang, praktik dan evaluasi; 12 jadwal tahun 2026. | [ ] Ganti materi generik dengan materi dan JP sumber; [ ] tampilkan biaya, metode, durasi, persyaratan; [ ] sinkronkan jadwal 2026 dari sumber. |
+| Pemadam Kebakaran Kelas D | [/safety-kebakaran/damkar-kelas-d/](https://pusattrainingk3.com/safety-kebakaran/damkar-kelas-d/) dan halaman pembaruan program [/ahli-k3/training-ahli-k3-pemadam-kebakaran/](https://pusattrainingk3.com/ahli-k3/training-ahli-k3-pemadam-kebakaran/) | Halaman program terbaru memuat jadwal per kelas, metode (D blended; C/B/A offline), materi kelas D, persyaratan pendidikan, waktu dan lokasi. Artikel jadwal Damkar memuat harga dan durasi per kelas/paket, komponen biaya dan prasyarat jenjang. | [ ] Tentukan sumber utama yang paling baru; [ ] bedakan Kelas D dari paket D-C/B/A; [ ] harga hanya tampil dengan catatan sumber dan tanggal pemeriksaan. |
+| Operator Boiler Tingkat 1 | [/operator-k3/pelatihan-operator-boiler-tingkat-1/](https://pusattrainingk3.com/operator-k3/pelatihan-operator-boiler-tingkat-1/) dan halaman gabungan [/operator-k3/operator-boiler/](https://pusattrainingk3.com/operator-k3/operator-boiler/) | Jadwal 2026 untuk kelas I; materi terperinci; pendidikan minimal SMA/STM; kriteria calon operator/SIO; metode blended; instruktur; investasi pada halaman gabungan Rp7.000.000 untuk Tingkat 1; termasuk modul, kit, souvenir, sertifikat dan SIO; lokasi training center. | [ ] Masukkan materi, syarat, jadwal, harga dan fasilitas sesuai sumber; [ ] tandai bahwa data jadwal dapat berubah. |
+| Operator Boiler Tingkat 2 | [/operator-k3/pelatihan-operator-boiler-tingkat-2/](https://pusattrainingk3.com/operator-k3/pelatihan-operator-boiler-tingkat-2/) dan halaman gabungan [/operator-k3/operator-boiler/](https://pusattrainingk3.com/operator-k3/operator-boiler/) | Halaman gabungan menyebut kapasitas boiler maksimal 10 ton; jadwal 2026 kelas II; materi kelas II; pendidikan minimal SMA/STM; investasi Rp5.500.000; rincian termasuk modul, kit, souvenir, sertifikat dan SIO. | [ ] Masukkan fakta kelas II; [ ] jangan tertukar dengan Tingkat 1; [ ] periksa ulang konsistensi halaman individual dan gabungan. |
+| Operator Gondola | [/operator-k3/operator-gondola/](https://pusattrainingk3.com/operator-k3/operator-gondola/) | Tujuan; jadwal 2026; materi kelompok dasar, inti, ujian teori/praktik; dokumen KTP, ijazah minimal SLTA, surat pernyataan, surat keterangan kerja, pasfoto; biaya Rp4.500.000/peserta dan komponen yang termasuk; klaim sertifikat/lisensi berlaku 5 tahun. | [ ] Pindahkan materi, syarat, biaya, dan komponen; [ ] pertahankan klaim masa berlaku sebagai klaim sumber dan verifikasi sebelum publikasi. |
+| Pemadam Kebakaran Kelas A | [/safety-kebakaran/pemadam-kebakaran-kelas-a/](https://pusattrainingk3.com/safety-kebakaran/pemadam-kebakaran-kelas-a/) dan halaman program terbaru [/ahli-k3/training-ahli-k3-pemadam-kebakaran/](https://pusattrainingk3.com/ahli-k3/training-ahli-k3-pemadam-kebakaran/) | Halaman lama memuat target peserta, persyaratan minimal D3 dan sertifikat Grade B & D, sertifikasi yang diperoleh, lokasi dan biaya Rp7.500.000 beserta komponen. Halaman baru memuat program kelas A dan jadwal 2026 yang diperbarui. | [ ] Prioritaskan halaman program terbaru untuk jadwal; [ ] simpan informasi persyaratan/biaya lama sebagai data yang perlu dicocokkan karena dapat berubah. |
+| Emergency Response Plan | [/safety-general/training-emergency-response-plan/](https://pusattrainingk3.com/safety-general/training-emergency-response-plan/) | Deskripsi, tujuan, manfaat, materi advance ERP, kriteria peserta lintas fungsi, durasi pilihan 1/2/3 hari sesuai kebutuhan klien, nama narasumber. Tidak ada harga publik pada halaman ini; diarahkan meminta penawaran. | [ ] Ganti materi generik dengan daftar materi asli; [ ] cantumkan durasi sebagai opsi sesuai kebutuhan; [ ] jangan menampilkan harga tetap. |
+| K3 Ruang Terbatas | [/ahli-k3/k3-ruang-terbatas/](https://pusattrainingk3.com/ahli-k3/k3-ruang-terbatas/) | Deskripsi, jadwal 2026, teori dan praktik, persyaratan blended, lokasi Jakarta/Bogor, investasi mulai Rp6.000.000/peserta, termasuk surat lulus, modul, souvenir, sertifikat/lisensi, konsumsi. | [ ] Pindahkan detail materi, syarat, lokasi, jadwal dan biaya; [ ] jelaskan bahwa halaman sumber menyebut “Teknisi K3 Ruang Terbatas”, bukan sekadar label generik confined space. |
+
+### 9.2 Temuan khusus: Ahli K3 Umum 2026
+
+Halaman sumber mencantumkan 12 rentang jadwal berikut:
+- 22 Januari–4 Februari 2026
+- 10–24 Februari 2026
+- 4–17 Maret 2026
+- 8–21 April 2026
+- 6–20 Mei 2026
+- 3–16 Juni 2026
+- 8–21 Juli 2026
+- 5–19 Agustus 2026
+- 9–22 September 2026
+- 7–20 Oktober 2026
+- 11–24 November 2026
+- 1–14 Desember 2026
+
+**Status kalender per 17 November 2026 (Asia/Jakarta):**
+- Januari sampai Oktober: selesai/terlewati.
+- 11–24 November: sedang berlangsung.
+- 1–14 Desember: akan datang.
+
+Ini adalah klasifikasi kalender, bukan konfirmasi kuota atau status pendaftaran. Status visual pada kartu harus dihitung dari tanggal mulai/akhir; jangan menyamakan “tanggal mendatang” dengan “pendaftaran pasti dibuka” tanpa field pendaftaran yang eksplisit.
+
+### 9.3 Catatan kualitas sumber dan konflik data
+
+1. Satu program dapat memiliki lebih dari satu halaman sumber (halaman program, halaman lama, artikel jadwal, dan halaman kategori). Pilih halaman program terbaru sebagai sumber utama, lalu gunakan artikel lama sebagai sumber tambahan hanya jika informasinya belum digantikan.
+2. Informasi harga, fasilitas, lokasi, instruktur, sertifikat, dan lisensi adalah klaim penyelenggara. Simpan URL sumber dan tanggal verifikasi di catatan editorial/frontmatter, bukan mengubahnya menjadi klaim regulasi.
+3. Jadwal yang ditampilkan pada halaman sumber tidak selalu berarti kuota masih tersedia. Status berjalan/akan datang adalah status kalender; status pendaftaran harus berasal dari data pendaftaran yang terverifikasi.
+4. Sitemap adalah indeks URL, bukan bukti bahwa semua isi halaman masih mutakhir. Halaman perlu diperiksa langsung dan dibandingkan bila ada beberapa URL yang membahas program yang sama.
+5. Nomor kontak pada situs sumber tidak boleh disalin ke proyek ini. Kebijakan proyek tetap satu kontak: Tiara — 0812-9805-3891.
+
+### 9.4 Status pengerjaan setelah audit sumber
+
+Status pada checklist bagian 7 adalah status implementasi konten saat PR #23 dibuat, bukan hasil audit terhadap situs asli. Setelah temuan bagian 9 ini, tandai halaman yang mempunyai data sumber lengkap sebagai **perlu revisi berbasis sumber**, bukan “informasi tidak tersedia”.
+
+- [ ] Perbarui delapan file `src/content/trainings/*.md` berdasarkan data asli di tabel 9.1.
+- [ ] Tambahkan metadata provenance (URL sumber dan tanggal audit) agar pembaruan mendatang dapat ditelusuri.
+- [ ] Periksa collection `schedules` terhadap jadwal 2026 sumber; jangan membuat schedule duplikat bila record telah ada.
+- [ ] Tandai status kalender selesai/berjalan/akan datang secara dinamis; status pendaftaran terpisah.
+- [ ] Setelah semua halaman diperbarui, perbarui kembali checklist bagian 7 dan jalankan pemeriksaan konten serta build.
