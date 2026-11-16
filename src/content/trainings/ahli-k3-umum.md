@@ -12,24 +12,24 @@ updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
 image: /images/training/ak3-umum.jpg
 hero:
-  title: Pelatihan Ahli K3 Umum Sertifikasi Kemnaker RI
-  imageAlt: Pelatihan Ahli K3 Umum Sertifikasi Kemnaker RI
-  eyebrow: PROGRAM PELATIHAN & SERTIFIKASI
-  certBadge: KEMNAKER RI
-  description: Pelatihan Calon Ahli K3 Umum Sertifikasi Kemnaker RI adalah program pembinaan kompetensi tertinggi dan paling dicari di Indonesia bagi tenaga profesional K3, berlandaskan Undang-Undang No. 1 Tahun 1970 dan Peraturan Menteri Tenaga Kerja No. 5 Tahun 2023 tentang Penunjukan, Kewajiban, dan Wewenang Ahli K3.
+  title: "Pelatihan Ahli K3 Umum Sertifikasi Kemnaker RI"
+  imageAlt: "Pelatihan Ahli K3 Umum Sertifikasi Kemnaker RI"
+  eyebrow: "PROGRAM PELATIHAN & SERTIFIKASI"
+  certBadge: "KEMNAKER RI"
+  description: "Pelatihan Calon Ahli K3 Umum Sertifikasi Kemnaker RI adalah program pembinaan kompetensi tertinggi dan paling dicari di Indonesia bagi tenaga profesional K3, berlandaskan Undang-Undang No. 1 Tahun 1970 dan Peraturan Menteri Tenaga Kerja No. 5 Tahun 2023 tentang Penunjukan, Kewajiban, dan Wewenang Ahli K3."
   deliveryMode: mixed
-  ctaLabel: Lihat biaya & daftar
+  ctaLabel: "Lihat biaya & daftar"
   ctaHref: "#pendaftaran"
   trustItems:
     - icon: "<path d=\"m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Z\"></path><path d=\"m8 12 3 3 5-6\"></path>"
-      label: PJK3 resmi Kemnaker RI
+      label: "PJK3 resmi Kemnaker RI"
     - icon: "<circle cx=\"12\" cy=\"7\" r=\"4\"></circle><path d=\"M4 21v-2a8 8 0 0 1 16 0v2Z\"></path>"
-      label: Instruktur praktisi
-    - icon: '<circle cx="9" cy="7" r="3"></circle><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6M21 21v-3a6 6 0 0 0-4-5"></path>'
-      label: Publik & in-house
-  price: Rp6.000.000
-  duration: 120 JP
-  priceNote: Per peserta. Program blended terdiri dari 11 hari pembelajaran online dan 1 hari evaluasi tatap muka.
+      label: "Instruktur praktisi"
+    - icon: '<circle cx="9" cy="7" r=\"3\"></circle><path d=\"M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6M21 21v-3a6 6 0 0 0-4-5\"></path>'
+      label: "Publik & in-house"
+  price: "Rp6.000.000"
+  duration: "120 JP"
+  priceNote: "Per peserta. Program blended terdiri dari 11 hari pembelajaran online dan 1 hari evaluasi tatap muka."
 related: []
 blocks:
   - type: training-detail-intro
@@ -66,13 +66,24 @@ blocks:
   - type: training-content-section
     id: deskripsi-program
     eyebrow: TENTANG PROGRAM
-    title: Deskripsi dan tujuan program
-    description: "Pelatihan Ahli K3 Umum membahas prinsip K3, identifikasi bahaya, pengendalian risiko, serta peran personel K3 dalam mendukung penerapan keselamatan dan kesehatan kerja. Program ini memberi kerangka pemahaman untuk menjalankan tugas sesuai peran dan ketentuan yang relevan. Silabus final, metode, durasi, evaluasi, dan keluaran mengikuti dokumen penyelenggara yang disetujui."
+    title: Deskripsi Pelatihan Ahli K3 Umum
+    description: "Pelatihan Ahli K3 Umum merupakan program pembinaan dan sertifikasi resmi—umumnya dari Kementerian Ketenagakerjaan RI (Kemnaker) atau badan sertifikasi terkait seperti BNSP—yang bertujuan untuk mencetak tenaga teknik berkeahlian khusus di bidang Keselamatan dan Kesehatan Kerja (K3)."
+
+  - type: training-content-section
+    id: tujuan-program
+    eyebrow: TUJUAN PROGRAM
+    title: Tujuan Pelatihan Ahli K3 Umum
     items:
-      - title: Tujuan pembelajaran
-        description: "Memahami prinsip dan prosedur utama, mengenali bahaya, serta menerapkan pengendalian sesuai peran peserta."
-      - title: Batas informasi
-        description: "Uraian ini adalah gambaran ruang lingkup, bukan klaim bahwa seluruh materi merupakan silabus resmi yang disahkan untuk setiap angkatan."
+      - title: Mencegah Kecelakaan dan Penyakit Akibat Kerja (PAK)
+        description: "Melakukan identifikasi potensi bahaya (hazard), melakukan penilaian risiko (risk assessment), dan merancang langkah pengendaliannya."
+      - title: Memenuhi Kepatuhan Hukum
+        description: "Memastikan perusahaan mematuhi regulasi ketenagakerjaan dan keselamatan kerja yang berlaku di Indonesia (seperti UU No. 1 Tahun 1970)."
+      - title: Menerapkan Sistem Manajemen K3 (SMK3)
+        description: "Membantu perusahaan merancang, menerapkan, dan mengevaluasi SMK3 agar lingkungan kerja aman dan produktif."
+      - title: Menangani Situasi Darurat
+        description: "Membekali kemampuan tanggap darurat, investigasi kecelakaan kerja, serta pengelolaan alat pelindung diri (APD) dan P3K."
+      - title: Meningkatkan Daya Saing Karir
+        description: "Membuka peluang kerja yang lebih luas di berbagai sektor industri seperti konstruksi, manufaktur, migas, pertambangan, hingga perkantoran."
 
   - type: training-content-section
     id: sasaran-peserta
