@@ -1,7 +1,7 @@
 # Checklist Implementasi Struktur HTML Halaman Referensi
 
 **Jenis dokumen:** audit implementasi halaman detail pelatihan  
-**Basis audit:** struktur HTML halaman referensi yang dicatat pada 16 November 2026, lalu dibandingkan dengan source code branch `main` saat dokumen ini dibuat.  
+**Basis audit:** struktur HTML halaman referensi dibandingkan dengan source code branch `main`, lalu diperbarui untuk konten delapan halaman pelatihan pada branch `content/training-detail-pages-and-checklists` (17 November 2026).  
 **Halaman yang diaudit:** `/pelatihan/[slug]/` dan komponen yang dipakai oleh halaman tersebut.  
 **Referensi visual/interaksi:** halaman detail program Wahana Totalita dan pola scheduler Damkar `/layanan/damkar-kelas-d/`.
 
@@ -134,3 +134,162 @@ Urutan berikut disarankan agar struktur inti program lengkap sebelum menambah de
 - Setelah integrasi, jalankan `npm run check` dan `npm run build`.
 - Lakukan pemeriksaan browser untuk desktop dan mobile; checklist source code bukan pengganti QA visual/interaksi.
 - Catat tanggal audit dan commit yang menjadi basis perubahan berikutnya.
+
+
+## 7. Checklist kelengkapan konten per halaman pelatihan
+
+Bagian ini memeriksa **isi masing-masing halaman**, bukan sekadar keberadaan komponen global. Status di bawah ini menggambarkan perubahan pada branch `content/training-detail-pages-and-checklists`; belum berarti seluruh data penyelenggara telah dikonfirmasi.
+
+Legenda tambahan:
+- [x] Konten dasar sudah ditulis pada frontmatter dan dirender oleh komponen yang tersedia.
+- [~] Ada kerangka/gambaran, tetapi detail resmi atau data penyelenggara masih harus dikonfirmasi.
+- [ ] Belum tersedia pada halaman.
+
+| Halaman | Intro | Ringkasan | Deskripsi & tujuan | Sasaran peserta | Materi/kurikulum | Persyaratan | Dasar hukum | FAQ | Jadwal | CTA |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Ahli K3 Umum | [x] | [x] | [x] | [~] | [~] | [~] | [x] | [~] | [x] | [x] |
+| Pemadam Kebakaran Kelas D | [x] | [x] | [x] | [~] | [~] | [~] | [x] | [~] | [x] | [x] |
+| Operator Boiler Tingkat 1 | [x] | [x] | [x] | [~] | [~] | [~] | [x] | [~] | [x] | [x] |
+| Operator Boiler Tingkat 2 | [x] | [x] | [x] | [~] | [~] | [~] | [x] | [~] | [x] | [x] |
+| Operator Gondola | [x] | [x] | [x] | [~] | [x] | [~] | [x] | [~] | [x] | [x] |
+| Pemadam Kebakaran Kelas A | [x] | [x] | [x] | [~] | [~] | [~] | [x] | [~] | [x] | [x] |
+| Emergency Response Plan | [x] | [x] | [x] | [x] | [~] | [~] | [x] | [~] | [x] | [x] |
+| K3 Ruang Terbatas (Confined Space) | [x] | [x] | [x] | [~] | [x] | [~] | [x] | [~] | [x] | [x] |
+
+### 7.1 Rincian pekerjaan dan verifikasi per halaman
+
+#### Ahli K3 Umum — `src/content/trainings/ahli-k3-umum.md`
+
+- [x] Intro dan deskripsi program.
+- [x] Ringkasan fokus dan cakupan.
+- [x] Gambaran tujuan dan fungsi Ahli K3 Umum.
+- [~] Sasaran peserta ditulis secara umum; kelayakan pendidikan/pengalaman perlu dicocokkan.
+- [~] Pokok bahasan ditulis sebagai ruang lingkup, bukan silabus resmi final.
+- [~] Persyaratan dan dokumen peserta harus diverifikasi terhadap skema/angkatan.
+- [x] Acuan Permenaker PER.02/MEN/1992 dicantumkan.
+- [~] FAQ tersedia; jawaban administratif tetap perlu konfirmasi penyelenggara.
+- [x] Jadwal terhubung ke collection schedules.
+- [x] CTA WhatsApp Tiara.
+- [ ] Harga, fasilitas, durasi pasti, dan keluaran biaya belum dipublikasikan.
+
+#### Pemadam Kebakaran Kelas D — `src/content/trainings/damkar-kelas-d.md`
+
+- [x] Intro dan deskripsi program.
+- [x] Ringkasan fokus dan cakupan.
+- [x] Tujuan tindakan awal, pencegahan, dan evakuasi.
+- [~] Sasaran peserta ditulis secara umum.
+- [~] Pokok bahasan disusun sebagai ruang lingkup; silabus resmi kelas D perlu konfirmasi.
+- [~] Definisi jenjang kelas, persyaratan, praktik, dan dokumen perlu dikonfirmasi.
+- [x] Acuan Kepmenaker KEP.186/MEN/1999 dicantumkan.
+- [~] FAQ tersedia; rincian kelas dan praktik perlu konfirmasi.
+- [x] Jadwal terhubung ke collection schedules.
+- [x] CTA WhatsApp Tiara.
+- [ ] Harga, fasilitas, durasi pasti, dan rincian keluaran belum tersedia.
+
+#### Operator Boiler Tingkat 1 — `src/content/trainings/operator-boiler-tingkat-1.md`
+
+- [x] Intro dan deskripsi program.
+- [x] Ringkasan fokus dan acuan regulasi terbaru.
+- [x] Gambaran tugas dan tanggung jawab operator.
+- [~] Sasaran peserta perlu dicocokkan dengan kelayakan resmi.
+- [~] Ruang lingkup materi ditulis; silabus dan evaluasi final perlu verifikasi.
+- [~] Kelas I harus dicocokkan dengan jenis/kapasitas pesawat uap dan persyaratan Permenaker 4/2025.
+- [x] Permenaker Nomor 4 Tahun 2025 dicantumkan sebagai acuan yang berlaku.
+- [~] FAQ tersedia; batas kewenangan spesifik harus merujuk ketentuan terbaru.
+- [x] Jadwal terhubung ke collection schedules.
+- [x] CTA WhatsApp Tiara.
+- [ ] Harga, fasilitas, durasi pasti, dan rincian keluaran belum tersedia.
+
+#### Operator Boiler Tingkat 2 — `src/content/trainings/operator-boiler-tingkat-2.md`
+
+- [x] Intro dan deskripsi program.
+- [x] Ringkasan fokus dan acuan regulasi terbaru.
+- [x] Gambaran tugas dan tanggung jawab operator.
+- [~] Sasaran peserta perlu dicocokkan dengan kelayakan resmi.
+- [~] Ruang lingkup materi ditulis; silabus dan evaluasi final perlu verifikasi.
+- [~] Kelas II harus dicocokkan dengan jenis/kapasitas pesawat uap dan persyaratan Permenaker 4/2025.
+- [x] Permenaker Nomor 4 Tahun 2025 dicantumkan sebagai acuan yang berlaku.
+- [~] FAQ tersedia; batas kewenangan spesifik harus merujuk ketentuan terbaru.
+- [x] Jadwal terhubung ke collection schedules.
+- [x] CTA WhatsApp Tiara.
+- [ ] Harga, fasilitas, durasi pasti, dan rincian keluaran belum tersedia.
+
+#### Operator Gondola — `src/content/trainings/operator-gondola.md`
+
+- [x] Intro dan deskripsi program.
+- [x] Ringkasan fokus dan acuan regulasi.
+- [x] Gambaran tanggung jawab dan risiko pengoperasian.
+- [~] Sasaran peserta dan kelayakan kerja di ketinggian perlu verifikasi.
+- [x] Materi pembinaan merujuk materi Operator Gondola pada Permenaker 8/2020.
+- [~] Persyaratan administrasi dan kesehatan perlu dikonfirmasi sesuai skema.
+- [x] Permenaker 8/2020 dan Permenaker 9/2016 dicantumkan.
+- [~] FAQ tersedia; praktik, lisensi, dan kelayakan peralatan dibedakan.
+- [x] Jadwal terhubung ke collection schedules.
+- [x] CTA WhatsApp Tiara.
+- [ ] Harga, fasilitas, durasi angkatan, dan rincian keluaran belum tersedia.
+
+#### Pemadam Kebakaran Kelas A — `src/content/trainings/pemadam-kebakaran-kelas-a.md`
+
+- [x] Intro dan deskripsi program.
+- [x] Ringkasan fokus dan acuan regulasi.
+- [x] Gambaran koordinasi dan organisasi penanggulangan kebakaran.
+- [~] Sasaran peserta ditulis umum; persyaratan jabatan perlu verifikasi.
+- [~] Ruang lingkup materi ditulis; silabus resmi kelas A perlu konfirmasi.
+- [~] Jenjang kelas, pengalaman, dan dokumen peserta harus diverifikasi.
+- [x] Acuan Kepmenaker KEP.186/MEN/1999 dicantumkan.
+- [~] FAQ tersedia; perbedaan kelas A dan D tidak diasumsikan.
+- [x] Jadwal terhubung ke collection schedules.
+- [x] CTA WhatsApp Tiara.
+- [ ] Harga, fasilitas, durasi pasti, dan rincian keluaran belum tersedia.
+
+#### Emergency Response Plan — `src/content/trainings/training-emergency-response-plan.md`
+
+- [x] Intro dan deskripsi program.
+- [x] Ringkasan fokus dan ruang lingkup.
+- [x] Tujuan perencanaan, penerapan, pengujian, dan evaluasi ERP.
+- [x] Sasaran peserta lintas fungsi.
+- [~] Materi disusun sebagai ruang lingkup workshop; silabus dan skenario final perlu kesepakatan perusahaan.
+- [~] Data lokasi, layout, risiko, organisasi, dan kebutuhan simulasi harus disiapkan perusahaan.
+- [x] PP Nomor 50 Tahun 2012 dan Kepmenaker KEP.186/MEN/1999 dicantumkan sesuai relevansi.
+- [~] FAQ tersedia; keluaran dokumen dan simulasi mengikuti ruang lingkup penawaran.
+- [x] Jadwal terhubung ke collection schedules.
+- [x] CTA WhatsApp Tiara.
+- [ ] Harga, fasilitas, durasi, dan deliverable final belum ditetapkan.
+
+#### K3 Ruang Terbatas (Confined Space) — `src/content/trainings/training-k3-bahaya-confined-space.md`
+
+- [x] Intro dan deskripsi program.
+- [x] Ringkasan fokus dan acuan regulasi.
+- [x] Gambaran bahaya atmosfer/non-atmosfer dan pengendalian pekerjaan.
+- [~] Sasaran peserta harus dipilah menurut fungsi personel.
+- [x] Materi mencakup izin masuk, pengujian atmosfer, isolasi energi, komunikasi, dan penyelamatan.
+- [~] Kualifikasi, pendidikan, pengalaman, dan dokumen harus dicocokkan dengan peran pada Permenaker 11/2023.
+- [x] Permenaker Nomor 11 Tahun 2023 dicantumkan.
+- [~] FAQ tersedia; praktik penyelamatan dan kualifikasi wajib diverifikasi.
+- [x] Jadwal terhubung ke collection schedules.
+- [x] CTA WhatsApp Tiara.
+- [ ] Harga, fasilitas, durasi pasti, dan rincian keluaran belum tersedia.
+
+### 7.2 Hal yang belum boleh dianggap final untuk semua halaman
+
+- [ ] Durasi dan jumlah jam pelajaran per angkatan.
+- [ ] Biaya, termin pembayaran, pajak, dan komponen yang termasuk.
+- [ ] Fasilitas, konsumsi, akomodasi, alat praktik, dan bahan ajar.
+- [ ] Persyaratan dokumen dan kelayakan peserta yang disahkan penyelenggara.
+- [ ] Nama/otorisasi lembaga pembina, asesor, instruktur, dan penerbit sertifikat/lisensi.
+- [ ] Bentuk evaluasi dan dokumen keluaran resmi.
+- [ ] Foto kegiatan, testimoni, statistik lulusan, dan bukti trust.
+- [ ] Relasi ke program lain dan artikel pendukung.
+
+Jangan mengubah butir di atas menjadi klaim publik sampai ada dokumen atau konfirmasi tertulis dari penyelenggara.
+
+## 8. Sumber regulasi yang digunakan untuk penyusunan awal
+
+1. Ahli K3 Umum — JDIH Kemnaker, [Permenaker PER.02/MEN/1992](https://jdih.kemnaker.go.id/peraturan/detail/242/peraturan-menteri-tenaga-kerja-nomor-2-tahun-1992).
+2. Pemadam Kebakaran — JDIH Kemnaker, [Kepmenaker KEP.186/MEN/1999](https://jdih.kemnaker.go.id/peraturan/detail/3122/keputusan-menteri-tenaga-kerja-nomor-186-tahun-1999).
+3. Operator Boiler Tingkat 1 dan 2 — JDIH Kemnaker, [Permenaker Nomor 4 Tahun 2025](https://jdih.kemnaker.go.id/peraturan/detail/2684).
+4. Operator Gondola — JDIH Kemnaker, [Permenaker Nomor 8 Tahun 2020](https://jdih.kemnaker.go.id/asset/data_puu/Permen_8_Tahun_2020.pdf) dan [Permenaker Nomor 9 Tahun 2016](https://jdih.kemnaker.go.id/peraturan/detail/1210/peraturan-menteri-ketenagakerjaan-nomor-9-tahun-2016).
+5. Emergency Response Plan — JDIH Kemnaker, [PP Nomor 50 Tahun 2012](https://jdih.kemnaker.go.id/peraturan/detail/58/peraturan-pemerintah-nomor-50-tahun-2012).
+6. K3 Ruang Terbatas — JDIH Kemnaker, [Permenaker Nomor 11 Tahun 2023](https://jdih.kemnaker.go.id/peraturan/detail/2412/peraturan-menteri-nomor-11-tahun-2023).
+
+**Peringatan verifikasi:** referensi regulasi di atas adalah landasan penyusunan konten awal. Sebelum publikasi final, periksa naskah lengkap, status berlaku, perubahan/pencabutan, dan kesesuaian dengan skema pembinaan yang benar-benar diselenggarakan.
