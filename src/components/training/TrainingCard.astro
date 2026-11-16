@@ -1,0 +1,46 @@
+---
+import TrainingMeta from './TrainingMeta.astro';
+import Button from '../shared/Button.astro';
+
+interface Props {
+  title: string;
+  href: string;
+  description: string;
+  category?: string;
+  image?: string;
+  imageAlt?: string;
+  credential?: string;
+  duration?: string;
+  delivery?: string;
+  organizer?: string;
+  featured?: boolean;
+  class?: string;
+}
+
+const {
+  title, href, description, category, image, imageAlt = '',
+  credential, duration, delivery, organizer, featured = false,
+  class: className = '',
+} = Astro.props;
+---
+
+<article class={['training-card group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5', featured ? 'training-card--featured ring-1 ring-amber-300' : '', className].filter(Boolean).join(' ')}>
+  {image && (
+    <a class="training-card__media block aspect-[16/10] overflow-hidden bg-slate-100" href={href} tabindex="-1" aria-hidden="true">
+      <img class="training-card__image h-full w-full object-cover transition duration-500 group-hover:scale-105" src={image} alt={imageAlt} loading="lazy" decoding="async" />
+    </a>
+  )}
+  <div class="training-card__content flex flex-1 flex-col p-5 sm:p-6">
+    {category && <p class="training-card__category mb-3 text-xs font-bold uppercase tracking-[0.14em] text-amber-700">{category}</p>}
+    <h3 class="training-card__title text-xl font-bold leading-snug tracking-tight text-slate-950">
+      <a class="training-card__title-link outline-offset-4 transition-colors hover:text-amber-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-slate-900" href={href}>{title}</a>
+    </h3>
+    <p class="training-card__description mt-3 line-clamp-3 text-sm leading-6 text-slate-600">{description}</p>
+    <div class="training-card__meta mt-5 border-t border-slate-100 pt-4">
+      <TrainingMeta credential={credential} duration={duration} delivery={delivery} organizer={organizer} />
+    </div>
+    <div class="training-card__actions mt-auto flex flex-wrap gap-3 pt-6">
+      <Button href={href} variant="outline" size="sm">Detail program <span aria-hidden="true">→</span></Button>
+    </div>
+  </div>
+</article>

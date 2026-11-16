@@ -1,0 +1,71 @@
+---
+import Container from './Container.astro';
+
+interface LinkItem {
+  label: string;
+  href: string;
+}
+
+interface LinkGroup {
+  title: string;
+  links: LinkItem[];
+}
+
+interface Props {
+  brand?: string;
+  description?: string;
+  groups?: LinkGroup[];
+  email?: string;
+  phone?: string;
+  copyrightName?: string;
+}
+
+const {
+  brand = 'Pusattraining',
+  description = 'Temukan program pengembangan kompetensi dan jadwal training dari berbagai penyelenggara dalam satu tempat.',
+  groups = [
+    { title: 'Jelajahi', links: [{ label: 'Semua Training', href: '/training/' }, { label: 'Jadwal Training', href: '/jadwal/' }] },
+    { title: 'Informasi', links: [{ label: 'Tentang Kami', href: '/tentang/' }, { label: 'Kontak', href: '/kontak/' }] },
+  ],
+  email,
+  phone,
+  copyrightName = 'Pusattraining',
+} = Astro.props;
+---
+
+<footer class="site-footer bg-slate-950 text-slate-300">
+  <Container class="site-footer__main grid gap-12 py-14 md:grid-cols-[1.4fr_2fr] lg:py-16">
+    <div class="site-footer__identity max-w-sm">
+      <a class="site-footer__brand text-2xl font-black tracking-tight text-white" href="/">{brand}<span class="text-amber-400" aria-hidden="true">.</span></a>
+      <p class="site-footer__description mt-4 text-sm leading-7 text-slate-400">{description}</p>
+      {(email || phone) && (
+        <address class="site-footer__contact mt-6 space-y-2 not-italic text-sm">
+          {email && <p><a class="hover:text-white" href={'mailto:' + email}>{email}</a></p>}
+          {phone && <p><a class="hover:text-white" href={'tel:' + phone}>{phone}</a></p>}
+        </address>
+      )}
+    </div>
+
+    <div class="site-footer__link-groups grid grid-cols-2 gap-8 sm:grid-cols-3">
+      {groups.map((group) => (
+        <section class="site-footer__link-group">
+          <h2 class="site-footer__group-title text-sm font-bold text-white">{group.title}</h2>
+          <ul class="site-footer__link-list mt-4 space-y-3">
+            {group.links.map((link) => (
+              <li class="site-footer__link-item">
+                <a class="site-footer__link text-sm text-slate-400 transition-colors hover:text-white" href={link.href}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </Container>
+
+  <div class="site-footer__bottom border-t border-white/10">
+    <Container class="site-footer__bottom-inner flex flex-col gap-2 py-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+      <p class="site-footer__copyright">© {new Date().getFullYear()} {copyrightName}. Hak cipta dilindungi.</p>
+      <p class="site-footer__note">Informasi jadwal dapat berubah. Konfirmasi kepada penyelenggara sebelum mendaftar.</p>
+    </Container>
+  </div>
+</footer>

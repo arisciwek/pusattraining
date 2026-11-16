@@ -1,0 +1,52 @@
+---
+import Container from '../../components/shared/Container.astro';
+import SectionHeading from '../../components/shared/SectionHeading.astro';
+import Button from '../../components/shared/Button.astro';
+import ScheduleList from '../../components/schedule/ScheduleList.astro';
+
+type Schedule = {
+  trainingTitle: string;
+  trainingHref: string;
+  startDate: string;
+  endDate?: string;
+  mode?: string;
+  location?: string;
+  duration?: string;
+  price?: string;
+  status?: 'available' | 'limited' | 'closed' | 'completed';
+  registrationHref?: string;
+  organizer?: string;
+};
+
+interface Props {
+  items: Schedule[];
+  title?: string;
+  description?: string;
+  allHref?: string;
+}
+
+const {
+  items,
+  title = 'Jadwal training terdekat',
+  description = 'Temukan batch yang sesuai dengan kebutuhan dan waktu pelaksanaan Anda.',
+  allHref = '/jadwal/',
+} = Astro.props;
+---
+
+<section class="upcoming-schedule bg-slate-50 py-16 sm:py-20 lg:py-24">
+  <Container>
+    <div class="upcoming-schedule__header mb-9 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+      <SectionHeading eyebrow="KALENDER PELATIHAN" title={title} description={description} />
+      <Button href={allHref} variant="outline">Lihat semua jadwal <span aria-hidden="true">→</span></Button>
+    </div>
+    {items.length > 0 ? (
+      <ScheduleList items={items} />
+    ) : (
+      <div class="upcoming-schedule__empty rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-12 text-center">
+        <h3 class="upcoming-schedule__empty-title text-lg font-bold text-slate-900">Jadwal segera diperbarui</h3>
+        <p class="upcoming-schedule__empty-description mt-2 text-sm text-slate-600">Silakan kunjungi katalog training untuk melihat program yang tersedia.</p>
+        <Button href="/training/" variant="outline" class="mt-5">Jelajahi training</Button>
+      </div>
+    )}
+  </Container>
+</section>

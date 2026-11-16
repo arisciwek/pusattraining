@@ -1,0 +1,8 @@
+---
+interface Props { id?: string; title?: string; description?: string; items: { question: string; answer: string }[]; }
+const { id = 'faq', title = 'Pertanyaan yang sering diajukan', description, items } = Astro.props;
+---
+<section class="faq-block" id={id} aria-labelledby={`${id}-title`}>
+  <header class="faq-block__header"><h2 class="faq-block__title" id={`${id}-title`}>{title}</h2>{description && <p class="faq-block__description">{description}</p>}</header>
+  <div class="faq-block__list">{items.map((item, index) => <details class="faq-block__item" open={index === 0}><summary class="faq-block__question"><span>{item.question}</span><span class="faq-block__toggle" aria-hidden="true">+</span></summary><div class="faq-block__answer"><p>{item.answer}</p></div></details>)}</div>
+</section>

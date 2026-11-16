@@ -1,0 +1,6 @@
+---
+interface Props { rows: { title: string; date: string; location?: string; method?: string; status: 'open' | 'limited' | 'closed' | 'completed'; href: string; }[]; }
+const { rows } = Astro.props;
+const labels = { open: 'Dibuka', limited: 'Terbatas', closed: 'Ditutup', completed: 'Selesai' };
+---
+<div class="schedule-table__scroll" role="region" aria-label="Daftar jadwal pelatihan" tabindex="0"><table class="schedule-table"><thead><tr><th scope="col">Pelatihan</th><th scope="col">Tanggal</th><th scope="col">Lokasi / metode</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Detail</span></th></tr></thead><tbody>{rows.map((row) => <tr><th scope="row">{row.title}</th><td>{row.date}</td><td>{[row.location,row.method].filter(Boolean).join(' · ') || '—'}</td><td><span class:list={['schedule-table__status', `schedule-table__status--${row.status}`]}>{labels[row.status]}</span></td><td><a class="schedule-table__link" href={row.href}>Detail →</a></td></tr>)}</tbody></table></div>

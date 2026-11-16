@@ -1,0 +1,21 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import Breadcrumb from '../../components/shared/Breadcrumb.astro';
+import EmptyState from '../../components/shared/EmptyState.astro';
+---
+<SiteLayout title="Jadwal Training" description="Temukan jadwal pelaksanaan training dari berbagai bidang dan penyelenggara.">
+  <section class="schedule-index py-12 sm:py-16">
+    <Container>
+      <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Jadwal Training' }]} />
+      <header class="schedule-index__header mt-8 max-w-3xl">
+        <p class="schedule-index__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">KALENDER PELATIHAN</p>
+        <h1 class="schedule-index__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Jadwal training</h1>
+        <p class="schedule-index__description mt-4 text-base leading-8 text-slate-600">Telusuri informasi batch training berdasarkan tanggal, bidang, dan penyelenggara.</p>
+      </header>
+      <div class="schedule-index__content mt-10">
+        <EmptyState title="Belum ada jadwal yang dipublikasikan" description="Jadwal training akan muncul di halaman ini setelah data batch tersedia." actionLabel="Kembali ke beranda" actionHref="/" />
+      </div>
+    </Container>
+  </section>
+</SiteLayout>

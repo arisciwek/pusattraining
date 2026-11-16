@@ -1,0 +1,11 @@
+---
+interface Props { currentPage: number; totalPages: number; baseUrl: string; }
+const { currentPage, totalPages, baseUrl } = Astro.props;
+const pageHref = (page: number) => page === 1 ? baseUrl : `${baseUrl.replace(/\/$/, '')}/page/${page}/`;
+const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+---
+{totalPages > 1 && <nav class="pagination" aria-label="Navigasi halaman">
+  {currentPage > 1 && <a class="pagination__link pagination__link--previous" href={pageHref(currentPage - 1)} rel="prev">← Sebelumnya</a>}
+  <div class="pagination__pages">{pages.map((page) => <a class:list={['pagination__link', { 'pagination__link--current': page === currentPage }]} href={pageHref(page)} aria-current={page === currentPage ? 'page' : undefined}>{page}</a>)}</div>
+  {currentPage < totalPages && <a class="pagination__link pagination__link--next" href={pageHref(currentPage + 1)} rel="next">Berikutnya →</a>}
+</nav>}

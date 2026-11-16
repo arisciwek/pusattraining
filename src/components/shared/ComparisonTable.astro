@@ -1,0 +1,5 @@
+---
+interface Props { title: string; description?: string; headers: string[]; rows: string[][]; note?: string; }
+const { title, description, headers, rows, note } = Astro.props;
+---
+<section class="comparison-table" aria-labelledby="comparison-table-title"><header class="comparison-table__header"><h2 class="comparison-table__title" id="comparison-table-title">{title}</h2>{description && <p class="comparison-table__description">{description}</p>}</header><div class="comparison-table__scroll" role="region" aria-label={`Tabel ${title}`} tabindex="0"><table class="comparison-table__table"><thead><tr>{headers.map((header) => <th scope="col">{header}</th>)}</tr></thead><tbody>{rows.map((row) => <tr>{row.map((cell, index) => index === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>)}</tr>)}</tbody></table></div>{note && <p class="comparison-table__note">{note}</p>}</section>

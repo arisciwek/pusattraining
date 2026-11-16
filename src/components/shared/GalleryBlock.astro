@@ -1,0 +1,5 @@
+---
+interface Props { title?: string; description?: string; items: { src: string; alt: string; caption?: string }[]; }
+const { title = 'Galeri kegiatan', description, items } = Astro.props;
+---
+<section class="gallery-block" aria-labelledby="gallery-block-title"><header class="gallery-block__header"><h2 class="gallery-block__title" id="gallery-block-title">{title}</h2>{description && <p class="gallery-block__description">{description}</p>}</header><div class="gallery-block__grid">{items.map((item) => <figure class="gallery-block__item"><img class="gallery-block__image" src={item.src} alt={item.alt} loading="lazy" decoding="async" /><figcaption class="gallery-block__caption">{item.caption ?? item.alt}</figcaption></figure>)}</div></section>

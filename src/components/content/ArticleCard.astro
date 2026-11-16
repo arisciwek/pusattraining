@@ -1,0 +1,6 @@
+---
+interface Props { article: { title: string; description: string; href: string; category?: string; date?: Date | string; image?: string; }; }
+const { article } = Astro.props;
+const dateValue = article.date instanceof Date ? article.date : article.date ? new Date(article.date) : undefined;
+---
+<article class="article-card"><a class="article-card__media-link" href={article.href} tabindex="-1" aria-hidden="true">{article.image ? <img class="article-card__image" src={article.image} alt="" loading="lazy" decoding="async" /> : <span class="article-card__placeholder" />}</a><div class="article-card__body">{article.category && <p class="article-card__category">{article.category}</p>}<h3 class="article-card__title"><a href={article.href}>{article.title}</a></h3><p class="article-card__description">{article.description}</p><div class="article-card__footer">{dateValue && <time class="article-card__date" datetime={dateValue.toISOString()}>{dateValue.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Jakarta'})}</time>}<a class="article-card__read-more" href={article.href}>Baca artikel <span aria-hidden="true">→</span></a></div></div></article>

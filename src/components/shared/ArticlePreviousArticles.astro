@@ -1,0 +1,5 @@
+---
+interface Props { href: string; title: string; label?: string; }
+const { href, title, label = 'Artikel sebelumnya' } = Astro.props;
+---
+<nav class="article-previous" aria-label="Navigasi artikel sebelumnya"><a class="article-previous__link" href={href}><span class="article-previous__label">← {label}</span><span class="article-previous__title">{title}</span></a></nav>

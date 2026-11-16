@@ -1,0 +1,95 @@
+---
+import Container from './Container.astro';
+import Button from './Button.astro';
+
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  brand?: string;
+  homeHref?: string;
+  navigation?: NavItem[];
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const {
+  brand = 'Pusattraining',
+  homeHref = '/',
+  navigation = [
+    { label: 'Beranda', href: '/' },
+    { label: 'Training', href: '/training/' },
+    { label: 'Jadwal', href: '/jadwal/' },
+    { label: 'Tentang', href: '/tentang/' },
+  ],
+  ctaLabel = 'Konsultasi',
+  ctaHref = '/kontak/',
+} = Astro.props;
+---
+
+<header class="site-header sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+  <Container class="site-header__inner flex min-h-18 items-center justify-between gap-6">
+    <a class="site-header__brand shrink-0 text-xl font-black tracking-tight text-slate-950" href={homeHref} aria-label={brand + ' — Beranda'}>
+      {brand}<span class="site-header__brand-mark text-amber-500" aria-hidden="true">.</span>
+    </a>
+
+    <button
+      class="site-header__menu-toggle inline-flex size-11 items-center justify-center rounded-full border border-slate-200 text-slate-800 transition hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 lg:hidden"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-primary-navigation"
+      aria-label="Buka menu navigasi"
+      data-menu-toggle
+    >
+      <svg class="site-header__menu-icon size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+      </svg>
+    </button>
+
+    <nav class="site-header__navigation hidden items-center gap-8 lg:flex" id="site-primary-navigation" aria-label="Navigasi utama" data-navigation>
+      {navigation.map((item) => (
+        <a class="site-header__navigation-link text-sm font-semibold text-slate-600 transition-colors hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900" href={item.href}>
+          {item.label}
+        </a>
+      ))}
+      <Button href={ctaHref} size="sm">{ctaLabel}</Button>
+    </nav>
+  </Container>
+
+  <nav class="site-header__mobile-panel hidden border-t border-slate-100 bg-white px-5 py-4 lg:hidden" aria-label="Navigasi mobile" data-mobile-panel>
+    <div class="site-header__mobile-links mx-auto flex max-w-7xl flex-col gap-1">
+      {navigation.map((item) => (
+        <a class="site-header__mobile-link rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950" href={item.href}>{item.label}</a>
+      ))}
+      <Button href={ctaHref} class="mt-3 w-full">{ctaLabel}</Button>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const header = document.querySelector('.site-header');
+  const toggle = header?.querySelector('[data-menu-toggle]');
+  const panel = header?.querySelector('[data-mobile-panel]');
+
+  if (toggle instanceof HTMLButtonElement && panel instanceof HTMLElement) {
+    const closeMenu = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Buka menu navigasi');
+      panel.classList.add('hidden');
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Buka menu navigasi' : 'Tutup menu navigasi');
+      panel.classList.toggle('hidden', isOpen);
+    });
+
+    panel.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+  }
+</script>

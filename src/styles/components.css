@@ -1,0 +1,206 @@
+/*
+ * Pusattraining component layer.
+ * Import this file after the Tailwind entry stylesheet in the future global.css.
+ * Semantic component classes remain in markup; @apply keeps the visual system Tailwind-based.
+ */
+@layer components {
+  .badge { @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-bold tracking-wide; }
+  .badge--accent { @apply bg-amber-100 text-amber-900; }
+  .badge--success { @apply bg-emerald-100 text-emerald-800; }
+  .badge--warning { @apply bg-orange-100 text-orange-900; }
+  .badge--muted { @apply bg-slate-100 text-slate-600; }
+  .badge--dark { @apply bg-slate-900 text-white; }
+
+  .search-field { @apply grid gap-2; }
+  .search-field__label, .schedule-filter__label { @apply text-sm font-semibold text-slate-700; }
+  .search-field__control { @apply relative; }
+  .search-field__icon { @apply pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400; }
+  .search-field__input { @apply min-h-12 w-full rounded-xl border border-slate-200 bg-white py-3 pl-12 pr-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:ring-4 focus:ring-amber-100; }
+
+  .empty-state { @apply flex flex-col items-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-6 py-12 text-center; }
+  .empty-state__icon { @apply mb-4 grid h-12 w-12 place-items-center rounded-full bg-white text-2xl text-amber-700 shadow-sm; }
+  .empty-state__title { @apply text-lg font-bold text-slate-900; }
+  .empty-state__description { @apply mt-2 max-w-lg text-sm leading-6 text-slate-600; }
+
+  .pagination { @apply flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-6; }
+  .pagination__pages { @apply flex items-center gap-1.5; }
+  .pagination__link { @apply inline-flex min-h-10 min-w-10 items-center justify-center rounded-lg border border-slate-200 px-3 text-sm font-semibold text-slate-700 transition hover:border-amber-400 hover:text-slate-950; }
+  .pagination__link--current { @apply border-slate-900 bg-slate-900 text-white hover:border-slate-900 hover:text-white; }
+
+  .training-category-chip { @apply inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-amber-400 hover:text-slate-950; }
+  .training-category-chip--active { @apply border-amber-500 bg-amber-50 text-amber-950; }
+  .training-syllabus, .training-requirements, .training-overview, .schedule-overview { @apply rounded-2xl border border-slate-200 bg-white p-6 sm:p-8; }
+  .training-syllabus__title, .training-requirements__title, .schedule-overview__title { @apply text-xl font-extrabold tracking-tight text-slate-950; }
+  .training-syllabus__list { @apply mt-6 divide-y divide-slate-100; }
+  .training-syllabus__item { @apply flex items-start gap-4 py-4; }
+  .training-syllabus__number, .process-timeline__step { @apply grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amber-100 text-xs font-extrabold text-amber-900; }
+  .training-syllabus__item-title, .process-timeline__item-title { @apply font-bold text-slate-900; }
+  .training-syllabus__description, .training-overview__description, .schedule-overview__description { @apply mt-1 text-sm leading-7 text-slate-600; }
+  .training-syllabus__duration { @apply ml-auto whitespace-nowrap text-xs font-semibold text-slate-500; }
+  .training-requirements__list { @apply mt-5 grid gap-3; }
+  .training-requirements__item, .checklist-card__item { @apply flex items-start gap-3 text-sm leading-6 text-slate-700; }
+  .training-requirements__check, .checklist-card__check { @apply mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-100 text-xs font-bold text-emerald-700; }
+  .training-facts { @apply grid grid-cols-2 gap-3 sm:grid-cols-4; }
+  .training-facts__item { @apply rounded-xl bg-slate-50 p-4; }
+  .training-facts__label { @apply text-xs font-semibold uppercase tracking-wide text-slate-500; }
+  .training-facts__value { @apply mt-2 text-sm font-bold text-slate-900; }
+
+  .faq-block, .benefits-block, .reasons-block, .gallery-block, .process-timeline, .testimonial-grid, .comparison-table, .program-grid, .article-grid { @apply py-10 sm:py-14; }
+  .faq-block__header, .benefits-block__header, .reasons-block__header, .gallery-block__header, .article-grid__header, .program-grid__header { @apply mb-7 max-w-3xl; }
+  .faq-block__title, .benefits-block__title, .reasons-block__title, .gallery-block__title, .testimonial-grid__title, .comparison-table__title, .program-grid__title, .article-grid__title, .process-timeline__title { @apply text-2xl font-extrabold tracking-tight text-slate-950 sm:text-3xl; }
+  .faq-block__description, .benefits-block__description, .reasons-block__description, .gallery-block__description, .article-grid__description, .program-grid__description { @apply mt-3 text-base leading-7 text-slate-600; }
+  .faq-block__list { @apply divide-y divide-slate-200 border-y border-slate-200; }
+  .faq-block__item { @apply py-1; }
+  .faq-block__question { @apply flex cursor-pointer list-none items-center justify-between gap-5 py-5 text-left font-bold text-slate-900 marker:hidden; }
+  .faq-block__toggle { @apply grid h-8 w-8 shrink-0 place-items-center rounded-full bg-slate-100 text-lg text-slate-700; }
+  .faq-block__item[open] .faq-block__toggle { @apply rotate-45 bg-amber-100 text-amber-900; }
+  .faq-block__answer { @apply max-w-3xl pb-5 pr-12 text-sm leading-7 text-slate-600; }
+
+  .benefits-block__grid, .program-grid__items, .article-grid__items, .testimonial-grid__items { @apply grid gap-4 sm:grid-cols-2 lg:grid-cols-3; }
+  .benefits-block__item, .program-grid__item, .testimonial-grid__item { @apply rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg; }
+  .benefits-block__index, .program-grid__index { @apply text-xs font-extrabold tracking-widest text-amber-700; }
+  .benefits-block__item-title, .program-grid__item-title { @apply mt-5 text-lg font-extrabold text-slate-950; }
+  .benefits-block__item-description, .program-grid__item-description { @apply mt-2 text-sm leading-6 text-slate-600; }
+  .reasons-block__list { @apply grid gap-5 md:grid-cols-2; }
+  .reasons-block__item { @apply flex gap-4 rounded-xl bg-slate-50 p-5; }
+  .reasons-block__number { @apply text-2xl font-black text-amber-700; }
+  .reasons-block__item-title { @apply font-bold text-slate-900; }
+  .reasons-block__item-text { @apply mt-1 text-sm leading-6 text-slate-600; }
+
+  .gallery-block__grid { @apply grid gap-4 sm:grid-cols-2 lg:grid-cols-3; }
+  .gallery-block__item, .image-panel { @apply overflow-hidden rounded-2xl bg-slate-100; }
+  .gallery-block__image, .image-panel__image { @apply aspect-[4/3] h-full w-full object-cover; }
+  .gallery-block__caption, .image-panel__caption { @apply px-4 py-3 text-xs leading-5 text-slate-600; }
+  .process-timeline__list { @apply mt-7 grid gap-5 md:grid-cols-2; }
+  .process-timeline__item { @apply flex gap-4; }
+  .process-timeline__description { @apply mt-1 text-sm leading-6 text-slate-600; }
+  .stats-grid { @apply grid grid-cols-2 gap-3 md:grid-cols-4; }
+  .stats-grid__item { @apply rounded-2xl bg-slate-900 p-5 text-white; }
+  .stats-grid__value { @apply text-3xl font-black tracking-tight; }
+  .stats-grid__label { @apply mt-2 text-sm font-semibold text-slate-200; }
+  .stats-grid__note { @apply mt-1 text-xs text-slate-400; }
+  .testimonial-grid__quote { @apply text-base leading-7 text-slate-700; }
+  .testimonial-grid__person { @apply mt-6 grid gap-1 border-t border-slate-100 pt-4; }
+  .testimonial-grid__name { @apply text-sm font-bold text-slate-950; }
+  .testimonial-grid__role, .testimonial-grid__organization { @apply text-xs text-slate-500; }
+
+  .comparison-table__scroll, .schedule-table__scroll { @apply mt-6 overflow-x-auto rounded-xl border border-slate-200; }
+  .comparison-table__table, .schedule-table { @apply w-full min-w-[640px] border-collapse text-left text-sm; }
+  .comparison-table__table th, .schedule-table th { @apply bg-slate-900 px-4 py-3 font-bold text-white; }
+  .comparison-table__table td, .schedule-table td, .schedule-table tbody th { @apply border-t border-slate-100 px-4 py-4 text-slate-700; }
+  .comparison-table__table tbody tr:nth-child(even) { @apply bg-slate-50; }
+  .comparison-table__note { @apply mt-3 text-xs leading-5 text-slate-500; }
+
+  .contact-panel, .cta-block { @apply flex flex-col justify-between gap-6 rounded-3xl bg-slate-950 p-7 text-white sm:p-10 lg:flex-row lg:items-center; }
+  .contact-panel__title, .cta-block__title { @apply text-2xl font-extrabold tracking-tight sm:text-3xl; }
+  .contact-panel__description, .cta-block__description { @apply mt-3 max-w-2xl text-sm leading-7 text-slate-300; }
+  .contact-panel__actions, .cta-block__actions { @apply flex flex-wrap gap-3; }
+  .contact-panel__action, .cta-block__button { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10; }
+  .contact-panel__action--primary, .cta-block__button--primary { @apply border-amber-400 bg-amber-400 text-slate-950 hover:bg-amber-300; }
+  .cta-block__eyebrow { @apply mb-3 text-xs font-bold uppercase tracking-[0.2em] text-amber-300; }
+  .cta-block__button--secondary { @apply border-white/30; }
+
+  .article-card, .program-grid__item { @apply h-full overflow-hidden rounded-2xl border border-slate-200 bg-white; }
+  .article-card { @apply flex flex-col transition hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg; }
+  .article-card__media-link { @apply block overflow-hidden bg-slate-100; }
+  .article-card__image, .article-card__placeholder { @apply aspect-[16/9] w-full object-cover transition duration-500; }
+  .article-card:hover .article-card__image { @apply scale-105; }
+  .article-card__body { @apply flex flex-1 flex-col p-5; }
+  .article-card__category, .program-grid__category { @apply text-xs font-bold uppercase tracking-wider text-amber-700; }
+  .article-card__title { @apply mt-3 text-lg font-extrabold leading-snug text-slate-950; }
+  .article-card__title a:hover, .program-grid__item-title a:hover { @apply text-amber-700; }
+  .article-card__description { @apply mt-3 flex-1 text-sm leading-6 text-slate-600; }
+  .article-card__footer { @apply mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4; }
+  .article-card__date { @apply text-xs text-slate-500; }
+  .article-card__read-more, .program-grid__link { @apply text-sm font-bold text-amber-800; }
+  .article-grid__header { @apply flex flex-wrap items-end justify-between gap-4; }
+
+  .schedule-status, .schedule-table__status { @apply inline-flex rounded-full px-3 py-1 text-xs font-bold; }
+  .schedule-status--open, .schedule-table__status--open { @apply bg-emerald-100 text-emerald-800; }
+  .schedule-status--limited, .schedule-table__status--limited { @apply bg-amber-100 text-amber-900; }
+  .schedule-status--closed, .schedule-table__status--closed { @apply bg-rose-100 text-rose-800; }
+  .schedule-status--completed, .schedule-table__status--completed { @apply bg-slate-100 text-slate-600; }
+  .schedule-month-heading { @apply flex flex-wrap items-end justify-between gap-4 border-b border-slate-200 pb-5; }
+  .schedule-month-heading__eyebrow, .schedule-overview__eyebrow, .training-overview__eyebrow { @apply text-xs font-bold uppercase tracking-[0.18em] text-amber-700; }
+  .schedule-month-heading__title { @apply mt-1 text-3xl font-black tracking-tight text-slate-950; }
+  .schedule-month-heading__title span { @apply text-slate-400; }
+  .schedule-month-heading__navigation { @apply flex gap-2; }
+  .schedule-month-heading__link { @apply grid h-10 w-10 place-items-center rounded-full border border-slate-200 text-lg font-bold text-slate-800 hover:border-amber-400; }
+  .schedule-month-heading__link--disabled { @apply opacity-30; }
+  .schedule-filter { @apply flex flex-wrap items-end gap-3 rounded-2xl bg-slate-50 p-4; }
+  .schedule-filter__field { @apply grid min-w-40 flex-1 gap-2; }
+  .schedule-filter__select { @apply min-h-11 rounded-xl border border-slate-200 bg-white px-3 text-sm text-slate-800 outline-none focus:border-amber-500 focus:ring-4 focus:ring-amber-100; }
+  .schedule-filter__submit { @apply min-h-11 rounded-xl bg-slate-900 px-5 text-sm font-bold text-white hover:bg-amber-700; }
+  .schedule-calendar { @apply overflow-hidden rounded-2xl border border-slate-200 bg-white; }
+  .schedule-calendar__weekdays, .schedule-calendar__days { @apply grid grid-cols-7; }
+  .schedule-calendar__weekday { @apply border-b border-slate-200 bg-slate-50 py-3 text-center text-xs font-bold text-slate-500; }
+  .schedule-calendar__day { @apply min-h-28 border-b border-r border-slate-100 p-2; }
+  .schedule-calendar__day--outside { @apply bg-slate-50/70 text-slate-300; }
+  .schedule-calendar__date { @apply mb-2 block text-xs font-bold text-slate-700; }
+  .schedule-calendar__event { @apply mb-1 block rounded-md bg-amber-50 px-2 py-1 text-[10px] leading-4 text-amber-950 hover:bg-amber-100; }
+  .schedule-calendar__event-time { @apply mr-1 font-extrabold; }
+  .schedule-table__link { @apply whitespace-nowrap font-bold text-amber-800 hover:text-amber-600; }
+
+  .detail-tabs__list { @apply flex gap-2 overflow-x-auto border-b border-slate-200; }
+  .detail-tabs__tab { @apply shrink-0 border-b-2 border-transparent px-4 py-3 text-sm font-bold text-slate-500 hover:text-slate-950; }
+  .detail-tabs__tab[aria-selected="true"] { @apply border-amber-500 text-slate-950; }
+  .detail-tabs__panel { @apply rounded-b-2xl bg-slate-50 p-6 text-sm leading-7 text-slate-700; }
+  .materi-list { @apply grid gap-2; }
+  .materi-list__item { @apply flex items-start gap-3 rounded-lg bg-slate-50 p-3 text-sm text-slate-700; }
+  .materi-list__number { @apply text-xs font-black text-amber-700; }
+  .materi-list__more { @apply mt-3 text-xs font-semibold text-slate-500; }
+
+  .checklist-card, .document-list, .glossary-block, .source-links { @apply rounded-2xl border border-slate-200 bg-white p-6; }
+  .checklist-card__title, .document-list__title, .glossary-block__title, .source-links__title { @apply text-lg font-extrabold text-slate-950; }
+  .checklist-card__description { @apply mt-2 text-sm leading-6 text-slate-600; }
+  .checklist-card__list, .document-list__items, .source-links__list { @apply mt-5 grid gap-3; }
+  .document-list__item, .source-links__item { @apply flex items-center gap-3 border-t border-slate-100 pt-3; }
+  .document-list__icon { @apply text-xl font-bold text-amber-700; }
+  .document-list__link, .source-links__link { @apply text-sm font-bold text-slate-900 hover:text-amber-700; }
+  .document-list__description, .source-links__publisher { @apply mt-1 text-xs text-slate-500; }
+  .document-list__type { @apply ml-auto rounded bg-slate-100 px-2 py-1 text-[10px] font-bold uppercase text-slate-500; }
+  .glossary-block__list { @apply mt-4 divide-y divide-slate-100; }
+  .glossary-block__item { @apply py-4; }
+  .glossary-block__term { @apply font-bold text-slate-900; }
+  .glossary-block__definition { @apply mt-1 text-sm leading-6 text-slate-600; }
+  .note-block { @apply flex gap-3 rounded-xl border p-4; }
+  .note-block--info { @apply border-sky-200 bg-sky-50 text-sky-950; }
+  .note-block--warning { @apply border-amber-200 bg-amber-50 text-amber-950; }
+  .note-block--success { @apply border-emerald-200 bg-emerald-50 text-emerald-950; }
+  .note-block__mark { @apply grid h-7 w-7 shrink-0 place-items-center rounded-full bg-white/80 font-black; }
+  .note-block__title { @apply font-bold; }
+  .note-block__text { @apply mt-1 text-sm leading-6; }
+
+  .dropdown { @apply relative inline-block; }
+  .dropdown__trigger { @apply flex cursor-pointer list-none items-center gap-2 rounded-xl border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-800; }
+  .dropdown__menu { @apply absolute right-0 z-20 mt-2 min-w-48 rounded-xl border border-slate-200 bg-white p-2 shadow-xl; }
+  .dropdown__link { @apply block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-amber-800; }
+  .modal__trigger { @apply rounded-full bg-slate-900 px-5 py-3 text-sm font-bold text-white hover:bg-amber-700; }
+  .modal__dialog { @apply w-[min(92vw,40rem)] rounded-2xl border-0 p-0 shadow-2xl backdrop:bg-slate-950/60; }
+  .modal__header { @apply flex items-center justify-between border-b border-slate-100 p-5; }
+  .modal__title { @apply text-lg font-extrabold text-slate-950; }
+  .modal__close { @apply grid h-9 w-9 place-items-center rounded-full bg-slate-100 text-xl text-slate-700; }
+  .modal__body { @apply p-6; }
+  .article-previous__link { @apply grid gap-2 rounded-xl border border-slate-200 p-5 hover:border-amber-300; }
+  .article-previous__label { @apply text-xs font-bold uppercase tracking-wider text-amber-700; }
+  .article-previous__title { @apply font-bold text-slate-900; }
+  .training-overview__title { @apply mt-2 text-2xl font-black text-slate-950; }
+  .training-overview__highlights { @apply mt-6 grid gap-3 sm:grid-cols-2; }
+  .training-overview__highlight { @apply flex gap-2 text-sm font-semibold text-slate-700; }
+  .schedule-overview__facts { @apply mt-6 grid gap-3 sm:grid-cols-2; }
+  .schedule-overview__fact { @apply rounded-xl bg-slate-50 p-4; }
+  .schedule-overview__fact dt { @apply text-xs font-semibold uppercase tracking-wide text-slate-500; }
+  .schedule-overview__fact dd { @apply mt-1 font-bold text-slate-900; }
+  .trust-signals__items { @apply grid grid-cols-2 divide-x divide-slate-200 rounded-2xl border border-slate-200 bg-white sm:grid-cols-4; }
+  .trust-signals__item { @apply flex flex-col gap-1 p-4 text-center; }
+  .trust-signals__value { @apply text-xl font-black text-slate-950; }
+  .trust-signals__label { @apply text-xs text-slate-500; }
+  .training-category-overview__grid { @apply mt-7 grid gap-3 md:grid-cols-2; }
+  .training-category-overview__item { @apply flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md; }
+  .training-category-overview__index { @apply text-xs font-black text-amber-700; }
+  .training-category-overview__body { @apply min-w-0 flex-1; }
+  .training-category-overview__title { @apply font-extrabold text-slate-950; }
+  .training-category-overview__description { @apply mt-1 text-sm leading-5 text-slate-600; }
+  .training-category-overview__count { @apply whitespace-nowrap text-xs font-semibold text-slate-500; }
+  .training-category-overview__arrow { @apply text-lg text-amber-700; }
+}

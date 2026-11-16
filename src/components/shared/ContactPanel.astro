@@ -1,0 +1,5 @@
+---
+interface Props { title: string; description: string; phone?: string; whatsapp?: string; email?: string; }
+const { title, description, phone, whatsapp, email } = Astro.props;
+---
+<aside class="contact-panel" aria-labelledby="contact-panel-title"><div class="contact-panel__content"><h2 class="contact-panel__title" id="contact-panel-title">{title}</h2><p class="contact-panel__description">{description}</p></div><div class="contact-panel__actions">{whatsapp && <a class="contact-panel__action contact-panel__action--primary" href={whatsapp} target="_blank" rel="noopener noreferrer">Hubungi WhatsApp <span aria-hidden="true">↗</span></a>}{phone && <a class="contact-panel__action" href={`tel:${phone.replace(/[^+\d]/g, '')}`}>Telepon</a>}{email && <a class="contact-panel__action" href={`mailto:${email}`}>Email</a>}</div></aside>

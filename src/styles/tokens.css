@@ -1,0 +1,101 @@
+/*
+ * Pusattraining color tokens.
+ * Import before components.css. Components remain Tailwind-first; these tokens
+ * provide a stable semantic palette for custom CSS, charts and future themes.
+ */
+:root {
+  color-scheme: light;
+
+  /* Neutral foundation */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  --color-neutral-950: #020617;
+
+  /* Brand: warm amber accent over a deep slate foundation */
+  --color-brand-50: #fffbeb;
+  --color-brand-100: #fef3c7;
+  --color-brand-200: #fde68a;
+  --color-brand-300: #fcd34d;
+  --color-brand-400: #fbbf24;
+  --color-brand-500: #f59e0b;
+  --color-brand-600: #d97706;
+  --color-brand-700: #b45309;
+  --color-brand-800: #92400e;
+  --color-brand-900: #78350f;
+  --color-brand-950: #451a03;
+
+  /* Semantic status palettes */
+  --color-success-50: #ecfdf5;
+  --color-success-100: #d1fae5;
+  --color-success-200: #a7f3d0;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+  --color-success-800: #065f46;
+
+  --color-warning-50: #fff7ed;
+  --color-warning-100: #ffedd5;
+  --color-warning-200: #fed7aa;
+  --color-warning-600: #ea580c;
+  --color-warning-700: #c2410c;
+  --color-warning-900: #7c2d12;
+
+  --color-danger-50: #fff1f2;
+  --color-danger-100: #ffe4e6;
+  --color-danger-200: #fecdd3;
+  --color-danger-600: #e11d48;
+  --color-danger-700: #be123c;
+  --color-danger-800: #9f1239;
+
+  --color-info-50: #f0f9ff;
+  --color-info-100: #e0f2fe;
+  --color-info-200: #bae6fd;
+  --color-info-600: #0284c7;
+  --color-info-700: #0369a1;
+  --color-info-900: #0c4a6e;
+
+  /* Semantic surfaces and text */
+  --surface-page: var(--color-neutral-0);
+  --surface-subtle: var(--color-neutral-50);
+  --surface-muted: var(--color-neutral-100);
+  --surface-inverse: var(--color-neutral-950);
+  --surface-brand: var(--color-brand-400);
+  --text-primary: var(--color-neutral-950);
+  --text-secondary: var(--color-neutral-600);
+  --text-muted: var(--color-neutral-500);
+  --text-inverse: var(--color-neutral-0);
+  --text-brand: var(--color-brand-700);
+  --border-default: var(--color-neutral-200);
+  --border-strong: var(--color-neutral-300);
+  --focus-ring: var(--color-brand-500);
+  --focus-ring-soft: var(--color-brand-100);
+
+  /* Layering and depth */
+  --overlay-scrim: rgb(2 6 23 / 0.64);
+  --shadow-card: 0 8px 24px rgb(15 23 42 / 0.06);
+  --shadow-card-hover: 0 16px 36px rgb(15 23 42 / 0.12);
+  --shadow-floating: 0 20px 50px rgb(2 6 23 / 0.18);
+}
+
+/* Optional dark surface tokens for future dedicated dark sections. */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-page: var(--color-neutral-950);
+  --surface-subtle: var(--color-neutral-900);
+  --surface-muted: var(--color-neutral-800);
+  --surface-inverse: var(--color-neutral-0);
+  --text-primary: var(--color-neutral-50);
+  --text-secondary: var(--color-neutral-300);
+  --text-muted: var(--color-neutral-400);
+  --text-inverse: var(--color-neutral-950);
+  --border-default: var(--color-neutral-800);
+  --border-strong: var(--color-neutral-700);
+}

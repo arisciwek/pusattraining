@@ -1,0 +1,6 @@
+---
+import ArticleCard from './ArticleCard.astro';
+interface Props { title?: string; description?: string; articles: { title: string; description: string; href: string; category?: string; date?: Date | string; image?: string; }[]; }
+const { title = 'Artikel terbaru', description, articles } = Astro.props;
+---
+<section class="article-grid" aria-labelledby="article-grid-title"><header class="article-grid__header"><div><h2 class="article-grid__title" id="article-grid-title">{title}</h2>{description && <p class="article-grid__description">{description}</p>}</div><slot name="action" /></header><div class="article-grid__items">{articles.map((article) => <ArticleCard article={article} />)}</div></section>

@@ -1,0 +1,43 @@
+---
+import Container from '../../components/shared/Container.astro';
+import SectionHeading from '../../components/shared/SectionHeading.astro';
+import Button from '../../components/shared/Button.astro';
+import TrainingGrid from '../../components/training/TrainingGrid.astro';
+
+interface Training {
+  title: string;
+  href: string;
+  description: string;
+  category?: string;
+  image?: string;
+  imageAlt?: string;
+  credential?: string;
+  duration?: string;
+  delivery?: string;
+  organizer?: string;
+}
+
+interface Props {
+  items: Training[];
+  title?: string;
+  description?: string;
+  allHref?: string;
+}
+
+const {
+  items,
+  title = 'Program training pilihan',
+  description = 'Jelajahi program pengembangan kompetensi dari berbagai bidang dan penyelenggara.',
+  allHref = '/training/',
+} = Astro.props;
+---
+
+<section class="featured-training py-16 sm:py-20 lg:py-24">
+  <Container>
+    <div class="featured-training__header mb-9 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+      <SectionHeading eyebrow="PILIH PROGRAM" title={title} description={description} />
+      <Button href={allHref} variant="outline">Semua training <span aria-hidden="true">→</span></Button>
+    </div>
+    <TrainingGrid items={items} columns={3} />
+  </Container>
+</section>

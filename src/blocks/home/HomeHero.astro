@@ -1,0 +1,55 @@
+---
+import Container from '../../components/shared/Container.astro';
+import Button from '../../components/shared/Button.astro';
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  proofPoints?: string[];
+}
+
+const {
+  eyebrow = 'PUSAT INFORMASI TRAINING',
+  title,
+  description,
+  primaryLabel = 'Jelajahi Training',
+  primaryHref = '/training/',
+  secondaryLabel = 'Lihat Jadwal',
+  secondaryHref = '/jadwal/',
+  proofPoints = ['Beragam bidang pelatihan', 'Jadwal dari berbagai penyelenggara', 'Informasi program dalam satu tempat'],
+} = Astro.props;
+---
+
+<section class="home-hero relative isolate overflow-hidden bg-slate-950 py-16 text-white sm:py-20 lg:py-28">
+  <div class="home-hero__glow pointer-events-none absolute -right-40 -top-40 -z-10 size-[34rem] rounded-full bg-amber-400/10 blur-3xl" aria-hidden="true"></div>
+  <Container class="home-hero__layout grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(18rem,0.7fr)] lg:gap-16">
+    <div class="home-hero__content max-w-3xl">
+      <p class="home-hero__eyebrow mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-amber-300">
+        <span class="size-1.5 rounded-full bg-amber-400" aria-hidden="true"></span>{eyebrow}
+      </p>
+      <h1 class="home-hero__title text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">{title}</h1>
+      <p class="home-hero__description mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">{description}</p>
+      <div class="home-hero__actions mt-8 flex flex-wrap gap-3">
+        <Button href={primaryHref} variant="secondary" size="lg">{primaryLabel} <span aria-hidden="true">→</span></Button>
+        <Button href={secondaryHref} variant="outline" size="lg" class="border-white/25 bg-white/5 text-white hover:bg-white/10 hover:text-white">{secondaryLabel}</Button>
+      </div>
+    </div>
+
+    <aside class="home-hero__proof-panel rounded-3xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur sm:p-8" aria-label="Keunggulan portal">
+      <p class="home-hero__proof-label text-xs font-bold uppercase tracking-[0.16em] text-slate-400">Satu tempat untuk merencanakan kompetensi</p>
+      <ul class="home-hero__proof-list mt-6 space-y-5">
+        {proofPoints.map((point, index) => (
+          <li class="home-hero__proof-item flex items-start gap-4">
+            <span class="home-hero__proof-number flex size-8 shrink-0 items-center justify-center rounded-full bg-amber-400 text-sm font-black text-slate-950">{String(index + 1).padStart(2, '0')}</span>
+            <span class="home-hero__proof-text pt-1 text-sm font-semibold leading-6 text-white sm:text-base">{point}</span>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  </Container>
+</section>

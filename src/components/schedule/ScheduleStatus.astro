@@ -1,0 +1,6 @@
+---
+interface Props { status: 'open' | 'limited' | 'closed' | 'completed'; label?: string; }
+const { status, label } = Astro.props;
+const defaults = { open: 'Pendaftaran dibuka', limited: 'Kuota terbatas', closed: 'Pendaftaran ditutup', completed: 'Selesai' };
+---
+<span class:list={['schedule-status', `schedule-status--${status}`]}>{label ?? defaults[status]}</span>

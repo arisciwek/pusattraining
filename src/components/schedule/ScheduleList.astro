@@ -1,0 +1,28 @@
+---
+import ScheduleCard from './ScheduleCard.astro';
+
+type Schedule = {
+  trainingTitle: string;
+  trainingHref: string;
+  startDate: string;
+  endDate?: string;
+  mode?: string;
+  location?: string;
+  duration?: string;
+  price?: string;
+  status?: 'available' | 'limited' | 'closed' | 'completed';
+  registrationHref?: string;
+  organizer?: string;
+};
+
+interface Props {
+  items: Schedule[];
+  class?: string;
+}
+
+const { items, class: className = '' } = Astro.props;
+---
+
+<div class={['schedule-list grid gap-4', className].filter(Boolean).join(' ')}>
+  {items.map((item) => <ScheduleCard {...item} />)}
+</div>

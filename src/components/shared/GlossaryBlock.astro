@@ -1,0 +1,5 @@
+---
+interface Props { title?: string; items: { term: string; definition: string }[]; }
+const { title = 'Istilah penting', items } = Astro.props;
+---
+<section class="glossary-block" aria-labelledby="glossary-block-title"><h2 class="glossary-block__title" id="glossary-block-title">{title}</h2><dl class="glossary-block__list">{items.map((item) => <div class="glossary-block__item"><dt class="glossary-block__term">{item.term}</dt><dd class="glossary-block__definition">{item.definition}</dd></div>)}</dl></section>

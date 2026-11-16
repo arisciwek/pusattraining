@@ -1,0 +1,41 @@
+---
+interface Props {
+  startDate: string;
+  endDate?: string;
+  mode?: string;
+  location?: string;
+  duration?: string;
+  price?: string;
+  status?: 'available' | 'limited' | 'closed' | 'completed';
+  class?: string;
+}
+
+const { startDate, endDate, mode, location, duration, price, status, class: className = '' } = Astro.props;
+const dateLabel = endDate ? `${startDate} – ${endDate}` : startDate;
+const statusLabels = {
+  available: 'Pendaftaran dibuka',
+  limited: 'Kuota terbatas',
+  closed: 'Pendaftaran ditutup',
+  completed: 'Selesai',
+};
+const statusClasses = {
+  available: 'bg-emerald-50 text-emerald-700',
+  limited: 'bg-amber-50 text-amber-800',
+  closed: 'bg-rose-50 text-rose-700',
+  completed: 'bg-slate-100 text-slate-600',
+};
+---
+
+<div class={['schedule-meta flex flex-col gap-3', className].filter(Boolean).join(' ')}>
+  <p class="schedule-meta__date flex items-center gap-2 text-sm font-bold text-slate-950">
+    <span class="schedule-meta__date-icon text-amber-700" aria-hidden="true">◷</span>
+    <time class="schedule-meta__date-value" datetime={startDate}>{dateLabel}</time>
+  </p>
+  <dl class="schedule-meta__details grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
+    {mode && <div class="schedule-meta__item"><dt class="inline text-slate-500">Metode: </dt><dd class="inline font-medium text-slate-800">{mode}</dd></div>}
+    {location && <div class="schedule-meta__item"><dt class="inline text-slate-500">Lokasi: </dt><dd class="inline font-medium text-slate-800">{location}</dd></div>}
+    {duration && <div class="schedule-meta__item"><dt class="inline text-slate-500">Durasi: </dt><dd class="inline font-medium text-slate-800">{duration}</dd></div>}
+    {price && <div class="schedule-meta__item"><dt class="inline text-slate-500">Biaya: </dt><dd class="inline font-medium text-slate-800">{price}</dd></div>}
+  </dl>
+  {status && <p class={['schedule-meta__status inline-flex w-fit rounded-full px-3 py-1 text-xs font-semibold', statusClasses[status]].join(' ')}>{statusLabels[status]}</p>}
+</div>

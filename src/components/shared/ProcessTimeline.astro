@@ -1,0 +1,5 @@
+---
+interface Props { title?: string; items: { title: string; description: string }[]; }
+const { title = 'Alur pendaftaran', items } = Astro.props;
+---
+<section class="process-timeline" aria-labelledby="process-timeline-title"><h2 class="process-timeline__title" id="process-timeline-title">{title}</h2><ol class="process-timeline__list">{items.map((item, index) => <li class="process-timeline__item"><span class="process-timeline__step">{String(index + 1).padStart(2, '0')}</span><div class="process-timeline__content"><h3 class="process-timeline__item-title">{item.title}</h3><p class="process-timeline__description">{item.description}</p></div></li>)}</ol></section>

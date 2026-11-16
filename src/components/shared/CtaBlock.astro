@@ -1,0 +1,5 @@
+---
+interface Props { eyebrow?: string; title: string; description?: string; actionLabel: string; actionHref: string; secondaryLabel?: string; secondaryHref?: string; }
+const { eyebrow, title, description, actionLabel, actionHref, secondaryLabel, secondaryHref } = Astro.props;
+---
+<section class="cta-block" aria-labelledby="cta-block-title"><div class="cta-block__content">{eyebrow && <p class="cta-block__eyebrow">{eyebrow}</p>}<h2 class="cta-block__title" id="cta-block-title">{title}</h2>{description && <p class="cta-block__description">{description}</p>}</div><div class="cta-block__actions"><a class="cta-block__button cta-block__button--primary" href={actionHref}>{actionLabel}<span aria-hidden="true">→</span></a>{secondaryLabel && secondaryHref && <a class="cta-block__button cta-block__button--secondary" href={secondaryHref}>{secondaryLabel}</a>}</div></section>

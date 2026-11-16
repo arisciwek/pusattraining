@@ -1,0 +1,6 @@
+---
+interface Props { days: { date: string; day: number; isCurrentMonth?: boolean; schedules?: { title: string; href: string; time?: string }[] }[]; }
+const { days } = Astro.props;
+const weekdays = ['Sen','Sel','Rab','Kam','Jum','Sab','Min'];
+---
+<div class="schedule-calendar" aria-label="Kalender jadwal pelatihan"><div class="schedule-calendar__weekdays">{weekdays.map((day) => <span class="schedule-calendar__weekday">{day}</span>)}</div><div class="schedule-calendar__days">{days.map((day) => <div class:list={['schedule-calendar__day', { 'schedule-calendar__day--outside': day.isCurrentMonth === false, 'schedule-calendar__day--has-events': day.schedules?.length }]}><time class="schedule-calendar__date" datetime={day.date}>{day.day}</time>{day.schedules?.map((schedule) => <a class="schedule-calendar__event" href={schedule.href} title={schedule.title}>{schedule.time && <span class="schedule-calendar__event-time">{schedule.time}</span>}<span class="schedule-calendar__event-title">{schedule.title}</span></a>)}</div>)}</div></div>

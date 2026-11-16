@@ -1,0 +1,27 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import Breadcrumb from '../../components/shared/Breadcrumb.astro';
+---
+<SiteLayout title="Tentang Pusattraining" description="Mengenal Pusattraining, portal informasi program dan jadwal pelatihan.">
+  <section class="about-page py-12 sm:py-16">
+    <Container>
+      <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Tentang' }]} />
+      <div class="about-page__content mt-10 max-w-4xl">
+        <p class="about-page__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">TENTANG PORTAL</p>
+        <h1 class="about-page__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Membantu menemukan informasi training dalam satu tempat.</h1>
+        <p class="about-page__lead mt-6 text-lg leading-8 text-slate-600">Pusattraining dikembangkan sebagai portal informasi yang menghubungkan pengunjung dengan program pengembangan kompetensi dan jadwal pelatihan dari berbagai bidang serta penyelenggara.</p>
+        <div class="about-page__principles mt-10 grid gap-4 sm:grid-cols-2">
+          <article class="about-page__principle rounded-2xl border border-slate-200 bg-white p-6">
+            <h2 class="about-page__principle-title text-lg font-extrabold text-slate-950">Informasi yang terstruktur</h2>
+            <p class="about-page__principle-description mt-2 text-sm leading-7 text-slate-600">Setiap program dan batch memiliki informasi yang disajikan secara terpisah agar mudah dipahami dan diperbarui.</p>
+          </article>
+          <article class="about-page__principle rounded-2xl border border-slate-200 bg-white p-6">
+            <h2 class="about-page__principle-title text-lg font-extrabold text-slate-950">Navigasi yang jelas</h2>
+            <p class="about-page__principle-description mt-2 text-sm leading-7 text-slate-600">Pengunjung dapat menelusuri katalog, bidang pelatihan, dan jadwal tanpa harus mencari dari banyak halaman yang tidak terhubung.</p>
+          </article>
+        </div>
+      </div>
+    </Container>
+  </section>
+</SiteLayout>

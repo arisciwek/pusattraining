@@ -1,0 +1,5 @@
+---
+interface Props { title: string; description?: string; items: { title: string; text: string }[]; }
+const { title, description, items } = Astro.props;
+---
+<section class="reasons-block" aria-labelledby="reasons-block-title"><header class="reasons-block__header"><h2 class="reasons-block__title" id="reasons-block-title">{title}</h2>{description && <p class="reasons-block__description">{description}</p>}</header><div class="reasons-block__list">{items.map((item, index) => <article class="reasons-block__item"><span class="reasons-block__number">{index + 1}</span><div class="reasons-block__body"><h3 class="reasons-block__item-title">{item.title}</h3><p class="reasons-block__item-text">{item.text}</p></div></article>)}</div></section>
