@@ -1,7 +1,7 @@
 ---
 type: page
-id: 1003
-ulid: 01KCV000000000000000000017
+id: 1004
+ulid: 01KCV000000000000000000018
 pageType: standard
 slug: pelatihan
 title: Katalog Pelatihan
