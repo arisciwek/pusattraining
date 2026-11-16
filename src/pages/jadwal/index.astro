@@ -25,9 +25,21 @@ const [allSchedules, trainings] = await Promise.all([
 ]);
 const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
 const schedules = allSchedules.filter((schedule) => trainingsById.has(schedule.data.trainingId));
-const today = new Date().toISOString().slice(0, 10);
+const now = new Date();
 const upcomingSchedules = schedules
-  .filter((schedule) => schedule.data.startDate.slice(0, 10) >= today)
+  .filter((schedule) => {
+    const startDate = schedule.data.startDate;
+    if (/^\\d{4}-\\d{2}-\\d{2}$/.test(startDate)) {
+      const todayInScheduleTimezone = new Intl.DateTimeFormat('en-CA', {
+        timeZone: schedule.data.timezone,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      }).format(now);
+      return startDate >= todayInScheduleTimezone;
+    }
+    return Date.parse(startDate) >= now.getTime();
+  })
   .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate));
 const latestSchedules = (upcomingSchedules.length > 0
   ? upcomingSchedules
