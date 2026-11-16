@@ -59,6 +59,7 @@ blocks:
     eyebrow: SASARAN PESERTA
     title: Siapa yang perlu mengikuti program ini?
     description: "Kelompok peserta yang relevan secara umum; kelayakan akhir tetap mengikuti persyaratan skema dan verifikasi penyelenggara."
+    items:
       - title: "calon personel K3"
         description: "Penugasan dan kelayakan peserta perlu disesuaikan dengan kebutuhan perusahaan serta persyaratan program."
       - title: "supervisor dan pengelola operasional"
@@ -73,6 +74,7 @@ blocks:
     eyebrow: KURIKULUM
     title: Ruang lingkup materi pelatihan
     description: "Pokok bahasan disusun dari ruang lingkup regulasi dan kompetensi terkait. Porsi materi dan praktik mengikuti skema pembinaan serta fasilitas angkatan."
+    items:
       - title: "landasan hukum K3"
         description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
       - title: "peran dan kewenangan Ahli K3"
@@ -93,6 +95,7 @@ blocks:
     eyebrow: PERSYARATAN
     title: Persyaratan dan dokumen peserta
     description: "Persyaratan akhir perlu diverifikasi untuk kelas dan skema yang didaftarkan. Jangan mengirim dokumen sensitif sebelum menerima instruksi resmi."
+    items:
       - title: Persyaratan kelayakan
         description: "Persyaratan pendidikan, pengalaman, dan dokumen mengikuti skema resmi Ahli K3 Umum. Penunjukan dan kewenangan formal tidak otomatis diperoleh hanya dengan mengikuti pelatihan."
       - title: Dokumen administrasi

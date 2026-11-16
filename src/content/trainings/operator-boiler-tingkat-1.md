@@ -59,6 +59,7 @@ blocks:
     eyebrow: SASARAN PESERTA
     title: Siapa yang perlu mengikuti program ini?
     description: "Kelompok peserta yang relevan secara umum; kelayakan akhir tetap mengikuti persyaratan skema dan verifikasi penyelenggara."
+    items:
       - title: "personel yang dipersiapkan mengoperasikan pesawat uap"
         description: "Penugasan dan kelayakan peserta perlu disesuaikan dengan kebutuhan perusahaan serta persyaratan program."
       - title: "operator dan teknisi utilitas"
@@ -71,6 +72,7 @@ blocks:
     eyebrow: KURIKULUM
     title: Ruang lingkup materi pelatihan
     description: "Pokok bahasan disusun dari ruang lingkup regulasi dan kompetensi terkait. Porsi materi dan praktik mengikuti skema pembinaan serta fasilitas angkatan."
+    items:
       - title: "prinsip kerja pesawat uap"
         description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
       - title: "komponen boiler dan perangkat keselamatan"
@@ -91,6 +93,7 @@ blocks:
     eyebrow: PERSYARATAN
     title: Persyaratan dan dokumen peserta
     description: "Persyaratan akhir perlu diverifikasi untuk kelas dan skema yang didaftarkan. Jangan mengirim dokumen sensitif sebelum menerima instruksi resmi."
+    items:
       - title: Persyaratan kelayakan
         description: "Kualifikasi pendidikan, pengalaman, kesehatan, dan dokumen mengikuti Permenaker 4/2025. Jenis serta kapasitas unit harus diperiksa untuk memastikan kesesuaian kelas I."
       - title: Dokumen administrasi

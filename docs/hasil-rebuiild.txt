@@ -6,116 +6,116 @@
 > pusattraining@0.1.0 check
 > astro sync && tsc --noEmit
 
-01:09:45 [content] Syncing content
-01:09:46 [WARN] [glob-loader] No files found matching "**/*.md" in directory "src/content/articles"
-01:09:46 [content] Synced content
-01:09:46 [types] Generated 2.55s
-01:09:49 [content] Syncing content
-01:09:49 [WARN] [glob-loader] No files found matching "**/*.md" in directory "src/content/articles"
-01:09:49 [content] Synced content
-01:09:49 [types] Generated 952ms
-01:09:49 [build] output: "static"
-01:09:49 [build] mode: "static"
-01:09:49 [build] directory: /www/wwwroot/pusattraining/pusattraining/dist/
-01:09:49 [build] Collecting build info...
-01:09:49 [build] ✓ Completed in 1.02s.
-01:09:49 [build] Building static entrypoints...
-01:09:50 [vite] ✓ built in 649ms
-01:09:50 [vite] ✓ built in 59ms
-01:09:50 [build] Rearranging server assets...
+01:22:18 [content] Syncing content
+01:22:18 [WARN] [glob-loader] No files found matching "**/*.md" in directory "src/content/articles"
+01:22:18 [content] Synced content
+01:22:18 [types] Generated 1.48s
+01:22:22 [content] Syncing content
+01:22:22 [WARN] [glob-loader] No files found matching "**/*.md" in directory "src/content/articles"
+01:22:23 [content] Synced content
+01:22:23 [types] Generated 2.27s
+01:22:23 [build] output: "static"
+01:22:23 [build] mode: "static"
+01:22:23 [build] directory: /www/wwwroot/pusattraining/pusattraining/dist/
+01:22:23 [build] Collecting build info...
+01:22:23 [build] ✓ Completed in 2.34s.
+01:22:23 [build] Building static entrypoints...
+01:22:25 [vite] ✓ built in 1.83s
+01:22:25 [vite] ✓ built in 72ms
+01:22:25 [build] Rearranging server assets...
 
  generating static routes 
-01:09:50 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
-01:09:50 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
-01:09:50 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
-01:09:50   ├─ /404.html (+58ms) 
-01:09:50   ├─ /jadwal/2019-08/ahli-k3-umum/ahli-k3-umum-batam-supa-jalan-19-30-agustus-2019/index.html (+25ms) 
-01:09:50   ├─ /jadwal/2019-09/ahli-k3-umum/ahli-k3-umum-jogja-02-15-september-2019-siap-jalan/index.html (+14ms) 
-01:09:50   ├─ /jadwal/2023-08/operator-gondola/inhouse-operator-gondola-pt-gerindo-indahtama-sukses-batch-2-tgl-21-23-agustus-2023/index.html (+15ms) 
-01:09:50   ├─ /jadwal/2026-01/ahli-k3-umum/inhouse-training-ahli-k3-umum-tgl-26-jan-10-feb-2026-di-lampung/index.html (+14ms) 
-01:09:50   ├─ /jadwal/2025-08/training-emergency-response-plan/inhouse-training-emergency-response-plan-01-agustus-2025-jakarta/index.html (+11ms) 
-01:09:50   ├─ /jadwal/2025-09/training-emergency-response-plan/inhouse-training-emergency-response-plan-17-september-2025-jakarta/index.html (+11ms) 
-01:09:50   ├─ /jadwal/2026-06/training-emergency-response-plan/inhouse-training-emergency-response-plan-27-juni-2026-jakarta/index.html (+10ms) 
-01:09:50   ├─ /jadwal/2023-06/operator-gondola/inhouse-training-operator-gondola-pt-gerindo-indahtama-sukses-tgl-19-21-juni-2023-jakarta/index.html (+14ms) 
-01:09:50   ├─ /jadwal/2026-02/operator-gondola/inhouse-training-operator-gondola-tgl-09-11-februari-2026-blended-training/index.html (+11ms) 
-01:09:50   ├─ /jadwal/2024-06/training-k3-bahaya-confined-space/inhouse-training-teknisi-k3-ruang-terbatas-confined-space-class-1-batch-1-tgl-29-jun-03-jul-2024/index.html (+8ms) 
-01:09:50   ├─ /jadwal/2021-02/ahli-k3-umum/jadwal-terdekat-training-ahli-k3-umum-08-22-februari-2021/index.html (+7ms) 
-01:09:50   ├─ /jadwal/2019-10/operator-gondola/operator-gondola-14-19-oktober-2019-siap-jalan/index.html (+7ms) 
-01:09:50   ├─ /jadwal/2026-09/ahli-k3-umum/pelatihan-ahli-k3-umum-bnsp-tanggal-07-10-september-2026/index.html (+8ms) 
-01:09:51   ├─ /jadwal/2024-06/ahli-k3-umum/pelatihan-ahli-k3-umum-bnsp-tgl-10-13-juni-2024-offline-training/index.html (+8ms) 
-01:09:51   ├─ /jadwal/2024-06/ahli-k3-umum/pelatihan-ahli-k3-umum-bnsp-tgl-10-13-juni-2024-offline-training-2/index.html (+8ms) 
-01:09:51   ├─ /jadwal/2025-03/ahli-k3-umum/pelatihan-ahli-k3-umum-sertifikasi-kemnaker-ri-tgl-10-22-maret-2025-full-online/index.html (+8ms) 
-01:09:51   ├─ /jadwal/2025-02/ahli-k3-umum/pelatihan-ahli-k3-umum-tgl-10-25-februari-2025-sertifikasi-kemnaker-ri-lampung/index.html (+8ms) 
-01:09:51   ├─ /jadwal/2017-11/damkar-kelas-d/pelatihan-damkar-kelas-dcba-13-25-nopember-2017-jakarta/index.html (+8ms) 
-01:09:51   ├─ /jadwal/2026-09/operator-gondola/pelatihan-inhouse-operator-gondola-tanggal-28-30-september-2026/index.html (+6ms) 
-01:09:51   ├─ /jadwal/2025-11/damkar-kelas-d/pelatihan-petugas-peran-pemadam-kebakaran-kelas-d-fire-d-03-05-nov-2025-bogor/index.html (+11ms) 
-01:09:51   ├─ /jadwal/2026-08/training-k3-bahaya-confined-space/pelatihan-teknisi-k3-ruang-terbatas-confined-space-tanggal-31-agustus-4-september-2026/index.html (+17ms) 
-01:09:51   ├─ /jadwal/2018-05/ahli-k3-umum/promo-ramadhan-ahli-k3-umum-yogyakarta-7-20-mei-2018/index.html (+8ms) 
-01:09:51   ├─ /jadwal/2019-08/ahli-k3-umum/siap-jalan-ahli-k3-umum-19-31-agustus-2019/index.html (+6ms) 
-01:09:51   ├─ /jadwal/2018-04/ahli-k3-umum/siap-jalan-ahli-k3-umum-batam-30-april-12-mei-2018/index.html (+7ms) 
-01:09:51   ├─ /jadwal/2020-02/ahli-k3-umum/siap-jalan-ahli-k3-umum-tgl-03-16-februari-2020-jogja/index.html (+6ms) 
-01:09:51   ├─ /jadwal/2020-03/ahli-k3-umum/siap-jalan-ahli-k3-umum-tgl-16-30-maret-2020-jakarta/index.html (+7ms) 
-01:09:51   ├─ /jadwal/2022-01/ahli-k3-umum/siap-jalan-ahli-k3-umum-tgl-17-29-januari-2022-full-online/index.html (+7ms) 
-01:09:51   ├─ /jadwal/2018-09/ahli-k3-umum/siap-jalan-pelatihan-ahli-k3-umum-jakarta-17-29-september-2018/index.html (+8ms) 
-01:09:51   ├─ /jadwal/2020-03/ahli-k3-umum/siap-jalan-pelatihan-ahli-k3-umum-tgl-23-maret-06-april-2020-jakarta/index.html (+7ms) 
-01:09:51   ├─ /jadwal/2024-12/ahli-k3-umum/training-ahli-k3-umum-bnsp-tgl-06-09-desember-2024-online-training/index.html (+7ms) 
-01:09:51   ├─ /jadwal/2019-08/index.html (+9ms) 
-01:09:51   ├─ /jadwal/2019-09/index.html (+6ms) 
-01:09:51   ├─ /jadwal/2023-08/index.html (+7ms) 
-01:09:51   ├─ /jadwal/2026-01/index.html (+6ms) 
-01:09:51   ├─ /jadwal/2025-08/index.html (+5ms) 
-01:09:51   ├─ /jadwal/2025-09/index.html (+5ms) 
-01:09:51   ├─ /jadwal/2026-06/index.html (+6ms) 
-01:09:51   ├─ /jadwal/2023-06/index.html (+7ms) 
-01:09:51   ├─ /jadwal/2026-02/index.html (+7ms) 
-01:09:51   ├─ /jadwal/2024-06/index.html (+6ms) 
-01:09:51   ├─ /jadwal/2021-02/index.html (+5ms) 
-01:09:51   ├─ /jadwal/2019-10/index.html (+5ms) 
-01:09:51   ├─ /jadwal/2026-09/index.html (+6ms) 
-01:09:51   ├─ /jadwal/2025-03/index.html (+5ms) 
-01:09:51   ├─ /jadwal/2025-02/index.html (+6ms) 
-01:09:51   ├─ /jadwal/2017-11/index.html (+6ms) 
-01:09:51   ├─ /jadwal/2025-11/index.html (+9ms) 
-01:09:51   ├─ /jadwal/2026-08/index.html (+7ms) 
-01:09:51   ├─ /jadwal/2018-05/index.html (+8ms) 
-01:09:51   ├─ /jadwal/2018-04/index.html (+9ms) 
-01:09:51   ├─ /jadwal/2020-02/index.html (+9ms) 
-01:09:51   ├─ /jadwal/2020-03/index.html (+9ms) 
-01:09:51   ├─ /jadwal/2022-01/index.html (+6ms) 
-01:09:51   ├─ /jadwal/2018-09/index.html (+7ms) 
-01:09:51   ├─ /jadwal/2024-12/index.html (+8ms) 
-01:09:51   ├─ /jadwal/index.html01:09:51 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
- (+54ms) 
-01:09:51   ├─ /kontak/index.html (+12ms) 
-01:09:51   ├─ /pelatihan/ahli-k3/index.html (+11ms) 
-01:09:51   ├─ /pelatihan/higiene-industri/index.html (+6ms) 
-01:09:51   ├─ /pelatihan/k3-kimia-risiko-proses/index.html (+7ms) 
-01:09:51   ├─ /pelatihan/k3-konstruksi/index.html (+5ms) 
-01:09:51   ├─ /pelatihan/k3-listrik/index.html (+6ms) 
-01:09:51   ├─ /pelatihan/k3-migas-pertambangan/index.html (+7ms) 
-01:09:51   ├─ /pelatihan/kebakaran-emergency/index.html (+6ms) 
-01:09:51   ├─ /pelatihan/lingkungan-energi/index.html (+18ms) 
-01:09:51   ├─ /pelatihan/operator-alat-berat/index.html (+7ms) 
-01:09:51   ├─ /pelatihan/p3k-kesehatan/index.html (+7ms) 
-01:09:51   ├─ /pelatihan/pesawat-uap-bejana-tekan/index.html (+5ms) 
-01:09:51   ├─ /pelatihan/program-khusus/index.html (+6ms) 
-01:09:51   ├─ /pelatihan/ruang-terbatas/index.html (+5ms) 
-01:09:51   ├─ /pelatihan/welder-rigging/index.html (+5ms) 
-01:09:51   ├─ /pelatihan/ahli-k3-umum/index.html (+89ms) 
-01:09:51   ├─ /pelatihan/damkar-kelas-d/index.html (+15ms) 
-01:09:51   ├─ /pelatihan/operator-boiler-tingkat-1/index.html (+7ms) 
-01:09:51   ├─ /pelatihan/operator-boiler-tingkat-2/index.html (+6ms) 
-01:09:51   ├─ /pelatihan/operator-gondola/index.html (+27ms) 
-01:09:51   ├─ /pelatihan/pemadam-kebakaran-kelas-a/index.html (+7ms) 
-01:09:51   ├─ /pelatihan/training-emergency-response-plan/index.html (+21ms) 
-01:09:51   ├─ /pelatihan/training-k3-bahaya-confined-space/index.html (+22ms) 
-01:09:51   ├─ /pelatihan/index.html (+16ms) 
-01:09:51   ├─ /tentang/index.html (+13ms) 
-01:09:51   ├─ /training/index.html (+10ms) 
-01:09:51   ├─ /index.html (+16ms) 
-01:09:51 ✓ Completed in 1.09s.
+01:22:25 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
+01:22:25 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
+01:22:25 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
+01:22:25   ├─ /404.html (+71ms) 
+01:22:25   ├─ /jadwal/2019-08/ahli-k3-umum/ahli-k3-umum-batam-supa-jalan-19-30-agustus-2019/index.html (+24ms) 
+01:22:25   ├─ /jadwal/2019-09/ahli-k3-umum/ahli-k3-umum-jogja-02-15-september-2019-siap-jalan/index.html (+15ms) 
+01:22:25   ├─ /jadwal/2023-08/operator-gondola/inhouse-operator-gondola-pt-gerindo-indahtama-sukses-batch-2-tgl-21-23-agustus-2023/index.html (+15ms) 
+01:22:25   ├─ /jadwal/2026-01/ahli-k3-umum/inhouse-training-ahli-k3-umum-tgl-26-jan-10-feb-2026-di-lampung/index.html (+17ms) 
+01:22:25   ├─ /jadwal/2025-08/training-emergency-response-plan/inhouse-training-emergency-response-plan-01-agustus-2025-jakarta/index.html (+11ms) 
+01:22:25   ├─ /jadwal/2025-09/training-emergency-response-plan/inhouse-training-emergency-response-plan-17-september-2025-jakarta/index.html (+10ms) 
+01:22:25   ├─ /jadwal/2026-06/training-emergency-response-plan/inhouse-training-emergency-response-plan-27-juni-2026-jakarta/index.html (+12ms) 
+01:22:25   ├─ /jadwal/2023-06/operator-gondola/inhouse-training-operator-gondola-pt-gerindo-indahtama-sukses-tgl-19-21-juni-2023-jakarta/index.html (+14ms) 
+01:22:25   ├─ /jadwal/2026-02/operator-gondola/inhouse-training-operator-gondola-tgl-09-11-februari-2026-blended-training/index.html (+13ms) 
+01:22:25   ├─ /jadwal/2024-06/training-k3-bahaya-confined-space/inhouse-training-teknisi-k3-ruang-terbatas-confined-space-class-1-batch-1-tgl-29-jun-03-jul-2024/index.html (+10ms) 
+01:22:25   ├─ /jadwal/2021-02/ahli-k3-umum/jadwal-terdekat-training-ahli-k3-umum-08-22-februari-2021/index.html (+9ms) 
+01:22:25   ├─ /jadwal/2019-10/operator-gondola/operator-gondola-14-19-oktober-2019-siap-jalan/index.html (+8ms) 
+01:22:25   ├─ /jadwal/2026-09/ahli-k3-umum/pelatihan-ahli-k3-umum-bnsp-tanggal-07-10-september-2026/index.html (+9ms) 
+01:22:25   ├─ /jadwal/2024-06/ahli-k3-umum/pelatihan-ahli-k3-umum-bnsp-tgl-10-13-juni-2024-offline-training/index.html (+8ms) 
+01:22:25   ├─ /jadwal/2024-06/ahli-k3-umum/pelatihan-ahli-k3-umum-bnsp-tgl-10-13-juni-2024-offline-training-2/index.html (+8ms) 
+01:22:25   ├─ /jadwal/2025-03/ahli-k3-umum/pelatihan-ahli-k3-umum-sertifikasi-kemnaker-ri-tgl-10-22-maret-2025-full-online/index.html (+9ms) 
+01:22:25   ├─ /jadwal/2025-02/ahli-k3-umum/pelatihan-ahli-k3-umum-tgl-10-25-februari-2025-sertifikasi-kemnaker-ri-lampung/index.html (+14ms) 
+01:22:25   ├─ /jadwal/2017-11/damkar-kelas-d/pelatihan-damkar-kelas-dcba-13-25-nopember-2017-jakarta/index.html (+9ms) 
+01:22:25   ├─ /jadwal/2026-09/operator-gondola/pelatihan-inhouse-operator-gondola-tanggal-28-30-september-2026/index.html (+20ms) 
+01:22:25   ├─ /jadwal/2025-11/damkar-kelas-d/pelatihan-petugas-peran-pemadam-kebakaran-kelas-d-fire-d-03-05-nov-2025-bogor/index.html (+12ms) 
+01:22:25   ├─ /jadwal/2026-08/training-k3-bahaya-confined-space/pelatihan-teknisi-k3-ruang-terbatas-confined-space-tanggal-31-agustus-4-september-2026/index.html (+7ms) 
+01:22:25   ├─ /jadwal/2018-05/ahli-k3-umum/promo-ramadhan-ahli-k3-umum-yogyakarta-7-20-mei-2018/index.html (+8ms) 
+01:22:25   ├─ /jadwal/2019-08/ahli-k3-umum/siap-jalan-ahli-k3-umum-19-31-agustus-2019/index.html (+7ms) 
+01:22:25   ├─ /jadwal/2018-04/ahli-k3-umum/siap-jalan-ahli-k3-umum-batam-30-april-12-mei-2018/index.html (+7ms) 
+01:22:25   ├─ /jadwal/2020-02/ahli-k3-umum/siap-jalan-ahli-k3-umum-tgl-03-16-februari-2020-jogja/index.html (+7ms) 
+01:22:25   ├─ /jadwal/2020-03/ahli-k3-umum/siap-jalan-ahli-k3-umum-tgl-16-30-maret-2020-jakarta/index.html (+7ms) 
+01:22:25   ├─ /jadwal/2022-01/ahli-k3-umum/siap-jalan-ahli-k3-umum-tgl-17-29-januari-2022-full-online/index.html (+7ms) 
+01:22:25   ├─ /jadwal/2018-09/ahli-k3-umum/siap-jalan-pelatihan-ahli-k3-umum-jakarta-17-29-september-2018/index.html (+7ms) 
+01:22:25   ├─ /jadwal/2020-03/ahli-k3-umum/siap-jalan-pelatihan-ahli-k3-umum-tgl-23-maret-06-april-2020-jakarta/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2024-12/ahli-k3-umum/training-ahli-k3-umum-bnsp-tgl-06-09-desember-2024-online-training/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2019-08/index.html (+8ms) 
+01:22:25   ├─ /jadwal/2019-09/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2023-08/index.html (+7ms) 
+01:22:25   ├─ /jadwal/2026-01/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2025-08/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2025-09/index.html (+5ms) 
+01:22:25   ├─ /jadwal/2026-06/index.html (+10ms) 
+01:22:25   ├─ /jadwal/2023-06/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2026-02/index.html (+7ms) 
+01:22:25   ├─ /jadwal/2024-06/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2021-02/index.html (+5ms) 
+01:22:25   ├─ /jadwal/2019-10/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2026-09/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2025-03/index.html (+5ms) 
+01:22:25   ├─ /jadwal/2025-02/index.html (+5ms) 
+01:22:25   ├─ /jadwal/2017-11/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2025-11/index.html (+5ms) 
+01:22:25   ├─ /jadwal/2026-08/index.html (+7ms) 
+01:22:25   ├─ /jadwal/2018-05/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2018-04/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2020-02/index.html (+7ms) 
+01:22:25   ├─ /jadwal/2020-03/index.html (+8ms) 
+01:22:25   ├─ /jadwal/2022-01/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2018-09/index.html (+6ms) 
+01:22:25   ├─ /jadwal/2024-12/index.html (+6ms) 
+01:22:25   ├─ /jadwal/index.html01:22:25 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
+ (+42ms) 
+01:22:26   ├─ /kontak/index.html (+10ms) 
+01:22:26   ├─ /pelatihan/ahli-k3/index.html (+10ms) 
+01:22:26   ├─ /pelatihan/higiene-industri/index.html (+5ms) 
+01:22:26   ├─ /pelatihan/k3-kimia-risiko-proses/index.html (+5ms) 
+01:22:26   ├─ /pelatihan/k3-konstruksi/index.html (+5ms) 
+01:22:26   ├─ /pelatihan/k3-listrik/index.html (+5ms) 
+01:22:26   ├─ /pelatihan/k3-migas-pertambangan/index.html (+10ms) 
+01:22:26   ├─ /pelatihan/kebakaran-emergency/index.html (+6ms) 
+01:22:26   ├─ /pelatihan/lingkungan-energi/index.html (+6ms) 
+01:22:26   ├─ /pelatihan/operator-alat-berat/index.html (+6ms) 
+01:22:26   ├─ /pelatihan/p3k-kesehatan/index.html (+5ms) 
+01:22:26   ├─ /pelatihan/pesawat-uap-bejana-tekan/index.html (+5ms) 
+01:22:26   ├─ /pelatihan/program-khusus/index.html (+5ms) 
+01:22:26   ├─ /pelatihan/ruang-terbatas/index.html (+5ms) 
+01:22:26   ├─ /pelatihan/welder-rigging/index.html (+5ms) 
+01:22:26   ├─ /pelatihan/ahli-k3-umum/index.html (+98ms) 
+01:22:26   ├─ /pelatihan/damkar-kelas-d/index.html (+19ms) 
+01:22:26   ├─ /pelatihan/operator-boiler-tingkat-1/index.html (+9ms) 
+01:22:26   ├─ /pelatihan/operator-boiler-tingkat-2/index.html (+9ms) 
+01:22:26   ├─ /pelatihan/operator-gondola/index.html (+38ms) 
+01:22:26   ├─ /pelatihan/pemadam-kebakaran-kelas-a/index.html (+8ms) 
+01:22:26   ├─ /pelatihan/training-emergency-response-plan/index.html (+22ms) 
+01:22:26   ├─ /pelatihan/training-k3-bahaya-confined-space/index.html (+18ms) 
+01:22:26   ├─ /pelatihan/index.html (+12ms) 
+01:22:26   ├─ /tentang/index.html (+10ms) 
+01:22:26   ├─ /training/index.html (+11ms) 
+01:22:26   ├─ /index.html (+18ms) 
+01:22:26 ✓ Completed in 1.16s.
 
-01:09:51 [build] ✓ Completed in 1.91s.
-01:09:51 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
-01:09:51 [build] 84 page(s) built in 3.03s
-01:09:51 [build] Complete!
+01:22:26 [build] ✓ Completed in 3.26s.
+01:22:26 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+01:22:26 [build] 84 page(s) built in 5.72s
+01:22:26 [build] Complete!

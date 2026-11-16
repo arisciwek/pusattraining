@@ -59,6 +59,7 @@ blocks:
     eyebrow: SASARAN PESERTA
     title: Siapa yang perlu mengikuti program ini?
     description: "Kelompok peserta yang relevan secara umum; kelayakan akhir tetap mengikuti persyaratan skema dan verifikasi penyelenggara."
+    items:
       - title: "manajemen"
         description: "Penugasan dan kelayakan peserta perlu disesuaikan dengan kebutuhan perusahaan serta persyaratan program."
       - title: "HSE"
@@ -75,6 +76,7 @@ blocks:
     eyebrow: KURIKULUM
     title: Ruang lingkup materi pelatihan
     description: "Pokok bahasan disusun dari ruang lingkup regulasi dan kompetensi terkait. Porsi materi dan praktik mengikuti skema pembinaan serta fasilitas angkatan."
+    items:
       - title: "identifikasi potensi keadaan darurat dan skenario"
         description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
       - title: "struktur komando dan tanggung jawab"
@@ -97,6 +99,7 @@ blocks:
     eyebrow: PERSYARATAN
     title: Persyaratan dan dokumen peserta
     description: "Persyaratan akhir perlu diverifikasi untuk kelas dan skema yang didaftarkan. Jangan mengirim dokumen sensitif sebelum menerima instruksi resmi."
+    items:
       - title: Persyaratan kelayakan
         description: "Perusahaan sebaiknya menyiapkan profil lokasi, layout, risiko utama, struktur organisasi, serta prosedur yang sudah ada. Kebutuhan simulasi dan dokumen keluaran disepakati dalam ruang lingkup."
       - title: Dokumen administrasi

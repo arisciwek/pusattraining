@@ -59,6 +59,7 @@ blocks:
     eyebrow: SASARAN PESERTA
     title: Siapa yang perlu mengikuti program ini?
     description: "Kelompok peserta yang relevan secara umum; kelayakan akhir tetap mengikuti persyaratan skema dan verifikasi penyelenggara."
+    items:
       - title: "pekerja yang ditunjuk mendukung kesiapsiagaan kebakaran"
         description: "Penugasan dan kelayakan peserta perlu disesuaikan dengan kebutuhan perusahaan serta persyaratan program."
       - title: "anggota tim tanggap darurat"
@@ -71,6 +72,7 @@ blocks:
     eyebrow: KURIKULUM
     title: Ruang lingkup materi pelatihan
     description: "Pokok bahasan disusun dari ruang lingkup regulasi dan kompetensi terkait. Porsi materi dan praktik mengikuti skema pembinaan serta fasilitas angkatan."
+    items:
       - title: "dasar api dan bahaya kebakaran"
         description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
       - title: "pencegahan kebakaran"
@@ -91,6 +93,7 @@ blocks:
     eyebrow: PERSYARATAN
     title: Persyaratan dan dokumen peserta
     description: "Persyaratan akhir perlu diverifikasi untuk kelas dan skema yang didaftarkan. Jangan mengirim dokumen sensitif sebelum menerima instruksi resmi."
+    items:
       - title: Persyaratan kelayakan
         description: "Kelas, kompetensi, durasi, prasyarat, dan sertifikat harus dicocokkan dengan skema pembinaan yang dipakai penyelenggara. Konfirmasikan definisi kelas D sebelum mendaftar."
       - title: Dokumen administrasi
