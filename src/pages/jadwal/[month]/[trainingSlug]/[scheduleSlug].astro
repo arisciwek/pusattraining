@@ -110,7 +110,7 @@ const structuredData = {
   ...(eventAttendanceMode ? { eventAttendanceMode } : {}),
   ...(eventLocation ? { location: eventLocation } : {}),
   url: Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined,
-  ...(data.sites?.main?.registrationUrl
+  ...(data.sites?.main?.registrationUrl && data.registration?.status
     ? {
         offers: {
           '@type': 'Offer',
