@@ -111,6 +111,8 @@ const trainings = defineCollection({
     ...editorialDates,
     image: z.string().optional(),
     hero: z.object({
+      title: z.string().min(1).optional(),
+      imageAlt: z.string().min(1).optional(),
       eyebrow: z.string().optional(),
       certBadge: z.string().optional(),
       description: z.string().optional(),
