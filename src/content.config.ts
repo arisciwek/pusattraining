@@ -120,6 +120,7 @@ const trainings = defineCollection({
       }),
       z.object({
         type: z.literal('training-summary'),
+        id: z.string().optional(),
         eyebrow: z.string().optional(),
         items: z.array(z.object({
           label: z.string().min(1),
@@ -161,6 +162,7 @@ const trainings = defineCollection({
       }),
       z.object({
         type: z.literal('training-schedule-list'),
+        id: z.string().optional(),
         eyebrow: z.string().optional(),
         title: z.string().min(1),
         allLabel: z.string().optional(),
