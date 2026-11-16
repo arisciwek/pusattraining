@@ -1,14 +1,16 @@
 ---
+import { CONTACT_PERSON, CONTACT_PHONE_DISPLAY, getContactWhatsAppHref } from '../../lib/contact';
+
 interface Props {
   eyebrow?: string;
   title: string;
   description?: string;
   actionLabel: string;
-  actionHref: string;
   secondaryLabel?: string;
   secondaryHref?: string;
 }
-const { eyebrow = 'KONSULTASI PROGRAM', title, description, actionLabel, actionHref, secondaryLabel, secondaryHref } = Astro.props;
+const { eyebrow = 'KONSULTASI PROGRAM', title, description, actionLabel, secondaryLabel, secondaryHref } = Astro.props;
+const whatsappHref = getContactWhatsAppHref(`Halo ${CONTACT_PERSON}, saya ingin bertanya mengenai ${title} di Pusattraining.`);
 ---
 <aside class="training-cta mt-14 overflow-hidden rounded-3xl bg-slate-950 px-6 py-8 text-white sm:px-9 sm:py-10">
   <div class="training-cta__content max-w-3xl">
@@ -16,8 +18,9 @@ const { eyebrow = 'KONSULTASI PROGRAM', title, description, actionLabel, actionH
     <h2 class="training-cta__title mt-3 text-2xl font-bold tracking-tight sm:text-3xl">{title}</h2>
     {description && <p class="training-cta__description mt-3 max-w-2xl text-sm leading-7 text-slate-300">{description}</p>}
     <div class="training-cta__actions mt-6 flex flex-wrap items-center gap-3">
-      <a class="training-cta__primary inline-flex min-h-11 items-center justify-center rounded-full bg-amber-400 px-5 py-3 text-sm font-bold text-slate-950 transition-colors hover:bg-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" href={actionHref}>{actionLabel}</a>
+      <a class="training-cta__primary inline-flex min-h-11 items-center justify-center rounded-full bg-amber-400 px-5 py-3 text-sm font-bold text-slate-950 transition-colors hover:bg-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" href={whatsappHref} target="_blank" rel="noopener noreferrer">{actionLabel} <span aria-hidden="true">↗</span></a>
       {secondaryLabel && secondaryHref && <a class="training-cta__secondary inline-flex min-h-11 items-center justify-center rounded-full border border-slate-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-slate-400 hover:bg-slate-800" href={secondaryHref}>{secondaryLabel}</a>}
     </div>
+    <p class="training-cta__contact mt-4 text-xs text-slate-400">Kontak: {CONTACT_PERSON} · <a class="training-cta__phone underline decoration-slate-600 underline-offset-4 hover:text-white" href={`tel:+6281298053891`}>{CONTACT_PHONE_DISPLAY}</a></p>
   </div>
 </aside>
