@@ -1,0 +1,239 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import SiteLayout from '../../../../../layouts/SiteLayout.astro';
+import Container from '../../../../../components/shared/Container.astro';
+import Breadcrumb from '../../../../../components/shared/Breadcrumb.astro';
+import {
+  formatScheduleDate,
+  getScheduleDescription,
+  getScheduleMonth,
+  getScheduleStatusLabel,
+  getScheduleTitle,
+  isMainSiteSchedule,
+  getRegistrationStatusLabel,
+} from '../../../../../lib/schedule-utils';
+import { validateContentRelations } from '../../../../../lib/validate-content';
+
+type ScheduleEntry = CollectionEntry<'schedules'>;
+type TrainingEntry = CollectionEntry<'trainings'>;
+
+export async function getStaticPaths() {
+  await validateContentRelations();
+  const [schedules, trainings] = await Promise.all([
+    getCollection('schedules', isMainSiteSchedule),
+    getCollection('trainings', ({ data }) => !data.draft),
+  ]);
+  const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
+
+  return schedules.flatMap((schedule) => {
+    const training = trainingsById.get(schedule.data.trainingId);
+    if (!training) return [];
+
+    return [{
+      params: {
+        month: getScheduleMonth(schedule.data),
+        trainingSlug: training.data.slug,
+        scheduleSlug: schedule.data.slug,
+      },
+      props: { schedule, training },
+    }];
+  });
+}
+
+interface Props {
+  schedule: ScheduleEntry;
+  training: TrainingEntry;
+}
+
+const { schedule, training } = Astro.props as Props;
+const data = schedule.data;
+const title = getScheduleTitle(schedule);
+const description = getScheduleDescription(schedule);
+const month = getScheduleMonth(data);
+const monthLabel = new Intl.DateTimeFormat('id-ID', {
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+}).format(new Date(Date.UTC(Number(month.slice(0, 4)), Number(month.slice(5, 7)) - 1, 1)));
+const deliveryLabels = {
+  offline: 'Tatap muka',
+  online: 'Online',
+  blended: 'Hybrid',
+};
+const attendanceLabels = {
+  offline: 'Hadir langsung',
+  online: 'Online',
+  mixed: 'Kombinasi online dan tatap muka',
+};
+const eventStatus = {
+  scheduled: 'https://schema.org/EventScheduled',
+  ongoing: 'https://schema.org/EventScheduled',
+  completed: 'https://schema.org/EventCompleted',
+  postponed: 'https://schema.org/EventPostponed',
+  cancelled: 'https://schema.org/EventCancelled',
+}[data.status];
+const eventAttendanceMode = data.delivery?.attendanceMode
+  ? {
+      offline: 'https://schema.org/OfflineEventAttendanceMode',
+      online: 'https://schema.org/OnlineEventAttendanceMode',
+      mixed: 'https://schema.org/MixedEventAttendanceMode',
+    }[data.delivery.attendanceMode]
+  : undefined;
+const eventLocation = data.venue
+  ? {
+      '@type': 'Place',
+      name: data.venue.name,
+      ...(data.venue.address || data.venue.city || data.venue.province
+        ? {
+            address: {
+              '@type': 'PostalAddress',
+              ...(data.venue.address ? { streetAddress: data.venue.address } : {}),
+              ...(data.venue.city ? { addressLocality: data.venue.city } : {}),
+              ...(data.venue.province ? { addressRegion: data.venue.province } : {}),
+              addressCountry: data.venue.countryCode,
+            },
+          }
+        : {}),
+    }
+  : data.delivery?.mode === 'online' && data.sites?.main?.registrationUrl
+    ? { '@type': 'VirtualLocation', url: data.sites.main.registrationUrl }
+    : undefined;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: title,
+  description,
+  startDate: data.startDate,
+  endDate: data.endDate,
+  eventStatus,
+  ...(eventAttendanceMode ? { eventAttendanceMode } : {}),
+  ...(eventLocation ? { location: eventLocation } : {}),
+  url: Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined,
+  ...(data.sites?.main?.registrationUrl
+    ? {
+        offers: {
+          '@type': 'Offer',
+          url: data.sites.main.registrationUrl,
+          availability: data.registration?.status === 'open'
+            ? 'https://schema.org/InStock'
+            : 'https://schema.org/SoldOut',
+        },
+      }
+    : {}),
+};
+const safeStructuredData = JSON.stringify(structuredData).replace(/</g, '\\u003c');
+---
+<SiteLayout title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={safeStructuredData} />
+  </Fragment>
+  <section class="schedule-detail py-12 sm:py-16">
+    <Container>
+      <Breadcrumb items={[
+        { label: 'Beranda', href: '/' },
+        { label: 'Jadwal Training', href: '/jadwal/' },
+        { label: monthLabel, href: `/jadwal/${month}/` },
+        { label: title },
+      ]} />
+
+      <article class="schedule-detail__article mt-8">
+        <header class="schedule-detail__header max-w-3xl">
+          <div class="schedule-detail__eyebrow flex flex-wrap items-center gap-3">
+            <span class="schedule-detail__status inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700">{getScheduleStatusLabel(data.status)}</span>
+            <span class="schedule-detail__batch text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Angkatan {data.batchNo}</span>
+          </div>
+          <p class="schedule-detail__training mt-5 text-xs font-bold uppercase tracking-[0.14em] text-amber-700">
+            <a class="schedule-detail__training-link hover:text-amber-800" href={`/pelatihan/${training.data.slug}/`}>{training.data.title}</a>
+          </p>
+          <h1 class="schedule-detail__title mt-3 text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">{title}</h1>
+          <p class="schedule-detail__description mt-5 text-base leading-8 text-slate-600">{description}</p>
+        </header>
+
+        <div class="schedule-detail__layout mt-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
+          <div class="schedule-detail__main space-y-8">
+            <section class="schedule-detail__section rounded-2xl border border-slate-200 bg-white p-6 sm:p-8" aria-labelledby="schedule-detail-date-title">
+              <h2 id="schedule-detail-date-title" class="schedule-detail__section-title text-xl font-bold text-slate-950">Waktu pelaksanaan</h2>
+              <p class="schedule-detail__date mt-4 text-lg font-semibold text-slate-800">{data.dateLabel}</p>
+              <dl class="schedule-detail__date-meta mt-5 grid gap-4 sm:grid-cols-2">
+                <div class="schedule-detail__date-item">
+                  <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Mulai</dt>
+                  <dd class="mt-1 text-sm text-slate-800"><time datetime={data.startDate}>{formatScheduleDate(data.startDate, data.timezone)}</time></dd>
+                </div>
+                <div class="schedule-detail__date-item">
+                  <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Selesai</dt>
+                  <dd class="mt-1 text-sm text-slate-800"><time datetime={data.endDate}>{formatScheduleDate(data.endDate, data.timezone)}</time></dd>
+                </div>
+              </dl>
+            </section>
+
+            {(data.venue || data.delivery) && (
+              <section class="schedule-detail__section rounded-2xl border border-slate-200 bg-white p-6 sm:p-8" aria-labelledby="schedule-detail-location-title">
+                <h2 id="schedule-detail-location-title" class="schedule-detail__section-title text-xl font-bold text-slate-950">Metode dan lokasi</h2>
+                <dl class="schedule-detail__facts mt-5 grid gap-5 sm:grid-cols-2">
+                  {data.delivery?.mode && (
+                    <div class="schedule-detail__fact">
+                      <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Metode</dt>
+                      <dd class="mt-1 text-sm text-slate-800">{deliveryLabels[data.delivery.mode]}</dd>
+                    </div>
+                  )}
+                  {data.delivery?.attendanceMode && (
+                    <div class="schedule-detail__fact">
+                      <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Kehadiran</dt>
+                      <dd class="mt-1 text-sm text-slate-800">{attendanceLabels[data.delivery.attendanceMode]}</dd>
+                    </div>
+                  )}
+                  {data.venue?.name && (
+                    <div class="schedule-detail__fact sm:col-span-2">
+                      <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Tempat</dt>
+                      <dd class="mt-1 text-sm font-semibold text-slate-800">{data.venue.name}</dd>
+                      {(data.venue.address || data.venue.city || data.venue.province) && (
+                        <dd class="mt-1 text-sm leading-6 text-slate-600">{[data.venue.address, data.venue.city, data.venue.province].filter(Boolean).join(', ')}</dd>
+                      )}
+                    </div>
+                  )}
+                </dl>
+              </section>
+            )}
+
+            <section class="schedule-detail__section rounded-2xl border border-slate-200 bg-white p-6 sm:p-8" aria-labelledby="schedule-detail-program-title">
+              <h2 id="schedule-detail-program-title" class="schedule-detail__section-title text-xl font-bold text-slate-950">Tentang program</h2>
+              <p class="mt-3 text-sm leading-7 text-slate-600">{training.data.description}</p>
+              <a class="schedule-detail__program-link mt-5 inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-amber-700" href={`/pelatihan/${training.data.slug}/`}>
+                Informasi program training <span aria-hidden="true">→</span>
+              </a>
+            </section>
+          </div>
+
+          <aside class="schedule-detail__aside">
+            <div class="schedule-detail__registration rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:sticky lg:top-24">
+              <p class="text-xs font-bold uppercase tracking-[0.14em] text-amber-700">INFORMASI PENDAFTARAN</p>
+              <h2 class="mt-2 text-xl font-bold text-slate-950">Angkatan {data.batchNo}</h2>
+              {data.registration ? (
+                <>
+                  <p class="mt-4 text-sm font-semibold text-slate-800">{getRegistrationStatusLabel(data.registration.status)}</p>
+                  {data.registration.deadline && (
+                    <p class="mt-2 text-sm leading-6 text-slate-600">Batas pendaftaran: {formatScheduleDate(data.registration.deadline, data.timezone)}</p>
+                  )}
+                  {data.registration.capacity && (
+                    <p class="mt-2 text-sm leading-6 text-slate-600">Kapasitas: {data.registration.capacity} peserta</p>
+                  )}
+                </>
+              ) : (
+                <p class="mt-4 text-sm leading-6 text-slate-600">Informasi pendaftaran belum tersedia. Hubungi penyelenggara untuk memperoleh keterangan lebih lanjut.</p>
+              )}
+              {data.registration?.status === 'open' && data.sites?.main?.registrationUrl && (
+                <a class="schedule-detail__registration-link mt-6 inline-flex w-full items-center justify-center rounded-xl bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-amber-700" href={data.sites.main.registrationUrl} target="_blank" rel="noopener noreferrer">
+                  {data.sites.main.ctaLabel ?? 'Daftar sekarang'}
+                </a>
+              )}
+              <a class="schedule-detail__all-link mt-4 inline-flex w-full items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:border-amber-400 hover:text-amber-700" href="/jadwal/">
+                Lihat semua jadwal
+              </a>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </Container>
+  </section>
+</SiteLayout>
