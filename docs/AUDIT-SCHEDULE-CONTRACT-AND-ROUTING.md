@@ -1,78 +1,79 @@
 # Audit Kontrak Schedule dan Routing — Pusattraining
 
-**Branch audit awal:** `fix/schedule-contract-audit`  
-**Branch tindak lanjut:** `fix/schedule-archive-audit`  
+**Branch audit schema:** `fix/schedule-contract-audit`  
+**Branch implementasi dan audit lanjutan:** `fix/schedule-archive-audit`  
 **Acuan:** `docs/FRONTMATTER-SCHEDULE-CONTRACT.md` dan `docs/CONTENT-DRIVEN-PAGE-ARCHITECTURE.md`  
-**Status:** schema dan routing portal sudah diimplementasikan; audit build terbaru dan fixture validasi masih diperlukan.
+**Status:** schema dan route portal sudah tersedia. Build terbaru dan fixture validasi masih harus dijalankan.
 
 ## 1. Hasil pemeriksaan schema
 
-Schema aktif berada di `src/content.config.ts`. Pemeriksaan dilakukan terhadap nama field, tipe, enum, field wajib/opsional, dan aturan validasi dalam kontrak.
+Schema aktif berada di `src/content.config.ts`. Nama field dan enum schedule mengikuti kontrak frontmatter yang dikunci.
 
 | Area kontrak | Hasil |
 |---|---|
 | Collection `schedules` | Sesuai |
-| Identitas universal `id` dan `ulid` | Ada, sesuai arsitektur content-driven |
+| Identitas universal `id` dan `ulid` | Ada |
 | Identitas schedule `scheduleId` | Ada; tidak menggantikan `id` atau `ulid` |
 | `publisherId`, `trainingId`, `batchNo` | Ada |
 | `slug`, `title`, `description` | Ada |
 | `startDate`, `endDate`, `dateLabel`, `timezone` | Ada |
 | `pubDate`, `updatedDate`, `draft` | Ada dan wajib |
-| Lifecycle `status` | Enum sesuai kontrak |
-| `registration.status` | Enum sesuai kontrak |
-| `registration.deadline`, `capacity` | Opsional dan tipe sesuai |
+| Lifecycle `status` | Enum sesuai |
+| `registration.status` | Enum sesuai |
 | `delivery.mode`, `delivery.attendanceMode` | Nama dan enum sesuai |
-| Object `venue` | Nama dan properti sesuai |
-| Object `completion` | Properti peserta dan galeri sesuai |
-| Object `sites` | Override copy, CTA, URL sesuai |
+| Object `venue`, `completion`, dan `sites` | Struktur sesuai kontrak |
 | Relasi schedule ke master training | Divalidasi melalui `trainingId` |
 
-### Perbaikan pada audit ini
+Validasi tanggal memeriksa tanggal kalender ISO, datetime dengan offset/`Z`, rentang jam dan offset, timezone IANA, `endDate >= startDate`, serta `updatedDate >= pubDate`. Tidak ada nama field atau enum kontrak yang diganti.
 
-Implementasi sebelumnya memeriksa format tanggal dan `Date.parse()`, tetapi belum cukup ketat untuk menolak tanggal kalender yang tidak valid, misalnya tanggal 31 Februari. Validasi tersebut diperketat agar:
+## 2. Validasi relasi dan URL
 
-- Tanggal kalender ISO benar-benar valid.
-- Datetime wajib menyertakan `Z` atau offset.
-- Jam, menit, detik, dan offset berada dalam rentang yang valid.
-- `timezone` harus dikenali sebagai zona waktu IANA.
-- Aturan `endDate >= startDate` dan `updatedDate >= pubDate` tetap dipertahankan.
+Validator lintas collection memeriksa:
 
-Tidak ada nama field atau enum kontrak yang diganti.
+- Keunikan `id`, `ulid`, `trainingId`, dan `scheduleId`.
+- Relasi `trainingId` ke master training.
+- Path sumber `schedules/<tahun-startDate>/<training-slug>/<schedule-slug>.md`.
+- Keunikan URL schedule portal untuk record yang aktif di `sites.main.enabled`, menggunakan kombinasi bulan lokal, slug training, dan slug schedule.
 
-## 2. Catatan yang belum boleh dianggap selesai
+Bulan URL diturunkan dari `startDate` menggunakan `timezone`, bukan dari `pubDate` atau `updatedDate`. Label tanggal yang dibaca pengguna berasal dari `dateLabel`; data terstruktur Event memakai `startDate` dan `endDate`.
 
-1. Daftar nilai `publisherId` yang sah belum tersedia sebagai registry terpusat. Schema sementara menerima string non-kosong; validasi allowlist baru boleh diterapkan setelah daftar ID publisher disepakati.
-2. Struktur folder kanonis `schedules/<YYYY>/<training-slug>/<schedule-slug>.md` kini diperiksa oleh validator lintas collection. Pemeriksaan ini akan aktif ketika record schedule ditambahkan.
-3. Belum ada fixture schedule untuk menguji semua lifecycle status dan variasi field opsional.
-4. Route arsip bulanan `/jadwal/<YYYY-MM>/` dan detail `/jadwal/<YYYY-MM>/<training-slug>/<schedule-slug>/` sudah tersedia. Indeks jadwal dan kartu batch pada halaman training juga sudah terhubung.
-5. Belum ada data schedule faktual. Jangan membuat data dummy untuk sekadar mengisi halaman.
-6. `registrationUrl` divalidasi sebagai URL absolut. URL pendaftaran harus berasal dari sumber yang benar, bukan ditebak.
+## 3. Routing yang sudah diimplementasikan
 
-## 3. Audit routing dan hasil build
+- `/jadwal/` menampilkan jadwal yang dipublikasikan dan arsip bulan; jika belum ada data, tampil empty state.
+- `/jadwal/<YYYY-MM>/` dibangkitkan untuk bulan yang mempunyai schedule aktif di portal.
+- `/jadwal/<YYYY-MM>/<training-slug>/<schedule-slug>/` dibangkitkan untuk schedule aktif yang memiliki master training valid.
+- Halaman master training menampilkan batch terkait melalui `trainingId` dan komponen `ScheduleCard`.
 
-Route yang ditemukan saat audit:
+Detail schedule memuat breadcrumb, informasi pelaksanaan, status, pendaftaran, dokumentasi completion bila tersedia, dan Event JSON-LD. Tombol pendaftaran hanya ditampilkan jika URL tersedia dan status pendaftaran secara eksplisit `open`. Tidak ada data schedule faktual atau dummy yang ditambahkan.
 
-- `/jadwal/` tersedia sebagai halaman indeks, tetapi masih menampilkan empty state statis.
-- Belum ditemukan route arsip bulan `/jadwal/<YYYY-MM>/`.
-- Belum ditemukan route detail portal `/jadwal/<YYYY-MM>/<training-slug>/<schedule-slug>/`.
-- Route kategori dan master training sudah tersedia di bawah `/pelatihan/`.
+## 4. Hal yang masih pending
 
-Build yang dijalankan pemilik repository menghasilkan 29 halaman dan membuat `sitemap-index.xml`. Ini mengonfirmasi build Astro selesai pada environment tersebut, tetapi tidak membuktikan route schedule sudah tersedia karena belum ada route arsip/detail schedule.
+1. Registry allowlist `publisherId` lintas situs belum tersedia. Schema sementara menerima string non-kosong; allowlist baru diterapkan setelah daftar ID disepakati.
+2. Belum ada fixture non-publik untuk lima lifecycle status dan variasi field opsional.
+3. Collection `schedules` masih kosong; route bulanan dan detail baru akan terbit setelah data faktual ditambahkan.
+4. Build terbaru belum diverifikasi. Commit implementasi schedule tidak memiliki status check atau workflow run yang dapat dipakai sebagai bukti build.
 
-## 4. Langkah implementasi berikutnya
+## 5. Verifikasi yang harus dilakukan
 
-1. Tetapkan registry `publisherId` yang disepakati lintas situs.
-2. Tambahkan fixture untuk membuktikan validasi struktur folder schedule dan relasi berjalan sesuai kontrak.
-3. Siapkan fixture validasi untuk lima lifecycle status dan variasi field opsional; fixture dapat berada di test/fixture, bukan menjadi data publik.
-4. Implementasikan arsip bulanan berdasarkan `startDate` dan `timezone`.
-5. Implementasikan detail schedule dengan pola URL portal yang sudah didokumentasikan.
-6. Hubungkan kartu batch pada halaman training ke detail schedule.
-7. Uji sitemap, canonical, breadcrumb, Event JSON-LD, dan internal link setelah data faktual tersedia.
+Setelah checkout branch `fix/schedule-archive-audit`, jalankan:
 
-## 5. Prinsip yang dipertahankan
+```bash
+npm run check
+npm run build
+```
 
-- Kontrak `FRONTMATTER-SCHEDULE-CONTRACT.md` adalah sumber kebenaran.
-- Tidak membuat alias field seperti `mode` root atau `venue` string.
-- Tidak mengubah `startDate`/`endDate` setelah pelatihan selesai hanya karena status berubah.
-- Halaman minimal tetap boleh dirender sebelum seluruh block siap.
-- Tidak mengubah `main` secara langsung; pekerjaan audit berada di branch terpisah.
+Setelah data schedule faktual ditambahkan, periksa:
+
+- URL bulan sesuai `startDate` dan `timezone`.
+- Link dari kartu batch pada halaman training menuju detail yang benar.
+- Canonical, sitemap, breadcrumb, dan Event JSON-LD.
+- Status pendaftaran dan CTA tidak mengasumsikan pendaftaran terbuka.
+- Field opsional `venue`, `registration`, dan `completion` tidak menyebabkan halaman gagal dirender.
+
+## 6. Keputusan yang dipertahankan
+
+- `FRONTMATTER-SCHEDULE-CONTRACT.md` tetap menjadi sumber kebenaran.
+- Tidak menambahkan alias seperti `mode` root atau `venue` string.
+- Tidak mengubah tanggal event setelah pelatihan selesai hanya karena status berubah.
+- Halaman minimal boleh dirender sebelum seluruh block siap.
+- Semua tindak lanjut dilakukan pada branch terpisah; `main` tidak diubah dalam pekerjaan audit ini.
