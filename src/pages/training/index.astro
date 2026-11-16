@@ -1,21 +1,36 @@
 ---
+import { getCollection } from 'astro:content';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import Container from '../../components/shared/Container.astro';
 import Breadcrumb from '../../components/shared/Breadcrumb.astro';
-import EmptyState from '../../components/shared/EmptyState.astro';
+import TrainingCategoryOverview from '../../blocks/home/TrainingCategoryOverview.astro';
+
+const categories = (await getCollection('pages', ({ data }) =>
+  data.pageType === 'category' && !data.draft
+)).sort((a, b) => a.data.title.localeCompare(b.data.title, 'id'));
+
+const categoryItems = categories.map(({ data }) => ({
+  title: data.title,
+  description: data.description,
+  href: `/pelatihan/${data.slug}/`,
+}));
 ---
-<SiteLayout title="Katalog Training" description="Jelajahi katalog program training berdasarkan bidang dan kebutuhan kompetensi.">
+<SiteLayout title="Katalog Pelatihan" description="Jelajahi kategori dan program pelatihan K3 berdasarkan bidang kompetensi." canonicalURL="https://pusattrainingk3.com/pelatihan/">
   <section class="training-index py-12 sm:py-16">
     <Container>
-      <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Training' }]} />
+      <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Pelatihan' }]} />
       <header class="training-index__header mt-8 max-w-3xl">
         <p class="training-index__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">KATALOG PROGRAM</p>
-        <h1 class="training-index__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Jelajahi program training</h1>
-        <p class="training-index__description mt-4 text-base leading-8 text-slate-600">Temukan program pengembangan kompetensi dari berbagai bidang. Informasi program akan ditampilkan setelah data katalog disiapkan.</p>
+        <h1 class="training-index__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Jelajahi kategori pelatihan</h1>
+        <p class="training-index__description mt-4 text-base leading-8 text-slate-600">Temukan rumpun kompetensi dan telusuri program pelatihan berdasarkan bidang yang dibutuhkan.</p>
       </header>
-      <div class="training-index__content mt-10">
-        <EmptyState title="Katalog sedang disiapkan" description="Daftar program training akan ditambahkan secara bertahap. Silakan kunjungi halaman jadwal untuk melihat pembaruan berikutnya." actionLabel="Lihat jadwal" actionHref="/jadwal/" />
-      </div>
+      {categoryItems.length > 0 ? (
+        <div class="training-index__content mt-10">
+          <TrainingCategoryOverview categories={categoryItems} />
+        </div>
+      ) : (
+        <p class="training-index__empty mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-slate-600">Kategori pelatihan sedang disiapkan.</p>
+      )}
     </Container>
   </section>
 </SiteLayout>
