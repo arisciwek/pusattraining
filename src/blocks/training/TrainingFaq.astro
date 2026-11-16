@@ -1,0 +1,28 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  items: { question: string; answer: string }[];
+}
+const { id = 'faq-pelatihan', eyebrow = 'PERTANYAAN UMUM', title, description, items } = Astro.props;
+---
+<section id={id} class="training-faq mt-14 scroll-mt-24">
+  <header class="training-faq__header max-w-3xl">
+    <p class="training-faq__eyebrow text-xs font-bold uppercase tracking-[0.16em] text-amber-700">{eyebrow}</p>
+    <h2 class="training-faq__title mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">{title}</h2>
+    {description && <p class="training-faq__description mt-3 text-base leading-8 text-slate-600">{description}</p>}
+  </header>
+  <div class="training-faq__list mt-6 divide-y divide-slate-200 border-y border-slate-200">
+    {items.map((item, index) => (
+      <details class="training-faq__item group py-5" name={id}>
+        <summary class="training-faq__question flex cursor-pointer list-none items-center justify-between gap-5 font-semibold text-slate-900 marker:hidden">
+          <span class="training-faq__question-text">{item.question}</span>
+          <span class="training-faq__toggle flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-100 text-lg transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+        </summary>
+        <p class="training-faq__answer max-w-3xl pt-3 pr-12 text-sm leading-7 text-slate-600">{item.answer}</p>
+      </details>
+    ))}
+  </div>
+</section>
