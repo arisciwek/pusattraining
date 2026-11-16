@@ -110,6 +110,21 @@ const trainings = defineCollection({
     ...editorialDates,
     image: z.string().optional(),
     related: z.array(z.number().int().positive()).default([]),
+    blocks: z.array(z.discriminatedUnion('type', [
+      z.object({
+        type: z.literal('training-detail-intro'),
+        eyebrow: z.string().optional(),
+        noticeTitle: z.string().min(1),
+        noticeDescription: z.string().min(1),
+      }),
+      z.object({
+        type: z.literal('training-schedule-list'),
+        eyebrow: z.string().optional(),
+        title: z.string().min(1),
+        allLabel: z.string().optional(),
+        emptyMessage: z.string().min(1),
+      }),
+    ])).default([]),
   }),
 });
 
