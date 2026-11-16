@@ -311,6 +311,16 @@ for (const row of await readExisting(outputPath)) {
   if (row.old_url) seen.set(row.old_url, row);
 }
 
+let checkpointQueue = Promise.resolve();
+
+function queueCheckpoint() {
+  const ordered = sourceRows
+    .filter((row) => seen.has(row.old_url))
+    .map((row) => seen.get(row.old_url));
+  checkpointQueue = checkpointQueue.then(() => saveCheckpoint(outputPath, ordered));
+  return checkpointQueue;
+}
+
 const pending = sourceRows
   .filter((row) => row.old_url && (
     !seen.has(row.old_url) ||
@@ -344,11 +354,8 @@ async function worker() {
     );
 
     if (completed % 10 === 0 || completed === pending.length) {
-      const ordered = sourceRows
-        .filter((row) => seen.has(row.old_url))
-        .map((row) => seen.get(row.old_url));
-      await saveCheckpoint(outputPath, ordered);
-      console.log(`Checkpoint saved: ${ordered.length}/${sourceRows.length}.`);
+      await queueCheckpoint();
+      console.log(`Checkpoint saved: ${seen.size}/${sourceRows.length}.`);
     }
 
     if (options.delayMs) await new Promise((resolveDelay) => setTimeout(resolveDelay, options.delayMs));
@@ -357,10 +364,10 @@ async function worker() {
 
 await Promise.all(Array.from({ length: options.concurrency }, () => worker()));
 
+await queueCheckpoint();
 const finalRows = sourceRows
   .filter((row) => seen.has(row.old_url))
   .map((row) => seen.get(row.old_url));
-await saveCheckpoint(outputPath, finalRows);
 
 const statusCounts = finalRows.reduce((counts, row) => {
   const key = row.crawl_error ? 'ERROR' : String(row.http_status || 'NO_STATUS');
