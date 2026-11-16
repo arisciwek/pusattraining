@@ -27,7 +27,9 @@ hero:
       label: Instruktur praktisi
     - icon: '<circle cx="9" cy="7" r="3"></circle><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6M21 21v-3a6 6 0 0 0-4-5"></path>'
       label: Publik & in-house
-  priceNote: Biaya dan cakupan program dikonfirmasi kepada tim sebelum pendaftaran.
+  price: Rp6.000.000
+  duration: 120 JP
+  priceNote: Per peserta. Program blended terdiri dari 11 hari pembelajaran online dan 1 hari evaluasi tatap muka.
 related: []
 blocks:
   - type: training-detail-intro
@@ -44,7 +46,7 @@ blocks:
       - label: Regulasi/acuan
         value: "PER.02/MEN/1992 tentang Tata Cara Penunjukan, Kewajiban dan Wewenang Ahli K3."
       - label: Informasi angkatan
-        value: "Durasi, metode, biaya, persyaratan akhir, dan keluaran dikonfirmasi kepada penyelenggara."
+        value: "120 JP; blended: 11 hari pembelajaran online dan 1 hari evaluasi tatap muka."
 
   - type: training-cta
     eyebrow: KONSULTASI PROGRAM
