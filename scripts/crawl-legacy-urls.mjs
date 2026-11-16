@@ -147,11 +147,11 @@ function attributes(tag) {
 
 function firstTagText(html, tagName) {
   const match = html.match(new RegExp(`<${tagName}\\b[^>]*>([\\s\\S]*?)<\\/${tagName}\\s*>`, 'i'));
-  return match ? decodeEntities(match[1].replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim()) : '';
+  return match ? decodeEntities(match[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()) : '';
 }
 
 function findMeta(html, key, value) {
-  const tags = html.match(/<meta\\b[^>]*>/gi) ?? [];
+  const tags = html.match(/<meta\b[^>]*>/gi) ?? [];
   for (const tag of tags) {
     const attrs = attributes(tag);
     if ((attrs[key] ?? '').toLowerCase() === value.toLowerCase()) return attrs.content ?? '';
@@ -160,10 +160,10 @@ function findMeta(html, key, value) {
 }
 
 function findCanonical(html, baseUrl) {
-  const tags = html.match(/<link\\b[^>]*>/gi) ?? [];
+  const tags = html.match(/<link\b[^>]*>/gi) ?? [];
   for (const tag of tags) {
     const attrs = attributes(tag);
-    const rel = (attrs.rel ?? '').toLowerCase().split(/\\s+/);
+    const rel = (attrs.rel ?? '').toLowerCase().split(/\s+/);
     if (rel.includes('canonical') && attrs.href) {
       try { return new URL(attrs.href, baseUrl).href; } catch { return attrs.href; }
     }
@@ -178,14 +178,14 @@ function extractPage(html, finalUrl) {
   const robots = findMeta(html, 'name', 'robots') || findMeta(html, 'name', 'googlebot');
   const canonical = findCanonical(html, finalUrl);
 
-  const body = (html.match(/<body\\b[^>]*>([\\s\\S]*?)<\\/body\\s*>/i)?.[1] ?? html)
-    .replace(/<!--[\\s\\S]*?-->/g, ' ')
-    .replace(/<(script|style|noscript|svg|nav|footer|header|form)\\b[^>]*>[\\s\\S]*?<\\/\\1\\s*>/gi, ' ')
+  const body = (html.match(/<body\b[^>]*>([\\s\\S]*?)<\\/body\\s*>/i)?.[1] ?? html)
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<(script|style|noscript|svg|nav|footer|header|form)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/&(?:nbsp|amp|quot|lt|gt);|&#(?:\\d+|x[\\da-f]+);/gi, ' ')
-    .replace(/\\s+/g, ' ')
+    .replace(/\s+/g, ' ')
     .trim();
-  const words = body ? body.split(/\\s+/).length : 0;
+  const words = body ? body.split(/\s+/).length : 0;
 
   return {
     title,
@@ -246,7 +246,7 @@ async function crawl(url, timeout, userAgent) {
 
       const contentType = response.headers.get('content-type') ?? '';
       let page = {};
-      if (/text\\/html|application\\/xhtml\\+xml/i.test(contentType)) {
+      if (/text\/html|application\/xhtml\+xml/i.test(contentType)) {
         const html = (await response.text()).slice(0, 5_000_000);
         page = extractPage(html, currentUrl);
       } else {
