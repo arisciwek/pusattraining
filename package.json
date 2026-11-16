@@ -12,7 +12,9 @@
     "build": "npm run check && astro build",
     "preview": "astro preview",
     "schedules:discover": "node scripts/discover-schedules.mjs",
-    "test:schedules:discover": "node --test scripts/discover-schedules.test.mjs"
+    "test:schedules:discover": "node --test scripts/discover-schedules.test.mjs",
+    "schedules:generate": "node scripts/generate-schedule-frontmatter.mjs",
+    "test:schedules:generate": "node --test scripts/generate-schedule-frontmatter.test.mjs"
   },
   "overrides": {
     "astro": "7.4.0",
