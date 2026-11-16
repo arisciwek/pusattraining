@@ -1,6 +1,26 @@
 ---
 import SectionHeading from '../../components/shared/SectionHeading.astro';
-interface Props { title?: string; description?: string; categories: { title: string; description: string; href: string; count?: string }[]; }
-const { title = 'Temukan bidang pelatihan', description, categories } = Astro.props;
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  categories: { title: string; description: string; href: string; count?: string }[];
+}
+const { eyebrow, title = 'Temukan bidang pelatihan', description, categories } = Astro.props;
 ---
-<section class="training-category-overview"><SectionHeading title={title} description={description} /><div class="training-category-overview__grid">{categories.map((category, index) => <a class="training-category-overview__item" href={category.href}><span class="training-category-overview__index">{String(index + 1).padStart(2, '0')}</span><div class="training-category-overview__body"><h3 class="training-category-overview__title">{category.title}</h3><p class="training-category-overview__description">{category.description}</p></div>{category.count && <span class="training-category-overview__count">{category.count}</span>}<span class="training-category-overview__arrow" aria-hidden="true">↗</span></a>)}</div></section>
+<section class="training-category-overview">
+  <SectionHeading eyebrow={eyebrow} title={title} description={description} />
+  <div class="training-category-overview__grid">
+    {categories.map((category, index) => (
+      <a class="training-category-overview__item" href={category.href}>
+        <span class="training-category-overview__index">{String(index + 1).padStart(2, '0')}</span>
+        <div class="training-category-overview__body">
+          <h3 class="training-category-overview__title">{category.title}</h3>
+          <p class="training-category-overview__description">{category.description}</p>
+        </div>
+        {category.count && <span class="training-category-overview__count">{category.count}</span>}
+        <span class="training-category-overview__arrow" aria-hidden="true">↗</span>
+      </a>
+    ))}
+  </div>
+</section>

@@ -9,3 +9,53 @@ export interface StatsPageBlock { type: 'stats'; items: { value: string; label: 
 export interface CtaPageBlock { type: 'cta'; eyebrow?: string; title: string; description?: string; actionLabel: string; actionHref: string; secondaryLabel?: string; secondaryHref?: string; }
 export interface TestimonialPageBlock { type: 'testimonials'; title?: string; items: { quote: string; name: string; role?: string; organization?: string }[]; }
 export type PageBlock = TrainingPageBlock | BenefitsPageBlock | ReasonsPageBlock | FaqPageBlock | GalleryPageBlock | TimelinePageBlock | StatsPageBlock | CtaPageBlock | TestimonialPageBlock;
+
+export interface HomeHeroBlock {
+  type: 'home-hero';
+  eyebrow?: string;
+  title: string;
+  description: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  proofPoints?: string[];
+}
+export interface HomeIntroductionBlock {
+  type: 'home-introduction';
+  eyebrow?: string;
+  title: string;
+  description: string;
+  actionLabel: string;
+  actionHref: string;
+}
+export interface HomeCategoryOverviewBlock {
+  type: 'home-category-overview';
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  limit?: number;
+}
+export interface HomeBenefitsBlock {
+  type: 'home-benefits';
+  title: string;
+  description?: string;
+  items: { title: string; description: string; icon?: string }[];
+}
+export interface HomeUpcomingScheduleBlock {
+  type: 'home-upcoming-schedule';
+  title?: string;
+  description?: string;
+  allHref?: string;
+}
+export interface HomeContactBlock {
+  type: 'home-contact';
+  eyebrow?: string;
+  title: string;
+  description: string;
+  primaryLabel: string;
+  primaryHref: string;
+  secondaryLabel: string;
+  secondaryHref: string;
+}
+export type HomePageBlock = HomeHeroBlock | HomeIntroductionBlock | HomeCategoryOverviewBlock | HomeBenefitsBlock | HomeUpcomingScheduleBlock | HomeContactBlock;

@@ -1,0 +1,71 @@
+---
+import HomeHero from './HomeHero.astro';
+import HomeIntroduction from './HomeIntroduction.astro';
+import TrainingCategoryOverview from './TrainingCategoryOverview.astro';
+import WhyChooseUs from './WhyChooseUs.astro';
+import UpcomingSchedule from './UpcomingSchedule.astro';
+import HomeContactCTA from './HomeContactCTA.astro';
+import Container from '../../components/shared/Container.astro';
+import type { HomePageBlock } from '../types';
+
+interface CategoryItem {
+  title: string;
+  description: string;
+  href: string;
+}
+
+interface Props {
+  blocks: HomePageBlock[];
+  categories: CategoryItem[];
+}
+
+const { blocks, categories } = Astro.props;
+---
+<div class="home-page-blocks">
+  {blocks.map((block) => {
+    if (block.type === 'home-hero') {
+      return <HomeHero {...block} />;
+    }
+    if (block.type === 'home-introduction') {
+      return <HomeIntroduction {...block} />;
+    }
+    if (block.type === 'home-category-overview') {
+      const items = categories.slice(0, block.limit ?? 4);
+      return (
+        <section class="home-categories py-12 sm:py-16">
+          <Container>
+            {items.length > 0 ? (
+              <TrainingCategoryOverview
+                eyebrow={block.eyebrow}
+                title={block.title}
+                description={block.description}
+                categories={items}
+              />
+            ) : (
+              <div class="home-categories__empty rounded-2xl border border-dashed border-slate-300 bg-white p-6 text-sm text-slate-600">
+                <h2 class="home-categories__empty-title font-bold text-slate-900">{block.title}</h2>
+                <p class="home-categories__empty-description mt-2">Kategori pelatihan sedang disiapkan.</p>
+              </div>
+            )}
+          </Container>
+        </section>
+      );
+    }
+    if (block.type === 'home-benefits') {
+      return (
+        <section class="home-benefits bg-slate-50 py-12 sm:py-16">
+          <Container>
+            <WhyChooseUs title={block.title} description={block.description} items={block.items} />
+          </Container>
+        </section>
+      );
+    }
+    if (block.type === 'home-upcoming-schedule') {
+      return <UpcomingSchedule items={[]} title={block.title} description={block.description} allHref={block.allHref} />;
+    }
+    if (block.type === 'home-contact') {
+      return <HomeContactCTA {...block} />;
+    }
+    return null;
+  })}
+</div>
