@@ -24,12 +24,15 @@ function slugifySectionTitle(value: string): string {
   return value
     .toLowerCase()
     .normalize('NFKD')
-    .replace(/[\\u0300-\\u036f]/g, '')
+    .replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
 }
 
-const navigationItems = blocks.flatMap((block) => {
+const introBlocks = blocks.filter((block) => block.type === 'training-detail-intro');
+const contentBlocks = blocks.filter((block) => block.type !== 'training-detail-intro');
+
+const navigationItems = contentBlocks.flatMap((block) => {
   if (block.type === 'training-summary') return [{ id: block.id ?? 'ringkasan-program', label: 'Ringkasan' }];
   if (block.type === 'training-schedule-list') return [{ id: block.id ?? 'jadwal-pelatihan', label: 'Jadwal' }];
   if (block.type === 'training-content-section') return [{ id: block.id ?? `bagian-${slugifySectionTitle(block.title)}`, label: block.title }];
@@ -38,6 +41,18 @@ const navigationItems = blocks.flatMap((block) => {
 });
 ---
 <div class="training-detail-renderer">
+  {introBlocks.map((block) => {
+    if (block.type !== 'training-detail-intro') return null;
+    return (
+      <TrainingDetailIntro
+        title={title}
+        description={description}
+        eyebrow={block.eyebrow}
+        noticeTitle={block.noticeTitle}
+        noticeDescription={block.noticeDescription}
+      />
+    );
+  })}
   {navigationItems.length > 1 && (
     <nav class="training-detail-renderer__navigation sticky top-20 z-20 -mx-4 mb-8 overflow-x-auto border-y border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-xl sm:border sm:px-5" aria-label="Navigasi bagian program">
       <ul class="training-detail-renderer__navigation-list flex min-w-max items-center gap-2">
@@ -49,19 +64,7 @@ const navigationItems = blocks.flatMap((block) => {
       </ul>
     </nav>
   )}
-  {blocks.map((block) => {
-    if (block.type === 'training-detail-intro') {
-      return (
-        <TrainingDetailIntro
-          title={title}
-          description={description}
-          eyebrow={block.eyebrow}
-          noticeTitle={block.noticeTitle}
-          noticeDescription={block.noticeDescription}
-        />
-      );
-    }
-
+  {contentBlocks.map((block) => {
     if (block.type === 'training-summary') {
       return <TrainingSummary id={block.id ?? 'ringkasan-program'} eyebrow={block.eyebrow} items={block.items} />;
     }
