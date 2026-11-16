@@ -1,7 +1,7 @@
 ---
 type: schedule
 id: 910008
-ulid: 01KCV30000000000000000008
+ulid: 01KCV300000000000000000080
 scheduleId: damkar_01M7C6X13JGTEFFEKNSF7MD0N4
 publisherId: damkar
 trainingId: damkar-kelas-a
