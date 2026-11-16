@@ -77,7 +77,7 @@ Urutan block pada frontmatter menentukan urutan konten editorial. Jadwal dirende
 2. Branch kategori tetap memakai `BlockRenderer` tanpa perubahan perilaku.
 3. Branch training membaca `entry.data.blocks` dan menyiapkan schedule berdasarkan `trainingId`.
 4. Renderer detail training menerima title, description, blocks, slug, dan schedule terkait melalui props.
-5. Registry memilih komponen berdasarkan `type`.
+5. `TrainingDetailRenderer` memilih komponen berdasarkan `type`; renderer detail sengaja dipisah dari registry block halaman umum karena block jadwal membutuhkan data relasional dari route.
 6. Komponen intro merender H1, deskripsi, dan notice sesuai frontmatter.
 7. Komponen schedule merender schedule card atau empty state sesuai block.
 8. `SiteLayout` tetap menerima title dan description dari metadata master training.
@@ -91,7 +91,7 @@ Komponen tidak boleh memanggil `getCollection` sendiri. Route tidak boleh menyim
 - Pertahankan `id`, `ulid`, `trainingId`, `slug`, `categoryIds`, `related`, dan metadata yang sudah ada.
 - Jangan mengubah kontrak schedule yang telah dikunci di `docs/FRONTMATTER-SCHEDULE-CONTRACT.md`.
 - Jangan membuat fakta program baru. Copy yang belum didukung sumber harus tetap transparan sebagai informasi yang menunggu verifikasi, atau tidak ditampilkan.
-- Schema Zod, tipe TypeScript, registry, renderer, frontmatter semua training, dan dokumentasi harus diperbarui bersama.
+- Schema Zod, tipe TypeScript, renderer, frontmatter semua training, dan dokumentasi harus diperbarui bersama. Registry `PageBlock` untuk halaman umum tidak perlu diubah karena block detail training memiliki kontrak dan data dinamis tersendiri.
 - Gunakan Tailwind CSS yang sudah ada dan pertahankan semantic class pada setiap elemen.
 - Pertahankan canonical, Open Graph, Twitter Card, breadcrumb, serta pola URL.
 - Pertahankan filter `isMainSiteSchedule`, relasi `trainingId`, pengurutan tanggal, dan komponen `ScheduleCard`.
