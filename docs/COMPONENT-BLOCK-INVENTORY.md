@@ -80,6 +80,8 @@ Status: implemented component and block foundation on `feat/training-design-syst
 The renderer is intentionally data-driven. A page can provide an ordered `PageBlock[]` configuration and `BlockRenderer.astro` resolves each known type through `registry.ts`. Add a new block type only after its component and props contract exist.
 
 Current block types:
+- `training-catalog` — katalog kategori pada `/pelatihan/`, dikonfigurasi melalui frontmatter.
+- `training-category` — halaman landing kategori dengan daftar master program terkait.
 - `program-grid`
 - `benefits`
 - `reasons`
@@ -103,6 +105,7 @@ Current block types:
 
 ### Training blocks
 
+- TrainingCategoryPage — frontmatter-driven category landing and related program grid.
 - TrainingOverview
 - RelatedTraining
 - Training syllabus and requirements components
