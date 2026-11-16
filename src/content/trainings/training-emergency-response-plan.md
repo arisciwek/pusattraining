@@ -5,7 +5,22 @@ ulid: 01KCV100000000000000000007
 trainingId: training-emergency-response-plan
 slug: training-emergency-response-plan
 title: "Emergency Response Plan"
-description: "Pelatihan Emergency Response Plan membantu organisasi menyusun, menerapkan, menguji, dan mengevaluasi rencana tanggap darurat berdasarkan potensi keadaan darurat, sumber daya, struktur komando, dan kebutuhan operasional."
+description: "Pelatihan Emergency Response Plan (ERP) membahas kesiapsiagaan organisasi, koordinasi tim, prosedur tanggap darurat, komunikasi, evakuasi, dan latihan berdasarkan potensi risiko serta kebutuhan operasional perusahaan."
+image: "https://pusattrainingk3.com/wp-content/uploads/2025/09/erp-1-scaled.jpg"
+hero:
+  title: "Pelatihan Emergency Response Plan (ERP)"
+  imageAlt: "Dokumentasi peserta pelatihan Emergency Response Plan BETRACOM bersama PT Hitachi Channel Solutions Indonesia, Jakarta, September 2025"
+  eyebrow: "IN-HOUSE TRAINING · KESIAPSIAGAAN DARURAT"
+  description: "Pelatihan Emergency Response Plan adalah program pembekalan untuk membantu organisasi menyiapkan koordinasi, prosedur, komunikasi, dan tindakan tanggap darurat sesuai potensi bahaya serta kebutuhan operasional perusahaan. Materi dan latihan disesuaikan dengan ruang lingkup yang disepakati bersama penyelenggara."
+  ctaLabel: "Konsultasikan program ERP"
+  ctaHref: "#jadwal-pelatihan"
+  trustItems:
+    - icon: '<path d="M12 2 20 6v6c0 5-8 10-8 10S4 17 4 12V6Z"></path><path d="m8 12 3 3 5-6"></path>'
+      label: "Kesiapsiagaan keadaan darurat"
+    - icon: '<circle cx="12" cy="7" r="4"></circle><path d="M4 21v-2a8 8 0 0 1 16 0v2Z"></path>'
+      label: "Koordinasi tim dan tanggung jawab"
+    - icon: '<rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path>'
+      label: "Diskusi, studi kasus, dan latihan"
 categoryIds: [2004]
 pubDate: '2026-11-16T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
