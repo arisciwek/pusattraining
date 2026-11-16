@@ -13,14 +13,16 @@ const editorialDates = {
 };
 
 function isValidScheduleDate(value: string): boolean {
-  const match = /^(\\d{4})-(\\d{2})-(\\d{2})(?:T(\\d{2}):(\\d{2})(?::(\\d{2})(?:\\.(\\d{1,3}))?)?(Z|[+-]\\d{2}:\\d{2}))?$/.exec(value);
+  const match = /^(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2})(?::(\d{2})(?:\\.(\d{1,3}))?)?(Z|[+-]\d{2}:\d{2}))?$/.exec(value);
   if (!match) return false;
 
   const [, yearText, monthText, dayText, hourText, minuteText, secondText, , offset] = match;
   const year = Number(yearText);
   const month = Number(monthText);
   const day = Number(dayText);
-  const calendarDate = new Date(Date.UTC(year, month - 1, day));
+  const calendarDate = new Date(0);
+  calendarDate.setUTCHours(0, 0, 0, 0);
+  calendarDate.setUTCFullYear(year, month - 1, day);
 
   if (
     calendarDate.getUTCFullYear() !== year ||
