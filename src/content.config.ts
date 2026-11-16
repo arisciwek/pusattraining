@@ -12,6 +12,55 @@ const editorialDates = {
   draft: z.boolean().default(false),
 };
 
+function isValidScheduleDate(value: string): boolean {
+  const match = /^(\\d{4})-(\\d{2})-(\\d{2})(?:T(\\d{2}):(\\d{2})(?::(\\d{2})(?:\\.(\\d{1,3}))?)?(Z|[+-]\\d{2}:\\d{2}))?$/.exec(value);
+  if (!match) return false;
+
+  const [, yearText, monthText, dayText, hourText, minuteText, secondText, , offset] = match;
+  const year = Number(yearText);
+  const month = Number(monthText);
+  const day = Number(dayText);
+  const calendarDate = new Date(Date.UTC(year, month - 1, day));
+
+  if (
+    calendarDate.getUTCFullYear() !== year ||
+    calendarDate.getUTCMonth() !== month - 1 ||
+    calendarDate.getUTCDate() !== day
+  ) return false;
+
+  if (hourText === undefined) return true;
+
+  const hour = Number(hourText);
+  const minute = Number(minuteText);
+  const second = secondText === undefined ? 0 : Number(secondText);
+
+  if (hour > 23 || minute > 59 || second > 59) return false;
+
+  if (offset && offset !== 'Z') {
+    const offsetHours = Number(offset.slice(1, 3));
+    const offsetMinutes = Number(offset.slice(4, 6));
+    if (offsetHours > 14 || offsetMinutes > 59 || (offsetHours === 14 && offsetMinutes !== 0)) {
+      return false;
+    }
+  }
+
+  return !Number.isNaN(Date.parse(value));
+}
+
+function isIanaTimezone(value: string): boolean {
+  try {
+    new Intl.DateTimeFormat('en-US', { timeZone: value });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+const scheduleDate = z.string().refine(
+  isValidScheduleDate,
+  'Tanggal schedule harus berupa tanggal kalender ISO 8601 atau datetime dengan zona waktu',
+);
+
 const pages = defineCollection({
   loader: glob({ base: './src/content/pages', pattern: '**/*.md' }),
   schema: z.object({
@@ -44,11 +93,6 @@ const trainings = defineCollection({
   }),
 });
 
-const scheduleDate = z.string().refine((value) => {
-  const isoDateOrDateTime = /^\d{4}-\d{2}-\d{2}(?:T\d{2}:\d{2}(?::\d{2}(?:\.\d{1,3})?)?(?:Z|[+-]\d{2}:\d{2}))?$/;
-  return isoDateOrDateTime.test(value) && !Number.isNaN(Date.parse(value));
-}, 'Tanggal schedule harus berupa tanggal ISO 8601 atau datetime dengan zona waktu');
-
 const schedules = defineCollection({
   loader: glob({ base: './src/content/schedules', pattern: '**/*.md' }),
   schema: z.object({
@@ -64,7 +108,10 @@ const schedules = defineCollection({
     startDate: scheduleDate,
     endDate: scheduleDate,
     dateLabel: z.string().min(1),
-    timezone: z.string().default('Asia/Jakarta'),
+    timezone: z.string().default('Asia/Jakarta').refine(
+      isIanaTimezone,
+      'timezone harus berupa nama zona waktu IANA yang valid',
+    ),
     ...editorialDates,
     status: z.enum(['scheduled', 'ongoing', 'completed', 'postponed', 'cancelled']),
     registration: z.object({
