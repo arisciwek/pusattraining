@@ -47,6 +47,10 @@ function encodeUlid(timestamp, digest) {
   return result;
 }
 
+function hasIdentityCollision(identity, usedIds) {
+  return usedIds.has(identity.id) || usedIds.has(identity.scheduleId);
+}
+
 function stableIdentity(candidate) {
   const digest = createHash('sha256').update(candidate.sourceUrl).digest('hex').toUpperCase();
   const scheduleId = `${candidate.publisherId}_${digest.slice(0, 20)}`;
@@ -158,7 +162,7 @@ async function main() {
   const usedIds = new Set(existingIds);
   for (const item of prepared) {
     const rendered = renderSchedule(item.candidate, item.training, item.batchNo, now);
-    if (usedIds.has(rendered.id) || usedIds.has(rendered.scheduleId)) {
+    if (hasIdentityCollision(rendered, usedIds)) {
       review.push({ sourceUrl: item.candidate.sourceUrl, title: item.candidate.title, reason: 'identity-collision' });
       continue;
     }
@@ -187,4 +191,4 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   main().catch((error) => { console.error(error.message); process.exitCode = 1; });
 }
 
-export { assignBatchNumbers, matchTraining, parseTrainingFiles, renderSchedule, stableIdentity };
+export { assignBatchNumbers, hasIdentityCollision, matchTraining, parseTrainingFiles, renderSchedule, stableIdentity };
