@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import ScheduleCard from '../../components/schedule/ScheduleCard.astro';
+import { getScheduleHref, getScheduleMonth } from '../../lib/schedule-utils';
 
 type ScheduleEntry = CollectionEntry<'schedules'>;
 
@@ -24,118 +24,364 @@ const {
   trainingSlug,
 } = Astro.props;
 
-type TimelineStatus = 'available' | 'ongoing' | 'past';
+const MONTHS = [
+  { short: 'Jan', long: 'Januari' }, { short: 'Feb', long: 'Februari' },
+  { short: 'Mar', long: 'Maret' }, { short: 'Apr', long: 'April' },
+  { short: 'Mei', long: 'Mei' }, { short: 'Jun', long: 'Juni' },
+  { short: 'Jul', long: 'Juli' }, { short: 'Agu', long: 'Agustus' },
+  { short: 'Sep', long: 'September' }, { short: 'Okt', long: 'Oktober' },
+  { short: 'Nov', long: 'November' }, { short: 'Des', long: 'Desember' },
+] as const;
+
+type TimelineStatus = 'available' | 'soon' | 'ongoing' | 'past' | 'postponed' | 'cancelled';
 
 function dateKeyInTimezone(value: string, timezone: string): string {
-  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+  if (/^\\d{4}-\\d{2}-\\d{2}$/.test(value)) return value;
   const parts = new Intl.DateTimeFormat('en-CA', {
-    timeZone: timezone,
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
+    timeZone: timezone, year: 'numeric', month: '2-digit', day: '2-digit',
   }).formatToParts(new Date(value));
   const part = (type: string) => parts.find((item) => item.type === type)?.value ?? '';
   return `${part('year')}-${part('month')}-${part('day')}`;
 }
 
-function getTimelineStatus(schedule: ScheduleEntry): TimelineStatus | undefined {
-  if (schedule.data.status === 'cancelled' || schedule.data.status === 'postponed') return undefined;
-  const timezone = schedule.data.timezone || 'Asia/Jakarta';
+function getTimelineStatus(schedule: ScheduleEntry): { key: TimelineStatus; label: string; active: boolean } {
+  const { data } = schedule;
+  if (data.status === 'cancelled') return { key: 'cancelled', label: 'Dibatalkan', active: false };
+  if (data.status === 'postponed') return { key: 'postponed', label: 'Ditunda', active: false };
+
+  const timezone = data.timezone || 'Asia/Jakarta';
   const today = dateKeyInTimezone(new Date().toISOString(), timezone);
-  const start = dateKeyInTimezone(schedule.data.startDate, timezone);
-  const end = dateKeyInTimezone(schedule.data.endDate, timezone);
-  if (end < today) return 'past';
-  if (start <= today) return 'ongoing';
-  return 'available';
+  const start = dateKeyInTimezone(data.startDate, timezone);
+  const end = dateKeyInTimezone(data.endDate, timezone);
+
+  if (end < today) return { key: 'past', label: 'Sudah terlewati', active: false };
+  if (start <= today) return { key: 'ongoing', label: 'Sedang berlangsung', active: true };
+
+  const days = Math.round((Date.parse(`${start}T00:00:00Z`) - Date.parse(`${today}T00:00:00Z`)) / 86400000);
+  if (days <= 3) return { key: 'soon', label: days === 1 ? 'Mulai besok' : `Mulai ${days} hari lagi`, active: true };
+  const registration = data.registration?.status;
+  if (registration === 'closed') return { key: 'available', label: 'Pendaftaran ditutup', active: true };
+  if (registration === 'not-open') return { key: 'available', label: 'Belum dibuka', active: true };
+  return { key: 'available', label: 'Pendaftaran dibuka', active: true };
 }
 
-// Tampilkan batch terbaru lebih dahulu, termasuk arsip jadwal yang sudah lewat.
+function dateParts(value: string, timezone: string) {
+  const date = new Date(/^\\d{4}-\\d{2}-\\d{2}$/.test(value) ? `${value}T12:00:00Z` : value);
+  const options = { timeZone: timezone };
+  return {
+    day: new Intl.DateTimeFormat('id-ID', { ...options, day: '2-digit' }).format(date),
+    month: new Intl.DateTimeFormat('id-ID', { ...options, month: 'short' }).format(date).replace('.', '').toUpperCase(),
+  };
+}
+
+function calendarHref(schedule: ScheduleEntry): string {
+  const { data } = schedule;
+  const start = dateKeyInTimezone(data.startDate, data.timezone).replaceAll('-', '');
+  const endDate = new Date(`${dateKeyInTimezone(data.endDate, data.timezone)}T00:00:00Z`);
+  endDate.setUTCDate(endDate.getUTCDate() + 1);
+  const end = endDate.toISOString().slice(0, 10).replaceAll('-', '');
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: data.title,
+    dates: `${start}/${end}`,
+    details: data.description,
+    ctz: data.timezone,
+  });
+  return `https://calendar.google.com/calendar/render?${params}`;
+}
+
 const sortedSchedules = [...schedules].sort((a, b) => {
   const dateDifference = Date.parse(b.data.startDate) - Date.parse(a.data.startDate);
-  return dateDifference || a.data.batchNo.localeCompare(b.data.batchNo, 'id', { numeric: true });
+  return dateDifference || b.data.batchNo.localeCompare(a.data.batchNo, 'id', { numeric: true });
 });
+
+const groups = [...new Set(sortedSchedules.map((schedule) => getScheduleMonth(schedule.data)))]
+  .sort((a, b) => b.localeCompare(a))
+  .map((key) => {
+    const [year, month] = key.split('-').map(Number);
+    return {
+      key,
+      title: `Jadwal ${title.replace(/^Jadwal\\s*/i, '')} ${MONTHS[month - 1].long} ${year}`,
+      schedules: sortedSchedules.filter((schedule) => getScheduleMonth(schedule.data) === key),
+    };
+  });
+
+const currentYear = Number(new Intl.DateTimeFormat('en', { timeZone: 'Asia/Jakarta', year: 'numeric' }).format(new Date()));
+const monthItems = MONTHS.map((month, index) => {
+  const key = `${currentYear}-${String(index + 1).padStart(2, '0')}`;
+  const count = sortedSchedules.filter((schedule) => getScheduleMonth(schedule.data) === key).length;
+  return { ...month, key, count };
+});
+const activeCount = sortedSchedules.filter((schedule) => getTimelineStatus(schedule).active).length;
 ---
-<section id={id} class="training-schedule-list mt-12" aria-labelledby={`${id}-title`}>
-  <div class="training-schedule-list__heading flex flex-wrap items-end justify-between gap-4">
-    <div>
-      <p class="training-schedule-list__eyebrow text-xs font-bold uppercase tracking-[0.14em] text-amber-700">{eyebrow}</p>
-      <h2 id={`${id}-title`} class="training-schedule-list__title mt-2 text-2xl font-bold tracking-tight text-slate-950">{title}</h2>
-    </div>
-    {sortedSchedules.length > 0 && (
-      <a class="training-schedule-list__all text-sm font-semibold text-slate-600 hover:text-amber-700" href="/jadwal/">
-        {allLabel} <span aria-hidden="true">→</span>
-      </a>
-    )}
-  </div>
+<section id={id} class="training-schedule-list" aria-labelledby={`${id}-title`}>
+  <header class="training-schedule-list__header">
+    <p class="training-schedule-list__eyebrow">{eyebrow}</p>
+    <h2 id={`${id}-title`} class="training-schedule-list__title">{title}</h2>
+    <p class="training-schedule-list__lede">
+      {sortedSchedules.length} jadwal pelatihan terdata. {activeCount} di antaranya masih aktif atau akan datang.
+    </p>
+  </header>
 
   {sortedSchedules.length > 0 ? (
     <>
-      <ul class="training-schedule-list__legend mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-slate-600" aria-label="Keterangan status jadwal">
-        <li class="training-schedule-list__legend-item"><span class="training-schedule-list__legend-dot training-schedule-list__legend-dot--available" aria-hidden="true"></span>Tersedia</li>
-        <li class="training-schedule-list__legend-item"><span class="training-schedule-list__legend-dot training-schedule-list__legend-dot--ongoing" aria-hidden="true"></span>Sedang berlangsung</li>
-        <li class="training-schedule-list__legend-item"><span class="training-schedule-list__legend-dot training-schedule-list__legend-dot--past" aria-hidden="true"></span>Sudah terlewati</li>
-      </ul>
-      <div class="training-schedule-list__grid mt-5 grid gap-5 lg:grid-cols-2">
-        {sortedSchedules.map((schedule) => <ScheduleCard schedule={schedule} trainingSlug={trainingSlug} timelineStatus={getTimelineStatus(schedule)} />)}
+      <div class="training-schedule-list__tools" data-schedule-tools>
+        <ol class="training-schedule-list__months" aria-label="Pilih bulan">
+          {monthItems.map((month) => (
+            <li class="training-schedule-list__month-item">
+              <button
+                class:list={['training-schedule-list__month', month.count === 0 && 'is-off']}
+                type="button"
+                data-month-filter={month.key}
+                data-month-base={`${month.long} ${currentYear}`}
+                aria-label={`${month.long} ${currentYear}, ${month.count} jadwal`}
+                aria-pressed="false"
+                disabled={month.count === 0}
+              >
+                <span>{month.short}</span><b data-month-count>{month.count}</b>
+              </button>
+            </li>
+          ))}
+        </ol>
+        <div class="training-schedule-list__toolbar">
+          <p class="training-schedule-list__summary" data-schedule-summary aria-live="polite">
+            Menampilkan {activeCount} jadwal aktif dan mendatang.
+          </p>
+          <label class="training-schedule-list__switch">
+            <input type="checkbox" data-show-past />
+            <span>Tampilkan jadwal yang sudah lewat</span>
+          </label>
+        </div>
       </div>
+
+      <div class="training-schedule-list__groups" data-schedule-list>
+        {groups.map((group) => (
+          <section class="training-schedule-list__group" data-month-group={group.key} aria-labelledby={`${id}-${group.key}`}>
+            <h3 class="training-schedule-list__group-title" id={`${id}-${group.key}`}>{group.title}</h3>
+            <ol class="training-schedule-list__grid">
+              {group.schedules.map((schedule) => {
+                const data = schedule.data;
+                const status = getTimelineStatus(schedule);
+                const timezone = data.timezone || 'Asia/Jakarta';
+                const date = dateParts(data.startDate, timezone);
+                const href = getScheduleHref(schedule, trainingSlug);
+                const registrationHref = data.sites?.main?.registrationUrl;
+                const registrationOpen = data.registration?.status === 'open' && Boolean(registrationHref);
+                const mode = data.delivery?.mode === 'blended' ? 'Blended' : data.delivery?.mode === 'online' ? 'Online' : data.delivery?.mode === 'offline' ? 'Tatap muka' : '';
+                const venue = data.venue?.city ?? data.venue?.name;
+                return (
+                  <li
+                    class:list={['training-schedule-list__card', `is-${status.key}`, !status.active && 'is-past']}
+                    data-schedule-item
+                    data-start-date={data.startDate}
+                    data-end-date={data.endDate}
+                    data-timezone={timezone}
+                    data-editorial-status={data.status}
+                    data-month={getScheduleMonth(data)}
+                    data-status={status.key}
+                    data-active={String(status.active)}
+                  >
+                    <div class="training-schedule-list__date" aria-hidden="true">
+                      <b>{date.day}</b><span>{date.month}</span>
+                    </div>
+                    <div class="training-schedule-list__body">
+                      <div class="training-schedule-list__card-head">
+                        <h4 class="training-schedule-list__batch">
+                          <a href={href}>{data.title}</a>
+                        </h4>
+                        <span class:list={['training-schedule-list__status', `status--${status.key}`]} data-status-label>{status.label}</span>
+                      </div>
+                      <p class="training-schedule-list__date-label">
+                        <a href={href} aria-label={`Lihat detail ${data.title}, ${data.dateLabel}`}>
+                          <time datetime={data.startDate}>{data.dateLabel}</time>
+                        </a>
+                      </p>
+                      <ul class="training-schedule-list__facts">
+                        <li>Angkatan {data.batchNo}</li>
+                        {mode && <li>{mode}</li>}
+                        {venue && <li>{venue}</li>}
+                      </ul>
+                      <div class="training-schedule-list__actions">
+                        {registrationOpen ? (
+                          <a class="training-schedule-list__register" href={registrationHref} target="_blank" rel="noopener noreferrer">Daftar Sekarang</a>
+                        ) : (
+                          <a class="training-schedule-list__register" href={href}>Detail Jadwal</a>
+                        )}
+                        <a class="training-schedule-list__calendar" href={calendarHref(schedule)} target="_blank" rel="noopener noreferrer" aria-label={`Simpan ${data.title} ke Google Calendar`} title="Simpan ke Google Calendar">
+                          <span aria-hidden="true">▦</span>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          </section>
+        ))}
+      </div>
+      <p class="training-schedule-list__empty" data-schedule-empty hidden>{emptyMessage}</p>
     </>
   ) : (
-    <p class="training-schedule-list__empty mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm leading-7 text-slate-600">{emptyMessage}</p>
+    <p class="training-schedule-list__empty">{emptyMessage}</p>
   )}
+  <p class="training-schedule-list__note">Jadwal dapat berubah. Konfirmasikan kembali informasi pelaksanaan sebelum melakukan pendaftaran.</p>
 </section>
 
 <script>
-  const getDateInTimezone = (value: string, timezone: string): string => {
-    // Nilai YYYY-MM-DD adalah tanggal kalender, bukan instant UTC.
-    if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
-
+  const roots = document.querySelectorAll<HTMLElement>('.training-schedule-list');
+  const dateKey = (value: string, timezone: string): string => {
+    if (/^\\d{4}-\\d{2}-\\d{2}$/.test(value)) return value;
     const parts = new Intl.DateTimeFormat('en-CA', {
-      timeZone: timezone,
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
+      timeZone: timezone, year: 'numeric', month: '2-digit', day: '2-digit',
     }).formatToParts(new Date(value));
-
     const part = (type: string) => parts.find((item) => item.type === type)?.value ?? '';
     return `${part('year')}-${part('month')}-${part('day')}`;
   };
 
-  document.querySelectorAll<HTMLElement>('.training-schedule-list .schedule-card').forEach((card) => {
-    const start = card.dataset.startDate;
-    const end = card.dataset.endDate;
-    const timezone = card.dataset.timezone || 'Asia/Jakarta';
-    const editorialStatus = card.dataset.editorialStatus;
+  roots.forEach((root) => {
+    const list = root.querySelector<HTMLElement>('[data-schedule-list]');
+    const toggle = root.querySelector<HTMLInputElement>('[data-show-past]');
+    const summary = root.querySelector<HTMLElement>('[data-schedule-summary]');
+    const empty = root.querySelector<HTMLElement>('[data-schedule-empty]');
+    const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-schedule-item]'));
+    const groups = Array.from(root.querySelectorAll<HTMLElement>('[data-month-group]'));
+    const monthButtons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-month-filter]'));
+    if (!list || !toggle) return;
 
-    if (!start || !end || editorialStatus === 'cancelled' || editorialStatus === 'postponed') return;
+    let selectedMonth = '';
+    const refreshStatuses = () => {
+      cards.forEach((card) => {
+        const start = card.dataset.startDate;
+        const end = card.dataset.endDate;
+        const timezone = card.dataset.timezone || 'Asia/Jakarta';
+        const editorial = card.dataset.editorialStatus;
+        if (!start || !end || editorial === 'cancelled' || editorial === 'postponed') return;
+        const today = dateKey(new Date().toISOString(), timezone);
+        const localStart = dateKey(start, timezone);
+        const localEnd = dateKey(end, timezone);
+        const status = localEnd < today ? 'past' : localStart <= today ? 'ongoing' : 'available';
+        const label = status === 'past' ? 'Sudah terlewati' : status === 'ongoing' ? 'Sedang berlangsung' : 'Pendaftaran dibuka';
+        card.dataset.status = status;
+        card.dataset.active = String(status !== 'past');
+        card.classList.remove('is-available', 'is-soon', 'is-ongoing', 'is-past');
+        card.classList.add(`is-${status}`);
+        const badge = card.querySelector<HTMLElement>('[data-status-label]');
+        if (badge) {
+          badge.className = `training-schedule-list__status status--${status}`;
+          badge.textContent = label;
+        }
+      });
+    };
 
-    const today = getDateInTimezone(new Date().toISOString(), timezone);
-    const localStart = getDateInTimezone(start, timezone);
-    const localEnd = getDateInTimezone(end, timezone);
+    const render = () => {
+      const showPast = toggle.checked;
+      let visible = 0;
+      cards.forEach((card) => {
+        const active = card.dataset.active === 'true';
+        const monthMatch = !selectedMonth || card.dataset.month === selectedMonth;
+        const show = (showPast || active) && monthMatch;
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+      groups.forEach((group) => {
+        group.hidden = !group.querySelector('[data-schedule-item]:not([hidden])');
+      });
+      monthButtons.forEach((button) => {
+        const key = button.dataset.monthFilter || '';
+        const count = cards.filter((card) => card.dataset.month === key && (showPast || card.dataset.active === 'true')).length;
+        const countNode = button.querySelector<HTMLElement>('[data-month-count]');
+        if (countNode) countNode.textContent = String(count);
+        button.classList.toggle('is-off', count === 0);
+        button.disabled = count === 0;
+        button.setAttribute('aria-label', `${button.dataset.monthBase || ''}, ${count} jadwal`);
+        button.setAttribute('aria-pressed', String(selectedMonth === key));
+      });
+      list.hidden = visible === 0;
+      if (empty) empty.hidden = visible > 0;
+      if (summary) summary.textContent = visible
+        ? `Menampilkan ${visible} jadwal${showPast ? '' : ' aktif dan mendatang'}.`
+        : 'Tidak ada jadwal untuk bulan yang dipilih.';
+    };
 
-    const status = localEnd < today
-      ? { key: 'past', label: 'Sudah terlewati' }
-      : localStart <= today
-        ? { key: 'ongoing', label: 'Sedang berlangsung' }
-        : { key: 'available', label: 'Tersedia' };
+    toggle.addEventListener('change', render);
+    monthButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const key = button.dataset.monthFilter || '';
+        selectedMonth = selectedMonth === key ? '' : key;
+        render();
+      });
+    });
+    refreshStatuses();
+    render();
 
-    const badge = card.querySelector<HTMLElement>('.schedule-card__status');
-    if (!badge) return;
-
-    badge.classList.remove(
-      'schedule-card__status--scheduled',
-      'schedule-card__status--ongoing',
-      'schedule-card__status--completed',
-    );
-    badge.classList.add(`schedule-card__status--${status.key}`);
-    badge.textContent = status.label;
-    card.dataset.timelineStatus = status.key;
+    const strip = root.querySelector<HTMLElement>('.training-schedule-list__months');
+    const firstActive = monthButtons.find((button) => !button.disabled);
+    if (strip && firstActive && strip.scrollWidth > strip.clientWidth) {
+      strip.scrollLeft = firstActive.offsetLeft - strip.offsetLeft - 12;
+    }
   });
 </script>
 
 <style>
-  .training-schedule-list__legend-item { display: inline-flex; align-items: center; gap: 0.5rem; }
-  .training-schedule-list__legend-dot { width: 0.625rem; height: 0.625rem; border-radius: 9999px; }
-  .training-schedule-list__legend-dot--available { background: #16a34a; }
-  .training-schedule-list__legend-dot--ongoing { background: #eab308; }
-  .training-schedule-list__legend-dot--past { background: #dc2626; }
+  .training-schedule-list { margin-top: 3rem; }
+  .training-schedule-list__header { margin: 0 auto 2rem; max-width: 46rem; text-align: center; }
+  .training-schedule-list__eyebrow { margin: 0 0 .5rem; color: #b91c1c; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+  .training-schedule-list__title { margin: 0; color: #171717; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -.035em; }
+  .training-schedule-list__lede { margin: .5rem 0 0; color: #525252; font-size: .95rem; line-height: 1.6; }
+  .training-schedule-list__tools { margin-bottom: 1.5rem; padding: 1.25rem; border: 1px solid #fecaca; border-radius: 1rem; }
+  .training-schedule-list__months { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: .35rem; margin: 0; padding: 0; list-style: none; }
+  .training-schedule-list__month { display: flex; width: 100%; min-height: 3.45rem; flex-direction: column; align-items: center; justify-content: center; gap: .05rem; border: 1px solid #fecaca; border-radius: .65rem; background: #fff; color: #171717; cursor: pointer; transition: background .2s, border-color .2s, color .2s; }
+  .training-schedule-list__month span { font-size: .72rem; }
+  .training-schedule-list__month b { font-size: .85rem; }
+  .training-schedule-list__month[aria-pressed="true"] { border-color: #dc2626; background: #dc2626; color: #fff; }
+  .training-schedule-list__month.is-off { border-color: #fee2e2; background: #fef2f2; color: #e7bcbc; cursor: default; }
+  .training-schedule-list__toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 1.5rem; margin-top: .8rem; padding-top: .8rem; border-top: 1px solid #fecaca; }
+  .training-schedule-list__summary { margin: 0; font-size: .85rem; font-weight: 700; color: #262626; }
+  .training-schedule-list__switch { display: inline-flex; align-items: center; gap: .65rem; color: #404040; font-size: .82rem; cursor: pointer; }
+  .training-schedule-list__switch input { appearance: none; position: relative; width: 2.25rem; height: 1.25rem; margin: 0; border-radius: 999px; background: #d4d4d4; cursor: pointer; transition: background .2s; }
+  .training-schedule-list__switch input::after { position: absolute; top: 3px; left: 3px; width: 1rem; height: 1rem; border-radius: 50%; background: white; content: ''; transition: transform .2s; }
+  .training-schedule-list__switch input:checked { background: #dc2626; }
+  .training-schedule-list__switch input:checked::after { transform: translateX(1rem); }
+  .training-schedule-list__group { margin-bottom: 2rem; }
+  .training-schedule-list__group-title { display: flex; align-items: center; gap: 1rem; margin: 0 0 .8rem; color: #171717; font-size: 1rem; font-weight: 700; }
+  .training-schedule-list__group-title::after { height: 1px; flex: 1; background: #fecaca; content: ''; }
+  .training-schedule-list__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; margin: 0; padding: 0; list-style: none; }
+  .training-schedule-list__card { display: grid; min-width: 0; grid-template-columns: 4.25rem minmax(0, 1fr); overflow: hidden; border: 1px solid #fecaca; border-radius: 1rem; background: #fff; transition: border-color .2s, box-shadow .2s; }
+  .training-schedule-list__card:hover { border-color: #dc2626; box-shadow: 0 8px 24px rgb(23 23 23 / 7%); }
+  .training-schedule-list__card[hidden], .training-schedule-list__group[hidden], .training-schedule-list__groups[hidden], .training-schedule-list__empty[hidden] { display: none; }
+  .training-schedule-list__date { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #dc2626; color: #fff; line-height: 1; }
+  .training-schedule-list__date b { font-size: 1.8rem; font-weight: 800; }
+  .training-schedule-list__date span { margin-top: .35rem; font-size: .68rem; letter-spacing: .08em; }
+  .training-schedule-list__body { min-width: 0; padding: 1rem; }
+  .training-schedule-list__card-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: .4rem .75rem; }
+  .training-schedule-list__batch { margin: 0; font-size: .9rem; font-weight: 750; }
+  .training-schedule-list__batch a { color: inherit; text-decoration: none; }
+  .training-schedule-list__batch a:hover { color: #b91c1c; text-decoration: underline; text-underline-offset: 3px; }
+  .training-schedule-list__status { display: inline-flex; align-items: center; gap: .3rem; border: 1px solid; border-radius: 999px; padding: .25rem .55rem; font-size: .64rem; font-weight: 700; white-space: nowrap; }
+  .training-schedule-list__status::before { width: .35rem; height: .35rem; border-radius: 50%; background: currentColor; content: ''; }
+  .status--available { border-color: #16a34a; background: #dcfce7; color: #166534; }
+  .status--soon { border-color: #16a34a; color: #166534; }
+  .status--ongoing { border-color: #eab308; background: #fef3c7; color: #92400e; }
+  .status--past { border-color: #dc2626; background: #fee2e2; color: #991b1b; }
+  .status--postponed { border-color: #d97706; background: #fffbeb; color: #92400e; }
+  .status--cancelled { border-color: #dc2626; background: #fef2f2; color: #991b1b; }
+  .training-schedule-list__date-label { margin: .45rem 0; color: #262626; font-size: .9rem; font-weight: 750; }
+  .training-schedule-list__date-label a { color: inherit; text-decoration: underline; text-decoration-color: #a3a3a3; text-underline-offset: 3px; }
+  .training-schedule-list__facts { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin: 0; padding-left: 1rem; color: #525252; font-size: .75rem; }
+  .training-schedule-list__actions { display: flex; align-items: center; gap: .5rem; margin-top: .85rem; }
+  .training-schedule-list__register { display: inline-flex; min-height: 2.25rem; align-items: center; justify-content: center; border-radius: .5rem; padding: .45rem .85rem; background: #dc2626; color: #fff; font-size: .75rem; font-weight: 750; text-decoration: none; }
+  .training-schedule-list__register:hover { background: #b91c1c; }
+  .training-schedule-list__calendar { display: inline-flex; width: 2.25rem; height: 2.25rem; align-items: center; justify-content: center; border: 1px solid #fecaca; border-radius: .5rem; color: #dc2626; font-size: 1.1rem; text-decoration: none; }
+  .training-schedule-list__note { margin: 1.25rem 0 0; color: #737373; font-size: .78rem; line-height: 1.6; }
+  .training-schedule-list__empty { padding: 1.5rem; border: 1px dashed #fca5a5; border-radius: 1rem; color: #525252; }
+  @media (max-width: 900px) { .training-schedule-list__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) {
+    .training-schedule-list__tools { padding: .85rem; }
+    .training-schedule-list__months { display: flex; overflow-x: auto; scrollbar-width: none; }
+    .training-schedule-list__months::-webkit-scrollbar { display: none; }
+    .training-schedule-list__month-item { flex: 0 0 3.75rem; }
+    .training-schedule-list__card { grid-template-columns: 3.75rem minmax(0, 1fr); }
+    .training-schedule-list__body { padding: .8rem; }
+    .training-schedule-list__facts { display: block; }
+  }
 </style>
