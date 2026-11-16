@@ -12,7 +12,7 @@ updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
 image: "https://raw.githubusercontent.com/arisciwek/damkar/main/public/images/damkar-pemadaman-tradisional.webp"
 hero:
-  title: Pelatihan Petugas Pemadam
+  title: "Pelatihan Pemadam Kebakaran Kelas D"
   imageAlt: Peserta pelatihan Pemadam Kebakaran saat praktik pemadaman api
   eyebrow: JENJANG 1 DARI 4 · PROGRAM SERTIFIKASI
   certBadge: KEMNAKER RI
@@ -56,7 +56,7 @@ blocks:
     description: Hubungi tim untuk memastikan jadwal, persyaratan peserta, cakupan praktik, dan proses sertifikasi.
     actionLabel: Konsultasi via WhatsApp
     secondaryLabel: Lihat jadwal
-    secondaryHref: "#jadwal-pelatihan"
+    secondaryHref: "#pendaftaran"
 
   - type: training-schedule-list
     id: jadwal-pelatihan
@@ -68,17 +68,27 @@ blocks:
   - type: training-content-section
     id: deskripsi-program
     eyebrow: TENTANG PROGRAM
-    title: Deskripsi dan tujuan program
+    title: Deskripsi Pelatihan Pemadam Kebakaran Kelas D
     description: "Pelatihan Damkar Kelas D merupakan program pembinaan untuk peran Petugas Pemadam. Materi menggabungkan pemahaman dasar pencegahan dan penanggulangan kebakaran dengan pengenalan sistem proteksi serta praktik penggunaan sarana pemadam. Metode program pada data sumber adalah blended training, yaitu teori dan praktik."
+
+  - type: training-content-section
+    id: tujuan-program
+    eyebrow: TUJUAN PROGRAM
+    title: Tujuan Pelatihan Pemadam Kebakaran Kelas D
+    description: "Tujuan utama dari Pelatihan Pemadam Kebakaran Kelas D (sertifikasi Kemnaker RI) adalah membekali tenaga kerja atau petugas pemula dengan pengetahuan dan keterampilan dasar dalam pencegahan serta penanggulangan kebakaran di tempat kerja."
     items:
-      - title: Memahami dasar kebakaran
-        description: "Mengenali teori dan anatomi api serta prinsip pencegahan kebakaran di tempat kerja."
-      - title: Mengenali sistem proteksi
-        description: "Memahami fungsi sistem proteksi kebakaran aktif dan pasif."
-      - title: Menjalankan prosedur darurat
-        description: "Mengenali dasar manajemen keselamatan kebakaran dan prosedur darurat kebakaran."
-      - title: Menggunakan sarana pemadam
-        description: "Mengenal praktik penggunaan APAR dan hidran sesuai fasilitas serta arahan instruktur."
+      - title: Identifikasi Bahaya
+        description: "Mengenali potensi sumber bahaya kebakaran (seperti instalasi listrik, mesin, dan bahan mudah terbakar) di area kerja."
+      - title: Pencegahan Kebakaran
+        description: "Memahami dan menerapkan prinsip-prinsip pencegahan agar tidak terjadi kondisi darurat."
+      - title: Pemadaman Awal
+        description: "Menguasai tindakan cepat dan tepat untuk memadamkan kebakaran skala kecil menggunakan Alat Pemadam Api Ringan (APAR) atau fire blanket."
+      - title: Prosedur Evakuasi & Penyelamatan
+        description: "Memahami alur evakuasi, jalur darurat, serta cara menyelamatkan diri atau rekan kerja saat terjadi kebakaran."
+      - title: Koordinasi Kesiapsiagaan
+        description: "Melatih koordinasi antarpetugas peran kebakaran, tim K3, dan unit terkait dalam situasi darurat."
+      - title: Kepatuhan Regulasi
+        description: "Memenuhi standar keselamatan kerja sesuai dengan peraturan perundang-undangan (seperti Kepmenaker No. KEP-186/MEN/1999 tentang Unit Penanggulangan Kebakaran)."
 
   - type: training-content-section
     id: sasaran-peserta
