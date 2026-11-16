@@ -1,0 +1,190 @@
+---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../../../layouts/SiteLayout.astro';
+import Container from '../../../../components/shared/Container.astro';
+import Breadcrumb from '../../../../components/shared/Breadcrumb.astro';
+import { validateContentRelations } from '../../../../lib/validate-content';
+import {
+  formatScheduleDate,
+  formatScheduleRange,
+  getScheduleDescription,
+  getScheduleMonth,
+  getScheduleStatusLabel,
+  getScheduleTitle,
+  isMainSiteSchedule,
+} from '../../../../lib/schedule-utils';
+
+export async function getStaticPaths() {
+  await validateContentRelations();
+  const [schedules, trainings] = await Promise.all([
+    getCollection('schedules', isMainSiteSchedule),
+    getCollection('trainings', ({ data }) => !data.draft),
+  ]);
+  const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
+
+  return schedules.flatMap((schedule) => {
+    const training = trainingsById.get(schedule.data.trainingId);
+    if (!training) return [];
+
+    return [{
+      params: {
+        month: getScheduleMonth(schedule.data),
+        training: training.data.slug,
+        schedule: schedule.data.slug,
+      },
+      props: { schedule, training },
+    }];
+  });
+}
+
+const { schedule, training } = Astro.props;
+const data = schedule.data;
+const siteCopy = data.sites?.main;
+const title = getScheduleTitle(schedule);
+const description = getScheduleDescription(schedule);
+const month = getScheduleMonth(data);
+const dateLabel = formatScheduleRange(data.startDate, data.endDate, data.timezone);
+const registrationUrl = siteCopy?.registrationUrl;
+const eventStatus = {
+  scheduled: 'https://schema.org/EventScheduled',
+  ongoing: 'https://schema.org/EventScheduled',
+  completed: 'https://schema.org/EventCompleted',
+  postponed: 'https://schema.org/EventPostponed',
+  cancelled: 'https://schema.org/EventCancelled',
+}[data.status];
+const attendanceMode = data.delivery?.attendanceMode === 'online'
+  ? 'https://schema.org/OnlineEventAttendanceMode'
+  : data.delivery?.attendanceMode === 'mixed'
+    ? 'https://schema.org/MixedEventAttendanceMode'
+    : data.delivery?.attendanceMode === 'offline'
+      ? 'https://schema.org/OfflineEventAttendanceMode'
+      : undefined;
+const eventJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: title,
+  description,
+  startDate: data.startDate,
+  endDate: data.endDate,
+  eventStatus,
+  ...(attendanceMode ? { eventAttendanceMode: attendanceMode } : {}),
+  ...(data.venue ? {
+    location: {
+      '@type': 'Place',
+      name: data.venue.name,
+      ...(data.venue.address || data.venue.city || data.venue.province ? {
+        address: {
+          '@type': 'PostalAddress',
+          ...(data.venue.address ? { streetAddress: data.venue.address } : {}),
+          ...(data.venue.city ? { addressLocality: data.venue.city } : {}),
+          ...(data.venue.province ? { addressRegion: data.venue.province } : {}),
+          addressCountry: data.venue.countryCode,
+        },
+      } : {}),
+    },
+  } : {}),
+  ...(registrationUrl ? { url: registrationUrl } : {}),
+};
+const safeEventJsonLd = JSON.stringify(eventJsonLd).replace(/</g, '\\u003c');
+---
+<SiteLayout title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={safeEventJsonLd} />
+  </Fragment>
+  <section class="schedule-detail py-12 sm:py-16">
+    <Container>
+      <Breadcrumb items={[
+        { label: 'Beranda', href: '/' },
+        { label: 'Jadwal Training', href: '/jadwal/' },
+        { label: month, href: `/jadwal/${month}/` },
+        { label: training.data.title, href: `/pelatihan/${training.data.slug}/` },
+        { label: title },
+      ]} />
+      <header class="schedule-detail__header mt-8 max-w-4xl">
+        <div class="schedule-detail__eyebrows flex flex-wrap items-center gap-3">
+          <span class="schedule-detail__status rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700">{getScheduleStatusLabel(data.status)}</span>
+          <span class="schedule-detail__batch text-xs font-bold uppercase tracking-[0.14em] text-amber-700">Angkatan {data.batchNo}</span>
+        </div>
+        <p class="schedule-detail__training mt-5 text-sm font-semibold text-slate-500">
+          Program: <a class="schedule-detail__training-link text-amber-700 hover:text-amber-800" href={`/pelatihan/${training.data.slug}/`}>{training.data.title}</a>
+        </p>
+        <h1 class="schedule-detail__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">{title}</h1>
+        <p class="schedule-detail__description mt-5 text-base leading-8 text-slate-600">{description}</p>
+        <p class="schedule-detail__date mt-6 flex items-start gap-3 text-base font-bold text-slate-800">
+          <span aria-hidden="true">▦</span>
+          <time datetime={data.startDate}>{dateLabel}</time>
+        </p>
+      </header>
+
+      <div class="schedule-detail__layout mt-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
+        <div class="schedule-detail__main space-y-8">
+          <section class="schedule-detail__section rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+            <h2 class="schedule-detail__section-title text-xl font-bold text-slate-950">Informasi pelaksanaan</h2>
+            <dl class="schedule-detail__facts mt-6 grid gap-5 sm:grid-cols-2">
+              <div class="schedule-detail__fact">
+                <dt class="schedule-detail__fact-label text-xs font-bold uppercase tracking-wider text-slate-500">Tanggal</dt>
+                <dd class="schedule-detail__fact-value mt-2 text-sm font-semibold leading-6 text-slate-800">{dateLabel}</dd>
+              </div>
+              <div class="schedule-detail__fact">
+                <dt class="schedule-detail__fact-label text-xs font-bold uppercase tracking-wider text-slate-500">Metode</dt>
+                <dd class="schedule-detail__fact-value mt-2 text-sm font-semibold leading-6 text-slate-800">{data.delivery?.mode === 'offline' ? 'Tatap muka' : data.delivery?.mode === 'online' ? 'Online' : data.delivery?.mode === 'blended' ? 'Blended' : 'Belum diinformasikan'}</dd>
+              </div>
+              <div class="schedule-detail__fact">
+                <dt class="schedule-detail__fact-label text-xs font-bold uppercase tracking-wider text-slate-500">Lokasi</dt>
+                <dd class="schedule-detail__fact-value mt-2 text-sm font-semibold leading-6 text-slate-800">
+                  {data.venue ? <>{data.venue.name}{data.venue.city ? <>, {data.venue.city}</> : null}{data.venue.province ? <>, {data.venue.province}</> : null}</> : data.delivery?.mode === 'online' ? 'Online' : 'Akan diinformasikan'}
+                </dd>
+              </div>
+              <div class="schedule-detail__fact">
+                <dt class="schedule-detail__fact-label text-xs font-bold uppercase tracking-wider text-slate-500">Zona waktu</dt>
+                <dd class="schedule-detail__fact-value mt-2 text-sm font-semibold leading-6 text-slate-800">{data.timezone}</dd>
+              </div>
+            </dl>
+            {data.venue?.address && <p class="schedule-detail__address mt-6 border-t border-slate-100 pt-5 text-sm leading-7 text-slate-600">{data.venue.address}</p>}
+          </section>
+
+          {data.completion && (data.completion.participants.length > 0 || data.completion.gallery.length > 0) && (
+            <section class="schedule-detail__completion rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+              <h2 class="schedule-detail__section-title text-xl font-bold text-slate-950">Dokumentasi pelaksanaan</h2>
+              {data.completion.completedDate && <p class="schedule-detail__completion-date mt-3 text-sm text-slate-600">Selesai pada {formatScheduleDate(data.completion.completedDate, data.timezone)}.</p>}
+              {data.completion.gallery.length > 0 && (
+                <div class="schedule-detail__gallery mt-6 grid gap-4 sm:grid-cols-2">
+                  {data.completion.gallery.map((image) => (
+                    <figure class="schedule-detail__figure overflow-hidden rounded-xl bg-slate-100">
+                      <img class="schedule-detail__image aspect-[4/3] w-full object-cover" src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+                      {image.caption && <figcaption class="schedule-detail__caption p-3 text-sm text-slate-600">{image.caption}</figcaption>}
+                    </figure>
+                  ))}
+                </div>
+              )}
+              {data.completion.participants.length > 0 && (
+                <div class="schedule-detail__participants mt-6">
+                  <h3 class="schedule-detail__participants-title text-base font-bold text-slate-900">Peserta yang dipublikasikan</h3>
+                  <ul class="schedule-detail__participants-list mt-3 list-inside list-disc space-y-2 text-sm text-slate-700">
+                    {data.completion.participants.map((participant) => <li>{participant.name}{participant.certificateNumber ? ` — Sertifikat ${participant.certificateNumber}` : ''}</li>)}
+                  </ul>
+                </div>
+              )}
+            </section>
+          )}
+        </div>
+
+        <aside class="schedule-detail__aside h-fit rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:sticky lg:top-24">
+          <p class="schedule-detail__aside-eyebrow text-xs font-bold uppercase tracking-[0.14em] text-amber-700">PENDAFTARAN</p>
+          <h2 class="schedule-detail__aside-title mt-2 text-xl font-bold text-slate-950">{siteCopy?.ctaLabel ? 'Ikuti jadwal ini' : 'Informasi pendaftaran'}</h2>
+          <p class="schedule-detail__aside-description mt-3 text-sm leading-6 text-slate-600">
+            {data.registration?.status === 'open' ? 'Pendaftaran untuk batch ini sedang dibuka.' : data.registration?.status === 'closed' ? 'Pendaftaran untuk batch ini telah ditutup.' : data.registration?.status === 'not-open' ? 'Pendaftaran belum dibuka.' : 'Hubungi penyelenggara untuk memastikan informasi pendaftaran.'}
+          </p>
+          {data.registration?.deadline && <p class="schedule-detail__deadline mt-4 text-sm text-slate-600">Batas pendaftaran: <strong class="font-semibold text-slate-900">{formatScheduleDate(data.registration.deadline, data.timezone)}</strong></p>}
+          {data.registration?.capacity && <p class="schedule-detail__capacity mt-2 text-sm text-slate-600">Kapasitas: <strong class="font-semibold text-slate-900">{data.registration.capacity} peserta</strong></p>}
+          {registrationUrl && data.registration?.status !== 'closed' && data.registration?.status !== 'not-open' ? (
+            <a class="schedule-detail__register mt-6 inline-flex w-full items-center justify-center rounded-xl bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-amber-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950" href={registrationUrl} target="_blank" rel="noopener noreferrer">{siteCopy?.ctaLabel ?? 'Daftar training'} <span class="ml-2" aria-hidden="true">↗</span></a>
+          ) : (
+            <p class="schedule-detail__register-note mt-6 rounded-xl border border-slate-200 bg-white p-4 text-xs leading-5 text-slate-500">Tautan pendaftaran belum tersedia. Periksa kembali informasi dari penyelenggara.</p>
+          )}
+          <a class="schedule-detail__back mt-5 inline-flex text-sm font-semibold text-slate-700 hover:text-amber-700" href={`/pelatihan/${training.data.slug}/`}>Lihat detail program <span class="ml-2" aria-hidden="true">→</span></a>
+        </aside>
+      </div>
+    </Container>
+  </section>
+</SiteLayout>
