@@ -29,10 +29,10 @@ const {
   allHref = '/jadwal/',
 } = Astro.props;
 ---
-<section class="hm-section" id="jadwal-terdekat">
-  <div class="hm-container">
-    <div class="hm-section-heading">
-      <div>
+<section id="jadwal-terdekat" class="py-12 sm:py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="mb-6">
+      <div class="max-w-2xl">
         <h2 class="text-3xl sm:text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">{title}</h2>
         <p class="mt-2 text-base leading-8 text-slate-600">{description}</p>
       </div>
@@ -43,15 +43,15 @@ const {
         </svg>
       </a>
     </div>
-    <div class="hm-schedule w-full" role="table" aria-label="Jadwal pelatihan K3 Kemnaker RI dan BNSP">
-      <div class="hm-schedule-head flex text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">
+    <div class="w-full" role="table" aria-label="Jadwal pelatihan K3 Kemnaker RI dan BNSP">
+      <div class="flex text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">
         <span role="columnheader" class="min-w-[140px] px-2 py-1.5">Program Pelatihan</span>
         <span role="columnheader" class="px-2 py-1.5">Metode Pelaksanaan</span>
         <span role="columnheader" class="min-w-[140px] px-2 py-1.5">Tanggal Batch</span>
         <span role="columnheader" class="px-2 py-1.5">Pendaftaran</span>
       </div>
       {items.map((item) => (
-        <div class="hm-schedule-row flex gap-4 items-start py-3 border-b border-slate-100" role="row">
+        <div class="flex gap-4 items-start py-3 border-b border-slate-100" role="row">
           <div role="cell" class="flex-1 min-w-[140px]">
             {item.image && (
               <img
@@ -92,108 +92,3 @@ const {
     </div>
   </div>
 </section>
-<style>
-  .hm-section {
-    @apply py-12 sm:py-20 lg:py-24;
-  }
-
-  .hm-container {
-    @apply max-w-7xl mx-auto px-4;
-  }
-
-  .hm-section-heading {
-    @apply mb-6;
-  }
-
-  .hm-section-heading div {
-    @apply max-w-2xl;
-  }
-
-  .hm-section-heading h2 {
-    @apply text-3xl sm:text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl;
-  }
-
-  .hm-section-heading p {
-    @apply mt-2 text-base leading-8 text-slate-600;
-  }
-
-  .hm-text-link {
-    @apply mt-4 inline-flex items-center gap-2 text-sm font-semibold text-amber-700 hover:text-amber-900 transition-colors;
-  }
-
-  .hm-text-link svg {
-    @apply align-middle;
-  }
-
-  .hm-schedule {
-    @apply w-full;
-  }
-
-  .hm-schedule-head {
-    @apply flex text-xs font-bold uppercase tracking-wider text-slate-500 mb-4;
-  }
-
-  .hm-schedule-head span {
-    @apply inline-block min-w-[140px] px-2 py-1.5 text-xs font-semibold text-slate-500;
-  }
-
-  .hm-schedule-row {
-    @apply flex gap-4 items-start py-3 border-b border-slate-100;
-  }
-
-  .hm-schedule-program {
-    @apply flex-1 min-w-[140px];
-  }
-
-  .hm-schedule-program img {
-    @apply rounded-sm mb-2;
-  }
-
-  .hm-schedule-program-link {
-    @apply line-clamp-2 block truncate hover:text-amber-700;
-  }
-
-  .hm-schedule-mode {
-    @apply text-sm font-medium text-slate-500;
-  }
-
-  .hm-schedule-date {
-    @apply flex flex-col;
-  }
-
-  .hm-schedule-date strong {
-    @apply block text-sm font-semibold text-slate-900;
-  }
-
-  .hm-schedule-date small {
-    @apply text-xs text-slate-400;
-  }
-
-  .hm-schedule-actions {
-    @apply flex items-end;
-  }
-
-  .hm-button {
-    @apply rounded-md px-4 py-2 text-sm font-medium transition-colors;
-  }
-
-  .hm-button-orange {
-    @apply bg-amber-500 text-white;
-  }
-
-  .hm-button-outline {
-    @apply border border-amber-500 text-amber-500;
-  }
-
-  .hm-schedule-empty {
-    @apply rounded-2xl border border-dashed border-slate-300 bg-white p-6 text-center;
-  }
-
-  .hm-schedule-empty-title {
-    @apply text-lg font-bold text-slate-900 mb-2;
-  }
-
-  .hm-schedule-empty-description {
-    @apply text-sm text-slate-600 mb-3;
-  }
-</style>

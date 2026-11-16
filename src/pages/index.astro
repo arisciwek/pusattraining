@@ -1,4 +1,51 @@
 ---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../layouts/SiteLayout.astro';
 import HomePageRenderer from '../blocks/home/HomePageRenderer.astro';
 import type { HomePageBlock } from '../blocks/types';
+import { isMainSiteSchedule } from '../lib/schedule-utils';
+
+const entries = await getCollection('pages', ({ data }) => data.slug === 'home' && !data.draft);
+const entry = entries[0];
+
+const categories = (await getCollection('pages', ({ data }) => data.pageType === 'category' && !data.draft))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'id'))
+  .map(({ data }) => ({
+    title: data.title,
+    description: data.description,
+    href: `/pelatihan/${data.slug}/`,
+  }));
+
+const schedules = await getCollection('schedules', isMainSiteSchedule);
+const upcomingSchedules = await Promise.all(
+  schedules
+    .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate))
+    .slice(0, 5)
+    .map(async (schedule) => {
+      const training = await getCollection('trainings', (t) => t.data.trainingId === schedule.data.trainingId);
+      const trainingEntry = training[0];
+      return {
+        trainingTitle: trainingEntry?.data?.title ?? 'Training',
+        trainingHref: `/pelatihan/${schedule.data.slug}/`,
+        startDate: schedule.data.startDate,
+        endDate: schedule.data.endDate,
+        mode: schedule.data.delivery?.mode,
+        location: schedule.data.venue?.name,
+        duration: '',
+        price: '',
+        status: schedule.data.status,
+        registrationHref: schedule.data.registration?.registrationUrl,
+        organizer: '',
+        image: schedule.data.image,
+        imageAlt: trainingEntry?.data?.title ?? '',
+      };
+    })
+);
 ---
+<SiteLayout title={entry.data.title} description={entry.data.description}>
+  <HomePageRenderer
+    blocks={entry.data.blocks as any}
+    categories={categories}
+    upcomingSchedules={upcomingSchedules}
+  />
+</SiteLayout>
