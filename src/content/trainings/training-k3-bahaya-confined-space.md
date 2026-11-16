@@ -16,7 +16,7 @@ hero:
   imageAlt: "Dokumentasi pelatihan Teknisi K3 Ruang Terbatas Betracom, angkatan 6–10 April 2026"
   eyebrow: "PROGRAM PEMBINAAN K3 RUANG TERBATAS"
   certBadge: "KEMNAKER RI"
-  description: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space) membekali tenaga kerja yang ditugaskan pada pekerjaan pemasangan, perakitan, pemeliharaan, atau perbaikan komponen di ruang terbatas dengan pemahaman identifikasi bahaya, penilaian risiko, izin masuk, pengujian atmosfer, isolasi energi, penggunaan APD, komunikasi kerja, dan kesiapsiagaan darurat sesuai Permenaker Nomor 11 Tahun 2023. Kualifikasi personel dan dokumen akhir mengikuti persyaratan skema serta ketentuan angkatan."
+  description: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space) adalah program pembinaan bagi tenaga kerja yang ditugaskan pada pekerjaan pemasangan, perakitan, pemeliharaan, atau perbaikan komponen di ruang terbatas dengan pemahaman identifikasi bahaya, penilaian risiko, izin masuk, pengujian atmosfer, isolasi energi, penggunaan APD, komunikasi kerja, dan kesiapsiagaan darurat sesuai Permenaker Nomor 11 Tahun 2023. Kualifikasi personel dan dokumen akhir mengikuti persyaratan skema serta ketentuan angkatan."
   deliveryMode: mixed
   ctaLabel: "Lihat jadwal dan pendaftaran"
   ctaHref: "#pendaftaran"
