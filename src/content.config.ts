@@ -43,7 +43,10 @@ const trainings = defineCollection({
   }),
 });
 
-const scheduleDate = z.string().refine((value) => !Number.isNaN(Date.parse(value)), 'Tanggal schedule harus berupa tanggal ISO 8601 yang valid');
+const scheduleDate = z.string().refine((value) => {
+  const isoDateOrDateTime = /^\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2}(?::\\d{2}(?:\\.\\d{1,3})?)?(?:Z|[+-]\\d{2}:\\d{2}))?$/;
+  return isoDateOrDateTime.test(value) && !Number.isNaN(Date.parse(value));
+}, 'Tanggal schedule harus berupa tanggal ISO 8601 atau datetime dengan zona waktu');
 
 const schedules = defineCollection({
   loader: glob({ base: './src/content/schedules', pattern: '**/*.md' }),
