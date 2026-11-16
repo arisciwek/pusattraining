@@ -10,7 +10,8 @@
     "dev": "astro dev",
     "check": "astro sync && tsc --noEmit",
     "build": "npm run check && astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "schedules:discover": "node scripts/discover-schedules.mjs"
   },
   "overrides": {
     "astro": "7.4.0",
