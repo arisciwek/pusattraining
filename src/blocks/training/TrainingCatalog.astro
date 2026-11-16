@@ -1,0 +1,34 @@
+---
+import SectionHeading from '../../components/shared/SectionHeading.astro';
+import TrainingCategoryOverview from '../home/TrainingCategoryOverview.astro';
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description: string;
+  emptyMessage?: string;
+  categories: { title: string; description: string; href: string }[];
+}
+
+const {
+  eyebrow = 'KATALOG PROGRAM',
+  title,
+  description,
+  emptyMessage = 'Kategori pelatihan sedang disiapkan.',
+  categories,
+} = Astro.props;
+---
+<section class="training-catalog">
+  <header class="training-catalog__header max-w-3xl">
+    <p class="training-catalog__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">{eyebrow}</p>
+    <h1 class="training-catalog__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">{title}</h1>
+    <p class="training-catalog__description mt-4 text-base leading-8 text-slate-600">{description}</p>
+  </header>
+  {categories.length > 0 ? (
+    <div class="training-catalog__categories mt-10">
+      <TrainingCategoryOverview categories={categories} />
+    </div>
+  ) : (
+    <p class="training-catalog__empty mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-slate-600">{emptyMessage}</p>
+  )}
+</section>
