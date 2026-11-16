@@ -77,7 +77,7 @@ const pages = defineCollection({
     related: z.array(z.number().int().positive()).default([]),
     blocks: z.array(z.discriminatedUnion('type', [
       z.object({ type: z.literal('training-category'), eyebrow: z.string().optional(), sectionTitle: z.string().min(1), sectionDescription: z.string().optional(), emptyMessage: z.string().min(1) }),
-      z.object({ type: z.literal('schedule-index'), eyebrow: z.string().optional(), latestTitle: z.string().min(1), archiveTitle: z.string().min(1), emptyTitle: z.string().min(1), emptyDescription: z.string().min(1), emptyActionLabel: z.string().min(1) }),
+      z.object({ type: z.literal('schedule-index'), eyebrow: z.string().optional(), sectionEyebrow: z.string().optional(), latestTitle: z.string().min(1), archiveTitle: z.string().min(1), emptyTitle: z.string().min(1), emptyDescription: z.string().min(1), emptyActionLabel: z.string().min(1) }),
       z.object({ type: z.literal('training-catalog'), eyebrow: z.string().optional(), title: z.string().min(1), description: z.string().min(1), emptyMessage: z.string().optional(), categoryTitle: z.string().min(1), categoryDescription: z.string().optional() }),
       z.object({ type: z.literal('program-grid'), title: z.string().optional(), description: z.string().optional(), programs: z.array(z.object({ title: z.string(), description: z.string(), href: z.string(), category: z.string().optional() })) }),
       z.object({ type: z.literal('benefits'), title: z.string(), description: z.string().optional(), items: z.array(z.object({ title: z.string(), description: z.string(), icon: z.string().optional() })) }),
