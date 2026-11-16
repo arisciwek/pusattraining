@@ -1,0 +1,1580 @@
+{
+  "generatedAt": "2026-11-16T08:42:58.216Z",
+  "registryPath": "var/schedule-discovery/registry.json",
+  "generatedCount": 30,
+  "reviewCount": 266,
+  "generated": [
+    {
+      "path": "var/schedule-discovery/frontmatter/2017/damkar-kelas-d/pelatihan-damkar-kelas-dcba-13-25-nopember-2017-jakarta.md",
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-damkar-kelas-dcba-13-25-nopember-2017-jakarta/",
+      "sourceLastmod": "2018-09-22T12:48:40+00:00",
+      "title": "Pelatihan Damkar Kelas Dcba Jakarta",
+      "trainingId": "damkar-kelas-d",
+      "batchNo": "01"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2018/ahli-k3-umum/siap-jalan-ahli-k3-umum-batam-30-april-12-mei-2018.md",
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-k3-umum-batam-30-april-12-mei-2018/",
+      "sourceLastmod": "2018-09-19T06:28:20+00:00",
+      "title": "Siap Jalan Ahli K3 Umum Batam",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "01"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2018/ahli-k3-umum/promo-ramadhan-ahli-k3-umum-yogyakarta-7-20-mei-2018.md",
+      "sourceUrl": "https://pusattrainingk3.com/promo-ramadhan-ahli-k3-umum-yogyakarta-7-20-mei-2018/",
+      "sourceLastmod": "2018-04-23T07:27:37+00:00",
+      "title": "Promo Ramadhan Ahli K3 Umum Yogyakarta",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "02"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2018/ahli-k3-umum/siap-jalan-pelatihan-ahli-k3-umum-jakarta-17-29-september-2018.md",
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pelatihan-ahli-k3-umum-jakarta-17-29-september-2018/",
+      "sourceLastmod": "2018-09-04T07:17:24+00:00",
+      "title": "Siap Jalan Pelatihan Ahli K3 Umum Jakarta",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "03"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2019/ahli-k3-umum/siap-jalan-ahli-k3-umum-19-31-agustus-2019.md",
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-k3-umum-19-31-agustus-2019/",
+      "sourceLastmod": "2019-08-06T07:46:20+00:00",
+      "title": "Siap Jalan Ahli K3 Umum",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "05"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2019/ahli-k3-umum/ahli-k3-umum-batam-supa-jalan-19-30-agustus-2019.md",
+      "sourceUrl": "https://pusattrainingk3.com/ahli-k3-umum-batam-supa-jalan-19-30-agustus-2019/",
+      "sourceLastmod": "2019-08-06T07:44:26+00:00",
+      "title": "Ahli K3 Umum Batam Supa Jalan",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "04"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2019/ahli-k3-umum/ahli-k3-umum-jogja-02-15-september-2019-siap-jalan.md",
+      "sourceUrl": "https://pusattrainingk3.com/ahli-k3-umum-jogja-02-15-september-2019-siap-jalan/",
+      "sourceLastmod": "2019-09-30T06:51:18+00:00",
+      "title": "Ahli K3 Umum Jogja Siap Jalan",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "06"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2019/operator-gondola/operator-gondola-14-19-oktober-2019-siap-jalan.md",
+      "sourceUrl": "https://pusattrainingk3.com/operator-gondola-14-19-oktober-2019-siap-jalan/",
+      "sourceLastmod": "2019-10-11T04:06:39+00:00",
+      "title": "Operator Gondola Siap Jalan",
+      "trainingId": "operator-gondola",
+      "batchNo": "01"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2020/ahli-k3-umum/siap-jalan-ahli-k3-umum-tgl-03-16-februari-2020-jogja.md",
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-k3-umum-tgl-03-16-februari-2020-jogja/",
+      "sourceLastmod": "2020-01-30T03:53:20+00:00",
+      "title": "Siap Jalan Ahli K3 Umum Tgl Jogja",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "07"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2020/ahli-k3-umum/siap-jalan-ahli-k3-umum-tgl-16-30-maret-2020-jakarta.md",
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-k3-umum-tgl-16-30-maret-2020-jakarta/",
+      "sourceLastmod": "2020-02-25T04:11:19+00:00",
+      "title": "Siap Jalan Ahli K3 Umum Tgl Jakarta",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "08"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2020/ahli-k3-umum/siap-jalan-pelatihan-ahli-k3-umum-tgl-23-maret-06-april-2020-jakarta.md",
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pelatihan-ahli-k3-umum-tgl-23-maret-06-april-2020-jakarta/",
+      "sourceLastmod": "2020-03-16T03:05:44+00:00",
+      "title": "Siap Jalan Pelatihan Ahli K3 Umum Tgl Jakarta",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "09"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2021/ahli-k3-umum/jadwal-terdekat-training-ahli-k3-umum-08-22-februari-2021.md",
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-training-ahli-k3-umum-08-22-februari-2021/",
+      "sourceLastmod": "2021-02-03T07:04:42+00:00",
+      "title": "Jadwal Terdekat Training Ahli K3 Umum",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "10"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2022/ahli-k3-umum/siap-jalan-ahli-k3-umum-tgl-17-29-januari-2022-full-online.md",
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-k3-umum-tgl-17-29-januari-2022-full-online/",
+      "sourceLastmod": "2022-01-13T07:44:16+00:00",
+      "title": "Siap Jalan Ahli K3 Umum Tgl Full Online",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "11"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2023/operator-gondola/inhouse-training-operator-gondola-pt-gerindo-indahtama-sukses-tgl-19-21-juni-2023-jakarta.md",
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-operator-gondola-pt-gerindo-indahtama-sukses-tgl-19-21-juni-2023-jakarta/",
+      "sourceLastmod": "2023-06-26T08:37:57+00:00",
+      "title": "Inhouse Training Operator Gondola Pt Gerindo Indahtama Sukses Tgl Jakarta",
+      "trainingId": "operator-gondola",
+      "batchNo": "02"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2023/operator-gondola/inhouse-operator-gondola-pt-gerindo-indahtama-sukses-batch-2-tgl-21-23-agustus-2023.md",
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-operator-gondola-pt-gerindo-indahtama-sukses-batch-2-tgl-21-23-agustus-2023/",
+      "sourceLastmod": "2023-08-28T05:24:17+00:00",
+      "title": "Inhouse Operator Gondola Pt Gerindo Indahtama Sukses Batch 2 Tgl",
+      "trainingId": "operator-gondola",
+      "batchNo": "03"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2024/ahli-k3-umum/pelatihan-ahli-k3-umum-bnsp-tgl-10-13-juni-2024-offline-training.md",
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-ahli-k3-umum-bnsp-tgl-10-13-juni-2024-offline-training/",
+      "sourceLastmod": "2024-06-18T07:37:04+00:00",
+      "title": "Pelatihan Ahli K3 Umum BNSP Tgl Offline Training",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "13"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2024/ahli-k3-umum/pelatihan-ahli-k3-umum-bnsp-tgl-10-13-juni-2024-offline-training-2.md",
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-ahli-k3-umum-bnsp-tgl-10-13-juni-2024-offline-training-2/",
+      "sourceLastmod": "2025-12-09T03:08:33+00:00",
+      "title": "Pelatihan Ahli K3 Umum BNSP Tgl Offline Training 2",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "12"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2024/training-k3-bahaya-confined-space/inhouse-training-teknisi-k3-ruang-terbatas-confined-space-class-1-batch-1-tgl-29-jun-03-jul-2024.md",
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-teknisi-k3-ruang-terbatas-confined-space-class-1-batch-1-tgl-29-jun-03-jul-2024/",
+      "sourceLastmod": "2024-07-09T13:08:37+00:00",
+      "title": "Inhouse Training Teknisi K3 Ruang Terbatas Confined Space Class 1 Batch 1 Tgl",
+      "trainingId": "training-k3-bahaya-confined-space",
+      "batchNo": "01"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2024/ahli-k3-umum/training-ahli-k3-umum-bnsp-tgl-06-09-desember-2024-online-training.md",
+      "sourceUrl": "https://pusattrainingk3.com/training-ahli-k3-umum-bnsp-tgl-06-09-desember-2024-online-training/",
+      "sourceLastmod": "2024-12-23T08:08:14+00:00",
+      "title": "Training Ahli K3 Umum BNSP Tgl Online Training",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "14"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2025/ahli-k3-umum/pelatihan-ahli-k3-umum-tgl-10-25-februari-2025-sertifikasi-kemnaker-ri-lampung.md",
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-ahli-k3-umum-tgl-10-25-februari-2025-sertifikasi-kemnaker-ri-lampung/",
+      "sourceLastmod": "2025-02-26T08:47:12+00:00",
+      "title": "Pelatihan Ahli K3 Umum Tgl Sertifikasi Kemnaker Ri Lampung",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "15"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2025/ahli-k3-umum/pelatihan-ahli-k3-umum-sertifikasi-kemnaker-ri-tgl-10-22-maret-2025-full-online.md",
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-ahli-k3-umum-sertifikasi-kemnaker-ri-tgl-10-22-maret-2025-full-online/",
+      "sourceLastmod": "2025-03-25T10:01:26+00:00",
+      "title": "Pelatihan Ahli K3 Umum Sertifikasi Kemnaker Ri Tgl Full Online",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "16"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2025/training-emergency-response-plan/inhouse-training-emergency-response-plan-01-agustus-2025-jakarta.md",
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-emergency-response-plan-01-agustus-2025-jakarta/",
+      "sourceLastmod": "2025-08-21T02:03:54+00:00",
+      "title": "Inhouse Training Emergency Response Plan Jakarta",
+      "trainingId": "training-emergency-response-plan",
+      "batchNo": "01"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2025/training-emergency-response-plan/inhouse-training-emergency-response-plan-17-september-2025-jakarta.md",
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-emergency-response-plan-17-september-2025-jakarta/",
+      "sourceLastmod": "2025-09-25T08:32:11+00:00",
+      "title": "Inhouse Training Emergency Response Plan Jakarta",
+      "trainingId": "training-emergency-response-plan",
+      "batchNo": "02"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2025/damkar-kelas-d/pelatihan-petugas-peran-pemadam-kebakaran-kelas-d-fire-d-03-05-nov-2025-bogor.md",
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-petugas-peran-pemadam-kebakaran-kelas-d-fire-d-03-05-nov-2025-bogor/",
+      "sourceLastmod": "2026-03-10T09:30:38+00:00",
+      "title": "Pelatihan Petugas Peran Pemadam Kebakaran Kelas D Fire D Bogor",
+      "trainingId": "damkar-kelas-d",
+      "batchNo": "02"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2026/operator-gondola/inhouse-training-operator-gondola-tgl-09-11-februari-2026-blended-training.md",
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-operator-gondola-tgl-09-11-februari-2026-blended-training/",
+      "sourceLastmod": "2026-02-18T17:19:12+00:00",
+      "title": "Inhouse Training Operator Gondola Tgl Blended Training",
+      "trainingId": "operator-gondola",
+      "batchNo": "04"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2026/ahli-k3-umum/inhouse-training-ahli-k3-umum-tgl-26-jan-10-feb-2026-di-lampung.md",
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-ahli-k3-umum-tgl-26-jan-10-feb-2026-di-lampung/",
+      "sourceLastmod": "2026-03-10T00:33:51+00:00",
+      "title": "Inhouse Training Ahli K3 Umum Tgl Di Lampung",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "17"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2026/training-emergency-response-plan/inhouse-training-emergency-response-plan-27-juni-2026-jakarta.md",
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-emergency-response-plan-27-juni-2026-jakarta/",
+      "sourceLastmod": "2026-09-08T02:31:43+00:00",
+      "title": "Inhouse Training Emergency Response Plan Jakarta",
+      "trainingId": "training-emergency-response-plan",
+      "batchNo": "03"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2026/training-k3-bahaya-confined-space/pelatihan-teknisi-k3-ruang-terbatas-confined-space-tanggal-31-agustus-4-september-2026.md",
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-teknisi-k3-ruang-terbatas-confined-space-tanggal-31-agustus-4-september-2026/",
+      "sourceLastmod": "2026-11-10T06:39:47+00:00",
+      "title": "Pelatihan Teknisi K3 Ruang Terbatas Confined Space Tanggal",
+      "trainingId": "training-k3-bahaya-confined-space",
+      "batchNo": "02"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2026/ahli-k3-umum/pelatihan-ahli-k3-umum-bnsp-tanggal-07-10-september-2026.md",
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-ahli-k3-umum-bnsp-tanggal-07-10-september-2026/",
+      "sourceLastmod": "2026-11-10T06:39:47+00:00",
+      "title": "Pelatihan Ahli K3 Umum BNSP Tanggal",
+      "trainingId": "ahli-k3-umum",
+      "batchNo": "18"
+    },
+    {
+      "path": "var/schedule-discovery/frontmatter/2026/operator-gondola/pelatihan-inhouse-operator-gondola-tanggal-28-30-september-2026.md",
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-inhouse-operator-gondola-tanggal-28-30-september-2026/",
+      "sourceLastmod": "2026-11-10T06:39:53+00:00",
+      "title": "Pelatihan Inhouse Operator Gondola Tanggal",
+      "trainingId": "operator-gondola",
+      "batchNo": "05"
+    }
+  ],
+  "review": [
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-muda-k3-konstruksi-12-17-feb-2018-jakarta/",
+      "title": "Siap Jalan Ahli Muda K3 Konstruksi Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-ahli-k3-pesawat-tenaga-produksi-2-28-juli-2018-yogyakarta/",
+      "title": "Pelatihan Ahli K3 Pesawat Tenaga Produksi Yogyakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/ahli-muda-k3-konstruksi-23-27-april-2018/",
+      "title": "Ahli Muda K3 Konstruksi",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-k3-konstruksi-surabaya-23-27-april-2018/",
+      "title": "Siap Jalan Ahli K3 Konstruksi Surabaya",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/promo-pelatihan-hiperkes-hanya-25jt-23-28-juli-2018-pusat-k3-cempaka-putih-jakarta-pusat/",
+      "title": "Promo Pelatihan Hiperkes Hanya 25jt Pusat K3 Cempaka Putih Jakarta Pusat",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-teknisi-k3-listrik-jakarta-dan-batam-27-sd-31-agustus-2018/",
+      "title": "Pelatihan Teknisi K3 Listrik Jakarta Dan Batam",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/promo-25jt-pelatihan-hiperkes-paramedis-24-28-september-2018-jakarta/",
+      "title": "Promo 25jt Pelatihan Hiperkes Paramedis Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-hiperkes-dokter-26-nop-sd-2-des-2018-di-tangerang/",
+      "title": "Pelatihan Hiperkes Dokter 26 Nop Sd Di Tangerang",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-damkar-tingkat-dcba-20-feb-4-maret-2017-jakarta/",
+      "title": "Pelatihan Damkar Tingkat Dcba Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/selamat-dan-sukses-kepada-peserta-k3-migas-di-cilacap-06-14-feb-2019/",
+      "title": "Selamat Dan Sukses Kepada Peserta K3 Migas Di Cilacap",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-keselamatan-dan-kesehatan-kerja-rumah-sakit-siap-jalan-18-22-april-2019/",
+      "title": "Pelatihan Keselamatan Dan Kesehatan Kerja Rumah Sakit Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/hiperkes-dokter-18-23-maret-2019-siap-jalan/",
+      "title": "Hiperkes Dokter Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/ahli-k3-listrik-18-mar-06-apr-2019-siap-jalan/",
+      "title": "Ahli K3 Listrik Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-rigger-juru-ikat-20-22-maret-2019-siap-jalan/",
+      "title": "Operator Rigger Juru Ikat Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-operator-boiler-kelas-2-18-21-maret-2019-siap-jalan/",
+      "title": "Pelatihan Operator Boiler Kelas 2 Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-teknisi-k3-listrik-25-30-maret-2019/",
+      "title": "Siap Jalan Teknisi K3 Listrik",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-operastor-crane-kelas-2-19-22-maret-2019/",
+      "title": "Siap Jalan Operastor Crane Kelas 2",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-operator-crane-kelas-3-20-22-maret-2019/",
+      "title": "Siap Jalan Operator Crane Kelas 3",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-damkar-dcba-19-mar-06-april-2019/",
+      "title": "Siap Jalan Damkar Dcba",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-petugas-k3-utama-ruang-terbatas-18-22-maret-2019/",
+      "title": "Siap Jalan Petugas K3 Utama Ruang Terbatas",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-genset-siap-jalan-19-22-agustus-2019/",
+      "title": "Operator Genset Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-operator-forklift-06-08-agustus-2019/",
+      "title": "Siap Jalan Operator Forklift",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/k3-rigger-juru-ikat-siap-jalan-14-16-agustus-2019/",
+      "title": "K3 Rigger Juru Ikat Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/ahli-k3-kimia-19-31-agustus-2019-siap-jalan/",
+      "title": "Ahli K3 Kimia Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-forklift-20-22-agustus-2019-siap-jalan/",
+      "title": "Operator Forklift Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-21-25-agustus-2019-siap-jalan/",
+      "title": "POP Pertambangan Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/teknisi-listrik-19-24-agustus-2019-siap-jalan/",
+      "title": "Teknisi Listrik Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/k3-migas-20-29-agustus-2019-siap-jalan/",
+      "title": "K3 Migas Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/p3k-di-tempat-kerja-19-21-agustus-2019-siap-jalan/",
+      "title": "P3k Di Tempat Kerja Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-26-30-agustus-2019-siap-jalan-jogja/",
+      "title": "POP Pertambangan Siap Jalan Jogja",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/tekni-listrik-19-24-agustus-2019-jakarta-siap-jalan/",
+      "title": "Tekni Listrik Jakarta Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/k3-rigger-juru-ikat-siap-jalan-28-30-agustus-2019/",
+      "title": "K3 Rigger Juru Ikat Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-crane-kelas-3-28-30-agustus-2019-siap-jalan/",
+      "title": "Operator Crane Kelas 3 Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/petugas-k3-utama-ruang-terbatas-26-30-agustus-2019-siap-jalan/",
+      "title": "Petugas K3 Utama Ruang Terbatas Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/hiperkes-dokter-02-07-september-2019-siap-jalan/",
+      "title": "Hiperkes Dokter Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/ahli-k3-konstruksi-02-06-september-2019-siap-jalan/",
+      "title": "Ahli K3 Konstruksi Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pom-palembang-04-09-september-2019-siap-jalan/",
+      "title": "POP Pom Palembang Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pom-riau-04-09-september-2019-siap-jalan/",
+      "title": "POP Pom Riau Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-operator-boiler-kelas-1-dan-2-mulai-tgl-09-13-september-2019/",
+      "title": "Siap Jalan Operator Boiler Kelas 1 Dan 2 Mulai Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/ahli-muda-k3-lingkungan-kerja-09-14-september-2019-siap-jalan/",
+      "title": "Ahli Muda K3 Lingkungan Kerja Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/k3-migas-cepu-10-19-september-2019-siap-jalan/",
+      "title": "K3 Migas Cepu Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-genset-16-19-september-2019-siap-jalan/",
+      "title": "Operator Genset Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-forklift-10-12-september-2019-siap-jalan/",
+      "title": "Operator Forklift Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-lift-16-20-september-2019-siap-jalan/",
+      "title": "Operator Lift Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/juru-las-smaw-dan-gtaw-kelas-1-2-dan-3-16-21-september-2019/",
+      "title": "Juru Las Smaw Dan Gtaw Kelas 1 2 Dan 3",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/k3-migas-cepu-24-september-03-oktober-2019-siap-jalan/",
+      "title": "K3 Migas Cepu Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-operator-boiler-kelas-1-dan-2-mulai-tgl-23-28-september-2019/",
+      "title": "Siap Jalan Operator Boiler Kelas 1 Dan 2 Mulai Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/k3-supervisi-perancah-23-27-september-2019-siap-jalan/",
+      "title": "K3 Supervisi Perancah Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/k3-teknisi-perancah-24-27-september-2019-siap-jalan/",
+      "title": "K3 Teknisi Perancah Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/hiperkes-paramedis-28-okt-01-nov-2019-siap-jalan/",
+      "title": "Hiperkes Paramedis Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-genset-14-17-oktober-2019-siap-jalan/",
+      "title": "Operator Genset Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-forklift-08-10-oktober-2019-siap-jalan/",
+      "title": "Operator Forklift Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/k3-rigger-juru-ikat-siap-jalan-09-11-oktober-2019/",
+      "title": "K3 Rigger Juru Ikat Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-crane-kelas-3-09-11-oktober-2019-siap-jalan/",
+      "title": "Operator Crane Kelas 3 Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/damkar-d-07-09-oktober-2019-siap-jalan/",
+      "title": "Damkar D Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/juru-las-14-19-oktober-2019-siap-jalan/",
+      "title": "Juru Las Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-lift-14-18-oktober-2019-siap-jalan/",
+      "title": "Operator Lift Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/teknisi-listrik-28-okt-02-nov-2019/",
+      "title": "Teknisi Listrik",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/ahli-k3-pesawat-angkat-angkut-28-okober-23-november-2019/",
+      "title": "Ahli K3 Pesawat Angkat Angkut 28 Okober",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/ahli-muda-k3-lingkungan-kerja-himu-21-26-oktober-2019/",
+      "title": "Ahli Muda K3 Lingkungan Kerja Himu",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-boiler-kelas-1-2-mulai-tgl-21-26-oktober-2019/",
+      "title": "Operator Boiler Kelas 1 2 Mulai Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/operator-forklift-29-31-oktober-2019-siap-jalan/",
+      "title": "Operator Forklift Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/hiperkes-dokter-siap-jalan-25-30-november-2019/",
+      "title": "Hiperkes Dokter Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/juru-las-13-18-januari-2020-siap-jalan/",
+      "title": "Juru Las Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/damkar-d-13-15-januari-2020-siap-jalan/",
+      "title": "Damkar D Siap Jalan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pop-pertambangan-28-jan-02-feb-2020-bandung/",
+      "title": "Siap Jalan POP Pertambangan Bandung",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-operator-forklift-tgl-04-06-februari-2020-jakarta/",
+      "title": "Siap Jalan Operator Forklift Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-k3-migas-cepu-tgl-04-13-februari-2020/",
+      "title": "Siap Jalan K3 Migas Cepu Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pelatihan-teknisi-k3-listrik-17-22-februari-2020-jakarta/",
+      "title": "Siap Jalan Pelatihan Teknisi K3 Listrik Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-k3-pesawat-tenaga-produksi-jogja-tgl-03-29-februari-2020/",
+      "title": "Siap Jalan Ahli K3 Pesawat Tenaga Produksi Jogja Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-k3-listrik-tgl-10-28-februari-2020-jakarta/",
+      "title": "Siap Jalan Ahli K3 Listrik Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-k3-kimia-tgl-10-22-februari-2020-jakarta/",
+      "title": "Siap Jalan Ahli K3 Kimia Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pelatihan-p3k-first-aidtgl-24-26-februari-2020-jakarta/",
+      "title": "Siap Jalan Pelatihan P3k First Aidtgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pelatihan-hiperkes-dokter-tgl-24-29-februari-2020-tangerang-selatan/",
+      "title": "Siap Jalan Pelatihan Hiperkes Dokter Tgl Tangerang Selatan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pop-pertambangan-tgl-12-16-februari-2020-palangkaraya/",
+      "title": "Siap Jalan POP Pertambangan Tgl Palangkaraya",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pop-pertambangan-tgl-12-16-februari-2020-jogja/",
+      "title": "Siap Jalan POP Pertambangan Tgl Jogja",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-pelatihan-juru-las-welder-tgl-17-20-februari-2020-jakarta/",
+      "title": "Jadwal Pelatihan Juru Las Welder Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-pelatihan-operator-genset-diesel-tgl-17-20-februari-2020-jakarta/",
+      "title": "Jadwal Terdekat Pelatihan Operator Genset Diesel Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-damkar-d-tgl-17-19-februari-2020-jakarta/",
+      "title": "Siap Jalan Damkar D Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pelatihan-supervisi-k3-perancah-tgl-10-14-februari-2020-jakarta/",
+      "title": "Siap Jalan Pelatihan Supervisi K3 Perancah Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-operator-boiler-kelas-12-mulai-tgl-10-15-februari-2020-jakarta/",
+      "title": "Siap Jalan Operator Boiler Kelas 12 Mulai Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pelatihan-auditor-smk3-tgl-11-14-februari-2020-jakarta/",
+      "title": "Siap Jalan Pelatihan Auditor Smk3 Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pop-pertambangan-tgl-19-23-februari-2020-gorontalo/",
+      "title": "Siap Jalan POP Pertambangan Tgl Gorontalo",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pop-pertambangan-tgl-19-23-februari-2020-kupang-kendari/",
+      "title": "Siap Jalan POP Pertambangan Tgl Kupang Kendari",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-k3-listrik-tgl-17-feb-06-mar-2020-jakarta/",
+      "title": "Siap Jalan Ahli K3 Listrik Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-rigger-juru-ikat-tgl-19-21-februari-2020-jakarta/",
+      "title": "Siap Jalan Rigger Juru Ikat Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-operator-crane-kelas-iii-tgl-19-21-februari-2020-jakarta/",
+      "title": "Siap Jalan Operator Crane Kelas Iii Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-damkar-c-tgl-19-24-februari-2020-jakarta/",
+      "title": "Siap Jalan Damkar C Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-teknisi-k3-listrik-tgl-24-29-februari-2020-jakarta/",
+      "title": "Siap Jalan Teknisi K3 Listrik Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-damkar-b-tgl-25-29-februari-2020-jakarta/",
+      "title": "Siap Jalan Damkar B Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-damkar-ba-tgl-25-feb-06-mar-2020-jakarta/",
+      "title": "Siap Jalan Damkar Ba Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pop-pertambangan-tgl-26-feb-01-mar-2020-bandung/",
+      "title": "Siap Jalan POP Pertambangan Tgl Bandung",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-operator-genset-diesel-tgl-02-05-maret-2020-jakarta/",
+      "title": "Siap Jalan Operator Genset Diesel Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pelatihan-hiperkes-paramedis-tgl-02-06-maret-2020-jakarta/",
+      "title": "Siap Jalan Pelatihan Hiperkes Paramedis Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-juru-las-welder-tgl-16-21-maret-2020-jakarta/",
+      "title": "Siap Jalan Juru Las Welder Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pop-pertambangan-bnsp-tgl-03-08-maret-2020-banten/",
+      "title": "Siap Jalan POP Pertambangan BNSP Tgl Banten",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-pop-pertambangan-bnsp-tgl-04-08-maret-2020-pontianak/",
+      "title": "Jadwal POP Pertambangan BNSP Tgl Pontianak",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-pop-pertambangan-bnsp-tgl-11-15-maret-2020-bali-palu/",
+      "title": "Jadwal POP Pertambangan BNSP Tgl Bali Palu",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-pelatihan-medical-check-up-and-fit-to-work-tgl-03-04-maret-2020-bintaro/",
+      "title": "Jadwal Pelatihan Medical Check Up And Fit To Work Tgl Bintaro",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-petugas-k3-kimia-tgl-23-30-maret-2020-jakarta/",
+      "title": "Siap Jalan Petugas K3 Kimia Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-muda-k3-lingkungan-kerja-tgl-16-21-maret-2020-jakarta/",
+      "title": "Siap Jalan Ahli Muda K3 Lingkungan Kerja Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-juru-las-welder-tgl-16-21-maret-2020-jakarta-2/",
+      "title": "Siap Jalan Juru Las Welder Tgl Jakarta 2",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pop-pertambangan-tgl-11-15-maret-2020/",
+      "title": "Siap Jalan POP Pertambangan Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pop-pertambangan-tgl-25-29-maret-2020-bandung/",
+      "title": "Siap Jalan POP Pertambangan Tgl Bandung",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-teknisi-k3-perancah-tgl-10-13-maret-2020-jakarta/",
+      "title": "Siap Jalan Teknisi K3 Perancah Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-operator-forklift-tgl-10-12-maret-2020-bekasi/",
+      "title": "Siap Jalan Operator Forklift Tgl Bekasi",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-supervisi-k3-perancah-tgl-09-13-maret-2020-jakarta/",
+      "title": "Siap Jalan Supervisi K3 Perancah Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-p3k-first-aid-tgl-10-12-maret-2020-jakarta/",
+      "title": "Siap Jalan P3k First Aid Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-hiperkes-paramedis-tgl-30-maret-03-april-2020-jakarta/",
+      "title": "Siap Jalan Hiperkes Paramedis Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-operator-forklift-tgl-17-19-maret-2020-jakarta/",
+      "title": "Siap Jalan Operator Forklift Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-k3-listrik-tgl-30-maret-18-april-2020-jakarta/",
+      "title": "Siap Jalan Ahli K3 Listrik Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-hiperkes-dokter-15-22-februari-2021/",
+      "title": "Siap Jalan Hiperkes Dokter",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-pelatihan-petugas-k3-utama-ruang-terbatas-tgl-18-22-januari-2021/",
+      "title": "Jadwal Pelatihan Petugas K3 Utama Ruang Terbatas Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-operator-boiler-01-06-februari-2021-blended-training/",
+      "title": "Jadwal Terdekat Operator Boiler Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-petugas-k3-kimia-tanggal-08-15-februari-2021/",
+      "title": "Jadwal Terdekat Petugas K3 Kimia Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-juru-las-smaw-gtaw-kelas-123-tanggal-15-20-februari-2021/",
+      "title": "Jadwal Terdekat Juru Las Smaw Gtaw Kelas 123 Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-ahli-k3-listrik-tgl-22-feb-15-mar-2021/",
+      "title": "Jadwal Terdekat Ahli K3 Listrik Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-training-tenaga-kerja-bangunan-tinggi-tkbt-2-tanggal-08-11-februari-2021/",
+      "title": "Jadwal Training Tenaga Kerja Bangunan Tinggi Tkbt 2 Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-penanggung-jawab-pengendalian-pencemaran-air-limbah-pppa-tanggal-17-19-feb-2021/",
+      "title": "Jadwal Terdekat Penanggung Jawab Pengendalian Pencemaran Air Limbah Pppa Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-pengoperasian-instalasi-pengelolaan-limbah-b3-tanggal-09-11-feb-2021/",
+      "title": "Jadwal Terdekat Pengoperasian Instalasi Pengelolaan Limbah B3 Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-pelatihan-pemantauan-dan-analisis-pengelolaan-limbah-b3-tanggal-15-17-feb-2021/",
+      "title": "Jadwal Terdekat Pelatihan Pemantauan Dan Analisis Pengelolaan Limbah B3 Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-teknisi-k3-perancah-09-12-februari-2021/",
+      "title": "Siap Jalan Teknisi K3 Perancah",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-tenaga-kerja-pada-ketinggian-tkpk-1-22-27-februari-2021/",
+      "title": "Siap Jalan Tenaga Kerja Pada Ketinggian Tkpk 1",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-damkar-d-tanggal-22-24-februari-2021/",
+      "title": "Siap Jalan Damkar D Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-damkar-d-15-17-maret-2021/",
+      "title": "Jadwal Terdekat Damkar D",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-training-tenaga-kerja-bangunan-tinggi-tkbt-2-tanggal-29-sep-02-okt-2021/",
+      "title": "Jadwal Terdekat Training Tenaga Kerja Bangunan Tinggi Tkbt 2 Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-pelatihan-operator-forklift-tgl-27-29-september-2021/",
+      "title": "Jadwal Pelatihan Operator Forklift Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-pelatihan-p3k-first-aid-30-sept-02-okt-2021/",
+      "title": "Jadwal Terdekat Pelatihan P3k First Aid 30 Sept",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-pelatihan-pengawas-operasional-pertama-pop-pertambangan-dan-pom-pengawas-operasional-manager-sertifikat-bnsp-tgl-27-sept-01-okt-2021/",
+      "title": "Jadwal Terdekat Pelatihan Pengawas Operasional Pertama POP Pertambangan Dan Pom Pengawas Operasional Manager Sertifikat BNSP Tgl 27 Sept",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-muda-k3-lingkungan-kerja-03-november-2021/",
+      "title": "Siap Jalan Ahli Muda K3 Lingkungan Kerja",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-hiperkes-dokter-08-13-november-2021/",
+      "title": "Siap Jalan Hiperkes Dokter",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-tenaga-kerja-pada-ketinggian-tkpk-1-15-20-november-2021/",
+      "title": "Siap Jalan Tenaga Kerja Pada Ketinggian Tkpk 1",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-tenaga-kerja-pada-ketinggian-tkpk-1-29-nov-04-des-2021/",
+      "title": "Siap Jalan Tenaga Kerja Pada Ketinggian Tkpk 1",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-ahli-muda-k3-lingkungan-kerja-08-18-desember-2021/",
+      "title": "Jadwal Terdekat Ahli Muda K3 Lingkungan Kerja",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-pelatihan-p3k-first-aid-15-17-desember-2021/",
+      "title": "Jadwal Terdekat Pelatihan P3k First Aid",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-pelatihan-p3k-first-aid-18-20-januari-2022/",
+      "title": "Jadwal Terdekat Pelatihan P3k First Aid",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-ahli-muda-k3-lingkungan-kerja-24-jan-04-feb-2022/",
+      "title": "Siap Jalan Ahli Muda K3 Lingkungan Kerja",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/jadwal-terdekat-pelatihan-pemadam-kebakaran-damkar-dcba-14-mar-01-apr-2022/",
+      "title": "Jadwal Terdekat Pelatihan Pemadam Kebakaran Damkar Dcba",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pelatihan-tenaga-kerja-pada-ketinggian-tkpk1-tanggal-11-16-april-2022/",
+      "title": "Siap Jalan Pelatihan Tenaga Kerja Pada Ketinggian Tkpk1 Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-pelatihan-tenaga-kerja-pada-ketinggian-tkpk1-tanggal-09-14-mei-2022/",
+      "title": "Siap Jalan Pelatihan Tenaga Kerja Pada Ketinggian Tkpk1 Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-operator-k3-genset-tanggal-19-22-juni-2023-jakarta/",
+      "title": "Training Operator K3 Genset Tanggal Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-pengawas-operasional-pertama-pop-pertambangan-sertifikasi-bnsp-tanggal-04-06-juli-2023/",
+      "title": "Pelatihan Pengawas Operasional Pertama POP Pertambangan Sertifikasi BNSP Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-fireman-2-pt-prabu-surya-pradana-tgl-10-12-juli-2023-sertifikat-bnsp/",
+      "title": "Inhouse Training Fireman 2 Pt Prabu Surya Pradana Tgl Sertifikat BNSP",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-damkar-d-tgl-04-06-september-2023/",
+      "title": "Pelatihan Damkar D Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-pop-pertambangan-tgl-11-13-september-2023-pembinaan-secara-online-via-zoom/",
+      "title": "Pelatihan POP Pertambangan Tgl Pembinaan Secara Online Via Zoom",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-damkar-d-tgl-20-22-september-2023/",
+      "title": "Pelatihan Damkar D Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-medical-check-up-and-fit-to-work-mcu-tgl-03-04-oktober-2023/",
+      "title": "Training Medical Check Up And Fit To Work Mcu Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-pengawa-operasional-pertama-pop-pertambangan-tgl-09-11-oktober-2023/",
+      "title": "Training Pengawa Operasional Pertama POP Pertambangan Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-operator-barge-crane-kls-1-pt-lis-internasional-tgl-09-14-oktober-2023-di-subang/",
+      "title": "Inhouse Training Operator Barge Crane Kls 1 Pt Lis Internasional Tgl Di Subang",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-damkar-d-tgl-30-okt-01-nov-2023/",
+      "title": "Training Damkar D Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-06-08-november-2023-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-tkbt2-pt-guohua-taidian-pembangkit-jawa-bali-cilegon-tanggal-13-15-november-2023/",
+      "title": "Inhouse Training Tkbt2 Pt Guohua Taidian Pembangkit Jawa Bali Cilegon Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-damkar-fire-d-tgl-27-29-november-2023/",
+      "title": "Pelatihan Damkar Fire D Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tkpk1-tgl-27-nov-01-des-2023-jakarta/",
+      "title": "Pelatihan Tkpk1 Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-sertifikasi-kemnaker-ri-operator-boiler-kelas-1-dan-2-tgl-23-29-april-2024-di-polban/",
+      "title": "Pelatihan Sertifikasi Kemnaker Ri Operator Boiler Kelas 1 Dan 2 Tgl Di Polban",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-06-08-mei-2024-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/h2s-training-29-mei-2024/",
+      "title": "H2S Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-04-06-juni-2024-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-ruang-terbatas-class-2-batch-1-cilegon-tgl-29-jun-03-jul-2024/",
+      "title": "Inhouse Training Ruang Terbatas Class 2 Batch 1 Cilegon Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-crowd-management-training-09-juli-2024/",
+      "title": "Inhouse Crowd Management Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-permit-to-work-training-09-juli-2024/",
+      "title": "Inhouse Permit To Work Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-banguan-tinggi-tingkat-2-tkbt2-tgl-10-12-juli-2024-blended-training/",
+      "title": "Pelatihan Tenaga Kerja Banguan Tinggi Tingkat 2 Tkbt2 Tgl Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-banguan-tinggi-tingkat-2-tkbt2-tgl-06-08-agustus-2024-blended-training/",
+      "title": "Pelatihan Tenaga Kerja Banguan Tinggi Tingkat 2 Tkbt2 Tgl Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-ruang-terbatas-class-1-batch-2-cilegon-tgl-10-14-juli-2024/",
+      "title": "Inhouse Training Ruang Terbatas Class 1 Batch 2 Cilegon Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-ruang-terbatas-class-2-batch-2-cilegon-tgl-10-14-juli-2024/",
+      "title": "Inhouse Training Ruang Terbatas Class 2 Batch 2 Cilegon Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-dan-sertifikasi-pengawas-operasional-pertama-pop-pertambangan-20-22-agustus-2024/",
+      "title": "Pelatihan Dan Sertifikasi Pengawas Operasional Pertama POP Pertambangan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-tenaga-kerja-pada-ketinggian-tingkat-2-tkpk-2-tgl-22-27-agustus-2024/",
+      "title": "Inhouse Training Tenaga Kerja Pada Ketinggian Tingkat 2 Tkpk 2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-incident-investigation-training-tanggal-09-september-2024-online-training/",
+      "title": "Inhouse Incident Investigation Training Tanggal Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-dan-sertifikasi-pengawas-operasional-pertama-pop-pertambangan-09-11-september-2024/",
+      "title": "Pelatihan Dan Sertifikasi Pengawas Operasional Pertama POP Pertambangan",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-petugas-k3-kimia-tanggal-04-11-september-2024-online-training/",
+      "title": "Training Petugas K3 Kimia Tanggal Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-awareness-inplementation-haccp-11-september-2024/",
+      "title": "Inhouse Training Awareness Inplementation Haccp",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-banguan-tinggi-tingkat-2-tkbt2-tgl-11-13-september-2024-blended-training/",
+      "title": "Pelatihan Tenaga Kerja Banguan Tinggi Tingkat 2 Tkbt2 Tgl Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-pop-pertambangan-tgl-26-28-september-2024-online-training/",
+      "title": "Training POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-16-18-oktober-2024-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-03-05-desember-2024-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-banguan-tinggi-tingkat-2-tkbt2-tgl-10-12-desember-2024-blended-training/",
+      "title": "Pelatihan Tenaga Kerja Banguan Tinggi Tingkat 2 Tkbt2 Tgl Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-17-19-desember-2024-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/riksa-uji-crawler-crane-dan-tangki-timbun-18-januari-2025/",
+      "title": "Riksa Uji Crawler Crane Dan Tangki Timbun",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/siap-jalan-operator-boiler-kelas-1-10-15-januari-2025-jakarta/",
+      "title": "Siap Jalan Operator Boiler Kelas 1 Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-21-23-januari-2025-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/riksa-uji-tangki-timbun-30-januari-2025/",
+      "title": "Riksa Uji Tangki Timbun",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-04-06-februari-2025-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-24-26-februari-2025/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-25-27-februari-2025-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-04-06-maret-2025-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-11-13-maret-2025-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-oplb3-plb3-10-12-maret-2025/",
+      "title": "Pelatihan Oplb3 Plb3",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-11-13-maret-2025/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-fireman-kelas-1-sertifikasi-bnsp-tgl-20-22-maret-2025/",
+      "title": "Inhouse Training Fireman Kelas 1 Sertifikasi BNSP Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-food-handler-16-april-2025/",
+      "title": "Inhouse Training Food Handler",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-ahli-k3-muda-konstruksi-sertifikat-kemnaker-tgl-21-25-april-2025-offline-training/",
+      "title": "Pelatihan Ahli K3 Muda Konstruksi Sertifikat Kemnaker Tgl Offline Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-22-24-april-2025-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-food-handler-23-april-2025-batch-2/",
+      "title": "Inhouse Training Food Handler Batch 2",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-food-handler-30-april-2025-batch-3/",
+      "title": "Inhouse Training Food Handler Batch 3",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-06-08-mei-2025-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-popal-tgl-20-22-mei-2025-online-training/",
+      "title": "Pelatihan Popal Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-oplb3-20-22-mei-2025-online-training/",
+      "title": "Pelatihan Oplb3 Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-03-05-juni-2025-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-popal-dan-pppa-tgl-30-juni-02-juli-2025-online-training/",
+      "title": "Pelatihan Popal Dan Pppa Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-09-11-juli-2025-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-basic-first-aid-tgl-16-juli-2025/",
+      "title": "Inhouse Training Basic First Aid Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-popal-dan-pppa-tgl-21-23-juli-2025-online-training/",
+      "title": "Pelatihan Popal Dan Pppa Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/private-class-pop-pertambangan-tgl-24-26-juli-2025-online-training/",
+      "title": "Private Class POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-29-30-juli-01-agustus-2025-online-training/",
+      "title": "POP Pertambangan Tgl 29 Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-tkbt-2-bnsp-11-13-agustus-2025-jakarta/",
+      "title": "Inhouse Training Tkbt 2 BNSP Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pengawas-k3-migas-tanggal-11-14-agustus-2025-online-training/",
+      "title": "Pengawas K3 Migas Tanggal Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-teknisi-k3-perancah-tgl-16-19-juli-2024-blended-training/",
+      "title": "Pelatihan Teknisi K3 Perancah Tgl Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-oplb3-dan-plb3-tgl-19-21-agustus-2025-online-training/",
+      "title": "Pelatihan Oplb3 Dan Plb3 Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-19-21-agustus-2025/",
+      "title": "Training Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/tenaga-kerja-pada-ketinggian-tingkat-1-tkpk-1-tgl-25-29-agustus-2025/",
+      "title": "Tenaga Kerja Pada Ketinggian Tingkat 1 Tkpk 1 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-09-11-september-2025/",
+      "title": "Training Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-23-25-september-2025/",
+      "title": "Training Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-07-09-oktober-2025/",
+      "title": "Training Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-teknisi-k3-ruang-terbatas-tgl-06-10-oktober-2025-blended-training/",
+      "title": "Training Teknisi K3 Ruang Terbatas Tgl Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-14-16-oktober-2025/",
+      "title": "Training Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-21-23-oktober-2025/",
+      "title": "Training Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pop-pertambangan-tgl-21-23-oktober-2025-online-training/",
+      "title": "POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-teknisi-k3-ruang-terbatas-tgl-20-24-oktober-2025-blended-training/",
+      "title": "Training Teknisi K3 Ruang Terbatas Tgl Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-basic-first-aid-tgl-29-oktober-2025/",
+      "title": "Inhouse Training Basic First Aid Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-04-06-november-2025/",
+      "title": "Training Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-18-20-november-2025/",
+      "title": "Training Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/sertifikasi-pop-pertambangan-tgl-18-20-november-2025-online-training/",
+      "title": "Sertifikasi POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-poippu-tgl-27-29-november-2025-online-training/",
+      "title": "Pelatihan Poippu Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/sertifikasi-pop-pertambangan-tgl-02-04-desember-2025-online-training/",
+      "title": "Sertifikasi POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-teknisi-k3-ruang-terbatas-tgl-08-12-desember-2025/",
+      "title": "Inhouse Training Teknisi K3 Ruang Terbatas Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-operator-conveyor-tgl-10-12-desember-2025-blended-training/",
+      "title": "Inhouse Training Operator Conveyor Tgl Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-16-18-desember-2025/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/sertifikasi-pop-pertambangan-tgl-16-18-desember-2025-online-training/",
+      "title": "Sertifikasi POP Pertambangan Tgl Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-k3-supervisi-perancah-tgl-15-19-desember-2025-cilegon/",
+      "title": "Inhouse Training K3 Supervisi Perancah Tgl Cilegon",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-23-24-26-januari-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl 23",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-03-05-februari-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-pop-pertambangan-tgl-0203-05-februari-2026-blended-training/",
+      "title": "Inhouse Training POP Pertambangan Tgl 0203 Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-pada-ketinggian-tingkat-1-tkpk1-tgl-09-13-februari-2026/",
+      "title": "Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 1 Tkpk1 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-teknisi-k3-ruang-terbatas-tgl-09-13-februari-2026-blended-training/",
+      "title": "Pelatihan Teknisi K3 Ruang Terbatas Tgl Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-operator-crane-kelas-2-tgl-10-13-februari-2026-offline-training/",
+      "title": "Inhouse Training Operator Crane Kelas 2 Tgl Offline Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-operator-forklift-kelas-2-tgl-10-12-februari-2026-offline-training/",
+      "title": "Inhouse Training Operator Forklift Kelas 2 Tgl Offline Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-operator-k3-genset-diesel-tgl-1618-20-februari-2026-blended-training/",
+      "title": "Pelatihan Operator K3 Genset Diesel Tgl 1618 Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-11-13-februari-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-tenaga-kerja-pada-ketinggian-tingkat-2-tkpk-2-tgl-02-06-maret-2026/",
+      "title": "Training Tenaga Kerja Pada Ketinggian Tingkat 2 Tkpk 2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-04-06-maret-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-ahli-k3-muda-lingkungan-kerja-himu-tgl-02-10-maret-2026-blended-training/",
+      "title": "Inhouse Training Ahli K3 Muda Lingkungan Kerja Himu Tgl Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-teknisi-k3-ruang-terbatas-tgl-06-10-april-2026-blended-training-bogor/",
+      "title": "Pelatihan Teknisi K3 Ruang Terbatas Tgl Blended Training Bogor",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-k3-operator-rigger-tgl-14-15-17-april-2026-blended-training/",
+      "title": "Pelatihan K3 Operator Rigger Tgl 14 Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/training-tenaga-kerja-pada-ketinggian-tingkat-1-tkpk-1-tgl-13-17-april-2026/",
+      "title": "Training Tenaga Kerja Pada Ketinggian Tingkat 1 Tkpk 1 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/inhouse-training-petugas-p3k-first-aid-sertifikat-kemnaker-tgl-20-22-april-2026/",
+      "title": "Inhouse Training Petugas P3k First Aid Sertifikat Kemnaker Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-pada-ketinggian-tingkat-1-tkpk1-tgl-27-30-april-04-mei-2026/",
+      "title": "Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 1 Tkpk1 Tgl 27",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-pada-ketinggian-tingkat-1-tkpk1-tgl-04-08-mei-2026/",
+      "title": "Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 1 Tkpk1 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-pop-pertambangan-tgl-06-07-09-mei-2026-online-training/",
+      "title": "Pelatihan POP Pertambangan Tgl 06 Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tgl-11-13-mei-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-operator-k3-genset-diesel-tgl-02-05-juni-2026-blended-training/",
+      "title": "Pelatihan Operator K3 Genset Diesel Tgl Blended Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-petugas-p3k-first-aid-sertifikat-kemnaker-ri-tgl-02-04-juni-2026-jakarta/",
+      "title": "Pelatihan Petugas P3k First Aid Sertifikat Kemnaker Ri Tgl Jakarta",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt-2-tgl-03-05-juni-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt 2 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-pada-ketinggian-tingkat-1-tkpk1-tgl-08-12-juni-2026/",
+      "title": "Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 1 Tkpk1 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-10-12-juni-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/sertifikasi-pop-pertambangan-tgl-17-18-20-juni-2026-online-training/",
+      "title": "Sertifikasi POP Pertambangan Tgl 17 Online Training",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-24-26-juni-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-pada-ketinggian-tingkat-1-tkpk1-tgl-22-26-juni-2026/",
+      "title": "Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 1 Tkpk1 Tgl",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-tanggal-15-17-juli-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2 Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-pada-ketinggi-tingkat-1-tkpk1-tanggal-20-24-juli-2026/",
+      "title": "Pelatihan Tenaga Kerja Pada Ketinggi Tingkat 1 Tkpk1 Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-1-tkbt-tanggal-22-24-juli-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 1 Tkbt Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tkbt2-tanggal-29-31-juli-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tkbt2 Tanggal",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-05-07-agustus-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-12-14-agustus-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-bangunan-tinggi-tingkat-2-tkbt2-26-28-agustus-2026/",
+      "title": "Pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 Tkbt2",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-tenaga-kerja-pada-ketinggian-tingkat-1-tkpk1-18-21-24-agustus-2026/",
+      "title": "Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 1 Tkpk1 18",
+      "reason": "no-mapping-rule"
+    },
+    {
+      "sourceUrl": "https://pusattrainingk3.com/pelatihan-pemadam-kebakaran-kelas-c-tanggal-21-25-28-september-2026/",
+      "title": "Pelatihan Pemadam Kebakaran Kelas C Tanggal 21",
+      "reason": "no-mapping-rule"
+    }
+  ]
+}
