@@ -24,10 +24,15 @@ const [allSchedules, trainings] = await Promise.all([
   getCollection('trainings', ({ data }) => !data.draft),
 ]);
 const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
-const schedules = allSchedules
-  .filter((schedule) => trainingsById.has(schedule.data.trainingId))
+const schedules = allSchedules.filter((schedule) => trainingsById.has(schedule.data.trainingId));
+const today = new Date().toISOString().slice(0, 10);
+const upcomingSchedules = schedules
+  .filter((schedule) => schedule.data.startDate.slice(0, 10) >= today)
   .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate));
-const latestSchedules = schedules.slice(0, 6);
+const latestSchedules = (upcomingSchedules.length > 0
+  ? upcomingSchedules
+  : [...schedules].sort((a, b) => Date.parse(b.data.startDate) - Date.parse(a.data.startDate))
+).slice(0, 6);
 const archiveMonths = [...new Set(schedules.map((schedule) => getScheduleMonth(schedule.data)))].sort().reverse();
 const monthLabel = (value: string) => {
   const [year, month] = value.split('-').map(Number);
