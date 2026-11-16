@@ -16,7 +16,7 @@ const [allSchedules, trainings] = await Promise.all([
 const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
 const schedules = allSchedules
   .filter((schedule) => trainingsById.has(schedule.data.trainingId))
-  .sort((a, b) => Date.parse(b.data.startDate) - Date.parse(a.data.startDate));
+  .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate));
 const latestSchedules = schedules.slice(0, 6);
 const archiveMonths = [...new Set(schedules.map((schedule) => getScheduleMonth(schedule.data)))].sort().reverse();
 const monthLabel = (value: string) => {
@@ -39,7 +39,7 @@ const monthLabel = (value: string) => {
           <section class="schedule-index__latest mt-12">
             <div class="schedule-index__section-heading flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p class="schedule-index__section-eyebrow text-xs font-bold uppercase tracking-[0.14em] text-amber-700">UPDATE TERBARU</p>
+                <p class="schedule-index__section-eyebrow text-xs font-bold uppercase tracking-[0.14em] text-amber-700">URUTAN PELAKSANAAN</p>
                 <h2 class="schedule-index__section-title mt-2 text-2xl font-bold tracking-tight text-slate-950">Jadwal yang dipublikasikan</h2>
               </div>
               <p class="schedule-index__total text-sm text-slate-500">{schedules.length} batch tersedia</p>
