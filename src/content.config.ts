@@ -156,7 +156,6 @@ const trainings = defineCollection({
         title: z.string().min(1),
         description: z.string().optional(),
         actionLabel: z.string().min(1),
-        actionHref: z.string().min(1),
         secondaryLabel: z.string().optional(),
         secondaryHref: z.string().optional(),
       }),
