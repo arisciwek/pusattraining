@@ -120,3 +120,17 @@ Block `training-cta` tidak menerima URL kontak bebas. Tujuannya selalu dibentuk 
 ## Batas data
 
 Jangan menyalin harga, klaim lisensi, persyaratan, kurikulum, atau fasilitas dari halaman pihak lain. Setiap nilai harus diverifikasi berdasarkan dokumen dan informasi penyelenggara untuk program yang sedang diterbitkan.
+
+## Data kartu pendaftaran pada hero
+
+Kartu pendaftaran di sisi kanan hero membaca data dari object `hero` pada frontmatter training:
+
+- `price`: harga terverifikasi; jika tidak tersedia, kartu menampilkan "Hubungi kami".
+- `priceNote`: catatan cakupan harga atau instruksi konfirmasi.
+- `duration`: durasi terverifikasi; baris durasi tidak ditampilkan bila belum tersedia.
+- `deliveryMode` dan `certBadge`: dipakai sebagai fakta pelaksanaan dan sertifikasi.
+- `imageSrcset`, `imageSizes`, `imageWidth`, `imageHeight`: opsional untuk aset gambar responsif.
+
+Jadwal terdekat tidak ditulis manual di frontmatter hero. Komponen mengambil batch paling dekat dari collection `schedules` berdasarkan `trainingId`, mengabaikan status dibatalkan/ditunda/selesai, dan membandingkan tanggal dalam zona waktu jadwal (default `Asia/Jakarta`). Bila belum ada batch mendatang, kartu menampilkan pesan konsultasi.
+
+Jangan mengisi harga atau durasi perkiraan. Biarkan field kosong sampai penyelenggara mengonfirmasi nilainya.
