@@ -22,22 +22,22 @@ export async function getStaticPaths() {
   const months = [...new Set(publishedSchedules.map((schedule) => getScheduleMonth(schedule.data)))].sort().reverse();
 
   return months.map((month) => {
-    const monthSchedules = publishedSchedules
+    const entries = publishedSchedules
       .filter((schedule) => getScheduleMonth(schedule.data) === month)
-      .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate));
+      .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate))
+      .map((schedule) => ({
+        schedule,
+        training: trainingsById.get(schedule.data.trainingId)!,
+      }));
 
     return {
       params: { month },
-      props: {
-        month,
-        schedules: monthSchedules,
-        trainingsById: Object.fromEntries(trainingsById),
-      },
+      props: { month, entries },
     };
   });
 }
 
-const { month, schedules, trainingsById } = Astro.props;
+const { month, entries } = Astro.props;
 const [year, monthNumber] = month.split('-').map(Number);
 const monthDate = new Date(Date.UTC(year, monthNumber - 1, 1));
 const monthLabel = new Intl.DateTimeFormat('id-ID', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(monthDate);
@@ -56,20 +56,17 @@ const description = `Daftar jadwal training yang diselenggarakan pada ${monthLab
         <p class="schedule-archive__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">ARSIP JADWAL</p>
         <h1 class="schedule-archive__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">{title}</h1>
         <p class="schedule-archive__description mt-4 text-base leading-8 text-slate-600">{description}</p>
-        <p class="schedule-archive__count mt-5 text-sm font-semibold text-slate-500">{schedules.length} jadwal dipublikasikan</p>
+        <p class="schedule-archive__count mt-5 text-sm font-semibold text-slate-500">{entries.length} jadwal dipublikasikan</p>
       </header>
-      {schedules.length > 0 ? (
+      {entries.length > 0 ? (
         <div class="schedule-archive__grid mt-10 grid gap-5 lg:grid-cols-2">
-          {schedules.map((schedule) => {
-            const training = trainingsById[schedule.data.trainingId];
-            return (
-              <ScheduleCard
-                schedule={schedule}
-                trainingSlug={training.data.slug}
-                trainingTitle={training.data.title}
-              />
-            );
-          })}
+          {entries.map(({ schedule, training }) => (
+            <ScheduleCard
+              schedule={schedule}
+              trainingSlug={training.data.slug}
+              trainingTitle={training.data.title}
+            />
+          ))}
         </div>
       ) : (
         <div class="schedule-archive__empty mt-10">
