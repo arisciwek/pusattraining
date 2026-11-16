@@ -47,6 +47,12 @@ function encodeUlid(timestamp, digest) {
   return result;
 }
 
+function parseExistingIdentities(content) {
+  const id = content.match(/^id:\\s*(\\d+)/m)?.[1];
+  const scheduleId = content.match(/^scheduleId:\\s*(.+)$/m)?.[1]?.replace(/^[\"']|[\"']$/g, '');
+  return { id: id ? Number(id) : null, scheduleId: scheduleId || null };
+}
+
 function hasIdentityCollision(identity, usedIds) {
   return usedIds.has(identity.id) || usedIds.has(identity.scheduleId);
 }
@@ -191,4 +197,4 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   main().catch((error) => { console.error(error.message); process.exitCode = 1; });
 }
 
-export { assignBatchNumbers, hasIdentityCollision, matchTraining, parseTrainingFiles, renderSchedule, stableIdentity };
+export { assignBatchNumbers, hasIdentityCollision, matchTraining, parseExistingIdentities, parseTrainingFiles, renderSchedule, stableIdentity };
