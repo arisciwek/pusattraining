@@ -122,4 +122,12 @@ const navigationItems = contentBlocks.flatMap((block) => {
 
     return null;
   })}
+  {!contentBlocks.some((block) => block.type === 'training-cta') && (
+    <TrainingCta
+      eyebrow="KONSULTASI PROGRAM"
+      title={`Tertarik mengikuti ${title}?`}
+      description="Hubungi Tiara untuk menanyakan informasi program, jadwal, dan proses pendaftaran."
+      actionLabel="Chat Tiara via WhatsApp"
+    />
+  )}
 </div>
