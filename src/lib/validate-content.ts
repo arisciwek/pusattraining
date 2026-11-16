@@ -45,14 +45,23 @@ export async function validateContentRelations(): Promise<void> {
   for (const training of trainings) {
     if (!training.data.hero) continue;
 
-    const summary = training.data.hero.description ?? training.data.description;
-    const trainingName = training.data.title.trim();
-    const normalizedSummary = summary.normalize('NFKC').toLocaleLowerCase('id-ID');
-    const normalizedName = trainingName.normalize('NFKC').toLocaleLowerCase('id-ID');
+    const summary = (training.data.hero.description ?? training.data.description)
+      .normalize('NFKC')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const trainingName = training.data.title
+      .normalize('NFKC')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const openingSentence = summary.split(/[.!?](?:\s|$)/, 1)[0] ?? '';
+    const normalizedOpening = openingSentence.toLocaleLowerCase('id-ID');
+    const normalizedName = trainingName.toLocaleLowerCase('id-ID');
+    const namePosition = normalizedOpening.indexOf(normalizedName);
+    const adalahPosition = normalizedOpening.search(/\badalah\b/);
 
-    if (!normalizedSummary.includes(normalizedName)) {
+    if (namePosition === -1 || adalahPosition < namePosition + normalizedName.length) {
       throw new Error(
-        `Hero summary untuk training "${training.data.trainingId}" harus menyebut nama pelatihan "${trainingName}" secara utuh.`,
+        `Hero summary untuk training "${training.data.trainingId}" harus memuat nama lengkap "${trainingName}" sebelum kata "adalah" pada kalimat pembuka. Gunakan pola "Pelatihan [nama lengkap] adalah ...".`,
       );
     }
   }
