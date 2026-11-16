@@ -53,7 +53,7 @@ blocks:
     description: Hubungi Tiara untuk mengonfirmasi jadwal, persyaratan peserta, ruang lingkup, dan penawaran.
     actionLabel: Chat Tiara via WhatsApp
     secondaryLabel: Lihat jadwal
-    secondaryHref: "#jadwal-pelatihan"
+    secondaryHref: "#pendaftaran"
 
   - type: training-schedule-list
     id: jadwal-pelatihan
@@ -65,8 +65,13 @@ blocks:
   - type: training-content-section
     id: deskripsi-program
     eyebrow: TENTANG PROGRAM
-    title: Deskripsi dan tujuan program
-    description: "Pelatihan K3 Ruang Terbatas membahas bahaya atmosfer dan non-atmosfer, izin masuk, isolasi energi, pengujian gas, komunikasi, pengawasan, serta kesiapsiagaan penyelamatan. Program ini memberi kerangka pemahaman untuk menjalankan tugas sesuai peran dan ketentuan yang relevan. Silabus final, metode, durasi, evaluasi, dan keluaran mengikuti dokumen penyelenggara yang disetujui."
+    title: Deskripsi Pelatihan Teknisi K3 Ruang Terbatas
+    description: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space) merupakan program pembinaan dan sertifikasi resmi—mengacu pada regulasi Kementerian Ketenagakerjaan (Kemnaker) RI (seperti Permenaker No. 11 Tahun 2023)—yang dirancang untuk membekali tenaga kerja dengan pengetahuan dan keterampilan khusus dalam bekerja secara aman di dalam ruang terbatas."
+
+  - type: training-content-section
+    id: tujuan-program
+    eyebrow: TUJUAN PROGRAM
+    title: Tujuan Pelatihan Teknisi K3 Ruang Terbatas
     items:
       - title: Memahami Regulasi
         description: "Memahami peraturan perundang-undangan dan standar Keselamatan dan Kesehatan Kerja (K3) yang berlaku terkait pekerjaan di ruang terbatas."
