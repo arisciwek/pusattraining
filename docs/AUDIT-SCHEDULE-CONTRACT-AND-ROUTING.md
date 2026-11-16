@@ -61,7 +61,7 @@ Build yang dijalankan pemilik repository menghasilkan 29 halaman dan membuat `si
 ## 4. Langkah implementasi berikutnya
 
 1. Tetapkan registry `publisherId` yang disepakati lintas situs.
-2. Tegakkan struktur folder schedule dan validasi identitas/relasi.
+2. Tambahkan fixture untuk membuktikan validasi struktur folder schedule dan relasi berjalan sesuai kontrak.
 3. Siapkan fixture validasi untuk lima lifecycle status dan variasi field opsional; fixture dapat berada di test/fixture, bukan menjadi data publik.
 4. Implementasikan arsip bulanan berdasarkan `startDate` dan `timezone`.
 5. Implementasikan detail schedule dengan pola URL portal yang sudah didokumentasikan.
