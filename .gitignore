@@ -165,6 +165,3 @@ Thumbs.db
 # Deployment adapters
 .vercel/
 .netlify/
-
-# Generated schedule discovery / frontmatter drafts (review before moving to src/content)
-var/
