@@ -1,4 +1,5 @@
 export interface BlockImage { src: string; alt: string; caption?: string; }
+export interface TrainingCatalogPageBlock { type: 'training-catalog'; eyebrow?: string; title: string; description: string; emptyMessage?: string; }
 export interface TrainingPageBlock { type: 'program-grid'; title?: string; description?: string; programs: { title: string; description: string; href: string; category?: string }[]; }
 export interface BenefitsPageBlock { type: 'benefits'; title: string; description?: string; items: { title: string; description: string; icon?: string }[]; }
 export interface ReasonsPageBlock { type: 'reasons'; title: string; description?: string; items: { title: string; text: string }[]; }
@@ -8,7 +9,7 @@ export interface TimelinePageBlock { type: 'timeline'; title?: string; items: { 
 export interface StatsPageBlock { type: 'stats'; items: { value: string; label: string; note?: string }[]; }
 export interface CtaPageBlock { type: 'cta'; eyebrow?: string; title: string; description?: string; actionLabel: string; actionHref: string; secondaryLabel?: string; secondaryHref?: string; }
 export interface TestimonialPageBlock { type: 'testimonials'; title?: string; items: { quote: string; name: string; role?: string; organization?: string }[]; }
-export type PageBlock = TrainingPageBlock | BenefitsPageBlock | ReasonsPageBlock | FaqPageBlock | GalleryPageBlock | TimelinePageBlock | StatsPageBlock | CtaPageBlock | TestimonialPageBlock;
+export type PageBlock = TrainingCatalogPageBlock | TrainingPageBlock | BenefitsPageBlock | ReasonsPageBlock | FaqPageBlock | GalleryPageBlock | TimelinePageBlock | StatsPageBlock | CtaPageBlock | TestimonialPageBlock;
 
 export interface HomeHeroBlock {
   type: 'home-hero';
