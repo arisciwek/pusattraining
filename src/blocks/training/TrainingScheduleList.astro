@@ -24,6 +24,31 @@ const {
   trainingSlug,
 } = Astro.props;
 
+type TimelineStatus = 'available' | 'ongoing' | 'past';
+
+function dateKeyInTimezone(value: string, timezone: string): string {
+  if (/^\\d{4}-\\d{2}-\\d{2}$/.test(value)) return value;
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: timezone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(new Date(value));
+  const part = (type: string) => parts.find((item) => item.type === type)?.value ?? '';
+  return `${part('year')}-${part('month')}-${part('day')}`;
+}
+
+function getTimelineStatus(schedule: ScheduleEntry): TimelineStatus | undefined {
+  if (schedule.data.status === 'cancelled' || schedule.data.status === 'postponed') return undefined;
+  const timezone = schedule.data.timezone || 'Asia/Jakarta';
+  const today = dateKeyInTimezone(new Date().toISOString(), timezone);
+  const start = dateKeyInTimezone(schedule.data.startDate, timezone);
+  const end = dateKeyInTimezone(schedule.data.endDate, timezone);
+  if (end < today) return 'past';
+  if (start <= today) return 'ongoing';
+  return 'available';
+}
+
 // Tampilkan batch terbaru lebih dahulu, termasuk arsip jadwal yang sudah lewat.
 const sortedSchedules = [...schedules].sort((a, b) => {
   const dateDifference = Date.parse(b.data.startDate) - Date.parse(a.data.startDate);
@@ -51,7 +76,7 @@ const sortedSchedules = [...schedules].sort((a, b) => {
         <li class="training-schedule-list__legend-item"><span class="training-schedule-list__legend-dot training-schedule-list__legend-dot--past" aria-hidden="true"></span>Sudah terlewati</li>
       </ul>
       <div class="training-schedule-list__grid mt-5 grid gap-5 lg:grid-cols-2">
-        {sortedSchedules.map((schedule) => <ScheduleCard schedule={schedule} trainingSlug={trainingSlug} />)}
+        {sortedSchedules.map((schedule) => <ScheduleCard schedule={schedule} trainingSlug={trainingSlug} timelineStatus={getTimelineStatus(schedule)} />)}
       </div>
     </>
   ) : (
