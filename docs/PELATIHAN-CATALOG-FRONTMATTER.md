@@ -51,6 +51,8 @@ Blok didefinisikan pada schema collection `pages` dan tipe TypeScript `TrainingC
 | `title` | string | Ya | H1 katalog. |
 | `description` | string | Ya | Pengantar katalog. |
 | `emptyMessage` | string | Tidak | Pesan saat belum ada kategori aktif. |
+| `categoryTitle` | string | Ya | Judul section daftar kategori. |
+| `categoryDescription` | string | Tidak | Pengantar section daftar kategori. |
 
 Renderer: `src/blocks/training/TrainingCatalog.astro`.
 
