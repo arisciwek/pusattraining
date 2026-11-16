@@ -76,7 +76,7 @@ const pages = defineCollection({
     ...editorialDates,
     related: z.array(z.number().int().positive()).default([]),
     blocks: z.array(z.discriminatedUnion('type', [
-      z.object({ type: z.literal('training-catalog'), eyebrow: z.string().optional(), title: z.string().min(1), description: z.string().min(1), emptyMessage: z.string().optional() }),
+      z.object({ type: z.literal('training-catalog'), eyebrow: z.string().optional(), title: z.string().min(1), description: z.string().min(1), emptyMessage: z.string().optional(), categoryTitle: z.string().min(1), categoryDescription: z.string().optional() }),
       z.object({ type: z.literal('program-grid'), title: z.string().optional(), description: z.string().optional(), programs: z.array(z.object({ title: z.string(), description: z.string(), href: z.string(), category: z.string().optional() })) }),
       z.object({ type: z.literal('benefits'), title: z.string(), description: z.string().optional(), items: z.array(z.object({ title: z.string(), description: z.string(), icon: z.string().optional() })) }),
       z.object({ type: z.literal('reasons'), title: z.string(), description: z.string().optional(), items: z.array(z.object({ title: z.string(), text: z.string() })) }),
