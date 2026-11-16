@@ -47,7 +47,6 @@ export interface TrainingCtaBlock {
   title: string;
   description?: string;
   actionLabel: string;
-  actionHref: string;
   secondaryLabel?: string;
   secondaryHref?: string;
 }
