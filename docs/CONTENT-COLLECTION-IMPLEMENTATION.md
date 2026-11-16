@@ -48,7 +48,7 @@ Collection bernama plural `schedules`. Schema mempertahankan field dan enum dari
 
 Validasi memeriksa tanggal kalender ISO, datetime dengan zona waktu, timezone IANA, `endDate >= startDate`, dan `updatedDate >= pubDate`. Relasi `trainingId` diperiksa saat validasi lintas collection.
 
-**Belum selesai:** registry allowlist `publisherId`, validasi struktur folder kanonis, fixture semua status, route arsip bulanan, dan route detail schedule. Rincian audit ada di `docs/AUDIT-SCHEDULE-CONTRACT-AND-ROUTING.md`.
+**Belum selesai:** registry allowlist `publisherId`, fixture semua status, route arsip bulanan, dan route detail schedule. Struktur folder kanonis sudah diperiksa oleh validator lintas collection. Rincian audit ada di `docs/AUDIT-SCHEDULE-CONTRACT-AND-ROUTING.md`.
 
 ### 2.4 Article
 
