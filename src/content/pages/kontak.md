@@ -17,6 +17,12 @@ Pusattraining menyajikan informasi program dan jadwal pelatihan dari berbagai bi
 
 Untuk pertanyaan mengenai suatu program atau batch, siapkan nama program dan jadwal yang dimaksud agar informasi yang ditanyakan dapat ditelusuri dengan tepat.
 
-## Informasi kanal komunikasi
+## Hubungi Tiara
 
-Kanal komunikasi resmi portal akan ditambahkan setelah alamat email, nomor telepon, dan pengelola komunikasi dikonfirmasi. Kami tidak menampilkan alamat atau nomor kontak yang belum diverifikasi.
+Untuk pertanyaan mengenai program, jadwal, persyaratan, atau pendaftaran pelatihan, hubungi kontak resmi Pusattraining:
+
+- **Kontak:** Tiara
+- **Telepon / WhatsApp:** [0812-9805-3891](tel:+6281298053891)
+- **WhatsApp:** [Chat dengan Tiara](https://wa.me/6281298053891)
+
+Sampaikan nama program dan jadwal yang dimaksud agar pertanyaan dapat ditindaklanjuti dengan tepat.
