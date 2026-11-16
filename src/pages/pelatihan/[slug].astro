@@ -4,10 +4,12 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 import Container from '../../components/shared/Container.astro';
 import Breadcrumb from '../../components/shared/Breadcrumb.astro';
 import TrainingCard from '../../components/training/TrainingCard.astro';
+import { validateContentRelations } from '../../lib/validate-content';
 
 const trainings = await getCollection('trainings', ({ data }) => !data.draft);
 
 export async function getStaticPaths() {
+  await validateContentRelations();
   const categories = await getCollection('pages', ({ data }) =>
     data.pageType === 'category' && !data.draft
   );
