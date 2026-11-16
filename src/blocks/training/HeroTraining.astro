@@ -14,7 +14,7 @@ const { eyebrow, certBadge, title, description, image, imageAlt, imageSrcset,
   imageWidth = '848', imageHeight = '308', deliveryMode, ctaLabel = 'Lihat biaya & daftar',
   ctaHref = '#pendaftaran', trustItems = [], price, priceNote, duration, schedules } = Astro.props;
 function localDateKey(value: string, timezone: string): string {
-  if (/^\\d{4}-\\d{2}-\\d{2}$/.test(value)) return value;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
   const parts = new Intl.DateTimeFormat('en-CA', {
     timeZone: timezone, year: 'numeric', month: '2-digit', day: '2-digit',
   }).formatToParts(new Date(value));
