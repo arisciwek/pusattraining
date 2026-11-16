@@ -119,6 +119,47 @@ const trainings = defineCollection({
         noticeDescription: z.string().min(1),
       }),
       z.object({
+        type: z.literal('training-summary'),
+        eyebrow: z.string().optional(),
+        items: z.array(z.object({
+          label: z.string().min(1),
+          value: z.string().min(1),
+          detail: z.string().optional(),
+        })).min(1),
+      }),
+      z.object({
+        type: z.literal('training-content-section'),
+        id: z.string().optional(),
+        eyebrow: z.string().optional(),
+        title: z.string().min(1),
+        description: z.string().optional(),
+        items: z.array(z.object({
+          title: z.string().min(1),
+          description: z.string().optional(),
+        })).default([]),
+      }),
+      z.object({
+        type: z.literal('training-faq'),
+        id: z.string().optional(),
+        eyebrow: z.string().optional(),
+        title: z.string().min(1),
+        description: z.string().optional(),
+        items: z.array(z.object({
+          question: z.string().min(1),
+          answer: z.string().min(1),
+        })).min(1),
+      }),
+      z.object({
+        type: z.literal('training-cta'),
+        eyebrow: z.string().optional(),
+        title: z.string().min(1),
+        description: z.string().optional(),
+        actionLabel: z.string().min(1),
+        actionHref: z.string().min(1),
+        secondaryLabel: z.string().optional(),
+        secondaryHref: z.string().optional(),
+      }),
+      z.object({
         type: z.literal('training-schedule-list'),
         eyebrow: z.string().optional(),
         title: z.string().min(1),
