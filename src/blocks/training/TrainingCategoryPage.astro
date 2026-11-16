@@ -1,0 +1,45 @@
+---
+import TrainingGrid from '../../components/training/TrainingGrid.astro';
+
+interface Props {
+  pageTitle: string;
+  pageDescription: string;
+  eyebrow?: string;
+  sectionTitle: string;
+  sectionDescription?: string;
+  emptyMessage: string;
+  trainings: { title: string; href: string; description: string }[];
+}
+
+const {
+  pageTitle,
+  pageDescription,
+  eyebrow = 'BIDANG PELATIHAN',
+  sectionTitle,
+  sectionDescription,
+  emptyMessage,
+  trainings,
+} = Astro.props;
+---
+<section class="training-category-page">
+  <header class="training-category-page__header max-w-4xl">
+    <p class="training-category-page__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">{eyebrow}</p>
+    <h1 class="training-category-page__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">{pageTitle}</h1>
+    <p class="training-category-page__description mt-4 text-base leading-8 text-slate-600">{pageDescription}</p>
+  </header>
+
+  <section class="training-category-page__programs mt-12" aria-labelledby="training-category-programs-title">
+    <header class="training-category-page__programs-header max-w-3xl">
+      <h2 id="training-category-programs-title" class="training-category-page__section-title text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">{sectionTitle}</h2>
+      {sectionDescription && <p class="training-category-page__section-description mt-3 text-base leading-7 text-slate-600">{sectionDescription}</p>}
+    </header>
+
+    {trainings.length > 0 ? (
+      <div class="training-category-page__grid mt-7">
+        <TrainingGrid items={trainings} columns={3} />
+      </div>
+    ) : (
+      <p class="training-category-page__empty mt-7 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm leading-7 text-slate-600">{emptyMessage}</p>
+    )}
+  </section>
+</section>
