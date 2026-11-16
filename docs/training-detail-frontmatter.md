@@ -97,7 +97,6 @@ blocks:
     title: Siap mengikuti pelatihan?
     description: Hubungi tim untuk mengonfirmasi jadwal dan proses pendaftaran.
     actionLabel: Konsultasi program
-    actionHref: /kontak/
 ```
 
 ## Kontak dan CTA resmi
@@ -116,7 +115,7 @@ Block `training-cta` tidak menerima URL kontak bebas. Tujuannya selalu dibentuk 
 - `training-summary`, `training-schedule-list`, `training-content-section`, dan `training-faq` memiliki anchor ID.
 - Tetapkan `id` secara eksplisit bila judul section berpotensi sama atau URL anchor perlu dipertahankan.
 - FAQ memakai elemen HTML `details/summary`; tidak membutuhkan JavaScript.
-- CTA menerima URL internal maupun eksternal. Pastikan URL pendaftaran dan kontak telah diverifikasi.
+- CTA utama selalu menuju WhatsApp Tiara; tautan sekunder hanya untuk navigasi internal atau tujuan pendukung yang telah diverifikasi.
 
 ## Batas data
 
