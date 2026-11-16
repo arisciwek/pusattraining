@@ -8,9 +8,11 @@ import CtaBlock from '../components/shared/CtaBlock.astro';
 import TestimonialGrid from '../components/shared/TestimonialGrid.astro';
 import ProgramGrid from '../components/content/ProgramGrid.astro';
 import TrainingCatalog from './training/TrainingCatalog.astro';
+import TrainingCategoryPage from './training/TrainingCategoryPage.astro';
 import type { PageBlock } from './types';
 
 export const blockRegistry = {
+  'training-category': TrainingCategoryPage,
   'training-catalog': TrainingCatalog,
   'program-grid': ProgramGrid,
   benefits: BenefitsBlock,
