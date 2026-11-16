@@ -69,7 +69,7 @@ const attendanceLabels = {
 const eventStatus = {
   scheduled: 'https://schema.org/EventScheduled',
   ongoing: 'https://schema.org/EventScheduled',
-  completed: 'https://schema.org/EventCompleted',
+  completed: undefined,
   postponed: 'https://schema.org/EventPostponed',
   cancelled: 'https://schema.org/EventCancelled',
 }[data.status];
@@ -106,7 +106,7 @@ const structuredData = {
   description,
   startDate: data.startDate,
   endDate: data.endDate,
-  eventStatus,
+  ...(eventStatus ? { eventStatus } : {}),
   ...(eventAttendanceMode ? { eventAttendanceMode } : {}),
   ...(eventLocation ? { location: eventLocation } : {}),
   url: Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined,
@@ -117,7 +117,9 @@ const structuredData = {
           url: data.sites.main.registrationUrl,
           availability: data.registration?.status === 'open'
             ? 'https://schema.org/InStock'
-            : 'https://schema.org/SoldOut',
+            : data.registration?.status === 'not-open'
+              ? 'https://schema.org/PreOrder'
+              : 'https://schema.org/SoldOut',
         },
       }
     : {}),
