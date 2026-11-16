@@ -1,17 +1,18 @@
 ---
 import { CONTACT_PERSON, CONTACT_PHONE_DISPLAY, CONTACT_TEL_HREF, getContactWhatsAppHref } from '../../lib/contact';
-interface Props { title: string; description: string; phone?: string; whatsapp?: string; email?: string; }
-const { title, description, phone = CONTACT_PHONE_DISPLAY, whatsapp = getContactWhatsAppHref(), email } = Astro.props;
-const telHref = phone === CONTACT_PHONE_DISPLAY ? CONTACT_TEL_HREF : `tel:${phone.replace(/[^+\\d]/g, '')}`;
+interface Props { title: string; description: string; email?: string; }
+const { title, description, email } = Astro.props;
+const telHref = CONTACT_TEL_HREF;
+const whatsappHref = getContactWhatsAppHref();
 ---
 <aside class="contact-panel" aria-labelledby="contact-panel-title">
   <div class="contact-panel__content">
     <h2 class="contact-panel__title" id="contact-panel-title">{title}</h2>
     <p class="contact-panel__description">{description}</p>
-    <p class="contact-panel__person">Kontak: {CONTACT_PERSON} · <a class="contact-panel__phone" href={telHref}>{phone}</a></p>
+    <p class="contact-panel__person">Kontak: {CONTACT_PERSON} · <a class="contact-panel__phone" href={telHref}>{CONTACT_PHONE_DISPLAY}</a></p>
   </div>
   <div class="contact-panel__actions">
-    <a class="contact-panel__action contact-panel__action--primary" href={whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp Tiara <span aria-hidden="true">↗</span></a>
+    <a class="contact-panel__action contact-panel__action--primary" href={whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp Tiara <span aria-hidden="true">↗</span></a>
     <a class="contact-panel__action" href={telHref}>Telepon</a>
     {email && <a class="contact-panel__action" href={`mailto:${email}`}>Email</a>}
   </div>
