@@ -1,6 +1,6 @@
 # Implementasi Route Schedule — Pusattraining
 
-> Status: implementasi route arsip bulanan dan detail schedule pada branch `feat/schedule-archive-detail-routes`. Dokumen ini menjelaskan perilaku route; kontrak frontmatter tetap mengacu ke `FRONTMATTER-SCHEDULE-CONTRACT.md`.
+> Status: route indeks, arsip bulanan, dan detail schedule sudah terimplementasi pada `main`. Dokumen ini menjelaskan perilaku route; kontrak frontmatter tetap mengacu ke `FRONTMATTER-SCHEDULE-CONTRACT.md`.
 
 ## 1. Pola URL
 
@@ -33,7 +33,14 @@ Komponen `ScheduleCard.astro` menggunakan `getScheduleHref()` sebagai tujuan anc
 
 `/jadwal/<YYYY-MM>/<training-slug>/<schedule-slug>/`
 
-## 4. Isi halaman arsip
+## 4. Isi indeks dan halaman arsip
+
+Indeks `/jadwal/`:
+
+- Mengambil schedule publik yang memiliki relasi valid ke master training.
+- Jika tersedia schedule yang tanggal mulainya hari ini atau setelah hari ini, menampilkan maksimal enam schedule mendatang terdekat dalam urutan tanggal menaik.
+- Jika tidak ada schedule mendatang, menampilkan maksimal enam schedule dengan tanggal pelaksanaan paling baru sebagai fallback historis.
+- Arsip bulanan tetap mencakup seluruh schedule publik, termasuk schedule historis.
 
 Arsip bulanan:
 
@@ -60,9 +67,9 @@ Detail schedule juga menghasilkan JSON-LD `Event` dari field sumber, termasuk ta
 ## 6. Validasi dan batasan
 
 - `getStaticPaths()` pada route arsip dan detail menjalankan `validateContentRelations()`.
-- Collection schedules saat ini masih kosong. Karena itu build dapat sukses tanpa menghasilkan halaman arsip/detail; jumlah URL akan bertambah otomatis saat record schedule valid ditambahkan.
+- Collection `schedules` sudah berisi data publik. Catatan rebuild pada `docs/hasil-rebuiild.txt` menunjukkan 84 halaman berhasil dibangun, termasuk route detail schedule dan arsip bulanan. Jumlah halaman akan mengikuti jumlah record schedule valid yang dipublikasikan.
 - Jangan menambahkan fixture atau schedule fiktif hanya untuk membuat route muncul.
-- Setelah checkout branch, jalankan `npm run check` dan `npm run build`; periksa output route ketika data schedule nyata tersedia.
+- Setelah perubahan route atau data schedule, jalankan `npm run check` dan `npm run build`; periksa output route dan sitemap.
 - Uji manual berikutnya perlu mencakup variasi status schedule, timezone yang melewati batas bulan UTC, venue kosong, delivery online/offline/blended, dan pendaftaran tanpa URL.
 
 ## 7. Berkas implementasi
