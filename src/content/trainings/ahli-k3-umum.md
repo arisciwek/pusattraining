@@ -11,6 +11,18 @@ pubDate: '2026-11-16T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
 image: /images/training/ak3-umum.jpg
+hero:
+  eyebrow: PROGRAM PELATIHAN & SERTIFIKASI
+  certBadge: KEMNAKER RI
+  description: Pelatihan Calon Ahli K3 Umum Sertifikasi Kemnaker RI adalah program pembinaan kompetensi tertinggi dan paling dicari di Indonesia bagi tenaga profesional K3, berlandaskan Undang-Undang No. 1 Tahun 1970 dan Peraturan Menteri Tenaga Kerja No. 5 Tahun 2023 tentang Penunjukan, Kewajiban, dan Wewenang Ahli K3.
+  deliveryMode: mixed
+  ctaLabel: Lihat biaya & daftar
+  ctaHref: "#pendaftaran"
+  trustItems:
+    - icon: "<path d=\"m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Z\"></path><path d=\"m8 12 3 3 5-6\"></path>"
+      label: PJK3 resmi Kemnaker RI
+    - icon: "<circle cx=\"12\" cy=\"7\" r=\"4\"></circle><path d=\"M4 21v-2a8 8 0 0 1 16 0v2Z\"></path>"
+      label: Instruktur praktisi
 related: []
 blocks:
   - type: training-detail-intro

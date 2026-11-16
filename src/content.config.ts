@@ -110,6 +110,18 @@ const trainings = defineCollection({
     categoryIds: z.array(z.number().int().positive()).default([]),
     ...editorialDates,
     image: z.string().optional(),
+    hero: z.object({
+      eyebrow: z.string().optional(),
+      certBadge: z.string().optional(),
+      description: z.string().optional(),
+      deliveryMode: z.enum(['online', 'offline', 'mixed']).optional(),
+      ctaLabel: z.string().optional(),
+      ctaHref: z.string().optional(),
+      trustItems: z.array(z.object({
+        icon: z.string().min(1),
+        label: z.string().min(1),
+      })).optional(),
+    }).optional(),
     related: z.array(z.number().int().positive()).default([]),
     blocks: z.array(z.discriminatedUnion('type', [
       z.object({

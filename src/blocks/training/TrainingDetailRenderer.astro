@@ -1,4 +1,5 @@
 ---
+import HeroTraining from './HeroTraining.astro';
 import TrainingDetailIntro from './TrainingDetailIntro.astro';
 import TrainingScheduleList from './TrainingScheduleList.astro';
 import TrainingSummary from './TrainingSummary.astro';
@@ -18,9 +19,18 @@ interface Props {
   trainingSlug: string;
   image?: string;
   imageAlt?: string;
+  hero?: {
+    eyebrow?: string;
+    certBadge?: string;
+    description?: string;
+    deliveryMode?: 'online' | 'offline' | 'mixed';
+    ctaLabel?: string;
+    ctaHref?: string;
+    trustItems?: { icon: string; label: string }[];
+  };
 }
 
-const { blocks, title, description, schedules, trainingSlug, image, imageAlt = title } = Astro.props;
+const { blocks, title, description, schedules, trainingSlug, image, imageAlt = title, hero } = Astro.props;
 
 function slugifySectionTitle(value: string): string {
   return value
@@ -43,10 +53,19 @@ const navigationItems = contentBlocks.flatMap((block) => {
 });
 ---
 <div class="training-detail-renderer">
-  {image && (
-    <div class="training-detail-renderer__hero mb-10 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
-      <img class="training-detail-renderer__image h-full w-full object-cover" src={image} alt={imageAlt} loading="lazy" decoding="async" />
-    </div>
+  {hero && (
+    <HeroTraining
+      eyebrow={hero.eyebrow ?? 'PROGRAM PELATIHAN'}
+      certBadge={hero.certBadge}
+      title={title}
+      description={hero.description ?? description}
+      image={image ?? ''}
+      imageAlt={imageAlt}
+      deliveryMode={hero.deliveryMode}
+      ctaLabel={hero.ctaLabel}
+      ctaHref={hero.ctaHref}
+      trustItems={hero.trustItems}
+    />
   )}
   {introBlocks.map((block) => {
     if (block.type !== 'training-detail-intro') return null;
