@@ -32,7 +32,7 @@ const todayInTimezone = (timezone: string) => new Intl.DateTimeFormat('en-CA', {
 
 const upcomingSchedules = schedules
   .filter((schedule) => {
-    const { status, startDate, endDate, timezone } = schedule.data;
+    const { status, endDate, timezone } = schedule.data;
     if (status === 'completed' || status === 'cancelled' || status === 'postponed') return false;
 
     const today = todayInTimezone(timezone);
@@ -50,7 +50,6 @@ const upcomingSchedules = schedules
     dateLabel: string;
     mode: string;
     location?: string;
-    status: string;
     registrationHref?: string;
     image?: string;
     imageAlt: string;
@@ -74,7 +73,6 @@ const upcomingSchedules = schedules
       dateLabel: schedule.data.dateLabel || formatScheduleRange(schedule.data.startDate, schedule.data.endDate, schedule.data.timezone),
       mode: modeLabels[schedule.data.delivery?.mode ?? 'offline'],
       location: schedule.data.venue?.name,
-      status: schedule.data.status,
       registrationHref: schedule.data.sites?.main?.registrationUrl,
       image: schedule.data.image ?? training.data.image,
       imageAlt: training.data.title,
