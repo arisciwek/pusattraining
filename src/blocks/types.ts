@@ -1,5 +1,5 @@
 export interface BlockImage { src: string; alt: string; caption?: string; }
-export interface TrainingCatalogPageBlock { type: 'training-catalog'; eyebrow?: string; title: string; description: string; emptyMessage?: string; }
+export interface TrainingCatalogPageBlock { type: 'training-catalog'; eyebrow?: string; title: string; description: string; emptyMessage?: string; categoryTitle: string; categoryDescription?: string; }
 export interface TrainingPageBlock { type: 'program-grid'; title?: string; description?: string; programs: { title: string; description: string; href: string; category?: string }[]; }
 export interface BenefitsPageBlock { type: 'benefits'; title: string; description?: string; items: { title: string; description: string; icon?: string }[]; }
 export interface ReasonsPageBlock { type: 'reasons'; title: string; description?: string; items: { title: string; text: string }[]; }
