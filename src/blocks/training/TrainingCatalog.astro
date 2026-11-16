@@ -1,5 +1,4 @@
 ---
-import SectionHeading from '../../components/shared/SectionHeading.astro';
 import TrainingCategoryOverview from '../home/TrainingCategoryOverview.astro';
 
 interface Props {
@@ -7,6 +6,8 @@ interface Props {
   title: string;
   description: string;
   emptyMessage?: string;
+  categoryTitle: string;
+  categoryDescription?: string;
   categories: { title: string; description: string; href: string }[];
 }
 
@@ -15,6 +16,8 @@ const {
   title,
   description,
   emptyMessage = 'Kategori pelatihan sedang disiapkan.',
+  categoryTitle,
+  categoryDescription,
   categories,
 } = Astro.props;
 ---
@@ -26,7 +29,7 @@ const {
   </header>
   {categories.length > 0 ? (
     <div class="training-catalog__categories mt-10">
-      <TrainingCategoryOverview categories={categories} />
+      <TrainingCategoryOverview title={categoryTitle} description={categoryDescription} categories={categories} />
     </div>
   ) : (
     <p class="training-catalog__empty mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-slate-600">{emptyMessage}</p>
