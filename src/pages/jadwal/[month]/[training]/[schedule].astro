@@ -6,7 +6,6 @@ import Breadcrumb from '../../../../components/shared/Breadcrumb.astro';
 import { validateContentRelations } from '../../../../lib/validate-content';
 import {
   formatScheduleDate,
-  formatScheduleRange,
   getScheduleDescription,
   getScheduleMonth,
   getScheduleStatusLabel,
@@ -43,15 +42,15 @@ const siteCopy = data.sites?.main;
 const title = getScheduleTitle(schedule);
 const description = getScheduleDescription(schedule);
 const month = getScheduleMonth(data);
-const dateLabel = formatScheduleRange(data.startDate, data.endDate, data.timezone);
+const dateLabel = data.dateLabel;
 const registrationUrl = siteCopy?.registrationUrl;
-const eventStatus = {
-  scheduled: 'https://schema.org/EventScheduled',
-  ongoing: 'https://schema.org/EventScheduled',
-  completed: 'https://schema.org/EventCompleted',
-  postponed: 'https://schema.org/EventPostponed',
-  cancelled: 'https://schema.org/EventCancelled',
-}[data.status];
+const eventStatus = data.status === 'scheduled' || data.status === 'ongoing'
+  ? 'https://schema.org/EventScheduled'
+  : data.status === 'postponed'
+    ? 'https://schema.org/EventPostponed'
+    : data.status === 'cancelled'
+      ? 'https://schema.org/EventCancelled'
+      : undefined;
 const attendanceMode = data.delivery?.attendanceMode === 'online'
   ? 'https://schema.org/OnlineEventAttendanceMode'
   : data.delivery?.attendanceMode === 'mixed'
@@ -66,7 +65,7 @@ const eventJsonLd = {
   description,
   startDate: data.startDate,
   endDate: data.endDate,
-  eventStatus,
+  ...(eventStatus ? { eventStatus } : {}),
   ...(attendanceMode ? { eventAttendanceMode: attendanceMode } : {}),
   ...(data.venue ? {
     location: {
@@ -177,7 +176,7 @@ const safeEventJsonLd = JSON.stringify(eventJsonLd).replace(/</g, '\\u003c');
           </p>
           {data.registration?.deadline && <p class="schedule-detail__deadline mt-4 text-sm text-slate-600">Batas pendaftaran: <strong class="font-semibold text-slate-900">{formatScheduleDate(data.registration.deadline, data.timezone)}</strong></p>}
           {data.registration?.capacity && <p class="schedule-detail__capacity mt-2 text-sm text-slate-600">Kapasitas: <strong class="font-semibold text-slate-900">{data.registration.capacity} peserta</strong></p>}
-          {registrationUrl && data.registration?.status !== 'closed' && data.registration?.status !== 'not-open' ? (
+          {registrationUrl && data.registration?.status === 'open' ? (
             <a class="schedule-detail__register mt-6 inline-flex w-full items-center justify-center rounded-xl bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-amber-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950" href={registrationUrl} target="_blank" rel="noopener noreferrer">{siteCopy?.ctaLabel ?? 'Daftar training'} <span class="ml-2" aria-hidden="true">↗</span></a>
           ) : (
             <p class="schedule-detail__register-note mt-6 rounded-xl border border-slate-200 bg-white p-4 text-xs leading-5 text-slate-500">Tautan pendaftaran belum tersedia. Periksa kembali informasi dari penyelenggara.</p>
