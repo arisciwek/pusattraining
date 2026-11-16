@@ -1,7 +1,7 @@
 # Implementasi Content Collections dan Katalog Awal
 
 **Repository:** `arisciwek/pusattraining`  
-**Status:** katalog awal sudah terpasang dan build berhasil pada environment pemilik repository. Audit kontrak schedule diperbarui pada branch `fix/schedule-contract-audit`.
+**Status:** katalog awal dan route schedule portal sudah tersedia. Implementasi route dan komponen schedule sedang diaudit pada branch `fix/schedule-archive-audit`; build terbaru belum diverifikasi.
 
 ## 1. Collection yang tersedia
 
@@ -48,7 +48,7 @@ Collection bernama plural `schedules`. Schema mempertahankan field dan enum dari
 
 Validasi memeriksa tanggal kalender ISO, datetime dengan zona waktu, timezone IANA, `endDate >= startDate`, dan `updatedDate >= pubDate`. Relasi `trainingId` diperiksa saat validasi lintas collection.
 
-**Belum selesai:** registry allowlist `publisherId`, fixture semua status, route arsip bulanan, dan route detail schedule. Struktur folder kanonis sudah diperiksa oleh validator lintas collection. Rincian audit ada di `docs/AUDIT-SCHEDULE-CONTRACT-AND-ROUTING.md`.
+**Belum selesai:** registry allowlist `publisherId` dan fixture semua status. Struktur folder kanonis serta relasi training diperiksa oleh validator lintas collection. Route arsip bulanan, detail batch, indeks jadwal dinamis, dan kartu batch pada halaman training sudah diimplementasikan; pemeriksaan build terbaru masih diperlukan.
 
 ### 2.4 Article
 
@@ -62,11 +62,11 @@ Schema artikel mengikuti pola editorial: identitas, slug, title, description, pu
 | `/pelatihan/` | Pages kategori | Tersedia |
 | `/pelatihan/<slug>/` | Page kategori atau master training | Tersedia |
 | `/training/` | Alias katalog lama, canonical ke `/pelatihan/` | Tersedia |
-| `/jadwal/` | Indeks jadwal | Tersedia, saat ini empty state |
-| `/jadwal/<YYYY-MM>/` | Arsip bulanan | Belum tersedia |
-| `/jadwal/<YYYY-MM>/<training-slug>/<schedule-slug>/` | Detail schedule portal | Belum tersedia |
+| `/jadwal/` | Indeks jadwal | Tersedia; menampilkan batch terbit dan arsip bulan, atau empty state bila belum ada data |
+| `/jadwal/<YYYY-MM>/` | Arsip bulanan | Tersedia; dibangkitkan dari schedule yang dipublikasikan pada situs main |
+| `/jadwal/<YYYY-MM>/<training-slug>/<schedule-slug>/` | Detail schedule portal | Tersedia; memuat data event, pendaftaran, dokumentasi, breadcrumb, dan Event JSON-LD |
 
-Route kategori menampilkan program yang `categoryIds`-nya memuat `pages.id` kategori. Route training menggunakan template dasar; kurikulum, persyaratan, FAQ, galeri, dan block tambahan dapat dilengkapi tanpa mengubah URL.
+Route kategori menampilkan program yang `categoryIds`-nya memuat `pages.id` kategori. Route training menampilkan batch terkait melalui `ScheduleCard`. Kurikulum, persyaratan, FAQ, galeri, dan block tambahan dapat dilengkapi tanpa mengubah URL.
 
 ## 4. Data awal
 
