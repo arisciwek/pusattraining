@@ -1,0 +1,74 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import Breadcrumb from '../../components/shared/Breadcrumb.astro';
+import TrainingCard from '../../components/training/TrainingCard.astro';
+
+const categories = await getCollection('pages', ({ data }) =>
+  data.pageType === 'category' && !data.draft
+);
+const trainings = await getCollection('trainings', ({ data }) => !data.draft);
+
+export async function getStaticPaths() {
+  const categories = await getCollection('pages', ({ data }) =>
+    data.pageType === 'category' && !data.draft
+  );
+  const trainings = await getCollection('trainings', ({ data }) => !data.draft);
+
+  return [
+    ...categories.map((entry) => ({
+      params: { slug: entry.data.slug },
+      props: { kind: 'category', entry },
+    })),
+    ...trainings.map((entry) => ({
+      params: { slug: entry.data.slug },
+      props: { kind: 'training', entry },
+    })),
+  ];
+}
+
+const { kind, entry } = Astro.props;
+const relatedTrainings = kind === 'category'
+  ? trainings.filter((training) => training.data.categoryIds.includes(entry.data.id))
+  : [];
+const title = entry.data.title;
+const description = entry.data.description;
+---
+<SiteLayout title={title} description={description}>
+  <section class="training-detail py-12 sm:py-16">
+    <Container>
+      <Breadcrumb items={[
+        { label: 'Beranda', href: '/' },
+        { label: 'Pelatihan', href: '/pelatihan/' },
+        { label: title },
+      ]} />
+      <header class="training-detail__header mt-8 max-w-4xl">
+        <p class="training-detail__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">
+          {kind === 'category' ? 'BIDANG PELATIHAN' : 'PROGRAM PELATIHAN'}
+        </p>
+        <h1 class="training-detail__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">{title}</h1>
+        <p class="training-detail__description mt-4 text-base leading-8 text-slate-600">{description}</p>
+      </header>
+
+      {kind === 'category' ? (
+        <section class="training-detail__programs mt-12">
+          <h2 class="training-detail__section-title text-2xl font-bold tracking-tight text-slate-950">Program dalam kategori ini</h2>
+          {relatedTrainings.length > 0 ? (
+            <div class="training-detail__program-grid mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {relatedTrainings.map((training) => <TrainingCard {...training.data} href={`/pelatihan/${training.data.slug}/`} />)}
+            </div>
+          ) : (
+            <p class="training-detail__empty mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-slate-600">Program dalam kategori ini akan ditambahkan secara bertahap.</p>
+          )}
+        </section>
+      ) : (
+        <div class="training-detail__content mt-10 max-w-3xl">
+          <div class="training-detail__notice rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <h2 class="training-detail__notice-title text-lg font-bold text-slate-950">Informasi program</h2>
+            <p class="training-detail__notice-description mt-2 leading-7 text-slate-600">Rincian materi, persyaratan, metode, dan jadwal program ini akan dilengkapi secara bertahap.</p>
+          </div>
+        </div>
+      )}
+    </Container>
+  </section>
+</SiteLayout>
