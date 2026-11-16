@@ -15,6 +15,17 @@ function assertUnique(values: string[], label: string): void {
   }
 }
 
+const scheduleFilePaths = Object.keys(import.meta.glob('/src/content/schedules/**/*.md', { eager: false }))
+  .map((p) => p.replace(/^.*\/src\/content\/schedules\//, '').replace(/\.md$/, ''));
+
+const schedulePathBySlug = new Map<string, string[]>();
+for (const relative of scheduleFilePaths) {
+  const segments = relative.split('/');
+  if (segments.length === 3) {
+    schedulePathBySlug.set(segments[2], segments);
+  }
+}
+
 /**
  * Run during static path generation so broken content relationships fail the build,
  * not silently disappear from category or schedule pages.
@@ -65,17 +76,22 @@ export async function validateContentRelations(): Promise<void> {
       );
     }
 
-    const pathSegments = schedule.id.split('/');
-    const [year, trainingSlug, scheduleSlug] = pathSegments;
+    const segments = schedulePathBySlug.get(schedule.data.slug);
+    if (!segments) {
+      throw new Error(
+        `Path schedule untuk slug "${schedule.data.slug}" tidak ditemukan dalam struktur direktori schedules/<tahun>/<training>/<schedule>.md.`,
+      );
+    }
+
+    const [year, trainingSlug, scheduleSlug] = segments;
 
     if (
-      pathSegments.length !== 3 ||
       year !== schedule.data.startDate.slice(0, 4) ||
       trainingSlug !== training.data.slug ||
       scheduleSlug !== schedule.data.slug
     ) {
       throw new Error(
-        `Path schedule "${schedule.id}" harus mengikuti schedules/<tahun-startDate>/<training-slug>/<schedule-slug>.md.`,
+        `Path schedule "${schedule.data.slug}" harus mengikuti schedules/<tahun-startDate>/<training-slug>/<schedule-slug>.md.`,
       );
     }
   }
