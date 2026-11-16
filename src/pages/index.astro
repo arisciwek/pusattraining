@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Container from '../components/shared/Container.astro';
 import Button from '../components/shared/Button.astro';
@@ -7,12 +8,16 @@ import TrainingCategoryOverview from '../blocks/home/TrainingCategoryOverview.as
 import UpcomingSchedule from '../blocks/home/UpcomingSchedule.astro';
 import WhyChooseUs from '../blocks/home/WhyChooseUs.astro';
 
-const categories = [
-  { title: 'Keselamatan & Kesehatan Kerja', description: 'Program kompetensi keselamatan kerja, pengendalian risiko, dan kepatuhan K3.', href: '/training/?kategori=k3' },
-  { title: 'Sertifikasi & Kompetensi', description: 'Informasi pelatihan dan sertifikasi untuk pengembangan kompetensi profesional.', href: '/training/?kategori=sertifikasi' },
-  { title: 'Teknik & Operasional', description: 'Pelatihan teknis, pemeliharaan, inspeksi, dan keterampilan operasional.', href: '/training/?kategori=teknik' },
-  { title: 'Lingkungan & Energi', description: 'Program terkait pengelolaan lingkungan, energi, dan keberlanjutan.', href: '/training/?kategori=lingkungan' },
-];
+const categories = (await getCollection('pages', ({ data }) =>
+  data.pageType === 'category' && !data.draft
+))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'id'))
+  .slice(0, 4)
+  .map(({ data }) => ({
+    title: data.title,
+    description: data.description,
+    href: `/pelatihan/${data.slug}/`,
+  }));
 
 const benefits = [
   { title: 'Informasi terpusat', description: 'Jelajahi beragam program dan jadwal pelatihan melalui satu portal.' },
@@ -29,7 +34,7 @@ const benefits = [
     title="Temukan training yang tepat untuk langkah profesional berikutnya."
     description="Jelajahi program pengembangan kompetensi, pahami informasi pelatihan, dan temukan jadwal dari berbagai bidang dalam satu tempat."
     primaryLabel="Jelajahi program"
-    primaryHref="/training/"
+    primaryHref="/pelatihan/"
     secondaryLabel="Lihat jadwal"
     secondaryHref="/jadwal/"
     proofPoints={['Beragam bidang pengembangan kompetensi', 'Informasi program yang mudah dipahami', 'Jadwal pelatihan dalam satu portal']}
@@ -80,7 +85,7 @@ const benefits = [
           <p class="home-contact__description mt-3 text-sm leading-7 text-slate-300">Telusuri katalog atau hubungi tim Pusattraining untuk informasi lebih lanjut mengenai portal.</p>
         </div>
         <div class="home-contact__actions flex flex-wrap gap-3">
-          <Button href="/training/" variant="secondary">Lihat katalog <span aria-hidden="true">→</span></Button>
+          <Button href="/pelatihan/" variant="secondary">Lihat katalog <span aria-hidden="true">→</span></Button>
           <Button href="/kontak/" variant="outline" class="border-white/30 bg-white/5 text-white hover:bg-white/10 hover:text-white">Hubungi kami</Button>
         </div>
       </div>
