@@ -395,3 +395,32 @@ Satu record lama Pusat Training pada 31 Agustus–4 September 2026 tidak ditemuk
 - [x] Status kalender `completed/ongoing/scheduled` ditetapkan dari rentang tanggal pada saat sinkronisasi; komponen daftar tetap menghitung ulang status visual dari tanggal aktual di browser.
 - [x] Status pendaftaran dipisahkan dari status kalender. Jangan mengubah pendaftaran menjadi terbuka hanya karena tanggal pelatihan masih di masa depan.
 - [ ] Build Astro dan pemeriksaan relasi konten harus dijalankan sebelum merge.
+
+
+## 11. Sinkronisasi seluruh kelas Pemadam Kebakaran dari repository Damkar
+
+**Tanggal sinkronisasi:** 17 November 2026  
+**Sumber:** `arisciwek/damkar` — collection `trainings` dan `schedules/2026`.
+
+| Kelas | Halaman Pusat Training | Jadwal sumber | Jadwal di Pusat Training | Status |
+|---|---|---:|---:|---|
+| A — Ahli K3 | `damkar-kelas-a.md` | 12 | 12 | [x] |
+| B — Ketua Regu | `damkar-kelas-b.md` | 11 | 11 | [x] |
+| C — Petugas Madya | `damkar-kelas-c.md` | 11 | 11 | [x] |
+| D — Petugas Pemadam | `damkar-kelas-d.md` | 23 | 23 | [x] |
+| **Total** | **4 halaman** | **57** | **57** | **[x]** |
+
+### Implementasi Kelas A, B, C
+- [x] Menambahkan halaman training untuk kelas A, B, dan C (kelas A diperbarui dari ringkasan generik menjadi data program sumber).
+- [x] Menyalin persyaratan pendidikan, peran, mode pelaksanaan, dan materi dari frontmatter program Damkar.
+- [x] Menambahkan daftar jadwal dengan `trainingId` yang cocok dengan halaman masing-masing.
+- [x] Menyalin semua 34 jadwal kelas A, B, dan C; mempertahankan `scheduleId`, nomor angkatan, slug, tanggal, label tanggal, deadline pendaftaran, metode, serta status pendaftaran sumber.
+- [x] Menambahkan identitas `id` dan `ulid` yang diperlukan schema collection Pusat Training.
+- [x] Menghitung status kalender `completed/ongoing/scheduled` berdasarkan tanggal audit 17 November 2026; status pendaftaran sumber tidak diubah.
+- [x] Semua kelas A–D kini memiliki halaman dan seluruh 57 jadwal 2026.
+
+### Catatan validasi
+- [ ] Jalankan `npm run check`.
+- [ ] Jalankan `npm run build`.
+- [ ] Periksa preview bahwa tiap halaman menampilkan jadwal kelas yang benar dan tidak mencampur angkatan kelas lain.
+- [ ] Verifikasi visual badge tanggal, urutan descending, dan toggle jadwal terlewati.
