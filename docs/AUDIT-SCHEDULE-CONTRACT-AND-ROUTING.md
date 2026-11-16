@@ -41,7 +41,7 @@ Tidak ada nama field atau enum kontrak yang diganti.
 ## 2. Catatan yang belum boleh dianggap selesai
 
 1. Daftar nilai `publisherId` yang sah belum tersedia sebagai registry terpusat. Schema sementara menerima string non-kosong; validasi allowlist baru boleh diterapkan setelah daftar ID publisher disepakati.
-2. Struktur folder kanonis `schedules/<YYYY>/<training-slug>/<schedule-slug>.md` belum ditegakkan oleh validator.
+2. Struktur folder kanonis `schedules/<YYYY>/<training-slug>/<schedule-slug>.md` kini diperiksa oleh validator lintas collection. Pemeriksaan ini akan aktif ketika record schedule ditambahkan.
 3. Belum ada fixture schedule untuk menguji semua lifecycle status dan variasi field opsional.
 4. Belum ada halaman arsip bulanan dan detail schedule di route Astro.
 5. Belum ada data schedule faktual. Jangan membuat data dummy untuk sekadar mengisi halaman.
