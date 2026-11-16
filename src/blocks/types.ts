@@ -1,7 +1,7 @@
 export interface BlockImage { src: string; alt: string; caption?: string; }
 export interface TrainingCategoryPageBlock { type: 'training-category'; eyebrow?: string; sectionTitle: string; sectionDescription?: string; emptyMessage: string; }
 export interface TrainingCatalogPageBlock { type: 'training-catalog'; eyebrow?: string; title: string; description: string; emptyMessage?: string; categoryTitle: string; categoryDescription?: string; }
-export interface ScheduleIndexPageBlock { type: 'schedule-index'; eyebrow?: string; latestTitle: string; archiveTitle: string; emptyTitle: string; emptyDescription: string; emptyActionLabel: string; }
+export interface ScheduleIndexPageBlock { type: 'schedule-index'; eyebrow?: string; sectionEyebrow?: string; latestTitle: string; archiveTitle: string; emptyTitle: string; emptyDescription: string; emptyActionLabel: string; }
 export interface TrainingPageBlock { type: 'program-grid'; title?: string; description?: string; programs: { title: string; description: string; href: string; category?: string }[]; }
 export interface BenefitsPageBlock { type: 'benefits'; title: string; description?: string; items: { title: string; description: string; icon?: string }[]; }
 export interface ReasonsPageBlock { type: 'reasons'; title: string; description?: string; items: { title: string; text: string }[]; }
