@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { assignBatchNumbers, matchTraining, parseTrainingFiles, renderSchedule, stableIdentity } from './generate-schedule-frontmatter.mjs';
+import { assignBatchNumbers, hasIdentityCollision, matchTraining, parseTrainingFiles, renderSchedule, stableIdentity } from './generate-schedule-frontmatter.mjs';
 
 const trainings = [
   { trainingId: 'ahli-k3-umum', slug: 'ahli-k3-umum', title: 'Ahli K3 Umum' },
@@ -26,6 +26,13 @@ test('maps only one explicit matching training rule', () => {
     { pattern: 'ahli', trainingId: 'ahli-k3-umum' },
     { pattern: 'pelatihan', trainingId: 'pemadam-kebakaran-kelas-a' },
   ], trainings).reason, 'multiple-mapping-rules');
+});
+
+test('detects both numeric id and string scheduleId collisions', () => {
+  const identity = { id: 123456789, scheduleId: 'pusattrainingk3_ABCDEF' };
+  assert.equal(hasIdentityCollision(identity, new Set([identity.id])), true);
+  assert.equal(hasIdentityCollision(identity, new Set([identity.scheduleId])), true);
+  assert.equal(hasIdentityCollision(identity, new Set([987654321, 'another_schedule'])), false);
 });
 
 test('parses master training metadata from frontmatter', () => {
