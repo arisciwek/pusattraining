@@ -59,6 +59,9 @@ const statusClass = `schedule-card__status--${data.status}`;
   </div>
 </article>
 <style>
+  .schedule-card[data-timeline-status='available'] { border-color: #86efac; background: #f0fdf4; }
+  .schedule-card[data-timeline-status='ongoing'] { border-color: #facc15; background: #fefce8; }
+  .schedule-card[data-timeline-status='past'] { border-color: #fca5a5; background: #fef2f2; }
   .schedule-card__status--scheduled,
   .schedule-card__status--available { background: #dcfce7; color: #166534; }
   .schedule-card__status--ongoing { background: #fef3c7; color: #92400e; }
