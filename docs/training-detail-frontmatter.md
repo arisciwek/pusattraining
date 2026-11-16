@@ -125,6 +125,7 @@ Jangan menyalin harga, klaim lisensi, persyaratan, kurikulum, atau fasilitas dar
 
 Kartu pendaftaran di sisi kanan hero membaca data dari object `hero` pada frontmatter training:
 
+- `title` dan `imageAlt`: judul H1 dan teks alternatif khusus hero; jika kosong, komponen memakai judul halaman.
 - `price`: harga terverifikasi; jika tidak tersedia, kartu menampilkan "Hubungi kami".
 - `priceNote`: catatan cakupan harga atau instruksi konfirmasi.
 - `duration`: durasi terverifikasi; baris durasi tidak ditampilkan bila belum tersedia.
