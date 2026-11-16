@@ -15,9 +15,9 @@ dateLabel: "19 Agustus 2019 – 30 Agustus 2019"
 timezone: "Asia/Jakarta"
 pubDate: '2026-11-16T08:42:58.216Z'
 updatedDate: '2026-11-16T08:42:58.216Z'
-draft: true
+draft: false
 status: scheduled
-sites:
-  main:
-    enabled: false
+
+
+enabled: true
 ---

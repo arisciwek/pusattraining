@@ -15,9 +15,9 @@ dateLabel: "30 April 2018 – 12 Mei 2018"
 timezone: "Asia/Jakarta"
 pubDate: '2026-11-16T08:42:58.216Z'
 updatedDate: '2026-11-16T08:42:58.216Z'
-draft: true
+draft: false
 status: scheduled
-sites:
-  main:
-    enabled: false
+
+
+enabled: true
 ---
