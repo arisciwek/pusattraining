@@ -35,7 +35,13 @@ const statusClass = `schedule-card__status--${data.status}`;
     </h3>
     <p class="schedule-card__date mt-3 flex items-start gap-2 text-sm font-semibold text-slate-700">
       <span aria-hidden="true">▦</span>
-      <time datetime={data.startDate}>{data.dateLabel}</time>
+      <a
+        class="schedule-card__date-link rounded-sm outline-offset-4 transition-colors hover:text-amber-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-slate-900"
+        href={href}
+        aria-label={`Lihat detail jadwal ${title}, ${data.dateLabel}`}
+      >
+        <time datetime={data.startDate}>{data.dateLabel}</time>
+      </a>
     </p>
     {!compact && <p class="schedule-card__description mt-3 line-clamp-3 text-sm leading-6 text-slate-600">{description}</p>}
   </div>
