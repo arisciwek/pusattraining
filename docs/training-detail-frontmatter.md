@@ -43,7 +43,6 @@ blocks:
     title: Konsultasikan kebutuhan pelatihan Anda
     description: Diskusikan jadwal, persyaratan, dan penawaran untuk tim perusahaan.
     actionLabel: Hubungi tim
-    actionHref: /kontak/
     secondaryLabel: Lihat jadwal
     secondaryHref: "#jadwal-pelatihan"
 
@@ -100,6 +99,16 @@ blocks:
     actionLabel: Konsultasi program
     actionHref: /kontak/
 ```
+
+## Kontak dan CTA resmi
+
+Seluruh CTA konsultasi/pendaftaran pada halaman pelatihan diarahkan ke WhatsApp Tiara melalui konfigurasi terpusat di `src/lib/contact.ts`:
+
+- Nama kontak: Tiara
+- Telepon / WhatsApp: `0812-9805-3891`
+- Nomor internasional WhatsApp: `6281298053891`
+
+Block `training-cta` tidak menerima URL kontak bebas. Tujuannya selalu dibentuk oleh helper kontak resmi; tautan sekunder tetap dapat digunakan untuk anchor section seperti `#jadwal-pelatihan`.
 
 ## Perilaku navigasi section
 
