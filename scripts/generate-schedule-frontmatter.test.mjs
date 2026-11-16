@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { assignBatchNumbers, hasIdentityCollision, matchTraining, parseTrainingFiles, renderSchedule, stableIdentity } from './generate-schedule-frontmatter.mjs';
+import { assignBatchNumbers, hasIdentityCollision, matchTraining, parseExistingIdentities, parseTrainingFiles, renderSchedule, stableIdentity } from './generate-schedule-frontmatter.mjs';
 
 const trainings = [
   { trainingId: 'ahli-k3-umum', slug: 'ahli-k3-umum', title: 'Ahli K3 Umum' },
@@ -33,6 +33,12 @@ test('detects both numeric id and string scheduleId collisions', () => {
   assert.equal(hasIdentityCollision(identity, new Set([identity.id])), true);
   assert.equal(hasIdentityCollision(identity, new Set([identity.scheduleId])), true);
   assert.equal(hasIdentityCollision(identity, new Set([987654321, 'another_schedule'])), false);
+});
+
+test('reads existing numeric id and scheduleId from frontmatter', () => {
+  const parsed = parseExistingIdentities('---\nid: 123456789\nscheduleId: "pusattrainingk3_ABCDEF"\n---');
+  assert.deepEqual(parsed, { id: 123456789, scheduleId: 'pusattrainingk3_ABCDEF' });
+  assert.deepEqual(parseExistingIdentities('---\ntype: article\n---'), { id: null, scheduleId: null });
 });
 
 test('parses master training metadata from frontmatter', () => {
