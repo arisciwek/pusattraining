@@ -5,17 +5,32 @@ import type { PageBlock } from './types';
 interface Props {
   blocks: PageBlock[];
   categories?: { title: string; description: string; href: string }[];
+  categoryTrainings?: { title: string; description: string; href: string }[];
+  pageTitle?: string;
+  pageDescription?: string;
 }
 
-const { blocks, categories = [] } = Astro.props;
+const {
+  blocks,
+  categories = [],
+  categoryTrainings = [],
+  pageTitle = '',
+  pageDescription = '',
+} = Astro.props;
 ---
 <div class="page-blocks">
   {blocks.map((block) => {
     const Component = blockRegistry[block.type] as typeof blockRegistry[PageBlock['type']];
     const { type: _type, ...props } = block;
 
-    return block.type === 'training-catalog'
-      ? <Component {...props} categories={categories} />
-      : <Component {...props} />;
+    if (block.type === 'training-catalog') {
+      return <Component {...props} categories={categories} />;
+    }
+
+    if (block.type === 'training-category') {
+      return <Component {...props} pageTitle={pageTitle} pageDescription={pageDescription} trainings={categoryTrainings} />;
+    }
+
+    return <Component {...props} />;
   })}
 </div>
