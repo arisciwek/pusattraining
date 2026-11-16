@@ -1,0 +1,48 @@
+---
+import TrainingDetailIntro from './TrainingDetailIntro.astro';
+import TrainingScheduleList from './TrainingScheduleList.astro';
+import type { TrainingDetailBlock } from '../types';
+import type { CollectionEntry } from 'astro:content';
+
+type ScheduleEntry = CollectionEntry<'schedules'>;
+
+interface Props {
+  blocks: TrainingDetailBlock[];
+  title: string;
+  description: string;
+  schedules: ScheduleEntry[];
+  trainingSlug: string;
+}
+
+const { blocks, title, description, schedules, trainingSlug } = Astro.props;
+---
+<div class="training-detail-renderer">
+  {blocks.map((block) => {
+    if (block.type === 'training-detail-intro') {
+      return (
+        <TrainingDetailIntro
+          title={title}
+          description={description}
+          eyebrow={block.eyebrow}
+          noticeTitle={block.noticeTitle}
+          noticeDescription={block.noticeDescription}
+        />
+      );
+    }
+
+    if (block.type === 'training-schedule-list') {
+      return (
+        <TrainingScheduleList
+          title={block.title}
+          eyebrow={block.eyebrow}
+          allLabel={block.allLabel}
+          emptyMessage={block.emptyMessage}
+          schedules={schedules}
+          trainingSlug={trainingSlug}
+        />
+      );
+    }
+
+    return null;
+  })}
+</div>
