@@ -1,5 +1,5 @@
 ---
-import { CONTACT_PERSON, CONTACT_PHONE_DISPLAY, getContactWhatsAppHref } from '../../lib/contact';
+import { CONTACT_PERSON, CONTACT_PHONE_DISPLAY, CONTACT_TEL_HREF, getContactWhatsAppHref } from '../../lib/contact';
 
 interface Props {
   eyebrow?: string;
@@ -21,6 +21,6 @@ const whatsappHref = getContactWhatsAppHref(`Halo ${CONTACT_PERSON}, saya ingin 
       <a class="training-cta__primary inline-flex min-h-11 items-center justify-center rounded-full bg-amber-400 px-5 py-3 text-sm font-bold text-slate-950 transition-colors hover:bg-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" href={whatsappHref} target="_blank" rel="noopener noreferrer">{actionLabel} <span aria-hidden="true">↗</span></a>
       {secondaryLabel && secondaryHref && <a class="training-cta__secondary inline-flex min-h-11 items-center justify-center rounded-full border border-slate-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-slate-400 hover:bg-slate-800" href={secondaryHref}>{secondaryLabel}</a>}
     </div>
-    <p class="training-cta__contact mt-4 text-xs text-slate-400">Kontak: {CONTACT_PERSON} · <a class="training-cta__phone underline decoration-slate-600 underline-offset-4 hover:text-white" href={`tel:+6281298053891`}>{CONTACT_PHONE_DISPLAY}</a></p>
+    <p class="training-cta__contact mt-4 text-xs text-slate-400">Kontak: {CONTACT_PERSON} · <a class="training-cta__phone underline decoration-slate-600 underline-offset-4 hover:text-white" href={CONTACT_TEL_HREF}>{CONTACT_PHONE_DISPLAY}</a></p>
   </div>
 </aside>
