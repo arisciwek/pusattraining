@@ -10,8 +10,8 @@ const MONTHS = new Map([
   ['mar', 3], ['maret', 3], ['apr', 4], ['april', 4],
   ['mei', 5], ['jun', 6], ['juni', 6], ['jul', 7], ['juli', 7],
   ['agu', 8], ['agustus', 8], ['sep', 9], ['september', 9],
-  ['okt', 10], ['oktober', 10], ['nov', 11], ['nop', 11],
-  ['november', 11], ['des', 12], ['desember', 12],
+  ['okt', 10], ['oktober', 10], ['nov', 11], ['november', 11], ['nop', 11], ['nopember', 11],
+  ['des', 12], ['desember', 12],
 ]);
 
 function decodeXml(value) {
@@ -47,7 +47,7 @@ function parseDateFromSlug(slug) {
     if (startDate && endDate && endDate >= startDate) return { startDate, endDate, matchedText: match[0].replace(/^[-/]|[-/]$/g, '') };
   }
 
-  match = value.match(/(?:^|[-/])(\d{1,2})-(?:(?:sd|sampai)-)?(\d{1,2})-(jan(?:uari)?|feb(?:ruari)?|mar(?:et)?|apr(?:il)?|mei|jun(?:i)?|jul(?:i)?|agu(?:stus)?|sep(?:tember)?|okt(?:ober)?|nov(?:ember)?|nop|des(?:ember)?)-(\d{4})(?:[-/]|$)/);
+  match = value.match(/(?:^|[-/])(\d{1,2})-(?:(?:sd|sampai)-)?(\d{1,2})-(jan(?:uari)?|feb(?:ruari)?|mar(?:et)?|apr(?:il)?|mei|jun(?:i)?|jul(?:i)?|agu(?:stus)?|sep(?:tember)?|okt(?:ober)?|nov(?:ember)?|nop(?:ember)?|des(?:ember)?)-(\d{4})(?:[-/]|$)/);
   if (match) {
     const [, firstDay, lastDay, monthName, yearText] = match;
     const year = Number(yearText);
