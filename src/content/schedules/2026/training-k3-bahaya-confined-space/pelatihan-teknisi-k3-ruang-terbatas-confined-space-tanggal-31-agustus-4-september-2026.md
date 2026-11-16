@@ -14,8 +14,8 @@ endDate: '2026-09-04'
 dateLabel: "31 Agustus 2026 – 4 September 2026"
 timezone: "Asia/Jakarta"
 pubDate: '2026-11-16T08:42:58.216Z'
-updatedDate: '2026-11-16T08:42:58.216Z'
-draft: false
+updatedDate: '2026-11-17T00:00:00+07:00'
+draft: true
 status: scheduled
 sites:
   main:
