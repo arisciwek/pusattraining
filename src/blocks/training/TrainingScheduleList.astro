@@ -5,6 +5,7 @@ import ScheduleCard from '../../components/schedule/ScheduleCard.astro';
 type ScheduleEntry = CollectionEntry<'schedules'>;
 
 interface Props {
+  id?: string;
   title: string;
   eyebrow?: string;
   allLabel?: string;
@@ -14,6 +15,7 @@ interface Props {
 }
 
 const {
+  id = 'jadwal-pelatihan',
   title,
   eyebrow = 'BATCH TERSEDIA',
   allLabel = 'Semua jadwal',
@@ -22,7 +24,7 @@ const {
   trainingSlug,
 } = Astro.props;
 ---
-<section class="training-schedule-list mt-12">
+<section id={id} class="training-schedule-list mt-12">
   <div class="training-schedule-list__heading flex flex-wrap items-end justify-between gap-4">
     <div>
       <p class="training-schedule-list__eyebrow text-xs font-bold uppercase tracking-[0.14em] text-amber-700">{eyebrow}</p>
