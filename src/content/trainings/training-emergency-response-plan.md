@@ -84,16 +84,16 @@ blocks:
     title: Siapa yang perlu mengikuti program ini?
     description: "Kelompok peserta yang relevan secara umum; kelayakan akhir tetap mengikuti persyaratan skema dan verifikasi penyelenggara."
     items:
-      - title: "manajemen"
-        description: "Penugasan dan kelayakan peserta perlu disesuaikan dengan kebutuhan perusahaan serta persyaratan program."
-      - title: "HSE"
-        description: "Penugasan dan kelayakan peserta perlu disesuaikan dengan kebutuhan perusahaan serta persyaratan program."
-      - title: "emergency response team"
-        description: "Penugasan dan kelayakan peserta perlu disesuaikan dengan kebutuhan perusahaan serta persyaratan program."
-      - title: "koordinator evakuasi"
-        description: "Penugasan dan kelayakan peserta perlu disesuaikan dengan kebutuhan perusahaan serta persyaratan program."
-      - title: "pemilik proses dan fasilitas"
-        description: "Penugasan dan kelayakan peserta perlu disesuaikan dengan kebutuhan perusahaan serta persyaratan program."
+      - title: Ahli K3 dan personel HSE
+        description: "Personel yang terlibat dalam pengelolaan keselamatan dan kesehatan kerja serta koordinasi kesiapsiagaan darurat di perusahaan."
+      - title: Anggota P2K3
+        description: "Anggota Panitia Pembina Keselamatan dan Kesehatan Kerja yang perlu memahami koordinasi dan prosedur tanggap darurat."
+      - title: Manajer dan supervisor
+        description: "Pimpinan bagian produksi, pemeliharaan, engineering, personalia, keamanan, dan unit lain yang memiliki tanggung jawab operasional."
+      - title: Tim tanggap darurat dan petugas terkait
+        description: "Personel yang ditunjuk perusahaan untuk menjalankan fungsi respons, komunikasi, pengamanan area, atau evakuasi."
+      - title: Karyawan yang memiliki peran dalam respons
+        description: "Karyawan yang perlu memahami tindakan awal dan koordinasi sesuai prosedur keadaan darurat di tempat kerja."
 
   - type: training-content-section
     id: materi-pelatihan
@@ -101,22 +101,24 @@ blocks:
     title: Ruang lingkup materi pelatihan
     description: "Pokok bahasan disusun dari ruang lingkup regulasi dan kompetensi terkait. Porsi materi dan praktik mengikuti skema pembinaan serta fasilitas angkatan."
     items:
-      - title: "identifikasi potensi keadaan darurat dan skenario"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "struktur komando dan tanggung jawab"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "aktivasi dan tingkat kedaruratan"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "komunikasi internal dan eksternal"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "evakuasi dan titik kumpul"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "inventaris sumber daya"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "penyusunan dokumen ERP"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "latihan, evaluasi, dan tindak lanjut"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
+      - title: Pengenalan Emergency Response Plan
+        description: "Konsep dasar keadaan darurat, kesiapsiagaan, dan pendekatan perencanaan tanggap darurat."
+      - title: Analisis risiko dan skenario kedaruratan
+        description: "Pengenalan potensi kejadian darurat dan penentuan skenario yang relevan dengan karakteristik kegiatan atau area perusahaan."
+      - title: Pengembangan tim tanggap darurat
+        description: "Pembentukan tim, struktur organisasi, rantai komando, serta tugas dan tanggung jawab bagian terkait."
+      - title: Tingkat kedaruratan dan prosedur aktivasi
+        description: "Penentuan tingkat keadaan darurat serta prosedur untuk mengaktifkan organisasi dan sumber daya respons."
+      - title: Strategi tata letak dan titik berkumpul
+        description: "Pertimbangan layout fasilitas, jalur evakuasi, muster point, dan assembly point sesuai kondisi lokasi."
+      - title: Komunikasi dan koordinasi
+        description: "Jalur pelaporan, sumber bantuan, komunikasi antarbagian, dan koordinasi selama keadaan darurat."
+      - title: Evakuasi dan penanganan keadaan darurat
+        description: "Teknik evakuasi di dalam maupun di luar area serta pembahasan skenario yang sesuai dengan kebutuhan perusahaan."
+      - title: Pengelolaan risiko khusus
+        description: "Pembahasan bahaya spesifik, termasuk bahan kimia atau toksik, apabila relevan dengan profil risiko dan ruang lingkup pelatihan."
+      - title: Latihan, studi kasus, dan evaluasi
+        description: "Diskusi kasus dan latihan dapat digunakan untuk memahami penerapan prosedur; bentuk praktik mengikuti kesepakatan, fasilitas, dan pengendalian risiko."
 
   - type: training-content-section
     id: persyaratan-peserta
@@ -124,10 +126,12 @@ blocks:
     title: Persyaratan dan dokumen peserta
     description: "Persyaratan akhir perlu diverifikasi untuk kelas dan skema yang didaftarkan. Jangan mengirim dokumen sensitif sebelum menerima instruksi resmi."
     items:
-      - title: Persyaratan kelayakan
-        description: "Perusahaan sebaiknya menyiapkan profil lokasi, layout, risiko utama, struktur organisasi, serta prosedur yang sudah ada. Kebutuhan simulasi dan dokumen keluaran disepakati dalam ruang lingkup."
+      - title: Penetapan peserta
+        description: "Peserta sebaiknya ditetapkan berdasarkan peran dan tanggung jawabnya dalam organisasi tanggap darurat perusahaan. Persyaratan khusus mengikuti kesepakatan penyelenggaraan."
+      - title: Informasi perusahaan
+        description: "Untuk pembahasan yang kontekstual, perusahaan dapat menyiapkan profil lokasi, layout area, potensi bahaya, struktur organisasi, serta prosedur tanggap darurat yang sudah tersedia."
       - title: Dokumen administrasi
-        description: "Identitas dan dokumen pendukung akan diinformasikan oleh tim setelah pemeriksaan kelas serta kelayakan peserta."
+        description: "Daftar dokumen peserta dan ketentuan administrasi dikonfirmasi kepada penyelenggara sebelum pendaftaran. Jangan mengirim dokumen sensitif sebelum menerima instruksi resmi."
 
   - type: training-content-section
     id: dasar-hukum
@@ -135,8 +139,12 @@ blocks:
     title: Regulasi dan acuan program
     description: "PP Nomor 50 Tahun 2012 tentang Penerapan SMK3; untuk kebakaran, KEPMENAKER KEP.186/MEN/1999."
     items:
+      - title: Penerapan SMK3
+        description: "PP Nomor 50 Tahun 2012 tentang Penerapan Sistem Manajemen Keselamatan dan Kesehatan Kerja dapat menjadi salah satu konteks pengelolaan kesiapsiagaan dan respons darurat dalam sistem manajemen perusahaan."
+      - title: Penanggulangan kebakaran
+        description: "KEPMENAKER KEP.186/MEN/1999 tentang Unit Penanggulangan Kebakaran di Tempat Kerja relevan untuk aspek organisasi dan penanggulangan kebakaran. Penerapannya perlu disesuaikan dengan kondisi serta ketentuan yang berlaku."
       - title: Verifikasi regulasi
-        description: "Periksa naskah dan status peraturan pada JDIH Kementerian Ketenagakerjaan. Penerapan pada skema pelatihan harus dikonfirmasi; halaman ini tidak menggantikan nasihat hukum."
+        description: "Periksa naskah dan status peraturan pada JDIH instansi berwenang. Penyebutan acuan ini bukan klaim bahwa pelatihan ERP merupakan sertifikasi atau lisensi yang diterbitkan berdasarkan kedua peraturan tersebut."
 
   - type: training-faq
     id: faq-pelatihan
@@ -144,14 +152,18 @@ blocks:
     title: Pertanyaan yang sering diajukan
     description: "Jawaban umum berikut tidak menggantikan ketentuan angkatan, administrasi, atau keputusan instansi berwenang."
     items:
-      - question: "Apa yang perlu diketahui tentang program ini?"
-        answer: "Dokumen ERP spesifik memerlukan data risiko dan fasilitas perusahaan, bukan template generik saja."
-      - question: "Siapa yang memenuhi persyaratan peserta?"
-        answer: "Simulasi dilakukan bila disepakati dan kondisi lokasi mendukung."
-      - question: "Apakah pelatihan otomatis menerbitkan sertifikat atau lisensi?"
-        answer: "Peserta idealnya lintas fungsi dan melibatkan pengambil keputusan."
-      - question: "Bagaimana memastikan jadwal, durasi, dan biaya?"
-        answer: "ERP perlu dievaluasi setelah perubahan risiko, fasilitas, organisasi, atau latihan."
+      - question: "Apa yang dipelajari dalam Pelatihan Emergency Response Plan?"
+        answer: "Pembahasan meliputi kesiapsiagaan, analisis skenario, pembentukan tim, struktur komando, prosedur aktivasi, komunikasi, evakuasi, serta latihan atau studi kasus sesuai ruang lingkup."
+      - question: "Siapa yang sebaiknya mengikuti program ini?"
+        answer: "Ahli K3, personel HSE, anggota P2K3, manajer, supervisor, tim tanggap darurat, dan karyawan lain yang memiliki peran dalam respons keadaan darurat."
+      - question: "Apakah pelatihan ini merupakan sertifikasi Kemnaker atau lisensi khusus?"
+        answer: "Informasi pada sumber penyelenggara menempatkan ERP sebagai program pelatihan. Jangan menganggap keikutsertaan otomatis memberikan penunjukan, lisensi, atau sertifikasi kompetensi tertentu."
+      - question: "Berapa lama durasi pelatihan?"
+        answer: "Sumber program mencantumkan pilihan skema 1, 2, atau 3 hari sesuai kebutuhan klien. Durasi aktual perlu dikonfirmasi dalam penawaran."
+      - question: "Apakah latihan atau simulasi selalu dilakukan?"
+        answer: "Bentuk latihan dan simulasi ditentukan berdasarkan ruang lingkup, kondisi lokasi, fasilitas, serta kesepakatan dengan penyelenggara."
+      - question: "Bagaimana menentukan materi yang sesuai untuk perusahaan?"
+        answer: "Materi perlu disesuaikan dengan profil bahaya, aktivitas, fasilitas, organisasi, dan prosedur tanggap darurat yang dimiliki perusahaan."
 
   - type: training-cta
     eyebrow: LANGKAH BERIKUTNYA
