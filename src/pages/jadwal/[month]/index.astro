@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import Container from '../../../components/shared/Container.astro';
+import Breadcrumb from '../../../components/shared/Breadcrumb.astro';
+import ScheduleCard from '../../../components/schedule/ScheduleCard.astro';
+import { getScheduleMonth, isMainSiteSchedule } from '../../../lib/schedule-utils';
+import { validateContentRelations } from '../../../lib/validate-content';
+
+export async function getStaticPaths() {
+  await validateContentRelations();
+  const [schedules, trainings] = await Promise.all([
+    getCollection('schedules', isMainSiteSchedule),
+    getCollection('trainings', ({ data }) => !data.draft),
+  ]);
+  const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
+  const months = new Map<string, typeof schedules>();
+
+  for (const schedule of schedules) {
+    if (!trainingsById.has(schedule.data.trainingId)) continue;
+    const month = getScheduleMonth(schedule.data);
+    const entries = months.get(month) ?? [];
+    entries.push(schedule);
+    months.set(month, entries);
+  }
+
+  return [...months.entries()].map(([month, entries]) => ({
+    params: { month },
+    props: {
+      month,
+      schedules: entries.sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate)),
+      trainings: trainings.filter((training) => entries.some((schedule) => schedule.data.trainingId === training.data.trainingId)),
+    },
+  }));
+}
+
+const { month, schedules, trainings } = Astro.props;
+const [year, monthNumber] = month.split('-').map(Number);
+const monthDate = new Date(Date.UTC(year, monthNumber - 1, 1));
+const monthLabel = new Intl.DateTimeFormat('id-ID', {
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+}).format(monthDate);
+const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
+const description = `Daftar jadwal training bulan ${monthLabel} beserta informasi program dan detail setiap angkatan.`;
+---
+<SiteLayout title={`Jadwal Training ${monthLabel}`} description={description}>
+  <section class="schedule-archive py-12 sm:py-16">
+    <Container>
+      <Breadcrumb items={[
+        { label: 'Beranda', href: '/' },
+        { label: 'Jadwal Training', href: '/jadwal/' },
+        { label: monthLabel },
+      ]} />
+      <header class="schedule-archive__header mt-8 max-w-3xl">
+        <p class="schedule-archive__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">ARSIP JADWAL</p>
+        <h1 class="schedule-archive__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Jadwal Training ${monthLabel}</h1>
+        <p class="schedule-archive__description mt-4 text-base leading-8 text-slate-600">{description}</p>
+      </header>
+
+      <section class="schedule-archive__results mt-12" aria-labelledby="schedule-archive-results-title">
+        <div class="schedule-archive__summary flex flex-wrap items-center justify-between gap-3">
+          <h2 id="schedule-archive-results-title" class="schedule-archive__section-title text-xl font-bold text-slate-950">Daftar angkatan</h2>
+          <p class="schedule-archive__count text-sm text-slate-500">{schedules.length} jadwal</p>
+        </div>
+        <div class="schedule-archive__grid mt-6 grid gap-5 lg:grid-cols-2">
+          {schedules.map((schedule) => {
+            const training = trainingsById.get(schedule.data.trainingId)!;
+            return <ScheduleCard schedule={schedule} trainingSlug={training.data.slug} trainingTitle={training.data.title} />;
+          })}
+        </div>
+      </section>
+
+      <nav class="schedule-archive__navigation mt-12 border-t border-slate-200 pt-6" aria-label="Navigasi jadwal">
+        <a class="schedule-archive__back-link inline-flex items-center gap-2 text-sm font-bold text-slate-700 transition-colors hover:text-amber-700" href="/jadwal/">
+          <span aria-hidden="true">←</span> Semua jadwal
+        </a>
+      </nav>
+    </Container>
+  </section>
+</SiteLayout>
