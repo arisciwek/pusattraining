@@ -1,11 +1,12 @@
 ---
 interface Props {
+  id?: string;
   eyebrow?: string;
   items: { label: string; value: string; detail?: string }[];
 }
-const { eyebrow = 'RINGKASAN PROGRAM', items } = Astro.props;
+const { id = 'ringkasan-program', eyebrow = 'RINGKASAN PROGRAM', items } = Astro.props;
 ---
-<section class="training-summary mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8" aria-label="Ringkasan program pelatihan">
+<section id={id} class="training-summary mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8" aria-label="Ringkasan program pelatihan">
   <p class="training-summary__eyebrow text-xs font-bold uppercase tracking-[0.16em] text-amber-700">{eyebrow}</p>
   <dl class="training-summary__grid mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
     {items.map((item) => (
