@@ -1,0 +1,13 @@
+---
+type: page
+id: 2003
+ulid: 01KCV000000000000000000003
+pageType: category
+slug: k3-migas-pertambangan
+title: "K3 Migas dan Pertambangan"
+description: "Rumpun pelatihan keselamatan dan kompetensi kerja pada sektor minyak dan gas bumi serta pertambangan."
+pubDate: '2026-11-16T00:00:00+07:00'
+updatedDate: '2026-11-16T00:00:00+07:00'
+draft: false
+related: []
+---
