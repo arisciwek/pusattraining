@@ -87,7 +87,7 @@ export async function validateContentRelations(): Promise<void> {
 
     if (
       year !== schedule.data.startDate.slice(0, 4) ||
-      trainingSlug !== training.data.slug ||
+      (trainingSlug !== training.data.slug && trainingSlug !== training.data.trainingId) ||
       scheduleSlug !== schedule.data.slug
     ) {
       throw new Error(

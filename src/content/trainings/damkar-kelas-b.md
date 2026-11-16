@@ -1,7 +1,7 @@
 ---
 type: training
-id: 3004
-ulid: 01KCV100000000000000000004
+id: 3009
+ulid: 01KCV100000000000000000009
 trainingId: damkar-kelas-b
 slug: pemadam-kebakaran-kelas-b
 title: "Pemadam Kebakaran Kelas B"

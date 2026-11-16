@@ -1,7 +1,7 @@
 ---
 type: training
-id: 3005
-ulid: 01KCV100000000000000000005
+id: 3010
+ulid: 01KCV100000000000000000010
 trainingId: damkar-kelas-c
 slug: pemadam-kebakaran-kelas-c
 title: "Pemadam Kebakaran Kelas C"
