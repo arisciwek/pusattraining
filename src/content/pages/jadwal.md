@@ -12,6 +12,7 @@ draft: false
 blocks:
   - type: schedule-index
     eyebrow: KALENDER PELATIHAN
+    sectionEyebrow: URUTAN PELAKSANAAN
     latestTitle: Jadwal yang dipublikasikan
     archiveTitle: Arsip jadwal
     emptyTitle: Belum ada jadwal yang dipublikasikan
