@@ -8,92 +8,92 @@ npm run build
 > pusattraining@0.1.0 check
 > astro sync && tsc --noEmit
 
-11:09:37 [content] Syncing content
-11:09:37 [WARN] [glob-loader] No files found matching "**/*.md" in directory "src/content/schedules"
-11:09:37 [WARN] [glob-loader] No files found matching "**/*.md" in directory "src/content/articles"
-11:09:37 [content] Synced content
-11:09:37 [types] Generated 3.79s
-11:09:43 [content] Syncing content
-11:09:43 [WARN] [glob-loader] No files found matching "**/*.md" in directory "src/content/schedules"
-11:09:43 [WARN] [glob-loader] No files found matching "**/*.md" in directory "src/content/articles"
-11:09:43 [content] Synced content
-11:09:43 [types] Generated 2.14s
-11:09:43 [build] output: "static"
-11:09:43 [build] mode: "static"
-11:09:43 [build] directory: /www/wwwroot/pusattraining/pusattraining/dist/
-11:09:43 [build] Collecting build info...
-11:09:43 [build] ✓ Completed in 2.23s.
-11:09:43 [build] Building static entrypoints...
-11:09:45 [vite] ✓ built in 1.95s
-11:09:45 [vite] ✓ built in 76ms
-11:09:45 [build] Rearranging server assets...
+11:18:09 [content] Syncing content
+11:18:09 [WARN] [glob-loader] No files found matching "**/*.md" in directory "src/content/schedules"
+11:18:09 [WARN] [glob-loader] No files found matching "**/*.md" in directory "src/content/articles"
+11:18:09 [content] Synced content
+11:18:09 [types] Generated 3.57s
+11:18:18 [content] Syncing content
+11:18:18 [WARN] [glob-loader] No files found matching "**/*.md" in directory "src/content/schedules"
+11:18:18 [WARN] [glob-loader] No files found matching "**/*.md" in directory "src/content/articles"
+11:18:18 [content] Synced content
+11:18:18 [types] Generated 2.64s
+11:18:18 [build] output: "static"
+11:18:18 [build] mode: "static"
+11:18:18 [build] directory: /www/wwwroot/pusattraining/pusattraining/dist/
+11:18:18 [build] Collecting build info...
+11:18:18 [build] ✓ Completed in 2.86s.
+11:18:19 [build] Building static entrypoints...
+11:18:21 [vite] ✓ built in 1.79s
+11:18:21 [vite] ✓ built in 89ms
+11:18:21 [build] Rearranging server assets...
 
  generating static routes 
-11:09:45 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
-11:09:45 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
-11:09:45 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
-11:09:45 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
-11:09:45 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
-11:09:45 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
-11:09:45 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
-11:09:45 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
-11:09:45   ├─ /404.html (+72ms) 
-11:09:45   ├─ /jadwal/index.html11:09:45 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
-11:09:45 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
-11:09:45 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+28ms) 
-11:09:45   ├─ /kontak/index.html (+17ms) 
-11:09:45   ├─ /pelatihan/ahli-k3/index.html11:09:45 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+16ms) 
-11:09:46   ├─ /pelatihan/higiene-industri/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+11:18:21 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
+11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+11:18:21 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
+11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+11:18:21 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
+11:18:21   ├─ /404.html (+81ms) 
+11:18:21   ├─ /jadwal/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+11:18:21 [WARN] [content] The collection "articles" does not exist or is empty. Please check your content config file for errors.
+11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+32ms) 
+11:18:21   ├─ /kontak/index.html (+19ms) 
+11:18:21   ├─ /pelatihan/ahli-k3/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+18ms) 
+11:18:21   ├─ /pelatihan/higiene-industri/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
  (+13ms) 
-11:09:46   ├─ /pelatihan/k3-kimia-risiko-proses/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+9ms) 
-11:09:46   ├─ /pelatihan/k3-konstruksi/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+11:18:21   ├─ /pelatihan/k3-kimia-risiko-proses/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+10ms) 
+11:18:21   ├─ /pelatihan/k3-konstruksi/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
  (+8ms) 
-11:09:46   ├─ /pelatihan/k3-listrik/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+9ms) 
-11:09:46   ├─ /pelatihan/k3-migas-pertambangan/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+11:18:21   ├─ /pelatihan/k3-listrik/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+10ms) 
+11:18:21   ├─ /pelatihan/k3-migas-pertambangan/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
  (+14ms) 
-11:09:46   ├─ /pelatihan/kebakaran-emergency/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+11:18:21   ├─ /pelatihan/kebakaran-emergency/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
  (+11ms) 
-11:09:46   ├─ /pelatihan/lingkungan-energi/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+10ms) 
-11:09:46   ├─ /pelatihan/operator-alat-berat/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+7ms) 
-11:09:46   ├─ /pelatihan/p3k-kesehatan/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+6ms) 
-11:09:46   ├─ /pelatihan/pesawat-uap-bejana-tekan/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+6ms) 
-11:09:46   ├─ /pelatihan/program-khusus/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+6ms) 
-11:09:46   ├─ /pelatihan/ruang-terbatas/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+6ms) 
-11:09:46   ├─ /pelatihan/welder-rigging/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+6ms) 
-11:09:46   ├─ /pelatihan/ahli-k3-umum/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+11ms) 
-11:09:46   ├─ /pelatihan/damkar-kelas-d/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+11:18:21   ├─ /pelatihan/lingkungan-energi/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
  (+9ms) 
-11:09:46   ├─ /pelatihan/operator-boiler-tingkat-1/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+6ms) 
-11:09:46   ├─ /pelatihan/operator-boiler-tingkat-2/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+7ms) 
-11:09:46   ├─ /pelatihan/operator-gondola/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+6ms) 
-11:09:46   ├─ /pelatihan/pemadam-kebakaran-kelas-a/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+11:18:21   ├─ /pelatihan/operator-alat-berat/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
  (+8ms) 
-11:09:46   ├─ /pelatihan/training-emergency-response-plan/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+10ms) 
-11:09:46   ├─ /pelatihan/training-k3-bahaya-confined-space/index.html11:09:46 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
- (+9ms) 
-11:09:46   ├─ /pelatihan/index.html (+18ms) 
-11:09:46   ├─ /tentang/index.html (+11ms) 
-11:09:46   ├─ /training/index.html (+13ms) 
-11:09:46   ├─ /index.html (+19ms) 
-11:09:46 ✓ Completed in 511ms.
+11:18:21   ├─ /pelatihan/p3k-kesehatan/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+7ms) 
+11:18:21   ├─ /pelatihan/pesawat-uap-bejana-tekan/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+7ms) 
+11:18:21   ├─ /pelatihan/program-khusus/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+7ms) 
+11:18:21   ├─ /pelatihan/ruang-terbatas/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+8ms) 
+11:18:21   ├─ /pelatihan/welder-rigging/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+7ms) 
+11:18:21   ├─ /pelatihan/ahli-k3-umum/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+8ms) 
+11:18:21   ├─ /pelatihan/damkar-kelas-d/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+7ms) 
+11:18:21   ├─ /pelatihan/operator-boiler-tingkat-1/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+8ms) 
+11:18:21   ├─ /pelatihan/operator-boiler-tingkat-2/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+7ms) 
+11:18:21   ├─ /pelatihan/operator-gondola/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+8ms) 
+11:18:21   ├─ /pelatihan/pemadam-kebakaran-kelas-a/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+6ms) 
+11:18:21   ├─ /pelatihan/training-emergency-response-plan/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+6ms) 
+11:18:21   ├─ /pelatihan/training-k3-bahaya-confined-space/index.html11:18:21 [WARN] [content] The collection "schedules" does not exist or is empty. Please check your content config file for errors.
+ (+6ms) 
+11:18:21   ├─ /pelatihan/index.html (+12ms) 
+11:18:21   ├─ /tentang/index.html (+13ms) 
+11:18:21   ├─ /training/index.html (+12ms) 
+11:18:21   ├─ /index.html (+17ms) 
+11:18:21 ✓ Completed in 546ms.
 
-11:09:46 [build] ✓ Completed in 2.73s.
-11:09:46 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
-11:09:46 [build] 29 page(s) built in 5.04s
-11:09:46 [build] Complete!
+11:18:21 [build] ✓ Completed in 2.63s.
+11:18:21 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+11:18:21 [build] 29 page(s) built in 5.74s
+11:18:21 [build] Complete!
