@@ -47,7 +47,7 @@ function parseDateFromSlug(slug) {
     if (startDate && endDate && endDate >= startDate) return { startDate, endDate, matchedText: match[0].replace(/^[-/]|[-/]$/g, '') };
   }
 
-  match = value.match(/(?:^|[-/])(\d{1,2})-(\d{1,2})-(jan(?:uari)?|feb(?:ruari)?|mar(?:et)?|apr(?:il)?|mei|jun(?:i)?|jul(?:i)?|agu(?:stus)?|sep(?:tember)?|okt(?:ober)?|nov(?:ember)?|nop|des(?:ember)?)-(\d{4})(?:[-/]|$)/);
+  match = value.match(/(?:^|[-/])(\d{1,2})-(?:(?:sd|sampai)-)?(\d{1,2})-(jan(?:uari)?|feb(?:ruari)?|mar(?:et)?|apr(?:il)?|mei|jun(?:i)?|jul(?:i)?|agu(?:stus)?|sep(?:tember)?|okt(?:ober)?|nov(?:ember)?|nop|des(?:ember)?)-(\d{4})(?:[-/]|$)/);
   if (match) {
     const [, firstDay, lastDay, monthName, yearText] = match;
     const year = Number(yearText);
