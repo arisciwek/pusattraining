@@ -5,34 +5,56 @@ ulid: 01KCV100000000000000000002
 trainingId: damkar-kelas-d
 slug: damkar-kelas-d
 title: "Pemadam Kebakaran Kelas D"
-description: "Pelatihan Pemadam Kebakaran Kelas D membekali pekerja memahami bahaya kebakaran, tindakan awal yang aman, sarana pemadam, pelaporan, dan evakuasi di tempat kerja."
+description: "Pelatihan Damkar Kelas D untuk Petugas Pemadam, dengan pembelajaran teori dan praktik mengenai pencegahan kebakaran, sistem proteksi, serta prosedur darurat di tempat kerja."
 categoryIds: [2004]
 pubDate: '2026-11-16T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
+image: "https://raw.githubusercontent.com/arisciwek/damkar/main/public/images/damkar-pemadaman-tradisional.webp"
+hero:
+  title: Pelatihan Petugas Pemadam
+  imageAlt: Peserta pelatihan Pemadam Kebakaran saat praktik pemadaman api
+  eyebrow: JENJANG 1 DARI 4 · PROGRAM SERTIFIKASI
+  certBadge: KEMNAKER RI
+  description: "Program pembinaan Petugas Pemadam (Kelas D) dengan pembelajaran teori dan praktik untuk memahami pencegahan kebakaran, sarana proteksi, dan prosedur darurat di tempat kerja. Program sumber diselenggarakan bersama PT Betracom Gemilang Nusa."
+  deliveryMode: mixed
+  ctaLabel: Lihat jadwal dan pendaftaran
+  ctaHref: "#pendaftaran"
+  trustItems:
+    - icon: '<path d="M12 2 20 6v6c0 5-8 10-8 10S4 17 4 12V6Z"></path><path d="m8 12 3 3 5-6"></path>'
+      label: Program sertifikasi Kemnaker RI
+    - icon: '<circle cx="12" cy="7" r="4"></circle><path d="M4 21v-2a8 8 0 0 1 16 0v2Z"></path>'
+      label: Peran Petugas Pemadam
+    - icon: '<rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path>'
+      label: Teori dan praktik
+  imageWidth: "1200"
+  imageHeight: "1600"
 related: []
 blocks:
   - type: training-detail-intro
-    eyebrow: PROGRAM PELATIHAN
-    noticeTitle: Catatan penyelenggaraan
-    noticeDescription: "Kelas, kompetensi, durasi, prasyarat, dan sertifikat harus dicocokkan dengan skema pembinaan yang dipakai penyelenggara. Konfirmasikan definisi kelas D sebelum mendaftar."
+    eyebrow: INFORMASI KELAS
+    noticeTitle: Jenjang Petugas Pemadam
+    noticeDescription: "Kelas D merupakan jenjang pertama dalam empat kelas program Damkar pada repository sumber. Data program mencantumkan peran Petugas Pemadam dan persyaratan pendidikan minimum SMA/SLTA. Rincian administrasi dan ketentuan sertifikasi akhir perlu dikonfirmasi kepada penyelenggara."
 
   - type: training-summary
     id: ringkasan-program
     eyebrow: RINGKASAN PROGRAM
     items:
-      - label: Fokus
-        value: "Pemadam Kebakaran Kelas D"
-      - label: Regulasi/acuan
-        value: "KEPMENAKER KEP.186/MEN/1999 tentang Unit Penanggulangan Kebakaran di Tempat Kerja."
-      - label: Informasi angkatan
-        value: "Durasi, metode, biaya, persyaratan akhir, dan keluaran dikonfirmasi kepada penyelenggara."
+      - label: Jenjang
+        value: "Kelas D · 1 dari 4"
+      - label: Peran
+        value: "Petugas Pemadam"
+      - label: Pendidikan minimum
+        value: "SMA/SLTA"
+      - label: Metode
+        value: "Blended Training"
+        detail: "Pembelajaran teori dan praktik."
 
   - type: training-cta
     eyebrow: KONSULTASI PROGRAM
-    title: Konsultasikan kebutuhan pelatihan Anda
-    description: Hubungi Tiara untuk mengonfirmasi jadwal, persyaratan peserta, ruang lingkup, dan penawaran.
-    actionLabel: Chat Tiara via WhatsApp
+    title: Konsultasikan pendaftaran Damkar Kelas D
+    description: Hubungi tim untuk memastikan jadwal, persyaratan peserta, cakupan praktik, dan proses sertifikasi.
+    actionLabel: Konsultasi via WhatsApp
     secondaryLabel: Lihat jadwal
     secondaryHref: "#jadwal-pelatihan"
 
@@ -41,91 +63,86 @@ blocks:
     eyebrow: JADWAL DAN ANGKATAN
     title: Jadwal Pemadam Kebakaran Kelas D
     allLabel: Semua jadwal
-    emptyMessage: "Belum ada batch yang dipublikasikan. Hubungi Tiara untuk menanyakan rencana pelaksanaan."
+    emptyMessage: "Belum ada jadwal yang dipublikasikan. Hubungi tim untuk menanyakan rencana pelaksanaan."
 
   - type: training-content-section
     id: deskripsi-program
     eyebrow: TENTANG PROGRAM
     title: Deskripsi dan tujuan program
-    description: "Pelatihan Pemadam Kebakaran Kelas D membekali pekerja memahami bahaya kebakaran, tindakan awal yang aman, sarana pemadam, pelaporan, dan evakuasi di tempat kerja. Program ini memberi kerangka pemahaman untuk menjalankan tugas sesuai peran dan ketentuan yang relevan. Silabus final, metode, durasi, evaluasi, dan keluaran mengikuti dokumen penyelenggara yang disetujui."
+    description: "Pelatihan Damkar Kelas D merupakan program pembinaan untuk peran Petugas Pemadam. Materi menggabungkan pemahaman dasar pencegahan dan penanggulangan kebakaran dengan pengenalan sistem proteksi serta praktik penggunaan sarana pemadam. Metode program pada data sumber adalah blended training, yaitu teori dan praktik."
     items:
-      - title: Tujuan pembelajaran
-        description: "Memahami prinsip dan prosedur utama, mengenali bahaya, serta menerapkan pengendalian sesuai peran peserta."
-      - title: Batas informasi
-        description: "Uraian ini adalah gambaran ruang lingkup, bukan klaim bahwa seluruh materi merupakan silabus resmi yang disahkan untuk setiap angkatan."
+      - title: Memahami dasar kebakaran
+        description: "Mengenali teori dan anatomi api serta prinsip pencegahan kebakaran di tempat kerja."
+      - title: Mengenali sistem proteksi
+        description: "Memahami fungsi sistem proteksi kebakaran aktif dan pasif."
+      - title: Menjalankan prosedur darurat
+        description: "Mengenali dasar manajemen keselamatan kebakaran dan prosedur darurat kebakaran."
+      - title: Menggunakan sarana pemadam
+        description: "Mengenal praktik penggunaan APAR dan hidran sesuai fasilitas serta arahan instruktur."
 
   - type: training-content-section
     id: sasaran-peserta
     eyebrow: SASARAN PESERTA
-    title: Siapa yang perlu mengikuti program ini?
-    description: "Kelompok peserta yang relevan secara umum; kelayakan akhir tetap mengikuti persyaratan skema dan verifikasi penyelenggara."
+    title: Peran dan sasaran peserta
+    description: "Program ini ditujukan untuk pembinaan peran Petugas Pemadam pada jenjang Kelas D."
     items:
-      - title: "pekerja yang ditunjuk mendukung kesiapsiagaan kebakaran"
-        description: "Penugasan dan kelayakan peserta perlu disesuaikan dengan kebutuhan perusahaan serta persyaratan program."
-      - title: "anggota tim tanggap darurat"
-        description: "Penugasan dan kelayakan peserta perlu disesuaikan dengan kebutuhan perusahaan serta persyaratan program."
-      - title: "supervisor dan personel HSE"
-        description: "Penugasan dan kelayakan peserta perlu disesuaikan dengan kebutuhan perusahaan serta persyaratan program."
-
-  - type: training-content-section
-    id: materi-pelatihan
-    eyebrow: KURIKULUM
-    title: Ruang lingkup materi pelatihan
-    description: "Pokok bahasan disusun dari ruang lingkup regulasi dan kompetensi terkait. Porsi materi dan praktik mengikuti skema pembinaan serta fasilitas angkatan."
-    items:
-      - title: "dasar api dan bahaya kebakaran"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "pencegahan kebakaran"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "alarm dan sarana proteksi"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "pengenalan APAR dan hidran sesuai fasilitas"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "pelaporan dan aktivasi tanggap darurat"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "evakuasi"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
-      - title: "latihan tindakan awal yang aman"
-        description: "Dibahas sesuai standar, risiko pekerjaan, dan skema pelatihan yang berlaku."
+      - title: Petugas Pemadam
+        description: "Peserta yang dipersiapkan atau ditugaskan menjalankan peran Petugas Pemadam sesuai kebutuhan organisasi penanggulangan kebakaran di tempat kerja."
 
   - type: training-content-section
     id: persyaratan-peserta
     eyebrow: PERSYARATAN
-    title: Persyaratan dan dokumen peserta
-    description: "Persyaratan akhir perlu diverifikasi untuk kelas dan skema yang didaftarkan. Jangan mengirim dokumen sensitif sebelum menerima instruksi resmi."
+    title: Persyaratan pendidikan dan administrasi
+    description: "Persyaratan yang tercantum pada data program sumber perlu diperiksa kembali saat pendaftaran untuk memastikan kesesuaiannya dengan angkatan yang dibuka."
     items:
-      - title: Persyaratan kelayakan
-        description: "Kelas, kompetensi, durasi, prasyarat, dan sertifikat harus dicocokkan dengan skema pembinaan yang dipakai penyelenggara. Konfirmasikan definisi kelas D sebelum mendaftar."
-      - title: Dokumen administrasi
-        description: "Identitas dan dokumen pendukung akan diinformasikan oleh tim setelah pemeriksaan kelas serta kelayakan peserta."
+      - title: Pendidikan minimum SMA/SLTA
+        description: "Data program Damkar Kelas D mencantumkan pendidikan minimum SMA/SLTA."
+      - title: Dokumen peserta
+        description: "Daftar dokumen administrasi dan bukti pendukung disampaikan oleh penyelenggara setelah pemeriksaan persyaratan peserta."
+
+  - type: training-content-section
+    id: materi-pelatihan
+    eyebrow: KURIKULUM
+    title: Materi pelatihan Damkar Kelas D
+    description: "Daftar pokok materi berikut mengikuti data program Damkar Kelas D pada repository sumber."
+    items:
+      - title: Peraturan Pemerintah
+      - title: Teori dan Anatomi Api
+      - title: Sistem Proteksi Kebakaran Aktif
+      - title: Sistem Proteksi Kebakaran Pasif
+      - title: Dasar Manajemen Keselamatan Kebakaran
+      - title: Dasar Prosedur Darurat Kebakaran
+      - title: Praktik penggunaan APAR dan Hidran
 
   - type: training-content-section
     id: dasar-hukum
     eyebrow: DASAR HUKUM
-    title: Regulasi dan acuan program
-    description: "KEPMENAKER KEP.186/MEN/1999 tentang Unit Penanggulangan Kebakaran di Tempat Kerja."
+    title: Acuan penanggulangan kebakaran di tempat kerja
+    description: "KEPMENAKER KEP.186/MEN/1999 tentang Unit Penanggulangan Kebakaran di Tempat Kerja menjadi salah satu acuan penting dalam pembentukan unit penanggulangan kebakaran dan kesiapsiagaan di lingkungan kerja. Penerapan ketentuan serta skema pembinaan yang digunakan perlu dikonfirmasi kepada penyelenggara."
     items:
-      - title: Verifikasi regulasi
-        description: "Periksa naskah dan status peraturan pada JDIH Kementerian Ketenagakerjaan. Penerapan pada skema pelatihan harus dikonfirmasi; halaman ini tidak menggantikan nasihat hukum."
+      - title: Penyesuaian dengan organisasi di tempat kerja
+        description: "Penugasan Petugas Pemadam perlu diselaraskan dengan organisasi, prosedur, sarana proteksi, dan rencana keadaan darurat perusahaan."
 
   - type: training-faq
     id: faq-pelatihan
     eyebrow: PERTANYAAN UMUM
     title: Pertanyaan yang sering diajukan
-    description: "Jawaban umum berikut tidak menggantikan ketentuan angkatan, administrasi, atau keputusan instansi berwenang."
+    description: "Informasi berikut merangkum data program. Ketentuan angkatan, administrasi, dan sertifikasi akhir tetap perlu dikonfirmasi kepada penyelenggara."
     items:
-      - question: "Apa yang perlu diketahui tentang program ini?"
-        answer: "Definisi kelas dan kewenangannya perlu dikonfirmasi menurut skema resmi penyelenggara."
-      - question: "Siapa yang memenuhi persyaratan peserta?"
-        answer: "Praktik APAR bergantung pada fasilitas dan rancangan angkatan."
-      - question: "Apakah pelatihan otomatis menerbitkan sertifikat atau lisensi?"
-        answer: "Pelatihan tidak menggantikan prosedur, sarana, organisasi, dan latihan darurat perusahaan."
-      - question: "Bagaimana memastikan jadwal, durasi, dan biaya?"
-        answer: "Dokumen peserta diinformasikan setelah kelas dikonfirmasi."
+      - question: "Apa peran peserta pada program Damkar Kelas D?"
+        answer: "Data program sumber mencantumkan peran Petugas Pemadam dan menempatkan Kelas D sebagai jenjang pertama dari empat kelas."
+      - question: "Apa persyaratan pendidikan minimum?"
+        answer: "Persyaratan pendidikan yang tercantum pada data program adalah SMA/SLTA."
+      - question: "Bagaimana metode pelatihannya?"
+        answer: "Program dicatat sebagai Blended Training dengan pembelajaran teori dan praktik."
+      - question: "Materi apa yang dipelajari?"
+        answer: "Materi mencakup peraturan pemerintah, teori dan anatomi api, sistem proteksi kebakaran aktif dan pasif, manajemen keselamatan kebakaran, prosedur darurat, serta praktik penggunaan APAR dan hidran."
+      - question: "Bagaimana memastikan jadwal dan proses sertifikasi?"
+        answer: "Lihat jadwal angkatan pada halaman ini, lalu hubungi tim untuk mengonfirmasi ketersediaan, persyaratan, dan rincian proses sertifikasi Kemnaker RI."
 
   - type: training-cta
     eyebrow: LANGKAH BERIKUTNYA
-    title: Pastikan program sesuai kebutuhan Anda
-    description: Konsultasikan kualifikasi peserta, ruang lingkup, jadwal, dan dokumen bersama Tiara.
-    actionLabel: Konsultasi dengan Tiara
+    title: Siapkan diri mengikuti pembinaan Petugas Pemadam
+    description: Konsultasikan persyaratan, jadwal, dan proses pendaftaran Damkar Kelas D bersama tim kami.
+    actionLabel: Tanya jadwal dan pendaftaran
 ---
