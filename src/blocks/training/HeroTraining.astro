@@ -13,9 +13,18 @@ const { eyebrow, certBadge, title, description, image, imageAlt, imageSrcset,
   imageSizes = '(max-width: 480px) 360px, (max-width: 900px) calc(100vw - 40px), (max-width: 1280px) 65vw, 800px',
   imageWidth = '848', imageHeight = '308', deliveryMode, ctaLabel = 'Lihat biaya & daftar',
   ctaHref = '#pendaftaran', trustItems = [], price, priceNote, duration, schedules } = Astro.props;
+function localDateKey(value: string, timezone: string): string {
+  if (/^\\d{4}-\\d{2}-\\d{2}$/.test(value)) return value;
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: timezone, year: 'numeric', month: '2-digit', day: '2-digit',
+  }).formatToParts(new Date(value));
+  const part = (type: string) => parts.find((item) => item.type === type)?.value ?? '';
+  return `${part('year')}-${part('month')}-${part('day')}`;
+}
+const today = localDateKey(new Date().toISOString(), 'Asia/Jakarta');
 const upcomingSchedules = [...schedules]
   .filter((entry) => !['cancelled', 'postponed', 'completed'].includes(entry.data.status))
-  .filter((entry) => Date.parse(entry.data.endDate) >= Date.now())
+  .filter((entry) => localDateKey(entry.data.endDate, entry.data.timezone || 'Asia/Jakarta') >= today)
   .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate));
 const nextSchedule = upcomingSchedules[0];
 const deliveryLabel = deliveryMode === 'online' ? 'Online' : deliveryMode === 'offline' ? 'Tatap Muka' : deliveryMode === 'mixed' ? 'Online / Tatap Muka' : undefined;
