@@ -1,5 +1,6 @@
 ---
 import Container from './Container.astro';
+import { CONTACT_PERSON, CONTACT_PHONE_DISPLAY, CONTACT_TEL_HREF, getContactWhatsAppHref } from '../../lib/contact';
 
 interface LinkItem {
   label: string;
@@ -28,7 +29,7 @@ const {
     { title: 'Informasi', links: [{ label: 'Tentang Kami', href: '/tentang/' }, { label: 'Kontak', href: '/kontak/' }] },
   ],
   email,
-  phone,
+  phone = CONTACT_PHONE_DISPLAY,
   copyrightName = 'Pusattraining',
 } = Astro.props;
 ---
@@ -41,7 +42,8 @@ const {
       {(email || phone) && (
         <address class="site-footer__contact mt-6 space-y-2 not-italic text-sm">
           {email && <p><a class="hover:text-white" href={'mailto:' + email}>{email}</a></p>}
-          {phone && <p><a class="hover:text-white" href={'tel:' + phone}>{phone}</a></p>}
+          {phone && <p><span class="site-footer__contact-person">{CONTACT_PERSON}: </span><a class="hover:text-white" href={CONTACT_TEL_HREF}>{phone}</a></p>}
+          <p><a class="site-footer__whatsapp text-amber-300 hover:text-white" href={getContactWhatsAppHref()} target="_blank" rel="noopener noreferrer">WhatsApp Tiara <span aria-hidden="true">↗</span></a></p>
         </address>
       )}
     </div>
