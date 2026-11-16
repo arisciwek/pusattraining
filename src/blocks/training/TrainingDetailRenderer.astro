@@ -1,6 +1,10 @@
 ---
 import TrainingDetailIntro from './TrainingDetailIntro.astro';
 import TrainingScheduleList from './TrainingScheduleList.astro';
+import TrainingSummary from './TrainingSummary.astro';
+import TrainingContentSection from './TrainingContentSection.astro';
+import TrainingFaq from './TrainingFaq.astro';
+import TrainingCta from './TrainingCta.astro';
 import type { TrainingDetailBlock } from '../types';
 import type { CollectionEntry } from 'astro:content';
 
@@ -26,6 +30,48 @@ const { blocks, title, description, schedules, trainingSlug } = Astro.props;
           eyebrow={block.eyebrow}
           noticeTitle={block.noticeTitle}
           noticeDescription={block.noticeDescription}
+        />
+      );
+    }
+
+    if (block.type === 'training-summary') {
+      return <TrainingSummary eyebrow={block.eyebrow} items={block.items} />;
+    }
+
+    if (block.type === 'training-content-section') {
+      return (
+        <TrainingContentSection
+          id={block.id}
+          eyebrow={block.eyebrow}
+          title={block.title}
+          description={block.description}
+          items={block.items}
+        />
+      );
+    }
+
+    if (block.type === 'training-faq') {
+      return (
+        <TrainingFaq
+          id={block.id}
+          eyebrow={block.eyebrow}
+          title={block.title}
+          description={block.description}
+          items={block.items}
+        />
+      );
+    }
+
+    if (block.type === 'training-cta') {
+      return (
+        <TrainingCta
+          eyebrow={block.eyebrow}
+          title={block.title}
+          description={block.description}
+          actionLabel={block.actionLabel}
+          actionHref={block.actionHref}
+          secondaryLabel={block.secondaryLabel}
+          secondaryHref={block.secondaryHref}
         />
       );
     }
