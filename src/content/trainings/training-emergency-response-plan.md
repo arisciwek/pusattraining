@@ -61,13 +61,22 @@ blocks:
   - type: training-content-section
     id: deskripsi-program
     eyebrow: TENTANG PROGRAM
-    title: Deskripsi dan tujuan program
-    description: "Pelatihan Emergency Response Plan membantu organisasi menyusun, menerapkan, menguji, dan mengevaluasi rencana tanggap darurat berdasarkan potensi keadaan darurat, sumber daya, struktur komando, dan kebutuhan operasional. Program ini memberi kerangka pemahaman untuk menjalankan tugas sesuai peran dan ketentuan yang relevan. Silabus final, metode, durasi, evaluasi, dan keluaran mengikuti dokumen penyelenggara yang disetujui."
+    title: Deskripsi Pelatihan Emergency Response Plan
+    description: "Emergency Response Plan (ERP) merupakan perencanaan dan pengorganisasian respons perusahaan ketika menghadapi keadaan darurat yang dapat mengancam keselamatan manusia, aset, lingkungan, maupun keberlangsungan kegiatan operasional. Pelatihan ini membekali peserta dengan pemahaman tentang kesiapsiagaan, pembentukan tim, pembagian tanggung jawab, prosedur penanganan, komunikasi, dan evakuasi. Contoh skenario dapat mencakup kebakaran, gempa bumi, banjir, gangguan keamanan, atau keadaan darurat lain yang relevan dengan profil risiko perusahaan. Ruang lingkup akhir, metode, dan bentuk latihan disesuaikan dengan kebutuhan klien serta kesepakatan penyelenggaraan."
+
+  - type: training-content-section
+    id: tujuan-program
+    eyebrow: TUJUAN PROGRAM
+    title: Tujuan Pelatihan Emergency Response Plan
     items:
-      - title: Tujuan pembelajaran
-        description: "Memahami prinsip dan prosedur utama, mengenali bahaya, serta menerapkan pengendalian sesuai peran peserta."
-      - title: Batas informasi
-        description: "Uraian ini adalah gambaran ruang lingkup, bukan klaim bahwa seluruh materi merupakan silabus resmi yang disahkan untuk setiap angkatan."
+      - title: Mengenali kondisi kedaruratan
+        description: "Membantu peserta mengenali berbagai kondisi darurat yang berpotensi terjadi di lingkungan kerja dan memahami perlunya respons yang terkoordinasi."
+      - title: Menyusun perencanaan dan mitigasi
+        description: "Membekali peserta untuk memahami perencanaan tanggap darurat dan langkah mitigasi berdasarkan potensi bahaya serta kondisi operasional perusahaan."
+      - title: Memahami rencana pemulihan
+        description: "Memberikan pemahaman mengenai Disaster Recovery Plan sebagai bagian dari upaya pemulihan setelah kejadian darurat, sesuai kebutuhan organisasi."
+      - title: Mengkoordinasikan pelaksanaan respons
+        description: "Memahami pembagian peran, jalur komunikasi, prosedur penanganan, dan koordinasi antarbagian agar tindakan tidak berjalan sendiri-sendiri."
 
   - type: training-content-section
     id: sasaran-peserta
