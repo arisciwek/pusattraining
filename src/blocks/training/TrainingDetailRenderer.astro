@@ -20,7 +20,7 @@ interface Props {
 }
 const { blocks, title, description, schedules, trainingSlug, image, imageAlt = title, hero } = Astro.props;
 function slugifySectionTitle(value: string): string {
-  return value.toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return value.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 const introBlocks = blocks.filter((block) => block.type === 'training-detail-intro');
 const contentBlocks = blocks.filter((block) => block.type !== 'training-detail-intro');
