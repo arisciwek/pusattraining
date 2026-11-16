@@ -4,11 +4,11 @@ type ScheduleItem = {
   trainingHref: string;
   startDate: string;
   endDate?: string;
+  dateLabel?: string;
   mode?: string;
   location?: string;
   duration?: string;
   price?: string;
-  status?: 'available' | 'limited' | 'closed' | 'completed';
   registrationHref?: string;
   organizer?: string;
   image?: string;
@@ -69,9 +69,14 @@ const {
           </div>
           <div role="cell" class="text-sm font-medium text-slate-500">{item.mode ?? ''}</div>
           <div role="cell" class="flex flex-col">
-            <strong class="block text-sm font-semibold text-slate-900">{item.startDate}</strong>
-            {item.endDate && `<p class="text-xs text-slate-400"> - ${item.endDate}</p>`}
-            {item.location && `<p class="text-xs text-slate-400"><small>{item.location}</small></p>`}
+            <strong class="block text-sm font-semibold text-slate-900">
+              <time datetime={item.startDate}>{item.dateLabel ?? item.startDate}</time>
+            </strong>
+            {item.location && (
+              <p class="mt-1 text-xs text-slate-400">
+                <small>{item.location}</small>
+              </p>
+            )}
           </div>
           <div role="cell" class="flex items-end">
             {item.registrationHref && (
