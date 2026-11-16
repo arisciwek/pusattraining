@@ -8,42 +8,22 @@ import TrainingFaq from './TrainingFaq.astro';
 import TrainingCta from './TrainingCta.astro';
 import type { TrainingDetailBlock } from '../types';
 import type { CollectionEntry } from 'astro:content';
-
 type ScheduleEntry = CollectionEntry<'schedules'>;
-
 interface Props {
-  blocks: TrainingDetailBlock[];
-  title: string;
-  description: string;
-  schedules: ScheduleEntry[];
-  trainingSlug: string;
-  image?: string;
-  imageAlt?: string;
+  blocks: TrainingDetailBlock[]; title: string; description: string; schedules: ScheduleEntry[]; trainingSlug: string;
+  image?: string; imageAlt?: string;
   hero?: {
-    eyebrow?: string;
-    certBadge?: string;
-    description?: string;
-    deliveryMode?: 'online' | 'offline' | 'mixed';
-    ctaLabel?: string;
-    ctaHref?: string;
-    trustItems?: { icon: string; label: string }[];
+    eyebrow?: string; certBadge?: string; description?: string; deliveryMode?: 'online' | 'offline' | 'mixed';
+    ctaLabel?: string; ctaHref?: string; trustItems?: { icon: string; label: string }[];
+    price?: string; priceNote?: string; duration?: string; imageSrcset?: string; imageSizes?: string; imageWidth?: string; imageHeight?: string;
   };
 }
-
 const { blocks, title, description, schedules, trainingSlug, image, imageAlt = title, hero } = Astro.props;
-
 function slugifySectionTitle(value: string): string {
-  return value
-    .toLowerCase()
-    .normalize('NFKD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
+  return value.toLowerCase().normalize('NFKD').replace(/[\\u0300-\\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
-
 const introBlocks = blocks.filter((block) => block.type === 'training-detail-intro');
 const contentBlocks = blocks.filter((block) => block.type !== 'training-detail-intro');
-
 const navigationItems = contentBlocks.flatMap((block) => {
   if (block.type === 'training-summary') return [{ id: block.id ?? 'ringkasan-program', label: 'Ringkasan' }];
   if (block.type === 'training-schedule-list') return [{ id: block.id ?? 'jadwal-pelatihan', label: 'Jadwal' }];
@@ -53,107 +33,16 @@ const navigationItems = contentBlocks.flatMap((block) => {
 });
 ---
 <div class="training-detail-renderer">
-  {hero && (
-    <HeroTraining
-      eyebrow={hero.eyebrow ?? 'PROGRAM PELATIHAN'}
-      certBadge={hero.certBadge}
-      title={title}
-      description={hero.description ?? description}
-      image={image ?? ''}
-      imageAlt={imageAlt}
-      deliveryMode={hero.deliveryMode}
-      ctaLabel={hero.ctaLabel}
-      ctaHref={hero.ctaHref}
-      trustItems={hero.trustItems}
-    />
-  )}
-  {introBlocks.map((block) => {
-    if (block.type !== 'training-detail-intro') return null;
-    return (
-      <TrainingDetailIntro
-        title={title}
-        description={description}
-        eyebrow={block.eyebrow}
-        noticeTitle={block.noticeTitle}
-        noticeDescription={block.noticeDescription}
-      />
-    );
-  })}
-  {navigationItems.length > 1 && (
-    <nav class="training-detail-renderer__navigation sticky top-20 z-20 -mx-4 mb-8 overflow-x-auto border-y border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-xl sm:border sm:px-5" aria-label="Navigasi bagian program">
-      <ul class="training-detail-renderer__navigation-list flex min-w-max items-center gap-2">
-        {navigationItems.map((item) => (
-          <li class="training-detail-renderer__navigation-item">
-            <a class="training-detail-renderer__navigation-link inline-flex rounded-full px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-slate-900" href={`#${item.id}`}>{item.label}</a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  )}
+  {hero && <HeroTraining eyebrow={hero.eyebrow ?? 'PROGRAM PELATIHAN'} certBadge={hero.certBadge} title={title} description={hero.description ?? description} image={image ?? ''} imageAlt={imageAlt} imageSrcset={hero.imageSrcset} imageSizes={hero.imageSizes} imageWidth={hero.imageWidth} imageHeight={hero.imageHeight} deliveryMode={hero.deliveryMode} ctaLabel={hero.ctaLabel} ctaHref={hero.ctaHref} trustItems={hero.trustItems} price={hero.price} priceNote={hero.priceNote} duration={hero.duration} schedules={schedules} />}
+  {introBlocks.map((block) => block.type === 'training-detail-intro' ? <TrainingDetailIntro eyebrow={block.eyebrow} noticeTitle={block.noticeTitle} noticeDescription={block.noticeDescription} /> : null)}
+  {navigationItems.length > 1 && <nav class="training-detail-renderer__navigation sticky top-20 z-20 -mx-4 mb-8 overflow-x-auto border-y border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-xl sm:border sm:px-5" aria-label="Navigasi bagian program"><ul class="training-detail-renderer__navigation-list flex min-w-max items-center gap-2">{navigationItems.map((item) => <li class="training-detail-renderer__navigation-item"><a class="training-detail-renderer__navigation-link inline-flex rounded-full px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-slate-900" href={`#${item.id}`}>{item.label}</a></li>)}</ul></nav>}
   {contentBlocks.map((block) => {
-    if (block.type === 'training-summary') {
-      return <TrainingSummary id={block.id ?? 'ringkasan-program'} eyebrow={block.eyebrow} items={block.items} />;
-    }
-
-    if (block.type === 'training-content-section') {
-      return (
-        <TrainingContentSection
-          id={block.id ?? `bagian-${slugifySectionTitle(block.title)}`}
-          eyebrow={block.eyebrow}
-          title={block.title}
-          description={block.description}
-          items={block.items}
-        />
-      );
-    }
-
-    if (block.type === 'training-faq') {
-      return (
-        <TrainingFaq
-          id={block.id ?? 'faq-pelatihan'}
-          eyebrow={block.eyebrow}
-          title={block.title}
-          description={block.description}
-          items={block.items}
-        />
-      );
-    }
-
-    if (block.type === 'training-cta') {
-      return (
-        <TrainingCta
-          eyebrow={block.eyebrow}
-          title={block.title}
-          description={block.description}
-          actionLabel={block.actionLabel}
-          secondaryLabel={block.secondaryLabel}
-          secondaryHref={block.secondaryHref}
-        />
-      );
-    }
-
-    if (block.type === 'training-schedule-list') {
-      return (
-        <TrainingScheduleList
-          id={block.id ?? 'jadwal-pelatihan'}
-          title={block.title}
-          eyebrow={block.eyebrow}
-          allLabel={block.allLabel}
-          emptyMessage={block.emptyMessage}
-          schedules={schedules}
-          trainingSlug={trainingSlug}
-        />
-      );
-    }
-
+    if (block.type === 'training-summary') return <TrainingSummary id={block.id ?? 'ringkasan-program'} eyebrow={block.eyebrow} items={block.items} />;
+    if (block.type === 'training-content-section') return <TrainingContentSection id={block.id ?? `bagian-${slugifySectionTitle(block.title)}`} eyebrow={block.eyebrow} title={block.title} description={block.description} items={block.items} />;
+    if (block.type === 'training-faq') return <TrainingFaq id={block.id ?? 'faq-pelatihan'} eyebrow={block.eyebrow} title={block.title} description={block.description} items={block.items} />;
+    if (block.type === 'training-cta') return <TrainingCta eyebrow={block.eyebrow} title={block.title} description={block.description} actionLabel={block.actionLabel} secondaryLabel={block.secondaryLabel} secondaryHref={block.secondaryHref} />;
+    if (block.type === 'training-schedule-list') return <TrainingScheduleList id={block.id ?? 'jadwal-pelatihan'} title={block.title} eyebrow={block.eyebrow} allLabel={block.allLabel} emptyMessage={block.emptyMessage} schedules={schedules} trainingSlug={trainingSlug} />;
     return null;
   })}
-  {!contentBlocks.some((block) => block.type === 'training-cta') && (
-    <TrainingCta
-      eyebrow="KONSULTASI PROGRAM"
-      title={`Tertarik mengikuti ${title}?`}
-      description="Hubungi Tiara untuk menanyakan informasi program, jadwal, dan proses pendaftaran."
-      actionLabel="Chat Tiara via WhatsApp"
-    />
-  )}
+  {!contentBlocks.some((block) => block.type === 'training-cta') && <TrainingCta eyebrow="KONSULTASI PROGRAM" title={`Tertarik mengikuti ${title}?`} description="Hubungi Tiara untuk menanyakan informasi program, jadwal, dan proses pendaftaran." actionLabel="Chat Tiara via WhatsApp" />}
 </div>
