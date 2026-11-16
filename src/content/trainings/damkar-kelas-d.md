@@ -12,7 +12,7 @@ updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
 image: "https://raw.githubusercontent.com/arisciwek/damkar/main/public/images/damkar-pemadaman-tradisional.webp"
 hero:
-  title: Pelatihan Petugas Pemadam
+  title: Pelatihan Petugas Pemadam Kebakaran Kelas D
   imageAlt: Peserta pelatihan Pemadam Kebakaran saat praktik pemadaman api
   eyebrow: JENJANG 1 DARI 4 · PROGRAM SERTIFIKASI
   certBadge: KEMNAKER RI
