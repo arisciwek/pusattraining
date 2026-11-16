@@ -36,9 +36,14 @@ const upcomingSchedules = schedules
     if (status === 'completed' || status === 'cancelled' || status === 'postponed') return false;
 
     const today = todayInTimezone(timezone);
-    const endDay = /^\\d{4}-\\d{2}-\\d{2}$/.test(endDate)
+    const endDay = /^\d{4}-\d{2}-\d{2}$/.test(endDate)
       ? endDate
-      : todayInTimezone(timezone);
+      : new Intl.DateTimeFormat('en-CA', {
+          timeZone: timezone,
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+        }).format(new Date(endDate));
     return endDay >= today;
   })
   .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate))
