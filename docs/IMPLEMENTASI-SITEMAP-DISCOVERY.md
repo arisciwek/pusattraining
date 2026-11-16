@@ -27,7 +27,10 @@ Sitemap index
 
 ```bash
 npm run schedules:discover
+npm run test:schedules:discover
 ```
+
+Perintah test menjalankan parser fixture menggunakan `node:test`; discovery sendiri mengambil sitemap live.
 
 Opsi:
 
