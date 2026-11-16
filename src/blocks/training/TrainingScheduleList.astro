@@ -351,6 +351,12 @@ const activeCount = sortedSchedules.filter((schedule) => getTimelineStatus(sched
   .training-schedule-list__group-title::after { height: 1px; flex: 1; background: #fecaca; content: ''; }
   .training-schedule-list__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; margin: 0; padding: 0; list-style: none; }
   .training-schedule-list__card { display: grid; min-width: 0; grid-template-columns: 4.25rem minmax(0, 1fr); overflow: hidden; border: 1px solid #fecaca; border-radius: 1rem; background: #fff; transition: border-color .2s, box-shadow .2s; }
+  .training-schedule-list__card.is-available { border-color: #86efac; background: #f0fdf4; }
+  .training-schedule-list__card.is-soon { border-color: #86efac; background: #f7fef8; }
+  .training-schedule-list__card.is-ongoing { border-color: #facc15; background: #fefce8; }
+  .training-schedule-list__card.is-past { border-color: #fca5a5; background: #fef2f2; }
+  .training-schedule-list__card.is-postponed { border-color: #fcd34d; background: #fffbeb; }
+  .training-schedule-list__card.is-cancelled { border-color: #fca5a5; background: #fef2f2; }
   .training-schedule-list__card:hover { border-color: #dc2626; box-shadow: 0 8px 24px rgb(23 23 23 / 7%); }
   .training-schedule-list__card[hidden], .training-schedule-list__group[hidden], .training-schedule-list__groups[hidden], .training-schedule-list__empty[hidden] { display: none; }
   .training-schedule-list__date { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #dc2626; color: #fff; line-height: 1; }
