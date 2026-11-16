@@ -99,3 +99,22 @@ Setelah schema tersedia, record minimum hanya berisi field wajib schema, identit
 - Program dapat dirender tanpa seluruh block selesai.
 - Build Astro berhasil.
 - Belum ada redirect otomatis yang diputuskan hanya dari kecocokan slug.
+
+
+## 8. Status implementasi branch
+
+Pekerjaan awal sudah ditambahkan pada branch `content/initial-training-catalog`:
+
+- [x] Content Collections `pages`, `trainings`, `schedules`, dan `articles`.
+- [x] Route katalog `/pelatihan/`.
+- [x] Route dinamis kategori/program `/pelatihan/<slug>/`.
+- [x] Alias katalog lama `/training/` dengan canonical ke `/pelatihan/`.
+- [x] Empat belas record kategori kandidat.
+- [x] Delapan master program awal yang ditemukan di sitemap.
+- [x] Relasi program-kategori melalui `categoryIds`.
+- [x] Validasi identitas unik dan relasi kategori/schedule saat static generation.
+- [x] Homepage dan navigasi utama mengambil/mengarah ke katalog baru.
+- [ ] Jalankan `npm run check` dan `npm run build` setelah branch di-pull.
+- [ ] Audit manual taksonomi dan verifikasi seluruh deskripsi/program terhadap konten sumber.
+
+Build belum diklaim lulus karena eksekusi lokal belum dilakukan pada environment repository. Jangan merge sebelum `npm run check` dan `npm run build` berhasil.
