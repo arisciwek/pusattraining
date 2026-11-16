@@ -46,8 +46,8 @@ function dateKeyInTimezone(value: string, timezone: string): string {
 
 function getTimelineStatus(schedule: ScheduleEntry): { key: TimelineStatus; label: string; active: boolean } {
   const { data } = schedule;
-  if (data.status === 'cancelled') return { key: 'cancelled', label: 'Dibatalkan', active: false };
-  if (data.status === 'postponed') return { key: 'postponed', label: 'Ditunda', active: false };
+  if (data.status === 'cancelled') return { key: 'cancelled', label: 'Dibatalkan', active: true };
+  if (data.status === 'postponed') return { key: 'postponed', label: 'Ditunda', active: true };
 
   const timezone = data.timezone || 'Asia/Jakarta';
   const today = dateKeyInTimezone(new Date().toISOString(), timezone);
@@ -62,7 +62,7 @@ function getTimelineStatus(schedule: ScheduleEntry): { key: TimelineStatus; labe
   const registration = data.registration?.status;
   if (registration === 'closed') return { key: 'available', label: 'Pendaftaran ditutup', active: true };
   if (registration === 'not-open') return { key: 'available', label: 'Belum dibuka', active: true };
-  return { key: 'available', label: 'Pendaftaran dibuka', active: true };
+  return { key: 'available', label: registration === 'open' ? 'Pendaftaran dibuka' : 'Tersedia', active: true };
 }
 
 function dateParts(value: string, timezone: string) {
@@ -101,7 +101,7 @@ const groups = [...new Set(sortedSchedules.map((schedule) => getScheduleMonth(sc
     const [year, month] = key.split('-').map(Number);
     return {
       key,
-      title: `Jadwal ${title.replace(/^Jadwal\\s*/i, '')} ${MONTHS[month - 1].long} ${year}`,
+      title: `${title.replace(/^Jadwal\\s*/i, '').replace(/\\s+\\d{4}$/, '')} — ${MONTHS[month - 1].long} ${year}`,
       schedules: sortedSchedules.filter((schedule) => getScheduleMonth(schedule.data) === key),
     };
   });
@@ -177,6 +177,7 @@ const activeCount = sortedSchedules.filter((schedule) => getTimelineStatus(sched
                     data-end-date={data.endDate}
                     data-timezone={timezone}
                     data-editorial-status={data.status}
+                    data-registration-status={data.registration?.status ?? 'unknown'}
                     data-month={getScheduleMonth(data)}
                     data-status={status.key}
                     data-active={String(status.active)}
@@ -260,14 +261,17 @@ const activeCount = sortedSchedules.filter((schedule) => getTimelineStatus(sched
         const localStart = dateKey(start, timezone);
         const localEnd = dateKey(end, timezone);
         const status = localEnd < today ? 'past' : localStart <= today ? 'ongoing' : 'available';
-        const label = status === 'past' ? 'Sudah terlewati' : status === 'ongoing' ? 'Sedang berlangsung' : 'Pendaftaran dibuka';
-        card.dataset.status = status;
+        const days = Math.round((Date.parse(`${localStart}T00:00:00Z`) - Date.parse(`${today}T00:00:00Z`)) / 86400000);
+        const registration = card.dataset.registrationStatus;
+        const key = status === 'available' && days <= 3 ? 'soon' : status;
+        const label = key === 'past' ? 'Sudah terlewati' : key === 'ongoing' ? 'Sedang berlangsung' : key === 'soon' ? (days === 1 ? 'Mulai besok' : `Mulai ${days} hari lagi`) : registration === 'open' ? 'Pendaftaran dibuka' : 'Tersedia';
+        card.dataset.status = key;
         card.dataset.active = String(status !== 'past');
         card.classList.remove('is-available', 'is-soon', 'is-ongoing', 'is-past');
-        card.classList.add(`is-${status}`);
+        card.classList.add(`is-${key}`);
         const badge = card.querySelector<HTMLElement>('[data-status-label]');
         if (badge) {
-          badge.className = `training-schedule-list__status status--${status}`;
+          badge.className = `training-schedule-list__status status--${key}`;
           badge.textContent = label;
         }
       });
