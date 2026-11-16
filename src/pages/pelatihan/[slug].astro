@@ -5,9 +5,6 @@ import Container from '../../components/shared/Container.astro';
 import Breadcrumb from '../../components/shared/Breadcrumb.astro';
 import TrainingCard from '../../components/training/TrainingCard.astro';
 
-const categories = await getCollection('pages', ({ data }) =>
-  data.pageType === 'category' && !data.draft
-);
 const trainings = await getCollection('trainings', ({ data }) => !data.draft);
 
 export async function getStaticPaths() {
@@ -56,7 +53,7 @@ const description = entry.data.description;
           <h2 class="training-detail__section-title text-2xl font-bold tracking-tight text-slate-950">Program dalam kategori ini</h2>
           {relatedTrainings.length > 0 ? (
             <div class="training-detail__program-grid mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {relatedTrainings.map((training) => <TrainingCard {...training.data} href={`/pelatihan/${training.data.slug}/`} />)}
+              {relatedTrainings.map((training) => <TrainingCard title={training.data.title} description={training.data.description} href={`/pelatihan/${training.data.slug}/`} />)}
             </div>
           ) : (
             <p class="training-detail__empty mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-slate-600">Program dalam kategori ini akan ditambahkan secara bertahap.</p>
