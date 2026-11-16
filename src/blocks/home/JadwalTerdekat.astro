@@ -1,0 +1,199 @@
+---
+type ScheduleItem = {
+  trainingTitle: string;
+  trainingHref: string;
+  startDate: string;
+  endDate?: string;
+  mode?: string;
+  location?: string;
+  duration?: string;
+  price?: string;
+  status?: 'available' | 'limited' | 'closed' | 'completed';
+  registrationHref?: string;
+  organizer?: string;
+  image?: string;
+  imageAlt?: string;
+};
+
+interface Props {
+  items: ScheduleItem[];
+  title?: string;
+  description?: string;
+  allHref?: string;
+}
+
+const {
+  items,
+  title = 'Jadwal Pelatihan K3 Kemnaker RI & Sertifikasi BNSP 2026',
+  description = 'Pilih jadwal batch terdekat untuk kelas Online via Zoom (seluruh Indonesia) maupun Tatap Muka di Training Center.',
+  allHref = '/jadwal/',
+} = Astro.props;
+---
+<section class="hm-section" id="jadwal-terdekat">
+  <div class="hm-container">
+    <div class="hm-section-heading">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">{title}</h2>
+        <p class="mt-2 text-base leading-8 text-slate-600">{description}</p>
+      </div>
+      <a class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-amber-700 hover:text-amber-900 transition-colors" href={allHref}>
+        Lihat kalender jadwal lengkap
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 12h16m-6-6 6 6-6 6"></path>
+        </svg>
+      </a>
+    </div>
+    <div class="hm-schedule w-full" role="table" aria-label="Jadwal pelatihan K3 Kemnaker RI dan BNSP">
+      <div class="hm-schedule-head flex text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">
+        <span role="columnheader" class="min-w-[140px] px-2 py-1.5">Program Pelatihan</span>
+        <span role="columnheader" class="px-2 py-1.5">Metode Pelaksanaan</span>
+        <span role="columnheader" class="min-w-[140px] px-2 py-1.5">Tanggal Batch</span>
+        <span role="columnheader" class="px-2 py-1.5">Pendaftaran</span>
+      </div>
+      {items.map((item) => (
+        <div class="hm-schedule-row flex gap-4 items-start py-3 border-b border-slate-100" role="row">
+          <div role="cell" class="flex-1 min-w-[140px]">
+            {item.image && (
+              <img
+                src={item.image}
+                width={66}
+                height={48}
+                alt={item.imageAlt ?? ''}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+            <a class="line-clamp-2 block truncate hover:text-amber-700" href={item.trainingHref}>
+              {item.trainingTitle}
+            </a>
+          </div>
+          <div role="cell" class="text-sm font-medium text-slate-500">{item.mode ?? ''}</div>
+          <div role="cell" class="flex flex-col">
+            <strong class="block text-sm font-semibold text-slate-900">{item.startDate}</strong>
+            {item.endDate && `<p class="text-xs text-slate-400"> - ${item.endDate}</p>`}
+            {item.location && `<p class="text-xs text-slate-400"><small>{item.location}</small></p>`}
+          </div>
+          <div role="cell" class="flex items-end">
+            {item.registrationHref && (
+              <a class="rounded-md bg-amber-500 text-white px-4 py-2 text-sm font-medium transition-colors" href={item.registrationHref} target="_blank" rel="noopener noreferrer">
+                Daftar
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+      {items.length === 0 && (
+        <div class="rounded-2xl border border-dashed border-slate-300 bg-white p-6 text-center">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Jadwal segera diperbarui</h3>
+          <p class="text-sm text-slate-600 mb-3">Silakan kunjungi katalog training untuk melihat program yang tersedia.</p>
+          <a class="rounded-md border border-amber-500 text-amber-500 px-4 py-2 text-sm font-medium transition-colors" href={allHref}>Lihat semua jadwal</a>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+<style>
+  .hm-section {
+    @apply py-12 sm:py-20 lg:py-24;
+  }
+
+  .hm-container {
+    @apply max-w-7xl mx-auto px-4;
+  }
+
+  .hm-section-heading {
+    @apply mb-6;
+  }
+
+  .hm-section-heading div {
+    @apply max-w-2xl;
+  }
+
+  .hm-section-heading h2 {
+    @apply text-3xl sm:text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl;
+  }
+
+  .hm-section-heading p {
+    @apply mt-2 text-base leading-8 text-slate-600;
+  }
+
+  .hm-text-link {
+    @apply mt-4 inline-flex items-center gap-2 text-sm font-semibold text-amber-700 hover:text-amber-900 transition-colors;
+  }
+
+  .hm-text-link svg {
+    @apply align-middle;
+  }
+
+  .hm-schedule {
+    @apply w-full;
+  }
+
+  .hm-schedule-head {
+    @apply flex text-xs font-bold uppercase tracking-wider text-slate-500 mb-4;
+  }
+
+  .hm-schedule-head span {
+    @apply inline-block min-w-[140px] px-2 py-1.5 text-xs font-semibold text-slate-500;
+  }
+
+  .hm-schedule-row {
+    @apply flex gap-4 items-start py-3 border-b border-slate-100;
+  }
+
+  .hm-schedule-program {
+    @apply flex-1 min-w-[140px];
+  }
+
+  .hm-schedule-program img {
+    @apply rounded-sm mb-2;
+  }
+
+  .hm-schedule-program-link {
+    @apply line-clamp-2 block truncate hover:text-amber-700;
+  }
+
+  .hm-schedule-mode {
+    @apply text-sm font-medium text-slate-500;
+  }
+
+  .hm-schedule-date {
+    @apply flex flex-col;
+  }
+
+  .hm-schedule-date strong {
+    @apply block text-sm font-semibold text-slate-900;
+  }
+
+  .hm-schedule-date small {
+    @apply text-xs text-slate-400;
+  }
+
+  .hm-schedule-actions {
+    @apply flex items-end;
+  }
+
+  .hm-button {
+    @apply rounded-md px-4 py-2 text-sm font-medium transition-colors;
+  }
+
+  .hm-button-orange {
+    @apply bg-amber-500 text-white;
+  }
+
+  .hm-button-outline {
+    @apply border border-amber-500 text-amber-500;
+  }
+
+  .hm-schedule-empty {
+    @apply rounded-2xl border border-dashed border-slate-300 bg-white p-6 text-center;
+  }
+
+  .hm-schedule-empty-title {
+    @apply text-lg font-bold text-slate-900 mb-2;
+  }
+
+  .hm-schedule-empty-description {
+    @apply text-sm text-slate-600 mb-3;
+  }
+</style>

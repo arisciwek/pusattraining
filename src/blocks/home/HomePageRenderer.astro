@@ -3,7 +3,7 @@ import HomeHero from './HomeHero.astro';
 import HomeIntroduction from './HomeIntroduction.astro';
 import TrainingCategoryOverview from './TrainingCategoryOverview.astro';
 import WhyChooseUs from './WhyChooseUs.astro';
-import UpcomingSchedule from './UpcomingSchedule.astro';
+import JadwalTerdekat from './JadwalTerdekat';
 import HomeContactCTA from './HomeContactCTA.astro';
 import Container from '../../components/shared/Container.astro';
 import type { HomePageBlock } from '../types';
@@ -14,12 +14,29 @@ interface CategoryItem {
   href: string;
 }
 
+interface ScheduleItem {
+  trainingTitle: string;
+  trainingHref: string;
+  startDate: string;
+  endDate?: string;
+  mode?: string;
+  location?: string;
+  duration?: string;
+  price?: string;
+  status?: 'available' | 'limited' | 'closed' | 'completed';
+  registrationHref?: string;
+  organizer?: string;
+  image?: string;
+  imageAlt?: string;
+}
+
 interface Props {
   blocks: HomePageBlock[];
   categories: CategoryItem[];
+  upcomingSchedules: ScheduleItem[];
 }
 
-const { blocks, categories } = Astro.props;
+const { blocks, categories, upcomingSchedules } = Astro.props;
 ---
 <div class="home-page-blocks">
   {blocks.map((block) => {
@@ -61,7 +78,7 @@ const { blocks, categories } = Astro.props;
       );
     }
     if (block.type === 'home-upcoming-schedule') {
-      return <UpcomingSchedule items={[]} title={block.title} description={block.description} allHref={block.allHref} />;
+      return <JadwalTerdekat items={upcomingSchedules} title={block.title} description={block.description} allHref={block.allHref} />;
     }
     if (block.type === 'home-contact') {
       return <HomeContactCTA {...block} />;

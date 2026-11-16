@@ -1,27 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
-import SiteLayout from '../layouts/SiteLayout.astro';
 import HomePageRenderer from '../blocks/home/HomePageRenderer.astro';
 import type { HomePageBlock } from '../blocks/types';
-
-const entry = (await getCollection('pages', ({ data }) =>
-  data.slug === 'home' && !data.draft
-))[0];
-
-if (!entry) throw new Error('Konten halaman Beranda (slug: home) tidak ditemukan.');
-
-const categories = (await getCollection('pages', ({ data }) =>
-  data.pageType === 'category' && !data.draft
-))
-  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'id'))
-  .map(({ data }) => ({
-    title: data.title,
-    description: data.description,
-    href: `/pelatihan/${data.slug}/`,
-  }));
-
-const blocks = entry.data.blocks as HomePageBlock[];
 ---
-<SiteLayout title={entry.data.title} description={entry.data.description}>
-  <HomePageRenderer blocks={blocks} categories={categories} />
-</SiteLayout>
