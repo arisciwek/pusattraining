@@ -1,7 +1,7 @@
 # Implementasi Content Collections dan Katalog Awal
 
-**Branch:** `content/initial-training-catalog`  
-**Status:** fondasi schema dan route awal ditambahkan; build lokal masih harus diverifikasi setelah branch di-pull.
+**Repository:** `arisciwek/pusattraining`  
+**Status:** katalog awal sudah terpasang dan build berhasil pada environment pemilik repository. Audit kontrak schedule diperbarui pada branch `fix/schedule-contract-audit`.
 
 ## 1. Collection yang tersedia
 
@@ -16,64 +16,67 @@ Konfigurasi ada di `src/content.config.ts` menggunakan Content Layer API Astro d
 
 Semua collection memakai `id` integer positif dan `ulid` 26 karakter. Identitas tersebut stabil dan tidak boleh dibuat ulang ketika slug/judul berubah.
 
-### 1.1 Page
+## 2. Schema utama
+
+### 2.1 Page
 
 Field wajib mengikuti `CONTENT-DRIVEN-PAGE-ARCHITECTURE.md`: `type`, `id`, `ulid`, `slug`, `title`, `description`, `pubDate`, `updatedDate`, dan `draft`.
 
-Implementasi menambahkan `pageType` dengan nilai:
-- `category`: landing rumpun pelatihan.
-- `standard`: halaman institusional atau halaman konten lain.
+Implementasi menambahkan `pageType` dengan nilai `category` atau `standard`. Field tambahan `image`, `related`, dan `blocks` tersedia; block tidak wajib sehingga halaman minimal tetap dapat dirender.
 
-Field tambahan: `image`, `related` (array ID), dan `blocks`. Block tidak wajib; halaman minimal tanpa block tetap valid.
-
-### 1.2 Training
+### 2.2 Training
 
 Field utama:
 - `type: training`
-- `id`, `ulid`
-- `trainingId`: identitas stabil yang dirujuk schedule.
+- `id`, `ulid`, dan `trainingId`
 - `slug`, `title`, `description`
-- `categoryIds`: relasi ke `pages.id` dari halaman kategori.
+- `categoryIds` sebagai relasi ke `pages.id` kategori
 - `pubDate`, `updatedDate`, `draft`
 - `image` dan `related` opsional.
 
-Satu program hanya memiliki satu master record. Schedule tidak boleh menyalin data master program.
+Satu program hanya memiliki satu master record. Schedule merujuknya melalui `trainingId`.
 
-### 1.3 Schedule
+### 2.3 Schedule
 
-Collection schedule mempertahankan nama field dan enum dari `FRONTMATTER-SCHEDULE-CONTRACT.md`, termasuk `scheduleId`, `publisherId`, `trainingId`, `batchNo`, tanggal, lifecycle status, registration, delivery, venue, completion, dan sites.
+Collection bernama plural `schedules`. Schema mempertahankan field dan enum dari `FRONTMATTER-SCHEDULE-CONTRACT.md`, termasuk:
+- Identitas universal `id` dan `ulid`.
+- Identitas schedule `scheduleId`, `publisherId`, dan relasi `trainingId`.
+- `batchNo`, `slug`, `title`, `description`.
+- `startDate`, `endDate`, `dateLabel`, `timezone`.
+- `pubDate`, `updatedDate`, `draft`, dan lifecycle `status`.
+- Object opsional `registration`, `delivery`, `venue`, `completion`, dan `sites`.
 
-`id` dan `ulid` ditambahkan sebagai identitas universal sesuai arsitektur content-driven; keduanya tidak menggantikan `scheduleId`.
+Validasi memeriksa tanggal kalender ISO, datetime dengan zona waktu, timezone IANA, `endDate >= startDate`, dan `updatedDate >= pubDate`. Relasi `trainingId` diperiksa saat validasi lintas collection.
 
-Validasi tanggal menerima date-only ISO `YYYY-MM-DD` atau datetime ISO dengan zona waktu. Validasi juga memastikan `endDate >= startDate` dan `updatedDate >= pubDate`.
+**Belum selesai:** registry allowlist `publisherId`, validasi struktur folder kanonis, fixture semua status, route arsip bulanan, dan route detail schedule. Rincian audit ada di `docs/AUDIT-SCHEDULE-CONTRACT-AND-ROUTING.md`.
 
-### 1.4 Article
+### 2.4 Article
 
-Schema artikel mengikuti pola editorial yang sudah digunakan pada proyek: identitas, slug, title, description, pubDate, author, category, tags, draft, dan image. `updatedDate` opsional.
+Schema artikel mengikuti pola editorial: identitas, slug, title, description, pubDate, author, category, tags, draft, dan image. `updatedDate` opsional.
 
-## 2. Routing yang ditambahkan
+## 3. Routing yang tersedia
 
-| URL | Sumber | Perilaku |
+| URL | Sumber | Status |
 |---|---|---|
-| `/pelatihan/` | `pages` dengan `pageType: category` | Daftar kategori |
-| `/pelatihan/<slug>/` | `pages` kategori atau `trainings` | Satu route dinamis untuk landing kategori dan detail program |
-| `/training/` | Alias katalog lama | Menampilkan katalog yang sama dengan canonical ke `/pelatihan/` |
+| `/` | Halaman homepage | Tersedia |
+| `/pelatihan/` | Pages kategori | Tersedia |
+| `/pelatihan/<slug>/` | Page kategori atau master training | Tersedia |
+| `/training/` | Alias katalog lama, canonical ke `/pelatihan/` | Tersedia |
+| `/jadwal/` | Indeks jadwal | Tersedia, saat ini empty state |
+| `/jadwal/<YYYY-MM>/` | Arsip bulanan | Belum tersedia |
+| `/jadwal/<YYYY-MM>/<training-slug>/<schedule-slug>/` | Detail schedule portal | Belum tersedia |
 
-Route kategori menampilkan program yang `categoryIds`-nya memuat `pages.id` kategori tersebut. Route program menggunakan template dasar; detail kurikulum, persyaratan, FAQ, galeri, dan block tambahan dapat dilengkapi tanpa mengubah URL.
+Route kategori menampilkan program yang `categoryIds`-nya memuat `pages.id` kategori. Route training menggunakan template dasar; kurikulum, persyaratan, FAQ, galeri, dan block tambahan dapat dilengkapi tanpa mengubah URL.
 
-Homepage dan navigasi utama sudah diarahkan ke `/pelatihan/`. Homepage mengambil empat kategori pertama dari collection, bukan lagi menyimpan daftar kategori hardcoded.
+## 4. Data awal
 
-## 3. Data awal yang dibuat
+### 4.1 Kategori
 
-### 3.1 Kategori
+Empat belas record kategori kandidat tersedia di `src/content/pages/categories/`, dengan ID 2001–2014. Taksonomi berasal dari inventaris sitemap dan masih perlu diverifikasi terhadap isi halaman lama.
 
-Empat belas record kandidat dibuat di `src/content/pages/categories/`. ID yang dialokasikan: `2001–2014`.
+### 4.2 Master training
 
-Kategori tersebut berasal dari inventaris sitemap dan taksonomi kerja. Klasifikasi masih perlu ditinjau terhadap isi halaman lama sebelum dianggap taksonomi final.
-
-### 3.2 Master training
-
-Delapan master program awal dibuat di `src/content/trainings/`. ID yang dialokasikan: `3001–3008`.
+Delapan master program awal tersedia di `src/content/trainings/`, dengan ID 3001–3008:
 
 | trainingId | Nama program | Kategori |
 |---|---|---|
@@ -86,26 +89,23 @@ Delapan master program awal dibuat di `src/content/trainings/`. ID yang dialokas
 | `training-emergency-response-plan` | Emergency Response Plan | Kebakaran dan Tanggap Darurat |
 | `training-k3-bahaya-confined-space` | K3 Ruang Terbatas (Confined Space) | Ruang Terbatas dan Gas Berbahaya |
 
-Record awal hanya berisi identitas, title, description ringkas, relasi kategori, tanggal editorial, dan status publikasi. Tidak ada jadwal, harga, kapasitas, lokasi, atau klaim sertifikasi yang direka.
+Record awal tidak mengarang jadwal, harga, kapasitas, lokasi, atau klaim sertifikasi.
 
-## 4. Hal yang belum dikerjakan
+## 5. Verifikasi
 
-- [ ] Jalankan `npm run check` dan `npm run build` pada environment lokal.
-- [ ] Tambahkan validasi lintas collection untuk keunikan `id`, `ulid`, `trainingId`, dan slug.
-- [ ] Tambahkan validasi bahwa setiap `categoryIds` mengarah ke page kategori yang tersedia.
-- [ ] Tambahkan schema block terperinci sesuai registry; saat ini `blocks` belum wajib dan belum menjadi syarat render.
-- [ ] Migrasikan seluruh copy homepage, tentang, kontak, dan halaman institusional ke frontmatter Markdown.
-- [ ] Lengkapi program lain setelah klasifikasi sitemap dan sumber kontennya diverifikasi.
-- [ ] Tambahkan route jadwal bulan dan detail schedule setelah data batch faktual tersedia.
-- [ ] Buat redirect map final setelah audit setiap URL lama.
+Pemilik repository melaporkan build selesai dengan 29 halaman dan `sitemap-index.xml` berhasil dibuat. Log tersebut menunjukkan Astro build berhasil pada environment lokal. Audit schedule tetap mencatat bahwa route arsip/detail belum tersedia; keberhasilan build tidak berarti semua rencana URL sudah diimplementasikan.
 
-## 5. Cara verifikasi setelah pull
-
-Jalankan:
-
+Perintah pemeriksaan yang digunakan:
 ```bash
 npm run check
 npm run build
 ```
 
-Jika ada error schema atau TypeScript, perbaiki di branch ini sebelum merge. Jangan membuat jadwal dummy hanya untuk mengisi tampilan.
+## 6. Pekerjaan berikutnya
+
+1. Verifikasi dan finalisasi taksonomi kategori serta daftar master program berdasarkan konten sumber.
+2. Tetapkan registry `publisherId` lintas situs.
+3. Tegakkan struktur folder dan fixture schedule.
+4. Implementasikan route arsip bulanan dan detail schedule.
+5. Migrasikan halaman institusional ke Markdown/frontmatter.
+6. Buat redirect map final setelah audit isi dan performa URL lama.
