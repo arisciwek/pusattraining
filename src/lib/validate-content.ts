@@ -1,4 +1,5 @@
 import { getCollection } from 'astro:content';
+import { getScheduleMonth } from './schedule-utils';
 
 function assertUnique(values: string[], label: string): void {
   const seen = new Set<string>();
@@ -77,4 +78,12 @@ export async function validateContentRelations(): Promise<void> {
       );
     }
   }
+
+  const publishedSchedulePaths = schedules
+    .filter(({ data }) => !data.draft && data.sites?.main?.enabled === true)
+    .map((schedule) => {
+      const training = trainingsById.get(schedule.data.trainingId)!;
+      return `${getScheduleMonth(schedule.data)}/${training.data.slug}/${schedule.data.slug}`;
+    });
+  assertUnique(publishedSchedulePaths, 'URL schedule portal');
 }
