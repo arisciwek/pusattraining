@@ -1,31 +1,11 @@
 ---
-interface Props {
-  title: string;
-  description: string;
-  eyebrow?: string;
-  noticeTitle: string;
-  noticeDescription: string;
-}
-
-const {
-  title,
-  description,
-  eyebrow = 'PROGRAM PELATIHAN',
-  noticeTitle,
-  noticeDescription,
-} = Astro.props;
+interface Props { eyebrow?: string; noticeTitle: string; noticeDescription: string; }
+const { eyebrow = 'CATATAN PROGRAM', noticeTitle, noticeDescription } = Astro.props;
 ---
-<section class="training-detail-intro">
-  <header class="training-detail-intro__header mt-8 max-w-4xl">
-    <p class="training-detail-intro__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">{eyebrow}</p>
-    <h1 class="training-detail-intro__title mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">{title}</h1>
-    <p class="training-detail-intro__description mt-4 text-base leading-8 text-slate-600">{description}</p>
-  </header>
-
-  <div class="training-detail-intro__content mt-10 max-w-3xl">
-    <div class="training-detail-intro__notice rounded-2xl border border-slate-200 bg-slate-50 p-6">
-      <h2 class="training-detail-intro__notice-title text-lg font-bold text-slate-950">{noticeTitle}</h2>
-      <p class="training-detail-intro__notice-description mt-2 leading-7 text-slate-600">{noticeDescription}</p>
-    </div>
+<aside class="training-detail-intro mt-8 rounded-2xl border border-amber-200 bg-amber-50/70 p-5 sm:p-6" aria-label={noticeTitle}>
+  <div class="training-detail-intro__content max-w-4xl">
+    <p class="training-detail-intro__eyebrow text-[.68rem] font-extrabold uppercase tracking-[.16em] text-amber-800">{eyebrow}</p>
+    <h2 class="training-detail-intro__notice-title mt-2 text-base font-bold text-slate-950">{noticeTitle}</h2>
+    <p class="training-detail-intro__notice-description mt-2 text-sm leading-7 text-slate-700">{noticeDescription}</p>
   </div>
-</section>
+</aside>
