@@ -13,7 +13,7 @@ interface Props {
   blocks: TrainingDetailBlock[]; title: string; description: string; schedules: ScheduleEntry[]; trainingSlug: string;
   image?: string; imageAlt?: string;
   hero?: {
-    eyebrow?: string; certBadge?: string; description?: string; deliveryMode?: 'online' | 'offline' | 'mixed';
+    title?: string; imageAlt?: string; eyebrow?: string; certBadge?: string; description?: string; deliveryMode?: 'online' | 'offline' | 'mixed';
     ctaLabel?: string; ctaHref?: string; trustItems?: { icon: string; label: string }[];
     price?: string; priceNote?: string; duration?: string; imageSrcset?: string; imageSizes?: string; imageWidth?: string; imageHeight?: string;
   };
@@ -33,7 +33,7 @@ const navigationItems = contentBlocks.flatMap((block) => {
 });
 ---
 <div class="training-detail-renderer">
-  {hero && <HeroTraining eyebrow={hero.eyebrow ?? 'PROGRAM PELATIHAN'} certBadge={hero.certBadge} title={title} description={hero.description ?? description} image={image ?? ''} imageAlt={imageAlt} imageSrcset={hero.imageSrcset} imageSizes={hero.imageSizes} imageWidth={hero.imageWidth} imageHeight={hero.imageHeight} deliveryMode={hero.deliveryMode} ctaLabel={hero.ctaLabel} ctaHref={hero.ctaHref} trustItems={hero.trustItems} price={hero.price} priceNote={hero.priceNote} duration={hero.duration} schedules={schedules} />}
+  {hero && <HeroTraining eyebrow={hero.eyebrow ?? 'PROGRAM PELATIHAN'} certBadge={hero.certBadge} title={hero.title ?? title} description={hero.description ?? description} image={image ?? ''} imageAlt={hero.imageAlt ?? imageAlt} imageSrcset={hero.imageSrcset} imageSizes={hero.imageSizes} imageWidth={hero.imageWidth} imageHeight={hero.imageHeight} deliveryMode={hero.deliveryMode} ctaLabel={hero.ctaLabel} ctaHref={hero.ctaHref} trustItems={hero.trustItems} price={hero.price} priceNote={hero.priceNote} duration={hero.duration} schedules={schedules} />}
   {introBlocks.map((block) => block.type === 'training-detail-intro' ? <TrainingDetailIntro eyebrow={block.eyebrow} noticeTitle={block.noticeTitle} noticeDescription={block.noticeDescription} /> : null)}
   {navigationItems.length > 1 && <nav class="training-detail-renderer__navigation sticky top-20 z-20 -mx-4 mb-8 overflow-x-auto border-y border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-xl sm:border sm:px-5" aria-label="Navigasi bagian program"><ul class="training-detail-renderer__navigation-list flex min-w-max items-center gap-2">{navigationItems.map((item) => <li class="training-detail-renderer__navigation-item"><a class="training-detail-renderer__navigation-link inline-flex rounded-full px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-slate-900" href={`#${item.id}`}>{item.label}</a></li>)}</ul></nav>}
   {contentBlocks.map((block) => {
