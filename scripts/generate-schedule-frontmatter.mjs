@@ -171,7 +171,7 @@ async function main() {
       if (error.code === 'EEXIST') throw new Error(`Output sudah ada, tidak ditimpa: ${target}`);
       throw error;
     });
-    generated.push({ path: target.replace(ROOT + '/', ''), title: item.candidate.title, trainingId: item.training.trainingId, batchNo: item.batchNo });
+    generated.push({ path: target.replace(ROOT + '/', ''), sourceUrl: item.candidate.sourceUrl, sourceLastmod: item.candidate.sourceLastmod, title: item.candidate.title, trainingId: item.training.trainingId, batchNo: item.batchNo });
   }
 
   const report = { generatedAt: now, registryPath: registryPath.replace(ROOT + '/', ''), generatedCount: generated.length, reviewCount: review.length, generated, review };
