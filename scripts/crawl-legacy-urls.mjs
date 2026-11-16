@@ -178,11 +178,11 @@ function extractPage(html, finalUrl) {
   const robots = findMeta(html, 'name', 'robots') || findMeta(html, 'name', 'googlebot');
   const canonical = findCanonical(html, finalUrl);
 
-  const body = (html.match(/<body\b[^>]*>([\\s\\S]*?)<\\/body\\s*>/i)?.[1] ?? html)
+  const body = (html.match(/<body\b[^>]*>([\s\S]*?)<\/body\s*>/i)?.[1] ?? html)
     .replace(/<!--[\s\S]*?-->/g, ' ')
     .replace(/<(script|style|noscript|svg|nav|footer|header|form)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
-    .replace(/&(?:nbsp|amp|quot|lt|gt);|&#(?:\\d+|x[\\da-f]+);/gi, ' ')
+    .replace(/&(?:nbsp|amp|quot|lt|gt);|&#(?:\d+|x[\da-f]+);/gi, ' ')
     .replace(/\s+/g, ' ')
     .trim();
   const words = body ? body.split(/\s+/).length : 0;
