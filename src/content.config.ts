@@ -21,6 +21,7 @@ const pages = defineCollection({
     slug: z.string().min(1),
     title: z.string().min(1),
     description: z.string().min(1),
+    image: z.string().optional(),
     ...editorialDates,
     related: z.array(z.number().int().positive()).default([]),
     blocks: z.array(z.record(z.string(), z.unknown())).default([]),
@@ -76,7 +77,7 @@ const schedules = defineCollection({
       attendanceMode: z.enum(['offline', 'online', 'mixed']),
     }).optional(),
     venue: z.object({
-      name: z.string().min(1).optional(),
+      name: z.string().min(1),
       address: z.string().optional(),
       city: z.string().optional(),
       province: z.string().optional(),
