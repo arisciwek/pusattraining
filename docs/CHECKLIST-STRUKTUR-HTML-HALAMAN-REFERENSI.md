@@ -352,3 +352,46 @@ Status pada checklist bagian 7 adalah status implementasi konten saat PR #23 dib
 - [ ] Periksa collection `schedules` terhadap jadwal 2026 sumber; jangan membuat schedule duplikat bila record telah ada.
 - [ ] Tandai status kalender selesai/berjalan/akan datang secara dinamis; status pendaftaran terpisah.
 - [ ] Setelah semua halaman diperbarui, perbarui kembali checklist bagian 7 dan jalankan pemeriksaan konten serta build.
+
+
+## 10. Sinkronisasi jadwal Damkar Kelas D dan Teknisi K3 Ruang Terbatas
+
+**Tanggal audit/sinkronisasi:** 17 November 2026  
+**Sumber otoritatif:** repository khusus masing-masing program.
+
+| Program di Pusat Training | Repository sumber | Record sumber | Record aktif yang disinkronkan | Status |
+|---|---|---:|---:|---|
+| Pemadam Kebakaran Kelas D | `arisciwek/damkar` — `src/content/schedules/2026/kelas-d/` | 23 | 23 | [x] Disalin ke collection schedules |
+| Teknisi K3 Ruang Terbatas (Confined Space) | `arisciwek/confinedspace` — `src/content/schedule/` | 9 | 9 | [x] Disalin ke collection schedules |
+
+### 10.1 Damkar Kelas D
+
+Semua 23 tanggal 2026 dari repository Damkar disalin ke `src/content/schedules/2026/damkar-kelas-d/`, mempertahankan nomor angkatan, slug, tanggal mulai, tanggal selesai, label tanggal, metode offline, deadline dan status pendaftaran sumber.
+
+Ringkasan:
+- Gelombang 01–20: tanggal sudah lewat.
+- Gelombang 21 (17–19 November): sedang berlangsung pada tanggal audit.
+- Gelombang 22 (30 November–2 Desember): akan datang.
+- Gelombang 23 (14–16 Desember): akan datang.
+
+Catatan: data sumber Gelombang 21 masih menandai pendaftaran `open` walaupun deadline 10 November telah lewat. Nilai sumber dipertahankan apa adanya; jangan menafsirkannya sebagai konfirmasi kuota aktif. Status kalender di komponen dihitung terpisah dari status pendaftaran.
+
+### 10.2 Teknisi K3 Ruang Terbatas
+
+Sembilan jadwal dari repository Confined Space disalin ke `src/content/schedules/2026/training-k3-bahaya-confined-space/`, mempertahankan nomor angkatan, slug, tanggal, label tanggal, dan mode blended/mixed. Lokasi mengikuti keterangan sumber: Betracom Arena Training Center, Kota Bogor.
+
+Ringkasan:
+- Angkatan 14–20: tanggal sudah lewat.
+- Angkatan 21 (23–27 November): akan datang.
+- Angkatan 22 (7–11 Desember): akan datang.
+
+Satu record lama Pusat Training pada 31 Agustus–4 September 2026 tidak ditemukan pada repository sumber dan tidak cocok dengan sembilan jadwal aktif di sana. Record tersebut diarsipkan dengan `draft: true`, bukan dihapus, agar riwayat editorial tetap dapat ditelusuri.
+
+### 10.3 Aturan integrasi
+
+- [x] Kedua program memakai `trainingId` yang sama dengan identitas program Pusat Training agar otomatis terhubung ke halaman detail masing-masing.
+- [x] Setiap record memakai `timezone: Asia/Jakarta`.
+- [x] Record sumber tetap berada di repository asal; sinkronisasi ini adalah salinan data untuk situs Pusat Training, bukan perubahan pada repository Damkar/Confined Space.
+- [x] Status kalender `completed/ongoing/scheduled` ditetapkan dari rentang tanggal pada saat sinkronisasi; komponen daftar tetap menghitung ulang status visual dari tanggal aktual di browser.
+- [x] Status pendaftaran dipisahkan dari status kalender. Jangan mengubah pendaftaran menjadi terbuka hanya karena tanggal pelatihan masih di masa depan.
+- [ ] Build Astro dan pemeriksaan relasi konten harus dijalankan sebelum merge.
