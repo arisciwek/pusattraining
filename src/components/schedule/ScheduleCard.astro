@@ -12,14 +12,16 @@ interface Props {
   trainingSlug: string;
   trainingTitle?: string;
   compact?: boolean;
+  timelineStatus?: 'available' | 'ongoing' | 'past';
 }
 
-const { schedule, trainingSlug, trainingTitle, compact = false } = Astro.props;
+const { schedule, trainingSlug, trainingTitle, compact = false, timelineStatus } = Astro.props;
 const data = schedule.data;
 const href = getScheduleHref(schedule, trainingSlug);
 const title = getScheduleTitle(schedule);
 const description = getScheduleDescription(schedule);
-const statusClass = `schedule-card__status--${data.status}`;
+const statusClass = `schedule-card__status--${timelineStatus ?? data.status}`;
+const statusLabel = timelineStatus === 'available' ? 'Tersedia' : timelineStatus === 'ongoing' ? 'Sedang berlangsung' : timelineStatus === 'past' ? 'Sudah terlewati' : getScheduleStatusLabel(data.status);
 ---
 <article
   class={['schedule-card group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 transition duration-200 hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg hover:shadow-slate-900/5 sm:p-6', compact ? 'schedule-card--compact' : ''].filter(Boolean).join(' ')}
@@ -27,10 +29,11 @@ const statusClass = `schedule-card__status--${data.status}`;
   data-end-date={data.endDate}
   data-timezone={data.timezone}
   data-editorial-status={data.status}
+  data-timeline-status={timelineStatus}
 >
   <div class="schedule-card__top flex flex-wrap items-center justify-between gap-3">
     <span class={['schedule-card__status inline-flex rounded-full px-3 py-1 text-xs font-bold', statusClass].join(' ')}>
-      {getScheduleStatusLabel(data.status)}
+      {statusLabel}
     </span>
     <span class="schedule-card__batch text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Angkatan {data.batchNo}</span>
   </div>
