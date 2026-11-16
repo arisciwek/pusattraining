@@ -23,6 +23,9 @@ hero:
       label: PJK3 resmi Kemnaker RI
     - icon: "<circle cx=\"12\" cy=\"7\" r=\"4\"></circle><path d=\"M4 21v-2a8 8 0 0 1 16 0v2Z\"></path>"
       label: Instruktur praktisi
+    - icon: '<circle cx="9" cy="7" r="3"></circle><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6M21 21v-3a6 6 0 0 0-4-5"></path>'
+      label: Publik & in-house
+  priceNote: Biaya dan cakupan program dikonfirmasi kepada tim sebelum pendaftaran.
 related: []
 blocks:
   - type: training-detail-intro
