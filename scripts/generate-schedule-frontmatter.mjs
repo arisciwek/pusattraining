@@ -144,7 +144,7 @@ async function main() {
 
   assignBatchNumbers(prepared);
   const now = new Date().toISOString();
-  const existingPaths = new Set(await listMarkdownFiles(resolve(ROOT, 'src/content/schedules')));
+  const existingPaths = await listMarkdownFiles(resolve(ROOT, 'src/content'));
   const existingIds = new Set();
   for (const path of existingPaths) {
     const content = await readFile(path, 'utf8');
