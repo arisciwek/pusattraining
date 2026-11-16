@@ -21,7 +21,13 @@ const title = getScheduleTitle(schedule);
 const description = getScheduleDescription(schedule);
 const statusClass = `schedule-card__status--${data.status}`;
 ---
-<article class={['schedule-card group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 transition duration-200 hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg hover:shadow-slate-900/5 sm:p-6', compact ? 'schedule-card--compact' : ''].filter(Boolean).join(' ')}>
+<article
+  class={['schedule-card group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 transition duration-200 hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg hover:shadow-slate-900/5 sm:p-6', compact ? 'schedule-card--compact' : ''].filter(Boolean).join(' ')}
+  data-start-date={data.startDate}
+  data-end-date={data.endDate}
+  data-timezone={data.timezone}
+  data-editorial-status={data.status}
+>
   <div class="schedule-card__top flex flex-wrap items-center justify-between gap-3">
     <span class={['schedule-card__status inline-flex rounded-full px-3 py-1 text-xs font-bold', statusClass].join(' ')}>
       {getScheduleStatusLabel(data.status)}
@@ -53,9 +59,11 @@ const statusClass = `schedule-card__status--${data.status}`;
   </div>
 </article>
 <style>
-  .schedule-card__status--scheduled { background: #eff6ff; color: #1d4ed8; }
-  .schedule-card__status--ongoing { background: #ecfdf5; color: #047857; }
-  .schedule-card__status--completed { background: #f1f5f9; color: #475569; }
+  .schedule-card__status--scheduled,
+  .schedule-card__status--available { background: #dcfce7; color: #166534; }
+  .schedule-card__status--ongoing { background: #fef3c7; color: #92400e; }
+  .schedule-card__status--completed,
+  .schedule-card__status--past { background: #fee2e2; color: #991b1b; }
   .schedule-card__status--postponed { background: #fffbeb; color: #b45309; }
   .schedule-card__status--cancelled { background: #fef2f2; color: #b91c1c; }
 </style>
