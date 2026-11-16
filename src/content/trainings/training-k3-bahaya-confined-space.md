@@ -68,10 +68,18 @@ blocks:
     title: Deskripsi dan tujuan program
     description: "Pelatihan K3 Ruang Terbatas membahas bahaya atmosfer dan non-atmosfer, izin masuk, isolasi energi, pengujian gas, komunikasi, pengawasan, serta kesiapsiagaan penyelamatan. Program ini memberi kerangka pemahaman untuk menjalankan tugas sesuai peran dan ketentuan yang relevan. Silabus final, metode, durasi, evaluasi, dan keluaran mengikuti dokumen penyelenggara yang disetujui."
     items:
-      - title: Tujuan pembelajaran
-        description: "Tujuan utama dari Pelatihan Teknisi K3 Ruang Terbatas (Confined Space) adalah membekali peserta dengan pengetahuan, keterampilan, dan kompetensi agar dapat bekerja, mengawasi, serta mengelola keselamatan di area kerja yang memiliki akses dan ruang gerak terbatas.\n\nSecara rinci, tujuan pelatihan ini meliputi:\n• Memahami Regulasi: Memahami peraturan perundang-undangan dan standar Keselamatan dan Kesehatan Kerja (K3) yang berlaku terkait pekerjaan di ruang terbatas.\n• Identifikasi dan Penilaian Bahaya: Mampu mengenali, mengukur, dan mengendalikan potensi bahaya seperti kekurangan oksigen, gas beracun, gas mudah terbakar, serta bahaya fisik dan mekanis.\n• Penerapan Prosedur Kerja Aman: Mampu melaksanakan sistem izin kerja (work permit system), prosedur Lock Out - Tag Out (LOTO), serta program memasuki ruang terbatas dengan benar.\n• Penggunaan Alat Keselamatan (APD & SCBA): Terampil menggunakan Alat Pelindung Diri (APD) khusus dan Self-Contained Breathing Apparatus (SCBA) atau alat bantu pernapasan.\n• Kesiapsiagaan Tanggap Darurat: Mempersiapkan peserta dalam menyusun rencana tanggap darurat (Emergency Response Plan), melakukan teknik penyelamatan/evakuasi korban, serta pertolongan pertama pada kecelakaan (P3K).\n• Kepatuhan dan Pencegahan Kecelakaan: Mengurangi risiko kecelakaan kerja fatal dan memastikan perusahaan mematuhi regulasi K3 nasional."
-      - title: Batas informasi
-        description: "Uraian ini adalah gambaran ruang lingkup, bukan klaim bahwa seluruh materi merupakan silabus resmi yang disahkan untuk setiap angkatan."
+      - title: Memahami Regulasi
+        description: "Memahami peraturan perundang-undangan dan standar Keselamatan dan Kesehatan Kerja (K3) yang berlaku terkait pekerjaan di ruang terbatas."
+      - title: Identifikasi dan Penilaian Bahaya
+        description: "Mampu mengenali, mengukur, dan mengendalikan potensi bahaya seperti kekurangan oksigen, gas beracun, gas mudah terbakar, serta bahaya fisik dan mekanis."
+      - title: Penerapan Prosedur Kerja Aman
+        description: "Mampu melaksanakan sistem izin kerja (work permit system), prosedur Lock Out - Tag Out (LOTO), serta program memasuki ruang terbatas dengan benar."
+      - title: Penggunaan Alat Keselamatan (APD & SCBA)
+        description: "Terampil menggunakan Alat Pelindung Diri (APD) khusus dan Self-Contained Breathing Apparatus (SCBA) atau alat bantu pernapasan."
+      - title: Kesiapsiagaan Tanggap Darurat
+        description: "Mempersiapkan peserta dalam menyusun rencana tanggap darurat (Emergency Response Plan), melakukan teknik penyelamatan/evakuasi korban, serta pertolongan pertama pada kecelakaan (P3K)."
+      - title: Kepatuhan dan Pencegahan Kecelakaan
+        description: "Mengurangi risiko kecelakaan kerja fatal dan memastikan perusahaan mematuhi regulasi K3 nasional."
 
   - type: training-content-section
     id: sasaran-peserta
