@@ -12,6 +12,21 @@ export interface CtaPageBlock { type: 'cta'; eyebrow?: string; title: string; de
 export interface TestimonialPageBlock { type: 'testimonials'; title?: string; items: { quote: string; name: string; role?: string; organization?: string }[]; }
 export type PageBlock = TrainingCategoryPageBlock | TrainingCatalogPageBlock | TrainingPageBlock | BenefitsPageBlock | ReasonsPageBlock | FaqPageBlock | GalleryPageBlock | TimelinePageBlock | StatsPageBlock | CtaPageBlock | TestimonialPageBlock;
 
+export interface TrainingDetailIntroBlock {
+  type: 'training-detail-intro';
+  eyebrow?: string;
+  noticeTitle: string;
+  noticeDescription: string;
+}
+export interface TrainingScheduleListBlock {
+  type: 'training-schedule-list';
+  eyebrow?: string;
+  title: string;
+  allLabel?: string;
+  emptyMessage: string;
+}
+export type TrainingDetailBlock = TrainingDetailIntroBlock | TrainingScheduleListBlock;
+
 export interface HomeHeroBlock {
   type: 'home-hero';
   eyebrow?: string;
