@@ -161,7 +161,6 @@ async function main() {
     const identities = parseExistingIdentities(content);
     if (identities.id) existingIds.add(identities.id);
     if (identities.scheduleId) existingIds.add(identities.scheduleId);
-    if (scheduleId) existingIds.add(scheduleId);
   }
 
   const generated = [];
