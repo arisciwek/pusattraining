@@ -51,11 +51,29 @@ export async function validateContentRelations(): Promise<void> {
     }
   }
 
-  const trainingIds = new Set(trainings.map(({ data }) => data.trainingId));
+  const trainingsById = new Map(
+    trainings.map((training) => [training.data.trainingId, training]),
+  );
+
   for (const schedule of schedules) {
-    if (!trainingIds.has(schedule.data.trainingId)) {
+    const training = trainingsById.get(schedule.data.trainingId);
+    if (!training) {
       throw new Error(
         `Schedule "${schedule.data.scheduleId}" merujuk trainingId "${schedule.data.trainingId}" yang tidak ditemukan.`,
+      );
+    }
+
+    const pathSegments = schedule.id.split('/');
+    const [year, trainingSlug, scheduleSlug] = pathSegments;
+
+    if (
+      pathSegments.length !== 3 ||
+      year !== schedule.data.startDate.slice(0, 4) ||
+      trainingSlug !== training.data.slug ||
+      scheduleSlug !== schedule.data.slug
+    ) {
+      throw new Error(
+        `Path schedule "${schedule.id}" harus mengikuti schedules/<tahun-startDate>/<training-slug>/<schedule-slug>.md.`,
       );
     }
   }
