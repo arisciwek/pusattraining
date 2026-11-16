@@ -30,7 +30,7 @@ blocks:
   - type: training-detail-intro
     eyebrow: PROGRAM PELATIHAN
     noticeTitle: Catatan penyelenggaraan
-    noticeDescription: "Perusahaan sebaiknya menyiapkan profil lokasi, layout, risiko utama, struktur organisasi, serta prosedur yang sudah ada. Kebutuhan simulasi dan dokumen keluaran disepakati dalam ruang lingkup."
+    noticeDescription: "Program ERP disesuaikan dengan profil bahaya dan kebutuhan perusahaan. Siapkan profil lokasi, layout area, risiko utama, struktur organisasi, serta prosedur yang sudah tersedia untuk membantu pembahasan bersama penyelenggara."
 
   - type: training-summary
     id: ringkasan-program
@@ -40,8 +40,10 @@ blocks:
         value: "Emergency Response Plan"
       - label: Regulasi/acuan
         value: "PP Nomor 50 Tahun 2012 tentang Penerapan SMK3; untuk kebakaran, KEPMENAKER KEP.186/MEN/1999."
-      - label: Informasi angkatan
-        value: "Durasi, metode, biaya, persyaratan akhir, dan keluaran dikonfirmasi kepada penyelenggara."
+      - label: Pilihan durasi
+        value: "Skema 1, 2, atau 3 hari sesuai kebutuhan dan ruang lingkup klien; konfirmasi saat konsultasi."
+      - label: Metode
+        value: "Diskusi kelas, pemaparan, studi kasus, dan latihan sesuai ruang lingkup serta kesepakatan penyelenggaraan."
 
   - type: training-cta
     eyebrow: KONSULTASI PROGRAM
@@ -99,7 +101,7 @@ blocks:
     id: materi-pelatihan
     eyebrow: KURIKULUM
     title: Ruang lingkup materi pelatihan
-    description: "Pokok bahasan disusun dari ruang lingkup regulasi dan kompetensi terkait. Porsi materi dan praktik mengikuti skema pembinaan serta fasilitas angkatan."
+    description: "Pokok bahasan mengacu pada materi ERP yang dipublikasikan penyelenggara. Urutan, kedalaman, dan latihan dipilih sesuai profil risiko, kebutuhan klien, serta fasilitas yang tersedia."
     items:
       - title: Pengenalan Emergency Response Plan
         description: "Konsep dasar keadaan darurat, kesiapsiagaan, dan pendekatan perencanaan tanggap darurat."
