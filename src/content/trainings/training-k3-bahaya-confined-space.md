@@ -4,12 +4,31 @@ id: 3008
 ulid: 01KCV100000000000000000008
 trainingId: training-k3-bahaya-confined-space
 slug: training-k3-bahaya-confined-space
-title: "K3 Ruang Terbatas (Confined Space)"
-description: "Pelatihan K3 Ruang Terbatas membahas bahaya atmosfer dan non-atmosfer, izin masuk, isolasi energi, pengujian gas, komunikasi, pengawasan, serta kesiapsiagaan penyelamatan."
+title: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space)"
+description: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space) membahas identifikasi bahaya, pengendalian risiko, izin masuk, pengujian atmosfer, isolasi energi, dan penerapan prosedur K3 sesuai Permenaker Nomor 11 Tahun 2023."
+image: "https://raw.githubusercontent.com/arisciwek/confinedspace/main/public/images/galeri-pelatihan-1.webp"
 categoryIds: [2005]
 pubDate: '2026-11-16T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
+hero:
+  title: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space)"
+  imageAlt: "Dokumentasi pelatihan Teknisi K3 Ruang Terbatas Betracom, angkatan 6–10 April 2026"
+  eyebrow: "PROGRAM PEMBINAAN K3 RUANG TERBATAS"
+  certBadge: "KEMNAKER RI"
+  description: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space) membekali tenaga kerja yang ditugaskan pada pekerjaan pemasangan, perakitan, pemeliharaan, atau perbaikan komponen di ruang terbatas dengan pemahaman identifikasi bahaya, penilaian risiko, izin masuk, pengujian atmosfer, isolasi energi, penggunaan APD, komunikasi kerja, dan kesiapsiagaan darurat sesuai Permenaker Nomor 11 Tahun 2023. Kualifikasi personel dan dokumen akhir mengikuti persyaratan skema serta ketentuan angkatan."
+  deliveryMode: mixed
+  ctaLabel: "Lihat jadwal dan pendaftaran"
+  ctaHref: "#pendaftaran"
+  trustItems:
+    - icon: '<path d="M12 2 20 6v6c0 5-8 10-8 10S4 17 4 12V6Z"></path><path d="m8 12 3 3 5-6"></path>'
+      label: "Acuan Permenaker 11/2023"
+    - icon: '<path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-8h6v8"></path>'
+      label: "PJK3 bidang Ruang Terbatas"
+    - icon: '<rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path>'
+      label: "Pembinaan teori dan praktik"
+  imageWidth: "800"
+  imageHeight: "600"
 related: []
 blocks:
   - type: training-detail-intro
