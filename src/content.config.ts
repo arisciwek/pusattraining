@@ -121,6 +121,13 @@ const trainings = defineCollection({
         icon: z.string().min(1),
         label: z.string().min(1),
       })).optional(),
+      price: z.string().min(1).optional(),
+      priceNote: z.string().min(1).optional(),
+      duration: z.string().min(1).optional(),
+      imageSrcset: z.string().optional(),
+      imageSizes: z.string().optional(),
+      imageWidth: z.string().optional(),
+      imageHeight: z.string().optional(),
     }).optional(),
     related: z.array(z.number().int().positive()).default([]),
     blocks: z.array(z.discriminatedUnion('type', [
