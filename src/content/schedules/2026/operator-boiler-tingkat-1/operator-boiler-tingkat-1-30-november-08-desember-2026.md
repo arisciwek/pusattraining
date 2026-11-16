@@ -1,7 +1,7 @@
 ---
 type: schedule
 id: 918273643
-ulid: 01KCV400000000000000000001
+ulid: 01KCV600000000000000000001
 scheduleId: "pusattrainingk3_OB1_20261130_08DEC"
 publisherId: "pusattrainingk3"
 trainingId: "operator-boiler-tingkat-1"
