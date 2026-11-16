@@ -148,7 +148,7 @@ async function main() {
   const existingIds = new Set();
   for (const path of existingPaths) {
     const content = await readFile(path, 'utf8');
-    const id = content.match(/^id:\\s*(\\d+)/m)?.[1];
+    const id = content.match(/^id:\s*(\d+)/m)?.[1];
     const scheduleId = content.match(/^scheduleId:\\s*(.+)$/m)?.[1]?.replace(/^["']|["']$/g, '');
     if (id) existingIds.add(Number(id));
     if (scheduleId) existingIds.add(scheduleId);
