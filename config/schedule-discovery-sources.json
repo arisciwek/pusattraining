@@ -1,0 +1,10 @@
+{
+  "sources": [
+    {
+      "publisherId": "pusattrainingk3",
+      "sitemapUrl": "https://pusattrainingk3.com/sitemap.xml",
+      "timezone": "Asia/Jakarta",
+      "includePathRegex": "(jadwal|training|pelatihan|siap-jalan|promo)"
+    }
+  ]
+}
