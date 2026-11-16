@@ -2,9 +2,9 @@
 
 **Proyek:** PusatTrainingK3.com  
 **Repository:** `arisciwek/pusattraining`  
-**Branch kerja:** `docs/analisis-sitemap-dan-rencana-astro`  
-**Status:** Usulan arsitektur untuk didiskusikan dan dikunci sebelum implementasi  
-**Tanggal pencatatan:** 14 November 2026
+**Status:** usulan arsitektur (perlu dikunci sebelum implementasi penuh). Infrastruktur redirect domain-aware sudah disiapkan (`vercel.json`, `public/.htaccess`, pola damkar; redirect path legacy belum aktif — mapping `NOT_REVIEWED`).  
+**Tanggal pencatatan:** 14 November 2026  
+**Diperbarui:** 2026-11-16
 
 ---
 

@@ -1,9 +1,10 @@
 # Audit Master URL Lama — Tahap 1
 
 **Repository:** `arisciwek/pusattraining`  
-**Basis audit:** sitemap snapshot 14 November 2026  
-**Sumber:** `docs/INVENTARIS-URL-SITEMAP.csv`  
-**Status:** inventaris awal; belum menjadi redirect produksi
+**Basis audit:** sitemap snapshot 14 November 2026 (legacy, tersimpan di `docs/sitemap.xml`, `docs/page-sitemap.xml`, `docs/post-sitemap.xml`)  
+**Sumber:** `docs/INVENTARIS-URL-SITEMAP.csv`, `docs/MASTER-LEGACY-URL-MAPPING.csv`  
+**Status:** inventaris/mapping awal; **belum ada redirect path legacy aktif**. Infrastruktur redirect (pola damkar, domain-aware) sudah disiapkan di `vercel.json` dan `public/.htaccess`, namun `redirects` path masih kosong/placeholder sampai ada keputusan `REDIRECT` + `new_url` terverifikasi.  
+**Diperbarui:** 2026-11-16
 
 ## Tujuan
 

@@ -1,82 +1,65 @@
 # Strategi Redirect: Vercel Staging dan VPS Production
 
 **Repository:** `arisciwek/pusattraining`  
-**Branch kerja:** `seo/redirect-deployment-strategy`  
-**Status:** rancangan deployment; belum ada redirect aktif.
+**Status:** infrastruktur redirect disiapkan (pola damkar, domain-aware); **belum ada redirect path legacy aktif**.  
+**Diperbarui:** 2026-11-16
+
+## Kondisi saat ini (fresh)
+
+- **`vercel.json` (root):** `trailingSlash: true`, `redirects: []` — siap menampung aturan redirect **path relatif** (berlaku di host/domain tempat deploy: `.lan`, staging, Vercel, maupun production).
+- **`public/.htaccess` (Apache/cPanel/VPS):** pola damkar — `ErrorDocument 404`, MIME/kompresi/cache/header keamanan, normalisasi `/index.html` → `/` (301, relatif ke host), dan **kanonisasi host hanya untuk produksi** `https://pusattrainingk3.com` (tanpa `www`, paksa https). Domain `.lan`/staging **tidak** dipaksa ke domain produksi. Bagian redirect path legacy masih placeholder (belum ada aturan).
+- **`astro.config.mjs`:** `site` dari `SITE_URL` → `VERCEL_PROJECT_PRODUCTION_URL` → fallback `https://pusattrainingk3.com`; `trailingSlash: 'always'`, `build.format: 'directory'`, sitemap aktif. Build staging dapat memakai `SITE_URL=http://<domain>.lan`.
+- **Mapping legacy:** `docs/MASTER-LEGACY-URL-MAPPING.csv` (572 URL: 136 page, 436 post) masih `NOT_REVIEWED` → **belum ada** keputusan `REDIRECT` dengan `new_url` terverifikasi yang boleh diekspor/diaktifkan.
+- **Sitemap build (saat ini):** `dist/sitemap-index.xml` + `dist/sitemap-0.xml` (28 URL kanonis situs baru). `docs/` menyimpan snapshot sitemap legacy (`sitemap.xml`, `page-sitemap.xml`, `post-sitemap.xml`) sebagai referensi inventaris.
 
 ## Keputusan deployment
 
 | Lingkungan | Platform | Mekanisme redirect |
 |---|---|---|
-| Staging | Vercel | `vercel.json` pada root project |
-| Production | VPS sendiri | Konfigurasi Nginx pada virtual host/domain production |
+| Staging `.lan` / lokal | Apache (sesuai hosting) atau preview | `public/.htaccess` (aturan relatif, tanpa paksa domain produksi) |
+| Staging/Production di Vercel | Vercel | `vercel.json` (path relatif; `permanent: true` untuk redirect permanen) |
+| Production VPS | VPS sendiri (Apache/Nginx) | `public/.htaccess` (Apache) atau snippet Nginx; kanonisasi host hanya aktif untuk `pusattrainingk3.com` |
 
-Satu master mapping di `docs/MASTER-LEGACY-URL-MAPPING.csv` menjadi sumber keputusan. Aturan untuk kedua platform harus dihasilkan dari mapping yang sama, bukan dipelihara manual secara terpisah.
+Satu master mapping menjadi sumber keputusan. Aturan path untuk semua target deploy harus **konsisten** dan berasal dari mapping yang sama. Gunakan **path relatif ke host** agar perilaku sama di `.lan`, Vercel, dan production.
 
 ## Prinsip penting
 
-1. Tidak ada redirect yang boleh aktif hanya karena slug lama terlihat mirip dengan slug baru.
+1. Tidak ada redirect aktif hanya karena slug lama terlihat mirip dengan slug baru.
 2. Hanya record dengan keputusan `REDIRECT` dan `new_url` yang sudah diverifikasi boleh diekspor menjadi aturan.
 3. `KEEP`, `MERGE`, `ARCHIVE`, dan `410` tidak boleh diterjemahkan menjadi redirect biasa.
-4. Setiap target harus merupakan URL internal yang valid, sudah tersedia, dan setara dari sisi isi serta search intent.
+4. Setiap target harus URL internal valid, sudah tersedia, dan setara dari sisi isi serta search intent.
 5. Jangan mengarahkan halaman yang tidak ditemukan ke homepage atau kategori umum.
-6. Satu URL sumber hanya boleh memiliki satu keputusan aktif. Hindari duplikasi, chain, dan loop.
-7. Pertahankan query string pada redirect kecuali ada alasan teknis dan SEO yang terdokumentasi.
-8. Jangan memasang aturan migrasi pada domain production sebelum staging dan daftar target lulus pengujian.
+6. Satu URL sumber hanya boleh memiliki satu keputusan aktif; hindari duplikasi, chain, dan loop.
+7. Pertahankan query string kecuali ada alasan teknis/SEO yang terdokumentasi.
+8. Jangan memasang aturan migrasi path pada production sebelum staging dan daftar target lulus pengujian.
 
 ## Perbedaan kode status
 
-- **Vercel:** properti `permanent: true` menghasilkan redirect permanen Vercel (308).
+- **Vercel:** `permanent: true` menghasilkan redirect permanen (308).
 - **Nginx production:** gunakan `return 301` untuk migrasi URL permanen.
-- Keduanya menyatakan perpindahan permanen kepada crawler. Perbedaan 301/308 tidak boleh menghasilkan perbedaan tujuan atau cakupan mapping.
-
-Jangan menambahkan `vercel.json` berisi aturan kosong atau contoh URL lama sebagai konfigurasi produksi. File konfigurasi baru dibuat ketika ada mapping REDIRECT yang telah disetujui dan targetnya tersedia.
+- **Apache `.htaccess`:** gunakan `[R=301,L]` untuk migrasi URL permanen.
+- Semuanya menyatakan perpindahan permanen; tujuan dan cakupan mapping harus tetap sama.
 
 ## Alur implementasi
 
 ### Tahap A — Audit dan persetujuan mapping
-
 - Periksa konten lama, title, H1, canonical, status HTTP, dan intent setiap URL.
-- Cocokkan dengan halaman baru yang sudah ada.
-- Isi `old_title`, `old_intent`, `new_url`, `decision`, `reason`, `content_action`, dan status audit.
+- Cocokkan dengan halaman baru yang sudah ada; isi `old_title`, `old_intent`, `new_url`, `decision`, `reason`, `content_action`, status audit.
 - Tandai data yang tidak dapat diverifikasi sebagai perlu review; jangan menebak target.
-- Gunakan data Google Search Console, analytics, dan backlink untuk menentukan prioritas bila tersedia.
+- Gunakan GSC/analytics/backlink untuk prioritas bila tersedia.
 
-### Tahap B — Generator konfigurasi
-
-Setelah kontrak mapping disepakati, siapkan generator deterministik yang membaca CSV dan menghasilkan:
-
-- `vercel.json` untuk staging.
-- Snippet Nginx terpisah untuk production, misalnya `deploy/nginx/redirects.conf`.
-
-Generator wajib gagal (fail closed) bila menemukan:
-- URL sumber duplikat.
-- Keputusan REDIRECT tanpa target.
-- Target eksternal atau target tanpa path yang valid.
-- Source sama dengan target.
-- Redirect chain/loop di antara aturan yang diekspor.
-- Record yang belum ditandai selesai audit tetapi dimasukkan ke ekspor.
-
-Jangan memasukkan seluruh mapping ke konfigurasi runtime. Hanya keputusan REDIRECT yang sudah disetujui yang diekspor.
+### Tahap B — Ekspor/generator konfigurasi (setelah mapping disetujui)
+- Hasilkan aturan path yang konsisten ke `vercel.json` dan/atau snippet server (mis. `deploy/nginx/redirects.conf`) dari sumber mapping yang sama.
+- Generator/proses wajib gagal (fail closed) bila: URL sumber duplikat, REDIRECT tanpa target, target eksternal/tidak valid, source=target, chain/loop, atau record belum selesai audit ikut diekspor.
+- Hanya keputusan `REDIRECT` yang disetujui yang diekspor.
 
 ### Tahap C — Verifikasi staging
+- Uji status permanen & `Location` benar, target 200 (bukan 404/soft-404), variasi trailing slash, query string/encoding, tidak ada loop/chain, canonical tujuan ke dirinya sendiri.
+- Pastikan perilaku sama di domain `.lan` dan/atau Vercel sesuai environment.
 
-Pada domain staging Vercel:
-- Uji setiap source dan pastikan status redirect permanen serta Location benar.
-- Pastikan target mengembalikan 200, bukan 404/soft-404.
-- Uji variasi slash sesuai kebijakan trailing slash Astro.
-- Uji query string, URL encoding, dan path yang mengandung karakter khusus.
-- Periksa tidak ada redirect loop atau chain.
-- Pastikan URL baru memiliki canonical ke dirinya sendiri.
-
-### Tahap D — Production VPS
-
-- Salin snippet Nginx yang sama-sama dihasilkan dari mapping yang sudah diuji.
-- Simpan salinan konfigurasi aktif sebelumnya untuk rollback.
-- Jalankan `nginx -t` sebelum reload.
-- Reload Nginx hanya setelah tes konfigurasi berhasil.
-- Uji beberapa URL dari jaringan publik setelah deployment.
-- Pantau 404, 3xx, dan landing page melalui log server serta Search Console.
+### Tahap D — Production
+- Terapkan konfigurasi yang sama-sama telah diuji (Vercel dan/atau VPS). Untuk Nginx: simpan config lama, `nginx -t`, reload. Untuk Apache: pastikan `.htaccess`/vhost termuat.
+- Uji dari jaringan publik; pantau 404/3xx/landing page via log & Search Console.
 
 ## Pemisahan file dan tanggung jawab
 
@@ -84,22 +67,17 @@ Pada domain staging Vercel:
 |---|---|
 | `docs/MASTER-LEGACY-URL-MAPPING.csv` | Sumber keputusan URL lama → URL baru |
 | `docs/AUDIT-LEGACY-URL-MIGRATION.md` | Prosedur audit dan kriteria keputusan |
-| `vercel.json` | Output deployment staging, dibuat setelah mapping disetujui |
-| `deploy/nginx/redirects.conf` | Output untuk VPS production, dibuat dari mapping yang sama |
-| `scripts/generate-redirects.mjs` | Generator dan validasi, dibuat setelah format mapping final |
-
-## Kondisi saat dokumen ini dibuat
-
-- Inventaris berisi 572 URL (136 page dan 436 post).
-- Semua record pada master mapping masih berstatus `NOT_REVIEWED`.
-- Karena belum ada target yang diverifikasi, belum ada `vercel.json` redirect atau snippet Nginx yang dibuat.
-- Halaman lama dan halaman baru yang substansinya belum setara harus diselesaikan kontennya terlebih dahulu. Contohnya halaman profil perusahaan dan kontak: jangan diarahkan sebelum isi penting dari halaman lama dipertahankan di tujuan baru.
+| `docs/ARSITEKTUR-URL-DAN-STRATEGI-REDIRECT.md` | Arsitektur URL & strategi redirect (rancangan) |
+| `vercel.json` | Konfigurasi deploy Vercel; `redirects` diisi hanya dari mapping REDIRECT terverifikasi |
+| `public/.htaccess` | Konfigurasi Apache (kanonisasi produksi + placeholder/aturan path redirect saat disetujui) |
+| `deploy/nginx/redirects.conf` (opsional) | Snippet Nginx production, bila digunakan, dari mapping yang sama |
+| `scripts/generate-redirects.mjs` (opsional) | Generator/validasi, bila disiapkan setelah format mapping final |
 
 ## Kriteria selesai
 
 Redirect migration siap production jika:
 - Semua URL bernilai SEO/bisnis tinggi sudah diaudit.
-- Semua keputusan REDIRECT memiliki target yang disetujui dan hidup.
-- Generator menghasilkan kedua konfigurasi dari satu sumber data.
-- Automated checks lulus untuk duplikasi, chain, loop, status target, dan konsistensi hasil Vercel/Nginx.
-- Uji staging selesai dan hasilnya disetujui sebelum aturan diterapkan di VPS.
+- Semua keputusan `REDIRECT` memiliki target yang disetujui dan hidup.
+- Konfigurasi untuk target deploy konsisten dan berasal dari satu sumber data.
+- Automated/manual checks lulus untuk duplikasi, chain, loop, status target, dan konsistensi hasil.
+- Uji staging selesai dan hasilnya disetujui sebelum aturan path diterapkan di production.
