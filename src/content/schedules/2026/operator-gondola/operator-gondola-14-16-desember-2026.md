@@ -1,7 +1,7 @@
 ---
 type: schedule
 id: 918273642
-ulid: 01KCV200000000000000000002
+ulid: 01KCV300000000000000000002
 scheduleId: "pusattrainingk3_OG20261214E5F6A7B8"
 publisherId: "pusattrainingk3"
 trainingId: "operator-gondola"
