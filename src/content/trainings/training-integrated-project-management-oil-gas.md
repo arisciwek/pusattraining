@@ -15,8 +15,8 @@ image: "https://pusattrainingk3.com/wp-content/uploads/2022/02/baner-inhouse-tra
 hero:
   title: "Training Integrated Project Management for Oil and Gas"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
-  eyebrow: "MIGAS · MANAJEMEN PROYEK TERPADU"
-  description: "Program untuk memahami bagaimana proses dan fungsi proyek minyak dan gas direncanakan, dikoordinasikan, dikendalikan, dan diintegrasikan sepanjang siklus hidup proyek."
+  eyebrow: "MIGAS \u00B7 MANAJEMEN PROYEK TERPADU"
+  description: "Pelatihan Training Integrated Project Management for Oil and Gas adalah program untuk memahami bagaimana proses dan fungsi proyek minyak dan gas direncanakan, dikoordinasikan, dikendalikan, dan diintegrasikan sepanjang siklus hidup proyek."
   ctaLabel: "Konsultasikan program pelatihan"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi disesuaikan dengan ruang lingkup dan kebutuhan peserta"
@@ -29,74 +29,131 @@ hero:
       label: "Studi kasus proyek"
 blocks:
   - type: training-detail-intro
-    eyebrow: "INTEGRATED PROJECT MANAGEMENT"
-    noticeTitle: "Materi disesuaikan dengan fase proyek dan tata kelola perusahaan"
-    noticeDescription: "Materi historis mencakup integrasi proses, aspek bisnis, tools/metode, estimasi dan cost control, scheduling, procurement/supply chain, keselamatan, teamwork, dan komunikasi."
+    eyebrow: "MANAJEMEN PROYEK TERPADU"
+    noticeTitle: "Pendekatan terpadu mengurangi risiko silo informasi"
+    noticeDescription: "Manajemen proyek migas yang efektif mengharuskan integrasi antara engineering, procurement, construction, HSE, commissioning, dan start-up. Program ini membantu peserta memahami keterkaitan antar fungsi dan pentingnya single source of truth dalam pengendalian proyek."
+
   - type: training-summary
     id: ringkasan-program
     eyebrow: "RINGKASAN PROGRAM"
     items:
+      - label: "Nama program"
+        value: "Training Integrated Project Management for Oil and Gas."
       - label: "Bidang"
-        value: "Project management dan koordinasi lintas fungsi proyek minyak dan gas."
-      - label: "Fokus"
-        value: "Integrasi proses, perencanaan, estimasi, biaya, jadwal, procurement, keselamatan, komunikasi, dan evaluasi."
-      - label: "Sasaran peserta"
-        value: "Project manager, project engineer, planner, project control, procurement, supervisor, dan personel proyek migas."
+        value: "Manajemen proyek terpadu industri hulu migas."
+      - label: "Fokus pembelajaran"
+        value: "Integrasi engineering, procurement, construction, HSE, commissioning, dan start-up."
+      - label: "Durasi"
+        value: "Dikonfirmasi berdasarkan ruang lingkup dan kebutuhan peserta."
       - label: "Metode"
-        value: "Presentasi, diskusi, studi kasus, dan evaluasi."
-      - label: "Jadwal dan biaya"
-        value: "Konfirmasikan penawaran terbaru kepada penyelenggara; informasi historis tidak digunakan sebagai penawaran aktif."
+        value: "Presentasi, diskusi, studi kasus proyek nyata, simulasi pengendalian terpadu."
+      - label: "Persyaratan awal"
+        value: "Pengalaman kerja pada proyek migas atau peran manajemen proyek."
+
   - type: training-cta
     eyebrow: "KONSULTASI PROGRAM"
-    title: "Kelola proyek migas secara lebih terintegrasi"
-    description: "Jelaskan fase proyek, fungsi peserta, dan tantangan pengendalian agar silabus dapat disesuaikan dengan kebutuhan organisasi."
-    actionLabel: "Konsultasikan kebutuhan training"
+    title: "Perlu integrasi manajemen proyek migas yang lebih efektif?"
+    description: "Konsultasikan kebutuhan perusahaan, profil peserta, dan ruang lingkup proyek untuk program yang disesuaikan."
+    actionLabel: "Konsultasikan melalui WhatsApp"
     secondaryLabel: "Lihat jadwal"
     secondaryHref: "#jadwal-pelatihan"
+
   - type: training-schedule-list
     id: jadwal-pelatihan
     eyebrow: "JADWAL DAN ANGKATAN"
-    title: "Jadwal Integrated Project Management for Oil and Gas"
-    allLabel: "Semua jadwal"
-    emptyMessage: "Belum ada batch mendatang yang dipublikasikan. Hubungi penyelenggara untuk mengonfirmasi jadwal dan biaya terbaru."
+    title: "Jadwal Pelatihan Integrated Project Management"
+    allLabel: "Lihat semua jadwal"
+    emptyMessage: "Jadwal angkatan terbaru akan dikonfirmasi. Hubungi tim BETRACOM untuk informasi tanggal, metode, lokasi, kuota, biaya, dan persyaratan pendaftaran."
+
   - type: training-content-section
-    id: deskripsi-program
+    id: tentang-program
     eyebrow: "TENTANG PROGRAM"
-    title: "Menghubungkan proses dan fungsi dalam siklus proyek"
-    description: "Proyek migas melibatkan berbagai disiplin, proses, dan pemangku kepentingan. Integrasi manajemen proyek membantu memastikan keputusan teknis, bisnis, biaya, jadwal, pengadaan, keselamatan, dan komunikasi bergerak menuju sasaran proyek yang sama."
+    title: "Mengapa Manajemen Proyek Terpadu Penting di Industri Migas?"
+    description: "Proyek minyak dan gas melibatkan kompleksitas tinggi: skala investasi besar, jangka waktu panjang, banyak pemangku kepentingan, regulasi ketat, dan risiko teknis serta HSE. Pendekatan terpisah (silo) pada setiap fungsi sering menimbulkan keterlambatan, biaya melonjak, dan ketidaksesuaian spesifikasi. Program ini membahas bagaimana mengintegrasikan seluruh fungsi proyek menjadi sistem pengendalian yang koheren."
+
+  - type: training-content-section
+    id: tujuan-pembelajaran
+    eyebrow: "TUJUAN PEMBELAJARAN"
+    title: "Kompetensi yang Dikembangkan"
     items:
-      - title: "Project integration"
-        description: "Memahami keterkaitan proses dan aktivitas yang dibutuhkan untuk mengarahkan proyek secara terpadu."
-      - title: "Business and stakeholder perspective"
-        description: "Menghubungkan sasaran teknis dengan kebutuhan bisnis, peran pemangku kepentingan, dan koordinasi lintas fungsi."
-      - title: "Project tools and methods"
-        description: "Mengenali perangkat dan metode manajemen untuk mendukung perencanaan, pemantauan, dan pengendalian."
+      - title: "Memahami siklus hidup proyek migas terpadu"
+        description: "Dari konsep, FEED, EPC, commissioning, hingga start-up dan handover."
+      - title: "Mengintegrasikan planning, cost, dan schedule control"
+        description: "Work Breakdown Structure, baseline, earned value management, change management."
+      - title: "Mengelola procurement dan kontrak terpadu"
+        description: "Strategi pengadaan, tender, evaluasi, administrasi kontrak, vendor management."
+      - title: "Menerapkan HSE terintegrasi dalam manajemen proyek"
+        description: "HSE plan, risk assessment, incident management, safety culture."
+      - title: "Mengkoordinasikan tim multidispliner"
+        description: "Komunikasi efektif, RACI matrix, issue management, lessons learned."
+
   - type: training-content-section
     id: materi-pelatihan
     eyebrow: "RUANG LINGKUP MATERI"
-    title: "Materi integrated project management"
-    description: "Topik mengikuti cakupan sumber program dan silabus pembanding, dengan kedalaman yang dapat disesuaikan."
+    title: "Materi Pelatihan"
     items:
-      - title: "Project integration dan lifecycle"
-        description: "Integrasi proses dan aktivitas proyek dari identifikasi hingga penyelesaian."
-      - title: "Project planning dan scheduling"
-        description: "Penyusunan rencana, penjadwalan, keterkaitan aktivitas, serta pemantauan kemajuan."
-      - title: "Estimasi dan cost control"
-        description: "Prinsip estimasi, pengendalian biaya, serta dampak perubahan terhadap anggaran."
-      - title: "Procurement dan supply chain"
-        description: "Peran pengadaan dan rantai pasok dalam mendukung kebutuhan proyek."
-      - title: "Leadership, safety, dan teamwork"
-        description: "Koordinasi tim, komunikasi, kepemimpinan, serta perhatian terhadap keselamatan."
-      - title: "Monitoring dan evaluation"
-        description: "Evaluasi hasil, pembelajaran proyek, dan akuntabilitas penyelesaian."
+      - title: "Framework manajemen proyek terpadu"
+        description: "PMI, ISO 21500, dan praktik industri migas."
+      - title: "Project charter dan stakeholder management"
+        description: "Definisi ruang lingkup, otoritas, identifikasi stakeholder."
+      - title: "Integrated planning & scheduling"
+        description: "WBS, CPM scheduling, resource leveling, baseline management."
+      - title: "Cost engineering & control"
+        description: "Estimasi biaya, AFE, budget tracking, EVM, cash flow forecast."
+      - title: "Procurement & contract management"
+        description: "Strategi pengadaan, paket kontrak, tender, administrasi kontrak."
+      - title: "Engineering management"
+        description: "FEED, detailed engineering, design review, IFR/IFU management."
+      - title: "Construction & installation management"
+        description: "Logistik, konstruksi, pre-commissioning, commissioning."
+      - title: "HSE integration"
+        description: "HSE-MS, JSA, permit to work, emergency response."
+      - title: "Risk & change management"
+        description: "Risk register, Monte Carlo, change control board, impact assessment."
+      - title: "Quality management"
+        description: "QA/QC plan, inspection test plan, NCR, vendor surveillance."
+      - title: "Project reporting & governance"
+        description: "Dashboard, steering committee, KPI, lessons learned."
+
+  - type: training-content-section
+    id: sasaran-peserta
+    eyebrow: "SASARAN PESERTA"
+    title: "Siapa yang Cocok Mengikuti Program Ini?"
+    items:
+      - title: "Project Manager / Project Engineer"
+        description: "Bertanggung jawab atas delivery proyek migas end-to-end."
+      - title: "Construction Manager / Field Engineer"
+        description: "Mengelola eksekusi lapangan dan koordinasi subkontraktor."
+      - title: "Cost Engineer / Planning Engineer"
+        description: "Bertanggung jawab atas pengendalian biaya dan jadwal."
+      - title: "Procurement / Contract Specialist"
+        description: "Mengelola strategi pengadaan dan administrasi kontrak."
+      - title: "HSE Manager / Engineer"
+        description: "Mengintegrasikan HSE ke dalam manajemen proyek."
+      - title: "Engineering Discipline Lead"
+        description: "Koordinasi desain multidisiplin dan interoperabilitas."
+
   - type: training-faq
-    id: faq-program
+    id: faq-integrated-pm
     eyebrow: "PERTANYAAN UMUM"
-    title: "Pertanyaan tentang Integrated Project Management for Oil and Gas"
+    title: "FAQ Training Integrated Project Management"
     items:
-      - question: "Siapa peserta yang paling sesuai?"
-        answer: "Program ditujukan bagi manajer dan personel proyek, termasuk project engineer, planner, project control, procurement, serta fungsi teknis dan pendukung."
-      - question: "Apakah program ini sama dengan project control?"
-        answer: "Tidak sepenuhnya. Integrated Project Management membahas integrasi berbagai area pengetahuan proyek, sedangkan project control lebih terfokus pada pengukuran dan pengendalian biaya, waktu, serta kinerja."
-      - question: "Apakah jadwal dan harga publikasi lama masih berlaku?"
-        answer: "Tidak. Informasi historis tidak dianggap sebagai penawaran aktif. Konfirmasikan jadwal, metode, lokasi, dan biaya terbaru kepada penyelenggara."
+      - question: "Apakah program ini berbasis standar internasional?"
+        answer: "Ya, mengacu pada PMBOK/PMI, ISO 21500, dan praktik industri migas internasional (API, IOGP)."
+      - question: "Apakah peserta harus punya sertifikasi PMP?"
+        answer: "Tidak wajib, namun pengalaman manajemen proyek atau peran di proyek migas sangat membantu."
+      - question: "Bagaimana metode pelaksanaannya?"
+        answer: "Kombinasi teori, diskusi, studi kasus proyek nyata, dan simulasi pengendalian terpadu."
+      - question: "Apakah tersedia in-house training?"
+        answer: "Ya, program dapat disesuaikan kebutuhan perusahaan, lokasi, durasi, dan kedalaman materi."
+      - question: "Bagaimana jadwal dan biaya?"
+        answer: "Dikonfirmasi berdasarkan ruang lingkup, jumlah peserta, lokasi, dan kebutuhan kustomisasi."
+
+  - type: training-cta
+    eyebrow: "PENDAFTARAN DAN KONSULTASI"
+    title: "Siapkan tim proyek migas yang terintegrasi dan berperforma"
+    description: "Konsultasikan kebutuhan perusahaan, profil peserta, ruang lingkup proyek, dan jadwal yang diinginkan."
+    actionLabel: "Hubungi tim BETRACOM"
+    secondaryLabel: "Lihat katalog pelatihan"
+    secondaryHref: "/pelatihan/"
+---

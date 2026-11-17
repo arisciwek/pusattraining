@@ -15,8 +15,8 @@ image: "https://pusattrainingk3.com/wp-content/uploads/2022/02/baner-inhouse-tra
 hero:
   title: "Training Oil and Gas Law of Contract"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
-  eyebrow: "MIGAS · HUKUM KONTRAK DAN TATA KELOLA KOMERSIAL"
-  description: "Pelatihan hukum kontrak migas untuk memahami kontrak sebagai alat manajemen, perspektif para pihak, strategi contracting, identifikasi klausul berisiko, serta proses pelaksanaan dan penyelesaian sengketa."
+  eyebrow: "MIGAS \u00B7 HUKUM KONTRAK DAN TATA KELOLA KOMERSIAL"
+  description: "Pelatihan Training Oil and Gas Law of Contract adalah pelatihan hukum kontrak migas untuk memahami kontrak sebagai alat manajemen, perspektif para pihak, strategi contracting, identifikasi klausul berisiko, serta proses pelaksanaan dan penyelesaian sengketa."
   ctaLabel: "Konsultasikan program pelatihan"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi disesuaikan dengan ruang lingkup dan kebutuhan peserta"
@@ -29,70 +29,129 @@ hero:
       label: "Studi kasus kontrak"
 blocks:
   - type: training-detail-intro
-    eyebrow: "HUKUM KONTRAK MIGAS"
-    noticeTitle: "Materi hukum harus disesuaikan dengan regulasi dan bentuk kontrak yang berlaku"
-    noticeDescription: "Silabus historis menyinggung kontrak sebagai alat manajemen, sudut pandang buyer dan seller, strategi contracting, serta perencanaan pra-kontrak. Pembahasan hukum dan klausul harus ditinjau instruktur; program ini bukan nasihat hukum."
+    eyebrow: "HUKUM KONTRAK INDUSTRI MIGAS"
+    noticeTitle: "Kontrak adalah instrumen manajemen, bukan hanya dokumen hukum"
+    noticeDescription: "Dalam industri minyak dan gas, kontrak mengatur hubungan komersial, teknis, dan HSE antara KKKS, SKK Migas, subkontraktor, vendor, dan pemerintah. Kesalahan kontrak berdampak ke biaya, jadwal, keamanan, dan legal. Program ini melatih peserta memahami kontrak sebagai alat manajemen risiko dan nilai."
+
   - type: training-summary
     id: ringkasan-program
     eyebrow: "RINGKASAN PROGRAM"
     items:
+      - label: "Nama program"
+        value: "Training Oil and Gas Law of Contract."
       - label: "Bidang"
-        value: "Hukum, komersial, dan tata kelola kontrak industri minyak dan gas."
-      - label: "Fokus"
-        value: "Strategi contracting, proses pra-kontrak, analisis klausul, pelaksanaan kontrak, dan penyelesaian sengketa."
-      - label: "Sasaran peserta"
-        value: "Legal counsel, contract/commercial staff, procurement, supply chain, project manager, dan manajemen perusahaan migas."
+        value: "Hukum kontrak dan tata kelola komersial industri minyak dan gas."
+      - label: "Fokus pembelajaran"
+        value: "Strategi contracting, klausul risiko, pelaksanaan, penyelesaian sengketa."
+      - label: "Durasi"
+        value: "Dikonfirmasi berdasarkan ruang lingkup dan kebutuhan peserta."
       - label: "Metode"
-        value: "Presentasi, diskusi, studi kasus, dan evaluasi."
-      - label: "Jadwal dan biaya"
-        value: "Konfirmasikan penawaran terbaru kepada penyelenggara; informasi historis tidak digunakan sebagai penawaran aktif."
+        value: "Presentasi, diskusi, analisis klausul, studi kasus sengketa, simulasi negosiasi."
+      - label: "Persyaratan awal"
+        value: "Pengalaman kerja pada industri migas, peran komersial, legal, procurement, atau manajemen proyek."
+
   - type: training-cta
     eyebrow: "KONSULTASI PROGRAM"
-    title: "Tingkatkan ketelitian dalam menilai risiko kontrak migas"
-    description: "Sampaikan peran peserta dan jenis kontrak yang ingin dipelajari agar ruang lingkup pembahasan dapat disesuaikan."
-    actionLabel: "Konsultasikan kebutuhan training"
+    title: "Perlu memahami hukum kontrak migas untuk mengelola risiko komersial?"
+    description: "Konsultasikan kebutuhan perusahaan, profil peserta, dan ruang lingkup kontrak yang dikelola untuk program yang disesuaikan."
+    actionLabel: "Konsultasikan melalui WhatsApp"
     secondaryLabel: "Lihat jadwal"
     secondaryHref: "#jadwal-pelatihan"
+
   - type: training-schedule-list
     id: jadwal-pelatihan
     eyebrow: "JADWAL DAN ANGKATAN"
-    title: "Jadwal Training Oil and Gas Law of Contract"
-    allLabel: "Semua jadwal"
-    emptyMessage: "Belum ada batch mendatang yang dipublikasikan. Hubungi penyelenggara untuk mengonfirmasi jadwal dan biaya terbaru."
+    title: "Jadwal Pelatihan Oil and Gas Law of Contract"
+    allLabel: "Lihat semua jadwal"
+    emptyMessage: "Jadwal angkatan terbaru akan dikonfirmasi. Hubungi tim BETRACOM untuk informasi tanggal, metode, lokasi, kuota, biaya, dan persyaratan pendaftaran."
+
   - type: training-content-section
-    id: deskripsi-program
+    id: tentang-program
     eyebrow: "TENTANG PROGRAM"
-    title: "Memahami kontrak sebagai instrumen pengelolaan bisnis migas"
-    description: "Kontrak migas mengatur hubungan, hak, kewajiban, risiko, dan mekanisme kerja sama antar pihak. Pemahaman dibutuhkan sejak perencanaan dan negosiasi hingga pelaksanaan, perubahan, klaim, dan penyelesaian sengketa."
+    title: "Mengapa Hukum Kontrak Penting di Industri Migas?"
+    description: "Industri minyak dan gas mengandalkan kontrak kompleks: PSC, JOA, TSA, FSA, EPC, drilling contracts, logistics, dan layanan khusus. Setiap kontrak memiliki klausul risiko unik: force majeure, price escalation, warranties, indemnities, limitation of liability, termination, dispute resolution. Program ini melatih peserta memahami, mengevaluasi, dan mengelola klausul-klausul tersebut untuk melindungi kepentingan perusahaan."
+
+  - type: training-content-section
+    id: tujuan-pembelajaran
+    eyebrow: "TUJUAN PEMBELAJARAN"
+    title: "Kompetensi yang Dikembangkan"
     items:
-      - title: "Kontrak sebagai alat manajemen"
-        description: "Memahami fungsi kontrak untuk menetapkan ruang lingkup, tanggung jawab, koordinasi, dan pengendalian risiko."
-      - title: "Perspektif buyer dan seller"
-        description: "Mengenali kepentingan, kewajiban, dan posisi komersial para pihak dalam proses contracting."
-      - title: "Strategi dan perencanaan pra-kontrak"
-        description: "Mengidentifikasi kebutuhan, opsi strategi, persiapan dokumen, dan isu yang perlu diselesaikan sebelum kontrak disepakati."
+      - title: "Memahami kerangka hukum kontrak migas Indonesia"
+        description: "UU Minyak Bumi, UU Pertambangan, PSC, regulasi SKK Migas, HSE, lingkungan."
+      - title: "Merancang strategi contracting yang efektif"
+        description: "Pemilihan tipe kontrak, paket kerja, alokasi risiko, model pembayaran."
+      - title: "Mengidentifikasi dan mengevaluasi klausul berisiko"
+        description: "Indemnity, force majeure, price adjustment, warranty, limitation of liability, IP rights."
+      - title: "Mengelola pelaksanaan kontrak dan perubahan"
+        description: "Variation order, claim management, extension of time, payment certification."
+      - title: "Menyelesaikan sengketa kontrak"
+        description: "Negosiasi, mediasi, arbitrase (BANI, ICC, SIAC), litigation, enforcement."
+
   - type: training-content-section
     id: materi-pelatihan
     eyebrow: "RUANG LINGKUP MATERI"
-    title: "Materi hukum kontrak dan proses contracting"
-    description: "Ruang lingkup dirangkum dari deskripsi historis dan silabus pembanding. Detail klausul disesuaikan dengan konteks kontrak peserta."
+    title: "Materi Pelatihan"
     items:
-      - title: "Introduction dan overview"
-        description: "Konsep dasar kontrak, peran kontrak dalam pengelolaan bisnis, dan karakteristik hubungan kontraktual di industri migas."
-      - title: "Contracting strategy"
-        description: "Pilihan strategi contracting, pembagian peran, dan pertimbangan komersial dalam pemilihan pendekatan."
-      - title: "Contract review dan risk clauses"
-        description: "Penelaahan struktur dan bahasa klausul untuk mengenali ambiguitas, ketidakseimbangan, serta potensi risiko."
-      - title: "Contract execution dan dispute resolution"
-        description: "Gambaran pengelolaan pelaksanaan, perubahan, klaim, dan mekanisme penyelesaian sengketa sesuai kontrak."
+      - title: "Dasar hukum kontrak Indonesia"
+        description: "KUH Perdata, UU Minyak Bumi, UU Pertambangan, PSC, peraturan SKK Migas."
+      - title: "Tipe kontrak di industri migas"
+        description: "PSC, JOA, TSA, FSA, EPC, drilling, logistics, well services, marine."
+      - title: "Strategi contracting & risk allocation"
+        description: "Make vs buy, lump sum vs reimb, risk matrix, insurance, bonding."
+      - title: "Klausul kunci kontrak migas"
+        description: "Scope, price, schedule, warranties, indemnities, force majeure, termination."
+      - title: "Negosiasi kontrak"
+        description: "Persiapan, BATNA, strategy, red flags, commercial vs legal terms."
+      - title: "Contract administration & change management"
+        description: "VO, claims, EOT, payment, documentation, records management."
+      - title: "Dispute resolution"
+        description: "Tiered dispute resolution, arbitration, litigation, enforcement."
+      - title: "PSC specific clauses"
+        description: "Cost recovery, lifting, DMO, tax, relinquishment, abandonment."
+      - title: "Case studies sengketa migas"
+        description: "Analisis kasus nyata: Cost recovery dispute, termination, force majeure."
+      - title: "Best practice contract management"
+        description: "Contract register, obligation tracking, compliance, audit, lessons learned."
+
+  - type: training-content-section
+    id: sasaran-peserta
+    eyebrow: "SASARAN PESERTA"
+    title: "Siapa yang Cocok Mengikuti Program Ini?"
+    items:
+      - title: "Legal Counsel / Contract Specialist"
+        description: "Bertanggung jawab drafting, review, negosiasi kontrak migas."
+      - title: "Commercial Manager / Business Development"
+        description: "Mengelola hubungan komersial, tender, joint venture."
+      - title: "Procurement / Supply Chain Manager"
+        description: "Mengelola tender, evaluasi vendor, administrasi kontrak EPC/logistics."
+      - title: "Project Manager / Project Engineer"
+        description: "Mengelola eksekusi kontrak EPC, drilling, services."
+      - title: "Finance / Cost Controller"
+        description: "Cost recovery, tax, lifting, budgeting, audit kontrak."
+      - title: "HSE / Regulatory Manager"
+        description: "Mengintegrasikan kewajiban HSE dan lingkungan ke dalam kontrak."
+
   - type: training-faq
-    id: faq-program
+    id: faq-oil-gas-law-contract
     eyebrow: "PERTANYAAN UMUM"
-    title: "Pertanyaan tentang Training Oil and Gas Law of Contract"
+    title: "FAQ Training Oil and Gas Law of Contract"
     items:
-      - question: "Siapa yang sesuai mengikuti program ini?"
-        answer: "Program relevan bagi fungsi legal, contract, commercial, procurement, supply chain, manajemen proyek, dan profesional yang terlibat dalam kontrak migas."
-      - question: "Apakah program ini menggantikan konsultasi hukum?"
-        answer: "Tidak. Program bersifat pelatihan dan peningkatan pemahaman. Penilaian kontrak tertentu tetap perlu dilakukan oleh penasihat hukum yang berwenang."
-      - question: "Apakah jadwal dan harga publikasi lama masih berlaku?"
-        answer: "Tidak. Informasi historis tidak dianggap sebagai penawaran aktif. Konfirmasikan jadwal, metode, lokasi, dan biaya terbaru kepada penyelenggara."
+      - question: "Apakah program ini hanya untuk latar belakang hukum?"
+        answer: "Tidak. Program dirancang untuk profesional komersial, teknis, procurement, finance, dan HSE yang mengelola kontrak migas."
+      - question: "Apakah membahas kasus nyata?"
+        answer: "Ya, analisis kasus sengketa migas nyata (cost recovery, termination, force majeure) menjadi bagian integral program."
+      - question: "Apakah tersedia in-house training?"
+        answer: "Ya, program dapat disesuaikan kebutuhan perusahaan, tipe kontrak yang dikelola, dan profil peserta."
+      - question: "Bagaimana metode pelaksanaannya?"
+        answer: "Kombinasi teori, diskusi, analisis klausul, simulasi negosiasi, dan studi kasus sengketa."
+      - question: "Bagaimana jadwal dan biaya?"
+        answer: "Dikonfirmasi berdasarkan ruang lingkup, jumlah peserta, lokasi, dan kebutuhan kustomisasi."
+
+  - type: training-cta
+    eyebrow: "PENDAFTARAN DAN KONSULTASI"
+    title: "Kelola risiko kontrak migas dengan pemahaman hukum yang kuat"
+    description: "Konsultasikan kebutuhan perusahaan, tipe kontrak yang dikelola, profil peserta, dan jadwal yang diinginkan."
+    actionLabel: "Hubungi tim BETRACOM"
+    secondaryLabel: "Lihat katalog pelatihan"
+    secondaryHref: "/pelatihan/"
+---
