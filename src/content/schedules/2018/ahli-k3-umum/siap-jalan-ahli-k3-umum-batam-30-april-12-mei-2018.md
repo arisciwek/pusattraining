@@ -16,7 +16,7 @@ timezone: "Asia/Jakarta"
 pubDate: '2026-11-16T08:42:58.216Z'
 updatedDate: '2026-11-16T08:42:58.216Z'
 draft: false
-status: scheduled
+status: completed
 sites:
   main:
     enabled: true
