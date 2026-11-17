@@ -1,4 +1,25 @@
 {
   "trailingSlash": true,
-  "redirects": []
+  "redirects": [
+    {
+      "source": "/operator-k3/operator-genset/",
+      "destination": "/pelatihan/operator-genset/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-pertambangan/pembekalan-pengawas-operasional-pertama-pop-pertambangan/",
+      "destination": "/pelatihan/training-pop-pertambangan/",
+      "permanent": true
+    },
+    {
+      "source": "/perpanjang-sio-forklift/",
+      "destination": "/layanan/perpanjang-sio-forklift/",
+      "permanent": true
+    },
+    {
+      "source": "/perpanjang-lisensi-k3/",
+      "destination": "/layanan/perpanjang-lisensi-k3/",
+      "permanent": true
+    }
+  ]
 }
