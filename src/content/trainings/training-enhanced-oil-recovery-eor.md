@@ -16,7 +16,7 @@ hero:
   title: "Training Enhanced Oil Recovery (EOR): Methods, Concepts and Mechanisms"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "MIGAS · RESERVOIR DAN TEKNOLOGI PRODUKSI"
-  description: "Program pembelajaran mengenai prinsip dan mekanisme Enhanced Oil Recovery (EOR), karakteristik batuan dan fluida reservoir, pemilihan metode berdasarkan kondisi lapangan, serta pertimbangan teknis dan keekonomian penerapannya."
+  description: "Pelatihan Training Enhanced Oil Recovery (EOR): Methods, Concepts and Mechanisms adalah program pembelajaran mengenai prinsip dan mekanisme Enhanced Oil Recovery (EOR), karakteristik batuan dan fluida reservoir, pemilihan metode berdasarkan kondisi lapangan, serta pertimbangan teknis dan keekonomian penerapannya."
   ctaLabel: "Konsultasikan program EOR"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi dan kedalaman teknis dikonfirmasi sesuai kebutuhan peserta"

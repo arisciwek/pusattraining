@@ -16,7 +16,7 @@ hero:
   title: "Training Cost Control and Financial Reporting of Upstream Oil & Gas under Indonesia PSC"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "MIGAS · COST CONTROL DAN PELAPORAN KEUANGAN"
-  description: "Program untuk memahami konsep biaya pada setiap tahap kegiatan hulu migas dan membangun pengendalian biaya yang mendukung pencatatan, analisis, serta pelaporan operasi berdasarkan kerangka PSC Indonesia."
+  description: "Pelatihan Training Cost Control and Financial Reporting of Upstream Oil & Gas under Indonesia PSC adalah program untuk memahami konsep biaya pada setiap tahap kegiatan hulu migas dan membangun pengendalian biaya yang mendukung pencatatan, analisis, serta pelaporan operasi berdasarkan kerangka PSC Indonesia."
   ctaLabel: "Konsultasikan program cost control"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi dan kedalaman studi kasus dikonfirmasi sesuai kebutuhan peserta"

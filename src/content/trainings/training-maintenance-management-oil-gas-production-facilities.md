@@ -16,7 +16,7 @@ hero:
   title: "Training Maintenance Management of Oil & Gas Production Facilities"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "MIGAS · PEMELIHARAAN DAN INTEGRITAS FASILITAS"
-  description: "Program untuk personel yang bertanggung jawab atas pemeliharaan fasilitas produksi minyak dan gas. Pembahasan diarahkan pada keandalan, ketersediaan, integritas fasilitas, strategi pemeliharaan, serta pengendalian pekerjaan dan material agar fasilitas mendukung target operasi dengan tetap memperhatikan aspek HSE."
+  description: "Pelatihan Training Maintenance Management of Oil & Gas Production Facilities adalah program untuk personel yang bertanggung jawab atas pemeliharaan fasilitas produksi minyak dan gas. Pembahasan diarahkan pada keandalan, ketersediaan, integritas fasilitas, strategi pemeliharaan, serta pengendalian pekerjaan dan material agar fasilitas mendukung target operasi dengan tetap memperhatikan aspek HSE."
   ctaLabel: "Konsultasikan program maintenance"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi dan kedalaman materi dikonfirmasi sesuai kebutuhan perusahaan"
