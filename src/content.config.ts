@@ -276,4 +276,48 @@ const articles = defineCollection({
   }),
 });
 
-export const collections = { pages, trainings, schedules, articles };
+const services = defineCollection({
+  loader: glob({ base: './src/content/services', pattern: '**/*.md' }),
+  schema: z.object({
+    type: z.literal('service'),
+    ...identity,
+    serviceId: z.string().min(1),
+    slug: z.string().min(1),
+    title: z.string().min(1),
+    description: z.string().min(1),
+    ...editorialDates,
+    image: z.string().optional(),
+    hero: z.object({
+      eyebrow: z.string().optional(),
+      title: z.string().min(1),
+      description: z.string().min(1),
+      imageAlt: z.string().optional(),
+      ctaLabel: z.string().optional(),
+      ctaHref: z.string().optional(),
+    }),
+    sections: z.array(z.object({
+      id: z.string().optional(),
+      eyebrow: z.string().optional(),
+      title: z.string().min(1),
+      description: z.string().optional(),
+      items: z.array(z.object({
+        title: z.string().min(1),
+        description: z.string().min(1),
+      })).default([]),
+    })).default([]),
+    process: z.array(z.object({
+      title: z.string().min(1),
+      description: z.string().min(1),
+    })).default([]),
+    faqs: z.array(z.object({
+      question: z.string().min(1),
+      answer: z.string().min(1),
+    })).default([]),
+    related: z.array(z.number().int().positive()).default([]),
+  }).refine((data) => Date.parse(data.updatedDate) >= Date.parse(data.pubDate), {
+    message: 'updatedDate tidak boleh lebih awal dari pubDate',
+    path: ['updatedDate'],
+  }),
+});
+
+export const collections = { pages, trainings, schedules, articles, services };
