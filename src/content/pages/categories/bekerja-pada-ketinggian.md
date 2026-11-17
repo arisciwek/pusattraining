@@ -1,7 +1,7 @@
 ---
 type: page
 id: 2015
-ulid: 01KCV000000000000000000015
+ulid: 01KCV900000000000000000015
 pageType: category
 slug: bekerja-pada-ketinggian
 title: "Pelatihan Bekerja Pada Ketinggian – Sertifikasi Kemnaker RI"
