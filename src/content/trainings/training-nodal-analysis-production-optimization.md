@@ -16,7 +16,7 @@ hero:
   title: "Training Nodal Analysis: Production and Optimization"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "MIGAS · PRODUCTION ENGINEERING"
-  description: "Program pembelajaran production system analysis yang mengintegrasikan kemampuan inflow reservoir dan outflow sumur hingga jaringan permukaan. Peserta mempelajari konsep nodal analysis, interpretasi kurva performa, identifikasi hambatan aliran, dan evaluasi alternatif optimasi."
+  description: "Pelatihan Training Nodal Analysis: Production and Optimization adalah program pembelajaran production system analysis yang mengintegrasikan kemampuan inflow reservoir dan outflow sumur hingga jaringan permukaan. Peserta mempelajari konsep nodal analysis, interpretasi kurva performa, identifikasi hambatan aliran, dan evaluasi alternatif optimasi."
   ctaLabel: "Konsultasikan program pelatihan"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi dan kedalaman materi dikonfirmasi sesuai kebutuhan peserta"

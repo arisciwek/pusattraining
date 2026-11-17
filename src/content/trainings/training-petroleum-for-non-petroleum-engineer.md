@@ -16,7 +16,7 @@ hero:
   title: "Training Petroleum for Non-Petroleum Engineer"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "MIGAS · PENGANTAR INDUSTRI DAN PETROLEUM ENGINEERING"
-  description: "Program pengantar untuk personel non-petroleum engineering yang perlu memahami gambaran menyeluruh industri hulu migas dan tahapan aktivitas teknisnya. Materi bergerak dari pengenalan industri, eksplorasi dan reservoir, pemboran, evaluasi formasi, hingga produksi dan teknologi peningkatan perolehan minyak."
+  description: "Pelatihan Training Petroleum for Non-Petroleum Engineer adalah program pengantar untuk personel non-petroleum engineering yang perlu memahami gambaran menyeluruh industri hulu migas dan tahapan aktivitas teknisnya. Materi bergerak dari pengenalan industri, eksplorasi dan reservoir, pemboran, evaluasi formasi, hingga produksi dan teknologi peningkatan perolehan minyak."
   ctaLabel: "Konsultasikan program pelatihan"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi dan kedalaman materi dikonfirmasi sesuai kebutuhan peserta"

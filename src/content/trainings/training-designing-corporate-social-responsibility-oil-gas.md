@@ -16,7 +16,7 @@ hero:
   title: "Training Designing Corporate Social Responsibility in the Oil and Gas Industry"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "PROGRAM KHUSUS · CSR DAN PENGEMBANGAN MASYARAKAT"
-  description: "Program pembelajaran untuk memahami perancangan dan pengelolaan CSR serta community development pada wilayah operasi industri migas. Peserta mempelajari bagaimana menghubungkan konteks sosial, pemangku kepentingan, prioritas perusahaan, dan kebutuhan masyarakat ke dalam program yang terukur dan berkelanjutan."
+  description: "Pelatihan Training Designing Corporate Social Responsibility in the Oil and Gas Industry adalah program pembelajaran untuk memahami perancangan dan pengelolaan CSR serta community development pada wilayah operasi industri migas. Peserta mempelajari bagaimana menghubungkan konteks sosial, pemangku kepentingan, prioritas perusahaan, dan kebutuhan masyarakat ke dalam program yang terukur dan berkelanjutan."
   ctaLabel: "Konsultasikan program pelatihan"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi dan kedalaman materi dikonfirmasi sesuai kebutuhan peserta"

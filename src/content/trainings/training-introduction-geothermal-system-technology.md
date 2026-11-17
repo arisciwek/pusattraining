@@ -16,7 +16,7 @@ hero:
   title: "Training Introduction to Geothermal System and Technology"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "ENERGI · SISTEM DAN TEKNOLOGI PANAS BUMI"
-  description: "Program pengenalan sistem dan teknologi geothermal bagi teknisi, operator, supervisor, dan profesional yang berhubungan dengan pengelolaan proyek panas bumi. Pembelajaran menghubungkan konsep geologi dan reservoir dengan kegiatan eksplorasi, pengembangan, produksi uap, serta pemanfaatan energi."
+  description: "Pelatihan Training Introduction to Geothermal System and Technology adalah program pengenalan sistem dan teknologi geothermal bagi teknisi, operator, supervisor, dan profesional yang berhubungan dengan pengelolaan proyek panas bumi. Pembelajaran menghubungkan konsep geologi dan reservoir dengan kegiatan eksplorasi, pengembangan, produksi uap, serta pemanfaatan energi."
   ctaLabel: "Konsultasikan program pelatihan"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi dan kedalaman materi dikonfirmasi sesuai kebutuhan peserta"
