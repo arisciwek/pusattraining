@@ -124,11 +124,21 @@ Gunakan tabel ini untuk memantau penerapan standar pada semua pelatihan.
 
 | Pelatihan | Hero | Gambar | Jadwal | Informasi inti | CTA | SEO | Mobile | Build | Status audit |
 |---|---|---|---|---|---|---|---|---|---|
-| Ahli K3 Umum | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | Acuan |
-| Pemadam Kebakaran Kelas D | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | Belum diaudit |
-| Pelatihan lainnya | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | Belum diaudit |
+| Ahli K3 Umum | Ada | Ada | Ada | Ada | Ada | Belum diverifikasi | Belum diuji | Belum diuji | Konten diaudit; FAQ diperbaiki |
+| Pemadam Kebakaran Kelas A | Ada | Ada | Ada | Ada | Ada | Belum diverifikasi | Belum diuji | Belum diuji | Konten diaudit |
+| Pemadam Kebakaran Kelas B | Ada | Ada | Ada | Ada | Ada | Belum diverifikasi | Belum diuji | Belum diuji | Konten diaudit |
+| Pemadam Kebakaran Kelas C | Ada | Ada | Ada | Ada | Ada | Belum diverifikasi | Belum diuji | Belum diuji | Konten diaudit |
+| Pemadam Kebakaran Kelas D | Ada | Ada | Ada | Ada | Ada | Belum diverifikasi | Belum diuji | Belum diuji | Konten diaudit |
+| Operator Boiler Tingkat 1 | Ada | Ada | Ada | Ada | Ada | Belum diverifikasi | Belum diuji | Belum diuji | Konten diaudit |
+| Operator Boiler Tingkat 2 | Ada | Ada | Ada | Ada | Ada | Belum diverifikasi | Belum diuji | Belum diuji | Konten diaudit |
+| Operator Gondola | Ada | Ada | Ada | Ada | Ada | Belum diverifikasi | Belum diuji | Belum diuji | Konten diaudit |
+| Emergency Response Plan | Ada | Ada | Ada | Ada | Ada | Belum diverifikasi | Belum diuji | Belum diuji | Konten diaudit |
+| Teknisi K3 Ruang Terbatas (Confined Space) | Ada | Ada | Ada | Ada | Ada | Belum diverifikasi | Belum diuji | Belum diuji | Konten diaudit; FAQ diperbaiki |
 
-Tambahkan satu baris untuk setiap record pelatihan aktif di collection. Jangan menganggap halaman lengkap hanya karena sudah memiliki judul dan deskripsi.
+Lihat laporan rinci: `docs/AUDIT-KELENGKAPAN-10-TRAINING.md`.
+
+**Catatan status:** "Ada" berarti blok atau data ditemukan di frontmatter; bukan klaim bahwa seluruh tampilan, tautan, SEO, jadwal eksternal, dan build telah lolos pengujian.
+
 
 ## 10. Kriteria selesai (Definition of Done)
 
