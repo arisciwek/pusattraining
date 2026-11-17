@@ -17,7 +17,7 @@ hero:
   imageAlt: "Peserta pelatihan Ahli Muda K3 Konstruksi BETRACOM dalam kegiatan kelas dan praktik"
   eyebrow: "K3 KONSTRUKSI DAN INFRASTRUKTUR"
   certBadge: "PEMBINAAN KEMNAKER RI"
-  description: "Pelatihan Ahli Muda K3 Konstruksi adalah program pembinaan bagi personel yang dipersiapkan membantu pengawasan keselamatan dan kesehatan kerja pada proyek konstruksi. Peserta mempelajari dasar regulasi, identifikasi bahaya, pengendalian risiko, inspeksi pekerjaan, keselamatan peralatan, serta kesiapsiagaan keadaan darurat. Persyaratan peserta dan proses penunjukan mengikuti ketentuan Kemnaker yang berlaku."
+  description: "Pelatihan Pelatihan Ahli Muda K3 Konstruksi adalah program pembinaan bagi personel yang dipersiapkan membantu pengawasan keselamatan dan kesehatan kerja pada proyek konstruksi. Peserta mempelajari dasar regulasi, identifikasi bahaya, pengendalian risiko, inspeksi pekerjaan, keselamatan peralatan, serta kesiapsiagaan keadaan darurat. Persyaratan peserta dan proses penunjukan mengikuti ketentuan Kemnaker yang berlaku."
   deliveryMode: mixed
   ctaLabel: "Konsultasikan Pelatihan Ahli Muda K3 Konstruksi"
   ctaHref: "#jadwal-pelatihan"
@@ -185,3 +185,4 @@ blocks:
     actionLabel: "Hubungi tim BETRACOM"
     secondaryLabel: "Lihat katalog pelatihan"
     secondaryHref: "/pelatihan/"
+---
