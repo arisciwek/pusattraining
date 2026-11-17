@@ -1,0 +1,5 @@
+old_url,new_url,content_type,migration_pr,redirect_status,notes
+https://pusattrainingk3.com/operator-k3/operator-genset/,https://pusattrainingk3.com/pelatihan/operator-genset/,training,#65,implemented,Legacy Operator Genset page migrated to canonical Astro training page.
+https://pusattrainingk3.com/safety-pertambangan/pembekalan-pengawas-operasional-pertama-pop-pertambangan/,https://pusattrainingk3.com/pelatihan/training-pop-pertambangan/,training,#66,implemented,Legacy POP preparation page migrated; distinguish preparation from competency assessment.
+https://pusattrainingk3.com/perpanjang-sio-forklift/,https://pusattrainingk3.com/layanan/perpanjang-sio-forklift/,service,#68,implemented,Administrative renewal service migrated to service collection.
+https://pusattrainingk3.com/perpanjang-lisensi-k3/,https://pusattrainingk3.com/layanan/perpanjang-lisensi-k3/,service,#69,implemented,K3 license renewal and mutation service migrated to service collection.
