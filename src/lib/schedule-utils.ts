@@ -58,8 +58,47 @@ export function getScheduleDescription(schedule: ScheduleEntry): string {
   return schedule.data.sites?.main?.description ?? schedule.data.description;
 }
 
+function assertRouteSegment(value: string, label: string): void {
+  if (!value || value === '.' || value === '..' || /[/?#]/.test(value)) {
+    throw new Error(`Segmen URL ${label} tidak valid: ${value}`);
+  }
+}
+
+export function getScheduleRouteParams(
+  schedule: Pick<ScheduleEntry, 'data'>,
+  trainingSlug: string,
+): { month: string; trainingSlug: string; scheduleSlug: string } {
+  assertRouteSegment(trainingSlug, 'trainingSlug');
+  assertRouteSegment(schedule.data.slug, 'scheduleSlug');
+
+  return {
+    month: getScheduleMonth(schedule.data),
+    trainingSlug,
+    scheduleSlug: schedule.data.slug,
+  };
+}
+
+/** Kandidat path sumber yang diperbolehkan oleh kontrak koleksi schedules. */
+export function getScheduleSourcePathCandidates(
+  startDate: string,
+  trainingSlug: string,
+  trainingId: string,
+  scheduleSlug: string,
+): string[] {
+  const year = /^(\d{4})-/.exec(startDate)?.[1];
+  if (!year) {
+    throw new Error(`startDate tidak memiliki tahun ISO yang valid: ${startDate}`);
+  }
+
+  return [...new Set([
+    `${year}/${trainingSlug}/${scheduleSlug}`,
+    `${year}/${trainingId}/${scheduleSlug}`,
+  ])];
+}
+
 export function getScheduleHref(schedule: ScheduleEntry, trainingSlug: string): string {
-  return `/jadwal/${getScheduleMonth(schedule.data)}/${trainingSlug}/${schedule.data.slug}/`;
+  const { month, trainingSlug: safeTrainingSlug, scheduleSlug } = getScheduleRouteParams(schedule, trainingSlug);
+  return `/jadwal/${month}/${encodeURIComponent(safeTrainingSlug)}/${encodeURIComponent(scheduleSlug)}/`;
 }
 
 export function getScheduleStatusLabel(status: ScheduleEntry['data']['status']): string {

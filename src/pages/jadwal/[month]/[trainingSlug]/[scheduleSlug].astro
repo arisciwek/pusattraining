@@ -8,6 +8,7 @@ import {
   formatScheduleDate,
   getScheduleDescription,
   getScheduleMonth,
+  getScheduleRouteParams,
   getScheduleStatusLabel,
   getScheduleTitle,
   isMainSiteSchedule,
@@ -31,11 +32,7 @@ export async function getStaticPaths() {
     if (!training) return [];
 
     return [{
-      params: {
-        month: getScheduleMonth(schedule.data),
-        trainingSlug: training.data.slug,
-        scheduleSlug: schedule.data.slug,
-      },
+      params: getScheduleRouteParams(schedule, training.data.slug),
       props: { schedule, training },
     }];
   });
@@ -51,6 +48,15 @@ const data = schedule.data;
 const title = getScheduleTitle(schedule);
 const description = getScheduleDescription(schedule);
 const month = getScheduleMonth(data);
+const completion = data.completion;
+const hasCompletion = Boolean(
+  completion && (
+    completion.completedDate ||
+    completion.participants.length > 0 ||
+    completion.gallery.length > 0
+  ),
+);
+const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
 const monthLabel = new Intl.DateTimeFormat('id-ID', {
   month: 'long',
   year: 'numeric',
@@ -102,6 +108,7 @@ const eventLocation = data.venue
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Event',
+  ...(canonicalUrl ? { '@id': `${canonicalUrl}#event`, url: canonicalUrl, mainEntityOfPage: canonicalUrl } : {}),
   name: title,
   description,
   startDate: data.startDate,
@@ -109,7 +116,6 @@ const structuredData = {
   ...(eventStatus ? { eventStatus } : {}),
   ...(eventAttendanceMode ? { eventAttendanceMode } : {}),
   ...(eventLocation ? { location: eventLocation } : {}),
-  url: Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined,
   ...(data.sites?.main?.registrationUrl && data.registration?.status
     ? {
         offers: {
@@ -205,6 +211,42 @@ const safeStructuredData = JSON.stringify(structuredData).replace(/</g, '\\u003c
                 Informasi program training <span aria-hidden="true">→</span>
               </a>
             </section>
+
+            {hasCompletion && completion && (
+              <section class="schedule-detail__completion rounded-2xl border border-slate-200 bg-white p-6 sm:p-8" aria-labelledby="schedule-detail-completion-title">
+                <h2 id="schedule-detail-completion-title" class="schedule-detail__section-title text-xl font-bold text-slate-950">Hasil pelaksanaan</h2>
+                {completion.completedDate && (
+                  <p class="schedule-detail__completion-date mt-3 text-sm text-slate-600">
+                    Selesai pada <time datetime={completion.completedDate}>{formatScheduleDate(completion.completedDate, data.timezone)}</time>
+                  </p>
+                )}
+                {completion.participants.length > 0 && (
+                  <div class="schedule-detail__participants mt-6">
+                    <h3 class="schedule-detail__participants-title text-base font-bold text-slate-900">Peserta yang dipublikasikan</h3>
+                    <ul class="schedule-detail__participants-list mt-3 space-y-3">
+                      {completion.participants.map((participant) => (
+                        <li class="schedule-detail__participant rounded-xl bg-slate-50 p-4">
+                          <p class="schedule-detail__participant-name text-sm font-semibold text-slate-900">{participant.name}</p>
+                          {participant.certificateNumber && (
+                            <p class="schedule-detail__certificate text-xs text-slate-600">Nomor sertifikat: {participant.certificateNumber}</p>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {completion.gallery.length > 0 && (
+                  <div class="schedule-detail__gallery mt-6 grid gap-4 sm:grid-cols-2">
+                    {completion.gallery.map((item) => (
+                      <figure class="schedule-detail__gallery-item">
+                        <img class="schedule-detail__gallery-image h-56 w-full rounded-xl object-cover" src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+                        {item.caption && <figcaption class="schedule-detail__gallery-caption mt-2 text-xs leading-5 text-slate-500">{item.caption}</figcaption>}
+                      </figure>
+                    ))}
+                  </div>
+                )}
+              </section>
+            )}
           </div>
 
           <aside class="schedule-detail__aside">

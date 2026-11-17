@@ -5,7 +5,12 @@ import Container from '../../components/shared/Container.astro';
 import Breadcrumb from '../../components/shared/Breadcrumb.astro';
 import EmptyState from '../../components/shared/EmptyState.astro';
 import ScheduleCard from '../../components/schedule/ScheduleCard.astro';
-import { getScheduleMonth, isMainSiteSchedule } from '../../lib/schedule-utils';
+import {
+  getScheduleHref,
+  getScheduleMonth,
+  getScheduleTitle,
+  isMainSiteSchedule,
+} from '../../lib/schedule-utils';
 import { validateContentRelations } from '../../lib/validate-content';
 
 const page = (await getCollection('pages', ({ data }) =>
@@ -28,6 +33,9 @@ const schedules = allSchedules.filter((schedule) => trainingsById.has(schedule.d
 const now = new Date();
 const upcomingSchedules = schedules
   .filter((schedule) => {
+    if (schedule.data.status === 'ongoing') return true;
+    if (schedule.data.status !== 'scheduled') return false;
+
     const startDate = schedule.data.startDate;
     if (/^\d{4}-\d{2}-\d{2}$/.test(startDate)) {
       const todayInScheduleTimezone = new Intl.DateTimeFormat('en-CA', {
@@ -50,8 +58,36 @@ const monthLabel = (value: string) => {
   const [year, month] = value.split('-').map(Number);
   return new Intl.DateTimeFormat('id-ID', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(year, month - 1, 1)));
 };
+const scheduleListStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: pageBlock.latestTitle,
+  itemListOrder: upcomingSchedules.length > 0
+    ? 'https://schema.org/ItemListOrderAscending'
+    : 'https://schema.org/ItemListOrderDescending',
+  numberOfItems: latestSchedules.length,
+  itemListElement: latestSchedules.map((schedule, index) => {
+    const training = trainingsById.get(schedule.data.trainingId)!;
+    const url = Astro.site
+      ? new URL(getScheduleHref(schedule, training.data.slug), Astro.site).toString()
+      : undefined;
+
+    return {
+      '@type': 'ListItem',
+      position: index + 1,
+      name: getScheduleTitle(schedule),
+      ...(url ? { item: url } : {}),
+    };
+  }),
+};
+const safeScheduleListStructuredData = JSON.stringify(scheduleListStructuredData).replace(/</g, '\\u003c');
 ---
 <SiteLayout title={page.data.title} description={page.data.description}>
+  {latestSchedules.length > 0 && (
+    <Fragment slot="head">
+      <script type="application/ld+json" set:html={safeScheduleListStructuredData} />
+    </Fragment>
+  )}
   <section class="schedule-index py-12 sm:py-16">
     <Container>
       <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: page.data.title }]} />

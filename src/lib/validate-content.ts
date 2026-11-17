@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import { getScheduleMonth } from './schedule-utils';
+import { getScheduleMonth, getScheduleRouteParams, getScheduleSourcePathCandidates } from './schedule-utils';
 
 function assertUnique(values: string[], label: string): void {
   const seen = new Set<string>();
@@ -18,13 +18,7 @@ function assertUnique(values: string[], label: string): void {
 const scheduleFilePaths = Object.keys(import.meta.glob('/src/content/schedules/**/*.md', { eager: false }))
   .map((p) => p.replace(/^.*\/src\/content\/schedules\//, '').replace(/\.md$/, ''));
 
-const schedulePathBySlug = new Map<string, string[]>();
-for (const relative of scheduleFilePaths) {
-  const segments = relative.split('/');
-  if (segments.length === 3) {
-    schedulePathBySlug.set(segments[2], segments);
-  }
-}
+const scheduleFilePathSet = new Set(scheduleFilePaths);
 
 /**
  * Run during static path generation so broken content relationships fail the build,
@@ -102,22 +96,18 @@ export async function validateContentRelations(): Promise<void> {
       );
     }
 
-    const segments = schedulePathBySlug.get(schedule.data.slug);
-    if (!segments) {
-      throw new Error(
-        `Path schedule untuk slug "${schedule.data.slug}" tidak ditemukan dalam struktur direktori schedules/<tahun>/<training>/<schedule>.md.`,
-      );
-    }
+    getScheduleRouteParams(schedule, training.data.slug);
 
-    const [year, trainingSlug, scheduleSlug] = segments;
+    const expectedSourcePaths = getScheduleSourcePathCandidates(
+      schedule.data.startDate,
+      training.data.slug,
+      training.data.trainingId,
+      schedule.data.slug,
+    );
 
-    if (
-      year !== schedule.data.startDate.slice(0, 4) ||
-      (trainingSlug !== training.data.slug && trainingSlug !== training.data.trainingId) ||
-      scheduleSlug !== schedule.data.slug
-    ) {
+    if (!expectedSourcePaths.some((path) => scheduleFilePathSet.has(path))) {
       throw new Error(
-        `Path schedule "${schedule.data.slug}" harus mengikuti schedules/<tahun-startDate>/<training-slug>/<schedule-slug>.md.`,
+        `Path schedule "${schedule.data.scheduleId}" harus cocok dengan salah satu lokasi berikut: ${expectedSourcePaths.join(' atau ')}. Path file harus mengikuti schedules/<tahun-startDate>/<training-slug>/<schedule-slug>.md.`,
       );
     }
   }
