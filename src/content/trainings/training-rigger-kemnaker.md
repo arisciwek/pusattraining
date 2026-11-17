@@ -17,7 +17,7 @@ hero:
   imageAlt: "Peserta Pelatihan Rigger (Juru Ikat) Sertifikasi Kemnaker RI bersama instruktur di BETRACOM Arena Training Center"
   eyebrow: "KEMNAKER RI · PESAWAT ANGKAT DAN ANGKUT"
   certBadge: "SERTIFIKASI KEMNAKER RI"
-  description: "Pelatihan Rigger (Juru Ikat) Sertifikasi Kemnaker RI mempersiapkan tenaga kerja untuk melaksanakan pekerjaan pengikatan dan pemindahan beban secara aman. Peserta mempelajari peraturan keselamatan kerja, pesawat angkat dan angkut, alat bantu angkat, tali kawat baja, metode pengikatan, serta praktik kerja rigging sesuai ruang lingkup pelatihan."
+  description: "Pelatihan Pelatihan Rigger (Juru Ikat) Sertifikasi Kemnaker RI adalah program yang mempersiapkan tenaga kerja untuk melaksanakan pekerjaan pengikatan dan pemindahan beban secara aman. Peserta mempelajari peraturan keselamatan kerja, pesawat angkat dan angkut, alat bantu angkat, tali kawat baja, metode pengikatan, serta praktik kerja rigging sesuai ruang lingkup pelatihan."
   deliveryMode: mixed
   ctaLabel: "Konsultasikan pelatihan Rigger"
   ctaHref: "#jadwal-pelatihan"
