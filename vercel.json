@@ -165,6 +165,26 @@
       "source": "/sertifikasi-kemenaker-ri/teknisi-k3-ruang-terbatas/",
       "destination": "/pelatihan/training-k3-bahaya-confined-space/",
       "permanent": true
+    },
+    {
+      "source": "/safety-pertambangan/",
+      "destination": "/pelatihan/k3-migas-pertambangan/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-bekerja-di-ketinggian/",
+      "destination": "/pelatihan/bekerja-pada-ketinggian/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-kebakaran/",
+      "destination": "/pelatihan/kebakaran-emergency/",
+      "permanent": true
+    },
+    {
+      "source": "/juru-las-welder/",
+      "destination": "/pelatihan/welder-rigging/",
+      "permanent": true
     }
   ]
 }
