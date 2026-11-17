@@ -18,6 +18,14 @@ blocks:
     sectionDescription: "Pilih program yang sesuai dengan metode kerja dan kompetensi yang dibutuhkan. Halaman detail program akan memuat materi, persyaratan, dan informasi pelaksanaannya."
     emptyMessage: "Informasi detail program sedang disiapkan. Hubungi tim BETRACOM untuk konsultasi kebutuhan pelatihan bekerja pada ketinggian."
 
+  - type: gallery
+    title: "Dokumentasi pelatihan bekerja pada ketinggian"
+    description: "Foto kegiatan pelatihan TKBT Tingkat 2 di BETRACOM Arena Training Center, Bogor, dari dokumentasi situs penyelenggara."
+    items:
+      - src: "https://pusattrainingk3.com/wp-content/uploads/2026/07/tkbt2new.jpg"
+        alt: "Peserta pelatihan Tenaga Kerja Bangunan Tinggi Tingkat 2 (TKBT 2) di BETRACOM Arena Training Center, Bogor"
+        caption: "Dokumentasi pelatihan TKBT Tingkat 2, Januari 2024."
+
   - type: reasons
     title: "Pilih jalur kompetensi sesuai metode kerja"
     description: "Kebutuhan kompetensi ditentukan oleh karakter pekerjaan, sistem akses, serta tanggung jawab tenaga kerja. Jangan memilih jenjang hanya berdasarkan nama atau durasi pelatihan."
