@@ -1,7 +1,7 @@
 ---
 type: article
-id: 5103
-ulid: 01KCV510000000000000000003
+id: 5105
+ulid: 01KCV510000000000000000005
 slug: jadwal-pelatihan-ahli-k3-umum-terdekat-di-beberapa-kota
 title: "Jadwal Pelatihan Ahli K3 Umum Terdekat di Beberapa Kota"
 description: "Mengenal peran Ahli K3 Umum, kompetensi yang dibutuhkan, ruang lingkup pelatihan, dan informasi yang perlu diperhatikan saat mencari jadwal pelatihan di berbagai kota."
@@ -69,7 +69,7 @@ blocks:
     paragraphs:
       - "Program ini relevan bagi personel yang akan diberi tanggung jawab K3, staf HSE, supervisor, tenaga teknis, maupun perwakilan manajemen yang terlibat dalam pengelolaan keselamatan dan kesehatan kerja. Kesesuaian peserta tetap perlu diperiksa berdasarkan persyaratan pendidikan, pengalaman, dokumen, dan ketentuan skema pembinaan yang berlaku."
       - "Sebelum mendaftar, calon peserta sebaiknya menyiapkan informasi latar belakang pendidikan, pengalaman kerja, jabatan, serta kebutuhan perusahaan. Pemeriksaan awal membantu penyelenggara memberikan arahan mengenai kelayakan dan dokumen yang perlu dilengkapi."
-  - type: training-cta
+  - type: service-cta
     eyebrow: "PROGRAM PELATIHAN AHLI K3 UMUM"
     title: "Cari jadwal pelatihan Ahli K3 Umum terbaru"
     description: "BETRACOM membantu calon peserta dan perusahaan memperoleh informasi program Ahli K3 Umum, mulai dari persyaratan, metode pelatihan, jadwal angkatan, hingga proses pendaftaran. Konsultasikan kebutuhan Anda agar tim dapat membantu memeriksa pilihan program yang sesuai."
