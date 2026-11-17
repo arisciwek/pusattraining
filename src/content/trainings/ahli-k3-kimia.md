@@ -16,7 +16,7 @@ hero:
   imageAlt: "Pembelajaran keselamatan dan kesehatan kerja dalam penanganan bahan kimia berbahaya"
   eyebrow: "PROGRAM K3 KIMIA"
   certBadge: "PROGRAM PEMBINAAN K3 KIMIA"
-  description: "Pelatihan Ahli K3 Kimia membekali peserta dengan pemahaman mengenai pengendalian bahaya bahan kimia di tempat kerja. Materi mencakup regulasi, lembar data keselamatan bahan, penyimpanan dan penanganan bahan berbahaya, toksikologi, pemantauan paparan, pengendalian risiko proses, pengelolaan limbah, serta tanggap darurat. Persyaratan peserta dan proses sertifikasi maupun penunjukan harus dikonfirmasi berdasarkan ketentuan Kemnaker yang berlaku."
+  description: "Pelatihan Pelatihan Ahli K3 Kimia adalah program yang membekali peserta dengan pemahaman mengenai pengendalian bahaya bahan kimia di tempat kerja. Materi mencakup regulasi, lembar data keselamatan bahan, penyimpanan dan penanganan bahan berbahaya, toksikologi, pemantauan paparan, pengendalian risiko proses, pengelolaan limbah, serta tanggap darurat. Persyaratan peserta dan proses sertifikasi maupun penunjukan harus dikonfirmasi berdasarkan ketentuan Kemnaker yang berlaku."
   deliveryMode: online
   ctaLabel: "Konsultasikan Pelatihan Ahli K3 Kimia"
   ctaHref: "#jadwal-pelatihan"
