@@ -4,17 +4,17 @@ id: 5102
 ulid: 01KCV510000000000000000002
 slug: ahli-k3-kimia
 title: "Mengenal Ahli K3 Kimia"
-description: "Leaflet ringkas mengenai peran Ahli K3 Kimia, pengendalian bahaya bahan kimia di tempat kerja, kompetensi yang dibutuhkan, dan layanan administrasi lisensi terkait."
+description: "Peran Ahli K3 Kimia dalam pengendalian bahaya bahan kimia di tempat kerja, kompetensi yang dibutuhkan, dan layanan administrasi lisensi terkait."
 pubDate: '2019-08-14T07:44:31+00:00'
 author: "BETRACOM"
-category: "Leaflet K3"
+category: "K3 Kimia"
 tags: ["Ahli K3 Kimia", "K3 Kimia", "bahan kimia berbahaya", "keselamatan kerja"]
 draft: false
 related: [3030]
 serviceIds: [4002]
 blocks:
   - type: intro
-    eyebrow: "LEAFLET KOMPETENSI K3"
+    eyebrow: "KOMPETENSI K3 KIMIA"
     lead: "Ahli K3 Kimia berperan membantu perusahaan mengenali, menilai, dan mengendalikan risiko keselamatan serta kesehatan kerja yang timbul dari penyimpanan, pemindahan, penggunaan, dan pengelolaan bahan kimia. Kompetensi ini penting bagi tempat kerja yang menggunakan bahan kimia berbahaya dalam proses produksi maupun kegiatan operasional."
   - type: section
     title: "Apa peran Ahli K3 Kimia?"
