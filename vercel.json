@@ -200,6 +200,11 @@
       "source": "/pelatihan/welder-rigging/",
       "destination": "/pelatihan/juru-las-welder/",
       "permanent": true
+    },
+    {
+      "source": "/safety-kebakaran/training-paket-pemadam-kebakaran-kelas-d-b-a/",
+      "destination": "/pelatihan/kebakaran-emergency/",
+      "permanent": true
     }
   ]
 }
