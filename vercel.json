@@ -613,7 +613,7 @@
     },
     {
       "source": "/ahli-k3/training-ahli-k3-listrik/",
-      "destination": "/pelatihan/k3-listrik/",
+      "destination": "/pelatihan/ahli-k3-listrik/",
       "permanent": true
     },
     {
