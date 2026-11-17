@@ -16,8 +16,8 @@ hero:
   imageAlt: "Pelatihan teknisi K3 perancah dalam kegiatan praktik scaffolding"
   eyebrow: "PROGRAM K3 KONSTRUKSI"
   certBadge: "TEKNISI K3 PERANCAH"
-  description: "Pelatihan Teknisi K3 Perancah dirancang untuk meningkatkan pengetahuan dan keterampilan tenaga kerja yang terlibat dalam pemasangan, pemeriksaan, pemeliharaan, dan pembongkaran scaffolding. Pembelajaran mencakup jenis dan komponen perancah, standar teknis, penilaian beban, inspeksi, prosedur kerja aman, serta praktik lapangan. Jenis sertifikat atau lisensi yang dapat diperoleh bergantung pada pemenuhan persyaratan, evaluasi, dan ketentuan instansi berwenang."
-  deliveryMode: blended
+  description: "Pelatihan Pelatihan Teknisi K3 Perancah adalah program yang dirancang untuk meningkatkan pengetahuan dan keterampilan tenaga kerja yang terlibat dalam pemasangan, pemeriksaan, pemeliharaan, dan pembongkaran scaffolding. Pembelajaran mencakup jenis dan komponen perancah, standar teknis, penilaian beban, inspeksi, prosedur kerja aman, serta praktik lapangan. Jenis sertifikat atau lisensi yang dapat diperoleh bergantung pada pemenuhan persyaratan, evaluasi, dan ketentuan instansi berwenang."
+  deliveryMode: mixed
   ctaLabel: "Konsultasikan Pelatihan Teknisi K3 Perancah"
   ctaHref: "#jadwal-pelatihan"
   duration: "Informasi program sumber menyebut empat hari; jadwal angkatan terbaru perlu dikonfirmasi"
