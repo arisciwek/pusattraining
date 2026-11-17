@@ -400,6 +400,156 @@
       "source": "/sertifikasi-kemenaker-ri/",
       "destination": "/pelatihan/",
       "permanent": true
+    },
+    {
+      "source": "/safety-kesehatan-2/",
+      "destination": "/pelatihan/p3k-kesehatan/",
+      "permanent": true
+    },
+    {
+      "source": "/juru-las-welder/juru-las-gtaw/",
+      "destination": "/pelatihan/juru-las-welder/",
+      "permanent": true
+    },
+    {
+      "source": "/juru-las-welder/juru-las-smaw/",
+      "destination": "/pelatihan/juru-las-welder/",
+      "permanent": true
+    },
+    {
+      "source": "/training-k3-listrik/",
+      "destination": "/pelatihan/k3-listrik/",
+      "permanent": true
+    },
+    {
+      "source": "/bnsp/pemantauan-dan-analisis-pengelolaan-limbah-b3/",
+      "destination": "/pelatihan/lingkungan-energi/",
+      "permanent": true
+    },
+    {
+      "source": "/pelatihan-awareness/energi/",
+      "destination": "/pelatihan/lingkungan-energi/",
+      "permanent": true
+    },
+    {
+      "source": "/bnsp/pelatihan-lingkungan-sertifikasi-kompetensi-bnsp-pppa-pppu-popal-poipu-limbah-b3-amdal/",
+      "destination": "/pelatihan/lingkungan-energi/",
+      "permanent": true
+    },
+    {
+      "source": "/bnsp/pemantauan-dan-analisis-pengolahan-sampah-limbah-padat-non-b3/",
+      "destination": "/pelatihan/lingkungan-energi/",
+      "permanent": true
+    },
+    {
+      "source": "/bnsp/operator-pengambilan-contoh-air/",
+      "destination": "/pelatihan/lingkungan-energi/",
+      "permanent": true
+    },
+    {
+      "source": "/bnsp/pelatihan-dan-sertifikasi-manajer-energi/",
+      "destination": "/pelatihan/lingkungan-energi/",
+      "permanent": true
+    },
+    {
+      "source": "/bnsp/pelatihan-dan-sertifikasi-auditor-energi/",
+      "destination": "/pelatihan/lingkungan-energi/",
+      "permanent": true
+    },
+    {
+      "source": "/training-ahli-higiene-industri-muda-himu-sertifikasi-bnsp/",
+      "destination": "/pelatihan/higiene-industri/",
+      "permanent": true
+    },
+    {
+      "source": "/training-ahli-higiene-industri-madya-hima-sertifikasi-bnsp/",
+      "destination": "/pelatihan/higiene-industri/",
+      "permanent": true
+    },
+    {
+      "source": "/training-ahli-higiene-industri-utama-hiu-sertifikasi-bnsp/",
+      "destination": "/pelatihan/higiene-industri/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/pelatihan-petugas-k3-kimia/",
+      "destination": "/pelatihan/k3-kimia-risiko-proses/",
+      "permanent": true
+    },
+    {
+      "source": "/training-hazops-bersertifikasi-bnsp/",
+      "destination": "/pelatihan/k3-kimia-risiko-proses/",
+      "permanent": true
+    },
+    {
+      "source": "/training-ahli-k3-muda-konstruksi-sertifikasi-bnsp/",
+      "destination": "/pelatihan/k3-konstruksi/",
+      "permanent": true
+    },
+    {
+      "source": "/training-ahli-k3-madya-konstruksi-sertifikasi-bnsp/",
+      "destination": "/pelatihan/k3-konstruksi/",
+      "permanent": true
+    },
+    {
+      "source": "/training-ahli-k3-utama-konstruksi-sertifikasi-bnsp/",
+      "destination": "/pelatihan/k3-konstruksi/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/teknisi-k3-perancah/",
+      "destination": "/pelatihan/k3-konstruksi/",
+      "permanent": true
+    },
+    {
+      "source": "/supervisi-perancah/",
+      "destination": "/pelatihan/k3-konstruksi/",
+      "permanent": true
+    },
+    {
+      "source": "/ahli-k3/ahli-k3-pesawat-tenaga-produksi/",
+      "destination": "/pelatihan/pesawat-uap-bejana-tekan/",
+      "permanent": true
+    },
+    {
+      "source": "/training-teknisi-k3-bidang-bejana-tekanan-tangki-timbun/",
+      "destination": "/pelatihan/pesawat-uap-bejana-tekan/",
+      "permanent": true
+    },
+    {
+      "source": "/training-teknisi-k3-bidang-pesawat-tenaga-produksi/",
+      "destination": "/pelatihan/pesawat-uap-bejana-tekan/",
+      "permanent": true
+    },
+    {
+      "source": "/ahli-k3/training-ahli-k3-pesawat-uap-dan-bejana-tekan/",
+      "destination": "/pelatihan/pesawat-uap-bejana-tekan/",
+      "permanent": true
+    },
+    {
+      "source": "/ahli-k3/training-ahli-k3-pesawat-angkat-angkut/",
+      "destination": "/pelatihan/operator-alat-berat/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/pelatihan-p3k/",
+      "destination": "/pelatihan/p3k-kesehatan/",
+      "permanent": true
+    },
+    {
+      "source": "/inhouse-first-aid-p3k-awareness/",
+      "destination": "/pelatihan/p3k-kesehatan/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-bekerja-di-ketinggian/bekerja-pada-ketinggian-tat/",
+      "destination": "/pelatihan/bekerja-pada-ketinggian/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-kesehatan-2/pelatihan-medical-check-up-and-fit-to-work/",
+      "destination": "/pelatihan/higiene-industri/",
+      "permanent": true
     }
   ]
 }
