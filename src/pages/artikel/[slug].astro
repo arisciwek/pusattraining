@@ -88,7 +88,7 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
                   ))}
                 </div>
               ) : (
-                <a class="article-detail__service-link mt-6 inline-flex rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white" href="/layanan/">{block.actionLabel}</a>
+                <a class="article-detail__service-link mt-6 inline-flex rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white" href={block.actionHref || "/layanan/"}>{block.actionLabel}</a>
               )}
             </section>
           )
