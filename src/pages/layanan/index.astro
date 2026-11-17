@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import Breadcrumb from '../../components/shared/Breadcrumb.astro';
+
+const services = (await getCollection('services', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'id'));
+---
+<SiteLayout
+  title="Layanan"
+  description="Jelajahi layanan profesional untuk kebutuhan perizinan, sertifikasi, dan pengembangan kompetensi."
+>
+  <section class="service-index py-12 sm:py-16">
+    <Container>
+      <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Layanan' }]} />
+      <header class="service-index__header mx-auto mt-10 max-w-3xl text-center">
+        <p class="service-index__eyebrow text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">LAYANAN PROFESIONAL</p>
+        <h1 class="service-index__title mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl">Layanan untuk kebutuhan perusahaan Anda</h1>
+        <p class="service-index__description mt-5 text-base leading-8 text-slate-600 sm:text-lg">Temukan informasi layanan, ruang lingkup pekerjaan, dan tahapan pendampingan sesuai kebutuhan perusahaan.</p>
+      </header>
+
+      {services.length > 0 ? (
+        <div class="service-index__grid mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {services.map(({ data }) => (
+            <article class="service-index__card group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-lg">
+              <p class="service-index__card-label text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">LAYANAN</p>
+              <h2 class="service-index__card-title mt-3 text-xl font-semibold leading-snug text-slate-950">{data.title}</h2>
+              <p class="service-index__card-description mt-3 flex-1 text-sm leading-7 text-slate-600">{data.description}</p>
+              <a class="service-index__card-link mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sky-700 transition group-hover:gap-3" href={`/layanan/${data.slug}/`}>
+                Pelajari layanan <span aria-hidden="true">→</span>
+              </a>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="service-index__empty mx-auto mt-12 max-w-2xl rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-6 py-12 text-center">
+          <h2 class="service-index__empty-title text-lg font-semibold text-slate-900">Informasi layanan sedang disiapkan</h2>
+          <p class="service-index__empty-description mt-2 text-sm leading-7 text-slate-600">Katalog layanan akan ditampilkan di halaman ini setelah kontennya diterbitkan.</p>
+        </div>
+      )}
+    </Container>
+  </section>
+</SiteLayout>
