@@ -2,18 +2,9 @@
 
 ## Status dan ruang lingkup
 
-Halaman `/pelatihan/` dimigrasikan menjadi halaman content-driven. Pekerjaan ini hanya mencakup halaman indeks katalog dan komponen blok yang dibutuhkan untuk merendernya. Halaman kategori dan detail training tidak termasuk scope migrasi ini.
+Halaman `/pelatihan/` menggunakan content collection untuk konten editorial dan daftar kategori. Route juga menghitung jumlah master program aktif yang terhubung ke setiap kategori.
 
-## Audit implementasi sebelumnya
-
-Sebelum migrasi, `src/pages/pelatihan/index.astro` menyimpan langsung:
-
-- Judul halaman: `Katalog Pelatihan`.
-- Meta description.
-- Eyebrow, H1, dan paragraf pengantar katalog.
-- Pesan empty state.
-
-Route mengambil collection `pages` dengan `pageType: category`, lalu menyusun tautan kategori untuk komponen `TrainingCategoryOverview`. Akibatnya, data kategori sudah berasal dari content collection, tetapi konten editorial dan susunan utama halaman masih tertanam di file route.
+Ruang lingkup implementasi ini adalah indeks katalog. Halaman kategori dan detail training memiliki route serta renderer masing-masing.
 
 ## Sumber konten
 
@@ -21,28 +12,9 @@ File sumber halaman:
 
 `src/content/pages/pelatihan.md`
 
-Frontmatter wajib mengikuti schema collection `pages` di `src/content.config.ts`:
-
-| Field | Fungsi |
-|---|---|
-| `type` | Harus bernilai `page`. |
-| `id` | ID numerik positif untuk kebutuhan relasi. |
-| `ulid` | ULID 26 karakter sebagai identifier stabil. |
-| `pageType` | `standard` untuk halaman katalog ini. |
-| `slug` | `pelatihan`, dipakai route untuk menemukan entry. |
-| `title` | Judul halaman dan title metadata. |
-| `description` | Meta description halaman. |
-| `pubDate` | Tanggal publikasi ISO 8601 dengan offset. |
-| `updatedDate` | Tanggal pembaruan ISO 8601 dengan offset. |
-| `draft` | Mengontrol publikasi entry. |
-| `related` | Relasi berbasis ID; kosong jika belum ada relasi. |
-| `blocks` | Urutan dan konfigurasi section yang dirender. |
-
-Konten halaman katalog saat ini seluruhnya berada di frontmatter; body Markdown sengaja kosong.
+Frontmatter mengikuti schema collection `pages` di `src/content.config.ts`. Field `blocks` menyimpan urutan dan konfigurasi editorial. Body Markdown sengaja kosong.
 
 ## Kontrak blok `training-catalog`
-
-Blok didefinisikan pada schema collection `pages` dan tipe TypeScript `TrainingCatalogPageBlock`.
 
 | Properti | Tipe | Wajib | Keterangan |
 |---|---|---:|---|
@@ -54,29 +26,34 @@ Blok didefinisikan pada schema collection `pages` dan tipe TypeScript `TrainingC
 | `categoryTitle` | string | Ya | Judul section daftar kategori. |
 | `categoryDescription` | string | Tidak | Pengantar section daftar kategori. |
 
-Renderer: `src/blocks/training/TrainingCatalog.astro`.
+Renderer berada di `src/blocks/training/TrainingCatalog.astro`. Komponen meneruskan kategori ke `TrainingCategoryOverview`; komponen visual mendukung properti `count` untuk label jumlah program.
 
-Renderer menerima daftar kategori sebagai props, bukan mengambil data sendiri. Daftar kategori berasal dari collection `pages` dengan `pageType: category`, diurutkan berdasarkan judul, dan URL detail kategori dibentuk sebagai `/pelatihan/{slug}/`.
+## Alur data dan jumlah program
 
-## Alur rendering
+1. Route `src/pages/pelatihan/index.astro` mengambil entry katalog, kategori aktif, dan master training aktif.
+2. Kategori diurutkan berdasarkan judul.
+3. Untuk setiap kategori, route menghitung jumlah training yang memiliki ID kategori tersebut di `categoryIds`.
+4. Kategori dengan relasi aktif menampilkan label `N program`.
+5. Kategori tanpa relasi aktif tetap ditampilkan, dengan label `Segera hadir`. Halaman kategori tidak disembunyikan dan empty state-nya tetap berasal dari frontmatter.
+6. `BlockRenderer.astro` memilih `TrainingCatalog.astro` melalui registry.
+7. `SiteLayout` menerima title dan description dari frontmatter untuk metadata SEO.
 
-1. `src/pages/pelatihan/index.astro` mengambil entry halaman dengan `slug: pelatihan` dan `draft: false`.
-2. Route mengambil kategori aktif dari collection `pages`.
-3. Route meneruskan `entry.data.blocks` dan kategori ke `BlockRenderer.astro`.
-4. `BlockRenderer.astro` memilih komponen melalui `src/blocks/registry.ts`.
-5. `TrainingCatalog.astro` merender H1, pengantar, daftar kategori, atau empty state.
-6. `SiteLayout` menerima title dan description dari frontmatter untuk metadata SEO; canonical, Open Graph, dan Twitter Card tetap dikelola layout.
+Jumlah program dihitung dari collection, bukan diketik manual. Draft tidak ikut dihitung. Penambahan atau penghapusan relasi program akan otomatis memperbarui label setelah build berikutnya.
 
-Route hanya bertanggung jawab mengambil data, menyiapkan relasi kategori, dan menyusun komponen kerangka halaman. Konten editorial dan urutan blok tidak disimpan di route.
+## Kondisi katalog saat audit
+
+Katalog saat ini memiliki 14 kategori terbit dan 10 master training terbit. Program tersebar pada kategori berdasarkan `categoryIds`. Kategori tanpa program tetap menjadi bagian taksonomi yang sudah ada, tetapi diberi penanda visual `Segera hadir` agar pengunjung tidak mengira kategori tersebut sudah memiliki daftar program.
+
+Angka di atas merupakan kondisi data saat audit, bukan angka yang ditulis permanen pada halaman.
 
 ## Aturan implementasi
 
-- Pertahankan seluruh semantic class pada section, header, heading, paragraf, wrapper, link, dan elemen navigasi.
-- Styling tetap menggunakan Tailwind CSS v4; jangan menambahkan framework styling lain.
-- Pertahankan komponen visual kategori yang sudah digunakan agar karakter desain katalog tidak berubah menjadi layout generik.
-- Jangan menambahkan data kategori atau program fiktif.
-- Perubahan schema blok harus diselaraskan pada schema Zod, tipe TypeScript, registry, dan dokumentasi.
-- Jangan memperluas perubahan ke route kategori atau detail training dalam pekerjaan ini.
+- Pertahankan semantic class pada section, header, heading, paragraf, wrapper, link, dan elemen navigasi.
+- Styling tetap menggunakan Tailwind CSS v4.
+- Jangan menambahkan kategori atau program fiktif.
+- Jangan menghitung draft sebagai program yang tersedia.
+- Relasi kategori-program menggunakan `categoryIds` dan `id`, bukan pencocokan judul.
+- Jangan mengubah skema jadwal atau detail training sebagai bagian dari pekerjaan indeks katalog.
 
 ## Verifikasi
 
@@ -87,4 +64,10 @@ npm run check
 npm run build
 ```
 
-Pastikan halaman `/pelatihan/` tetap menghasilkan breadcrumb, heading katalog, daftar kategori aktif, dan empty state ketika collection kategori kosong. Build harus memvalidasi frontmatter melalui Astro Content Collections.
+Periksa hasil:
+- Breadcrumb, H1, dan deskripsi katalog berasal dari frontmatter.
+- Semua kategori aktif tetap tampil dan menuju `/pelatihan/{slug}/`.
+- Label jumlah hanya menghitung master training yang tidak draft.
+- Kategori tanpa program menampilkan `Segera hadir`.
+- Detail kategori dengan program menampilkan kartu yang sesuai relasi `categoryIds`.
+- Empty state kategori tanpa program tetap informatif.
