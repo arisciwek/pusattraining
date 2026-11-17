@@ -150,17 +150,16 @@ blocks:
     id: faq-pelatihan
     eyebrow: PERTANYAAN UMUM
     title: Pertanyaan yang sering diajukan
-    description: "Jawaban umum berikut tidak menggantikan ketentuan angkatan, administrasi, atau keputusan instansi berwenang."
+    description: "Jawaban umum mengenai pekerjaan di ruang terbatas. Kualifikasi personel dan ketentuan angkatan harus dikonfirmasi kepada penyelenggara."
     items:
-      - question: "Apa yang perlu diketahui tentang program ini?"
-        answer: "Peraturan membedakan fungsi dan kualifikasi personel; tidak semua peserta mendapat kualifikasi yang sama."
-      - question: "Siapa yang memenuhi persyaratan peserta?"
-        answer: "Pengujian atmosfer penting untuk mendeteksi kekurangan/kelebihan oksigen dan kontaminan."
-      - question: "Apakah pelatihan otomatis menerbitkan sertifikat atau lisensi?"
-        answer: "Pelatihan tidak menggantikan izin masuk dan pengendalian di lokasi."
+      - question: "Apa yang dipelajari dalam Pelatihan Teknisi K3 Ruang Terbatas?"
+        answer: "Materi mencakup karakteristik ruang terbatas, identifikasi bahaya, penilaian risiko, izin masuk, pengujian atmosfer, deteksi gas, ventilasi, isolasi energi, APD, komunikasi, serta prosedur tanggap darurat dan penyelamatan sesuai ruang lingkup pelatihan."
+      - question: "Siapa yang perlu mengikuti pelatihan ini?"
+        answer: "Program relevan bagi pekerja yang ditugaskan di ruang terbatas, pengawas, personel HSE, teknisi, petugas deteksi gas, dan personel penyelamat sesuai fungsi. Kelayakan serta kualifikasi jabatan harus mengikuti Permenaker Nomor 11 Tahun 2023 dan verifikasi penyelenggara."
+      - question: "Apakah pelatihan otomatis memberikan sertifikat atau lisensi Kemnaker?"
+        answer: "Tidak otomatis. Sertifikat, lisensi, atau penetapan kualifikasi mengikuti skema, evaluasi, persyaratan peserta, dan proses instansi berwenang. Pelatihan juga tidak menggantikan izin masuk, pengujian atmosfer, maupun pengendalian bahaya di lokasi kerja."
       - question: "Bagaimana memastikan jadwal, durasi, dan biaya?"
-        answer: "Praktik penyelamatan hanya dilakukan dengan instruktur, peralatan, dan pengendalian risiko memadai."
-
+        answer: "Lihat daftar angkatan pada bagian jadwal, lalu hubungi Tiara untuk mengonfirmasi tanggal, metode blended, durasi, lokasi praktik, biaya, persyaratan dokumen, dan ketersediaan tempat."
   - type: training-cta
     eyebrow: LANGKAH BERIKUTNYA
     title: Pastikan program sesuai kebutuhan Anda
