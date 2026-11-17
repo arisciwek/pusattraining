@@ -11,7 +11,7 @@ hero:
   title: "Training Incident Investigation dan Reporting"
   imageAlt: "Banner in-house training BETRACOM dari situs resmi Pusat Training K3"
   eyebrow: "K3 UMUM · INVESTIGASI DAN PELAPORAN INSIDEN"
-  description: "Incident Investigation dan Reporting adalah pelatihan untuk membantu personel memahami proses penyelidikan kecelakaan kerja secara sistematis, mulai dari pengumpulan informasi dan penyusunan urutan kejadian hingga analisis penyebab, pelaporan, dan rekomendasi perbaikan. Fokusnya adalah pembelajaran dari kejadian agar risiko kejadian serupa dapat dikendalikan."
+  description: "Pelatihan Training Incident Investigation dan Reporting adalah pelatihan untuk membantu personel memahami proses penyelidikan kecelakaan kerja secara sistematis, mulai dari pengumpulan informasi dan penyusunan urutan kejadian hingga analisis penyebab, pelaporan, dan rekomendasi perbaikan. Fokusnya adalah pembelajaran dari kejadian agar risiko kejadian serupa dapat dikendalikan."
   ctaLabel: "Konsultasikan program investigasi"
   ctaHref: "#jadwal-pelatihan"
   trustItems:
