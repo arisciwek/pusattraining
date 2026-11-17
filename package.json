@@ -14,7 +14,8 @@
     "schedules:discover": "node scripts/discover-schedules.mjs",
     "test:schedules:discover": "node --test scripts/discover-schedules.test.mjs",
     "schedules:generate": "node scripts/generate-schedule-frontmatter.mjs",
-    "test:schedules:generate": "node --test scripts/generate-schedule-frontmatter.test.mjs"
+    "test:schedules:generate": "node --test scripts/generate-schedule-frontmatter.test.mjs",
+    "test:schedules:routing": "node --test scripts/schedule-routing.test.mjs"
   },
   "overrides": {
     "astro": "7.4.0",

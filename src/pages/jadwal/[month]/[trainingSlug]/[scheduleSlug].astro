@@ -8,6 +8,7 @@ import {
   formatScheduleDate,
   getScheduleDescription,
   getScheduleMonth,
+  getScheduleRouteParams,
   getScheduleStatusLabel,
   getScheduleTitle,
   isMainSiteSchedule,
@@ -31,11 +32,7 @@ export async function getStaticPaths() {
     if (!training) return [];
 
     return [{
-      params: {
-        month: getScheduleMonth(schedule.data),
-        trainingSlug: training.data.slug,
-        scheduleSlug: schedule.data.slug,
-      },
+      params: getScheduleRouteParams(schedule, training.data.slug),
       props: { schedule, training },
     }];
   });
