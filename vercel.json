@@ -650,6 +650,21 @@
       "source": "/operator-k3/pelatihan-sertifikasi-k3-deteksi-gas/",
       "destination": "/pelatihan/k3-kimia-risiko-proses/",
       "permanent": true
+    },
+    {
+      "source": "/berita-training/",
+      "destination": "/jadwal/",
+      "permanent": true
+    },
+    {
+      "source": "/bnsp/okupasi-nasional-penjamah-makanan-food-handler/",
+      "destination": "/pelatihan/",
+      "permanent": true
+    },
+    {
+      "source": "/12314-2/",
+      "destination": "/pelatihan/training-emergency-response-plan/",
+      "permanent": true
     }
   ]
 }
