@@ -16,7 +16,7 @@ hero:
   imageAlt: "Peserta pelatihan mengoperasikan forklift Toyota dengan perlengkapan keselamatan di area praktik"
   eyebrow: "PROGRAM KOMPETENSI OPERATOR · PESAWAT ANGKAT DAN ANGKUT"
   certBadge: "KEMNAKER RI"
-  description: "Pelatihan Operator Forklift merupakan program pembinaan bagi tenaga kerja yang bertugas atau dipersiapkan untuk mengoperasikan forklift. Peserta mempelajari prinsip K3, pengenalan komponen dan perangkat keselamatan, pengendalian serta stabilitas beban, pemeriksaan harian, dan praktik pengoperasian yang aman."
+  description: "Pelatihan Operator Forklift Kemnaker RI adalah program pembinaan bagi tenaga kerja yang bertugas atau dipersiapkan untuk mengoperasikan forklift. Peserta mempelajari prinsip K3, pengenalan komponen dan perangkat keselamatan, pengendalian serta stabilitas beban, pemeriksaan harian, dan praktik pengoperasian yang aman."
   deliveryMode: mixed
   ctaLabel: "Lihat jadwal dan pendaftaran"
   ctaHref: "#jadwal-pelatihan"
