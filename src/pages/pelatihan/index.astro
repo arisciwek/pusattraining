@@ -6,21 +6,28 @@ import Breadcrumb from '../../components/shared/Breadcrumb.astro';
 import BlockRenderer from '../../blocks/BlockRenderer.astro';
 import type { PageBlock } from '../../blocks/types';
 
-const entry = (await getCollection('pages', ({ data }) =>
-  data.slug === 'pelatihan' && !data.draft
-))[0];
+const [entry, categoryEntries, trainings] = await Promise.all([
+  getCollection('pages', ({ data }) => data.slug === 'pelatihan' && !data.draft).then((entries) => entries[0]),
+  getCollection('pages', ({ data }) => data.pageType === 'category' && !data.draft),
+  getCollection('trainings', ({ data }) => !data.draft),
+]);
 
 if (!entry) throw new Error('Konten halaman Pelatihan (slug: pelatihan) tidak ditemukan.');
 
-const categories = (await getCollection('pages', ({ data }) =>
-  data.pageType === 'category' && !data.draft
-))
+const categories = categoryEntries
   .sort((a, b) => a.data.title.localeCompare(b.data.title, 'id'))
-  .map(({ data }) => ({
-    title: data.title,
-    description: data.description,
-    href: `/pelatihan/${data.slug}/`,
-  }));
+  .map(({ data }) => {
+    const programCount = trainings.filter((training) =>
+      training.data.categoryIds.includes(data.id)
+    ).length;
+
+    return {
+      title: data.title,
+      description: data.description,
+      href: `/pelatihan/${data.slug}/`,
+      count: programCount > 0 ? `${programCount} program` : 'Segera hadir',
+    };
+  });
 
 const blocks = entry.data.blocks as PageBlock[];
 ---
