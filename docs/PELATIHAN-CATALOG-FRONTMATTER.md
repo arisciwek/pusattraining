@@ -71,3 +71,45 @@ Periksa hasil:
 - Kategori tanpa program menampilkan `Segera hadir`.
 - Detail kategori dengan program menampilkan kartu yang sesuai relasi `categoryIds`.
 - Empty state kategori tanpa program tetap informatif.
+
+## Audit implementasi pada main — 17 November 2026
+
+**Baseline audit:** `main` pada commit `3a7a673e4179dd07ccc68e323e40c12b51a53e11`.
+
+### Kesimpulan audit
+
+Migrasi inti halaman `/pelatihan/` sebenarnya sudah berada di `main` sebelum pekerjaan ini dimulai. Karena itu, route dan tampilan yang telah berfungsi tidak ditulis ulang. Perubahan implementasi pada branch audit dibatasi pada penegasan kontrak tipe data turunan agar label jumlah program yang dihitung route tetap dikenali sepanjang rantai renderer.
+
+| Area | Implementasi yang diaudit | Hasil |
+|---|---|---|
+| Sumber konten | `src/content/pages/pelatihan.md` | Frontmatter menjadi satu-satunya sumber copy editorial dan urutan block; body Markdown kosong. |
+| Identitas | `id: 1004`, `ulid: 01KCV000000000000000000018` | Dipertahankan sesuai schema collection `pages`. |
+| Schema | `src/content.config.ts` | `type`, `id`, `ulid`, `slug`, `title`, `description`, tanggal editorial, `draft`, dan `blocks` tervalidasi. |
+| Route | `src/pages/pelatihan/index.astro` | Mengambil entry halaman, kategori aktif, dan master training aktif; tidak menyimpan copy judul/deskripsi section. |
+| Relasi kategori | `categoryIds` terhadap `pages.id` | Jumlah program dihitung dari relasi ID dan tidak memasukkan draft. Kategori kosong tetap tampil sebagai `Segera hadir`. |
+| Block | `training-catalog` | Copy H1, pengantar, judul daftar kategori, deskripsi, dan empty state diatur dari frontmatter. |
+| Renderer | `BlockRenderer` → `TrainingCatalog` → `TrainingCategoryOverview` | Registry memilih komponen berdasarkan `type`; komponen visual mempertahankan kartu kategori dan label jumlah. |
+| SEO | `SiteLayout` | Title, description, canonical, Open Graph, dan Twitter Card dirender dari metadata halaman/layout. Tidak menambahkan gambar sosial tanpa aset sumber yang terverifikasi. |
+| Visual dan markup | Block katalog, heading, kategori, breadcrumb, container | Semantic class dipertahankan; styling memakai Tailwind dan design tokens yang sudah ada. |
+
+### Penyesuaian kontrak tipe
+
+Route katalog membentuk properti turunan `count` untuk tiap kategori. Komponen `TrainingCategoryOverview` telah menerima properti tersebut, tetapi tipe perantara di `BlockRenderer.astro` dan `TrainingCatalog.astro` belum mendeklarasikannya. Keduanya kini menyatakan `count?: string` agar kontrak data eksplisit dan konsisten dari route sampai komponen visual. Tidak ada perubahan format frontmatter atau hasil tampilan yang dimaksudkan.
+
+### Batas scope
+
+- Route indeks `/pelatihan/` saja yang diaudit.
+- `src/pages/pelatihan/[slug].astro`, halaman kategori, dan halaman detail training tidak diubah.
+- Tidak ada kategori, program, harga, jadwal, atau klaim baru yang ditambahkan.
+- Tidak ada perubahan pada `main`; semua perubahan berada di branch audit dan menunggu review melalui pull request.
+
+### Status verifikasi lokal
+
+Pemeriksaan statis terhadap file dan kontrak repository selesai. `npm run check` dan `npm run build` belum dapat dijalankan: clone repository gagal karena environment tidak dapat me-resolve `github.com` (`Could not resolve host: github.com`). Node yang tersedia adalah `v22.16.0`, sedangkan `package.json` mensyaratkan `>=22.22.0`. Hasil build karena itu tidak boleh dianggap lulus berdasarkan audit kode saja.
+
+Setelah branch tersedia pada environment dengan akses dependency dan Node sesuai versi repository, jalankan:
+
+```bash
+npm run check
+npm run build
+```
