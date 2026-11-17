@@ -11,7 +11,7 @@ hero:
   title: "Pelatihan Rigger Offshore (Lifting and Rigging)"
   imageAlt: "Banner in-house training BETRACOM dari situs resmi Pusat Training K3"
   eyebrow: "K3 OFFSHORE · LIFTING AND RIGGING"
-  description: "Pelatihan Rigger Offshore adalah program pembekalan bagi personel yang terlibat dalam pekerjaan pengikatan dan pemindahan beban pada kegiatan lifting di lingkungan offshore. Materi diarahkan pada pemahaman tugas juru ikat, komunikasi dengan operator dan pengawas lifting, pengenalan alat bantu angkat, pemeriksaan sebelum digunakan, serta praktik kerja aman sesuai prosedur lokasi."
+  description: "Pelatihan Pelatihan Rigger Offshore (Lifting and Rigging) adalah program pembekalan bagi personel yang terlibat dalam pekerjaan pengikatan dan pemindahan beban pada kegiatan lifting di lingkungan offshore. Materi diarahkan pada pemahaman tugas juru ikat, komunikasi dengan operator dan pengawas lifting, pengenalan alat bantu angkat, pemeriksaan sebelum digunakan, serta praktik kerja aman sesuai prosedur lokasi."
   ctaLabel: "Konsultasikan pelatihan Rigger Offshore"
   ctaHref: "#jadwal-pelatihan"
   duration: "1 hari (informasi pada halaman sumber; konfirmasi kembali)"
