@@ -2,7 +2,7 @@
 type: schedule
 id: 918273647
 ulid: 01KCV800000000000000000001
-scheduleId: "damkar_01M7C6X14MA9P3FYB0T6AZ3E0R"
+scheduleId: "damkar_01M7C6X14MA9P3FYB0T6AZ3E0R_G2"
 publisherId: "damkar"
 trainingId: "damkar-kelas-a"
 batchNo: "12"
