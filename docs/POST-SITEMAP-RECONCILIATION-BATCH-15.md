@@ -1,40 +1,46 @@
-# Rekonsiliasi Post Sitemap — Batch 15 (Ordinal 99–102)
+# Migrasi Post Sitemap — Batch 15 (Ordinal 99–102)
 
-Tanggal audit: 2026-11-17
+Tanggal pengerjaan: 2026-11-17
 
-## Ringkasan keputusan
+## Keputusan editorial
 
-| Ordinal | URL lama | Indikasi dari slug | Keputusan |
-|---:|---|---|---|
-| 99 | `/jadwal-trainingsertifikasi-bnsp-terdekat-jakarta-2019/` | Informasi jadwal/training sertifikasi BNSP 2019 | WAITING_SOURCE |
-| 100 | `/ahli-k3-kimia-19-31-agustus-2019-siap-jalan/` | Ahli K3 Kimia, indikasi batch 19–31 Agustus 2019 | WAITING_SOURCE |
-| 101 | `/operator-forklift-20-22-agustus-2019-siap-jalan/` | Operator Forklift, indikasi batch 20–22 Agustus 2019 | WAITING_SOURCE |
-| 102 | `/siap-jalan-ahli-k3-pesawat-angkat-angkut-26-agst-21-sept-2019/` | Ahli K3 Pesawat Angkat dan Angkut, indikasi batch 26 Agustus–21 September 2019 | WAITING_SOURCE |
+Keempat URL lama tidak dipaksakan menjadi salinan persis dari sumber yang tidak dapat diakses. Atas arahan pemilik situs, konten dialihkan menjadi materi editorial baru dengan klasifikasi brosur atau leaflet. Tanggal `pubDate` mengikuti `lastmod` sitemap untuk mempertahankan kronologi arsip; tanggal itu bukan klaim tanggal pelaksanaan kelas.
 
-Keempatnya diberi keputusan `HOLD_SOURCE_CONTENT`. Indikasi topik/tanggal di atas hanya berasal dari slug dan metadata sitemap, bukan hasil verifikasi isi post.
+| Ordinal | Materi baru | Type | pubDate dari sitemap | Service ID |
+|---:|---|---|---|---:|
+| 99 | Jadwal Training BNSP | `brochure` | 2019-09-30 | — |
+| 100 | Mengenal Ahli K3 Kimia | `leaflet` | 2019-08-14 | 4002 |
+| 101 | Mengenal Kompetensi Operator Forklift | `leaflet` | 2019-08-15 | 4001 |
+| 102 | Mengenal Ahli K3 Pesawat Angkat dan Angkut | `leaflet` | 2019-08-15 | 4002 |
 
-## Upaya verifikasi
+## Perlakuan konten
 
-Untuk setiap URL, audit mencoba:
-1. Membuka URL asli melalui HTTPS.
-2. Mengakses WordPress REST API berdasarkan slug.
-3. Mencari exact slug/judul dan variasi topik/tanggal.
-4. Memeriksa apakah hasil indeks yang ditemukan benar-benar merupakan sumber post 2019, bukan halaman program atau jadwal terkini.
+- Ordinal 99 menjadi brosur informasi pelatihan dan sertifikasi BNSP. Karena detail jadwal lama tidak tersedia, materi hanya menyebut konteks periode akhir September 2019 berdasarkan tanggal sitemap dan tidak mengarang tanggal kelas, biaya, kuota, atau venue.
+- Ordinal 100 menjadi leaflet evergreen tentang peran, ruang lingkup, kompetensi, dan batas antara pelatihan, sertifikat, serta penunjukan Ahli K3 Kimia.
+- Ordinal 101 menjadi leaflet evergreen tentang kompetensi, risiko operasi, pemeriksaan, dan pelatihan Operator Forklift.
+- Ordinal 102 menjadi leaflet evergreen tentang ruang lingkup, risiko, dan tanggung jawab Ahli K3 Pesawat Angkat dan Angkut.
 
-URL langsung dan REST API tidak dapat diakses melalui alat penelusuran. Pencarian exact tidak menemukan salinan post 2019 yang dapat diverifikasi. Untuk ordinal 100–102 ditemukan halaman program Astro terkini dengan topik serupa; ordinal 99 juga menghasilkan halaman jadwal/program terkini. Hasil tersebut bukan bukti isi post lama dan tidak cukup untuk menyimpulkan bahwa post hanya berisi pengumuman batch.
+## CTA dan relasi layanan
 
-Karena sumber asli belum tersedia, audit tidak mengisi H1, ringkasan isi, persyaratan, lokasi, biaya, materi, atau rincian pelaksanaan yang tidak dapat dibuktikan.
+- Service ID 4002 (`perpanjang-lisensi-k3`) dipakai untuk Ahli K3 Kimia dan Ahli K3 Pesawat Angkat dan Angkut. CTA dibatasi secara eksplisit pada perpanjangan/mutasi SKP atau Lisensi K3, bukan pelatihan awal.
+- Service ID 4001 (`perpanjang-sio-forklift`) dipakai untuk Operator Forklift. CTA hanya menawarkan pendampingan perpanjangan SIO/Lisensi K3, bukan pelatihan operator awal.
 
-## Tindakan
+## Implementasi teknis
 
-- Keempat baris queue dan master mapping ditandai `WAITING_SOURCE` / `HOLD_SOURCE_CONTENT`.
-- Tidak membuat halaman training baru.
-- Tidak membuat schedule record dari indikasi batch 2019.
-- Tidak menetapkan target redirect.
-- Redirect tetap menunggu seluruh post selesai diaudit.
+- Schema koleksi articles menerima `article`, `brochure`, dan `leaflet`.
+- Schema artikel menambahkan `serviceIds` dan blok frontmatter untuk intro, section, catatan jadwal, serta CTA layanan.
+- Route `/artikel/[slug]/` menampilkan materi dan menghubungkan CTA berdasarkan numeric service ID.
+- Semua materi disimpan di frontmatter Markdown; tidak ada body Markdown biasa.
 
-## File yang diperbarui
+## File utama
 
+- `src/content.config.ts`
+- `src/pages/artikel/[slug].astro`
+- `src/content/articles/jadwal-training-bnsp.md`
+- `src/content/articles/ahli-k3-kimia-leaflet.md`
+- `src/content/articles/operator-forklift-leaflet.md`
+- `src/content/articles/ahli-k3-pesawat-angkat-angkut-leaflet.md`
 - `docs/LEGACY-POST-AUDIT-QUEUE.csv`
 - `docs/MASTER-LEGACY-URL-MAPPING.csv`
-- `docs/POST-SITEMAP-RECONCILIATION-BATCH-15.md`
+
+Build belum diklaim berhasil; perubahan perlu diverifikasi melalui build setelah PR diperiksa.
