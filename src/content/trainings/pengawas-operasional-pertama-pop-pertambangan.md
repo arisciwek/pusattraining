@@ -1,7 +1,7 @@
 ---
 type: training
-id: 3032
-ulid: 01KCV100000000000000000032
+id: 3034
+ulid: 01KCV100000000000000000034
 trainingId: pengawas-operasional-pertama-pop-pertambangan
 slug: pengawas-operasional-pertama-pop-pertambangan
 title: "Pelatihan Pengawas Operasional Pertama (POP) Pertambangan"
@@ -16,7 +16,7 @@ hero:
   imageAlt: "Pelatihan Pengawas Operasional Pertama untuk keselamatan operasional pertambangan"
   eyebrow: "PROGRAM K3 PERTAMBANGAN"
   certBadge: "POP PERTAMBANGAN"
-  description: "Program pembekalan kompetensi bagi personel yang dipersiapkan menjalankan fungsi pengawasan operasional tingkat pertama di perusahaan pertambangan mineral dan batubara. Materi menekankan tanggung jawab pengawas, pengelolaan K3 pertambangan, identifikasi bahaya, inspeksi, komunikasi keselamatan, dan tindak lanjut insiden. Skema sertifikasi, persyaratan, dan proses uji kompetensi harus dikonfirmasi kepada penyelenggara serta lembaga berwenang."
+  description: "Pelatihan Pelatihan Pengawas Operasional Pertama (POP) Pertambangan adalah program pembekalan kompetensi bagi personel yang dipersiapkan menjalankan fungsi pengawasan operasional tingkat pertama di perusahaan pertambangan mineral dan batubara. Materi menekankan tanggung jawab pengawas, pengelolaan K3 pertambangan, identifikasi bahaya, inspeksi, komunikasi keselamatan, dan tindak lanjut insiden. Skema sertifikasi, persyaratan, dan proses uji kompetensi harus dikonfirmasi kepada penyelenggara serta lembaga berwenang."
   deliveryMode: mixed
   ctaLabel: "Konsultasikan program POP"
   ctaHref: "#pendaftaran"
