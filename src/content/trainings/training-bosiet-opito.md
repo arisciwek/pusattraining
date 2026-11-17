@@ -11,7 +11,7 @@ hero:
   title: "Pelatihan BOSIET OPITO"
   imageAlt: "Banner in-house training BETRACOM dari situs resmi Pusat Training K3"
   eyebrow: "OFFSHORE SAFETY · OPITO"
-  description: "Pelatihan BOSIET (Basic Offshore Safety Induction and Emergency Training) ditujukan bagi personel yang perlu memahami keselamatan dasar dan respons keadaan darurat saat bekerja di lingkungan offshore. Program mencakup pengenalan bahaya, keselamatan perjalanan helikopter, prosedur evakuasi darurat, penggunaan perlengkapan keselamatan, serta keterampilan bertahan hidup di laut sesuai ruang lingkup dan standar kursus yang dipilih."
+  description: "Pelatihan Pelatihan BOSIET OPITO adalah program pembekalan bagi personel yang perlu memahami keselamatan dasar dan respons keadaan darurat saat bekerja di lingkungan offshore. Program mencakup pengenalan bahaya, keselamatan perjalanan helikopter, prosedur evakuasi darurat, penggunaan perlengkapan keselamatan, serta keterampilan bertahan hidup di laut sesuai ruang lingkup dan standar kursus yang dipilih."
   ctaLabel: "Konsultasikan pelatihan BOSIET"
   ctaHref: "#jadwal-pelatihan"
   duration: "3 hari untuk BOSIET termasuk EBS dan TSBB; durasi mengikuti varian kursus"
