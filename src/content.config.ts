@@ -260,7 +260,7 @@ const schedules = defineCollection({
 const articles = defineCollection({
   loader: glob({ base: './src/content/articles', pattern: '**/*.md' }),
   schema: z.object({
-    type: z.literal('article'),
+    type: z.enum(['article', 'brochure', 'leaflet']),
     ...identity,
     slug: z.string().min(1),
     title: z.string().min(1),
@@ -273,6 +273,13 @@ const articles = defineCollection({
     draft: z.boolean().default(false),
     image: z.string().optional(),
     related: z.array(z.number().int().positive()).default([]),
+    serviceIds: z.array(z.number().int().positive()).default([]),
+    blocks: z.array(z.discriminatedUnion('type', [
+      z.object({ type: z.literal('intro'), eyebrow: z.string().optional(), lead: z.string().min(1) }),
+      z.object({ type: z.literal('section'), title: z.string().min(1), paragraphs: z.array(z.string()).default([]), items: z.array(z.object({ title: z.string().min(1), description: z.string().min(1) })).default([]) }),
+      z.object({ type: z.literal('schedule-note'), title: z.string().min(1), period: z.string().min(1), note: z.string().min(1), items: z.array(z.object({ label: z.string().min(1), value: z.string().min(1) })).default([]) }),
+      z.object({ type: z.literal('service-cta'), title: z.string().min(1), description: z.string().min(1), actionLabel: z.string().min(1) }),
+    ])).default([]),
   }),
 });
 
