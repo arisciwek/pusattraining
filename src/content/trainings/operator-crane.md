@@ -12,7 +12,7 @@ updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
 image: "https://pusattrainingk3.com/wp-content/uploads/2022/02/baner-inhouse-training-baru.gif"
 hero:
-  title: "Pelatihan Operator Crane Hoist dan Overhead Crane"
+  title: "Pelatihan Operator Crane Kemnaker RI"
   imageAlt: "Banner resmi in-house training BETRACOM dari situs Pusat Training K3"
   eyebrow: "PROGRAM KOMPETENSI OPERATOR · PESAWAT ANGKAT DAN ANGKUT"
   certBadge: "KEMNAKER RI"
