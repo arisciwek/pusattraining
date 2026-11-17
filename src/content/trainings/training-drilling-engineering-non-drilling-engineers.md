@@ -16,7 +16,7 @@ hero:
   title: "Training Drilling Engineering for Non-Drilling Engineers"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "MIGAS · PENGENALAN TEKNIK PEMBORAN"
-  description: "Program pengenalan proses dan prinsip engineering pemboran sumur migas bagi profesional yang bekerja bersama fungsi drilling tetapi bukan berlatar belakang engineer pemboran. Peserta mempelajari istilah, tahapan pekerjaan, peralatan utama, serta hubungan keputusan pemboran dengan operasi sumur."
+  description: "Pelatihan Training Drilling Engineering for Non-Drilling Engineers adalah program pengenalan proses dan prinsip engineering pemboran sumur migas bagi profesional yang bekerja bersama fungsi drilling tetapi bukan berlatar belakang engineer pemboran. Peserta mempelajari istilah, tahapan pekerjaan, peralatan utama, serta hubungan keputusan pemboran dengan operasi sumur."
   ctaLabel: "Konsultasikan program drilling"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi dan kedalaman teknis dikonfirmasi sesuai profil peserta"

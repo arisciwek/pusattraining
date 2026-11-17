@@ -16,7 +16,7 @@ hero:
   title: "Training Computer Forensics and Information Systems Auditing"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "PROGRAM KHUSUS · FORENSIK DIGITAL DAN AUDIT TI"
-  description: "Program pengenalan forensik komputer dan audit sistem informasi untuk personel yang perlu memahami risiko lingkungan digital, penanganan awal dugaan penyalahgunaan sistem, prinsip preservasi bukti, serta pendekatan audit pengendalian teknologi informasi."
+  description: "Pelatihan Training Computer Forensics and Information Systems Auditing adalah program pengenalan forensik komputer dan audit sistem informasi untuk personel yang perlu memahami risiko lingkungan digital, penanganan awal dugaan penyalahgunaan sistem, prinsip preservasi bukti, serta pendekatan audit pengendalian teknologi informasi."
   ctaLabel: "Konsultasikan program computer forensics"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi dan praktik dikonfirmasi berdasarkan kebutuhan peserta"

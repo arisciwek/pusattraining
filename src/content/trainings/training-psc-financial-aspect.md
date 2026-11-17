@@ -16,7 +16,7 @@ hero:
   title: "Training PSC Financial Aspect"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "MIGAS · ASPEK KEUANGAN PRODUCTION SHARING CONTRACT"
-  description: "Program pembelajaran mengenai aspek keuangan dalam Production Sharing Contract (PSC), menghubungkan pemahaman kontrak dengan kegiatan eksplorasi, pengembangan, produksi, penganggaran, pelaporan, dan analisis keekonomian proyek hulu migas."
+  description: "Pelatihan Training PSC Financial Aspect adalah program pembelajaran mengenai aspek keuangan dalam Production Sharing Contract (PSC), menghubungkan pemahaman kontrak dengan kegiatan eksplorasi, pengembangan, produksi, penganggaran, pelaporan, dan analisis keekonomian proyek hulu migas."
   ctaLabel: "Konsultasikan program PSC Financial Aspect"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi dan studi kasus dikonfirmasi sesuai kebutuhan peserta"
