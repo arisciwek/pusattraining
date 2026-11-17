@@ -4,17 +4,17 @@ id: 5104
 ulid: 01KCV510000000000000000004
 slug: ahli-k3-pesawat-angkat-angkut
 title: "Mengenal Ahli K3 Pesawat Angkat dan Angkut"
-description: "Leaflet mengenai peran Ahli K3 Pesawat Angkat dan Angkut dalam pengawasan keselamatan alat, kompetensi yang dibutuhkan, dan layanan administrasi lisensi terkait."
+description: "Peran Ahli K3 Pesawat Angkat dan Angkut dalam pengawasan keselamatan alat, kompetensi yang dibutuhkan, dan layanan administrasi lisensi terkait."
 pubDate: '2019-08-15T07:02:08+00:00'
 author: "BETRACOM"
-category: "Leaflet K3"
+category: "Keselamatan Pesawat Angkat dan Angkut"
 tags: ["Ahli K3 Pesawat Angkat dan Angkut", "PAA", "pesawat angkat dan angkut", "K3"]
 draft: false
 related: []
 serviceIds: [4002]
 blocks:
   - type: intro
-    eyebrow: "LEAFLET KOMPETENSI AHLI K3"
+    eyebrow: "KOMPETENSI AHLI K3"
     lead: "Ahli K3 Pesawat Angkat dan Angkut mendukung perusahaan dalam memastikan kegiatan penggunaan pesawat angkat dan angkut dikendalikan dengan memperhatikan persyaratan keselamatan, kondisi peralatan, kompetensi personel, dan prosedur kerja. Bidang ini mencakup peralatan yang digunakan untuk mengangkat, memindahkan, atau mengangkut orang maupun barang dalam kegiatan industri."
   - type: section
     title: "Ruang lingkup pesawat angkat dan angkut"
