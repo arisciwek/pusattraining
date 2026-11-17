@@ -623,7 +623,7 @@
     },
     {
       "source": "/operator-k3/teknisi-k3-listrik/",
-      "destination": "/pelatihan/k3-listrik/",
+      "destination": "/pelatihan/teknisi-k3-listrik/",
       "permanent": true
     },
     {
