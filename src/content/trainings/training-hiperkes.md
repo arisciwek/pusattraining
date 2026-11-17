@@ -16,7 +16,7 @@ hero:
   imageAlt: "Pelatihan Hiperkes untuk dokter dan tenaga paramedis"
   eyebrow: "PROGRAM K3 KESEHATAN KERJA"
   certBadge: "HIPERKES"
-  description: "Pelatihan Hiperkes membahas penerapan higiene perusahaan, ergonomi, kesehatan kerja, dan pengendalian faktor lingkungan kerja yang dapat memengaruhi kesehatan tenaga kerja. Program memiliki jalur terpisah untuk dokter dan paramedis/perawat/bidan, dengan durasi serta kriteria peserta yang berbeda."
+  description: "Pelatihan Pelatihan Hiperkes Dokter dan Paramedis adalah program yang membahas penerapan higiene perusahaan, ergonomi, kesehatan kerja, dan pengendalian faktor lingkungan kerja yang dapat memengaruhi kesehatan tenaga kerja. Program memiliki jalur terpisah untuk dokter dan paramedis/perawat/bidan, dengan durasi serta kriteria peserta yang berbeda."
   deliveryMode: mixed
   ctaLabel: "Konsultasikan Pelatihan Hiperkes"
   ctaHref: "#jadwal-pelatihan"
