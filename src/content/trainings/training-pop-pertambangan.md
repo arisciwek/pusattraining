@@ -161,23 +161,23 @@ blocks:
     title: "Acuan Regulasi Pengawas Operasional Pertambangan"
     description: "Salah satu rujukan utama terkait pengawas operasional dan pelaksanaan kaidah teknik pertambangan yang baik adalah Keputusan Menteri ESDM Nomor 1827 K/30/MEM/2018. Dokumen tersebut mengatur pedoman permohonan, evaluasi, dan/atau pengesahan Kepala Teknik Tambang, pengawas operasional, pengawas teknis, serta unsur terkait lainnya. Standar Kompetensi Kerja Khusus Pengawas Operasional di bidang pertambangan mineral dan batubara juga dibahas dalam Permen ESDM Nomor 43 Tahun 2016. Status perubahan, ketentuan teknis terbaru, dan skema asesmen harus diperiksa kembali melalui JDIH ESDM serta LSP yang berwenang sebelum peserta mendaftar."
 
-  - type: training-content-section
+  - type: training-faq
     id: faq
     eyebrow: "PERTANYAAN UMUM"
     title: "Pertanyaan tentang Pelatihan POP Pertambangan"
     items:
-      - title: "Apa kepanjangan POP Pertambangan?"
-        description: "POP adalah Pengawas Operasional Pertama, yaitu jenjang pengawas operasional lini pertama pada kegiatan pertambangan."
-      - title: "Apakah pelatihan langsung menerbitkan sertifikat BNSP?"
-        description: "Tidak otomatis. Pelatihan merupakan pembekalan. Sertifikat kompetensi diperoleh melalui proses asesmen oleh LSP berlisensi sesuai skema dan ketentuan yang berlaku."
-      - title: "Berapa lama durasi pelatihan POP?"
-        description: "Halaman program BETRACOM mencantumkan pembekalan selama 3 hari. Rangkaian asesmen dapat memiliki jadwal tersendiri, sehingga total hari pelaksanaan perlu dikonfirmasi."
-      - title: "Apakah peserta harus memiliki pengalaman di pertambangan?"
-        description: "Ya, persyaratan pengalaman merupakan bagian dari ketentuan peserta yang dipublikasikan. Lama pengalaman bergantung pada jenjang pendidikan dan harus diverifikasi kepada LSP."
-      - title: "Apakah pelatihan tersedia secara online?"
-        description: "Halaman sumber mencantumkan metode online dan offline. Ketersediaan metode, lokasi asesmen, dan jadwal setiap batch perlu dikonfirmasi kepada penyelenggara."
-      - title: "Dokumen apa yang perlu disiapkan?"
-        description: "Dokumen yang dicantumkan meliputi KTP, CV, ijazah, surat penugasan perusahaan, pasfoto, serta formulir dan bukti pendukung asesmen sesuai ketentuan LSP."
+      - question: "Apa kepanjangan POP Pertambangan?"
+        answer: "POP adalah Pengawas Operasional Pertama, yaitu jenjang pengawas operasional lini pertama pada kegiatan pertambangan."
+      - question: "Apakah pelatihan langsung menerbitkan sertifikat BNSP?"
+        answer: "Tidak otomatis. Pelatihan merupakan pembekalan. Sertifikat kompetensi diperoleh melalui proses asesmen oleh LSP berlisensi sesuai skema dan ketentuan yang berlaku."
+      - question: "Berapa lama durasi pelatihan POP?"
+        answer: "Halaman program BETRACOM mencantumkan pembekalan selama 3 hari. Rangkaian asesmen dapat memiliki jadwal tersendiri, sehingga total hari pelaksanaan perlu dikonfirmasi."
+      - question: "Apakah peserta harus memiliki pengalaman di pertambangan?"
+        answer: "Ya, persyaratan pengalaman merupakan bagian dari ketentuan peserta yang dipublikasikan. Lama pengalaman bergantung pada jenjang pendidikan dan harus diverifikasi kepada LSP."
+      - question: "Apakah pelatihan tersedia secara online?"
+        answer: "Halaman sumber mencantumkan metode online dan offline. Ketersediaan metode, lokasi asesmen, dan jadwal setiap batch perlu dikonfirmasi kepada penyelenggara."
+      - question: "Dokumen apa yang perlu disiapkan?"
+        answer: "Dokumen yang dicantumkan meliputi KTP, CV, ijazah, surat penugasan perusahaan, pasfoto, serta formulir dan bukti pendukung asesmen sesuai ketentuan LSP."
 
   - type: training-cta
     eyebrow: "MULAI DENGAN VERIFIKASI PERSYARATAN"
