@@ -4,7 +4,12 @@ import SiteLayout from '../../../layouts/SiteLayout.astro';
 import Container from '../../../components/shared/Container.astro';
 import Breadcrumb from '../../../components/shared/Breadcrumb.astro';
 import ScheduleCard from '../../../components/schedule/ScheduleCard.astro';
-import { getScheduleMonth, isMainSiteSchedule } from '../../../lib/schedule-utils';
+import {
+  getScheduleHref,
+  getScheduleMonth,
+  getScheduleTitle,
+  isMainSiteSchedule,
+} from '../../../lib/schedule-utils';
 import { validateContentRelations } from '../../../lib/validate-content';
 
 export async function getStaticPaths() {
@@ -44,8 +49,32 @@ const monthLabel = new Intl.DateTimeFormat('id-ID', {
 }).format(monthDate);
 const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
 const description = `Daftar jadwal training bulan ${monthLabel} beserta informasi program dan detail setiap angkatan.`;
+const scheduleListStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `Jadwal Training ${monthLabel}`,
+  itemListOrder: 'https://schema.org/ItemListOrderAscending',
+  numberOfItems: schedules.length,
+  itemListElement: schedules.map((schedule, index) => {
+    const training = trainingsById.get(schedule.data.trainingId)!;
+    const url = Astro.site
+      ? new URL(getScheduleHref(schedule, training.data.slug), Astro.site).toString()
+      : undefined;
+
+    return {
+      '@type': 'ListItem',
+      position: index + 1,
+      name: getScheduleTitle(schedule),
+      ...(url ? { item: url } : {}),
+    };
+  }),
+};
+const safeScheduleListStructuredData = JSON.stringify(scheduleListStructuredData).replace(/</g, '\\u003c');
 ---
 <SiteLayout title={`Jadwal Training ${monthLabel}`} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={safeScheduleListStructuredData} />
+  </Fragment>
   <section class="schedule-archive py-12 sm:py-16">
     <Container>
       <Breadcrumb items={[

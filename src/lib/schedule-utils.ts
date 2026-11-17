@@ -85,7 +85,7 @@ export function getScheduleSourcePathCandidates(
   trainingId: string,
   scheduleSlug: string,
 ): string[] {
-  const year = /^(\\d{4})-/.exec(startDate)?.[1];
+  const year = /^(\d{4})-/.exec(startDate)?.[1];
   if (!year) {
     throw new Error(`startDate tidak memiliki tahun ISO yang valid: ${startDate}`);
   }
