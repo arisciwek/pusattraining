@@ -5,7 +5,7 @@ ulid: 01KCV100000000000000000071
 slug: sertifikasi-k3-bnsp
 title: "Sertifikasi K3 BNSP: Skema, Persyaratan, dan Proses Uji Kompetensi"
 description: "Panduan sertifikasi K3 BNSP untuk memahami peran LSP, skema kompetensi, persyaratan peserta, tahapan asesmen, serta cara memeriksa legalitas sertifikasi."
-pubDate: '2026-11-17T00:00:00+07:00'
+pubDate: '2021-01-29T06:00:30+00:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 author: "BETRACOM Training"
 category: "Sertifikasi K3"
@@ -98,8 +98,9 @@ blocks:
       - title: "Bagaimana mengetahui LSP memiliki lisensi aktif?"
         description: "Periksa direktori LSP pada situs resmi BNSP, lalu cocokkan status lisensi, ruang lingkup skema, dan informasi lembaga. Konfirmasikan kembali apabila terdapat perbedaan informasi."
   - type: service-cta
-    title: "Konsultasikan kebutuhan pelatihan dan sertifikasi K3"
-    description: "Sampaikan bidang pekerjaan, jabatan, pengalaman, dan kebutuhan perusahaan kepada tim BETRACOM. Kami dapat membantu mengarahkan konsultasi program pelatihan yang relevan serta hal-hal yang perlu diverifikasi kepada LSP sebelum proses sertifikasi."
-    actionLabel: "Konsultasi program K3 melalui BETRACOM"
+    title: "Pelajari program pelatihan K3 yang relevan"
+    description: "Untuk kebutuhan kompetensi keselamatan di industri minyak dan gas, pelajari program K3 Migas BETRACOM. Pilihan skema dan proses asesmen tetap perlu dikonfirmasi kepada LSP yang memiliki lisensi serta ruang lingkup terkait."
+    actionLabel: "Lihat Pelatihan K3 Migas"
+    actionHref: "/pelatihan/training-ahli-k3-migas/"
 ---
 
