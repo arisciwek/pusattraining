@@ -10,7 +10,7 @@ author: "BETRACOM"
 category: "Leaflet K3"
 tags: ["Ahli K3 Pesawat Angkat dan Angkut", "PAA", "pesawat angkat dan angkut", "K3"]
 draft: false
-related: [3023]
+related: []
 serviceIds: [4002]
 blocks:
   - type: intro
