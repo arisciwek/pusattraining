@@ -6,8 +6,8 @@ Tanggal audit: 2026-11-17
 
 | Ordinal | Judul sumber | Keputusan | Target Astro |
 |---:|---|---|---|
-| 91 | Siap Jalan Petugas K3 Utama Ruang Terbatas 18–22 Maret 2019 | EXISTING_TRAINING | `/training-k3-bahaya-confined-space/` |
-| 92 | Jadwal Pelatihan Ahli K3 Migas Cilacap Cepu | EXISTING_TRAINING | `/training-ahli-k3-migas/` |
+| 91 | Siap Jalan Petugas K3 Utama Ruang Terbatas 18–22 Maret 2019 | EXISTING_TRAINING | `/pelatihan/training-k3-bahaya-confined-space/` |
+| 92 | Jadwal Pelatihan Ahli K3 Migas Cilacap Cepu | EXISTING_TRAINING | `/pelatihan/training-ahli-k3-migas/` |
 | 93 | Pelatihan K3 Di Rumah Sakit Sertifikat Kemenaker RI | NEW_TRAINING | `/pelatihan/training-k3-rumah-sakit/` |
 | 94 | Operator Genset Siap Jalan 19–22 Agustus 2019 | HOLD_SOURCE_CONTENT | Belum ditetapkan |
 
