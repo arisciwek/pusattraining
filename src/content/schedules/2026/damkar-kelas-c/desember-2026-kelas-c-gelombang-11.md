@@ -23,6 +23,12 @@ registration:
 delivery:
   mode: 'offline'
   attendanceMode: 'offline'
+venue:
+  name: 'Hotel Ibis Jakarta Cawang (konfirmasi penyelenggara)'
+  address: 'Jl. Letjen M.T. Haryono No. 9, Cawang, Kramatjati'
+  city: 'Jakarta Timur'
+  province: 'DKI Jakarta'
+  countryCode: ID
 sites:
   main:
     enabled: true
