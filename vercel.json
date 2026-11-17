@@ -190,6 +190,11 @@
       "source": "/ahli-k3/training-ahli-k3-migas/",
       "destination": "/pelatihan/training-ahli-k3-migas/",
       "permanent": true
+    },
+    {
+      "source": "/operator-k3/operator-boiler/",
+      "destination": "/pelatihan/pesawat-uap-bejana-tekan/",
+      "permanent": true
     }
   ]
 }
