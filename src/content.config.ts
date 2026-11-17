@@ -278,7 +278,7 @@ const articles = defineCollection({
       z.object({ type: z.literal('intro'), eyebrow: z.string().optional(), lead: z.string().min(1) }),
       z.object({ type: z.literal('section'), title: z.string().min(1), paragraphs: z.array(z.string()).default([]), items: z.array(z.object({ title: z.string().min(1), description: z.string().min(1) })).default([]) }),
       z.object({ type: z.literal('schedule-note'), title: z.string().min(1), period: z.string().min(1), note: z.string().min(1), items: z.array(z.object({ label: z.string().min(1), value: z.string().min(1) })).default([]) }),
-      z.object({ type: z.literal('service-cta'), title: z.string().min(1), description: z.string().min(1), actionLabel: z.string().min(1) }),
+      z.object({ type: z.literal('service-cta'), title: z.string().min(1), description: z.string().min(1), actionLabel: z.string().min(1), actionHref: z.string().optional() }),
     ])).default([]),
   }),
 });
