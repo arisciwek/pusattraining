@@ -16,7 +16,7 @@ hero:
   title: "Training Crisis Management of the Upstream Oil & Gas Operation"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "MIGAS · KESIAPSIAGAAN DAN MANAJEMEN KRISIS"
-  description: "Program untuk personel perusahaan hulu migas yang perlu memahami tata kelola koordinasi, pengambilan keputusan, komunikasi, notifikasi, dan pelaporan ketika terjadi keadaan darurat atau krisis di wilayah kerja. Materi menempatkan konteks hubungan KKKS, subkontraktor, SKK Migas, dan instansi pemerintah terkait sebagai bagian penting penanganan."
+  description: "Pelatihan Training Crisis Management of the Upstream Oil & Gas Operation adalah program untuk personel perusahaan hulu migas yang perlu memahami tata kelola koordinasi, pengambilan keputusan, komunikasi, notifikasi, dan pelaporan ketika terjadi keadaan darurat atau krisis di wilayah kerja. Materi menempatkan konteks hubungan KKKS, subkontraktor, SKK Migas, dan instansi pemerintah terkait sebagai bagian penting penanganan."
   ctaLabel: "Konsultasikan program crisis management"
   ctaHref: "#jadwal-pelatihan"
   duration: "Sumber historis memuat agenda tiga hari; durasi kelas terbaru perlu dikonfirmasi"

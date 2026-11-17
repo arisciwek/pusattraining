@@ -16,7 +16,7 @@ hero:
   title: "Training PSC Cost Recovery Mechanism dan Perpajakan Hulu Migas"
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "MIGAS · KONTRAK, KEUANGAN, DAN PERPAJAKAN"
-  description: "Program pembelajaran bagi personel keuangan, akuntansi, perpajakan, budgeting, cost control, dan manajemen yang terlibat dalam kegiatan usaha hulu migas. Materi berfokus pada pemahaman Production Sharing Contract (PSC), mekanisme cost recovery, perhitungan lifting dan bagi hasil, serta pelaporan dan perpajakan sesuai ruang lingkup kelas."
+  description: "Pelatihan Training PSC Cost Recovery Mechanism dan Perpajakan Hulu Migas adalah program pembelajaran bagi personel keuangan, akuntansi, perpajakan, budgeting, cost control, dan manajemen yang terlibat dalam kegiatan usaha hulu migas. Materi berfokus pada pemahaman Production Sharing Contract (PSC), mekanisme cost recovery, perhitungan lifting dan bagi hasil, serta pelaporan dan perpajakan sesuai ruang lingkup kelas."
   ctaLabel: "Konsultasikan program PSC"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi dan cakupan kelas dikonfirmasi berdasarkan kebutuhan peserta dan pembaruan materi"
