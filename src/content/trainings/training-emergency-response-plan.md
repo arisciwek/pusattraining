@@ -78,7 +78,11 @@ blocks:
       - title: Memahami rencana pemulihan
         description: "Memberikan pemahaman mengenai Disaster Recovery Plan sebagai bagian dari upaya pemulihan setelah kejadian darurat, sesuai kebutuhan organisasi."
       - title: Mengkoordinasikan pelaksanaan respons
-        description: "Memahami pembagian peran, jalur komunikasi, prosedur penanganan, dan koordinasi antarbagian agar tindakan tidak berjalan sendiri-sendiri."
+        description: "Memahami pembagian peran, rantai komando, jalur komunikasi, prosedur aktivasi, dan koordinasi antarbagian agar tindakan berjalan terpadu."
+      - title: Mengurangi dampak keadaan darurat
+        description: "Mendorong respons yang terencana untuk membantu mengurangi potensi korban jiwa, kerusakan aset, dan dampak terhadap lingkungan melalui prosedur yang sesuai."
+      - title: Memahami desain dan evaluasi program ERP
+        description: "Memberikan pemahaman mengenai perancangan, pelaksanaan, dan evaluasi program ERP sesuai risiko serta kebutuhan operasional perusahaan."
 
   - type: training-content-section
     id: sasaran-peserta
@@ -101,26 +105,32 @@ blocks:
     id: materi-pelatihan
     eyebrow: KURIKULUM
     title: Ruang lingkup materi pelatihan
-    description: "Pokok bahasan mengacu pada materi ERP yang dipublikasikan penyelenggara. Urutan, kedalaman, dan latihan dipilih sesuai profil risiko, kebutuhan klien, serta fasilitas yang tersedia."
+    description: "Materi berikut mengikuti pokok bahasan pada halaman program ERP BETRACOM. Kedalaman pembahasan, studi kasus, dan penerapannya disesuaikan dengan karakteristik fasilitas, profil bahaya, kebutuhan klien, serta ruang lingkup yang disepakati."
     items:
-      - title: Pengenalan Emergency Response Plan
-        description: "Konsep dasar keadaan darurat, kesiapsiagaan, dan pendekatan perencanaan tanggap darurat."
-      - title: Analisis risiko dan skenario kedaruratan
-        description: "Pengenalan potensi kejadian darurat dan penentuan skenario yang relevan dengan karakteristik kegiatan atau area perusahaan."
-      - title: Pengembangan tim tanggap darurat
-        description: "Pembentukan tim, struktur organisasi, rantai komando, serta tugas dan tanggung jawab bagian terkait."
-      - title: Tingkat kedaruratan dan prosedur aktivasi
-        description: "Penentuan tingkat keadaan darurat serta prosedur untuk mengaktifkan organisasi dan sumber daya respons."
-      - title: Strategi tata letak dan titik berkumpul
-        description: "Pertimbangan layout fasilitas, jalur evakuasi, muster point, dan assembly point sesuai kondisi lokasi."
-      - title: Komunikasi dan koordinasi
-        description: "Jalur pelaporan, sumber bantuan, komunikasi antarbagian, dan koordinasi selama keadaan darurat."
-      - title: Evakuasi dan penanganan keadaan darurat
-        description: "Teknik evakuasi di dalam maupun di luar area serta pembahasan skenario yang sesuai dengan kebutuhan perusahaan."
-      - title: Pengelolaan risiko khusus
-        description: "Pembahasan bahaya spesifik, termasuk bahan kimia atau toksik, apabila relevan dengan profil risiko dan ruang lingkup pelatihan."
-      - title: Latihan, studi kasus, dan evaluasi
-        description: "Diskusi kasus dan latihan dapat digunakan untuk memahami penerapan prosedur; bentuk praktik mengikuti kesepakatan, fasilitas, dan pengendalian risiko."
+      - title: Pengantar Emergency Response Plan
+        description: "Konsep keadaan darurat, kesiapsiagaan insiden, tujuan ERP, serta hubungan antara perencanaan, operasi, dan evaluasi program tanggap darurat."
+      - title: Layer of Protection Analysis (LOPA) untuk ERP
+        description: "Pengenalan pendekatan Layer of Protection Analysis untuk memahami lapisan perlindungan dan skenario risiko yang perlu dipertimbangkan dalam perencanaan tanggap darurat. Pembahasan bukan pengganti studi LOPA teknis untuk fasilitas tertentu."
+      - title: Strategi tata letak fasilitas dan penentuan muster point
+        description: "Pertimbangan plant layout, akses keluar, jalur evakuasi, lokasi muster point atau assembly point, serta faktor keselamatan dalam menentukan titik berkumpul."
+      - title: Pengembangan manajemen bencana
+        description: "Pengenalan elemen National Disaster Management dan keterkaitannya dengan kesiapsiagaan organisasi, koordinasi sumber daya, serta penanganan kejadian yang berdampak luas."
+      - title: Tenability Calculation dan FED Decision
+        description: "Pengenalan konsep tenability dan Fractional Effective Dose (FED) dalam menilai kondisi yang dapat memengaruhi keselamatan penghuni serta pertimbangan jalur evakuasi. Perhitungan teknis memerlukan data, metode, dan kompetensi khusus; pelatihan ini tidak otomatis menghasilkan desain keselamatan atau validasi rekayasa."
+      - title: Penentuan tingkat keadaan darurat
+        description: "Penetapan level atau klasifikasi keadaan darurat berdasarkan skala kejadian, dampak, kemampuan penanganan internal, serta karakteristik bisnis dan area."
+      - title: Crisis Management dan pengembangan ERP
+        description: "Hubungan crisis management dengan pengembangan program ERP, termasuk koordinasi keputusan, komunikasi krisis, kesinambungan operasi, dan eskalasi kepada pihak terkait."
+      - title: Penerapan HAZWOPER pada bahaya kimia dan toksik
+        description: "Pengenalan prinsip Hazardous Waste Operations and Emergency Response (HAZWOPER) untuk konteks bahaya bahan kimia atau toksik. Penerapan operasional harus mengikuti regulasi, prosedur, pelatihan kompetensi, dan pengendalian khusus yang relevan."
+      - title: Pengembangan Emergency Management Team
+        description: "Pembentukan tim manajemen keadaan darurat, struktur organisasi, fungsi setiap peran, kesiapan sumber daya, serta mekanisme koordinasi selama respons."
+      - title: Chain of Command dan tanggung jawab departemen
+        description: "Penetapan rantai komando, kewenangan pengambilan keputusan, alur pelaporan, serta pembagian tanggung jawab antarbagian agar respons terkoordinasi."
+      - title: Skenario kasus dan sumber bantuan saat darurat
+        description: "Pembahasan skenario keadaan darurat dan identifikasi sumber bantuan internal maupun eksternal yang dapat dihubungi sesuai jenis serta tingkat kejadian."
+      - title: Teknik evakuasi dalam dan luar area
+        description: "Pembahasan teknik evakuasi on-site dan off-site, pengaturan fasilitas pendukung, jalur perpindahan, titik berkumpul, serta koordinasi penghuni dan petugas."
 
   - type: training-content-section
     id: persyaratan-peserta
@@ -155,7 +165,7 @@ blocks:
     description: "Jawaban umum berikut tidak menggantikan ketentuan angkatan, administrasi, atau keputusan instansi berwenang."
     items:
       - question: "Apa yang dipelajari dalam Pelatihan Emergency Response Plan?"
-        answer: "Pembahasan meliputi kesiapsiagaan, analisis skenario, pembentukan tim, struktur komando, prosedur aktivasi, komunikasi, evakuasi, serta latihan atau studi kasus sesuai ruang lingkup."
+        answer: "Materi mencakup pengantar ERP, pendekatan Layer of Protection Analysis, strategi tata letak dan muster point, manajemen bencana, konsep tenability dan FED, penentuan tingkat keadaan darurat, crisis management, pengenalan HAZWOPER, pengembangan tim manajemen darurat, chain of command, skenario kasus, sumber bantuan, serta teknik evakuasi dalam dan luar area. Kedalaman pembahasan mengikuti ruang lingkup program."
       - question: "Siapa yang sebaiknya mengikuti program ini?"
         answer: "Ahli K3, personel HSE, anggota P2K3, manajer, supervisor, tim tanggap darurat, dan karyawan lain yang memiliki peran dalam respons keadaan darurat."
       - question: "Apakah pelatihan ini merupakan sertifikasi Kemnaker atau lisensi khusus?"
@@ -164,8 +174,12 @@ blocks:
         answer: "Sumber program mencantumkan pilihan skema 1, 2, atau 3 hari sesuai kebutuhan klien. Durasi aktual perlu dikonfirmasi dalam penawaran."
       - question: "Apakah latihan atau simulasi selalu dilakukan?"
         answer: "Bentuk latihan dan simulasi ditentukan berdasarkan ruang lingkup, kondisi lokasi, fasilitas, serta kesepakatan dengan penyelenggara."
+      - question: "Apakah pelatihan mencakup LOPA, tenability calculation, dan FED?"
+        answer: "Ya. Pokok bahasan tersebut tercantum pada materi program. Pembahasannya bersifat pengenalan dan penerapan konsep sesuai ruang lingkup pelatihan; perhitungan rekayasa atau kajian teknis fasilitas memerlukan data serta tenaga ahli yang sesuai."
+      - question: "Apakah HAZWOPER menjadi bagian dari materi?"
+        answer: "Materi program mencantumkan pengenalan penerapan HAZWOPER untuk bahaya kimia atau toksik. Kebutuhan pelatihan kompetensi khusus dan penerapan di lapangan harus dikonfirmasi secara terpisah sesuai risiko serta ketentuan yang berlaku."
       - question: "Bagaimana menentukan materi yang sesuai untuk perusahaan?"
-        answer: "Materi perlu disesuaikan dengan profil bahaya, aktivitas, fasilitas, organisasi, dan prosedur tanggap darurat yang dimiliki perusahaan."
+        answer: "Materi perlu disesuaikan dengan profil bahaya, aktivitas, fasilitas, organisasi, jalur evakuasi, sumber daya, dan prosedur tanggap darurat yang dimiliki perusahaan."
 
   - type: training-cta
     eyebrow: LANGKAH BERIKUTNYA
