@@ -16,8 +16,8 @@ hero:
   imageAlt: "Pelatihan teknisi mengenai pemeriksaan dan keselamatan instalasi listrik"
   eyebrow: "PROGRAM K3 KELISTRIKAN"
   certBadge: "PELATIHAN K3 KELISTRIKAN"
-  description: "Program ini membahas prinsip keselamatan dalam pekerjaan teknisi listrik, mulai dari pemasangan, pengoperasian, pemeriksaan, hingga pemeliharaan instalasi. Peserta mempelajari potensi bahaya listrik, pembacaan gambar, pengukuran, pengujian instalasi, penggunaan alat pelindung diri, prosedur kerja selamat, dan respons awal terhadap kecelakaan listrik. Persyaratan peserta serta proses evaluasi dan sertifikasi harus dikonfirmasi berdasarkan ketentuan Kemnaker yang berlaku."
-  deliveryMode: blended
+  description: "Pelatihan Pelatihan Teknisi K3 Listrik adalah program yang membahas prinsip keselamatan dalam pekerjaan teknisi listrik, mulai dari pemasangan, pengoperasian, pemeriksaan, hingga pemeliharaan instalasi. Peserta mempelajari potensi bahaya listrik, pembacaan gambar, pengukuran, pengujian instalasi, penggunaan alat pelindung diri, prosedur kerja selamat, dan respons awal terhadap kecelakaan listrik. Persyaratan peserta serta proses evaluasi dan sertifikasi harus dikonfirmasi berdasarkan ketentuan Kemnaker yang berlaku."
+  deliveryMode: mixed
   ctaLabel: "Konsultasikan Pelatihan Teknisi K3 Listrik"
   ctaHref: "#jadwal-pelatihan"
   duration: "Durasi angkatan terbaru dikonfirmasi kepada penyelenggara"
