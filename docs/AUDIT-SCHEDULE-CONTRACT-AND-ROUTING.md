@@ -100,4 +100,4 @@ npm run check
 npm run build
 ```
 
-Clone lokal untuk menjalankan perintah gagal karena environment tidak dapat me-resolve `github.com`. Karena itu, build/check belum boleh dinyatakan lulus sampai workflow GitHub selesai. PR dibuat sebagai draft bila workflow belum memberikan hasil. `main` tidak diubah langsung dan PR tidak di-merge.
+Clone lokal untuk menjalankan perintah gagal karena environment tidak dapat me-resolve `github.com`. Validasi kemudian berhasil dijalankan melalui GitHub Actions: run `44000432872` pada commit `27c934c0b2aa8daf8fe442cd50b4ecb51614ed59` berstatus `success`. Semua langkah selesai, termasuk tiga suite test, `npm run check`, dan `npm run build`. Visual QA desktop/mobile dan Rich Results Test tetap perlu diperiksa. `main` tidak diubah langsung dan PR tidak di-merge.
