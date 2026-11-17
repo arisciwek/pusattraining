@@ -70,6 +70,56 @@
       "source": "/operator-k3/operator-crane/",
       "destination": "/pelatihan/operator-crane/",
       "permanent": true
+    },
+    {
+      "source": "/safety-kebakaran/pemadam-kebakaran-kelas-a/",
+      "destination": "/pelatihan/damkar-kelas-a/",
+      "permanent": true
+    },
+    {
+      "source": "/ahli-k3/training-ahli-k3-pemadam-kebakaran/pemadam-kebakaran-kelas-c/",
+      "destination": "/pelatihan/damkar-kelas-c/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/pelatihan-operator-boiler-tingkat-1/",
+      "destination": "/pelatihan/operator-boiler-tingkat-1/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/pelatihan-operator-boiler-tingkat-2/",
+      "destination": "/pelatihan/operator-boiler-tingkat-2/",
+      "permanent": true
+    },
+    {
+      "source": "/training-k3-manajemen-alat-pelindung-diri/",
+      "destination": "/pelatihan/training-k3-manajemen-apd/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-general/incident-investigation/",
+      "destination": "/pelatihan/training-incident-investigation/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-offshore/pelatihan-penanganan-h2s/",
+      "destination": "/pelatihan/training-penanganan-h2s/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-offshore/rigger-offshore/",
+      "destination": "/pelatihan/training-rigger-offshore/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-offshore/bosiet-huet-basic-sea-survival/",
+      "destination": "/pelatihan/training-bosiet-huet-basic-sea-survival/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-offshore/bosiet-opito/",
+      "destination": "/pelatihan/training-bosiet-opito/",
+      "permanent": true
     }
   ]
 }
