@@ -4,17 +4,17 @@ id: 5103
 ulid: 01KCV510000000000000000003
 slug: operator-forklift
 title: "Mengenal Kompetensi Operator Forklift"
-description: "Leaflet mengenai tugas operator forklift, risiko pengoperasian, kompetensi keselamatan, pemeriksaan unit, dan layanan terkait lisensi operator."
+description: "Tugas operator forklift, risiko pengoperasian, kompetensi keselamatan, pemeriksaan unit, dan layanan terkait lisensi operator."
 pubDate: '2019-08-15T06:49:53+00:00'
 author: "BETRACOM"
-category: "Leaflet K3"
+category: "Operator K3"
 tags: ["Operator Forklift", "forklift", "SIO Forklift", "pesawat angkat dan angkut"]
 draft: false
 related: [3023]
 serviceIds: [4001]
 blocks:
   - type: intro
-    eyebrow: "LEAFLET KOMPETENSI OPERATOR"
+    eyebrow: "KOMPETENSI OPERATOR"
     lead: "Operator forklift bertanggung jawab mengoperasikan alat angkat-angkut untuk memindahkan material secara aman dan terkendali. Kompetensi operator tidak hanya berkaitan dengan kemampuan mengemudi, tetapi juga pemahaman kapasitas angkat, stabilitas beban, kondisi unit, karakteristik lintasan, dan keselamatan orang di sekitar area kerja."
   - type: section
     title: "Mengapa kompetensi operator forklift penting?"
