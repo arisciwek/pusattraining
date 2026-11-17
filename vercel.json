@@ -498,7 +498,7 @@
     },
     {
       "source": "/operator-k3/teknisi-k3-perancah/",
-      "destination": "/pelatihan/k3-konstruksi/",
+      "destination": "/pelatihan/teknisi-k3-perancah/",
       "permanent": true
     },
     {
@@ -533,7 +533,7 @@
     },
     {
       "source": "/operator-k3/pelatihan-p3k/",
-      "destination": "/pelatihan/p3k-kesehatan/",
+      "destination": "/pelatihan/petugas-p3k/",
       "permanent": true
     },
     {
