@@ -145,17 +145,16 @@ blocks:
     id: faq-pelatihan
     eyebrow: PERTANYAAN UMUM
     title: Pertanyaan yang sering diajukan
-    description: "Jawaban umum berikut tidak menggantikan ketentuan angkatan, administrasi, atau keputusan instansi berwenang."
+    description: "Jawaban berikut menjelaskan ruang lingkup program dan hal yang perlu dikonfirmasi sebelum pendaftaran."
     items:
-      - question: "Apa yang perlu diketahui tentang program ini?"
-        answer: "Tidak otomatis. Penunjukan mengikuti prosedur dan keputusan pejabat berwenang berdasarkan ketentuan."
-      - question: "Siapa yang memenuhi persyaratan peserta?"
-        answer: "Kelayakan mengikuti persyaratan pendidikan, pengalaman, dan dokumen skema resmi."
-      - question: "Apakah pelatihan otomatis menerbitkan sertifikat atau lisensi?"
-        answer: "Durasi dan biaya dikonfirmasi per angkatan."
+      - question: "Apa yang dipelajari dalam Pelatihan Ahli K3 Umum?"
+        answer: "Program membahas dasar hukum K3, peran dan tanggung jawab Ahli K3, identifikasi bahaya, penilaian serta pengendalian risiko, inspeksi, investigasi insiden, komunikasi K3, dan dukungan penerapan SMK3. Rincian kurikulum mengikuti skema dan angkatan."
+      - question: "Siapa yang dapat mengikuti program ini?"
+        answer: "Peserta harus memenuhi persyaratan pendidikan, pengalaman, dan dokumen sesuai skema pembinaan Ahli K3 Umum yang berlaku. Tim penyelenggara perlu memeriksa kelayakan peserta sebelum pendaftaran."
+      - question: "Apakah mengikuti pelatihan otomatis menjadikan peserta Ahli K3 yang ditunjuk?"
+        answer: "Tidak. Keikutsertaan atau kelulusan pelatihan tidak otomatis memberikan penunjukan maupun kewenangan formal. Proses penunjukan mengikuti prosedur dan keputusan pejabat berwenang berdasarkan ketentuan."
       - question: "Bagaimana memastikan jadwal, durasi, dan biaya?"
-        answer: "Sertifikat pelatihan tidak boleh dianggap sama dengan surat penunjukan atau lisensi."
-
+        answer: "Periksa jadwal angkatan pada bagian jadwal halaman ini, lalu hubungi Tiara untuk memastikan tanggal, metode, durasi, biaya, persyaratan dokumen, dan ketersediaan tempat sebelum mendaftar."
   - type: training-cta
     eyebrow: LANGKAH BERIKUTNYA
     title: Pastikan program sesuai kebutuhan Anda
