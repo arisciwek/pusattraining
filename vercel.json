@@ -205,6 +205,201 @@
       "source": "/safety-kebakaran/training-paket-pemadam-kebakaran-kelas-d-b-a/",
       "destination": "/pelatihan/kebakaran-emergency/",
       "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/tentang/",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/tentang/",
+      "permanent": true
+    },
+    {
+      "source": "/hubungi-kami/",
+      "destination": "/kontak/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-3/",
+      "destination": "/kontak/",
+      "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pendaftaran/",
+      "destination": "/jadwal/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/",
+      "destination": "/pelatihan/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-general/",
+      "destination": "/pelatihan/",
+      "permanent": true
+    },
+    {
+      "source": "/smk3/",
+      "destination": "/pelatihan/",
+      "permanent": true
+    },
+    {
+      "source": "/sistem-manajemen-keselamatan-dan-kesehatan-kerja-k3/",
+      "destination": "/pelatihan/",
+      "permanent": true
+    },
+    {
+      "source": "/bnsp/",
+      "destination": "/pelatihan/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-offshore/",
+      "destination": "/pelatihan/k3-migas-pertambangan/",
+      "permanent": true
+    },
+    {
+      "source": "/bnsp/pelatihan-investigasi-insiden-sertifikasi-bnsp/",
+      "destination": "/pelatihan/training-incident-investigation/",
+      "permanent": true
+    },
+    {
+      "source": "/training-k3-investigasi-kecelakaan-kerja-bersertifikasi-bnsp/",
+      "destination": "/pelatihan/training-incident-investigation/",
+      "permanent": true
+    },
+    {
+      "source": "/operator/",
+      "destination": "/pelatihan/",
+      "permanent": true
+    },
+    {
+      "source": "/teknisi/",
+      "destination": "/pelatihan/",
+      "permanent": true
+    },
+    {
+      "source": "/petugas/",
+      "destination": "/pelatihan/",
+      "permanent": true
+    },
+    {
+      "source": "/petugas-teknisi/",
+      "destination": "/pelatihan/",
+      "permanent": true
+    },
+    {
+      "source": "/pelatihank3/",
+      "destination": "/pelatihan/",
+      "permanent": true
+    },
+    {
+      "source": "/pelatihan-awareness/",
+      "destination": "/pelatihan/",
+      "permanent": true
+    },
+    {
+      "source": "/training-fireman-1-2-dan-fire-officer-sertifikasi-bnsp/",
+      "destination": "/pelatihan/kebakaran-emergency/",
+      "permanent": true
+    },
+    {
+      "source": "/training-petugas-penanganan-bahaya-gas-h2s-sertifikasi-bnsp/",
+      "destination": "/pelatihan/training-penanganan-h2s/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-pemula/pelatihan-operator-forklift-bisa-untuk-pemula/",
+      "destination": "/pelatihan/operator-forklift/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-pemula/",
+      "destination": "/pelatihan/operator-alat-berat/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-wheel-loader/",
+      "destination": "/pelatihan/operator-alat-berat/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/operator-dan-teknisi-lift/",
+      "destination": "/pelatihan/operator-alat-berat/",
+      "permanent": true
+    },
+    {
+      "source": "/petugas-penyelamat-ruang-terbatas-confined-space/",
+      "destination": "/pelatihan/ruang-terbatas/",
+      "permanent": true
+    },
+    {
+      "source": "/k3-migas/",
+      "destination": "/pelatihan/k3-migas-pertambangan/",
+      "permanent": true
+    },
+    {
+      "source": "/training-pengawas-k3-migas-bersertifikasi-bnsp/",
+      "destination": "/pelatihan/k3-migas-pertambangan/",
+      "permanent": true
+    },
+    {
+      "source": "/training-operator-k3-migas-bersertifikasi-bnsp/",
+      "destination": "/pelatihan/k3-migas-pertambangan/",
+      "permanent": true
+    },
+    {
+      "source": "/bnsp/k3-migas-bnsp-jakarta/",
+      "destination": "/pelatihan/k3-migas-pertambangan/",
+      "permanent": true
+    },
+    {
+      "source": "/ahli-k3/pelatihan-k3-umum-slta/",
+      "destination": "/pelatihan/ahli-k3-umum/",
+      "permanent": true
+    },
+    {
+      "source": "/services/",
+      "destination": "/layanan/",
+      "permanent": true
+    },
+    {
+      "source": "/in-house-training/",
+      "destination": "/layanan/",
+      "permanent": true
+    },
+    {
+      "source": "/riksa-uji/",
+      "destination": "/layanan/",
+      "permanent": true
+    },
+    {
+      "source": "/jasa-pendampingan-sertifikasi-smk3-perusahaan/",
+      "destination": "/layanan/",
+      "permanent": true
+    },
+    {
+      "source": "/jasa-pendampingan-sertifikasi-sistem-manajemen-mutu-berdasarkan-iso-90012015/",
+      "destination": "/layanan/",
+      "permanent": true
+    },
+    {
+      "source": "/jasa-pengurusan-slf-sertifikat-laik-fungsi/",
+      "destination": "/layanan/",
+      "permanent": true
+    },
+    {
+      "source": "/sertifikasi-kemenaker-ri/",
+      "destination": "/pelatihan/",
+      "permanent": true
     }
   ]
 }
