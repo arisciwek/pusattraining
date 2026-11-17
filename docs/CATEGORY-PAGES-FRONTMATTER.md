@@ -5,7 +5,7 @@
 Tahap ini memindahkan tampilan halaman kategori pada URL `/pelatihan/{slug}/` ke konfigurasi frontmatter. Pekerjaan ini merupakan lanjutan setelah indeks katalog `/pelatihan/` menjadi content-driven.
 
 Scope:
-- 14 entry kategori pada `src/content/pages/categories/`.
+- 15 entry kategori pada `src/content/pages/categories/`.
 - Kontrak block `training-category`.
 - Komponen `TrainingCategoryPage.astro`.
 - Pemilihan block kategori melalui `BlockRenderer`.
@@ -60,7 +60,7 @@ Komponen tidak mengambil collection secara langsung. Semua data diterima melalui
 
 ## Daftar kategori yang dikonfigurasi
 
-Seluruh 14 entry kategori telah diberi block `training-category`:
+Seluruh 15 entry kategori telah diberi block `training-category`:
 - Ahli K3 dan Manajemen K3
 - K3 Konstruksi dan Infrastruktur
 - K3 Migas dan Pertambangan
@@ -69,7 +69,7 @@ Seluruh 14 entry kategori telah diberi block `training-category`:
 - Operator Alat Berat dan Pesawat Angkat
 - Pesawat Uap, Bejana Tekan, dan Pesawat Produksi
 - K3 Listrik dan Kelistrikan
-- Pengelasan dan Rigging
+- Juru Las (Welder)
 - Higiene Industri dan Kesehatan Kerja
 - Lingkungan dan Energi
 - P3K dan Kesiapsiagaan Medis
@@ -97,7 +97,7 @@ npm run build
 ```
 
 Pemeriksaan manual:
-- Semua 14 URL kategori tetap dihasilkan.
+- Semua 15 URL kategori tetap dihasilkan.
 - H1 dan meta description berasal dari frontmatter.
 - Kategori dengan program terkait menampilkan kartu yang benar.
 - Kategori tanpa program menampilkan empty state dari frontmatter.
