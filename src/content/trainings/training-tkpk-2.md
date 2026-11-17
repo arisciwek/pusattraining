@@ -7,7 +7,7 @@ slug: training-tkpk-2
 title: "Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 2 (TKPK 2)"
 description: "Pelatihan TKPK Tingkat 2 merupakan pembinaan lanjutan bagi tenaga kerja yang telah memiliki kompetensi TKPK Tingkat 1. Program ini memperdalam teknik akses tali, pergerakan pada struktur, pemasangan angkur, pengangkatan barang, serta penyelamatan korban pada pekerjaan di ketinggian."
 image: "https://pusattrainingk3.com/wp-content/uploads/2026/03/tkpk2-1.jpg"
-categoryIds: [2002]
+categoryIds: [2002, 2015]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
