@@ -16,7 +16,7 @@ hero:
   imageAlt: "Program pembelajaran Keselamatan dan Kesehatan Kerja di Rumah Sakit"
   eyebrow: "PROGRAM K3 FASILITAS PELAYANAN KESEHATAN"
   certBadge: "K3 RUMAH SAKIT"
-  description: "Pelatihan K3 Rumah Sakit (K3RS) membekali peserta dengan pemahaman mengenai identifikasi bahaya, pengendalian risiko, dan penerapan sistem keselamatan serta kesehatan kerja di lingkungan rumah sakit. Materi mencakup keselamatan fasilitas, kesehatan kerja, pencegahan infeksi, pengelolaan bahan berbahaya dan limbah medis, keselamatan peralatan, kebakaran, serta kesiapsiagaan darurat. Persyaratan peserta, skema pembinaan, metode, dan dokumen akhir perlu dikonfirmasi sesuai ketentuan yang berlaku."
+  description: "Pelatihan Pelatihan K3 Rumah Sakit (K3RS) adalah program yang membekali peserta dengan pemahaman mengenai identifikasi bahaya, pengendalian risiko, dan penerapan sistem keselamatan serta kesehatan kerja di lingkungan rumah sakit. Materi mencakup keselamatan fasilitas, kesehatan kerja, pencegahan infeksi, pengelolaan bahan berbahaya dan limbah medis, keselamatan peralatan, kebakaran, serta kesiapsiagaan darurat. Persyaratan peserta, skema pembinaan, metode, dan dokumen akhir perlu dikonfirmasi sesuai ketentuan yang berlaku."
   deliveryMode: mixed
   ctaLabel: "Konsultasikan Pelatihan K3 Rumah Sakit"
   ctaHref: "#jadwal-pelatihan"
