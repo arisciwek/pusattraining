@@ -150,6 +150,21 @@
       "source": "/ahli-k3/k3-ruang-terbatas/",
       "destination": "/pelatihan/ruang-terbatas/",
       "permanent": true
+    },
+    {
+      "source": "/training-auditor-smk3-bersertifikasi-bnsp/",
+      "destination": "/pelatihan/training-auditor-smk3-bnsp/",
+      "permanent": true
+    },
+    {
+      "source": "/training-auditor-smk3/",
+      "destination": "/pelatihan/training-auditor-smk3-kemnaker/",
+      "permanent": true
+    },
+    {
+      "source": "/sertifikasi-kemenaker-ri/teknisi-k3-ruang-terbatas/",
+      "destination": "/pelatihan/training-k3-bahaya-confined-space/",
+      "permanent": true
     }
   ]
 }
