@@ -550,6 +550,106 @@
       "source": "/safety-kesehatan-2/pelatihan-medical-check-up-and-fit-to-work/",
       "destination": "/pelatihan/higiene-industri/",
       "permanent": true
+    },
+    {
+      "source": "/training-ak3-muda-sertifikasi-bnsp/",
+      "destination": "/pelatihan/ahli-k3/",
+      "permanent": true
+    },
+    {
+      "source": "/k3-umum-bnsp/",
+      "destination": "/pelatihan/ahli-k3/",
+      "permanent": true
+    },
+    {
+      "source": "/k3-migas-bnsp/",
+      "destination": "/pelatihan/k3-migas-pertambangan/",
+      "permanent": true
+    },
+    {
+      "source": "/k3-konstruksi-bnsp/",
+      "destination": "/pelatihan/k3-konstruksi/",
+      "permanent": true
+    },
+    {
+      "source": "/bnsp/ahli-muda-k3-umum-bnsp/",
+      "destination": "/pelatihan/ahli-k3/",
+      "permanent": true
+    },
+    {
+      "source": "/training-dasar-dasar-k3-bersertifikasi-bnsp/",
+      "destination": "/pelatihan/ahli-k3/",
+      "permanent": true
+    },
+    {
+      "source": "/training-operator-gas-tester-bersertifikasi-bnsp/",
+      "destination": "/pelatihan/k3-kimia-risiko-proses/",
+      "permanent": true
+    },
+    {
+      "source": "/training-ahli-k3-umum-muda-bersertifikasi-bnsp/",
+      "destination": "/pelatihan/ahli-k3/",
+      "permanent": true
+    },
+    {
+      "source": "/training-ahli-k3-umum-utama-bersertifikasi-bnsp/",
+      "destination": "/pelatihan/ahli-k3/",
+      "permanent": true
+    },
+    {
+      "source": "/training-ahli-k3-umum-madya-bersertifikasi-bnsp/",
+      "destination": "/pelatihan/ahli-k3/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-kesehatan-2/training-hiperkes/",
+      "destination": "/pelatihan/higiene-industri/",
+      "permanent": true
+    },
+    {
+      "source": "/ahli-k3/training-ahli-k3-konstruksi/",
+      "destination": "/pelatihan/k3-konstruksi/",
+      "permanent": true
+    },
+    {
+      "source": "/ahli-k3/training-ahli-k3-listrik/",
+      "destination": "/pelatihan/k3-listrik/",
+      "permanent": true
+    },
+    {
+      "source": "/ahli-k3/training-ahli-k3-kimia/",
+      "destination": "/pelatihan/k3-kimia-risiko-proses/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/teknisi-k3-listrik/",
+      "destination": "/pelatihan/k3-listrik/",
+      "permanent": true
+    },
+    {
+      "source": "/training-teknisi-k3-bidang-pesawat-angkat-dan-angkut/",
+      "destination": "/pelatihan/operator-alat-berat/",
+      "permanent": true
+    },
+    {
+      "source": "/pelatihan-operator-mesin-produksi-perkakas-kelas-1/",
+      "destination": "/pelatihan/pesawat-uap-bejana-tekan/",
+      "permanent": true
+    },
+    {
+      "source": "/pelatihan-k3-operator-mesin-produksi-perkakas-kelas-2/",
+      "destination": "/pelatihan/pesawat-uap-bejana-tekan/",
+      "permanent": true
+    },
+    {
+      "source": "/ahli-k3/ahli-k3-lingkungan/",
+      "destination": "/pelatihan/lingkungan-energi/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/pelatihan-sertifikasi-k3-deteksi-gas/",
+      "destination": "/pelatihan/k3-kimia-risiko-proses/",
+      "permanent": true
     }
   ]
 }
