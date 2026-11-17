@@ -17,7 +17,7 @@ hero:
   imageAlt: "Banner program pelatihan in-house BETRACOM"
   eyebrow: "K3 INDUSTRI MINYAK DAN GAS BUMI"
   certBadge: "JALUR KOMPETENSI OPERATOR DAN PENGAWAS"
-  description: "Pelatihan K3 Migas adalah program pembekalan keselamatan dan kesehatan kerja untuk personel yang bekerja pada kegiatan industri minyak dan gas bumi. Materi disesuaikan dengan kebutuhan fungsi operator atau pengawas, termasuk pengenalan bahaya, pengendalian risiko, izin kerja, penggunaan alat pelindung diri, proteksi kebakaran, pengujian gas, inspeksi, dan tanggap darurat. Skema serta persyaratan sertifikasi kompetensi harus dipastikan kepada LSP yang memiliki lisensi dan ruang lingkup terkait."
+  description: "Pelatihan Pelatihan K3 Migas (Operator dan Pengawas) adalah program pembekalan keselamatan dan kesehatan kerja untuk personel yang bekerja pada kegiatan industri minyak dan gas bumi. Materi disesuaikan dengan kebutuhan fungsi operator atau pengawas, termasuk pengenalan bahaya, pengendalian risiko, izin kerja, penggunaan alat pelindung diri, proteksi kebakaran, pengujian gas, inspeksi, dan tanggap darurat. Skema serta persyaratan sertifikasi kompetensi harus dipastikan kepada LSP yang memiliki lisensi dan ruang lingkup terkait."
   deliveryMode: mixed
   ctaLabel: "Konsultasikan Pelatihan K3 Migas"
   ctaHref: "#jadwal-pelatihan"
