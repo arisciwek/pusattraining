@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import { getScheduleMonth, getScheduleSourcePathCandidates } from './schedule-utils';
+import { getScheduleMonth, getScheduleRouteParams, getScheduleSourcePathCandidates } from './schedule-utils';
 
 function assertUnique(values: string[], label: string): void {
   const seen = new Set<string>();
@@ -95,6 +95,8 @@ export async function validateContentRelations(): Promise<void> {
         `Schedule "${schedule.data.scheduleId}" merujuk trainingId "${schedule.data.trainingId}" yang tidak ditemukan.`,
       );
     }
+
+    getScheduleRouteParams(schedule, training.data.slug);
 
     const expectedSourcePaths = getScheduleSourcePathCandidates(
       schedule.data.startDate,

@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+      - feat/schedule-url-content-architecture
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Content, schedule, and Astro validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.22.0
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test schedule discovery
+        run: npm run test:schedules:discover
+
+      - name: Test schedule frontmatter generator
+        run: npm run test:schedules:generate
+
+      - name: Test schedule routing helpers
+        run: npm run test:schedules:routing
+
+      - name: Type and content checks
+        run: npm run check
+
+      - name: Build Astro site
+        run: npm run build
