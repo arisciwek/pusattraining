@@ -38,7 +38,6 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
         <div class="article-detail__meta mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-500">
           <span class="article-detail__author">{data.author}</span>
           <time class="article-detail__date" datetime={data.pubDate}>{formatDate(data.pubDate)}</time>
-          <span class="article-detail__type">{data.type === 'brochure' ? 'Brosur' : data.type === 'leaflet' ? 'Leaflet' : 'Artikel'}</span>
         </div>
       </header>
 
