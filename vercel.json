@@ -185,6 +185,11 @@
       "source": "/juru-las-welder/",
       "destination": "/pelatihan/welder-rigging/",
       "permanent": true
+    },
+    {
+      "source": "/ahli-k3/training-ahli-k3-migas/",
+      "destination": "/pelatihan/training-ahli-k3-migas/",
+      "permanent": true
     }
   ]
 }
