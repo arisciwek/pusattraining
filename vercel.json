@@ -120,6 +120,36 @@
       "source": "/safety-offshore/bosiet-opito/",
       "destination": "/pelatihan/training-bosiet-opito/",
       "permanent": true
+    },
+    {
+      "source": "/operator-k3/operator-gondola-2/",
+      "destination": "/pelatihan/operator-gondola/",
+      "permanent": true
+    },
+    {
+      "source": "/basic-h2s-training-course-9014-opito-approved/",
+      "destination": "/pelatihan/training-basic-h2s-opito/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/pelatihan-rigger-juru-ikat/",
+      "destination": "/pelatihan/training-rigger-kemnaker/",
+      "permanent": true
+    },
+    {
+      "source": "/pelatihan-tenaga-kerja-pada-ketinggian-tingkat-2/",
+      "destination": "/pelatihan/training-tkpk-2/",
+      "permanent": true
+    },
+    {
+      "source": "/ahli-k3/training-ahli-k3-pemadam-kebakaran/",
+      "destination": "/pelatihan/kebakaran-emergency/",
+      "permanent": true
+    },
+    {
+      "source": "/ahli-k3/k3-ruang-terbatas/",
+      "destination": "/pelatihan/ruang-terbatas/",
+      "permanent": true
     }
   ]
 }
