@@ -65,7 +65,7 @@ Halaman detail menghasilkan JSON-LD `Event` dengan `@id` berupa canonical detail
 - `SiteLayout` menghasilkan title, description, canonical, Open Graph, dan Twitter Card. Canonical menggunakan path halaman saat ini pada `Astro.site`.
 - Komponen `Breadcrumb` merender navigasi HTML dan JSON-LD `BreadcrumbList`.
 - `@astrojs/sitemap` menerima static routes hasil build dan mengecualikan halaman 404.
-- Konfigurasi sitemap saat ini belum memetakan `updatedDate` schedule ke `lastmod`; ini dicatat sebagai tindak lanjut, bukan diasumsikan telah selesai.
+- Resolver `scripts/sitemap-lastmod.mjs` memetakan `updatedDate` schedule (fallback `pubDate`) ke detail, arsip bulanan, dan indeks jadwal. Arsip memakai tanggal pembaruan schedule terbaru pada bulan tersebut; indeks memakai maksimum tanggal pembaruan schedule publik dan halaman jadwal.
 - Internal links pada ScheduleCard dan halaman training memakai helper URL yang sama.
 
 ## 6. Inventaris dan validasi

@@ -38,6 +38,9 @@ jobs:
       - name: Test schedule routing helpers
         run: npm run test:schedules:routing
 
+      - name: Test schedule sitemap metadata
+        run: npm run test:schedules:sitemap
+
       - name: Type and content checks
         run: npm run check
 

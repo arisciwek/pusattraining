@@ -68,7 +68,7 @@ Temuan dan perbaikan:
 - **Title/description:** indeks memakai frontmatter halaman; detail memakai `sites.main.title/description` jika ada, lalu fallback ke field schedule.
 - **Canonical:** `SiteLayout` membentuk canonical absolut dari `Astro.url.pathname` dan `Astro.site`; route detail tidak memakai URL legacy.
 - **Breadcrumb:** komponen bersama tetap merender navigasi HTML dan kini juga menghasilkan JSON-LD `BreadcrumbList`.
-- **Sitemap:** integrasi `@astrojs/sitemap` membangun URL dari seluruh static routes dan mengecualikan 404. Konfigurasi saat ini belum memasang resolver `lastmod` khusus schedule; jangan menganggap `updatedDate` otomatis sudah menjadi sitemap lastmod.
+- **Sitemap:** integrasi `@astrojs/sitemap` membangun URL dari seluruh static routes dan mengecualikan 404. Resolver membaca `updatedDate` schedule publik (fallback `pubDate`), lalu menetapkan `lastmod` untuk detail, arsip bulan, dan indeks jadwal.
 - **Internal linking:** ScheduleCard memakai helper URL yang sama pada indeks, arsip, dan daftar jadwal di halaman master training. Detail schedule menaut kembali ke master training, arsip bulan, dan indeks.
 - **ItemList:** indeks jadwal dan arsip bulanan menghasilkan JSON-LD `ItemList` yang hanya menunjuk ke URL detail kanonis. Listing tidak membuat Event duplikat.
 - **Event:** satu JSON-LD `Event` berada pada halaman detail. `@id` menggunakan canonical detail URL + `#event`; `startDate` dan `endDate` selalu berasal dari tanggal pelaksanaan, bukan tanggal editorial.
@@ -85,8 +85,8 @@ Tidak termasuk pekerjaan ini:
 Tindak lanjut yang masih terbuka:
 1. Registry allowlist `publisherId` lintas situs setelah daftar publisher disepakati.
 2. Fixture uji untuk seluruh lifecycle dan variasi object opsional.
-3. Penambahan resolver sitemap `lastmod` dari `updatedDate` schedule dan halaman arsip.
-4. Verifikasi Rich Results dan visual QA setelah build berhasil.
+3. Verifikasi nilai `lastmod` pada sitemap hasil build dan bandingkan dengan `updatedDate` record sumber.
+4. Verifikasi Rich Results dan visual QA desktop/mobile setelah build berhasil.
 
 ## 7. Verifikasi
 
