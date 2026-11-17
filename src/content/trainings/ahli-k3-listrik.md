@@ -6,7 +6,7 @@ trainingId: ahli-k3-listrik
 slug: ahli-k3-listrik
 title: "Pelatihan Ahli K3 Listrik"
 description: "Pelatihan Ahli K3 Listrik membahas pengawasan keselamatan instalasi dan pekerjaan kelistrikan, mulai dari persyaratan instalasi, sistem proteksi, identifikasi bahaya listrik, inspeksi, hingga prosedur kerja aman."
-categoryIds: [2004]
+categoryIds: [2008]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
