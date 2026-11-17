@@ -31,7 +31,9 @@ Segmen training di URL portal membedakan schedule dengan slug sama dari program 
 
 Indeks `/jadwal/`:
 - Mengambil schedule publik yang memiliki relasi valid ke master training.
-- Menampilkan maksimal enam schedule terdekat yang belum dimulai; jika tidak ada, menggunakan enam tanggal pelaksanaan terbaru sebagai fallback historis.
+- Menampilkan maksimal enam schedule berstatus `scheduled` yang tanggal mulainya hari ini atau setelah hari ini, serta schedule berstatus `ongoing` walaupun tanggal mulainya sudah lewat.
+- Status `completed`, `postponed`, dan `cancelled` tidak masuk daftar mendatang.
+- Jika tidak ada schedule aktif mendatang/berlangsung, menggunakan maksimal enam tanggal pelaksanaan terbaru sebagai fallback historis.
 - Menyediakan link ke arsip bulan yang memiliki schedule publik.
 - Copy, title, description, dan empty state berasal dari frontmatter halaman `jadwal.md`.
 

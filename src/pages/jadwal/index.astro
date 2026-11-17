@@ -33,6 +33,9 @@ const schedules = allSchedules.filter((schedule) => trainingsById.has(schedule.d
 const now = new Date();
 const upcomingSchedules = schedules
   .filter((schedule) => {
+    if (schedule.data.status === 'ongoing') return true;
+    if (schedule.data.status !== 'scheduled') return false;
+
     const startDate = schedule.data.startDate;
     if (/^\d{4}-\d{2}-\d{2}$/.test(startDate)) {
       const todayInScheduleTimezone = new Intl.DateTimeFormat('en-CA', {
@@ -59,7 +62,9 @@ const scheduleListStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: pageBlock.latestTitle,
-  itemListOrder: 'https://schema.org/ItemListOrderAscending',
+  itemListOrder: upcomingSchedules.length > 0
+    ? 'https://schema.org/ItemListOrderAscending'
+    : 'https://schema.org/ItemListOrderDescending',
   numberOfItems: latestSchedules.length,
   itemListElement: latestSchedules.map((schedule, index) => {
     const training = trainingsById.get(schedule.data.trainingId)!;
