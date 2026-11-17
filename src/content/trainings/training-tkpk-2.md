@@ -17,7 +17,7 @@ hero:
   imageAlt: "Peserta Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 2 (TKPK 2) di BETRACOM Arena Training Center, Bogor"
   eyebrow: "K3 BEKERJA PADA KETINGGIAN · KEMNAKER RI"
   certBadge: "SERTIFIKASI KEMNAKER RI"
-  description: "Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 2 (TKPK 2) merupakan pembinaan lanjutan bagi pekerja yang telah memiliki sertifikat dan lisensi TKPK Tingkat 1. Peserta mempelajari teknik akses tali tingkat lanjut, pergerakan pada struktur, sistem angkur, pengangkatan barang, pengawasan pekerjaan, serta penyelamatan dalam keadaan darurat."
+  description: "Pelatihan Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 2 (TKPK 2) adalah pembinaan lanjutan bagi pekerja yang telah memiliki sertifikat dan lisensi TKPK Tingkat 1. Peserta mempelajari teknik akses tali tingkat lanjut, pergerakan pada struktur, sistem angkur, pengangkatan barang, pengawasan pekerjaan, serta penyelamatan dalam keadaan darurat."
   deliveryMode: mixed
   ctaLabel: "Konsultasikan pelatihan TKPK 2"
   ctaHref: "#jadwal-pelatihan"
