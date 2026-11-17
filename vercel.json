@@ -20,6 +20,56 @@
       "source": "/perpanjang-lisensi-k3/",
       "destination": "/layanan/perpanjang-lisensi-k3/",
       "permanent": true
+    },
+    {
+      "source": "/ahli-k3/",
+      "destination": "/pelatihan/ahli-k3/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-kebakaran/damkar-kelas-d/",
+      "destination": "/pelatihan/damkar-kelas-d/",
+      "permanent": true
+    },
+    {
+      "source": "/safety-general/training-emergency-response-plan/",
+      "destination": "/pelatihan/training-emergency-response-plan/",
+      "permanent": true
+    },
+    {
+      "source": "/higiene-industri/",
+      "destination": "/pelatihan/higiene-industri/",
+      "permanent": true
+    },
+    {
+      "source": "/pelatihan-awareness/training-awareness-emergency-response-plan/",
+      "destination": "/pelatihan/training-awareness-emergency-response-plan/",
+      "permanent": true
+    },
+    {
+      "source": "/training-k3-bahaya-confined-space/",
+      "destination": "/pelatihan/training-k3-bahaya-confined-space/",
+      "permanent": true
+    },
+    {
+      "source": "/ahli-k3/ahli-k3-umum/",
+      "destination": "/pelatihan/ahli-k3-umum/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/operator-gondola/",
+      "destination": "/pelatihan/operator-gondola/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/operator-forklift/",
+      "destination": "/pelatihan/operator-forklift/",
+      "permanent": true
+    },
+    {
+      "source": "/operator-k3/operator-crane/",
+      "destination": "/pelatihan/operator-crane/",
+      "permanent": true
     }
   ]
 }
