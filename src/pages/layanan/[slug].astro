@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import Breadcrumb from '../../components/shared/Breadcrumb.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services', ({ data }) => !data.draft);
+  return services.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+---
+<SiteLayout title={data.title} description={data.description}>
+  <article class="service-detail py-12 sm:py-16">
+    <Container>
+      <Breadcrumb items={[
+        { label: 'Beranda', href: '/' },
+        { label: 'Layanan', href: '/layanan/' },
+        { label: data.title },
+      ]} />
+
+      <header class="service-detail__hero mt-8 overflow-hidden rounded-3xl bg-slate-950 px-6 py-12 text-white sm:px-10 sm:py-16">
+        <div class="service-detail__hero-content max-w-3xl">
+          {data.hero.eyebrow && <p class="service-detail__eyebrow text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">{data.hero.eyebrow}</p>}
+          <h1 class="service-detail__title mt-3 text-3xl font-bold tracking-tight sm:text-5xl">{data.hero.title}</h1>
+          <p class="service-detail__summary mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">{data.hero.description}</p>
+          {data.hero.ctaLabel && data.hero.ctaHref && (
+            <a class="service-detail__hero-cta mt-8 inline-flex rounded-full bg-sky-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-300" href={data.hero.ctaHref}>{data.hero.ctaLabel}</a>
+          )}
+        </div>
+      </header>
+
+      {data.sections.length > 0 && (
+        <div class="service-detail__sections mx-auto mt-14 max-w-4xl space-y-14">
+          {data.sections.map((section, index) => (
+            <section class="service-detail__section" id={section.id}>
+              {section.eyebrow && <p class="service-detail__section-eyebrow text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">{section.eyebrow}</p>}
+              <h2 class="service-detail__section-title mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">{section.title}</h2>
+              {section.description && <p class="service-detail__section-description mt-4 max-w-3xl text-base leading-8 text-slate-600">{section.description}</p>}
+              {section.items.length > 0 && (
+                <div class="service-detail__section-items mt-6 grid gap-4 sm:grid-cols-2">
+                  {section.items.map((item) => (
+                    <article class="service-detail__item rounded-2xl border border-slate-200 bg-white p-5">
+                      <h3 class="service-detail__item-title text-base font-semibold text-slate-900">{item.title}</h3>
+                      <p class="service-detail__item-description mt-2 text-sm leading-7 text-slate-600">{item.description}</p>
+                    </article>
+                  ))}
+                </div>
+              )}
+            </section>
+          ))}
+        </div>
+      )}
+
+      {data.process.length > 0 && (
+        <section class="service-detail__process mx-auto mt-16 max-w-4xl">
+          <h2 class="service-detail__process-title text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">Tahapan layanan</h2>
+          <ol class="service-detail__process-list mt-7 grid gap-4 sm:grid-cols-2">
+            {data.process.map((step, index) => (
+              <li class="service-detail__process-item rounded-2xl bg-slate-50 p-5">
+                <span class="service-detail__process-number text-sm font-bold text-sky-700">TAHAP {String(index + 1).padStart(2, '0')}</span>
+                <h3 class="service-detail__process-step-title mt-2 font-semibold text-slate-950">{step.title}</h3>
+                <p class="service-detail__process-step-description mt-2 text-sm leading-7 text-slate-600">{step.description}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      {data.faqs.length > 0 && (
+        <section class="service-detail__faq mx-auto mt-16 max-w-4xl">
+          <h2 class="service-detail__faq-title text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">Pertanyaan umum</h2>
+          <div class="service-detail__faq-list mt-6 divide-y divide-slate-200 border-y border-slate-200">
+            {data.faqs.map((faq) => (
+              <details class="service-detail__faq-item group py-5">
+                <summary class="service-detail__faq-question cursor-pointer list-none pr-8 font-semibold text-slate-900 marker:content-none">{faq.question}</summary>
+                <p class="service-detail__faq-answer mt-3 text-sm leading-7 text-slate-600">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <aside class="service-detail__back-link mx-auto mt-14 max-w-4xl">
+        <a class="service-detail__back-anchor text-sm font-semibold text-sky-700 hover:text-sky-900" href="/layanan/">← Kembali ke katalog layanan</a>
+      </aside>
+    </Container>
+  </article>
+</SiteLayout>
