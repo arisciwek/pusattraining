@@ -4,10 +4,10 @@ id: 5101
 ulid: 01KCV510000000000000000001
 slug: jadwal-training-bnsp
 title: "Jadwal Training BNSP"
-description: "Brosur informasi program pelatihan dan sertifikasi BNSP BETRACOM, gambaran bidang kompetensi, alur pendaftaran, dan cara memperoleh jadwal angkatan yang sesuai kebutuhan."
+description: "Informasi program pelatihan dan sertifikasi BNSP BETRACOM, bidang kompetensi, alur pendaftaran, dan cara memperoleh jadwal angkatan yang sesuai kebutuhan."
 pubDate: '2019-09-30T03:54:38+00:00'
 author: "BETRACOM"
-category: "Brosur Pelatihan"
+category: "Sertifikasi Kompetensi"
 tags: ["BNSP", "jadwal training BNSP", "sertifikasi kompetensi", "pelatihan"]
 draft: false
 related: []
@@ -15,7 +15,7 @@ serviceIds: []
 blocks:
   - type: intro
     eyebrow: "INFORMASI PROGRAM · BNSP"
-    lead: "Brosur ini merangkum informasi pelatihan berbasis kompetensi dan sertifikasi BNSP yang dapat dikonsultasikan melalui BETRACOM. Kebutuhan kompetensi setiap perusahaan berbeda; pilihan skema, persyaratan peserta, dan jadwal perlu dicocokkan dengan bidang pekerjaan serta skema sertifikasi yang tersedia."
+    lead: "Informasi pelatihan berbasis kompetensi dan sertifikasi BNSP dapat dikonsultasikan melalui BETRACOM. Kebutuhan kompetensi setiap perusahaan berbeda; pilihan skema, persyaratan peserta, dan jadwal perlu dicocokkan dengan bidang pekerjaan serta skema sertifikasi yang tersedia."
   - type: section
     title: "Pelatihan berbasis kompetensi BNSP"
     paragraphs:
@@ -33,7 +33,7 @@ blocks:
   - type: schedule-note
     title: "Referensi periode jadwal"
     period: "Sekitar akhir September 2019"
-    note: "Tanggal publikasi yang tercatat pada sitemap adalah 30 September 2019. Salinan jadwal rinci dari periode tersebut tidak tersedia untuk diverifikasi, sehingga brosur ini tidak mengarang tanggal kelas, lokasi, biaya, atau kuota. Gunakan periode tersebut sebagai konteks arsip; jadwal aktual harus diminta langsung kepada penyelenggara."
+    note: "Tanggal publikasi yang tercatat pada sitemap adalah 30 September 2019. Salinan jadwal rinci dari periode tersebut tidak tersedia untuk diverifikasi, sehingga informasi ini tidak mencantumkan tanggal kelas, lokasi, biaya, atau kuota. Gunakan periode tersebut sebagai konteks arsip; jadwal aktual harus diminta langsung kepada penyelenggara."
     items:
       - label: "Periode arsip"
         value: "Akhir September 2019"
