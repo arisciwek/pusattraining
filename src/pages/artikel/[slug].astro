@@ -90,9 +90,9 @@ const articleSchema = {
         imageAlt={data.image ? data.title : `Ilustrasi artikel ${data.title}`}
       />
 
-      <div class="article-detail__layout mt-10 grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-12">
+      <div class="article-detail__layout mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_16rem] xl:gap-10">
         <div class="article-detail__main min-w-0">
-          <div class="article-detail__body space-y-12">
+          <div class="article-detail__body max-w-4xl space-y-12">
         {data.blocks.map((block) => (
           block.type === 'intro' ? (
             <section class="article-detail__intro rounded-3xl bg-slate-950 px-6 py-8 text-white sm:px-9 sm:py-10">
