@@ -19,6 +19,7 @@ const { entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
 const articles = await getCollection('articles', ({ data: item }) => !item.draft);
+const hasPreviousArticles = articles.some((item) => item.data.type === 'article' && item.data.id < data.id);
 const services = await getCollection('services', ({ data: service }) => !service.draft);
 const relatedServices = services.filter((service) => data.serviceIds.includes(service.data.id));
 const trainings = await getCollection('trainings', ({ data: training }) => !training.draft);
@@ -89,7 +90,9 @@ const articleSchema = {
         imageAlt={data.image ? data.title : `Ilustrasi artikel ${data.title}`}
       />
 
-      <div class="article-detail__body mx-auto mt-10 max-w-4xl space-y-12">
+      <div class="article-detail__layout mt-10 grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-12">
+        <div class="article-detail__main min-w-0">
+          <div class="article-detail__body space-y-12">
         {data.blocks.map((block) => (
           block.type === 'intro' ? (
             <section class="article-detail__intro rounded-3xl bg-slate-950 px-6 py-8 text-white sm:px-9 sm:py-10">
@@ -141,11 +144,16 @@ const articleSchema = {
             </section>
           )
         ))}
-      </div>
+          </div>
+        </div>
 
-      <div class="mx-auto mt-12 max-w-4xl">
-        <ArticlePreviousArticles article={entry} articles={articles} />
-      </div>
+        {hasPreviousArticles && (
+          <aside class="article-detail__aside min-w-0 lg:row-start-1" aria-label="Navigasi artikel sebelumnya">
+            <div class="article-detail__aside-inner lg:sticky lg:top-28">
+              <ArticlePreviousArticles article={entry} articles={articles} />
+            </div>
+          </aside>
+        )}
     </Container>
   </article>
 </SiteLayout>
