@@ -35,6 +35,7 @@ Contoh:
 
 Karakteristik:
 - Persuasif, ringkas, terstruktur, dan mudah dipindai.
+- Hierarki heading tetap wajib: H1 untuk judul program, H2 untuk tiap bagian informasi, dan H3 untuk sub-bagian. Brosur bukan pengecualian dari aturan heading.
 - Menonjolkan ringkasan program, manfaat, sasaran peserta, persyaratan, materi, metode, dan informasi penyelenggara.
 - Menampilkan jadwal yang relevan jika tersedia.
 - Memiliki CTA yang jelas, seperti konsultasi atau pendaftaran.
@@ -48,7 +49,7 @@ Karakteristik:
 | Tipe konten | `article` | `brochure` |
 | Tujuan utama | Edukasi dan informasi | Penawaran dan konversi |
 | Gaya bahasa | Editorial dan informatif | Persuasif dan ringkas |
-| Struktur | Narasi dengan H1/H2/H3 | Bagian informasi program yang mudah dipindai |
+| Struktur | Narasi dengan H1/H2/H3 | H1/H2/H3 pada bagian informasi program yang mudah dipindai |
 | CTA utama | Tautan baca dan eksplorasi | Konsultasi atau pendaftaran |
 | Layout | Editorial, nyaman untuk membaca | Landing page penawaran |
 | Aside/relasi | Artikel dan konten terkait | Training dan jadwal terkait |
@@ -69,7 +70,8 @@ Perbedaan schema dan Open Graph di atas adalah aturan implementasi Pusattraining
 
 ### Halaman brosur
 
-- Hero penawaran dengan nama program dan CTA.
+- Hero penawaran dengan nama program, CTA, dan tepat satu H1.
+- Hierarki heading H1/H2/H3 yang benar: H1 judul program, H2 tiap bagian (ringkasan, manfaat, persyaratan, materi, jadwal), H3 sub-bagian di dalamnya.
 - Ringkasan program.
 - Manfaat atau kompetensi yang dituju.
 - Sasaran dan persyaratan peserta.
@@ -158,6 +160,7 @@ Saat migrasi:
 - [ ] Artikel dan brosur dibedakan berdasarkan tujuan serta substansi.
 - [ ] Artikel memakai pola editorial dan CTA eksplorasi.
 - [ ] Brosur memakai pola landing page penawaran dan CTA konversi.
+- [ ] Brosur memakai hierarki heading H1/H2/H3 yang benar dengan tepat satu H1.
 - [ ] Brosur tetap berupa halaman HTML yang dapat diindeks.
 - [ ] Brosur terhubung ke master training melalui `trainingId`.
 - [ ] Jadwal brosur diambil dinamis dari collection `schedules` berdasarkan `trainingId`.

@@ -9,6 +9,7 @@
 - Do not normally add `scheduleId` or `scheduleIds` to brochure frontmatter and do not duplicate operational schedule facts there. A brochure describes a training program; a schedule describes one specific delivery/batch.
 - If legacy content describes one specific batch with dates and operational details, migrate it as a schedule according to `docs/FRONTMATTER-SCHEDULE-CONTRACT.md`, not as a brochure.
 - Keep article and brochure page structures, calls to action, Open Graph types, and JSON-LD appropriate to their distinct purposes.
+- Both content types must keep a correct heading hierarchy with exactly one H1: articles use H1/H2/H3 for editorial sections, and brochures use H1 for the program title, H2 for each offer section, and H3 for subsections.
 - Never invent missing program, certification, price, duration, prerequisite, venue, or schedule facts during migration.
 - When a brochure's `trainingId` cannot be confidently mapped to an existing master training, record it as an unresolved migration mapping; do not guess.
 
