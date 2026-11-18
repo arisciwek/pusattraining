@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import Container from '../../components/shared/Container.astro';
 import Breadcrumb from '../../components/shared/Breadcrumb.astro';
+import { COMPANY_NAME } from '../../lib/site';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
@@ -23,10 +24,10 @@ const relatedServiceTitles = relatedServices.map((service) => service.data.title
 const footerDescription = relatedTrainingTitles.length || relatedServiceTitles.length
   ? [
       relatedTrainingTitles.length
-        ? `PT Betracom Gemilang Nusa menyelenggarakan pelatihan ${relatedTrainingTitles.join(', ')}`
+        ? `${COMPANY_NAME} menyelenggarakan pelatihan ${relatedTrainingTitles.join(', ')}`
         : '',
       relatedServiceTitles.length
-        ? `PT Betracom Gemilang Nusa menyediakan layanan ${relatedServiceTitles.join(', ')}`
+        ? `${COMPANY_NAME} menyediakan layanan ${relatedServiceTitles.join(', ')}`
         : '',
     ].filter(Boolean).join('. ') + '.'
   : undefined;
