@@ -24,10 +24,10 @@ const {
   disabled = false,
 } = Astro.props;
 
-const base = 'ui-button inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
+const base = 'ui-button inline-flex items-center justify-center gap-2 rounded-[var(--radius-control)] font-display font-bold tracking-[-0.01em] transition duration-150 ease-out active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
 const variants: Record<Variant, string> = {
   primary: 'bg-slate-950 text-white hover:bg-slate-800 focus-visible:ring-slate-700',
-  secondary: 'bg-amber-400 text-slate-950 hover:bg-amber-300 focus-visible:ring-amber-500',
+  secondary: 'bg-amber-400 text-slate-950 shadow-[inset_0_-2px_0_rgb(180_83_9/0.35)] hover:bg-amber-300 focus-visible:ring-amber-500',
   outline: 'border border-slate-300 bg-white text-slate-900 hover:border-slate-500 hover:bg-slate-50 focus-visible:ring-slate-500',
   text: 'text-slate-700 hover:text-slate-950 focus-visible:ring-slate-500',
 };

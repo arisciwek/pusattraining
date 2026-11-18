@@ -4,7 +4,13 @@
  * Semantic component classes remain in markup; @apply keeps the visual system Tailwind-based.
  */
 @layer components {
-  .badge { @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-bold tracking-wide; }
+  /* Signature motif: caution-tape stripe, used sparingly (footer edge, home hero edge). */
+  .hazard-stripe { height: 0.5rem; background: repeating-linear-gradient(-45deg, var(--color-brand-400) 0 0.75rem, var(--color-neutral-950) 0.75rem 1.5rem); }
+
+  .site-header__navigation-link { @apply relative py-2; }
+  .site-header__navigation-link[aria-current="page"]::after { content: ""; @apply absolute inset-x-0 -bottom-0.5 h-0.5 rounded-full bg-amber-500; }
+
+  .badge { @apply inline-flex items-center rounded-md px-2.5 py-1 text-xs font-bold; }
   .badge--accent { @apply bg-amber-100 text-amber-900; }
   .badge--success { @apply bg-emerald-100 text-emerald-800; }
   .badge--warning { @apply bg-orange-100 text-orange-900; }

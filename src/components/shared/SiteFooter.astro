@@ -33,9 +33,10 @@ const {
 ---
 
 <footer class="site-footer bg-slate-950 text-slate-300">
+  <div class="hazard-stripe" aria-hidden="true"></div>
   <Container class="site-footer__main grid gap-12 py-14 md:grid-cols-[1.4fr_2fr] lg:py-16">
     <div class="site-footer__identity max-w-sm">
-      <a class="site-footer__brand text-2xl font-black tracking-tight text-white" href="/">{brand}<span class="text-amber-400" aria-hidden="true">.</span></a>
+      <a class="site-footer__brand font-display text-2xl font-extrabold tracking-tight text-white" href="/">{brand}<span class="text-amber-400" aria-hidden="true">.</span></a>
       <p class="site-footer__description mt-4 text-sm leading-7 text-slate-400">{description}</p>
       <address class="site-footer__contact mt-6 space-y-2 not-italic text-sm">
           {email && <p><a class="hover:text-white" href={'mailto:' + email}>{email}</a></p>}
@@ -47,7 +48,7 @@ const {
     <div class="site-footer__link-groups grid grid-cols-2 gap-8 sm:grid-cols-3">
       {groups.map((group) => (
         <section class="site-footer__link-group">
-          <h2 class="site-footer__group-title text-sm font-bold text-white">{group.title}</h2>
+          <h2 class="site-footer__group-title font-display text-base font-bold text-white">{group.title}</h2>
           <ul class="site-footer__link-list mt-4 space-y-3">
             {group.links.map((link) => (
               <li class="site-footer__link-item">
