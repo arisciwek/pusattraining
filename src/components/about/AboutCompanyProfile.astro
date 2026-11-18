@@ -41,7 +41,7 @@ import SectionHeading from '../../components/shared/SectionHeading.astro';
   </section>
 
   <section class="about-company__history" aria-label="Perjalanan perusahaan">
-    <SectionHeading eyebrow="Perjalanan perusahaan" title="Berawal dari komitmen pada kompetensi dan keselamatan kerja" description="Betracom mengukuhkan legalitas usahanya sebagai {COMPANY_NAME} pada tahun 2022." />
+    <SectionHeading eyebrow="Perjalanan perusahaan" title="Berawal dari komitmen pada kompetensi dan keselamatan kerja" description={`Betracom mengukuhkan legalitas usahanya sebagai ${COMPANY_NAME} pada tahun 2022.`} />
     <ol class="about-company__history-list mt-8 grid gap-4 sm:grid-cols-[minmax(0,1fr)_2fr]">
       <li class="about-company__history-year rounded-2xl bg-amber-50 p-6">
         <p class="text-sm font-bold uppercase tracking-wider text-amber-800">Tonggak legalitas</p>
