@@ -16,6 +16,20 @@ const { entry } = Astro.props;
 const { data } = entry;
 const services = await getCollection('services', ({ data: service }) => !service.draft);
 const relatedServices = services.filter((service) => data.serviceIds.includes(service.data.id));
+const trainings = await getCollection('trainings', ({ data: training }) => !training.draft);
+const relatedTrainings = trainings.filter((training) => data.related.includes(training.data.id));
+const relatedTrainingTitles = relatedTrainings.map((training) => training.data.title);
+const relatedServiceTitles = relatedServices.map((service) => service.data.title);
+const footerDescription = relatedTrainingTitles.length || relatedServiceTitles.length
+  ? [
+      relatedTrainingTitles.length
+        ? `PT Betracom Gemilang Nusa menyelenggarakan pelatihan ${relatedTrainingTitles.join(', ')}`
+        : '',
+      relatedServiceTitles.length
+        ? `PT Betracom Gemilang Nusa menyediakan layanan ${relatedServiceTitles.join(', ')}`
+        : '',
+    ].filter(Boolean).join('. ') + '.'
+  : undefined;
 const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID', {
   day: 'numeric',
   month: 'long',
@@ -23,7 +37,7 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
   timeZone: 'Asia/Jakarta',
 });
 ---
-<SiteLayout title={data.title} description={data.description}>
+<SiteLayout title={data.title} description={data.description} footerDescription={footerDescription}>
   <article class="article-detail py-10 sm:py-14">
     <Container>
       <Breadcrumb items={[
