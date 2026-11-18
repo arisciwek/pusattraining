@@ -22,9 +22,6 @@ const relatedTrainings = trainings.filter((training) => data.related.includes(tr
 const relatedTrainingTitles = relatedTrainings.map((training) => training.data.title);
 const relatedServiceTitles = relatedServices.map((service) => service.data.title);
 
-// Satu halaman artikel hanya boleh membuat satu klaim footer.
-// Pelatihan diprioritaskan; layanan hanya menjadi fallback jika tidak ada
-// pelatihan terkait pada artikel tersebut.
 const footerDescription = relatedTrainingTitles.length
   ? `${COMPANY_NAME} menyelenggarakan pelatihan ${relatedTrainingTitles.join(', ')}.`
   : relatedServiceTitles.length
@@ -39,8 +36,7 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
 
 const articleImage = new URL(data.image || DEFAULT_ARTICLE_IMAGE, Astro.site).href;
 const canonicalUrl = new URL(`/artikel/${data.slug}/`, Astro.site).href;
-// BETRACOM adalah nama organisasi penerbit, bukan nama orang. Schema author
-// menggunakan Organization agar identitas penulis tidak salah diklasifikasikan.
+// BETRACOM adalah nama organisasi penerbit, bukan nama orang.
 const authorSchema = {
   '@type': 'Organization',
   name: data.author,
@@ -69,9 +65,8 @@ const articleSchema = {
   },
 };
 ---
-<SiteLayout title={data.title} description={data.description} footerDescription={footerDescription}>
+<SiteLayout title={data.title} description={data.description} footerDescription={footerDescription} ogType="article">
   <Fragment slot="head">
-    <meta property="og:type" content="article" />
     <meta property="og:image" content={articleImage} />
     <meta name="twitter:image" content={articleImage} />
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
@@ -98,7 +93,7 @@ const articleSchema = {
       </figure>
 
       <div class="article-detail__body mx-auto mt-10 max-w-4xl space-y-12">
-        {data.blocks.map((block, index) => (
+        {data.blocks.map((block) => (
           block.type === 'intro' ? (
             <section class="article-detail__intro rounded-3xl bg-slate-950 px-6 py-8 text-white sm:px-9 sm:py-10">
               {block.eyebrow && <p class="article-detail__intro-eyebrow text-sm font-semibold text-amber-300">{block.eyebrow}</p>}
