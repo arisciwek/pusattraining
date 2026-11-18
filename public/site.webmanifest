@@ -1,0 +1,18 @@
+{
+  "name": "Pusat Training",
+  "short_name": "Pusat Training",
+  "description": "Portal informasi program pengembangan kompetensi dan jadwal pelatihan.",
+  "lang": "id",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#FFFFFF",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "/images/logo-betracom.png",
+      "sizes": "151x151",
+      "type": "image/png"
+    }
+  ]
+}
