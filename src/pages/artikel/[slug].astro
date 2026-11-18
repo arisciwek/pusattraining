@@ -6,23 +6,45 @@ import Breadcrumb from '../../components/shared/Breadcrumb.astro';
 import { COMPANY_NAME, COMPANY_URL, DEFAULT_ARTICLE_IMAGE } from '../../lib/site';
 import Hero from '../../components/content/Hero.astro';
 import ArticlePreviousArticles from '../../components/content/ArticlePreviousArticles.astro';
+import ArticleIndexListing from '../../components/content/ArticleIndexListing.astro';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
-  return articles.map((entry) => ({
+  const articlePaths = articles.map((entry) => ({
     params: { slug: entry.data.slug },
     props: { entry },
   }));
+  const pageSize = 9;
+  const totalPages = Math.ceil(articles.length / pageSize);
+  const paginationPaths = Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => ({
+    params: { slug: String(index + 2) },
+    props: { paginationPage: index + 2 },
+  }));
+  return [...articlePaths, ...paginationPaths];
 }
 
-const { entry } = Astro.props;
-const { data } = entry;
-const { Content } = await render(entry);
-const articles = await getCollection('articles', ({ data: item }) => !item.draft);
+const { entry, paginationPage } = Astro.props;
+const isPaginationPage = typeof paginationPage === 'number';
+const allArticles = (await getCollection('articles', ({ data: item }) => !item.draft))
+  .sort((a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate)
+    || b.data.slug.localeCompare(a.data.slug));
+const pageSize = 9;
+const totalPages = Math.max(1, Math.ceil(allArticles.length / pageSize));
+const pageArticles = isPaginationPage
+  ? allArticles.slice((paginationPage - 1) * pageSize, paginationPage * pageSize)
+  : [];
+const categories = [...new Set(allArticles.map(({ data: item }) => item.category))]
+  .sort((a, b) => a.localeCompare(b, 'id'));
+const data = entry?.data ?? {
+  id: 0, slug: '', title: '', description: '', pubDate: '', author: '',
+  category: '', tags: [], image: undefined, blocks: [], serviceIds: [], related: [],
+};
+const { Content } = entry ? await render(entry) : { Content: undefined };
+const articles = allArticles;
 const hasPreviousArticles = articles.some((item) => item.data.type === 'article' && item.data.id < data.id);
-const services = await getCollection('services', ({ data: service }) => !service.draft);
+const services = isPaginationPage ? [] : await getCollection('services', ({ data: service }) => !service.draft);
 const relatedServices = services.filter((service) => data.serviceIds.includes(service.data.id));
-const trainings = await getCollection('trainings', ({ data: training }) => !training.draft);
+const trainings = isPaginationPage ? [] : await getCollection('trainings', ({ data: training }) => !training.draft);
 const relatedTrainings = trainings.filter((training) => data.related.includes(training.data.id));
 const relatedTrainingTitles = relatedTrainings.map((training) => training.data.title);
 const relatedServiceTitles = relatedServices.map((service) => service.data.title);
@@ -39,7 +61,7 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
   timeZone: 'Asia/Jakarta',
 });
 
-const articleImage = new URL(data.image || '/images/default-article.svg', Astro.site).href;
+const articleImage = new URL(data.image || DEFAULT_ARTICLE_IMAGE, Astro.site).href;
 const canonicalUrl = new URL(`/artikel/${data.slug}/`, Astro.site).href;
 const articleSchema = {
   '@context': 'https://schema.org',
@@ -69,6 +91,31 @@ const articleSchema = {
 };
 ---
 
+{isPaginationPage ? (
+  <SiteLayout
+    title={`Artikel dan Informasi Pelatihan — Halaman ${paginationPage}`}
+    description="Jelajahi artikel dan informasi pelatihan terbaru."
+    canonicalURL={new URL(`/artikel/${paginationPage}/`, Astro.site).href}
+  >
+    <section class="article-index overflow-hidden bg-slate-950 py-14 text-white sm:py-20">
+      <Container>
+        <Breadcrumb items={[
+          { label: 'Beranda', href: '/' },
+          { label: 'Artikel', href: '/artikel/' },
+          { label: `Halaman ${paginationPage}` },
+        ]} />
+        <div class="article-index__hero mt-10 max-w-3xl">
+          <p class="article-index__eyebrow text-sm font-semibold text-amber-300">Wawasan & referensi</p>
+          <h1 class="article-index__title mt-4 text-4xl font-black tracking-tight sm:text-5xl">Artikel dan Informasi Pelatihan</h1>
+          <p class="article-index__description mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">Lanjutkan membaca panduan, penjelasan program, dan informasi praktis seputar pelatihan serta sertifikasi kompetensi.</p>
+          <p class="article-index__count mt-7 text-sm font-semibold text-amber-200">{allArticles.length} materi tersedia</p>
+        </div>
+      </Container>
+    </section>
+    <ArticleIndexListing articles={pageArticles} categories={categories} page={paginationPage} totalPages={totalPages} />
+  </SiteLayout>
+)}
+) : (
 <SiteLayout title={data.title} description={data.description} footerDescription={footerDescription} ogType="article">
   <Fragment slot="head">
     <meta property="og:image" content={articleImage} />
