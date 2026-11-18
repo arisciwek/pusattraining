@@ -71,7 +71,10 @@ const relatedTrainings = allTrainings
   .slice(0, 4);
 const title = getScheduleTitle(schedule);
 const description = getScheduleDescription(schedule);
-const footerDescription = `${COMPANY_NAME} menyelenggarakan pelatihan ${training.data.title}.`;
+// Sama seperti footer halaman training: buang awalan "Pelatihan"/"Training"
+// hanya pada kalimat footer. Judul di tautan detail tetap memakai nama resmi.
+const footerTrainingName = training.data.title.replace(/^(?:Pelatihan|Training)\s+/i, '');
+const footerDescription = `${COMPANY_NAME} menyelenggarakan pelatihan ${footerTrainingName}.`;
 const month = getScheduleMonth(data);
 const completion = data.completion;
 const hasCompletion = Boolean(
