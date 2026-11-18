@@ -31,15 +31,15 @@ const safeBreadcrumbStructuredData = breadcrumbStructuredData
   <script type="application/ld+json" set:html={safeBreadcrumbStructuredData} />
 )}
 <nav class={['site-breadcrumb', className].filter(Boolean).join(' ')} aria-label="Breadcrumb">
-  <ol class="site-breadcrumb__list flex flex-wrap items-center gap-2 text-sm text-slate-500">
+  <ol class="site-breadcrumb__list flex flex-wrap items-center gap-2 text-sm text-slate-500 in-[.bg-slate-950]:text-slate-400">
     {items.map((item, index) => (
       <li class="site-breadcrumb__item inline-flex items-center gap-2">
         {item.href && index !== items.length - 1 ? (
-          <a class="site-breadcrumb__link transition-colors hover:text-slate-950" href={item.href}>{item.label}</a>
+          <a class="site-breadcrumb__link transition-colors hover:text-slate-950 in-[.bg-slate-950]:hover:text-white" href={item.href}>{item.label}</a>
         ) : (
-          <span class="site-breadcrumb__current font-medium text-slate-800" aria-current="page">{item.label}</span>
+          <span class="site-breadcrumb__current font-medium text-slate-800 in-[.bg-slate-950]:text-amber-300" aria-current="page">{item.label}</span>
         )}
-        {index < items.length - 1 && <span class="site-breadcrumb__separator text-slate-300" aria-hidden="true">/</span>}
+        {index < items.length - 1 && <span class="site-breadcrumb__separator text-slate-300 in-[.bg-slate-950]:text-slate-600" aria-hidden="true">/</span>}
       </li>
     ))}
   </ol>
