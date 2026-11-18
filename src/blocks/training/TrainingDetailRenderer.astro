@@ -35,7 +35,19 @@ const navigationItems = contentBlocks.flatMap((block) => {
 <div class="training-detail-renderer">
   {hero && <HeroTraining eyebrow={hero.eyebrow ?? 'PROGRAM PELATIHAN'} certBadge={hero.certBadge} title={hero.title ?? title} description={hero.description ?? description} image={image ?? ''} imageAlt={hero.imageAlt ?? imageAlt} imageSrcset={hero.imageSrcset} imageSizes={hero.imageSizes} imageWidth={hero.imageWidth} imageHeight={hero.imageHeight} deliveryMode={hero.deliveryMode} ctaLabel={hero.ctaLabel} ctaHref={hero.ctaHref} trustItems={hero.trustItems} price={hero.price} priceNote={hero.priceNote} duration={hero.duration} schedules={schedules} />}
   {introBlocks.map((block) => block.type === 'training-detail-intro' ? <TrainingDetailIntro eyebrow={block.eyebrow} noticeTitle={block.noticeTitle} noticeDescription={block.noticeDescription} /> : null)}
-  {navigationItems.length > 1 && <nav class="training-detail-renderer__navigation sticky top-20 z-20 -mx-4 mb-8 overflow-x-auto border-y border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-xl sm:border sm:px-5" aria-label="Navigasi bagian program"><ul class="training-detail-renderer__navigation-list flex min-w-max items-center gap-2">{navigationItems.map((item) => <li class="training-detail-renderer__navigation-item"><a class="training-detail-renderer__navigation-link inline-flex rounded-full px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-slate-900" href={`#${item.id}`}>{item.label}</a></li>)}</ul></nav>}
+  {navigationItems.length > 1 && (
+    <nav class="training-detail-renderer__navigation" aria-label="Navigasi bagian program" data-section-nav>
+      <div class="training-detail-renderer__navigation-scroller" data-section-nav-scroller>
+        <ul class="training-detail-renderer__navigation-list">
+          {navigationItems.map((item) => (
+            <li class="training-detail-renderer__navigation-item">
+              <a class="training-detail-renderer__navigation-link" href={`#${item.id}`} title={item.label}><span class="training-detail-renderer__navigation-label">{item.label}</span></a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  )}
   {contentBlocks.map((block) => {
     if (block.type === 'training-summary') return <TrainingSummary id={block.id ?? 'ringkasan-program'} eyebrow={block.eyebrow} items={block.items} />;
     if (block.type === 'training-content-section') return <TrainingContentSection id={block.id ?? `bagian-${slugifySectionTitle(block.title)}`} eyebrow={block.eyebrow} title={block.title} description={block.description} items={block.items} />;
@@ -46,3 +58,49 @@ const navigationItems = contentBlocks.flatMap((block) => {
   })}
   {!contentBlocks.some((block) => block.type === 'training-cta') && <TrainingCta eyebrow="KONSULTASI PROGRAM" title={`Tertarik mengikuti ${title}?`} description="Hubungi Tiara untuk menanyakan informasi program, jadwal, dan proses pendaftaran." actionLabel="Chat Tiara via WhatsApp" />}
 </div>
+<script>
+  // Scrollspy for the section navigation: marks the current section, keeps the active tab in view,
+  // toggles the "stuck" shadow and the edge fades that hint the tab list can be scrolled.
+  const nav = document.querySelector<HTMLElement>('[data-section-nav]');
+  const scroller = nav?.querySelector<HTMLElement>('[data-section-nav-scroller]');
+  if (nav && scroller) {
+    const links = Array.from(nav.querySelectorAll<HTMLAnchorElement>('.training-detail-renderer__navigation-link'));
+    const targets = links.map((link) => document.getElementById(decodeURIComponent(link.hash.slice(1))));
+    const header = document.querySelector<HTMLElement>('.site-header');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let current = -1;
+    let frame = 0;
+
+    const setCurrent = (index: number) => {
+      if (index === current) return;
+      current = index;
+      links.forEach((link, i) => (i === index ? link.setAttribute('aria-current', 'location') : link.removeAttribute('aria-current')));
+      const link = links[index];
+      if (link) {
+        const left = link.offsetLeft - (scroller.clientWidth - link.offsetWidth) / 2;
+        scroller.scrollTo({ left, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+      }
+    };
+
+    const update = () => {
+      frame = 0;
+      const headerHeight = header?.offsetHeight ?? 0;
+      const offset = headerHeight + nav.offsetHeight + 24;
+      let index = -1;
+      targets.forEach((target, i) => {
+        if (target && target.getBoundingClientRect().top <= offset) index = i;
+      });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) index = targets.length - 1;
+      setCurrent(index);
+      nav.toggleAttribute('data-stuck', nav.getBoundingClientRect().top <= headerHeight + 1);
+      nav.toggleAttribute('data-fade-start', scroller.scrollLeft > 4);
+      nav.toggleAttribute('data-fade-end', scroller.scrollLeft + scroller.clientWidth < scroller.scrollWidth - 4);
+    };
+
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    scroller.addEventListener('scroll', schedule, { passive: true });
+    update();
+  }
+</script>

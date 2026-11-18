@@ -8,7 +8,7 @@ interface Props {
 }
 const { id, eyebrow, title, description, items } = Astro.props;
 ---
-<section id={id} class="training-content-section mt-14 scroll-mt-24">
+<section id={id} class="training-content-section mt-14">
   <header class="training-content-section__header max-w-3xl">
     {eyebrow && <p class="training-content-section__eyebrow text-sm font-semibold text-amber-800">{eyebrow}</p>}
     <h2 class="training-content-section__title mt-2 text-2xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-3xl">{title}</h2>
