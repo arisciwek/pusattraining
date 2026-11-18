@@ -8,6 +8,7 @@ import TrainingDetailRenderer from '../../blocks/training/TrainingDetailRenderer
 import type { PageBlock, TrainingDetailBlock } from '../../blocks/types';
 import { isMainSiteSchedule } from '../../lib/schedule-utils';
 import { validateContentRelations } from '../../lib/validate-content';
+import { COMPANY_NAME } from '../../lib/site';
 
 const trainings = await getCollection('trainings', ({ data }) => !data.draft);
 const schedules = await getCollection('schedules', isMainSiteSchedule);
@@ -43,7 +44,7 @@ const relatedSchedules = kind === 'training'
 const title = entry.data.title;
 const description = entry.data.description;
 const footerDescription = kind === 'training'
-  ? `PT Betracom Gemilang Nusa menyelenggarakan pelatihan ${title}.`
+  ? `${COMPANY_NAME} menyelenggarakan pelatihan ${title}.`
   : undefined;
 const categoryBlocks = kind === 'category' ? entry.data.blocks as PageBlock[] : [];
 const trainingBlocks = kind === 'training' ? entry.data.blocks as TrainingDetailBlock[] : [];
