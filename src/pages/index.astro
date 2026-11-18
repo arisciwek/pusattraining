@@ -3,8 +3,9 @@ import { getCollection } from 'astro:content';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import HomePageRenderer from '../blocks/home/HomePageRenderer.astro';
 import LatestArticlesSection from '../components/LatestArticlesSection.astro';
-import { formatScheduleRange, isMainSiteSchedule } from '../lib/schedule-utils';
+import { formatScheduleRange, getScheduleDescription, getScheduleHref, getScheduleTitle, isMainSiteSchedule } from '../lib/schedule-utils';
 
+const siteUrl = Astro.site ?? new URL('https://pusattrainingk3.com');
 const entry = (await getCollection('pages', ({ data }) => data.slug === 'home' && !data.draft))[0];
 
 if (!entry) {
@@ -31,11 +32,10 @@ const todayInTimezone = (timezone: string) => new Intl.DateTimeFormat('en-CA', {
   day: '2-digit',
 }).format(now);
 
-const upcomingSchedules = schedules
+const upcomingScheduleEntries = schedules
   .filter((schedule) => {
     const { status, endDate, timezone } = schedule.data;
     if (status === 'completed' || status === 'cancelled' || status === 'postponed') return false;
-
     const today = todayInTimezone(timezone);
     const endDay = /^\d{4}-\d{2}-\d{2}$/.test(endDate)
       ? endDate
@@ -48,47 +48,201 @@ const upcomingSchedules = schedules
     return endDay >= today;
   })
   .sort((a, b) => Date.parse(b.data.startDate) - Date.parse(a.data.startDate))
-  .reduce<Array<{
-    trainingTitle: string;
-    trainingHref: string;
-    startDate: string;
-    endDate: string;
-    dateLabel: string;
-    mode: string;
-    location?: string;
-    registrationHref?: string;
-    image?: string;
-    imageAlt: string;
-  }>>((items, schedule) => {
+  .reduce<Array<{ schedule: (typeof schedules)[number]; training: (typeof trainings)[number] }>>((items, schedule) => {
     const training = trainingsById.get(schedule.data.trainingId);
-    if (!training || items.some((item) => item.trainingHref === `/pelatihan/${training.data.slug}/`)) {
-      return items;
-    }
-
-    const modeLabels = {
-      offline: 'Offline',
-      online: 'Online',
-      blended: 'Blended',
-    } as const;
-
-    items.push({
-      trainingTitle: training.data.title,
-      trainingHref: `/pelatihan/${training.data.slug}/`,
-      startDate: schedule.data.startDate,
-      endDate: schedule.data.endDate,
-      dateLabel: schedule.data.dateLabel || formatScheduleRange(schedule.data.startDate, schedule.data.endDate, schedule.data.timezone),
-      mode: modeLabels[schedule.data.delivery?.mode ?? 'offline'],
-      location: schedule.data.venue?.name,
-      registrationHref: schedule.data.sites?.main?.registrationUrl,
-      image: schedule.data.image ?? training.data.image,
-      imageAlt: training.data.title,
-    });
-
+    if (!training || items.some((item) => item.training.data.slug === training.data.slug)) return items;
+    items.push({ schedule, training });
     return items;
   }, []);
+
+const upcomingSchedules = upcomingScheduleEntries.map(({ schedule, training }) => {
+  const modeLabels = { offline: 'Offline', online: 'Online', blended: 'Blended' } as const;
+  return {
+    trainingTitle: training.data.title,
+    trainingHref: `/pelatihan/${training.data.slug}/`,
+    startDate: schedule.data.startDate,
+    endDate: schedule.data.endDate,
+    dateLabel: schedule.data.dateLabel || formatScheduleRange(schedule.data.startDate, schedule.data.endDate, schedule.data.timezone),
+    mode: modeLabels[schedule.data.delivery?.mode ?? 'offline'],
+    location: schedule.data.venue?.name,
+    registrationHref: schedule.data.sites?.main?.registrationUrl,
+    image: schedule.data.image ?? training.data.image,
+    imageAlt: training.data.title,
+  };
+});
+
+const latestArticles = (await getCollection('articles', ({ data }) => !data.draft))
+  .sort((a, b) => {
+    const updatedDifference = Date.parse(b.data.updatedDate ?? b.data.pubDate)
+      - Date.parse(a.data.updatedDate ?? a.data.pubDate);
+    if (updatedDifference !== 0) return updatedDifference;
+    const publishedDifference = Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate);
+    if (publishedDifference !== 0) return publishedDifference;
+    return b.data.id - a.data.id;
+  })
+  .slice(0, 3);
+
+const organizationId = new URL('/#organization', siteUrl).href;
+
+const scheduleItemList = {
+  '@type': 'ItemList',
+  '@id': new URL('/#upcoming-schedules', siteUrl).href,
+  name: 'Jadwal training terdekat',
+  numberOfItems: upcomingScheduleEntries.length,
+  itemListElement: upcomingScheduleEntries.map(({ schedule, training }, index) => {
+    const data = schedule.data;
+    const url = new URL(getScheduleHref(schedule, training.data.slug), siteUrl).href;
+    const location = data.venue
+      ? {
+          '@type': 'Place',
+          name: data.venue.name,
+          ...(data.venue.address || data.venue.city || data.venue.province
+            ? {
+                address: {
+                  '@type': 'PostalAddress',
+                  ...(data.venue.address ? { streetAddress: data.venue.address } : {}),
+                  ...(data.venue.city ? { addressLocality: data.venue.city } : {}),
+                  ...(data.venue.province ? { addressRegion: data.venue.province } : {}),
+                  addressCountry: data.venue.countryCode,
+                },
+              }
+            : {}),
+        }
+      : data.delivery?.mode === 'online' && data.sites?.main?.registrationUrl
+        ? { '@type': 'VirtualLocation', url: data.sites.main.registrationUrl }
+        : undefined;
+    const attendanceMode = data.delivery?.attendanceMode
+      ? {
+          offline: 'https://schema.org/OfflineEventAttendanceMode',
+          online: 'https://schema.org/OnlineEventAttendanceMode',
+          mixed: 'https://schema.org/MixedEventAttendanceMode',
+        }[data.delivery.attendanceMode]
+      : undefined;
+    const eventStatus = {
+      scheduled: 'https://schema.org/EventScheduled',
+      ongoing: 'https://schema.org/EventScheduled',
+      postponed: 'https://schema.org/EventPostponed',
+      completed: undefined,
+      cancelled: undefined,
+    }[data.status];
+
+    return {
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Event',
+        '@id': `${url}#event`,
+        url,
+        name: getScheduleTitle(schedule),
+        description: getScheduleDescription(schedule),
+        startDate: data.startDate,
+        endDate: data.endDate,
+        ...(eventStatus ? { eventStatus } : {}),
+        ...(attendanceMode ? { eventAttendanceMode: attendanceMode } : {}),
+        ...(location ? { location } : {}),
+        organizer: { '@id': organizationId },
+        ...(data.sites?.main?.registrationUrl && data.registration?.status
+          ? {
+              offers: {
+                '@type': 'Offer',
+                url: data.sites.main.registrationUrl,
+                availability: data.registration.status === 'open'
+                  ? 'https://schema.org/InStock'
+                  : data.registration.status === 'not-open'
+                    ? 'https://schema.org/PreOrder'
+                    : 'https://schema.org/SoldOut',
+              },
+            }
+          : {}),
+      },
+    };
+  }),
+};
+
+const articleItemList = {
+  '@type': 'ItemList',
+  '@id': new URL('/#latest-articles', siteUrl).href,
+  name: 'Artikel Terbaru',
+  numberOfItems: latestArticles.length,
+  itemListElement: latestArticles.map(({ data }, index) => {
+    const url = new URL(`/artikel/${data.slug}/`, siteUrl).href;
+    return {
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'BlogPosting',
+        '@id': `${url}#article`,
+        url,
+        headline: data.title,
+        description: data.description,
+        ...(data.image ? { image: new URL(data.image, siteUrl).href } : {}),
+        datePublished: data.pubDate,
+        dateModified: data.updatedDate ?? data.pubDate,
+        author: { '@type': 'Person', name: data.author },
+        publisher: { '@id': organizationId },
+        mainEntityOfPage: url,
+        inLanguage: 'id-ID',
+      },
+    };
+  }),
+};
 ---
 
 <SiteLayout title={entry.data.title} description={entry.data.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          '@id': new URL('/#organization', siteUrl).href,
+          name: 'PT Betracom Gemilang Nusa',
+          alternateName: 'Betracom',
+          url: siteUrl.href,
+          email: 'betracomtraining@gmail.com',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'Grand Slipi Tower Lt. 9, Jl. Letjen S. Parman',
+            addressLocality: 'Jakarta Barat',
+            addressRegion: 'DKI Jakarta',
+            addressCountry: 'ID',
+          },
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://raw.githubusercontent.com/arisciwek/damkar/main/public/images/logo-betracom.png',
+          },
+        },
+        {
+          '@type': 'WebSite',
+          '@id': new URL('/#website', siteUrl).href,
+          url: siteUrl.href,
+          name: 'Pusat Training',
+          alternateName: 'Pusattraining',
+          inLanguage: 'id-ID',
+          publisher: { '@id': new URL('/#organization', siteUrl).href },
+        },
+        {
+          '@type': 'WebPage',
+          '@id': new URL('/#webpage', siteUrl).href,
+          url: siteUrl.href,
+          name: entry.data.title,
+          description: entry.data.description,
+          inLanguage: 'id-ID',
+          isPartOf: { '@id': new URL('/#website', siteUrl).href },
+          about: { '@id': new URL('/#organization', siteUrl).href },
+          publisher: { '@id': new URL('/#organization', siteUrl).href },
+          datePublished: entry.data.pubDate,
+          dateModified: entry.data.updatedDate ?? entry.data.pubDate,
+          hasPart: [
+            { '@id': new URL('/#upcoming-schedules', siteUrl).href },
+            { '@id': new URL('/#latest-articles', siteUrl).href },
+          ],
+        },
+        scheduleItemList,
+        articleItemList,
+      ],
+    })} />
+  </Fragment>
   <HomePageRenderer
     blocks={entry.data.blocks as any}
     categories={categories}
