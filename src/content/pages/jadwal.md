@@ -11,7 +11,7 @@ updatedDate: '2026-11-16T00:00:00+07:00'
 draft: false
 blocks:
   - type: schedule-index
-    eyebrow: KALENDER PELATIHAN
+    eyebrow: Kalender pelatihan
     sectionEyebrow: URUTAN PELAKSANAAN
     latestTitle: Jadwal yang dipublikasikan
     archiveTitle: Arsip jadwal

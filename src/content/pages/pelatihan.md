@@ -12,7 +12,7 @@ draft: false
 related: []
 blocks:
   - type: training-catalog
-    eyebrow: KATALOG PROGRAM
+    eyebrow: Katalog program
     title: Jelajahi kategori pelatihan
     description: Temukan rumpun kompetensi dan telusuri program pelatihan berdasarkan bidang yang dibutuhkan.
     emptyMessage: Kategori pelatihan sedang disiapkan.

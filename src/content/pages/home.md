@@ -11,7 +11,7 @@ updatedDate: '2026-11-16T00:00:00+07:00'
 draft: false
 blocks:
   - type: home-hero
-    eyebrow: PORTAL INFORMASI PELATIHAN
+    eyebrow: Portal informasi pelatihan
     title: Temukan training yang tepat untuk langkah profesional berikutnya.
     description: Jelajahi program pengembangan kompetensi, pahami informasi pelatihan, dan temukan jadwal dari berbagai bidang dalam satu tempat.
     primaryLabel: Jelajahi program
@@ -23,13 +23,13 @@ blocks:
       - Informasi program yang mudah dipahami
       - Jadwal pelatihan dalam satu portal
   - type: home-introduction
-    eyebrow: PUSAT INFORMASI TRAINING
+    eyebrow: Pusat informasi training
     title: Satu portal untuk menjelajahi berbagai kebutuhan pelatihan.
     description: Pusattraining membantu pengunjung menemukan informasi program, memahami gambaran pelatihan, dan menelusuri jadwal yang diterbitkan oleh penyelenggara.
     actionLabel: Tentang portal
     actionHref: /tentang/
   - type: home-category-overview
-    eyebrow: JELAJAHI BERDASARKAN BIDANG
+    eyebrow: Jelajahi berdasarkan bidang
     title: Bidang pelatihan
     description: Mulai pencarian dari bidang kompetensi yang paling sesuai dengan kebutuhan Anda.
     limit: 4
@@ -48,7 +48,7 @@ blocks:
     description: Temukan batch yang sesuai dengan kebutuhan dan waktu pelaksanaan Anda.
     allHref: /jadwal/
   - type: home-contact
-    eyebrow: BUTUH INFORMASI?
+    eyebrow: Butuh informasi?
     title: Mulai dari program yang ingin Anda temukan.
     description: Telusuri katalog atau hubungi tim Pusattraining untuk informasi lebih lanjut mengenai portal.
     primaryLabel: Lihat katalog
