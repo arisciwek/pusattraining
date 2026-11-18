@@ -11,7 +11,7 @@ updatedDate: '2026-11-18T00:00:00+07:00'
 draft: false
 ---
 
-Pusat Training merupakan portal informasi yang membantu pengunjung menemukan program pengembangan kompetensi dan jadwal pelatihan dari berbagai bidang serta penyelenggara. Portal ini dikelola oleh **PT Betracom Gemilang Nusa**, yang juga dikenal dengan nama **Betracom**.
+Pusat Training merupakan portal informasi yang membantu pengunjung menemukan program pengembangan kompetensi dan jadwal pelatihan dari berbagai bidang serta penyelenggara. Portal ini dikelola oleh **{{COMPANY_NAME}}**, yang juga dikenal dengan nama **Betracom**.
 
 ## Tentang Pusat Training
 
