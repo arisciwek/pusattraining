@@ -4,6 +4,7 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 import Container from '../../components/shared/Container.astro';
 import Breadcrumb from '../../components/shared/Breadcrumb.astro';
 import BlockRenderer from '../../blocks/BlockRenderer.astro';
+import LatestArticlesSection from '../../components/LatestArticlesSection.astro';
 import type { PageBlock } from '../../blocks/types';
 
 const [entry, categoryEntries, trainings] = await Promise.all([
@@ -40,4 +41,5 @@ const blocks = entry.data.blocks as PageBlock[];
       </div>
     </Container>
   </section>
+  <LatestArticlesSection offset={3} limit={3} />
 </SiteLayout>
