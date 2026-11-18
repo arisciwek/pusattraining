@@ -78,6 +78,15 @@
   --focus-ring: var(--color-brand-500);
   --focus-ring-soft: var(--color-brand-100);
 
+  /* Shape, rhythm, and motion */
+  --radius-control: 0.75rem;
+  --radius-card: 1rem;
+  --radius-panel: 1.5rem;
+  --measure-prose: 68ch;
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+
   /* Layering and depth */
   --overlay-scrim: rgb(2 6 23 / 0.64);
   --shadow-card: 0 8px 24px rgb(15 23 42 / 0.06);
