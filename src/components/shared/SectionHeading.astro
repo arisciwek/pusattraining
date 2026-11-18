@@ -5,14 +5,16 @@ interface Props {
   description?: string;
   align?: 'left' | 'center';
   class?: string;
+  size?: 'default' | 'sub';
 }
 
-const { eyebrow, title, description, align = 'left', class: className = '' } = Astro.props;
+const { eyebrow, title, description, align = 'left', class: className = '', size = 'default' } = Astro.props;
+const titleSize = size === 'sub' ? 'text-2xl sm:text-3xl' : 'text-3xl sm:text-4xl';
 const alignment = align === 'center' ? 'mx-auto text-center' : 'text-left';
 ---
 
 <header class={['section-heading max-w-3xl', alignment, className].filter(Boolean).join(' ')}>
   {eyebrow && <p class="section-heading__eyebrow mb-3 text-sm font-semibold text-amber-800">{eyebrow}</p>}
-  <h2 class="section-heading__title text-3xl font-extrabold leading-[1.1] tracking-tight text-slate-950 sm:text-4xl">{title}</h2>
+  <h2 class={`section-heading__title font-extrabold leading-[1.1] tracking-tight text-slate-950 ${titleSize}`}>{title}</h2>
   {description && <p class="section-heading__description mt-4 text-base leading-7 text-slate-600 sm:text-lg">{description}</p>}
 </header>

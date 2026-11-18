@@ -4,22 +4,27 @@ interface Props {
   eyebrow?: string;
   title?: string;
   description?: string;
+  compact?: boolean;
   categories: { title: string; description: string; href: string; count?: string }[];
 }
-const { eyebrow, title = 'Temukan bidang pelatihan', description, categories } = Astro.props;
+const { eyebrow, title = 'Temukan bidang pelatihan', description, categories, compact = false } = Astro.props;
 ---
 <section class="training-category-overview">
-  <SectionHeading eyebrow={eyebrow} title={title} description={description} />
+  <SectionHeading eyebrow={eyebrow} title={title} description={description} size={compact ? 'sub' : 'default'} />
   <div class="training-category-overview__grid">
-    {categories.map((category) => (
-      <a class="training-category-overview__item" href={category.href}>
-        <div class="training-category-overview__body">
+    {categories.map((category, index) => {
+      const hasPrograms = /^\d+/.test(category.count ?? '');
+      return (
+        <a class="training-category-overview__item" href={category.href} data-empty={hasPrograms ? undefined : ''}>
+          <div class="training-category-overview__top">
+            <span class="training-category-overview__index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            {category.count && <span class="training-category-overview__count">{category.count}</span>}
+            <span class="training-category-overview__arrow" aria-hidden="true">↗</span>
+          </div>
           <h3 class="training-category-overview__title">{category.title}</h3>
           <p class="training-category-overview__description">{category.description}</p>
-        </div>
-        {category.count && <span class="training-category-overview__count">{category.count}</span>}
-        <span class="training-category-overview__arrow" aria-hidden="true">↗</span>
-      </a>
-    ))}
+        </a>
+      );
+    })}
   </div>
 </section>
