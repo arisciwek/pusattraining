@@ -29,7 +29,7 @@ blocks:
         value: "Pusat K3 Cempaka Putih, Jalan Jenderal Ahmad Yani No. 69/70, Jakarta."
       - label: "Status jadwal"
         value: "Jadwal historis tahun 2019; bukan jadwal pendaftaran saat ini."
-    note: "Jadwal dirangkum dari halaman program Operator Boiler Tingkat 1 dan Tingkat 2 yang diterbitkan pada Februari 2019. Pada halaman Tingkat 1, rentang kedua ditulis singkat sebagai 25–2 Februari; rentang tersebut dinormalisasi menjadi 25 Februari–2 Maret 2019 sesuai urutan kalender dan pola penulisan jadwal lintas bulan."
+    note: "Jadwal ini merupakan arsip angkatan tahun 2019 yang dirangkum dari halaman program Operator Boiler Tingkat 1 dan Tingkat 2."
   - type: section
     title: "Pelatihan Operator Boiler Tingkat 1"
     paragraphs:
