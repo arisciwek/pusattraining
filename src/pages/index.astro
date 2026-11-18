@@ -236,10 +236,6 @@ const articleItemList = {
           publisher: { '@id': new URL('/#organization', siteUrl).href },
           datePublished: entry.data.pubDate,
           dateModified: entry.data.updatedDate ?? entry.data.pubDate,
-          hasPart: [
-            { '@id': new URL('/#upcoming-schedules', siteUrl).href },
-            { '@id': new URL('/#latest-articles', siteUrl).href },
-          ],
         },
         scheduleItemList,
         articleItemList,
