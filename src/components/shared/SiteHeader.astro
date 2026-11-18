@@ -60,6 +60,9 @@ const {
           {item.label}
         </a>
       ))}
+      <a class="site-header__search-link inline-flex size-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:border-amber-400 hover:text-slate-950" href="/pencarian/" aria-label="Cari seluruh konten">
+        <svg class="site-header__search-icon size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 4.2 4.2" stroke-linecap="round" /></svg>
+      </a>
       <Button href={ctaHref} size="sm">{ctaLabel}</Button>
     </nav>
   </Container>
@@ -72,6 +75,10 @@ const {
           Astro.url.pathname === item.href || (item.href !== "/" && Astro.url.pathname.startsWith(item.href)) ? "bg-slate-50 text-slate-950" : "text-slate-700",
         ]} href={item.href} aria-current={Astro.url.pathname === item.href || (item.href !== "/" && Astro.url.pathname.startsWith(item.href)) ? "page" : undefined}>{item.label}</a>
       ))}
+      <a class="site-header__mobile-search-link mt-2 inline-flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 text-sm font-semibold text-slate-700 hover:border-amber-400 hover:text-slate-950" href="/pencarian/">
+        <svg class="site-header__search-icon size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 4.2 4.2" stroke-linecap="round" /></svg>
+        Cari seluruh konten
+      </a>
       <Button href={ctaHref} class="mt-3 w-full">{ctaLabel}</Button>
     </div>
   </nav>
