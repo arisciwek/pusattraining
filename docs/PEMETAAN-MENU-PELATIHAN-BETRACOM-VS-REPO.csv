@@ -1,0 +1,120 @@
+Kategori Betracom;Menu/pelatihan pada situs Betracom;File pelatihan di repo (main);Status / tindak lanjut
+Kemnaker - Umum;Ahli K3 Umum;ahli-k3-umum.md;SUDAH ADA
+Kemnaker - Ruang Terbatas;Teknisi K3 Ruang Terbatas;;BELUM ADA - perlu konten tersendiri
+Kemnaker - Ruang Terbatas;Petugas Penyelamat K3 Ruang Terbatas;;BELUM ADA - perlu verifikasi nomenklatur dan skema
+Kemnaker - Kimia;Petugas K3 Kimia;;BELUM ADA - jangan disamakan dengan Ahli K3 Kimia
+Kemnaker - Kimia;Ahli K3 Kimia;ahli-k3-kimia.md;SUDAH ADA
+Kemnaker - Lingkungan Kerja;Ahli Muda K3 Lingkungan Kerja;;BELUM ADA
+Kemnaker - Kebakaran;Damkar Kelas D;damkar-kelas-d.md;SUDAH ADA
+Kemnaker - Kebakaran;Damkar Kelas C;damkar-kelas-c.md;SUDAH ADA
+Kemnaker - Kebakaran;Damkar Kelas B;damkar-kelas-b.md;SUDAH ADA
+Kemnaker - Kebakaran;Damkar Kelas A;damkar-kelas-a.md;SUDAH ADA
+Kemnaker - Kebakaran;Damkar Paket DC;;CEK - paket gabungan, bukan otomatis training baru
+Kemnaker - Kebakaran;Damkar Paket DCB;;CEK - paket gabungan, bukan otomatis training baru
+Kemnaker - Kebakaran;Damkar Paket DCBA;;CEK - paket gabungan, bukan otomatis training baru
+Kemnaker - Kebakaran;Damkar Paket CBA;;CEK - paket gabungan, bukan otomatis training baru
+Kemnaker - Kebakaran;Damkar Paket CB;;CEK - paket gabungan, bukan otomatis training baru
+Kemnaker - Kebakaran;Damkar Paket BA;;CEK - paket gabungan, bukan otomatis training baru
+Kemnaker - Listrik;Teknisi K3 Listrik;teknisi-k3-listrik.md;SUDAH ADA
+Kemnaker - Listrik;Ahli K3 Listrik;ahli-k3-listrik.md;SUDAH ADA
+Kemnaker - Ketinggian;TKBT 2;;BELUM ADA - cek apakah tercakup dalam training-tkpk-2.md (kemungkinan berbeda)
+Kemnaker - Ketinggian;TKPK 1;;BELUM ADA
+Kemnaker - Ketinggian;TKPK 2;training-tkpk-2.md;SUDAH ADA - validasi judul dan cakupan
+Kemnaker - Ketinggian;Sertifikasi K3 Ketinggian (info/biaya);;MENU INFORMASI - bukan otomatis training
+Kemnaker - Ketinggian;Pelatihan K3 Ketinggian Bogor;;MENU LOKASI - bukan training terpisah
+Kemnaker - Ketinggian;Pelatihan K3 Ketinggian Jakarta;;MENU LOKASI - bukan training terpisah
+Kemnaker - Pesawat Angkat Angkut;Operator Crane;operator-crane.md;SUDAH ADA
+Kemnaker - Pesawat Angkat Angkut;Operator Gondola;operator-gondola.md;SUDAH ADA
+Kemnaker - Pesawat Angkat Angkut;Operator Lift;;BELUM ADA
+Kemnaker - Pesawat Angkat Angkut;Operator Rigger (Juru Ikat);training-rigger-kemnaker.md;CEK KESETARAAN - pastikan skema/judul sama
+Kemnaker - Pesawat Angkat Angkut;Operator Forklift;operator-forklift.md;SUDAH ADA
+Kemnaker - Pesawat Angkat Angkut;Teknisi K3 PAA;;BELUM ADA
+Kemnaker - Pesawat Angkat Angkut;Ahli K3 Pesawat Angkat Angkut;;BELUM ADA
+Kemnaker - Pesawat Angkat Angkut;Pelatihan Forklift Bogor;;MENU LOKASI - bukan training terpisah
+Kemnaker - Pesawat Angkat Angkut;Pelatihan Forklift Jakarta;;MENU LOKASI - bukan training terpisah
+Kemnaker - Pesawat Uap/Bejana Tekan;Operator Boiler;operator-boiler-tingkat-1.md;ADA - repo memecah tingkat 1 dan 2
+Kemnaker - Pesawat Uap/Bejana Tekan;Teknisi K3 Bejana Tekan & Tangki Timbun;;BELUM ADA
+Kemnaker - Pesawat Uap/Bejana Tekan;Ahli K3 Pesawat Uap Bejana Tekan;;BELUM ADA
+Kemnaker - Pesawat Tenaga Produksi;Operator K3 Genset (Diesel);operator-genset.md;CEK KESETARAAN - verifikasi judul/otorisasi
+Kemnaker - Pesawat Tenaga Produksi;Operator Mesin Produksi & Perkakas 1 (Otomatis);;BELUM ADA
+Kemnaker - Pesawat Tenaga Produksi;Operator Mesin Produksi & Perkakas 2 (Manual);;BELUM ADA
+Kemnaker - Pesawat Tenaga Produksi;Ahli K3 Pesawat Tenaga & Produksi;;BELUM ADA
+Kemnaker - Konstruksi;Ahli Muda K3 Konstruksi;ahli-muda-k3-konstruksi.md;SUDAH ADA
+Kemnaker - Konstruksi;Teknisi K3 Perancah;teknisi-k3-perancah.md;SUDAH ADA
+Kemnaker - Konstruksi;Supervisi K3 Perancah;;BELUM ADA
+Kemnaker - Juru Las;SMAW Kelas 1;;BELUM ADA
+Kemnaker - Juru Las;SMAW Kelas 2;;BELUM ADA
+Kemnaker - Juru Las;SMAW Kelas 3;;BELUM ADA
+Kemnaker - Juru Las;GTAW Kelas 1;;BELUM ADA
+Kemnaker - Juru Las;GTAW Kelas 2;;BELUM ADA
+Kemnaker - Juru Las;GTAW Kelas 3;;BELUM ADA
+Kemnaker - Kesehatan;Petugas P3K;petugas-p3k.md;SUDAH ADA
+Kemnaker - Kesehatan;MCU;;MENU LAYANAN - bukan otomatis training
+Kemnaker - Kesehatan;Hiperkes;training-hiperkes.md;SUDAH ADA - cek cakupan dan penamaan
+BNSP - Limbah B3;Manajer Pemanfaatan Limbah B3 Jenjang Kualifikasi 6;;BELUM ADA
+BNSP - Limbah B3;Manajer Pengolahan Limbah B3 Jenjang Kualifikasi 6;;BELUM ADA
+BNSP - Limbah B3;Manajer Pengumpulan Limbah B3 Jenjang Kualifikasi 6;;BELUM ADA
+BNSP - Limbah B3;Operator Penyimpanan Limbah B3 Jenjang Kualifikasi 3;;BELUM ADA
+BNSP - Limbah B3;Operator Pengumpulan Limbah B3 Jenjang Kualifikasi 3;;BELUM ADA
+BNSP - Limbah B3;Operator Pengolahan Limbah B3 Proses Termal untuk Boiler Jenjang Kualifikasi 3;;BELUM ADA
+BNSP - Limbah B3;Operator Pengolahan Limbah B3 dengan Insinerator Jenjang Kualifikasi 3;;BELUM ADA
+BNSP - Limbah B3;Operator Pemanfaatan Limbah B3 sebagai Substitusi Baku Beton Siap Pakai Jenjang Kualifikasi 3;;BELUM ADA
+BNSP - Limbah B3;Operator Pemanfaatan Limbah B3 sebagai Substitusi Bahan Bakar Jenjang Kualifikasi 3;;BELUM ADA
+BNSP - Limbah B3;Operator Pemanfaatan Limbah B3 sebagai Bahan Baku Teknologi Peleburan Jenjang Kualifikasi 3;;BELUM ADA
+BNSP - Lingkungan;Pengoperasian dan Instalasi Pengelolaan Limbah B3;;BELUM ADA
+BNSP - Lingkungan;Pengawas Pemantauan dan Analisis Pengelolaan Limbah B3;;BELUM ADA
+BNSP - Lingkungan;Penanggung Jawab Pengendalian Pencemaran Air Limbah (PPPA);;BELUM ADA
+BNSP - Lingkungan;Penanggung Jawab Pengendalian Pencemaran Udara (PPPU);;BELUM ADA
+BNSP - Lingkungan;Penanggung Jawab Operasional Pengolahan Air Limbah (POPAL);;BELUM ADA
+BNSP - Lingkungan;Operator Pengambilan Contoh Uji Air (PCUA);;BELUM ADA
+BNSP - Lingkungan;Penanggung Jawab Operasional Instalasi Pengendalian Pencemaran Udara (POPPU);;BELUM ADA
+BNSP - Manajemen;Manager Energi;;BELUM ADA
+BNSP - Manajemen;Manager HR;;BELUM ADA
+BNSP - Higiene Industri;Higiene Industri Muda (HIMU);;BELUM ADA
+BNSP - Higiene Industri;Higiene Industri Madya (HIMA);;BELUM ADA
+BNSP - Higiene Industri;Ahli Higiene Industri Utama (HIU);;BELUM ADA
+BNSP - Pertambangan;Pengawas Operasional Pertama (POP);training-pop-pertambangan.md;SUDAH ADA - verifikasi skema/level
+BNSP - Pertambangan;Pengawas Operasional Madya (POM);;BELUM ADA
+BNSP - K3;Rigger;training-rigger-kemnaker.md;CEK KESETARAAN - menu BNSP, jangan diasumsikan sama dengan Kemnaker
+BNSP - K3 Umum;Sertifikasi BNSP Fireman;;CEK - jangan diasumsikan sama dengan Damkar Kemnaker
+Offshore;Basic Sea Survival;training-bosiet-huet-basic-sea-survival.md;CEK KESETARAAN - repo menggabungkan beberapa topik
+Offshore;HUET;training-bosiet-huet-basic-sea-survival.md;CEK KESETARAAN - verifikasi kursus/sertifikasi tersendiri
+Offshore;Rigger Offshore;training-rigger-offshore.md;SUDAH ADA
+Offshore;H2S;training-basic-h2s-opito.md;CEK KESETARAAN - repo juga punya training-penanganan-h2s.md
+Offshore;BOSIET;training-bosiet-opito.md;SUDAH ADA - cek OPITO dan varian tropical
+Offshore;T-BOSIET;;BELUM ADA - jangan digabung dengan BOSIET tanpa verifikasi
+Perpanjangan Lisensi K3;Semua Perpanjangan Lisensi K3;;MENU LAYANAN - perlu halaman layanan/katalog tersendiri
+Perpanjangan Lisensi K3;Perpanjangan SIO Forklift;;BELUM ADA
+Perpanjangan Lisensi K3;Perpanjangan Lisensi K3 Ketinggian;;BELUM ADA
+Perpanjangan Lisensi K3;Perpanjangan SIO Operator Genset;;BELUM ADA
+Menu informasi;Tentang Kami;;HALAMAN INFORMASI - bukan training
+Menu informasi;Berita Pelatihan;;HALAMAN INFORMASI - bukan training
+Menu informasi;Artikel;;HALAMAN INFORMASI - bukan training
+Menu informasi;Konsultasi;;HALAMAN LAYANAN - bukan training
+Menu repo saja;Ahli K3 Migas;training-ahli-k3-migas.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Auditor SMK3 BNSP;training-auditor-smk3-bnsp.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Auditor SMK3 Kemnaker;training-auditor-smk3-kemnaker.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Awareness Emergency Response Plan;training-awareness-emergency-response-plan.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Computer Forensics & Information Systems Auditing;training-computer-forensics-information-systems-auditing.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Cost Control & Financial Reporting Upstream Oil & Gas PSC;training-cost-control-financial-reporting-upstream-oil-gas-psc.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Crisis Management Upstream Oil & Gas;training-crisis-management-upstream-oil-gas.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Designing Corporate Social Responsibility Oil & Gas;training-designing-corporate-social-responsibility-oil-gas.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Drilling Engineering for Non-Drilling Engineers;training-drilling-engineering-non-drilling-engineers.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Emergency Response Plan;training-emergency-response-plan.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Enhanced Oil Recovery (EOR);training-enhanced-oil-recovery-eor.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Incident Investigation;training-incident-investigation.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Integrated Project Management Oil & Gas;training-integrated-project-management-oil-gas.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Introduction to Geothermal System Technology;training-introduction-geothermal-system-technology.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;K3 Bahaya Ruang Terbatas;training-k3-bahaya-confined-space.md;ADA DI REPO - cek kesetaraan dengan Teknisi/Petugas Penyelamat Ruang Terbatas
+Menu repo saja;K3 Manajemen APD;training-k3-manajemen-apd.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;K3 Rumah Sakit;training-k3-rumah-sakit.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Maintenance Management Oil & Gas Production Facilities;training-maintenance-management-oil-gas-production-facilities.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Nodal Analysis & Production Optimization;training-nodal-analysis-production-optimization.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Oil & Gas Law of Contract;training-oil-and-gas-law-of-contract.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Penanganan H2S;training-penanganan-h2s.md;ADA DI REPO - cek kesetaraan dengan Basic H2S OPITO
+Menu repo saja;Petroleum for Non-Petroleum Engineer;training-petroleum-for-non-petroleum-engineer.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;PSC Cost Recovery Mechanism;training-psc-cost-recovery-mechanism.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;PSC Financial Aspect;training-psc-financial-aspect.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+Menu repo saja;Penanganan H2S;training-penanganan-h2s.md;ADA DI REPO - periksa pemisahan H2S umum dan OPITO
+Menu repo saja;Operator Boiler Tingkat 2;operator-boiler-tingkat-2.md;ADA DI REPO - daftar menu Betracom hanya menulis Operator Boiler
+Menu repo saja;Awareness Emergency Response Plan;training-awareness-emergency-response-plan.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
