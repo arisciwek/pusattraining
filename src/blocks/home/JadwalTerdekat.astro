@@ -61,8 +61,8 @@ const tileParts = (value: string) => {
         {items.map((item) => {
           const tile = tileParts(item.startDate);
           return (
-            <li class="home-schedule__row grid grid-cols-[3.75rem_minmax(0,1fr)] items-center gap-x-4 gap-y-3 py-5 sm:grid-cols-[3.75rem_4.5rem_minmax(0,1fr)_auto] sm:gap-x-5">
-              <time class="home-schedule__tile grid h-16 w-[3.75rem] place-content-center rounded-xl bg-slate-950 text-center text-white" datetime={item.startDate}>
+            <li class="home-schedule__row grid grid-cols-[3.75rem_minmax(0,1fr)] items-center gap-x-4 gap-y-3 py-5 sm:grid-cols-[3.75rem_4.5rem_minmax(0,1fr)] sm:gap-x-5">
+              <time class="home-schedule__tile row-span-2 grid h-16 w-[3.75rem] place-content-center rounded-xl bg-slate-950 text-center text-white sm:row-span-1" datetime={item.startDate}>
                 <span class="home-schedule__tile-day font-display text-2xl font-extrabold leading-none">{tile.day}</span>
                 <span class="home-schedule__tile-month mt-1 text-xs font-semibold leading-none text-amber-300">{tile.month}</span>
               </time>
@@ -73,20 +73,25 @@ const tileParts = (value: string) => {
                 )}
               </div>
 
-              <div class="home-schedule__main flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
-                <a class="home-schedule__link font-display text-lg font-bold leading-snug text-slate-950 hover:text-amber-800" href={item.trainingHref}>{item.trainingTitle}</a>
-                <p class="home-schedule__date text-sm font-semibold text-slate-700">{item.dateLabel ?? item.startDate}</p>
-                <p class="home-schedule__meta flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
-                  {item.mode && <span class="badge badge--muted">{item.mode}</span>}
-                  {item.location && <span class="home-schedule__location">{item.location}</span>}
-                </p>
-              </div>
-
-              {item.registrationHref && (
-                <div class="home-schedule__action col-span-full sm:col-span-1">
-                  <Button href={item.registrationHref} variant="secondary" size="sm" target="_blank" class="w-full sm:w-auto">Daftar</Button>
+              <div class="home-schedule__content grid min-w-0 grid-cols-1 items-center gap-x-4 gap-y-2 sm:col-start-3 sm:grid-cols-[minmax(0,1fr)_auto] xl:grid-cols-[minmax(15rem,1fr)_11rem_5.5rem_minmax(10rem,14rem)_auto] xl:gap-x-5">
+                <div class="home-schedule__main min-w-0">
+                  <a class="home-schedule__link font-display text-lg font-bold leading-snug text-slate-950 hover:text-amber-800" href={item.trainingHref}>{item.trainingTitle}</a>
                 </div>
-              )}
+
+                <p class="home-schedule__date text-sm font-semibold text-slate-700">{item.dateLabel ?? item.startDate}</p>
+
+                <div class="home-schedule__meta flex items-center text-sm text-slate-500">
+                  {item.mode && <span class="badge badge--muted">{item.mode}</span>}
+                </div>
+
+                <p class="home-schedule__location min-w-0 text-sm text-slate-500">{item.location ?? ''}</p>
+
+                {item.registrationHref && (
+                  <div class="home-schedule__action">
+                    <Button href={item.registrationHref} variant="secondary" size="sm" target="_blank" class="w-full sm:w-auto">Daftar</Button>
+                  </div>
+                )}
+              </div>
             </li>
           );
         })}
