@@ -10,8 +10,13 @@ interface Props {
 const { article, articles, limit = 5 } = Astro.props;
 
 const previousArticles = articles
-  .filter((item) => !item.data.draft && item.data.type === 'article' && item.data.id < article.data.id)
-  .sort((a, b) => b.data.id - a.data.id)
+  .filter((item) =>
+    !item.data.draft &&
+    item.id !== article.id &&
+    ['article', 'brochure'].includes(item.data.type) &&
+    Date.parse(item.data.pubDate) < Date.parse(article.data.pubDate)
+  )
+  .sort((a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate))
   .slice(0, limit);
 ---
 
@@ -22,13 +27,13 @@ const previousArticles = articles
     aria-labelledby="artikel-sebelumnya-title"
   >
     <p class="article-previous__eyebrow text-xs font-bold uppercase tracking-wider text-amber-700">
-      Artikel sebelumnya
+      Konten sebelumnya
     </p>
     <h2
       id="artikel-sebelumnya-title"
       class="article-previous__title mt-2 text-lg font-bold tracking-tight text-slate-950"
     >
-      Baca juga artikel lainnya
+      Baca juga konten lainnya
     </h2>
     <ol class="article-previous__list mt-5 space-y-3">
       {previousArticles.map((item) => (
