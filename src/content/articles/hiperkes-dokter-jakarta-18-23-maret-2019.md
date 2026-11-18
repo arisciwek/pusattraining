@@ -1,6 +1,7 @@
 ---
 type: article
-id: 1077
+id: 1079
+ulid: 01KCV510000000000000000008
 slug: hiperkes-dokter-jakarta-18-23-maret-2019
 title: "Pelatihan Hiperkes Dokter: Peran Dokter Perusahaan dan Kompetensi Kesehatan Kerja"
 description: "Pelatihan Hiperkes Dokter membahas higiene perusahaan, ergonomi, pemeriksaan kesehatan kerja, pengendalian bahaya, dan pencegahan penyakit akibat kerja."
