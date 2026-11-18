@@ -47,7 +47,7 @@ const upcomingSchedules = schedules
         }).format(new Date(endDate));
     return endDay >= today;
   })
-  .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate))
+  .sort((a, b) => Date.parse(b.data.startDate) - Date.parse(a.data.startDate))
   .reduce<Array<{
     trainingTitle: string;
     trainingHref: string;
