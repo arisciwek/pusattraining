@@ -12,8 +12,6 @@
 - Never invent missing program, certification, price, duration, prerequisite, venue, or schedule facts during migration.
 - When a brochure's `trainingId` cannot be confidently mapped to an existing master training, record it as an unresolved migration mapping; do not guess.
 
-# Repository Instructions
-
 ## Training detail pages
 
 - Treat `src/content/trainings/*.md` as the source of truth for each training detail page.
