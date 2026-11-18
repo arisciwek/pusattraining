@@ -41,7 +41,9 @@ const data = entry?.data ?? {
 };
 const { Content } = entry ? await render(entry) : { Content: undefined };
 const articles = allArticles;
-const hasPreviousArticles = articles.some((item) => item.data.type === 'article' && item.data.id < data.id);
+const hasPreviousArticles = articles.some((item) =>
+  item.id !== entry?.id && Date.parse(item.data.pubDate) < Date.parse(data.pubDate)
+);
 const services = isPaginationPage ? [] : await getCollection('services', ({ data: service }) => !service.draft);
 const relatedServices = services.filter((service) => data.serviceIds.includes(service.data.id));
 const trainings = isPaginationPage ? [] : await getCollection('trainings', ({ data: training }) => !training.draft);
