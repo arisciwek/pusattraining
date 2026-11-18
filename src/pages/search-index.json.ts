@@ -33,6 +33,7 @@ export async function GET() {
   ]);
 
   const trainingsById = new Map(trainings.map((entry) => [entry.data.trainingId, entry]));
+  const categoryTitlesById = new Map(pages.filter((entry) => entry.data.pageType === 'category').map((entry) => [entry.data.id, entry.data.title]));
   const records: SearchRecord[] = [
     ...articles.map(({ data }) => ({
       id: `article-${data.id}`,
@@ -50,7 +51,7 @@ export async function GET() {
       title: data.title,
       description: data.description,
       href: `/pelatihan/${data.slug}/`,
-      category: data.categoryIds.map(String).join(' '),
+      category: data.categoryIds.map((id) => categoryTitlesById.get(id)).filter(Boolean).join(' · '),
       date: data.updatedDate ?? data.pubDate,
       content: collectText(data).join(' '),
     })),
@@ -66,7 +67,7 @@ export async function GET() {
         href: getScheduleHref(schedule, training.data.slug),
         category: [training.data.title, data.venue?.city, data.venue?.province, data.venue?.name].filter(Boolean).join(' · '),
         date: data.startDate,
-        content: collectText(data).concat(collectText(training.data.title)).join(' '),
+        content: collectText(data).concat(collectText(training.data)).join(' '),
       }];
     }),
     ...services.map(({ data }) => ({
