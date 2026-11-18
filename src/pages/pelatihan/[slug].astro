@@ -42,6 +42,9 @@ const relatedSchedules = kind === 'training'
   : [];
 const title = entry.data.title;
 const description = entry.data.description;
+const footerDescription = kind === 'training'
+  ? `PT Betracom Gemilang Nusa menyelenggarakan pelatihan ${title}.`
+  : undefined;
 const categoryBlocks = kind === 'category' ? entry.data.blocks as PageBlock[] : [];
 const trainingBlocks = kind === 'training' ? entry.data.blocks as TrainingDetailBlock[] : [];
 const categoryTrainingCards = relatedTrainings.map((training) => ({
@@ -52,7 +55,7 @@ const categoryTrainingCards = relatedTrainings.map((training) => ({
   imageAlt: training.data.title,
 }));
 ---
-<SiteLayout title={title} description={description}>
+<SiteLayout title={title} description={description} footerDescription={footerDescription}>
   <section class="training-detail py-12 sm:py-16">
     <Container>
       <Breadcrumb items={[
