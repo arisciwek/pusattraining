@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { buildScheduleLastmodMap } from './scripts/sitemap-lastmod.mjs';
+import { remarkSiteTokens } from './src/lib/site-tokens.ts';
 
 const vercelProductionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL;
 const siteUrl =
@@ -15,6 +16,9 @@ export default defineConfig({
   trailingSlash: 'always',
   build: {
     format: 'directory',
+  },
+  markdown: {
+    remarkPlugins: [remarkSiteTokens],
   },
   integrations: [
     sitemap({
