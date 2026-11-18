@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import HomePageRenderer from '../blocks/home/HomePageRenderer.astro';
 import LatestArticlesSection from '../components/LatestArticlesSection.astro';
-import { formatScheduleRange, getScheduleDescription, getScheduleHref, getScheduleTitle, isMainSiteSchedule } from '../lib/schedule-utils';
+import { formatScheduleRange, getScheduleDescription, getScheduleHref, getScheduleTitle, getScheduleVenue, isMainSiteSchedule } from '../lib/schedule-utils';
 
 const siteUrl = Astro.site ?? new URL('https://pusattrainingk3.com');
 const entry = (await getCollection('pages', ({ data }) => data.slug === 'home' && !data.draft))[0];
@@ -64,7 +64,7 @@ const upcomingSchedules = upcomingScheduleEntries.map(({ schedule, training }) =
     endDate: schedule.data.endDate,
     dateLabel: schedule.data.dateLabel || formatScheduleRange(schedule.data.startDate, schedule.data.endDate, schedule.data.timezone),
     mode: modeLabels[schedule.data.delivery?.mode ?? 'offline'],
-    location: schedule.data.venue?.name,
+    location: getScheduleVenue(schedule.data)?.name,
     registrationHref: schedule.data.sites?.main?.registrationUrl,
     image: schedule.data.image ?? training.data.image,
     imageAlt: training.data.title,
@@ -92,21 +92,24 @@ const scheduleItemList = {
   itemListElement: upcomingScheduleEntries.map(({ schedule, training }, index) => {
     const data = schedule.data;
     const url = new URL(getScheduleHref(schedule, training.data.slug), siteUrl).href;
-    const location = data.venue
+    const venue = getScheduleVenue(data);
+    const location = venue
       ? {
           '@type': 'Place',
-          name: data.venue.name,
-          ...(data.venue.address || data.venue.city || data.venue.province
+          name: venue.name,
+          ...(venue.address || venue.city || venue.province
             ? {
                 address: {
                   '@type': 'PostalAddress',
-                  ...(data.venue.address ? { streetAddress: data.venue.address } : {}),
-                  ...(data.venue.city ? { addressLocality: data.venue.city } : {}),
-                  ...(data.venue.province ? { addressRegion: data.venue.province } : {}),
-                  addressCountry: data.venue.countryCode,
+                  ...(venue.address ? { streetAddress: venue.address } : {}),
+                  ...(venue.city ? { addressLocality: venue.city } : {}),
+                  ...(venue.province ? { addressRegion: venue.province } : {}),
+                  ...(venue.postalCode ? { postalCode: venue.postalCode } : {}),
+                  addressCountry: venue.countryCode,
                 },
               }
             : {}),
+          ...(venue.mapsUrl ? { sameAs: venue.mapsUrl } : {}),
         }
       : data.delivery?.mode === 'online' && data.sites?.main?.registrationUrl
         ? { '@type': 'VirtualLocation', url: data.sites.main.registrationUrl }
