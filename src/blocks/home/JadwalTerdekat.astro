@@ -73,10 +73,10 @@ const tileParts = (value: string) => {
                 )}
               </div>
 
-              <div class="home-schedule__main min-w-0">
-                <a class="home-schedule__link block font-display text-lg font-bold leading-snug text-slate-950 hover:text-amber-800" href={item.trainingHref}>{item.trainingTitle}</a>
-                <p class="home-schedule__date mt-1 text-sm font-semibold text-slate-700">{item.dateLabel ?? item.startDate}</p>
-                <p class="home-schedule__meta mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
+              <div class="home-schedule__main flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+                <a class="home-schedule__link font-display text-lg font-bold leading-snug text-slate-950 hover:text-amber-800" href={item.trainingHref}>{item.trainingTitle}</a>
+                <p class="home-schedule__date text-sm font-semibold text-slate-700">{item.dateLabel ?? item.startDate}</p>
+                <p class="home-schedule__meta flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
                   {item.mode && <span class="badge badge--muted">{item.mode}</span>}
                   {item.location && <span class="home-schedule__location">{item.location}</span>}
                 </p>
