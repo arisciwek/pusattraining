@@ -260,7 +260,7 @@ const schedules = defineCollection({
 const articles = defineCollection({
   loader: glob({ base: './src/content/articles', pattern: '**/*.md' }),
   schema: z.object({
-    type: z.enum(['article', 'brochure', 'leaflet']),
+    type: z.enum(['article', 'brochure']),
     ...identity,
     slug: z.string().min(1),
     title: z.string().min(1),
