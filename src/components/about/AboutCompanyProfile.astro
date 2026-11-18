@@ -1,0 +1,148 @@
+---
+import {
+  COMPANY_EMAIL,
+  COMPANY_NAME,
+  COMPANY_PROFILE_URL,
+  COMPANY_LEGALITY,
+  COMPANY_MISSION,
+  COMPANY_NETWORK,
+  COMPANY_OFFICES,
+  COMPANY_SERVICES,
+  COMPANY_VISION,
+} from '../../lib/site';
+import ContactPanel from '../../components/shared/ContactPanel.astro';
+import SectionHeading from '../../components/shared/SectionHeading.astro';
+---
+
+<div class="about-company space-y-20 sm:space-y-24">
+  <section class="about-company__overview grid gap-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:grid-cols-[1.1fr_0.9fr] sm:gap-12 sm:p-10">
+    <div class="about-company__overview-copy">
+      <p class="about-company__eyebrow text-sm font-bold uppercase tracking-[0.16em] text-amber-800">Perusahaan Pengelola</p>
+      <h2 class="about-company__overview-title mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">{COMPANY_NAME}</h2>
+      <p class="about-company__overview-description mt-5 text-base leading-8 text-slate-600">
+        Betracom Gemilang Nusa bergerak di bidang pelatihan, sertifikasi, dan konsultasi, terutama pada bidang Keselamatan dan Kesehatan Kerja (K3) atau Health, Safety, and Environment (HSE). Program yang diselenggarakan mencakup pembinaan dengan sertifikasi Kemnaker RI, BNSP, serta pelatihan internal sesuai kebutuhan klien.
+      </p>
+      <p class="about-company__overview-description mt-4 text-base leading-8 text-slate-600">
+        Selain program K3, perusahaan menyediakan pelatihan lain yang dapat disesuaikan dengan kebutuhan dan karakteristik organisasi.
+      </p>
+      <a class="about-company__website-link mt-6 inline-flex items-center gap-2 font-semibold text-amber-800 underline decoration-amber-300 underline-offset-4 hover:text-amber-950" href={COMPANY_PROFILE_URL} target="_blank" rel="noopener noreferrer">
+        Kunjungi website perusahaan <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <div class="about-company__milestone flex flex-col justify-between rounded-2xl bg-slate-950 p-7 text-white sm:p-8">
+      <div>
+        <p class="about-company__milestone-label text-sm font-semibold uppercase tracking-[0.14em] text-amber-300">Legalitas perusahaan</p>
+        <p class="about-company__milestone-year mt-5 text-6xl font-black tracking-tight sm:text-7xl">{COMPANY_LEGALITY.establishedYear}</p>
+        <p class="about-company__milestone-description mt-3 max-w-xs text-base leading-7 text-slate-300">Tahun legalitas usaha dikukuhkan dengan nama {COMPANY_NAME}.</p>
+      </div>
+      <div class="about-company__milestone-divider my-8 border-t border-white/15"></div>
+      <p class="about-company__milestone-note text-sm leading-6 text-slate-300">Pelatihan <span class="px-1 text-amber-300">•</span> Sertifikasi <span class="px-1 text-amber-300">•</span> Konsultasi K3 / HSE</p>
+    </div>
+  </section>
+
+  <section class="about-company__history" aria-label="Perjalanan perusahaan">
+    <SectionHeading eyebrow="Perjalanan perusahaan" title="Berawal dari komitmen pada kompetensi dan keselamatan kerja" description={`Betracom mengukuhkan legalitas usahanya sebagai {COMPANY_NAME} pada tahun 2022.`} />
+    <ol class="about-company__history-list mt-8 grid gap-4 sm:grid-cols-[minmax(0,1fr)_2fr]">
+      <li class="about-company__history-year rounded-2xl bg-amber-50 p-6">
+        <p class="text-sm font-bold uppercase tracking-wider text-amber-800">Tonggak legalitas</p>
+        <p class="mt-2 text-4xl font-black text-slate-950">{COMPANY_LEGALITY.establishedYear}</p>
+      </li>
+      <li class="about-company__history-detail rounded-2xl border border-slate-200 bg-white p-6">
+        <h3 class="text-lg font-bold text-slate-950">{COMPANY_NAME}</h3>
+        <p class="mt-2 leading-7 text-slate-600">Legalitas badan usaha dikukuhkan berdasarkan akta notaris tertanggal {COMPANY_LEGALITY.established} sebagai landasan penyelenggaraan layanan perusahaan.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="about-company__vision-mission grid gap-10 lg:grid-cols-2">
+    <div class="about-company__vision rounded-3xl bg-slate-950 p-7 text-white sm:p-9">
+      <p class="text-sm font-bold uppercase tracking-[0.16em] text-amber-300">Arah perusahaan</p>
+      <h2 class="mt-3 text-3xl font-black tracking-tight">Visi</h2>
+      <ol class="mt-7 space-y-5">
+        {COMPANY_VISION.map((item, index) => (
+          <li class="flex gap-4">
+            <span class="about-company__list-number flex size-8 shrink-0 items-center justify-center rounded-full bg-white/10 text-sm font-bold text-amber-300">{String(index + 1).padStart(2, '0')}</span>
+            <p class="leading-7 text-slate-200">{item}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+    <div class="about-company__mission rounded-3xl border border-slate-200 bg-white p-7 sm:p-9">
+      <p class="text-sm font-bold uppercase tracking-[0.16em] text-amber-800">Cara kami bekerja</p>
+      <h2 class="mt-3 text-3xl font-black tracking-tight text-slate-950">Misi</h2>
+      <ol class="mt-7 space-y-5">
+        {COMPANY_MISSION.map((item, index) => (
+          <li class="flex gap-4">
+            <span class="about-company__list-number flex size-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-900">{String(index + 1).padStart(2, '0')}</span>
+            <p class="leading-7 text-slate-600">{item}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="about-company__services" aria-label="Ruang lingkup layanan">
+    <SectionHeading eyebrow="Ruang lingkup layanan" title="Dukungan pelatihan dan pengembangan kompetensi" description="Layanan perusahaan berfokus pada peningkatan pemahaman, keterampilan, dan kompetensi kerja sesuai kebutuhan organisasi." />
+    <div class="about-company__service-grid mt-8 grid gap-4 sm:grid-cols-2">
+      {COMPANY_SERVICES.map((service, index) => (
+        <a class="about-company__service-card group rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg" href={service.href}>
+          <span class="about-company__service-index text-sm font-bold text-amber-800">0{index + 1}</span>
+          <h3 class="mt-3 text-xl font-bold text-slate-950">{service.title}</h3>
+          <p class="mt-2 leading-7 text-slate-600">{service.description}</p>
+          <span class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-amber-800">Pelajari lebih lanjut <span class="transition group-hover:translate-x-1" aria-hidden="true">→</span></span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="about-company__legality rounded-3xl border border-slate-200 bg-slate-50 p-7 sm:p-9" aria-label="Legalitas perusahaan">
+    <SectionHeading eyebrow="Identitas badan usaha" title="Legalitas perusahaan" description="Informasi legalitas berikut merujuk pada identitas badan usaha yang dipublikasikan oleh perusahaan." />
+    <dl class="about-company__legality-list mt-8 grid gap-4 sm:grid-cols-2">
+      <div class="about-company__legality-item rounded-xl bg-white p-5">
+        <dt class="text-sm font-medium text-slate-500">Nama badan usaha</dt>
+        <dd class="mt-2 font-bold text-slate-950">{COMPANY_NAME}</dd>
+      </div>
+      <div class="about-company__legality-item rounded-xl bg-white p-5">
+        <dt class="text-sm font-medium text-slate-500">Nomor Induk Berusaha (NIB)</dt>
+        <dd class="mt-2 font-bold text-slate-950">{COMPANY_LEGALITY.nib}</dd>
+      </div>
+      <div class="about-company__legality-item rounded-xl bg-white p-5 sm:col-span-2">
+        <dt class="text-sm font-medium text-slate-500">{COMPANY_LEGALITY.deed.label}</dt>
+        <dd class="mt-2 font-bold text-slate-950">{COMPANY_LEGALITY.deed.value}</dd>
+        <dd class="mt-1 text-sm text-slate-600">Tanggal {COMPANY_LEGALITY.deed.date}</dd>
+      </div>
+      <div class="about-company__legality-item rounded-xl bg-white p-5 sm:col-span-2">
+        <dt class="text-sm font-medium text-slate-500">NPWP</dt>
+        <dd class="mt-2 font-bold text-slate-950">{COMPANY_LEGALITY.npwp}</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="about-company__offices" aria-label="Kantor dan training center">
+    <SectionHeading eyebrow="Lokasi operasional" title="Kantor dan training center" description="Dua lokasi dengan fungsi berbeda untuk mendukung koordinasi perusahaan dan pelaksanaan kegiatan pelatihan." />
+    <div class="about-company__office-grid mt-8 grid gap-5 lg:grid-cols-2">
+      {COMPANY_OFFICES.map((office) => (
+        <article class="about-company__office-card flex flex-col rounded-2xl border border-slate-200 bg-white p-6 sm:p-7">
+          <p class="text-sm font-bold uppercase tracking-wider text-amber-800">{office.label}</p>
+          <h3 class="mt-3 text-xl font-bold text-slate-950">{office.name}</h3>
+          <p class="mt-3 flex-1 leading-7 text-slate-600">{office.address}</p>
+          <a class="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-slate-300 px-4 py-2.5 text-sm font-bold text-slate-800 transition hover:border-amber-500 hover:text-amber-900" href={office.mapsUrl} target="_blank" rel="noopener noreferrer">Petunjuk arah <span aria-hidden="true">↗</span></a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="about-company__network" aria-label="Jaringan informasi Betracom">
+    <SectionHeading eyebrow="Ekosistem digital" title="Jaringan informasi Betracom" description="Beberapa kanal digital yang saling melengkapi untuk menyampaikan informasi perusahaan, pelatihan, dan pengembangan kompetensi." />
+    <ul class="about-company__network-list mt-7 grid gap-3 sm:grid-cols-2">
+      {COMPANY_NETWORK.map((site) => (
+        <li class="about-company__network-item rounded-xl border border-slate-200 bg-white p-5">
+          <a class="font-bold text-slate-950 underline decoration-amber-400 underline-offset-4 hover:text-amber-800" href={site.url} target="_blank" rel="noopener noreferrer">{site.name} <span aria-hidden="true">↗</span></a>
+          <p class="mt-2 text-sm leading-6 text-slate-600">{site.description}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <ContactPanel title="Diskusikan kebutuhan pelatihan perusahaan Anda" description="Hubungi tim Pusat Training untuk mendapatkan informasi program, jadwal, dan pilihan pelatihan yang sesuai dengan kebutuhan." email={COMPANY_EMAIL} />
+</div>
