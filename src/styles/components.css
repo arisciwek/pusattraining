@@ -253,4 +253,14 @@
   .training-category-overview__item[data-empty] .training-category-overview__title { @apply text-slate-700; }
   .training-category-overview__arrow { @apply text-lg leading-none text-amber-700 transition-transform duration-200; }
   .training-category-overview__item:hover .training-category-overview__arrow { @apply translate-x-0.5 -translate-y-0.5; }
+
+  /* Global content search */
+  .site-search__filter { @apply rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-amber-400 hover:text-slate-950; }
+  .site-search__filter.is-active { @apply border-slate-950 bg-slate-950 text-white hover:border-slate-950 hover:text-white; }
+  .site-search__result { @apply overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-lg hover:shadow-slate-200/60; }
+  .site-search__result-link { @apply block p-5 sm:p-6; }
+  .site-search__result-type { @apply inline-flex rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-800; }
+  .site-search__result-title { @apply mt-3 text-lg font-bold leading-snug text-slate-950; }
+  .site-search__result-description { @apply mt-2 text-sm leading-7 text-slate-600; }
+  .site-search__result-detail { @apply mt-3 block text-xs font-semibold text-slate-500; }
 }
