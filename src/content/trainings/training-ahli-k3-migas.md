@@ -11,7 +11,7 @@ categoryIds: [2003]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: [3016, 3026]
+trainingId: 3016
 hero:
   title: "Pelatihan K3 Migas (Operator dan Pengawas)"
   imageAlt: "Banner program pelatihan in-house BETRACOM"

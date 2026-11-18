@@ -11,7 +11,7 @@ author: "BETRACOM"
 category: "K3 Rumah Sakit"
 tags: ["K3 Rumah Sakit", "K3RS", "pelatihan K3 Rumah Sakit", "pengelola K3RS", "keselamatan fasilitas kesehatan", "manajemen risiko rumah sakit"]
 draft: false
-related: [3049]
+trainingId: 3049
 blocks:
   - type: intro
     eyebrow: "K3 RUMAH SAKIT · PERAN DAN KOMPETENSI"

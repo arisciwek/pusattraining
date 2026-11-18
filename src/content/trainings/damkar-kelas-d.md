@@ -29,7 +29,6 @@ hero:
       label: Teori dan praktik
   imageWidth: "1200"
   imageHeight: "1600"
-related: []
 blocks:
   - type: training-detail-intro
     eyebrow: INFORMASI KELAS

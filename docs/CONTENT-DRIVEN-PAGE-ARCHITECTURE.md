@@ -92,9 +92,7 @@ pubDate: '2026-11-16T00:00:00+07:00'
 updatedDate: '2026-11-16T00:00:00+07:00'
 draft: false
 
-related:
-  - 1002
-  - 1003
+trainingId: 3001
 
 blocks:
   - type: hero
@@ -130,7 +128,7 @@ Konten Markdown tambahan dapat ditulis di sini bila halaman membutuhkan narasi p
 | pubDate | ISO 8601 datetime | Ya | Waktu publikasi dengan zona waktu. |
 | updatedDate | ISO 8601 datetime | Ya | Waktu pembaruan konten terakhir dengan zona waktu. |
 | draft | boolean | Ya | Status publikasi draft. |
-| related | array integer | Tidak | Daftar id entitas terkait; target wajib divalidasi. |
+| trainingId | integer | Tidak | Satu id numerik master `trainings`; wajib ditemukan saat build. |
 | blocks | array block | Tidak | Susunan section/block halaman yang dirender registry. |
 
 Field SEO tambahan seperti image, canonical, noindex, atau social metadata dapat ditetapkan dalam schema SEO bersama bila dibutuhkan. Jangan membuat variasi metadata tanpa alasan dan dokumentasi.
@@ -185,20 +183,25 @@ Aturan implementasi:
 Relasi menggunakan ID stabil, bukan slug. Contoh:
 
 ```yaml
-related:
-  - 1002
-  - 1003
+trainingId: 3001       # satu id numerik master trainings (pages, trainings, articles, services)
+serviceId: 4002        # satu id numerik master services (hanya articles)
 ```
 
+Keduanya **tunggal** (`optional`, bukan array): satu entitas hanya merujuk satu training dan/atau satu layanan. Pada artikel, `trainingId` lebih diutamakan untuk kalimat footer "menyelenggarakan pelatihan …"; `serviceId` dipakai sebagai fallback "menyediakan layanan …" bila `trainingId` tidak ada. Membuat keduanya array berisiko menghasilkan beberapa klaim sekaligus, sehingga tidak dipakai.
+
 Ketentuan implementasi:
-1. Tetapkan ruang ID dan aturan alokasi yang mencegah benturan.
-2. Validasi bahwa setiap ID yang direferensikan ditemukan.
+1. Tetapkan ruang ID dan aturan alokasi yang mencegah benturan; `src/lib/validate-content.ts` memaksa keunikan id global di seluruh collection.
+2. Validasi bahwa setiap ID yang direferensikan ditemukan — validasi `trainingId`, `serviceId`, dan `categoryIds` berjalan saat build dan menggagalkan build bila ada ID basi.
 3. Pastikan target relasi berasal dari collection yang diizinkan untuk jenis relasi tersebut.
 4. Untuk relasi lintas publisher, gunakan identitas yang tidak ambigu: publisherId + id, atau ulid.
 5. Jangan mengubah relasi otomatis hanya karena slug berubah.
 6. Hindari relasi yang menunjuk kembali ke dirinya sendiri kecuali jenis relasinya memang mengizinkan.
 
-Jika kebutuhan relasi berkembang, gunakan nama field eksplisit seperti relatedPages, relatedArticles, atau relatedTrainings agar target collection tidak ambigu. Jangan mengubah arti related secara diam-diam.
+Nama yang mudah tertukar, jangan disamakan: **`trainingId`** dan **`serviceId`** pada konten adalah relasi numerik ke id master, sedangkan kunci alami berupa string selalu berakhiran `...Slug` — **`trainingSlug`** pada master `trainings` (dipakai schedule dan routing) dan **`serviceSlug`** pada master `services`. Karena itu nilai string tidak boleh memakai nama `...Id`.
+
+Nama `related` dicadangkan untuk konsep awal **artikel → artikel** dan boleh berupa array (satu artikel dapat merujuk beberapa artikel lain). Konsep ini **belum ditambahkan ke schema** karena belum ada datanya; jangan memakai `related` untuk relasi ke training atau layanan — gunakan `trainingId`/`serviceId` seperti di atas. Jangan mengubah arti field relasi secara diam-diam: `related` historis pernah terisi id training, itulah yang kini diperbaiki dengan memindahkannya ke `trainingId`.
+
+Jika kebutuhan relasi berkembang, gunakan nama field eksplisit yang menamai collection tujuan (misalnya `relatedPages`, `relatedArticles`) agar target collection tidak ambigu.
 
 ## 8. Hubungan dengan collection lain
 

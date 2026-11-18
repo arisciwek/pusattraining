@@ -10,7 +10,6 @@ categoryIds: [2012]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: []
 hero:
   title: "Pelatihan Petugas P3K (First Aid)"
   imageAlt: "Pelatihan pertolongan pertama pada kecelakaan di tempat kerja"

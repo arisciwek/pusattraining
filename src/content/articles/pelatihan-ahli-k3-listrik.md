@@ -11,7 +11,7 @@ author: "BETRACOM"
 category: "K3 Listrik"
 tags: ["Ahli K3 Listrik", "pelatihan Ahli K3 Listrik", "K3 kelistrikan", "keselamatan instalasi listrik", "pengawasan K3 listrik", "Permenaker 12 Tahun 2015"]
 draft: false
-related: [3029]
+trainingId: 3029
 blocks:
   - type: intro
     eyebrow: "K3 LISTRIK · PENGAWASAN DAN PENGENDALIAN RISIKO"

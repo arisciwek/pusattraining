@@ -2,7 +2,7 @@
 type: service
 id: 4002
 ulid: 01KCV400000000000000000028
-serviceId: perpanjang-lisensi-k3
+serviceSlug: perpanjang-lisensi-k3
 slug: perpanjang-lisensi-k3
 title: "Jasa Perpanjangan dan Mutasi Lisensi K3, SIO, dan SKP"
 description: "Pendampingan administrasi perpanjangan dan mutasi Lisensi K3, SIO operator, serta Surat Keputusan Penunjukan (SKP) Ahli K3 untuk tenaga ahli, petugas, teknisi, dan operator."
@@ -133,5 +133,4 @@ faqs:
     answer: "Tidak. BETRACOM memberikan pendampingan administrasi dan koordinasi. Persetujuan serta penerbitan dokumen merupakan kewenangan instansi pemerintah atau instansi penerbit yang berwenang."
   - question: "Apakah semua proses dapat dilakukan secara online?"
     answer: "Pemeriksaan dan penyiapan berkas awal dapat dilakukan dengan softcopy. Namun, kebutuhan dokumen asli, verifikasi, atau tahapan lain mengikuti prosedur instansi penerbit."
-related: []
 ---

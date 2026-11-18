@@ -10,7 +10,6 @@ categoryIds: [2012]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: []
 hero:
   title: "Pelatihan Hiperkes Dokter dan Paramedis"
   imageAlt: "Pelatihan Hiperkes untuk dokter dan tenaga paramedis"

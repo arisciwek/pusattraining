@@ -11,8 +11,6 @@ author: "BETRACOM Training"
 category: "Jadwal Pelatihan K3"
 tags: ["jadwal Ahli K3 Kimia", "jadwal pelatihan Ahli K3 Kimia", "pelatihan Ahli K3 Kimia", "sertifikasi Ahli K3 Kimia", "K3 bahan kimia"]
 draft: false
-related: []
-serviceIds: []
 blocks:
   - type: intro
     eyebrow: "INFORMASI JADWAL PELATIHAN"

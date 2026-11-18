@@ -10,7 +10,6 @@ image: "https://pusattrainingk3.com/wp-content/uploads/2026/07/tkbt2new.jpg"
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: []
 blocks:
   - type: training-category
     eyebrow: "PROGRAM PELATIHAN"

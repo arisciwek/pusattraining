@@ -10,8 +10,7 @@ author: "BETRACOM"
 category: "Keselamatan Pesawat Angkat dan Angkut"
 tags: ["Ahli K3 Pesawat Angkat dan Angkut", "PAA", "pesawat angkat dan angkut", "K3"]
 draft: false
-related: []
-serviceIds: [4002]
+serviceId: 4002
 blocks:
   - type: intro
     eyebrow: "KOMPETENSI AHLI K3"

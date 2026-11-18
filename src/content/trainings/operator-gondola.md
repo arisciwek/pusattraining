@@ -30,7 +30,6 @@ hero:
       label: "Teori dan praktik"
     - icon: '<path d="M4 19 10 5l4 9 2-4 4 9"></path><path d="M3 21h18"></path>'
       label: "Keselamatan kerja di ketinggian"
-related: []
 blocks:
   - type: training-detail-intro
     eyebrow: PROGRAM PELATIHAN

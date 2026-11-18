@@ -27,7 +27,6 @@ hero:
       label: "Peran Petugas Madya"
     - icon: '<rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path>'
       label: "Full offline · praktik lapangan"
-related: []
 blocks:
   - type: training-detail-intro
     eyebrow: INFORMASI JENJANG

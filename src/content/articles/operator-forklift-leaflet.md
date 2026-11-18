@@ -10,8 +10,8 @@ author: "BETRACOM"
 category: "Operator K3"
 tags: ["Operator Forklift", "forklift", "SIO Forklift", "pesawat angkat dan angkut"]
 draft: false
-related: [3023]
-serviceIds: [4001]
+trainingId: 3023
+serviceId: 4001
 blocks:
   - type: intro
     eyebrow: "KOMPETENSI OPERATOR"

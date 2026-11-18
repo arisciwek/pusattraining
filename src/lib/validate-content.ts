@@ -25,14 +25,15 @@ const scheduleFilePathSet = new Set(scheduleFilePaths);
  * not silently disappear from category or schedule pages.
  */
 export async function validateContentRelations(): Promise<void> {
-  const [pages, trainings, schedules, articles] = await Promise.all([
+  const [pages, trainings, schedules, articles, services] = await Promise.all([
     getCollection('pages'),
     getCollection('trainings'),
     getCollection('schedules'),
     getCollection('articles'),
+    getCollection('services'),
   ]);
 
-  const allEntries = [...pages, ...trainings, ...schedules, ...articles];
+  const allEntries = [...pages, ...trainings, ...schedules, ...articles, ...services];
 
   // HeroTraining renders this value inside p.hero-training__summary.
   // Keep the official training name visible in every rendered hero summary.
@@ -69,6 +70,7 @@ export async function validateContentRelations(): Promise<void> {
     'slug kategori/program pada /pelatihan/',
   );
   assertUnique(trainings.map(({ data }) => data.trainingSlug), 'trainingSlug');
+  assertUnique(services.map(({ data }) => data.serviceSlug), 'serviceSlug');
   assertUnique(schedules.map(({ data }) => data.scheduleId), 'scheduleId');
 
   const categoryIds = new Set(
@@ -81,6 +83,28 @@ export async function validateContentRelations(): Promise<void> {
           `Training "${training.data.trainingSlug}" merujuk category id ${categoryId} yang tidak ditemukan.`,
         );
       }
+    }
+  }
+
+  // Relasi trainingId (pages/trainings/articles/services -> id numerik master
+  // trainings) dan serviceId (artikel -> id numerik master services). Tanpa
+  // validasi ini id yang basi hilang diam-diam dari kartu terkait dan footer.
+  const trainingIds = new Set(trainings.map(({ data }) => data.id));
+  for (const entry of [...pages, ...trainings, ...articles, ...services]) {
+    const trainingId = entry.data.trainingId;
+    if (trainingId !== undefined && !trainingIds.has(trainingId)) {
+      throw new Error(
+        `Konten "${entry.data.slug}" merujuk trainingId ${trainingId} yang tidak ditemukan di src/content/trainings/.`,
+      );
+    }
+  }
+
+  const serviceIds = new Set(services.map(({ data }) => data.id));
+  for (const article of articles) {
+    if (article.data.serviceId !== undefined && !serviceIds.has(article.data.serviceId)) {
+      throw new Error(
+        `Artikel "${article.data.slug}" merujuk serviceId ${article.data.serviceId} yang tidak ditemukan di src/content/services/.`,
+      );
     }
   }
 

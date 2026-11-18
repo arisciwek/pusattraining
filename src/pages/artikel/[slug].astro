@@ -7,6 +7,8 @@ import { COMPANY_NAME, COMPANY_URL, DEFAULT_ARTICLE_IMAGE } from '../../lib/site
 import Hero from '../../components/content/Hero.astro';
 import ArticlePreviousArticles from '../../components/content/ArticlePreviousArticles.astro';
 import ArticleIndexListing from '../../components/content/ArticleIndexListing.astro';
+import TrainingScheduleList from '../../blocks/training/TrainingScheduleList.astro';
+import { isMainSiteSchedule } from '../../lib/schedule-utils';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
@@ -37,17 +39,33 @@ const categories = [...new Set(allArticles.map(({ data: item }) => item.category
   .sort((a, b) => a.localeCompare(b, 'id'));
 const data = entry?.data ?? {
   id: 0, slug: '', title: '', description: '', pubDate: '', author: '',
-  category: '', tags: [], image: undefined, blocks: [], serviceIds: [], related: [],
+  category: '', tags: [], image: undefined, blocks: [], serviceId: undefined, trainingId: undefined,
 };
+const isBrochure = data.type === 'brochure';
 const { Content } = entry ? await render(entry) : { Content: undefined };
 const articles = allArticles;
 const hasPreviousArticles = articles.some((item) =>
   item.id !== entry?.id && Date.parse(item.data.pubDate) < Date.parse(data.pubDate)
 );
 const services = isPaginationPage ? [] : await getCollection('services', ({ data: service }) => !service.draft);
-const relatedServices = services.filter((service) => data.serviceIds.includes(service.data.id));
+const relatedServices = data.serviceId === undefined
+  ? []
+  : services.filter((service) => service.data.id === data.serviceId);
 const trainings = isPaginationPage ? [] : await getCollection('trainings', ({ data: training }) => !training.draft);
-const relatedTrainings = trainings.filter((training) => data.related.includes(training.data.id));
+const relatedTrainings = data.trainingId === undefined
+  ? []
+  : trainings.filter((training) => training.data.id === data.trainingId);
+// Brosur memakai trainingId untuk memilih master training. Slug master itulah
+// yang dipakai schedule, jadi jadwal selalu diambil dinamis dari collection.
+const brochureTraining = isBrochure ? relatedTrainings[0] : undefined;
+const schedules = brochureTraining === undefined
+  ? []
+  : await getCollection('schedules', isMainSiteSchedule);
+const brochureSchedules = brochureTraining === undefined
+  ? []
+  : schedules
+      .filter((schedule) => schedule.data.trainingSlug === brochureTraining.data.trainingSlug)
+      .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate));
 const relatedTrainingTitles = relatedTrainings.map((training) => training.data.title);
 const relatedServiceTitles = relatedServices.map((service) => service.data.title);
 
@@ -65,7 +83,6 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
 
 const articleImage = new URL(data.image || DEFAULT_ARTICLE_IMAGE, Astro.site).href;
 const canonicalUrl = new URL(`/artikel/${data.slug}/`, Astro.site).href;
-const isBrochure = data.type === 'brochure';
 const structuredData = isBrochure
   ? {
       '@context': 'https://schema.org',
@@ -218,6 +235,17 @@ const structuredData = isBrochure
             </section>
           )
         ))}
+        {brochureTraining && (
+          <TrainingScheduleList
+            id="jadwal-brosur"
+            title={`Jadwal ${brochureTraining.data.title}`}
+            eyebrow="JADWAL TERKAIT"
+            allLabel="Semua jadwal"
+            emptyMessage="Belum ada jadwal yang dapat ditampilkan untuk program ini."
+            schedules={brochureSchedules}
+            trainingSlug={brochureTraining.data.trainingSlug}
+          />
+        )}
           </div>
         </div>
 

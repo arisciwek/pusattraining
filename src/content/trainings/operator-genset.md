@@ -30,7 +30,6 @@ hero:
       label: "Dasar motor diesel dan sistem genset"
     - icon: '<path d="M4 19h16M6 16V5h12v11M9 9h6M9 12h6"></path>'
       label: "Pemeriksaan dan praktik lapangan"
-related: []
 blocks:
   - type: training-detail-intro
     eyebrow: PROGRAM KOMPETENSI OPERATOR

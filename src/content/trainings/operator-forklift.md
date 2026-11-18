@@ -28,7 +28,7 @@ hero:
       label: "Teori online dan praktik offline"
     - icon: '<path d="M4 19V5h3v14M17 19V5h3v14M7 9h10M7 15h10"></path>'
       label: "Pengoperasian dan pemeriksaan forklift"
-related: [3004, 3021]
+trainingId: 3004
 blocks:
   - type: training-detail-intro
     eyebrow: PROGRAM SERTIFIKASI OPERATOR

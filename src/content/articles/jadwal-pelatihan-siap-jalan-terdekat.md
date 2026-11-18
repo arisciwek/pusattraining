@@ -11,7 +11,6 @@ author: "BETRACOM"
 category: "Jadwal Pelatihan K3"
 tags: ["Jadwal Pelatihan K3", "Pelatihan K3", "Pelatihan Siap Jalan", "Sertifikasi K3", "Pelatihan Operator", "Pelatihan Ahli K3"]
 draft: false
-related: []
 blocks:
   - type: intro
     eyebrow: "JADWAL PELATIHAN K3 · PANDUAN PESERTA DAN PERUSAHAAN"

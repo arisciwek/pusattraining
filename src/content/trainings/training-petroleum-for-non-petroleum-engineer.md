@@ -10,7 +10,6 @@ categoryIds: [2003]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: []
 image: "https://pusattrainingk3.com/wp-content/uploads/2022/02/baner-inhouse-training-baru.gif"
 hero:
   title: "Training Petroleum for Non-Petroleum Engineer"

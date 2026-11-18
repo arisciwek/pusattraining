@@ -11,7 +11,7 @@ categoryIds: [2006]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: [3017]
+trainingId: 3017
 hero:
   title: "Pelatihan Rigger (Juru Ikat) Sertifikasi Kemnaker RI"
   imageAlt: "Peserta Pelatihan Rigger (Juru Ikat) Sertifikasi Kemnaker RI bersama instruktur di BETRACOM Arena Training Center"

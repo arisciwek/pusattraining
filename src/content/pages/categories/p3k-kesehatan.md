@@ -9,7 +9,6 @@ description: "Rumpun pelatihan pertolongan pertama dan kesiapsiagaan penanganan 
 pubDate: '2026-11-16T00:00:00+07:00'
 updatedDate: '2026-11-16T00:00:00+07:00'
 draft: false
-related: []
 blocks:
   - type: training-category
     eyebrow: KATEGORI PELATIHAN

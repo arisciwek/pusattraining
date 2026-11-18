@@ -11,7 +11,7 @@ author: "BETRACOM"
 category: "Ahli K3 Umum"
 tags: ["AK3 Umum", "Ahli K3 Umum", "Jadwal Pelatihan K3", "Pelatihan Kemnaker", "Sertifikasi K3"]
 draft: false
-related: [3001]
+trainingId: 3001
 blocks:
   - type: intro
     eyebrow: "AK3 UMUM · INFORMASI PELATIHAN"

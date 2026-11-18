@@ -29,7 +29,6 @@ hero:
       label: "Pembinaan teori dan praktik"
   imageWidth: "800"
   imageHeight: "600"
-related: []
 blocks:
   - type: training-detail-intro
     eyebrow: PROGRAM PELATIHAN

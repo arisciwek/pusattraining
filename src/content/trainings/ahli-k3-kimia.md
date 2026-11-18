@@ -10,7 +10,6 @@ categoryIds: [2013]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: []
 hero:
   title: "Pelatihan Ahli K3 Kimia Sertifikasi Kemnaker RI"
   imageAlt: "Pembelajaran keselamatan dan kesehatan kerja dalam penanganan bahan kimia berbahaya"

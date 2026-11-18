@@ -11,8 +11,6 @@ author: "BETRACOM Training"
 category: "Arsip Jadwal Pelatihan K3"
 tags: ["daftar pelatihan Februari 2019", "jadwal pelatihan K3 2019", "training K3 siap jalan", "pelatihan operator boiler", "operator boiler tingkat 1", "operator boiler tingkat 2"]
 draft: false
-related: []
-serviceIds: []
 blocks:
   - type: intro
     eyebrow: "ARSIP JADWAL PELATIHAN K3 · FEBRUARI 2019"

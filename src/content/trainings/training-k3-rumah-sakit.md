@@ -10,7 +10,7 @@ categoryIds: [2012]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: [3034, 3033]
+trainingId: 3034
 hero:
   title: "Pelatihan K3 Rumah Sakit (K3RS)"
   imageAlt: "Program pembelajaran Keselamatan dan Kesehatan Kerja di Rumah Sakit"

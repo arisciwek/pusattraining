@@ -9,7 +9,6 @@ description: "Informasi pelatihan dan sertifikasi kompetensi juru las untuk pros
 pubDate: '2026-11-16T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: []
 blocks:
   - type: training-category
     eyebrow: "KATEGORI PELATIHAN KETERAMPILAN"

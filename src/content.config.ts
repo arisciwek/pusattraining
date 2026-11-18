@@ -74,7 +74,7 @@ const pages = defineCollection({
     description: z.string().min(1),
     image: z.string().optional(),
     ...editorialDates,
-    related: z.array(z.number().int().positive()).default([]),
+    trainingId: z.number().int().positive().optional(),
     blocks: z.array(z.discriminatedUnion('type', [
       z.object({ type: z.literal('training-category'), eyebrow: z.string().optional(), sectionTitle: z.string().min(1), sectionDescription: z.string().optional(), emptyMessage: z.string().min(1) }),
       z.object({ type: z.literal('schedule-index'), eyebrow: z.string().optional(), sectionEyebrow: z.string().optional(), latestTitle: z.string().min(1), archiveTitle: z.string().min(1), emptyTitle: z.string().min(1), emptyDescription: z.string().min(1), emptyActionLabel: z.string().min(1) }),
@@ -131,7 +131,7 @@ const trainings = defineCollection({
       imageWidth: z.string().optional(),
       imageHeight: z.string().optional(),
     }).optional(),
-    related: z.array(z.number().int().positive()).default([]),
+    trainingId: z.number().int().positive().optional(),
     blocks: z.array(z.discriminatedUnion('type', [
       z.object({
         type: z.literal('training-detail-intro'),
@@ -272,8 +272,8 @@ const articles = defineCollection({
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     image: z.string().optional(),
-    related: z.array(z.number().int().positive()).default([]),
-    serviceIds: z.array(z.number().int().positive()).default([]),
+    trainingId: z.number().int().positive().optional(),
+    serviceId: z.number().int().positive().optional(),
     blocks: z.array(z.discriminatedUnion('type', [
       z.object({ type: z.literal('intro'), eyebrow: z.string().optional(), lead: z.string().min(1) }),
       z.object({ type: z.literal('section'), title: z.string().min(1), paragraphs: z.array(z.string()).default([]), items: z.array(z.object({ title: z.string().min(1), description: z.string().min(1) })).default([]) }),
@@ -288,7 +288,7 @@ const services = defineCollection({
   schema: z.object({
     type: z.literal('service'),
     ...identity,
-    serviceId: z.string().min(1),
+    serviceSlug: z.string().min(1),
     slug: z.string().min(1),
     title: z.string().min(1),
     description: z.string().min(1),
@@ -320,7 +320,7 @@ const services = defineCollection({
       question: z.string().min(1),
       answer: z.string().min(1),
     })).default([]),
-    related: z.array(z.number().int().positive()).default([]),
+    trainingId: z.number().int().positive().optional(),
   }).refine((data) => Date.parse(data.updatedDate) >= Date.parse(data.pubDate), {
     message: 'updatedDate tidak boleh lebih awal dari pubDate',
     path: ['updatedDate'],

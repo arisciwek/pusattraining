@@ -87,13 +87,13 @@ Bagian yang datanya belum tersedia sebaiknya tidak ditampilkan sebagai fakta. Ja
 
 **Brosur harus memiliki relasi ke master training, bukan menyimpan daftar jadwal sebagai data utama.**
 
-Gunakan `trainingSlug` sebagai penghubung antara brosur dan master training. Schedule juga sudah memiliki `trainingSlug` sesuai kontrak `docs/FRONTMATTER-SCHEDULE-CONTRACT.md`.
+Gunakan `trainingId` (integer, satu nilai) sebagai penghubung antara brosur dan master training. Nilainya adalah `id` numerik pada record `src/content/trainings/*.md`. Master training memiliki `trainingSlug` (string) sesuai kontrak `docs/FRONTMATTER-SCHEDULE-CONTRACT.md`, dan schedule juga memiliki `trainingSlug` yang sama. Brosur tidak menyimpan slug; slug dipakai sebagai kunci penghubung internal setelah `trainingId` di-resolve ke master training.
 
 Alur relasi:
 
 ```text
 Brochure
-  └── trainingSlug ──> Training
+  └── trainingId ──> Training (id)
                        └── trainingSlug <── Schedule A
                                       <── Schedule B
                                       <── Schedule C
@@ -102,7 +102,7 @@ Brochure
 Konsekuensi implementasi:
 - Satu brosur menjelaskan satu program/master training.
 - Satu master training dapat memiliki banyak schedule.
-- Halaman brosur mengambil daftar schedule dengan mencocokkan `schedule.trainingSlug === brochure.trainingSlug`.
+- Halaman brosur mengambil daftar schedule dengan mencocokkan `schedule.data.trainingSlug === masterTraining.data.trainingSlug`, di mana `masterTraining` diperoleh dari `brochure.data.trainingId`.
 - Jadwal ditampilkan secara dinamis dari collection `schedules`, bukan disalin manual ke frontmatter brosur.
 - Perubahan tanggal, status, lokasi, kapasitas, atau pendaftaran cukup dilakukan pada record schedule; brosur akan menampilkan data terbaru saat dibangun ulang.
 - Brosur tidak perlu memiliki field `scheduleId` tunggal atau array `scheduleIds` sebagai relasi normal. Relasi langsung semacam itu akan membuat brosur cepat usang ketika angkatan baru dibuat atau jadwal lama ditutup.
@@ -110,10 +110,10 @@ Konsekuensi implementasi:
 
 ### Kontrak field relasi
 
-- Tambahkan/gunakan `trainingSlug` pada frontmatter brosur.
-- Nilainya harus sama persis dengan `trainingSlug` pada satu record master `trainings`.
-- Validasi harus memastikan `trainingSlug` brosur mengarah ke master training yang tersedia.
-- Saat menampilkan jadwal, hanya ambil schedule dengan `trainingSlug` yang sama dan yang memang boleh ditampilkan pada situs Pusattraining sesuai aturan distribusi schedule.
+- Tambahkan/gunakan `trainingId` pada frontmatter brosur (satu integer, bukan array).
+- Nilainya harus sama persis dengan `id` numerik pada satu record master `trainings`.
+- Validasi harus memastikan `trainingId` brosur mengarah ke master training yang tersedia.
+- Saat menampilkan jadwal, resolve `trainingId` ke `trainingSlug` master training, lalu ambil hanya schedule dengan `trainingSlug` yang sama dan yang memang boleh ditampilkan pada situs Pusattraining sesuai aturan distribusi schedule.
 - Schedule yang berstatus `cancelled` atau `postponed`, pendaftaran tertutup, maupun schedule lampau harus ditampilkan sesuai status faktualnya; jangan dipromosikan sebagai jadwal aktif.
 - Jika belum ada master training atau relasi belum dapat dipastikan dari data sumber, jangan menebak ID. Catat sebagai pekerjaan migrasi yang perlu pemetaan.
 
@@ -124,7 +124,7 @@ Contoh frontmatter konseptual:
 type: brochure
 title: Brosur Pelatihan Ahli K3 Kimia
 description: Informasi program Pelatihan Ahli K3 Kimia dan cara pendaftaran.
-trainingSlug: ahli-k3-kimia
+trainingId: 3030
 ---
 ```
 
@@ -136,7 +136,7 @@ Alur yang diharapkan:
 
 1. Pengunjung menemukan artikel melalui pencarian dan memperoleh pemahaman.
 2. Artikel mengarahkan pengunjung ke halaman training atau brosur yang sesuai.
-3. Brosur menjelaskan penawaran dan menampilkan jadwal yang terkait melalui `trainingSlug`.
+3. Brosur menjelaskan penawaran dan menampilkan jadwal yang terkait melalui `trainingId` (di-resolve ke master training, lalu ke `trainingSlug` schedule).
 4. Pengunjung membuka detail schedule untuk memeriksa tanggal, lokasi, status, dan pendaftaran.
 5. Pengunjung melakukan konsultasi atau pendaftaran melalui CTA yang tersedia.
 
@@ -149,7 +149,7 @@ Saat migrasi:
 2. Konten edukasi, panduan, penjelasan, dan berita program masuk sebagai `article`.
 3. Materi penawaran program yang memiliki informasi program dan CTA masuk sebagai `brochure`.
 4. Konten yang berisi satu penyelenggaraan/angkatan dengan tanggal dan informasi operasional spesifik harus dipetakan ke collection `schedules` sesuai kontrak schedule, bukan dipaksakan menjadi brosur.
-5. Hubungkan brosur ke master training menggunakan `trainingSlug` yang telah diverifikasi.
+5. Hubungkan brosur ke master training menggunakan `trainingId` yang telah diverifikasi.
 6. Jangan menyalin tanggal, venue, status, kapasitas, atau URL pendaftaran schedule ke frontmatter brosur sebagai data duplikat.
 7. Jika konten lama mencampur penjelasan edukatif dan penawaran, pisahkan hanya jika masing-masing hasil memiliki tujuan dan isi yang cukup; jangan membuat duplikasi tipis untuk mengejar jumlah halaman.
 8. Pertahankan URL lama dan petakan redirect sesuai dokumen arsitektur URL dan strategi redirect.
@@ -162,8 +162,8 @@ Saat migrasi:
 - [ ] Brosur memakai pola landing page penawaran dan CTA konversi.
 - [ ] Brosur memakai hierarki heading H1/H2/H3 yang benar dengan tepat satu H1.
 - [ ] Brosur tetap berupa halaman HTML yang dapat diindeks.
-- [ ] Brosur terhubung ke master training melalui `trainingSlug`.
-- [ ] Jadwal brosur diambil dinamis dari collection `schedules` berdasarkan `trainingSlug`.
+- [ ] Brosur terhubung ke master training melalui `trainingId`.
+- [ ] Jadwal brosur diambil dinamis dari collection `schedules` berdasarkan `trainingSlug` master training yang di-resolve dari `trainingId`.
 - [ ] Tidak ada salinan manual data operasional schedule pada frontmatter brosur.
 - [ ] Konten untuk satu angkatan tertentu dimodelkan sebagai schedule.
 - [ ] Tidak ada informasi program atau jadwal yang dikarang saat migrasi.

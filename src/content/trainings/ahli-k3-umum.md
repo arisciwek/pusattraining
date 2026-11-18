@@ -30,7 +30,6 @@ hero:
   price: "Rp6.000.000"
   duration: "120 JP"
   priceNote: "Per peserta. Program blended terdiri dari 11 hari pembelajaran online dan 1 hari evaluasi tatap muka."
-related: []
 blocks:
   - type: training-detail-intro
     eyebrow: PROGRAM PELATIHAN

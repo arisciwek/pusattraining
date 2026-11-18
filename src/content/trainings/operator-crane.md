@@ -28,7 +28,7 @@ hero:
       label: "Teori online dan praktik offline"
     - icon: '<path d="M3 18h18M5 18V8h14v10M8 8V5h8v3M9 12h6"></path>'
       label: "Fokus praktik hoist dan overhead crane"
-related: [3023, 3017]
+trainingId: 3023
 blocks:
   - type: training-detail-intro
     eyebrow: PROGRAM SERTIFIKASI OPERATOR

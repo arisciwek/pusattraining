@@ -2,7 +2,7 @@
 type: service
 id: 4001
 ulid: 01KCV300000000000000000027
-serviceId: perpanjang-sio-forklift
+serviceSlug: perpanjang-sio-forklift
 slug: perpanjang-sio-forklift
 title: "Jasa Perpanjangan SIO Forklift"
 description: "Layanan pendampingan administrasi perpanjangan Lisensi K3 atau SIO Operator Forklift, termasuk pemeriksaan kelengkapan dokumen dan konsultasi proses pengajuan sesuai ketentuan yang berlaku."
@@ -89,5 +89,4 @@ faqs:
     answer: "Biaya dan estimasi waktu dikonfirmasi setelah dokumen serta kondisi pengajuan diperiksa. Keduanya dapat berubah mengikuti ketentuan dan proses instansi penerbit."
   - question: "Apakah BETRACOM menjamin lisensi pasti terbit?"
     answer: "Tidak. BETRACOM memberikan pendampingan administrasi, sedangkan verifikasi dan penerbitan Lisensi K3 merupakan kewenangan instansi pemerintah yang berwenang."
-related: []
 ---

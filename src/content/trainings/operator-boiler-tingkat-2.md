@@ -29,7 +29,7 @@ hero:
       label: "Teori online dan praktik offline"
     - icon: '<path d="M4 19 10 5l4 9 2-4 4 9"></path><path d="M3 21h18"></path>'
       label: "Pengoperasian boiler secara aman"
-related: [3005]
+trainingId: 3005
 blocks:
   - type: training-detail-intro
     eyebrow: PROGRAM PELATIHAN

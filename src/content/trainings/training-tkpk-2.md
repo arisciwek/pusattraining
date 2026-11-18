@@ -11,7 +11,7 @@ categoryIds: [2002, 2015]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: [3004]
+trainingId: 3004
 hero:
   title: "Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 2 (TKPK 2)"
   imageAlt: "Peserta Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 2 (TKPK 2) di BETRACOM Arena Training Center, Bogor"

@@ -11,8 +11,7 @@ author: "BETRACOM Training"
 category: "Sertifikasi K3"
 tags: ["sertifikasi K3 BNSP", "sertifikat kompetensi K3", "LSP K3", "uji kompetensi K3", "pelatihan K3"]
 draft: false
-related: []
-serviceIds: []
+trainingId: 3013
 blocks:
   - type: intro
     eyebrow: "PANDUAN SERTIFIKASI KOMPETENSI"

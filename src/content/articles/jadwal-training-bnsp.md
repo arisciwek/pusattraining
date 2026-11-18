@@ -10,8 +10,7 @@ author: "BETRACOM"
 category: "Sertifikasi Kompetensi"
 tags: ["BNSP", "jadwal training BNSP", "sertifikasi kompetensi", "pelatihan"]
 draft: false
-related: []
-serviceIds: []
+trainingId: 3014
 blocks:
   - type: intro
     eyebrow: "INFORMASI PROGRAM · BNSP"

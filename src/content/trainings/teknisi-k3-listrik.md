@@ -10,7 +10,6 @@ categoryIds: [2008]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: []
 hero:
   title: "Pelatihan Teknisi K3 Listrik Sertifikasi Kemnaker RI"
   imageAlt: "Pelatihan teknisi mengenai pemeriksaan dan keselamatan instalasi listrik"

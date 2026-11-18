@@ -11,7 +11,7 @@ author: "BETRACOM"
 category: "POP Pertambangan"
 tags: ["POP Pertambangan", "Pengawas Operasional Pertama", "Pelatihan POP", "Sertifikasi BNSP", "K3 Pertambangan", "Bandung", "Palangkaraya"]
 draft: false
-related: [3026]
+trainingId: 3026
 blocks:
   - type: intro
     eyebrow: "POP PERTAMBANGAN · KOMPETENSI PENGAWAS OPERASIONAL"

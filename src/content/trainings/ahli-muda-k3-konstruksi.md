@@ -11,7 +11,6 @@ categoryIds: [2002]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: []
 hero:
   title: "Pelatihan Ahli Muda K3 Konstruksi Sertifikasi Kemnaker RI"
   imageAlt: "Peserta pelatihan Ahli Muda K3 Konstruksi BETRACOM dalam kegiatan kelas dan praktik"

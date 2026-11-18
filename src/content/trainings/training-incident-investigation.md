@@ -25,7 +25,6 @@ categoryIds: [2001]
 pubDate: '2026-11-17T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
-related: []
 blocks:
   - type: training-detail-intro
     eyebrow: PROGRAM PELATIHAN K3

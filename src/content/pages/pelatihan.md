@@ -9,7 +9,6 @@ description: Jelajahi kategori dan program pelatihan K3 berdasarkan bidang kompe
 pubDate: '2026-11-16T00:00:00+07:00'
 updatedDate: '2026-11-16T00:00:00+07:00'
 draft: false
-related: []
 blocks:
   - type: training-catalog
     eyebrow: Katalog program

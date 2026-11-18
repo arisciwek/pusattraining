@@ -11,8 +11,6 @@ author: "BETRACOM Training"
 category: "Jadwal Pelatihan K3"
 tags: ["jadwal pelatihan pemadam kebakaran", "jadwal Damkar", "pelatihan Damkar kelas D", "pelatihan Damkar kelas C", "pelatihan Damkar kelas B", "pelatihan Damkar kelas A", "paket Damkar DCBA", "sertifikasi pemadam kebakaran"]
 draft: false
-related: []
-serviceIds: []
 blocks:
   - type: intro
     eyebrow: "INFORMASI JADWAL DAN JENJANG DAMKAR"

@@ -11,7 +11,7 @@ author: "BETRACOM"
 category: "Hiperkes"
 tags: ["Hiperkes Dokter", "pelatihan Hiperkes", "dokter perusahaan", "kesehatan kerja", "higiene perusahaan", "penyakit akibat kerja"]
 draft: false
-related: [3034]
+trainingId: 3034
 blocks:
   - type: intro
     eyebrow: "HIPERKES DOKTER · KESEHATAN KERJA"

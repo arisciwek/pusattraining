@@ -10,8 +10,8 @@ author: "BETRACOM"
 category: "K3 Kimia"
 tags: ["Ahli K3 Kimia", "K3 Kimia", "bahan kimia berbahaya", "keselamatan kerja"]
 draft: false
-related: [3030]
-serviceIds: [4002]
+trainingId: 3030
+serviceId: 4002
 blocks:
   - type: intro
     eyebrow: "KOMPETENSI K3 KIMIA"
