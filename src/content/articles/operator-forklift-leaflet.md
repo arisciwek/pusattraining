@@ -1,5 +1,5 @@
 ---
-type: leaflet
+type: article
 id: 5103
 ulid: 01KCV510000000000000000003
 slug: operator-forklift
