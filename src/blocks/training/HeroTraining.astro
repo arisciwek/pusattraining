@@ -1,5 +1,6 @@
 ---
 import TrainingRegistration from './TrainingRegistration.astro';
+import { certificationLabel } from '../../lib/certification';
 import type { CollectionEntry } from 'astro:content';
 type ScheduleEntry = CollectionEntry<'schedules'>;
 interface TrustItem { icon: string; label: string; }
@@ -21,6 +22,7 @@ function localDateKey(value: string, timezone: string): string {
   const part = (type: string) => parts.find((item) => item.type === type)?.value ?? '';
   return `${part('year')}-${part('month')}-${part('day')}`;
 }
+const certLabel = certificationLabel(certBadge);
 const today = localDateKey(new Date().toISOString(), 'Asia/Jakarta');
 const upcomingSchedules = [...schedules]
   .filter((entry) => !['cancelled', 'postponed', 'completed'].includes(entry.data.status))
@@ -34,7 +36,7 @@ const deliveryLabel = deliveryMode === 'online' ? 'Online' : deliveryMode === 'o
     <div class="hero-training__main">
       <div class="hero-training__eyebrow">
         <span class="hero-training__status-dot" aria-hidden="true"></span><span>{eyebrow}</span>
-        {certBadge && <span class="hero-training__cert-tag">{certBadge}</span>}
+        {certBadge && <span class="hero-training__cert-tag">{certLabel}</span>}
       </div>
       <h1 id="course-title" class="hero-training__title">{title}</h1>
       <p class="hero-training__summary">{description}</p>
@@ -42,7 +44,7 @@ const deliveryLabel = deliveryMode === 'online' ? 'Online' : deliveryMode === 'o
       <figure class="hero-training__image">
         <img src={image} {...imageSrcset && { srcset: imageSrcset }} {...imageSizes && { sizes: imageSizes }} width={imageWidth} height={imageHeight} alt={imageAlt} fetchpriority="high" decoding="async" />
         <figcaption class="hero-training__caption">
-          {certBadge && <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Z"></path><path d="m8 12 3 3 5-6"></path></svg>Sertifikasi {certBadge}</span>}
+          {certBadge && <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Z"></path><path d="m8 12 3 3 5-6"></path></svg>{certLabel}</span>}
           {deliveryLabel && <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>{deliveryLabel}</span>}
         </figcaption>
       </figure>
@@ -54,7 +56,7 @@ const deliveryLabel = deliveryMode === 'online' ? 'Online' : deliveryMode === 'o
   </div>
 </section>
 <style>
-.hero-training{margin-bottom:2.5rem}.hero-training__grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(19rem,.8fr);align-items:start;gap:clamp(1.5rem,3vw,2.75rem)}.hero-training__main{display:flex;min-width:0;flex-direction:column}.hero-training__eyebrow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;color:#92400e;font-size:.875rem;font-weight:600}.hero-training__status-dot{display:inline-block;width:.5rem;height:.5rem;flex:0 0 auto;border-radius:9999px;background:#10b981}.hero-training__cert-tag{display:inline-flex;border-radius:9999px;background:#0f172a;padding:.3rem .7rem;color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.04em}.hero-training__title{margin:.85rem 0 0;color:#0f172a;font-size:clamp(2rem,4vw,3.4rem);font-weight:800;line-height:1.08;letter-spacing:-.03em}.hero-training__summary{max-width:52rem;margin:1rem 0 0;color:#475569;font-size:1rem;line-height:1.85}.hero-training__mobile-link{display:none}.hero-training__image{overflow:hidden;margin:1.6rem 0 0;border:1px solid #e2e8f0;border-radius:1.15rem;background:#f1f5f9}.hero-training__image img{display:block;width:100%;height:auto;aspect-ratio:630/380;object-fit:cover}.hero-training__caption{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem 1.25rem;border-top:1px solid #e2e8f0;padding:.8rem 1rem;color:#475569;font-size:.75rem;font-weight:650}.hero-training__caption span{display:inline-flex;align-items:center;gap:.4rem}.hero-training__trust{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem 1.25rem;margin:1.25rem 0 0;padding:0;color:#64748b;font-size:.76rem;font-weight:650;list-style:none}.hero-training__trust-item{display:inline-flex;align-items:center;gap:.4rem}.hero-training__trust-item svg{flex:0 0 auto;color:#0f766e}.hero-training__registration{min-width:0;scroll-margin-top:6rem}
+.hero-training{margin-bottom:2.5rem}.hero-training__grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(19rem,.8fr);align-items:start;gap:clamp(1.5rem,3vw,2.75rem)}.hero-training__main{display:flex;min-width:0;flex-direction:column}.hero-training__eyebrow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;color:#92400e;font-size:.875rem;font-weight:600}.hero-training__status-dot{display:inline-block;width:.5rem;height:.5rem;flex:0 0 auto;border-radius:9999px;background:#10b981}.hero-training__cert-tag{display:inline-flex;border-radius:9999px;background:#0f172a;padding:.3rem .7rem;color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.04em}.hero-training__title{margin:.85rem 0 0;color:#0f172a;font-size:clamp(2rem,4vw,3.4rem);font-weight:800;line-height:1.08;letter-spacing:-.03em}.hero-training__summary{max-width:52rem;margin:1rem 0 0;color:#475569;font-size:1rem;line-height:1.85}.hero-training__mobile-link{display:none}.hero-training__image{overflow:hidden;margin:1.6rem 0 0;border:1px solid #e2e8f0;border-radius:1.15rem;background:#f1f5f9}.hero-training__image img{display:block;width:100%;height:auto;aspect-ratio:630/380;object-fit:cover;color:transparent;font-size:0;background:radial-gradient(circle at 85% 110%,rgb(251 191 36/.35),transparent 58%),linear-gradient(rgb(255 255 255/.05) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(90deg,rgb(255 255 255/.05) 1px,transparent 1px) 0 0/28px 28px,#0f172a}.hero-training__caption{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem 1.25rem;border-top:1px solid #e2e8f0;padding:.8rem 1rem;color:#475569;font-size:.75rem;font-weight:650}.hero-training__caption span{display:inline-flex;align-items:center;gap:.4rem}.hero-training__trust{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem 1.25rem;margin:1.25rem 0 0;padding:0;color:#64748b;font-size:.76rem;font-weight:650;list-style:none}.hero-training__trust-item{display:inline-flex;align-items:center;gap:.4rem}.hero-training__trust-item svg{flex:0 0 auto;color:#0f766e}.hero-training__registration{min-width:0;scroll-margin-top:6rem}
 @media(max-width:1023px){.hero-training__grid{grid-template-columns:minmax(0,1fr)}.hero-training__registration{width:100%;max-width:42rem;margin-inline:auto}.hero-training__mobile-link{display:inline-flex;width:fit-content;align-items:center;justify-content:center;gap:.5rem;margin-top:1.25rem;border-radius:.75rem;background:#0f172a;padding:.8rem 1.15rem;color:#fff;font-size:.875rem;font-weight:700;text-decoration:none}}
 @media(max-width:640px){.hero-training__title{font-size:clamp(1.9rem,9vw,2.6rem)}.hero-training__summary{font-size:.94rem;line-height:1.75}.hero-training__image{margin-top:1.25rem;border-radius:.85rem}.hero-training__caption{padding:.7rem .8rem}.hero-training__trust{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}}
 </style>
