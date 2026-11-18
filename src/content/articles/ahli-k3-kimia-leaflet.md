@@ -1,5 +1,5 @@
 ---
-type: leaflet
+type: article
 id: 5102
 ulid: 01KCV510000000000000000002
 slug: ahli-k3-kimia
