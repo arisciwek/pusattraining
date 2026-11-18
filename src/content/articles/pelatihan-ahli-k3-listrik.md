@@ -1,6 +1,7 @@
 ---
 type: article
-id: 1078
+id: 1080
+ulid: 01KCV510000000000000000009
 slug: pelatihan-ahli-k3-listrik
 title: "Pelatihan Ahli K3 Listrik: Pengawasan Instalasi dan Keselamatan Pekerjaan Kelistrikan"
 description: "Pelajari peran Ahli K3 Listrik, pengawasan norma keselamatan instalasi, sistem proteksi, identifikasi bahaya, prosedur kerja aman, dan materi pelatihannya."
