@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import SiteHeader from '../components/shared/SiteHeader.astro';
 import SiteFooter from '../components/shared/SiteFooter.astro';
+import { SITE_NAME } from '../lib/site';
 
 interface Props {
   title?: string;
@@ -12,14 +13,14 @@ interface Props {
 }
 
 const {
-  title = 'Pusattraining — Pusat Informasi Training',
+  title = `${SITE_NAME} — Pusat Informasi Training`,
   description = 'Temukan program pengembangan kompetensi dan jadwal training dari berbagai penyelenggara dalam satu portal.',
   canonicalURL,
   noindex = false,
   footerDescription,
 } = Astro.props;
 
-const pageTitle = title.includes('Pusattraining') ? title : `${title} | Pusattraining`;
+const pageTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
 const canonical = canonicalURL ?? (Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined);
 ---
 <!doctype html>
@@ -33,7 +34,7 @@ const canonical = canonicalURL ?? (Astro.site ? new URL(Astro.url.pathname, Astr
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Pusattraining" />
+    <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     {canonical && <meta property="og:url" content={canonical} />}
