@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import Container from '../../components/shared/Container.astro';
 import Breadcrumb from '../../components/shared/Breadcrumb.astro';
-import { COMPANY_NAME } from '../../lib/site';
+import { COMPANY_NAME, COMPANY_URL, DEFAULT_ARTICLE_IMAGE } from '../../lib/site';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
@@ -36,8 +36,46 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
   year: 'numeric',
   timeZone: 'Asia/Jakarta',
 });
+
+const articleImage = new URL(data.image || DEFAULT_ARTICLE_IMAGE, Astro.site).href;
+const canonicalUrl = new URL(`/artikel/${data.slug}/`, Astro.site).href;
+// BETRACOM adalah nama organisasi penerbit, bukan nama orang. Schema author
+// menggunakan Organization agar identitas penulis tidak salah diklasifikasikan.
+const authorSchema = {
+  '@type': 'Organization',
+  name: data.author,
+  url: COMPANY_URL,
+};
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: data.title,
+  description: data.description,
+  image: [articleImage],
+  datePublished: data.pubDate,
+  dateModified: data.updatedDate || data.pubDate,
+  author: authorSchema,
+  publisher: {
+    '@type': 'Organization',
+    name: COMPANY_NAME,
+    url: COMPANY_URL,
+  },
+  articleSection: data.category,
+  keywords: data.tags,
+  inLanguage: 'id-ID',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalUrl,
+  },
+};
 ---
 <SiteLayout title={data.title} description={data.description} footerDescription={footerDescription}>
+  <Fragment slot="head">
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content={articleImage} />
+    <meta name="twitter:image" content={articleImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  </Fragment>
   <article class="article-detail py-10 sm:py-14">
     <Container>
       <Breadcrumb items={[
@@ -54,6 +92,10 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
           <time class="article-detail__date" datetime={data.pubDate}>{formatDate(data.pubDate)}</time>
         </div>
       </header>
+
+      <figure class="article-detail__featured-media mx-auto mt-9 max-w-4xl overflow-hidden rounded-3xl bg-slate-100">
+        <img class="article-detail__featured-image aspect-[1200/630] w-full object-cover" src={articleImage} alt={data.image ? data.title : 'Ilustrasi artikel Pusat Training'} width="1200" height="630" fetchpriority="high" />
+      </figure>
 
       <div class="article-detail__body mx-auto mt-10 max-w-4xl space-y-12">
         {data.blocks.map((block, index) => (
