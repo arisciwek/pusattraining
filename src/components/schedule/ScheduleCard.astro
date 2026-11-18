@@ -5,6 +5,7 @@ import {
   getScheduleHref,
   getScheduleStatusLabel,
   getScheduleTitle,
+  getScheduleVenue,
 } from '../../lib/schedule-utils';
 
 interface Props {
@@ -20,6 +21,7 @@ const data = schedule.data;
 const href = getScheduleHref(schedule, trainingSlug);
 const title = getScheduleTitle(schedule);
 const description = getScheduleDescription(schedule);
+const venue = getScheduleVenue(data);
 const statusClass = `schedule-card__status--${timelineStatus ?? data.status}`;
 const statusLabel = timelineStatus === 'available' ? 'Tersedia' : timelineStatus === 'ongoing' ? 'Sedang berlangsung' : timelineStatus === 'past' ? 'Sudah terlewati' : getScheduleStatusLabel(data.status);
 ---
@@ -55,7 +57,7 @@ const statusLabel = timelineStatus === 'available' ? 'Tersedia' : timelineStatus
     {!compact && <p class="schedule-card__description mt-3 line-clamp-3 text-sm leading-6 text-slate-600">{description}</p>}
   </div>
   <div class="schedule-card__footer mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4">
-    <span class="schedule-card__venue text-xs text-slate-500">{data.venue?.city ?? data.venue?.name ?? (data.delivery?.mode === 'online' ? 'Online' : data.delivery?.mode ? 'Lokasi menyusul' : 'Metode menyusul')}</span>
+    <span class="schedule-card__venue text-xs text-slate-500">{venue?.city ?? venue?.name ?? (data.delivery?.mode === 'online' ? 'Online' : 'Lokasi menyusul')}</span>
     <a class="schedule-card__action inline-flex items-center gap-2 text-sm font-bold text-slate-900 transition-colors hover:text-amber-700" href={href}>
       Detail jadwal <span aria-hidden="true">→</span>
     </a>

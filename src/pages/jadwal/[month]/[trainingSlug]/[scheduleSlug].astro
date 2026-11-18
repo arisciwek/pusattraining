@@ -12,6 +12,7 @@ import {
   getScheduleRouteParams,
   getScheduleStatusLabel,
   getScheduleTitle,
+  getScheduleVenue,
   isMainSiteSchedule,
   getRegistrationStatusLabel,
 } from '../../../../lib/schedule-utils';
@@ -47,6 +48,7 @@ interface Props {
 
 const { schedule, training } = Astro.props as Props;
 const data = schedule.data;
+const venue = getScheduleVenue(data);
 const [allSchedules, allTrainings] = await Promise.all([
   getCollection('schedules', isMainSiteSchedule),
   getCollection('trainings', ({ data }) => !data.draft),
@@ -109,21 +111,23 @@ const eventAttendanceMode = data.delivery?.attendanceMode
       mixed: 'https://schema.org/MixedEventAttendanceMode',
     }[data.delivery.attendanceMode]
   : undefined;
-const eventLocation = data.venue
+const eventLocation = venue
   ? {
       '@type': 'Place',
-      name: data.venue.name,
-      ...(data.venue.address || data.venue.city || data.venue.province
+      name: venue.name,
+      ...(venue.address || venue.city || venue.province
         ? {
             address: {
               '@type': 'PostalAddress',
-              ...(data.venue.address ? { streetAddress: data.venue.address } : {}),
-              ...(data.venue.city ? { addressLocality: data.venue.city } : {}),
-              ...(data.venue.province ? { addressRegion: data.venue.province } : {}),
-              addressCountry: data.venue.countryCode,
+              ...(venue.address ? { streetAddress: venue.address } : {}),
+              ...(venue.city ? { addressLocality: venue.city } : {}),
+              ...(venue.province ? { addressRegion: venue.province } : {}),
+              ...(venue.postalCode ? { postalCode: venue.postalCode } : {}),
+              addressCountry: venue.countryCode,
             },
           }
         : {}),
+      ...(venue.mapsUrl ? { sameAs: venue.mapsUrl } : {}),
     }
   : data.delivery?.mode === 'online' && data.sites?.main?.registrationUrl
     ? { '@type': 'VirtualLocation', url: data.sites.main.registrationUrl }
@@ -198,7 +202,7 @@ const safeStructuredData = JSON.stringify(structuredData).replace(/</g, '\\u003c
               </dl>
             </section>
 
-            {(data.venue || data.delivery) && (
+            {(venue || data.delivery) && (
               <section class="schedule-detail__section relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm shadow-slate-900/[0.03] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-amber-400 before:via-amber-200 before:to-transparent sm:p-7" aria-labelledby="schedule-detail-location-title">
                 <h2 id="schedule-detail-location-title" class="schedule-detail__section-title text-xl font-bold tracking-tight text-slate-950">Metode dan lokasi</h2>
                 <dl class="schedule-detail__facts mt-5 grid gap-5 sm:grid-cols-2">
@@ -214,13 +218,14 @@ const safeStructuredData = JSON.stringify(structuredData).replace(/</g, '\\u003c
                       <dd class="mt-1 text-sm text-slate-800">{attendanceLabels[data.delivery.attendanceMode]}</dd>
                     </div>
                   )}
-                  {data.venue?.name && (
+                  {venue?.name && (
                     <div class="schedule-detail__fact rounded-xl border border-slate-100 bg-slate-50/80 p-4 sm:col-span-2">
                       <dt class="text-xs font-semibold text-slate-500">Tempat</dt>
-                      <dd class="mt-1 text-sm font-semibold text-slate-800">{data.venue.name}</dd>
-                      {(data.venue.address || data.venue.city || data.venue.province) && (
-                        <dd class="mt-1 text-sm leading-6 text-slate-600">{[data.venue.address, data.venue.city, data.venue.province].filter(Boolean).join(', ')}</dd>
+                      <dd class="mt-1 text-sm font-semibold text-slate-800">{venue.name}</dd>
+                      {(venue.address || venue.city || venue.province) && (
+                        <dd class="mt-1 text-sm leading-6 text-slate-600">{[venue.address, venue.city, venue.province].filter(Boolean).join(', ')}</dd>
                       )}
+                      {venue.mapsUrl && <dd class="mt-3"><a class="schedule-detail__venue-map inline-flex items-center gap-2 text-sm font-semibold text-amber-700 hover:text-amber-800" href={venue.mapsUrl} target="_blank" rel="noopener noreferrer">Lihat lokasi di Google Maps <span aria-hidden="true">↗</span></a></dd>}
                     </div>
                   )}
                 </dl>

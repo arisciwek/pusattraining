@@ -1,6 +1,26 @@
 import type { CollectionEntry } from 'astro:content';
+import { DEFAULT_EVENT_LOCATION } from './site';
 
 export type ScheduleEntry = CollectionEntry<'schedules'>;
+
+export interface ScheduleVenue {
+  name: string;
+  address?: string;
+  city?: string;
+  province?: string;
+  countryCode: string;
+  postalCode?: string;
+  mapsUrl?: string;
+}
+
+/** Use the configured training center when a schedule has no physical venue. */
+export function getScheduleVenue(
+  schedule: Pick<ScheduleEntry['data'], 'venue' | 'delivery'>,
+): ScheduleVenue | undefined {
+  if (schedule.venue) return schedule.venue;
+  if (schedule.delivery?.mode === 'online') return undefined;
+  return DEFAULT_EVENT_LOCATION;
+}
 
 export function isMainSiteSchedule(schedule: ScheduleEntry): boolean {
   return !schedule.data.draft && schedule.data.sites?.main?.enabled === true;

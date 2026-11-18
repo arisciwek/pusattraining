@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { getScheduleHref, getScheduleMonth } from '../../lib/schedule-utils';
+import { getScheduleHref, getScheduleMonth, getScheduleVenue } from '../../lib/schedule-utils';
 
 type ScheduleEntry = CollectionEntry<'schedules'>;
 
@@ -168,7 +168,8 @@ const activeCount = sortedSchedules.filter((schedule) => getTimelineStatus(sched
                 const registrationHref = data.sites?.main?.registrationUrl;
                 const registrationOpen = data.registration?.status === 'open' && Boolean(registrationHref);
                 const mode = data.delivery?.mode === 'blended' ? 'Blended' : data.delivery?.mode === 'online' ? 'Online' : data.delivery?.mode === 'offline' ? 'Tatap muka' : '';
-                const venue = data.venue?.city ?? data.venue?.name;
+                const scheduleVenue = getScheduleVenue(data);
+                const venue = scheduleVenue?.city ?? scheduleVenue?.name;
                 return (
                   <li
                     class:list={['training-schedule-list__card', `is-${status.key}`, !status.active && 'is-past']}
