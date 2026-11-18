@@ -1,6 +1,7 @@
 ---
 import {
   COMPANY_EMAIL,
+  COMPANY_NAME,
   COMPANY_LEGALITY,
   COMPANY_MISSION,
   COMPANY_NETWORK,
@@ -17,7 +18,7 @@ import SectionHeading from '../../components/shared/SectionHeading.astro';
   <section class="about-company__overview grid gap-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:grid-cols-[1.1fr_0.9fr] sm:gap-12 sm:p-10">
     <div class="about-company__overview-copy">
       <p class="about-company__eyebrow text-sm font-bold uppercase tracking-[0.16em] text-amber-800">Perusahaan Pengelola</p>
-      <h2 class="about-company__overview-title mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">PT Betracom Gemilang Nusa</h2>
+      <h2 class="about-company__overview-title mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">{COMPANY_NAME}</h2>
       <p class="about-company__overview-description mt-5 text-base leading-8 text-slate-600">
         Betracom Gemilang Nusa bergerak di bidang pelatihan, sertifikasi, dan konsultasi, terutama pada bidang Keselamatan dan Kesehatan Kerja (K3) atau Health, Safety, and Environment (HSE). Program yang diselenggarakan mencakup pembinaan dengan sertifikasi Kemnaker RI, BNSP, serta pelatihan internal sesuai kebutuhan klien.
       </p>
@@ -32,7 +33,7 @@ import SectionHeading from '../../components/shared/SectionHeading.astro';
       <div>
         <p class="about-company__milestone-label text-sm font-semibold uppercase tracking-[0.14em] text-amber-300">Legalitas perusahaan</p>
         <p class="about-company__milestone-year mt-5 text-6xl font-black tracking-tight sm:text-7xl">{COMPANY_LEGALITY.establishedYear}</p>
-        <p class="about-company__milestone-description mt-3 max-w-xs text-base leading-7 text-slate-300">Tahun legalitas usaha dikukuhkan dengan nama PT Betracom Gemilang Nusa.</p>
+        <p class="about-company__milestone-description mt-3 max-w-xs text-base leading-7 text-slate-300">Tahun legalitas usaha dikukuhkan dengan nama {COMPANY_NAME}.</p>
       </div>
       <div class="about-company__milestone-divider my-8 border-t border-white/15"></div>
       <p class="about-company__milestone-note text-sm leading-6 text-slate-300">Pelatihan <span class="px-1 text-amber-300">•</span> Sertifikasi <span class="px-1 text-amber-300">•</span> Konsultasi K3 / HSE</p>
@@ -40,14 +41,14 @@ import SectionHeading from '../../components/shared/SectionHeading.astro';
   </section>
 
   <section class="about-company__history" aria-label="Perjalanan perusahaan">
-    <SectionHeading eyebrow="Perjalanan perusahaan" title="Berawal dari komitmen pada kompetensi dan keselamatan kerja" description="Betracom mengukuhkan legalitas usahanya sebagai PT Betracom Gemilang Nusa pada tahun 2022." />
+    <SectionHeading eyebrow="Perjalanan perusahaan" title="Berawal dari komitmen pada kompetensi dan keselamatan kerja" description="Betracom mengukuhkan legalitas usahanya sebagai {COMPANY_NAME} pada tahun 2022." />
     <ol class="about-company__history-list mt-8 grid gap-4 sm:grid-cols-[minmax(0,1fr)_2fr]">
       <li class="about-company__history-year rounded-2xl bg-amber-50 p-6">
         <p class="text-sm font-bold uppercase tracking-wider text-amber-800">Tonggak legalitas</p>
         <p class="mt-2 text-4xl font-black text-slate-950">{COMPANY_LEGALITY.establishedYear}</p>
       </li>
       <li class="about-company__history-detail rounded-2xl border border-slate-200 bg-white p-6">
-        <h3 class="text-lg font-bold text-slate-950">PT Betracom Gemilang Nusa</h3>
+        <h3 class="text-lg font-bold text-slate-950">{COMPANY_NAME}</h3>
         <p class="mt-2 leading-7 text-slate-600">Legalitas badan usaha dikukuhkan berdasarkan akta notaris tertanggal {COMPANY_LEGALITY.established} sebagai landasan penyelenggaraan layanan perusahaan.</p>
       </li>
     </ol>
@@ -99,7 +100,7 @@ import SectionHeading from '../../components/shared/SectionHeading.astro';
     <dl class="about-company__legality-list mt-8 grid gap-4 sm:grid-cols-2">
       <div class="about-company__legality-item rounded-xl bg-white p-5">
         <dt class="text-sm font-medium text-slate-500">Nama badan usaha</dt>
-        <dd class="mt-2 font-bold text-slate-950">PT Betracom Gemilang Nusa</dd>
+        <dd class="mt-2 font-bold text-slate-950">{COMPANY_NAME}</dd>
       </div>
       <div class="about-company__legality-item rounded-xl bg-white p-5">
         <dt class="text-sm font-medium text-slate-500">Nomor Induk Berusaha (NIB)</dt>
