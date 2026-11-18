@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   canonicalURL?: string;
   noindex?: boolean;
+  footerDescription?: string;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description = 'Temukan program pengembangan kompetensi dan jadwal training dari berbagai penyelenggara dalam satu portal.',
   canonicalURL,
   noindex = false,
+  footerDescription,
 } = Astro.props;
 
 const pageTitle = title.includes('Pusattraining') ? title : `${title} | Pusattraining`;
@@ -46,6 +48,6 @@ const canonical = canonicalURL ?? (Astro.site ? new URL(Astro.url.pathname, Astr
     <main class="site-main flex-1">
       <slot />
     </main>
-    <SiteFooter />
+    <SiteFooter description={footerDescription} />
   </body>
 </html>
