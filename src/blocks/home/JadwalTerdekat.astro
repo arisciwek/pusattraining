@@ -1,4 +1,7 @@
 ---
+import Container from '../../components/shared/Container.astro';
+import Button from '../../components/shared/Button.astro';
+
 type ScheduleItem = {
   trainingTitle: string;
   trainingHref: string;
@@ -28,72 +31,72 @@ const {
   description = 'Pilih jadwal batch terdekat untuk kelas Online via Zoom (seluruh Indonesia) maupun Tatap Muka di Training Center.',
   allHref = '/jadwal/',
 } = Astro.props;
+
+const tileParts = (value: string) => {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return { day: '', month: '' };
+  const format = (options: Intl.DateTimeFormatOptions) =>
+    new Intl.DateTimeFormat('id-ID', { timeZone: 'Asia/Jakarta', ...options }).format(date);
+  return { day: format({ day: 'numeric' }), month: format({ month: 'short' }) };
+};
+
 ---
-<section id="jadwal-terdekat" class="py-12 sm:py-20 lg:py-24">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="mb-6">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl sm:text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">{title}</h2>
-        <p class="mt-2 text-base leading-8 text-slate-600">{description}</p>
+<section id="jadwal-terdekat" class="home-schedule py-14 sm:py-20 lg:py-24">
+  <Container>
+    <header class="home-schedule__header flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
+      <div class="home-schedule__intro max-w-2xl">
+        <h2 class="home-schedule__title text-3xl font-extrabold leading-[1.1] tracking-tight text-slate-950 sm:text-4xl">{title}</h2>
+        <p class="home-schedule__description mt-3 text-base leading-7 text-slate-600">{description}</p>
       </div>
-      <a class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-amber-700 hover:text-amber-900 transition-colors" href={allHref}>
+      <a class="home-schedule__all inline-flex items-center gap-2 text-sm font-bold text-amber-800 transition-colors hover:text-amber-950" href={allHref}>
         Lihat kalender jadwal lengkap
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M4 12h16m-6-6 6 6-6 6"></path>
         </svg>
       </a>
-    </div>
-    <div class="w-full" role="table" aria-label="Jadwal pelatihan K3 Kemnaker RI dan BNSP">
-      <div class="flex text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">
-        <span role="columnheader" class="min-w-[140px] px-2 py-1.5">Program Pelatihan</span>
-        <span role="columnheader" class="px-2 py-1.5">Metode Pelaksanaan</span>
-        <span role="columnheader" class="min-w-[140px] px-2 py-1.5">Tanggal Batch</span>
-        <span role="columnheader" class="px-2 py-1.5">Pendaftaran</span>
+    </header>
+
+    {items.length > 0 ? (
+      <ul class="home-schedule__list mt-8 divide-y divide-slate-200 border-y border-slate-200" aria-label="Jadwal pelatihan terdekat">
+        {items.map((item) => {
+          const tile = tileParts(item.startDate);
+          return (
+            <li class="home-schedule__row grid grid-cols-[3.75rem_minmax(0,1fr)] items-center gap-x-4 gap-y-3 py-5 sm:grid-cols-[3.75rem_4.5rem_minmax(0,1fr)_auto] sm:gap-x-5">
+              <time class="home-schedule__tile grid h-16 w-[3.75rem] place-content-center rounded-xl bg-slate-950 text-center text-white" datetime={item.startDate}>
+                <span class="home-schedule__tile-day font-display text-2xl font-extrabold leading-none">{tile.day}</span>
+                <span class="home-schedule__tile-month mt-1 text-xs font-semibold leading-none text-amber-300">{tile.month}</span>
+              </time>
+
+              <div class="home-schedule__thumb hidden h-[3.25rem] w-[4.5rem] overflow-hidden rounded-lg bg-slate-100 sm:block">
+                {item.image && (
+                  <img class="h-full w-full object-cover" src={item.image} width={72} height={52} alt="" loading="lazy" decoding="async" />
+                )}
+              </div>
+
+              <div class="home-schedule__main min-w-0">
+                <a class="home-schedule__link block font-display text-lg font-bold leading-snug text-slate-950 hover:text-amber-800" href={item.trainingHref}>{item.trainingTitle}</a>
+                <p class="home-schedule__date mt-1 text-sm font-semibold text-slate-700">{item.dateLabel ?? item.startDate}</p>
+                <p class="home-schedule__meta mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
+                  {item.mode && <span class="badge badge--muted">{item.mode}</span>}
+                  {item.location && <span class="home-schedule__location">{item.location}</span>}
+                </p>
+              </div>
+
+              {item.registrationHref && (
+                <div class="home-schedule__action col-span-full sm:col-span-1">
+                  <Button href={item.registrationHref} variant="secondary" size="sm" target="_blank" class="w-full sm:w-auto">Daftar</Button>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    ) : (
+      <div class="home-schedule__empty mt-8 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
+        <h3 class="font-display text-lg font-bold text-slate-900">Jadwal segera diperbarui</h3>
+        <p class="mt-2 text-sm text-slate-600">Kunjungi katalog training untuk melihat program yang tersedia.</p>
+        <Button href={allHref} variant="outline" size="sm" class="mt-4">Lihat semua jadwal</Button>
       </div>
-      {items.map((item) => (
-        <div class="flex gap-4 items-start py-3 border-b border-slate-100" role="row">
-          <div role="cell" class="flex-1 min-w-[140px]">
-            {item.image && (
-              <img
-                src={item.image}
-                width={66}
-                height={48}
-                alt={item.imageAlt ?? ''}
-                loading="lazy"
-                decoding="async"
-              />
-            )}
-            <a class="line-clamp-2 block truncate hover:text-amber-700" href={item.trainingHref}>
-              {item.trainingTitle}
-            </a>
-          </div>
-          <div role="cell" class="text-sm font-medium text-slate-500">{item.mode ?? ''}</div>
-          <div role="cell" class="flex flex-col">
-            <strong class="block text-sm font-semibold text-slate-900">
-              <time datetime={item.startDate}>{item.dateLabel ?? item.startDate}</time>
-            </strong>
-            {item.location && (
-              <p class="mt-1 text-xs text-slate-400">
-                <small>{item.location}</small>
-              </p>
-            )}
-          </div>
-          <div role="cell" class="flex items-end">
-            {item.registrationHref && (
-              <a class="rounded-md bg-amber-500 text-white px-4 py-2 text-sm font-medium transition-colors" href={item.registrationHref} target="_blank" rel="noopener noreferrer">
-                Daftar
-              </a>
-            )}
-          </div>
-        </div>
-      ))}
-      {items.length === 0 && (
-        <div class="rounded-2xl border border-dashed border-slate-300 bg-white p-6 text-center">
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Jadwal segera diperbarui</h3>
-          <p class="text-sm text-slate-600 mb-3">Silakan kunjungi katalog training untuk melihat program yang tersedia.</p>
-          <a class="rounded-md border border-amber-500 text-amber-500 px-4 py-2 text-sm font-medium transition-colors" href={allHref}>Lihat semua jadwal</a>
-        </div>
-      )}
-    </div>
-  </div>
+    )}
+  </Container>
 </section>

@@ -11,9 +11,8 @@ const { eyebrow, title = 'Temukan bidang pelatihan', description, categories } =
 <section class="training-category-overview">
   <SectionHeading eyebrow={eyebrow} title={title} description={description} />
   <div class="training-category-overview__grid">
-    {categories.map((category, index) => (
+    {categories.map((category) => (
       <a class="training-category-overview__item" href={category.href}>
-        <span class="training-category-overview__index">{String(index + 1).padStart(2, '0')}</span>
         <div class="training-category-overview__body">
           <h3 class="training-category-overview__title">{category.title}</h3>
           <p class="training-category-overview__description">{category.description}</p>

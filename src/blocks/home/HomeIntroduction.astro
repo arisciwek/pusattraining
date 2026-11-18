@@ -14,10 +14,10 @@ const { eyebrow, title, description, actionLabel, actionHref } = Astro.props;
 ---
 <section class="home-introduction py-12 sm:py-16">
   <Container>
-    <div class="home-introduction__panel grid gap-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-9 lg:grid-cols-[1fr_auto] lg:items-center">
+    <div class="home-introduction__panel grid gap-6 border-l-4 border-amber-400 py-2 pl-6 sm:pl-9 lg:grid-cols-[1fr_auto] lg:items-center">
       <div class="home-introduction__content max-w-3xl">
-        {eyebrow && <p class="home-introduction__eyebrow text-xs font-bold uppercase tracking-[0.18em] text-amber-700">{eyebrow}</p>}
-        <h2 class="home-introduction__title mt-3 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">{title}</h2>
+        {eyebrow && <p class="home-introduction__eyebrow text-sm font-semibold text-amber-800">{eyebrow}</p>}
+        <h2 class="home-introduction__title mt-2 text-2xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-3xl">{title}</h2>
         <p class="home-introduction__description mt-3 text-sm leading-7 text-slate-600 sm:text-base">{description}</p>
       </div>
       <Button href={actionHref} variant="outline">{actionLabel} <span aria-hidden="true">→</span></Button>
