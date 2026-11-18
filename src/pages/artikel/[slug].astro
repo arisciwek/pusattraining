@@ -65,32 +65,58 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
 
 const articleImage = new URL(data.image || DEFAULT_ARTICLE_IMAGE, Astro.site).href;
 const canonicalUrl = new URL(`/artikel/${data.slug}/`, Astro.site).href;
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: data.title,
-  description: data.description,
-  image: [new URL(data.image || '/images/default-article.svg', Astro.site).href],
-  datePublished: data.pubDate,
-  dateModified: data.updatedDate || data.pubDate,
-  author: {
-    '@type': 'Organization',
-    name: data.author,
-    url: COMPANY_URL,
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: COMPANY_NAME,
-    url: COMPANY_URL,
-  },
-  articleSection: data.category,
-  keywords: data.tags,
-  inLanguage: 'id-ID',
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': canonicalUrl,
-  },
-};
+const isBrochure = data.type === 'brochure';
+const structuredData = isBrochure
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: data.title,
+      description: data.description,
+      url: canonicalUrl,
+      datePublished: data.pubDate,
+      dateModified: data.updatedDate || data.pubDate,
+      author: {
+        '@type': 'Organization',
+        name: data.author,
+        url: COMPANY_URL,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: COMPANY_NAME,
+        url: COMPANY_URL,
+      },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: articleImage,
+      },
+      inLanguage: 'id-ID',
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: data.title,
+      description: data.description,
+      image: [articleImage],
+      datePublished: data.pubDate,
+      dateModified: data.updatedDate || data.pubDate,
+      author: {
+        '@type': 'Organization',
+        name: data.author,
+        url: COMPANY_URL,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: COMPANY_NAME,
+        url: COMPANY_URL,
+      },
+      articleSection: data.category,
+      keywords: data.tags,
+      inLanguage: 'id-ID',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': canonicalUrl,
+      },
+    };
 ---
 
 {isPaginationPage ? (
@@ -117,11 +143,11 @@ const articleSchema = {
     <ArticleIndexListing articles={pageArticles} categories={categories} page={paginationPage} totalPages={totalPages} />
   </SiteLayout>
 ) : (
-<SiteLayout title={data.title} description={data.description} footerDescription={footerDescription} ogType="article">
+<SiteLayout title={data.title} description={data.description} footerDescription={footerDescription} ogType={isBrochure ? 'website' : 'article'}>
   <Fragment slot="head">
     <meta property="og:image" content={articleImage} />
     <meta name="twitter:image" content={articleImage} />
-    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </Fragment>
   <article class="article-detail py-10 sm:py-14">
     <Container>
