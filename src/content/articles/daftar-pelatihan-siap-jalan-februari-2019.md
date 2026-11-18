@@ -4,71 +4,82 @@ id: 1074
 ulid: 01KCV100000000000000000074
 slug: daftar-pelatihan-siap-jalan-februari-2019
 title: "Daftar Pelatihan Siap Jalan Februari 2019"
-description: "Arsip jadwal pelatihan K3 Februari 2019 yang dapat diverifikasi dari halaman program, termasuk jadwal Operator Boiler Kelas 1 dan Kelas 2, dengan catatan bahwa informasi ini bersifat historis."
+description: "Arsip jadwal pelatihan K3 BETRACOM pada Februari 2019, mencakup angkatan Operator Boiler Tingkat 1 dan Tingkat 2 beserta gambaran kompetensi dan pelatihannya."
 pubDate: '2019-02-08T11:13:03+00:00'
-updatedDate: '2026-11-17T00:00:00+07:00'
+updatedDate: '2026-11-18T00:00:00+07:00'
 author: "BETRACOM Training"
 category: "Arsip Jadwal Pelatihan K3"
-tags: ["daftar pelatihan Februari 2019", "jadwal pelatihan K3 2019", "training K3 siap jalan", "jadwal operator boiler", "operator boiler kelas 1", "operator boiler kelas 2"]
+tags: ["daftar pelatihan Februari 2019", "jadwal pelatihan K3 2019", "training K3 siap jalan", "pelatihan operator boiler", "operator boiler tingkat 1", "operator boiler tingkat 2"]
 draft: false
 related: []
 serviceIds: []
 blocks:
   - type: intro
-    eyebrow: "ARSIP JADWAL PELATIHAN K3"
-    lead: "Daftar pelatihan siap jalan Februari 2019 merupakan arsip informasi angkatan yang pernah dipublikasikan BETRACOM. Halaman sumber arsip tidak lagi dapat diakses, sehingga daftar lengkap program pada pengumuman tersebut belum dapat dipastikan. Untuk menjaga akurasi, artikel ini hanya mencatat jadwal Februari 2019 yang masih dapat diverifikasi melalui halaman program individual yang diterbitkan pada periode tersebut. Informasi berikut bukan jadwal aktif dan tidak dapat digunakan sebagai dasar pendaftaran saat ini."
+    eyebrow: "ARSIP JADWAL PELATIHAN K3 · FEBRUARI 2019"
+    lead: "BETRACOM menjadwalkan pelatihan Operator Boiler Tingkat 1 dan Tingkat 2 pada Februari 2019. Angkatan terdekat dimulai pada 11 Februari 2019, dengan jadwal lanjutan pada akhir Februari. Arsip ini merangkum jadwal yang diumumkan pada periode tersebut sekaligus menjelaskan perbedaan kompetensi operator boiler berdasarkan tingkat dan kapasitas pesawat uap. Seluruh tanggal di halaman ini merupakan dokumentasi historis, bukan penawaran kelas yang masih berlangsung."
   - type: schedule-note
     period: "ARSIP HISTORIS · FEBRUARI 2019"
-    title: "Jadwal yang dapat diverifikasi dari halaman program"
+    title: "Jadwal pelatihan Operator Boiler"
     items:
       - label: "Operator Boiler Tingkat 1"
-        value: "11–16 Februari 2019; jadwal lanjutan pada sumber tertulis 25–2 Februari dan tidak dicantumkan karena rentangnya ambigu."
+        value: "11–16 Februari 2019 dan 25 Februari–2 Maret 2019."
       - label: "Operator Boiler Tingkat 2"
         value: "11–14 Februari 2019 dan 25–28 Februari 2019."
-      - label: "Status informasi"
-        value: "Arsip historis, bukan jadwal pendaftaran saat ini."
-    note: "Tanggal di atas dikutip dari halaman program Operator Boiler yang memuat jadwal tahun 2019. Tidak semua program dalam daftar agregat Februari 2019 berhasil diverifikasi karena URL arsip utama tidak dapat dibaca. Jangan menganggap daftar ini sebagai salinan lengkap pengumuman lama."
+      - label: "Lokasi yang dicantumkan pada halaman program"
+        value: "Pusat K3 Cempaka Putih, Jalan Jenderal Ahmad Yani No. 69/70, Jakarta."
+      - label: "Status jadwal"
+        value: "Jadwal historis tahun 2019; bukan jadwal pendaftaran saat ini."
+    note: "Jadwal dirangkum dari halaman program Operator Boiler Tingkat 1 dan Tingkat 2 yang diterbitkan pada Februari 2019. Pada halaman Tingkat 1, rentang kedua ditulis singkat sebagai 25–2 Februari; rentang tersebut dinormalisasi menjadi 25 Februari–2 Maret 2019 sesuai urutan kalender dan pola penulisan jadwal lintas bulan."
   - type: section
-    title: "Mengapa Arsip Februari 2019 Tidak Ditampilkan sebagai Jadwal Aktif?"
+    title: "Pelatihan Operator Boiler Tingkat 1"
     paragraphs:
-      - "Pengumuman pelatihan siap jalan merupakan informasi operasional yang terikat pada periode tertentu. Status running, tanggal mulai, jumlah hari, kuota, lokasi, dan biaya dapat berubah dari satu angkatan ke angkatan berikutnya. Karena jadwal yang tercatat di sini berasal dari Februari 2019, seluruh tanggal tersebut sudah lewat dan hanya relevan sebagai dokumentasi historis."
-      - "URL arsip utama yang berjudul Daftar Pelatihan Siap Jalan Februari 2019 tidak dapat diakses saat proses migrasi. Penelusuran juga tidak menemukan salinan terindeks yang dapat memastikan seluruh nama program, tanggal, durasi, dan status running. Oleh sebab itu, kami tidak mengisi bagian yang hilang dengan jadwal Februari dari tahun lain atau dengan jadwal pelatihan terkini."
-  - type: section
-    title: "Jadwal Operator Boiler yang Tercatat pada Februari 2019"
-    paragraphs:
-      - "Dua halaman program Operator Boiler di situs BETRACOM memuat kalender tahun 2019, termasuk periode pelaksanaan pada Februari. Informasi ini menjadi bagian yang dapat diverifikasi dari arsip jadwal pada periode tersebut."
+      - "Operator Boiler Tingkat 1 ditujukan bagi personel yang mengoperasikan pesawat uap dengan kapasitas di atas 10 ton. Tanggung jawab operator mencakup memahami prinsip kerja boiler, menjalankan prosedur pengoperasian, memantau kondisi operasi, serta mengenali keadaan yang dapat menimbulkan bahaya seperti gangguan tekanan, kekurangan air, atau kegagalan perlengkapan pengaman."
+      - "Materi program yang diumumkan BETRACOM pada 2019 meliputi dasar keselamatan dan kesehatan kerja, ketentuan pesawat uap, jenis dan cara kerja pesawat uap, pengoperasian boiler, fungsi perlengkapan atau appendages, pengolahan air pengisi, penyebab peledakan, persiapan pemeriksaan dan pengujian, pengetahuan bahan bakar dan pembakaran, inspeksi, reparasi, serta praktik."
     items:
-      - title: "Operator Boiler Tingkat 1"
-        description: "Halaman program Operator Boiler Tingkat 1 yang dipublikasikan pada 5 Februari 2019 mencantumkan jadwal 11–16 Februari 2019. Sumber yang sama juga menuliskan rentang berikutnya sebagai 25–2 Februari 2019; karena penulisan rentang tersebut ambigu, tanggal itu tidak ditafsirkan ulang dalam arsip ini."
-      - title: "Operator Boiler Tingkat 2"
-        description: "Halaman program Operator Boiler Tingkat 2 mencantumkan dua periode Februari 2019, yaitu 11–14 Februari dan 25–28 Februari 2019."
-      - title: "Perbedaan tingkat operator"
-        description: "Informasi program membedakan Operator Boiler Tingkat 1 untuk boiler berkapasitas di atas 10 ton dan Tingkat 2 untuk kapasitas di bawah 10 ton. Penentuan kelas harus mengikuti kapasitas peralatan serta persyaratan kompetensi yang berlaku."
+      - title: "Persyaratan peserta pada pengumuman 2019"
+        description: "Halaman program mencantumkan pendidikan minimal SMA atau STM. Program ditujukan bagi calon operator pesawat uap yang belum memiliki SIO Kelas I maupun operator yang telah memiliki SIO Kelas II dan akan melanjutkan ke Tingkat 1."
+      - title: "Investasi yang tercantum pada 2019"
+        description: "Halaman program saat itu mencantumkan biaya Rp6.000.000. Angka ini merupakan informasi historis dan tidak dapat digunakan sebagai acuan biaya pelatihan saat ini."
   - type: section
-    title: "Cara Menemukan Jadwal Pelatihan K3 Terbaru"
+    title: "Pelatihan Operator Boiler Tingkat 2"
     paragraphs:
-      - "Untuk mengikuti pelatihan saat ini, gunakan halaman program sesuai jenis kompetensi yang dibutuhkan. Pastikan jadwal yang ditampilkan merupakan angkatan terbaru, bukan kalender tahunan lama atau artikel arsip. Jika tanggal belum tersedia, hubungi penyelenggara untuk menanyakan rencana pembukaan kelas."
+      - "Operator Boiler Tingkat 2 ditujukan untuk pengoperasian pesawat uap dengan kapasitas di bawah 10 ton. Kompetensi yang dibangun mencakup pemahaman prinsip kerja boiler, pengoperasian yang aman, pemeriksaan kondisi perlengkapan, pengenalan potensi bahaya, dan penerapan prosedur kerja sesuai ketentuan keselamatan pesawat uap."
+      - "Materi yang dicantumkan pada halaman program 2019 mencakup kebijakan K3, Undang-Undang Keselamatan Kerja, peraturan pesawat uap, dasar K3, jenis dan cara kerja pesawat uap, pengoperasian boiler, fungsi perlengkapan, pengolahan air pengisi, penyebab peledakan, persiapan pemeriksaan dan pengujian, instalasi listrik ketel uap, bahan bakar, pembakaran, serta praktik."
     items:
-      - title: "Pilih program yang sesuai pekerjaan"
-        description: "Tentukan jenis peralatan, jabatan, dan kompetensi yang dibutuhkan sebelum memilih pelatihan. Untuk Operator Boiler, kapasitas boiler menjadi salah satu pembeda tingkat program."
-      - title: "Periksa kalender angkatan"
-        description: "Pastikan tanggal mulai dan selesai, jumlah hari, metode, lokasi, dan status pembukaan kelas."
-      - title: "Konfirmasi persyaratan"
-        description: "Tanyakan pendidikan, pengalaman, dokumen identitas, serta persyaratan teknis yang berlaku untuk kelas yang dipilih."
-      - title: "Minta rincian penawaran"
-        description: "Pastikan biaya, fasilitas, materi, dokumen hasil pembinaan, dan ketentuan administrasi secara tertulis sebelum mendaftar."
+      - title: "Persyaratan peserta pada pengumuman 2019"
+        description: "Halaman program mencantumkan pendidikan minimal SMA atau STM. Persyaratan untuk pendaftaran angkatan baru perlu mengikuti ketentuan dan informasi resmi penyelenggara pada periode pendaftaran."
+      - title: "Investasi yang tercantum pada 2019"
+        description: "Biaya yang dipublikasikan pada halaman program saat itu adalah Rp5.500.000. Informasi ini hanya merupakan catatan historis, bukan penawaran harga yang berlaku sekarang."
   - type: section
-    title: "Informasi Program Operator Boiler Saat Ini"
+    title: "Perbedaan Operator Boiler Tingkat 1 dan Tingkat 2"
     paragraphs:
-      - "Arsip jadwal Februari 2019 tidak menunjukkan ketersediaan kelas pada masa sekarang. Untuk kebutuhan pelatihan Operator Boiler, buka halaman program tingkat 1 atau tingkat 2 pada situs ini dan periksa bagian jadwal pelatihan. Jika kalender belum menampilkan angkatan yang sesuai, konsultasikan rencana pelaksanaan kepada tim BETRACOM."
+      - "Pembeda utama kedua tingkat program dalam informasi BETRACOM tersebut adalah kapasitas pesawat uap yang dioperasikan. Tingkat 1 ditujukan untuk kapasitas di atas 10 ton, sedangkan Tingkat 2 untuk kapasitas di bawah 10 ton. Karena itu, pemilihan tingkat pelatihan perlu mempertimbangkan spesifikasi boiler di tempat kerja dan tanggung jawab operator."
+      - "Perusahaan sebaiknya memeriksa data teknis pesawat uap dan kebutuhan personel sebelum mendaftarkan pekerja. Jangan memilih tingkat hanya berdasarkan ketersediaan jadwal atau kemiripan nama program. Persyaratan, kewenangan, dan dokumen operator juga harus dikonfirmasi berdasarkan ketentuan yang berlaku."
+    items:
+      - title: "Tingkat 1"
+        description: "Untuk kebutuhan pengoperasian pesawat uap dengan kapasitas di atas 10 ton."
+      - title: "Tingkat 2"
+        description: "Untuk kebutuhan pengoperasian pesawat uap dengan kapasitas di bawah 10 ton."
+  - type: section
+    title: "Memeriksa Jadwal dan Persyaratan Pelatihan Saat Ini"
+    paragraphs:
+      - "Jadwal Februari 2019 di atas merupakan bagian dari arsip kegiatan terdahulu. Tanggal, lokasi, biaya, fasilitas, dan persyaratan dapat berubah pada angkatan berikutnya. Calon peserta perlu merujuk halaman program terbaru dan meminta konfirmasi tertulis sebelum melakukan pendaftaran."
+      - "Sebelum memilih kelas, siapkan informasi kapasitas boiler yang akan dioperasikan, latar belakang pendidikan, pengalaman kerja, serta status lisensi operator jika sudah memilikinya. Informasi tersebut membantu penyelenggara mengarahkan peserta ke tingkat program yang sesuai."
+    items:
+      - title: "Cocokkan kapasitas boiler"
+        description: "Periksa spesifikasi dan kapasitas pesawat uap di tempat kerja untuk menentukan tingkat program yang relevan."
+      - title: "Konfirmasi jadwal angkatan"
+        description: "Tanyakan tanggal mulai dan selesai, lokasi, metode pembelajaran, status pembukaan kelas, dan ketersediaan tempat."
+      - title: "Pastikan persyaratan dan biaya"
+        description: "Minta informasi terbaru mengenai pendidikan, pengalaman, dokumen administrasi, biaya, fasilitas, serta dokumen hasil pelatihan."
   - type: service-cta
     title: "Lihat Program Operator Boiler Tingkat 1"
-    description: "Periksa gambaran program, persyaratan, dan jadwal angkatan terbaru Operator Boiler Tingkat 1. Tanggal pada arsip 2019 tidak berlaku sebagai jadwal pendaftaran."
+    description: "Pelajari ruang lingkup program, persyaratan peserta, dan informasi jadwal terbaru Operator Boiler Tingkat 1."
     actionLabel: "Lihat Program Boiler Tingkat 1"
     actionHref: "/pelatihan/operator-boiler-tingkat-1/#jadwal-pelatihan"
   - type: service-cta
     title: "Lihat Program Operator Boiler Tingkat 2"
-    description: "Untuk boiler berkapasitas di bawah 10 ton, periksa informasi program Operator Boiler Tingkat 2 dan konfirmasikan jadwal yang tersedia."
+    description: "Periksa informasi program dan jadwal terbaru Operator Boiler Tingkat 2 untuk kebutuhan pengoperasian pesawat uap di bawah 10 ton."
     actionLabel: "Lihat Program Boiler Tingkat 2"
     actionHref: "/pelatihan/operator-boiler-tingkat-2/#jadwal-pelatihan"
 ---
