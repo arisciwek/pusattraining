@@ -4,7 +4,7 @@ id: 149853626
 ulid: 01E045HH00FYCG60X83GETEHMW
 scheduleId: "pusattrainingk3_7F990303A81C1DA7469C"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "07"
 slug: "siap-jalan-ahli-k3-umum-tgl-03-16-februari-2020-jogja"
 title: "Siap Jalan Ahli K3 Umum Tgl Jogja"

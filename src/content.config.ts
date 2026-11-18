@@ -103,7 +103,7 @@ const trainings = defineCollection({
   schema: z.object({
     type: z.literal('training'),
     ...identity,
-    trainingId: z.string().min(1),
+    trainingSlug: z.string().min(1),
     slug: z.string().min(1),
     title: z.string().min(1),
     description: z.string().min(1),
@@ -199,7 +199,7 @@ const schedules = defineCollection({
     ...identity,
     scheduleId: z.string().min(1),
     publisherId: z.string().min(1),
-    trainingId: z.string().min(1),
+    trainingSlug: z.string().min(1),
     batchNo: z.string().min(1),
     slug: z.string().min(1),
     title: z.string().min(1),

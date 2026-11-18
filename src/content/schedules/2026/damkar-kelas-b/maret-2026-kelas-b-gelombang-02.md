@@ -4,7 +4,7 @@ id: 920102
 ulid: 01KCV400000000000000000002
 scheduleId: damkar_01M7C6X11TPP2QF9SQR6PN4V3J
 publisherId: damkar
-trainingId: damkar-kelas-b
+trainingSlug: damkar-kelas-b
 batchNo: '02'
 slug: maret-2026-kelas-b-gelombang-02
 title: 'Jadwal Pelatihan Damkar Kelas B — 10–16 Maret 2026'

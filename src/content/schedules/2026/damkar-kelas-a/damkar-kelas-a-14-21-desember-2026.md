@@ -4,7 +4,7 @@ id: 918273647
 ulid: 01KCV800000000000000000001
 scheduleId: "damkar_01M7C6X14MA9P3FYB0T6AZ3E0R_G2"
 publisherId: "damkar"
-trainingId: "damkar-kelas-a"
+trainingSlug: "damkar-kelas-a"
 batchNo: "12"
 slug: "damkar-kelas-a-14-21-desember-2026"
 title: "Pelatihan Pemadam Kebakaran Kelas A — 14–21 Desember 2026"

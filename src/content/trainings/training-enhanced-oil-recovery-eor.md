@@ -2,7 +2,7 @@
 type: training
 id: 3038
 ulid: 01KCV200000000000000000038
-trainingId: training-enhanced-oil-recovery-eor
+trainingSlug: training-enhanced-oil-recovery-eor
 slug: training-enhanced-oil-recovery-eor
 title: "Training Enhanced Oil Recovery (EOR): Methods, Concepts and Mechanisms"
 description: "Pelatihan metode Enhanced Oil Recovery yang membahas karakteristik reservoir, mekanisme peningkatan perolehan minyak, screening metode EOR, proses thermal, gas, kimia, dan evaluasi penerapannya."

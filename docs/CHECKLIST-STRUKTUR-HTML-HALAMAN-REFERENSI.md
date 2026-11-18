@@ -389,7 +389,7 @@ Satu record lama Pusat Training pada 31 Agustus–4 September 2026 tidak ditemuk
 
 ### 10.3 Aturan integrasi
 
-- [x] Kedua program memakai `trainingId` yang sama dengan identitas program Pusat Training agar otomatis terhubung ke halaman detail masing-masing.
+- [x] Kedua program memakai `trainingSlug` yang sama dengan identitas program Pusat Training agar otomatis terhubung ke halaman detail masing-masing.
 - [x] Setiap record memakai `timezone: Asia/Jakarta`.
 - [x] Record sumber tetap berada di repository asal; sinkronisasi ini adalah salinan data untuk situs Pusat Training, bukan perubahan pada repository Damkar/Confined Space.
 - [x] Status kalender `completed/ongoing/scheduled` ditetapkan dari rentang tanggal pada saat sinkronisasi; komponen daftar tetap menghitung ulang status visual dari tanggal aktual di browser.
@@ -413,7 +413,7 @@ Satu record lama Pusat Training pada 31 Agustus–4 September 2026 tidak ditemuk
 ### Implementasi Kelas A, B, C
 - [x] Menambahkan halaman training untuk kelas A, B, dan C (kelas A diperbarui dari ringkasan generik menjadi data program sumber).
 - [x] Menyalin persyaratan pendidikan, peran, mode pelaksanaan, dan materi dari frontmatter program Damkar.
-- [x] Menambahkan daftar jadwal dengan `trainingId` yang cocok dengan halaman masing-masing.
+- [x] Menambahkan daftar jadwal dengan `trainingSlug` yang cocok dengan halaman masing-masing.
 - [x] Menyalin semua 34 jadwal kelas A, B, dan C; mempertahankan `scheduleId`, nomor angkatan, slug, tanggal, label tanggal, deadline pendaftaran, metode, serta status pendaftaran sumber.
 - [x] Menambahkan identitas `id` dan `ulid` yang diperlukan schema collection Pusat Training.
 - [x] Menghitung status kalender `completed/ongoing/scheduled` berdasarkan tanggal audit 17 November 2026; status pendaftaran sumber tidak diubah.

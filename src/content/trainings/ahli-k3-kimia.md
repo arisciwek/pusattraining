@@ -2,7 +2,7 @@
 type: training
 id: 3030
 ulid: 01KCV100000000000000000030
-trainingId: ahli-k3-kimia
+trainingSlug: ahli-k3-kimia
 slug: ahli-k3-kimia
 title: "Pelatihan Ahli K3 Kimia"
 description: "Pelatihan Ahli K3 Kimia membahas regulasi K3 kimia, identifikasi dan pengendalian bahaya bahan kimia berbahaya, toksikologi, pemantauan paparan, penyimpanan, penanganan, serta kesiapsiagaan darurat di tempat kerja."

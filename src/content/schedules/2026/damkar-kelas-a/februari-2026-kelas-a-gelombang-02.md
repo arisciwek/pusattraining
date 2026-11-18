@@ -4,7 +4,7 @@ id: 910002
 ulid: 01KCV300000000000000000020
 scheduleId: damkar_01M7C6X11E33FP20049R7FFJMZ
 publisherId: damkar
-trainingId: damkar-kelas-a
+trainingSlug: damkar-kelas-a
 batchNo: '02'
 slug: februari-2026-kelas-a-gelombang-02
 title: 'Jadwal Pelatihan Damkar Kelas A — 16–24 Februari 2026'

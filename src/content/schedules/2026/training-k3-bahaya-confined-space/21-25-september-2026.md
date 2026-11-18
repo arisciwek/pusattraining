@@ -4,7 +4,7 @@ id: 900000117
 ulid: 01KCV200000000000000000117
 scheduleId: "pusattraining_sync_confinedspace_17"
 publisherId: "confinedspace"
-trainingId: "training-k3-bahaya-confined-space"
+trainingSlug: "training-k3-bahaya-confined-space"
 batchNo: "17"
 slug: "21-25-september-2026"
 title: "Pelatihan Teknisi K3 Ruang Terbatas — Angkatan 17 (21–25 September 2026)"

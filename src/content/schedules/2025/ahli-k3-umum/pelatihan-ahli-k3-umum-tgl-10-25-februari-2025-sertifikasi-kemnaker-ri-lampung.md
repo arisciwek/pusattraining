@@ -4,7 +4,7 @@ id: 873082338
 ulid: 01JKPJFQ00Y2GPW9N036V87R0S
 scheduleId: "pusattrainingk3_F0A16E26A019B683E019"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "15"
 slug: "pelatihan-ahli-k3-umum-tgl-10-25-februari-2025-sertifikasi-kemnaker-ri-lampung"
 title: "Pelatihan Ahli K3 Umum Tgl Sertifikasi Kemnaker Ri Lampung"

@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import { assignBatchNumbers, hasIdentityCollision, matchTraining, parseExistingIdentities, parseTrainingFiles, renderSchedule, stableIdentity } from './generate-schedule-frontmatter.mjs';
 
 const trainings = [
-  { trainingId: 'ahli-k3-umum', slug: 'ahli-k3-umum', title: 'Ahli K3 Umum' },
-  { trainingId: 'pemadam-kebakaran-kelas-a', slug: 'pemadam-kebakaran-kelas-a', title: 'Pemadam Kebakaran Kelas A' },
+  { trainingSlug: 'ahli-k3-umum', slug: 'ahli-k3-umum', title: 'Ahli K3 Umum' },
+  { trainingSlug: 'pemadam-kebakaran-kelas-a', slug: 'pemadam-kebakaran-kelas-a', title: 'Pemadam Kebakaran Kelas A' },
 ];
 
 const candidate = {
@@ -20,11 +20,11 @@ const candidate = {
 };
 
 test('maps only one explicit matching training rule', () => {
-  assert.equal(matchTraining(candidate, [{ pattern: 'ahli[- ]?k3[- ]?umum', trainingId: 'ahli-k3-umum' }], trainings).training.trainingId, 'ahli-k3-umum');
+  assert.equal(matchTraining(candidate, [{ pattern: 'ahli[- ]?k3[- ]?umum', trainingSlug: 'ahli-k3-umum' }], trainings).training.trainingSlug, 'ahli-k3-umum');
   assert.equal(matchTraining(candidate, [], trainings).reason, 'no-mapping-rule');
   assert.equal(matchTraining(candidate, [
-    { pattern: 'ahli', trainingId: 'ahli-k3-umum' },
-    { pattern: 'pelatihan', trainingId: 'pemadam-kebakaran-kelas-a' },
+    { pattern: 'ahli', trainingSlug: 'ahli-k3-umum' },
+    { pattern: 'pelatihan', trainingSlug: 'pemadam-kebakaran-kelas-a' },
   ], trainings).reason, 'multiple-mapping-rules');
 });
 
@@ -42,8 +42,8 @@ test('reads existing numeric id and scheduleId from frontmatter', () => {
 });
 
 test('parses master training metadata from frontmatter', () => {
-  const parsed = parseTrainingFiles([{ path: 'training.md', content: '---\ntype: training\ntrainingId: ahli-k3-umum\nslug: ahli-k3-umum\ntitle: "Ahli K3 Umum"\n---' }]);
-  assert.deepEqual(parsed[0], { path: 'training.md', trainingId: 'ahli-k3-umum', slug: 'ahli-k3-umum', title: 'Ahli K3 Umum' });
+  const parsed = parseTrainingFiles([{ path: 'training.md', content: '---\ntype: training\ntrainingSlug: ahli-k3-umum\nslug: ahli-k3-umum\ntitle: "Ahli K3 Umum"\n---' }]);
+  assert.deepEqual(parsed[0], { path: 'training.md', trainingSlug: 'ahli-k3-umum', slug: 'ahli-k3-umum', title: 'Ahli K3 Umum' });
 });
 
 test('creates deterministic valid identity values', () => {
@@ -67,6 +67,6 @@ test('renders schema-shaped unpublished draft frontmatter', () => {
   assert.match(rendered.content, /draft: true/);
   assert.match(rendered.content, /status: scheduled/);
   assert.match(rendered.content, /enabled: false/);
-  assert.match(rendered.content, /trainingId: "ahli-k3-umum"/);
+  assert.match(rendered.content, /trainingSlug: "ahli-k3-umum"/);
   assert.doesNotMatch(rendered.content, /registration:|delivery:|venue:/);
 });

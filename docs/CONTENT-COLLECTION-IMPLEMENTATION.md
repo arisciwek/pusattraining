@@ -28,25 +28,25 @@ Implementasi menambahkan `pageType` dengan nilai `category` atau `standard`. Fie
 
 Field utama:
 - `type: training`
-- `id`, `ulid`, dan `trainingId`
+- `id`, `ulid`, dan `trainingSlug`
 - `slug`, `title`, `description`
 - `categoryIds` sebagai relasi ke `pages.id` kategori
 - `pubDate`, `updatedDate`, `draft`
 - `image` dan `related` opsional.
 
-Satu program hanya memiliki satu master record. Schedule merujuknya melalui `trainingId`.
+Satu program hanya memiliki satu master record. Schedule merujuknya melalui `trainingSlug`.
 
 ### 2.3 Schedule
 
 Collection bernama plural `schedules`. Schema mempertahankan field dan enum dari `FRONTMATTER-SCHEDULE-CONTRACT.md`, termasuk:
 - Identitas universal `id` dan `ulid`.
-- Identitas schedule `scheduleId`, `publisherId`, dan relasi `trainingId`.
+- Identitas schedule `scheduleId`, `publisherId`, dan relasi `trainingSlug`.
 - `batchNo`, `slug`, `title`, `description`.
 - `startDate`, `endDate`, `dateLabel`, `timezone`.
 - `pubDate`, `updatedDate`, `draft`, dan lifecycle `status`.
 - Object opsional `registration`, `delivery`, `venue`, `completion`, dan `sites`.
 
-Validasi memeriksa tanggal kalender ISO, datetime dengan zona waktu, timezone IANA, `endDate >= startDate`, dan `updatedDate >= pubDate`. Relasi `trainingId` diperiksa saat validasi lintas collection.
+Validasi memeriksa tanggal kalender ISO, datetime dengan zona waktu, timezone IANA, `endDate >= startDate`, dan `updatedDate >= pubDate`. Relasi `trainingSlug` diperiksa saat validasi lintas collection.
 
 **Belum selesai:** registry allowlist `publisherId` dan fixture semua status. Struktur folder kanonis serta relasi training diperiksa oleh validator lintas collection. Route arsip bulanan, detail batch, indeks jadwal dinamis, dan kartu batch pada halaman training sudah diimplementasikan; pemeriksaan build terbaru masih diperlukan.
 
@@ -78,7 +78,7 @@ Empat belas record kategori kandidat tersedia di `src/content/pages/categories/`
 
 Delapan master program awal tersedia di `src/content/trainings/`, dengan ID 3001–3008:
 
-| trainingId | Nama program | Kategori |
+| trainingSlug | Nama program | Kategori |
 |---|---|---|
 | `ahli-k3-umum` | Ahli K3 Umum | Ahli K3 dan Manajemen K3 |
 | `damkar-kelas-d` | Pemadam Kebakaran Kelas D | Kebakaran dan Tanggap Darurat |

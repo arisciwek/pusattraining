@@ -4,7 +4,7 @@ id: 939962443
 ulid: 01M3JMZC002TGJVPCF1JQEZ16E
 scheduleId: "pusattrainingk3_16A12DD98F0CAEEF84CE"
 publisherId: "pusattrainingk3"
-trainingId: "operator-gondola"
+trainingSlug: "operator-gondola"
 batchNo: "05"
 slug: "pelatihan-inhouse-operator-gondola-tanggal-28-30-september-2026"
 title: "Pelatihan Inhouse Operator Gondola Tanggal"

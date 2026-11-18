@@ -4,7 +4,7 @@ id: 910017
 ulid: 01KCV300000000000000000170
 scheduleId: damkar_01M7C6X137F8KFYD9A7Z2SC54Y
 publisherId: damkar
-trainingId: damkar-kelas-a
+trainingSlug: damkar-kelas-a
 batchNo: '07'
 slug: juli-2026-kelas-a-gelombang-07
 title: 'Jadwal Pelatihan Damkar Kelas A — 20–27 Juli 2026'

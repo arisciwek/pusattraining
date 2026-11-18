@@ -2,7 +2,7 @@
 type: training
 id: 3001
 ulid: 01KCV100000000000000000001
-trainingId: ahli-k3-umum
+trainingSlug: ahli-k3-umum
 slug: ahli-k3-umum
 title: "Ahli K3 Umum"
 description: "Pelatihan Ahli K3 Umum membahas prinsip K3, identifikasi bahaya, pengendalian risiko, serta peran personel K3 dalam mendukung penerapan keselamatan dan kesehatan kerja."

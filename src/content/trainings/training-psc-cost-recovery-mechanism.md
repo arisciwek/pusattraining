@@ -2,7 +2,7 @@
 type: training
 id: 3035
 ulid: 01KCV200000000000000000035
-trainingId: training-psc-cost-recovery-mechanism
+trainingSlug: training-psc-cost-recovery-mechanism
 slug: training-psc-cost-recovery-mechanism
 title: "Training PSC Cost Recovery Mechanism dan Perpajakan Hulu Migas"
 description: "Pelatihan untuk memahami kerangka Production Sharing Contract, cost recovery, pembebanan biaya operasi, perhitungan bagi hasil, serta aspek perpajakan kegiatan usaha hulu minyak dan gas bumi."

@@ -2,7 +2,7 @@
 type: training
 id: 3021
 ulid: 01KCV100000000000000000021
-trainingId: training-rigger-kemnaker
+trainingSlug: training-rigger-kemnaker
 slug: training-rigger-kemnaker
 title: "Pelatihan Rigger (Juru Ikat) Sertifikasi Kemnaker RI"
 description: "Pelatihan Rigger (Juru Ikat) Sertifikasi Kemnaker RI membekali tenaga kerja dengan pengetahuan dan keterampilan pengikatan beban yang aman, pemilihan alat bantu angkat, pemeriksaan tali kawat baja, serta metode kerja rigging sesuai ketentuan K3."

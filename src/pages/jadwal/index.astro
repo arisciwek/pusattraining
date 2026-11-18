@@ -28,8 +28,8 @@ const [allSchedules, trainings] = await Promise.all([
   getCollection('schedules', isMainSiteSchedule),
   getCollection('trainings', ({ data }) => !data.draft),
 ]);
-const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
-const schedules = allSchedules.filter((schedule) => trainingsById.has(schedule.data.trainingId));
+const trainingsById = new Map(trainings.map((training) => [training.data.trainingSlug, training]));
+const schedules = allSchedules.filter((schedule) => trainingsById.has(schedule.data.trainingSlug));
 const now = new Date();
 const upcomingSchedules = schedules
   .filter((schedule) => {
@@ -67,7 +67,7 @@ const scheduleListStructuredData = {
     : 'https://schema.org/ItemListOrderDescending',
   numberOfItems: latestSchedules.length,
   itemListElement: latestSchedules.map((schedule, index) => {
-    const training = trainingsById.get(schedule.data.trainingId)!;
+    const training = trainingsById.get(schedule.data.trainingSlug)!;
     const url = Astro.site
       ? new URL(getScheduleHref(schedule, training.data.slug), Astro.site).toString()
       : undefined;
@@ -109,7 +109,7 @@ const safeScheduleListStructuredData = JSON.stringify(scheduleListStructuredData
             </div>
             <div class="schedule-index__grid mt-6 grid gap-5 lg:grid-cols-2">
               {latestSchedules.map((schedule) => {
-                const training = trainingsById.get(schedule.data.trainingId)!;
+                const training = trainingsById.get(schedule.data.trainingSlug)!;
                 return <ScheduleCard schedule={schedule} trainingSlug={training.data.slug} trainingTitle={training.data.title} />;
               })}
             </div>

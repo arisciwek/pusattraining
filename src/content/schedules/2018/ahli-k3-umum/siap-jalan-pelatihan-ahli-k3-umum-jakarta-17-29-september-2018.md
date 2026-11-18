@@ -4,7 +4,7 @@ id: 242974701
 ulid: 01CQJD7900GF24NZFKQTS0Y85N
 scheduleId: "pusattrainingk3_83C44AFDF3BEB20F20B5"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "03"
 slug: "siap-jalan-pelatihan-ahli-k3-umum-jakarta-17-29-september-2018"
 title: "Siap Jalan Pelatihan Ahli K3 Umum Jakarta"

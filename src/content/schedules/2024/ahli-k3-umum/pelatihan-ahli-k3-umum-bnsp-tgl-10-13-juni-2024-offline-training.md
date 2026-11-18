@@ -4,7 +4,7 @@ id: 331962369
 ulid: 01HZZQ3M00RD1XEZQT9YR2H3TR
 scheduleId: "pusattrainingk3_C343D77EFA4FB0288F58"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "13"
 slug: "pelatihan-ahli-k3-umum-bnsp-tgl-10-13-juni-2024-offline-training"
 title: "Pelatihan Ahli K3 Umum BNSP Tgl Offline Training"

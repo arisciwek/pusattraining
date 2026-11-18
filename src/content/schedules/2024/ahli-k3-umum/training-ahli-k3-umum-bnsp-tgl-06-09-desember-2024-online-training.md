@@ -4,7 +4,7 @@ id: 455004391
 ulid: 01JECM89008YZ2PS88BBZVWGAR
 scheduleId: "pusattrainingk3_47BE2B65085AFFBE4158"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "14"
 slug: "training-ahli-k3-umum-bnsp-tgl-06-09-desember-2024-online-training"
 title: "Training Ahli K3 Umum BNSP Tgl Online Training"

@@ -4,7 +4,7 @@ id: 910021
 ulid: 01KCV300000000000000000210
 scheduleId: damkar_01M7C6X149Y76P9DM0BDKA0RDG
 publisherId: damkar
-trainingId: damkar-kelas-a
+trainingSlug: damkar-kelas-a
 batchNo: '11'
 slug: november-2026-kelas-a-gelombang-11
 title: 'Jadwal Pelatihan Damkar Kelas A — 16–23 November 2026'

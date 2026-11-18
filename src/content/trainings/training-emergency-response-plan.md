@@ -2,7 +2,7 @@
 type: training
 id: 3007
 ulid: 01KCV100000000000000000007
-trainingId: training-emergency-response-plan
+trainingSlug: training-emergency-response-plan
 slug: training-emergency-response-plan
 title: "Emergency Response Plan"
 description: "Pelatihan Emergency Response Plan (ERP) membahas kesiapsiagaan organisasi, koordinasi tim, prosedur tanggap darurat, komunikasi, evakuasi, dan latihan berdasarkan potensi risiko serta kebutuhan operasional perusahaan."

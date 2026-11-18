@@ -2,7 +2,7 @@
 type: training
 id: 3014
 ulid: 01KCV100000000000000000014
-trainingId: training-auditor-smk3-kemnaker
+trainingSlug: training-auditor-smk3-kemnaker
 slug: training-auditor-smk3-kemnaker
 title: "Training Auditor SMK3 Bersertifikasi Kemnaker RI"
 description: "Pelatihan Auditor SMK3 jalur Kemnaker RI membahas prinsip dan kriteria SMK3, perencanaan audit internal, teknik pengumpulan bukti, pelaporan, serta tindak lanjut. Program ini memiliki persyaratan dan keluaran yang berbeda dari jalur BNSP."

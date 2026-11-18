@@ -20,7 +20,7 @@ Segmen training di URL portal membedakan schedule dengan slug sama dari program 
 ## 2. Kontrak dan pembentukan URL
 
 - Hanya schedule non-draft dengan `sites.main.enabled: true` yang diterbitkan pada portal utama.
-- Setiap schedule harus memiliki `trainingId` yang cocok dengan master training terbit.
+- Setiap schedule harus memiliki `trainingSlug` yang cocok dengan master training terbit.
 - Bulan URL diturunkan oleh `getScheduleMonth()` dari `startDate` dan `timezone`; `pubDate/updatedDate` tidak dipakai untuk menentukan bulan event.
 - Parameter detail menggunakan `getScheduleRouteParams()`; anchor internal memakai `getScheduleHref()`.
 - Validator mencocokkan path sumber secara tepat berdasarkan tahun, training slug atau training ID, dan schedule slug. Slug yang sama pada training berbeda tidak saling menimpa.

@@ -4,7 +4,7 @@ id: 930211
 ulid: 01KCV500000000000000000011
 scheduleId: damkar_01M7C6X14GNHRPYGH2DHG15CVP
 publisherId: damkar
-trainingId: damkar-kelas-c
+trainingSlug: damkar-kelas-c
 batchNo: '11'
 slug: desember-2026-kelas-c-gelombang-11
 title: 'Jadwal Pelatihan Damkar Kelas C — 2–8 Desember 2026'

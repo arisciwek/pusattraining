@@ -2,7 +2,7 @@
 type: training
 id: 3029
 ulid: 01KCV100000000000000000029
-trainingId: ahli-k3-listrik
+trainingSlug: ahli-k3-listrik
 slug: ahli-k3-listrik
 title: "Pelatihan Ahli K3 Listrik"
 description: "Pelatihan Ahli K3 Listrik membahas pengawasan keselamatan instalasi dan pekerjaan kelistrikan, mulai dari persyaratan instalasi, sistem proteksi, identifikasi bahaya listrik, inspeksi, hingga prosedur kerja aman."

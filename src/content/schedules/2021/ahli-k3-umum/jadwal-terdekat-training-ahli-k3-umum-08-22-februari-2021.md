@@ -4,7 +4,7 @@ id: 902874657
 ulid: 01EXZF06005PB3EPDXBC811WVC
 scheduleId: "pusattrainingk3_2D963759BD5B1010F36C"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "10"
 slug: "jadwal-terdekat-training-ahli-k3-umum-08-22-februari-2021"
 title: "Jadwal Terdekat Training Ahli K3 Umum"

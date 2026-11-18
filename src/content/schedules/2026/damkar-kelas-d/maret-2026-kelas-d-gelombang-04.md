@@ -4,7 +4,7 @@ id: 900000004
 ulid: 01KCV200000000000000000004
 scheduleId: "pusattraining_sync_damkar_04"
 publisherId: "damkar"
-trainingId: "damkar-kelas-d"
+trainingSlug: "damkar-kelas-d"
 batchNo: "04"
 slug: "maret-2026-kelas-d-gelombang-04"
 title: "Jadwal Pelatihan Damkar Kelas D — 2–4 Maret 2026"

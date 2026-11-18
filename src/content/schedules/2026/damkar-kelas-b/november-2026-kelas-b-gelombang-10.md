@@ -4,7 +4,7 @@ id: 920110
 ulid: 01KCV400000000000000000010
 scheduleId: damkar_01M7C6X14DFG5XMNMNH8HPG5XS
 publisherId: damkar
-trainingId: damkar-kelas-b
+trainingSlug: damkar-kelas-b
 batchNo: '10'
 slug: november-2026-kelas-b-gelombang-10
 title: 'Jadwal Pelatihan Damkar Kelas B — 23–27 November 2026'

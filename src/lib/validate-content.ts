@@ -55,7 +55,7 @@ export async function validateContentRelations(): Promise<void> {
 
     if (namePosition === -1 || adalahPosition < namePosition + normalizedName.length) {
       throw new Error(
-        `Hero summary untuk training "${training.data.trainingId}" harus memuat nama lengkap "${trainingName}" sebelum kata "adalah" pada kalimat pembuka. Gunakan pola "Pelatihan [nama lengkap] adalah ...".`,
+        `Hero summary untuk training "${training.data.trainingSlug}" harus memuat nama lengkap "${trainingName}" sebelum kata "adalah" pada kalimat pembuka. Gunakan pola "Pelatihan [nama lengkap] adalah ...".`,
       );
     }
   }
@@ -68,7 +68,7 @@ export async function validateContentRelations(): Promise<void> {
       ...trainings.map(({ data }) => data.slug)],
     'slug kategori/program pada /pelatihan/',
   );
-  assertUnique(trainings.map(({ data }) => data.trainingId), 'trainingId');
+  assertUnique(trainings.map(({ data }) => data.trainingSlug), 'trainingSlug');
   assertUnique(schedules.map(({ data }) => data.scheduleId), 'scheduleId');
 
   const categoryIds = new Set(
@@ -78,21 +78,21 @@ export async function validateContentRelations(): Promise<void> {
     for (const categoryId of training.data.categoryIds) {
       if (!categoryIds.has(categoryId)) {
         throw new Error(
-          `Training "${training.data.trainingId}" merujuk category id ${categoryId} yang tidak ditemukan.`,
+          `Training "${training.data.trainingSlug}" merujuk category id ${categoryId} yang tidak ditemukan.`,
         );
       }
     }
   }
 
   const trainingsById = new Map(
-    trainings.map((training) => [training.data.trainingId, training]),
+    trainings.map((training) => [training.data.trainingSlug, training]),
   );
 
   for (const schedule of schedules) {
-    const training = trainingsById.get(schedule.data.trainingId);
+    const training = trainingsById.get(schedule.data.trainingSlug);
     if (!training) {
       throw new Error(
-        `Schedule "${schedule.data.scheduleId}" merujuk trainingId "${schedule.data.trainingId}" yang tidak ditemukan.`,
+        `Schedule "${schedule.data.scheduleId}" merujuk trainingSlug "${schedule.data.trainingSlug}" yang tidak ditemukan.`,
       );
     }
 
@@ -101,7 +101,6 @@ export async function validateContentRelations(): Promise<void> {
     const expectedSourcePaths = getScheduleSourcePathCandidates(
       schedule.data.startDate,
       training.data.slug,
-      training.data.trainingId,
       schedule.data.slug,
     );
 
@@ -115,7 +114,7 @@ export async function validateContentRelations(): Promise<void> {
   const publishedSchedulePaths = schedules
     .filter(({ data }) => !data.draft && data.sites?.main?.enabled === true)
     .map((schedule) => {
-      const training = trainingsById.get(schedule.data.trainingId)!;
+      const training = trainingsById.get(schedule.data.trainingSlug)!;
       return `${getScheduleMonth(schedule.data)}/${training.data.slug}/${schedule.data.slug}`;
     });
   assertUnique(publishedSchedulePaths, 'URL schedule portal');

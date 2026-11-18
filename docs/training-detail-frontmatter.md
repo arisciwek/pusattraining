@@ -132,6 +132,6 @@ Kartu pendaftaran di sisi kanan hero membaca data dari object `hero` pada frontm
 - `deliveryMode` dan `certBadge`: dipakai sebagai fakta pelaksanaan dan sertifikasi.
 - `imageSrcset`, `imageSizes`, `imageWidth`, `imageHeight`: opsional untuk aset gambar responsif.
 
-Jadwal terdekat tidak ditulis manual di frontmatter hero. Komponen mengambil batch paling dekat dari collection `schedules` berdasarkan `trainingId`, mengabaikan status dibatalkan/ditunda/selesai, dan membandingkan tanggal dalam zona waktu jadwal (default `Asia/Jakarta`). Bila belum ada batch mendatang, kartu menampilkan pesan konsultasi.
+Jadwal terdekat tidak ditulis manual di frontmatter hero. Komponen mengambil batch paling dekat dari collection `schedules` berdasarkan `trainingSlug`, mengabaikan status dibatalkan/ditunda/selesai, dan membandingkan tanggal dalam zona waktu jadwal (default `Asia/Jakarta`). Bila belum ada batch mendatang, kartu menampilkan pesan konsultasi.
 
 Jangan mengisi harga atau durasi perkiraan. Biarkan field kosong sampai penyelenggara mengonfirmasi nilainya.

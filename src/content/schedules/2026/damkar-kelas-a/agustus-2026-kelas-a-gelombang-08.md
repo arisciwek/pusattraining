@@ -4,7 +4,7 @@ id: 910008
 ulid: 01KCV300000000000000000080
 scheduleId: damkar_01M7C6X13JGTEFFEKNSF7MD0N4
 publisherId: damkar
-trainingId: damkar-kelas-a
+trainingSlug: damkar-kelas-a
 batchNo: '08'
 slug: agustus-2026-kelas-a-gelombang-08
 title: 'Jadwal Pelatihan Damkar Kelas A — 18–26 Agustus 2026'

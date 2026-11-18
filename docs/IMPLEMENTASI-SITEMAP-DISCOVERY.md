@@ -19,7 +19,7 @@ Sitemap index
   -> titleize slug
   -> deduplikasi URL
   -> var/schedule-discovery/registry.json
-  -> review manusia + pencocokan trainingId
+  -> review manusia + pencocokan trainingSlug
   -> pembuatan frontmatter schedules
 ```
 
@@ -49,7 +49,7 @@ Setiap kandidat menyimpan:
 - `sourceUrl`, `sourceLastmod`, `sourceSlug`: jejak sumber.
 - `title`, `slug`: judul awal dari slug URL dan slug sumber.
 - `startDate`, `endDate`, `dateLabel`, `timezone`: tanggal yang diparse dari slug.
-- `trainingId`, `batchNo`: sengaja `null` sampai dipetakan/diverifikasi.
+- `trainingSlug`, `batchNo`: sengaja `null` sampai dipetakan/diverifikasi.
 - `confidence`: menyatakan bahwa title/tanggal hasil inferensi slug, bukan fakta yang sudah diverifikasi.
 - `status: needs-review` dan `reviewRequired: true`: mencegah kandidat dianggap jadwal aktif.
 
@@ -59,7 +59,7 @@ Setiap kandidat menyimpan:
 2. `lastmod` tidak boleh dipakai sebagai `startDate`, `endDate`, `pubDate`, atau status event.
 3. Parser hanya menerima tanggal kalender valid; tanggal ambigu/tidak lengkap tidak menjadi kandidat.
 4. Parser tidak membuat asumsi lokasi, mode, kuota, harga, deadline, atau pendaftaran.
-5. `trainingId` dan `batchNo` tidak ditebak. Kandidat yang belum dipetakan tetap berada di registry.
+5. `trainingSlug` dan `batchNo` tidak ditebak. Kandidat yang belum dipetakan tetap berada di registry.
 6. Jangan menyalin registry langsung ke `src/content/schedules`. Tahap generator frontmatter harus memvalidasi relasi ke master training dan menulis record sebagai draft untuk review.
 7. Sitemap index dan sitemap anak boleh berubah; URL dideduplikasi sebelum disimpan.
 8. Hanya URL dengan host yang sama seperti sitemap sumber yang diproses.
@@ -75,7 +75,7 @@ Setiap kandidat menyimpan:
 
 Setelah registry pertama diperiksa, tahap generator perlu:
 
-1. mencocokkan kandidat dengan `trainingId` yang sudah ada;
+1. mencocokkan kandidat dengan `trainingSlug` yang sudah ada;
 2. meminta review untuk kandidat yang ambigu atau tidak cocok;
 3. membuat `scheduleId` final, nomor batch, dan slug kanonis;
 4. mengisi nilai kontrak yang dapat diturunkan secara aman;

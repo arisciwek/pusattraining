@@ -4,7 +4,7 @@ id: 583875003
 ulid: 01KFVSK9005C0ZV8ZPG3C9YYGA
 scheduleId: "pusattrainingk3_2B01FDA3F680D89F7A0A"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "17"
 slug: "inhouse-training-ahli-k3-umum-tgl-26-jan-10-feb-2026-di-lampung"
 title: "In-house Training Ahli K3 Umum – Lampung"

@@ -4,7 +4,7 @@ id: 597679083
 ulid: 01CCVYBP0080KTVJ3Q1WCDE1B8
 scheduleId: "pusattrainingk3_4027ADC8770F18D70568"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "02"
 slug: "promo-ramadhan-ahli-k3-umum-yogyakarta-7-20-mei-2018"
 title: "Promo Ramadhan Ahli K3 Umum Yogyakarta"

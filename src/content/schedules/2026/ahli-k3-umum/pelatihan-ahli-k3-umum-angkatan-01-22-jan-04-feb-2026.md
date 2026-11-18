@@ -4,7 +4,7 @@ id: 920260001
 ulid: 01KCV170000000000000000001
 scheduleId: "pusattrainingk3_ahli_k3_umum_2026_01"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "01"
 slug: "pelatihan-ahli-k3-umum-angkatan-01-22-jan-04-feb-2026"
 title: "Pelatihan Ahli K3 Umum – Angkatan 01"

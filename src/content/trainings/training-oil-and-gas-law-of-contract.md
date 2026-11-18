@@ -2,7 +2,7 @@
 type: training
 id: 3047
 ulid: 01KCV200000000000000000047
-trainingId: training-oil-and-gas-law-of-contract
+trainingSlug: training-oil-and-gas-law-of-contract
 slug: training-oil-and-gas-law-of-contract
 title: "Training Oil and Gas Law of Contract"
 description: "Pelatihan hukum kontrak industri minyak dan gas yang membahas strategi contracting, perencanaan pra-kontrak, evaluasi klausul, pelaksanaan kontrak, dan penyelesaian sengketa."

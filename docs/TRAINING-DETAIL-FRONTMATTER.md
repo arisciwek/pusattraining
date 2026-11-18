@@ -18,13 +18,13 @@ Scope implementasi:
 
 Tidak termasuk:
 - Mengubah kontrak collection `schedules` atau nama field schedule.
-- Mengubah `trainingId`, `id`, `ulid`, slug, `categoryIds`, atau relasi yang sudah ada.
+- Mengubah `trainingSlug`, `id`, `ulid`, slug, `categoryIds`, atau relasi yang sudah ada.
 - Menambahkan materi, persyaratan, durasi, harga, sertifikasi, fasilitas, klaim, atau fakta program tanpa sumber terverifikasi.
 - Mengubah tampilan dan block halaman kategori.
 
 ## Audit kondisi saat ini
 
-Collection `trainings` sudah memiliki identitas `id` dan `ulid`, `trainingId`, `slug`, `title`, `description`, `categoryIds`, tanggal editorial, `draft`, `image`, dan `related`.
+Collection `trainings` sudah memiliki identitas `id` dan `ulid`, `trainingSlug`, `slug`, `title`, `description`, `categoryIds`, tanggal editorial, `draft`, `image`, dan `related`.
 
 Contoh entry yang diperiksa:
 - `ahli-k3-umum.md`
@@ -40,7 +40,7 @@ Route `src/pages/pelatihan/[slug].astro` saat ini masih menulis langsung:
 - Link ke seluruh jadwal.
 - Empty state jadwal.
 
-Data jadwal sudah dihitung dari collection `schedules` melalui relasi `trainingId`, diurutkan berdasarkan `startDate`, dan dirender memakai `ScheduleCard`. Bagian ini adalah data relasional/dinamis, bukan konten editorial detail training, sehingga tetap dikelola route dan komponen schedule.
+Data jadwal sudah dihitung dari collection `schedules` melalui relasi `trainingSlug`, diurutkan berdasarkan `startDate`, dan dirender memakai `ScheduleCard`. Bagian ini adalah data relasional/dinamis, bukan konten editorial detail training, sehingga tetap dikelola route dan komponen schedule.
 
 ## Kontrak frontmatter detail training
 
@@ -67,7 +67,7 @@ H1 dan deskripsi utama tetap menggunakan field top-level `title` dan `descriptio
 | `allLabel` | string | Tidak | Label tautan ke arsip jadwal. |
 | `emptyMessage` | string | Ya | Pesan ketika tidak ada jadwal yang ditampilkan. |
 
-Block ini hanya mengatur copy dan urutan slot. Daftar schedule tetap dipasok route melalui relasi `trainingId`; frontmatter training tidak boleh menyalin atau meng-hardcode daftar schedule.
+Block ini hanya mengatur copy dan urutan slot. Daftar schedule tetap dipasok route melalui relasi `trainingSlug`; frontmatter training tidak boleh menyalin atau meng-hardcode daftar schedule.
 
 Urutan block pada frontmatter menentukan urutan konten editorial. Jadwal dirender pada posisi block `training-schedule-list`, agar susunan halaman juga content-driven.
 
@@ -75,7 +75,7 @@ Urutan block pada frontmatter menentukan urutan konten editorial. Jadwal dirende
 
 1. Route membuat static paths dari entry kategori dan master training seperti sekarang.
 2. Branch kategori tetap memakai `BlockRenderer` tanpa perubahan perilaku.
-3. Branch training membaca `entry.data.blocks` dan menyiapkan schedule berdasarkan `trainingId`.
+3. Branch training membaca `entry.data.blocks` dan menyiapkan schedule berdasarkan `trainingSlug`.
 4. Renderer detail training menerima title, description, blocks, slug, dan schedule terkait melalui props.
 5. `TrainingDetailRenderer` memilih komponen berdasarkan `type`; renderer detail sengaja dipisah dari registry block halaman umum karena block jadwal membutuhkan data relasional dari route.
 6. Komponen intro merender H1, deskripsi, dan notice sesuai frontmatter.
@@ -88,13 +88,13 @@ Komponen tidak boleh memanggil `getCollection` sendiri. Route tidak boleh menyim
 
 - Semua konten editorial dan urutan section halaman detail berasal dari frontmatter Markdown.
 - Body Markdown setiap file training tetap kosong; jangan menambahkan konten body biasa.
-- Pertahankan `id`, `ulid`, `trainingId`, `slug`, `categoryIds`, `related`, dan metadata yang sudah ada.
+- Pertahankan `id`, `ulid`, `trainingSlug`, `slug`, `categoryIds`, `related`, dan metadata yang sudah ada.
 - Jangan mengubah kontrak schedule yang telah dikunci di `docs/FRONTMATTER-SCHEDULE-CONTRACT.md`.
 - Jangan membuat fakta program baru. Copy yang belum didukung sumber harus tetap transparan sebagai informasi yang menunggu verifikasi, atau tidak ditampilkan.
 - Schema Zod, tipe TypeScript, renderer, frontmatter semua training, dan dokumentasi harus diperbarui bersama. Registry `PageBlock` untuk halaman umum tidak perlu diubah karena block detail training memiliki kontrak dan data dinamis tersendiri.
 - Gunakan Tailwind CSS yang sudah ada dan pertahankan semantic class pada setiap elemen.
 - Pertahankan canonical, Open Graph, Twitter Card, breadcrumb, serta pola URL.
-- Pertahankan filter `isMainSiteSchedule`, relasi `trainingId`, pengurutan tanggal, dan komponen `ScheduleCard`.
+- Pertahankan filter `isMainSiteSchedule`, relasi `trainingSlug`, pengurutan tanggal, dan komponen `ScheduleCard`.
 
 ## Verifikasi wajib
 
@@ -108,7 +108,7 @@ npm run build
 Pemeriksaan manual:
 - Semua URL detail training yang aktif tetap dihasilkan.
 - H1, deskripsi, notice, heading jadwal, dan empty state berasal dari frontmatter.
-- Jadwal yang tampil hanya schedule situs utama yang memiliki `trainingId` sesuai.
+- Jadwal yang tampil hanya schedule situs utama yang memiliki `trainingSlug` sesuai.
 - Jadwal terurut berdasarkan `startDate`.
 - Halaman tanpa jadwal menampilkan empty state dari frontmatter.
 - Breadcrumb, canonical, Open Graph, Twitter Card, dan URL tidak berubah.

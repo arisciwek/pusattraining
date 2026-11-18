@@ -2,7 +2,7 @@
 type: training
 id: 3018
 ulid: 01KCV100000000000000000018
-trainingId: training-bosiet-opito
+trainingSlug: training-bosiet-opito
 slug: training-bosiet-opito
 title: "Pelatihan BOSIET OPITO"
 description: "Pelatihan BOSIET OPITO membekali personel yang bekerja di industri offshore dengan pengetahuan dan keterampilan keselamatan dasar, termasuk respons keadaan darurat, keselamatan helikopter, evakuasi di air, dan survival di laut."

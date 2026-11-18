@@ -2,7 +2,7 @@
 type: training
 id: 3049
 ulid: 01KCV200000000000000000049
-trainingId: training-k3-rumah-sakit
+trainingSlug: training-k3-rumah-sakit
 slug: training-k3-rumah-sakit
 title: "Pelatihan K3 Rumah Sakit (K3RS)"
 description: "Pelatihan K3 Rumah Sakit membahas pengendalian risiko keselamatan dan kesehatan kerja di fasilitas pelayanan kesehatan, termasuk infeksi, bahan berbahaya, limbah medis, peralatan, kebakaran, keadaan darurat, dan manajemen risiko."

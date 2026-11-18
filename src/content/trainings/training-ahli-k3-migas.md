@@ -2,7 +2,7 @@
 type: training
 id: 3027
 ulid: 01KCV100000000000000000027
-trainingId: training-ahli-k3-migas
+trainingSlug: training-ahli-k3-migas
 slug: training-ahli-k3-migas
 title: "Pelatihan K3 Migas (Operator dan Pengawas)"
 description: "Pelatihan K3 Migas membahas penerapan keselamatan dan kesehatan kerja pada kegiatan minyak dan gas bumi, mulai dari pengendalian bahaya, penggunaan APD, proteksi kebakaran, pengujian gas, hingga inspeksi dan pengawasan keselamatan."

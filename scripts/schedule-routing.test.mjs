@@ -58,18 +58,17 @@ test('URL segments are encoded and path separators are rejected', () => {
   );
 });
 
-test('source path candidates include the training slug and stable training id', () => {
+test('source path candidates use the training slug', () => {
   assert.deepEqual(
     getScheduleSourcePathCandidates(
       '2026-11-17',
-      'damkar-kelas-d',
       'damkar-kelas-d',
       'november-2026-kelas-d-gelombang-21',
     ),
     ['2026/damkar-kelas-d/november-2026-kelas-d-gelombang-21'],
   );
   assert.deepEqual(
-    getScheduleSourcePathCandidates('2026-11-23', 'training-a', 'stable-id-a', 'same-slug'),
-    ['2026/training-a/same-slug', '2026/stable-id-a/same-slug'],
+    getScheduleSourcePathCandidates('2026-11-23', 'training-a', 'same-slug'),
+    ['2026/training-a/same-slug'],
   );
 });

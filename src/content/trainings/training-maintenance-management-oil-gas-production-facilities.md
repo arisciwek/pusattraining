@@ -2,7 +2,7 @@
 type: training
 id: 3037
 ulid: 01KCV200000000000000000037
-trainingId: training-maintenance-management-oil-gas-production-facilities
+trainingSlug: training-maintenance-management-oil-gas-production-facilities
 slug: training-maintenance-management-oil-gas-production-facilities
 title: "Training Maintenance Management of Oil & Gas Production Facilities"
 description: "Pelatihan pengelolaan pemeliharaan fasilitas produksi migas yang membahas integritas aset, keandalan peralatan, strategi maintenance, perencanaan pekerjaan, material, audit, dan pelaporan."

@@ -2,7 +2,7 @@
 type: training
 id: 3013
 ulid: 01KCV100000000000000000013
-trainingId: training-auditor-smk3-bnsp
+trainingSlug: training-auditor-smk3-bnsp
 slug: training-auditor-smk3-bnsp
 title: "Training Auditor SMK3 Bersertifikasi BNSP"
 description: "Program Training Auditor SMK3 membahas prinsip sistem manajemen K3, perencanaan dan pelaksanaan audit, pengumpulan bukti, pelaporan, serta tindak lanjut hasil audit. Halaman ini khusus untuk jalur sertifikasi kompetensi BNSP."

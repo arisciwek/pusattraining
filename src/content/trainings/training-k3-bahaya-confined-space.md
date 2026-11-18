@@ -2,7 +2,7 @@
 type: training
 id: 3008
 ulid: 01KCV100000000000000000008
-trainingId: training-k3-bahaya-confined-space
+trainingSlug: training-k3-bahaya-confined-space
 slug: training-k3-bahaya-confined-space
 title: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space)"
 description: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space) membahas identifikasi bahaya, pengendalian risiko, izin masuk, pengujian atmosfer, isolasi energi, dan penerapan prosedur K3 sesuai Permenaker Nomor 11 Tahun 2023."

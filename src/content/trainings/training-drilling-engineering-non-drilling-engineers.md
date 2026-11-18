@@ -2,7 +2,7 @@
 type: training
 id: 3040
 ulid: 01KCV200000000000000000040
-trainingId: training-drilling-engineering-non-drilling-engineers
+trainingSlug: training-drilling-engineering-non-drilling-engineers
 slug: training-drilling-engineering-non-drilling-engineers
 title: "Training Drilling Engineering for Non-Drilling Engineers"
 description: "Pelatihan pengenalan rekayasa dan operasi pemboran migas bagi profesional non-drilling, mencakup tahapan pemboran, rig, sistem utama, fluida, casing, cementing, well control, dan evaluasi formasi."

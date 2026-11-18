@@ -2,7 +2,7 @@
 type: training
 id: 3011
 ulid: 01KCV100000000000000000011
-trainingId: training-awareness-emergency-response-plan
+trainingSlug: training-awareness-emergency-response-plan
 slug: training-awareness-emergency-response-plan
 title: "Training Awareness Emergency Response Plan"
 description: "Program awareness dua hari yang memperkenalkan kesiapsiagaan keadaan darurat, pembentukan tim, prosedur evakuasi, pemadaman awal, pertolongan pertama, dan koordinasi respons di lingkungan perusahaan."

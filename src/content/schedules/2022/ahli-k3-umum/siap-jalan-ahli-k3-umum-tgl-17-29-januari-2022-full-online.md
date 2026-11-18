@@ -4,7 +4,7 @@ id: 745494210
 ulid: 01FSJNAQ00X2VX26FP01MC7QTH
 scheduleId: "pusattrainingk3_E8B7D119F60068C3DF51"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "11"
 slug: "siap-jalan-ahli-k3-umum-tgl-17-29-januari-2022-full-online"
 title: "Siap Jalan Ahli K3 Umum Tgl Full Online"

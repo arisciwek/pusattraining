@@ -4,7 +4,7 @@ id: 155215199
 ulid: 01K1HEVB00EDJA50JBD7TQS8DR
 scheduleId: "pusattrainingk3_7364A2824B69F57CA1B8"
 publisherId: "pusattrainingk3"
-trainingId: "training-emergency-response-plan"
+trainingSlug: "training-emergency-response-plan"
 batchNo: "01"
 slug: "inhouse-training-emergency-response-plan-01-agustus-2025-jakarta"
 title: "Inhouse Training Emergency Response Plan Jakarta"

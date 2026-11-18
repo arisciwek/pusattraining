@@ -112,9 +112,9 @@ export async function buildScheduleLastmodMap(contentRoot) {
     const frontmatter = frontmatterOf(await readFile(file, 'utf8'));
     if (scalar(frontmatter, 'draft') === 'true') continue;
 
-    const trainingId = scalar(frontmatter, 'trainingId');
+    const trainingSlug = scalar(frontmatter, 'trainingSlug');
     const slug = scalar(frontmatter, 'slug');
-    if (trainingId && slug) trainingById.set(trainingId, { slug });
+    if (trainingSlug && slug) trainingById.set(trainingSlug, { slug });
   }
 
   const scheduleRoot = join(root, 'schedules');
@@ -130,7 +130,7 @@ export async function buildScheduleLastmodMap(contentRoot) {
     const frontmatter = frontmatterOf(await readFile(file, 'utf8'));
     if (scalar(frontmatter, 'draft') === 'true' || !mainSiteEnabled(frontmatter)) continue;
 
-    const training = trainingById.get(scalar(frontmatter, 'trainingId'));
+    const training = trainingById.get(scalar(frontmatter, 'trainingSlug'));
     const startDate = scalar(frontmatter, 'startDate');
     const timezone = scalar(frontmatter, 'timezone') || 'Asia/Jakarta';
     const scheduleSlug = scalar(frontmatter, 'slug') || basename(file, '.md');

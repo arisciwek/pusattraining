@@ -2,7 +2,7 @@
 type: training
 id: 3015
 ulid: 01KCV100000000000000000015
-trainingId: training-incident-investigation
+trainingSlug: training-incident-investigation
 slug: training-incident-investigation
 title: "Training Incident Investigation dan Reporting"
 description: "Pelatihan Incident Investigation dan Reporting membahas dasar investigasi kecelakaan kerja, pengumpulan dan verifikasi informasi, analisis penyebab, penyusunan laporan, serta rekomendasi pencegahan agar kejadian serupa tidak terulang."

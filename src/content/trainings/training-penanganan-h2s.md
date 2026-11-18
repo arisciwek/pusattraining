@@ -2,7 +2,7 @@
 type: training
 id: 3016
 ulid: 01KCV100000000000000000016
-trainingId: training-penanganan-h2s
+trainingSlug: training-penanganan-h2s
 slug: training-penanganan-h2s
 title: "Pelatihan Penanganan Bahaya Gas H2S"
 description: "Pelatihan Penanganan Bahaya Gas H2S membahas karakteristik hidrogen sulfida, potensi paparan, pengenalan gejala, kewaspadaan di area berisiko, serta prinsip respons darurat bagi pekerja sektor migas, offshore, pertambangan, dan industri terkait."

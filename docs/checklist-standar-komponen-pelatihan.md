@@ -12,7 +12,7 @@ Tujuannya adalah menjaga konsistensi struktur dan pengalaman pengguna. Konsisten
 - [ ] Memiliki nama/judul resmi yang konsisten di navigasi, kartu, breadcrumb, hero, dan metadata.
 - [ ] Memiliki ringkasan/deskripsi singkat yang menjelaskan manfaat dan konteks pelatihan.
 - [ ] Memiliki kategori/jenis pelatihan yang benar.
-- [ ] Relasi ke jadwal menggunakan identifier pelatihan yang sama (misalnya `trainingId`), bukan pencocokan judul.
+- [ ] Relasi ke jadwal menggunakan identifier pelatihan yang sama (misalnya `trainingSlug`), bukan pencocokan judul.
 - [ ] Status publikasi/draft ditetapkan dengan benar.
 
 ## 2. Hero pelatihan
@@ -33,7 +33,7 @@ Tujuannya adalah menjaga konsistensi struktur dan pengalaman pengguna. Konsisten
 
 - [ ] Bagian jadwal tersedia pada halaman detail.
 - [ ] Jadwal ditarik dari collection/registry jadwal, bukan ditulis ulang secara manual di komponen halaman.
-- [ ] Setiap jadwal terhubung ke pelatihan melalui `trainingId` yang valid.
+- [ ] Setiap jadwal terhubung ke pelatihan melalui `trainingSlug` yang valid.
 - [ ] Nama pelatihan pada jadwal sesuai dengan halaman detail.
 - [ ] Tanggal mulai dan tanggal selesai tersedia serta berurutan.
 - [ ] Rentang tanggal ditampilkan dengan format yang konsisten dan mudah dibaca.

@@ -4,7 +4,7 @@ id: 827153714
 ulid: 01CC9XJN00JJTK713J9M7SC8M2
 scheduleId: "pusattrainingk3_94B53384724D0F962282"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "01"
 slug: "siap-jalan-ahli-k3-umum-batam-30-april-12-mei-2018"
 title: "Siap Jalan Ahli K3 Umum Batam"

@@ -18,7 +18,7 @@ test('sitemap lastmod follows published schedule updates for detail, month, and 
 
   await writeMarkdown(root, 'trainings/training-a.md', `---
 type: training
-trainingId: training-a
+trainingSlug: training-a
 slug: kelas-a
 draft: false
 ---
@@ -35,7 +35,7 @@ draft: false
 
   await writeMarkdown(root, 'schedules/2026/training-a/batch-1.md', `---
 type: schedule
-trainingId: training-a
+trainingSlug: training-a
 slug: batch-1
 startDate: '2026-11-23'
 timezone: Asia/Jakarta
@@ -50,7 +50,7 @@ sites:
 
   await writeMarkdown(root, 'schedules/2026/training-a/batch-2.md', `---
 type: schedule
-trainingId: training-a
+trainingSlug: training-a
 slug: batch-2
 startDate: '2026-11-24'
 timezone: Asia/Jakarta
@@ -65,7 +65,7 @@ sites:
 
   await writeMarkdown(root, 'schedules/2026/training-a/hidden.md', `---
 type: schedule
-trainingId: training-a
+trainingSlug: training-a
 slug: hidden
 startDate: '2026-11-25'
 timezone: Asia/Jakarta
@@ -91,13 +91,13 @@ test('datetime schedule month is resolved in its IANA timezone', async (t) => {
   t.after(() => rm(root, { recursive: true, force: true }));
 
   await writeMarkdown(root, 'trainings/training-a.md', `---
-trainingId: training-a
+trainingSlug: training-a
 slug: kelas-a
 draft: false
 ---
 `);
   await writeMarkdown(root, 'schedules/2026/training-a/cross-month.md', `---
-trainingId: training-a
+trainingSlug: training-a
 slug: cross-month
 startDate: '2026-10-31T17:30:00Z'
 timezone: Asia/Jakarta

@@ -2,7 +2,7 @@
 type: training
 id: 3048
 ulid: 01KCV200000000000000000048
-trainingId: training-integrated-project-management-oil-gas
+trainingSlug: training-integrated-project-management-oil-gas
 slug: training-integrated-project-management-oil-gas
 title: "Training Integrated Project Management for Oil and Gas"
 description: "Pelatihan manajemen proyek migas terpadu yang mencakup integrasi proses, perencanaan, pengendalian biaya dan jadwal, procurement, keselamatan, koordinasi tim, dan evaluasi proyek."

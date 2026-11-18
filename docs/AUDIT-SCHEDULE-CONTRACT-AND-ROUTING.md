@@ -21,7 +21,7 @@ Sumber yang diperiksa:
 | Area | Damkar saat ini | Confined Space saat ini | Kontrak portal |
 |---|---|---|---|
 | Collection | `schedules` (plural) | Masih `schedule` (singular) pada implementasi lama | `schedules` (plural) |
-| Identitas sumber | `scheduleId`, `publisherId`, `trainingId` | Sample lama belum memilikinya | Dipakai sesuai rencana kontrak bersama |
+| Identitas sumber | `scheduleId`, `publisherId`, `trainingSlug` | Sample lama belum memilikinya | Dipakai sesuai rencana kontrak bersama |
 | Identitas portal | Tidak memakai `id/ulid` pada schema schedule Damkar | Memakai `id/ulid` | Memakai `id/ulid` dan `scheduleId`; ketiganya tidak saling menggantikan |
 | Tanggal | `startDate`, `endDate`, `dateLabel`, `timezone` | `startDate`, `endDate`, `dateLabel`; sample lama belum memiliki `timezone` | Field target lengkap, validasi tanggal dan IANA timezone |
 | Lifecycle | `status` | Sample lama belum memiliki `status` | Enum `scheduled/ongoing/completed/postponed/cancelled` |
@@ -42,7 +42,7 @@ Perbedaan yang memang diperlukan:
 
 - Satu file Markdown pada `src/content/schedules/<tahun>/<training-slug>/<schedule-slug>.md` mewakili satu penyelenggaraan.
 - Master program berada terpisah di `src/content/trainings/*.md`.
-- Relasi schedule ke master training menggunakan `trainingId`, bukan judul, slug, atau posisi array.
+- Relasi schedule ke master training menggunakan `trainingSlug`, bukan judul, slug, atau posisi array.
 - `id`, `ulid`, dan `scheduleId` memiliki fungsi berbeda dan dipertahankan.
 - Metadata halaman indeks `/jadwal/` bersumber dari `src/content/pages/jadwal.md`; block `schedule-index` mengendalikan copy.
 - Halaman arsip dan detail dibangkitkan dari collection; tidak ada Markdown duplikat untuk setiap bulan atau batch.

@@ -4,7 +4,7 @@ id: 910001
 ulid: 01KCV300000000000000000010
 scheduleId: damkar_01M7C6X113ZAMXKCW3G0PBP4QV
 publisherId: damkar
-trainingId: damkar-kelas-a
+trainingSlug: damkar-kelas-a
 batchNo: '01'
 slug: januari-2026-kelas-a-gelombang-01
 title: 'Jadwal Pelatihan Damkar Kelas A — 20–27 Januari 2026'

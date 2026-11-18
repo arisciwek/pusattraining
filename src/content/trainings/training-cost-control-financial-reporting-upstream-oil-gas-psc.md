@@ -2,7 +2,7 @@
 type: training
 id: 3039
 ulid: 01KCV200000000000000000039
-trainingId: training-cost-control-financial-reporting-upstream-oil-gas-psc
+trainingSlug: training-cost-control-financial-reporting-upstream-oil-gas-psc
 slug: training-cost-control-financial-reporting-upstream-oil-gas-psc
 title: "Training Cost Control and Financial Reporting of Upstream Oil & Gas under Indonesia PSC"
 description: "Pelatihan pengendalian biaya dan pelaporan keuangan operasi hulu migas dalam skema PSC, meliputi klasifikasi biaya, capital dan non-capital cost, AFE, accruals, operating cost, dan analisis laporan."

@@ -2,7 +2,7 @@
 type: training
 id: 3033
 ulid: 01KCV200000000000000000033
-trainingId: petugas-p3k
+trainingSlug: petugas-p3k
 slug: petugas-p3k
 title: "Pelatihan Petugas P3K (First Aid)"
 description: "Pelatihan Petugas P3K membekali pekerja dengan pengetahuan dan keterampilan pertolongan pertama di tempat kerja, mulai dari dasar kesehatan kerja, penanganan kondisi darurat, resusitasi jantung paru, hingga evakuasi korban."

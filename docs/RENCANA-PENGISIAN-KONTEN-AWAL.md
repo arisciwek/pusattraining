@@ -24,7 +24,7 @@ Jangan membuat satu file untuk setiap URL lama secara otomatis. Sitemap lama ber
 | 1 | Schema dan kontrak collection | Menjamin field dan relasi stabil sebelum data dibuat | Tidak ada |
 | 2 | Landing page kategori | Membentuk navigasi dan halaman rumpun pelatihan | Schema pages |
 | 3 | Master program (`trainings`) | Membentuk URL detail program kanonis | Schema trainings |
-| 4 | Jadwal (`schedules`) | Menghubungkan batch ke program melalui `trainingId` | Master training dan kontrak schedule |
+| 4 | Jadwal (`schedules`) | Menghubungkan batch ke program melalui `trainingSlug` | Master training dan kontrak schedule |
 | 5 | Halaman institusional | Beranda, tentang, kontak, pendaftaran, in-house | Schema pages |
 | 6 | Layanan non-pelatihan | Memisahkan konsultasi/jasa dari katalog training | Keputusan jenis collection/halaman |
 | 7 | Artikel | Mengembangkan topical coverage dan internal linking | Schema articles |
@@ -62,7 +62,7 @@ Berikut 14 rumpun dari analisis sitemap. Nama dan cakupan perlu diperiksa terhad
 - Program dengan kelas/jenjang berbeda hanya menjadi record terpisah bila substansi kompetensi, kurikulum, atau intent pencariannya memang berbeda.
 - Kemnaker, BNSP, dan OPITO tidak otomatis membuat duplikasi program.
 - Jangan menulis tanggal, harga, kuota, lokasi, status aktif, atau badan sertifikasi berdasarkan dugaan dari slug.
-- Setiap record yang dapat direlasikan wajib memiliki `id` dan `ulid`. Untuk master training, `trainingId` tetap digunakan sesuai kontrak relasi schedule.
+- Setiap record yang dapat direlasikan wajib memiliki `id` dan `ulid`. Untuk master training, `trainingSlug` tetap digunakan sesuai kontrak relasi schedule.
 - Schedule tetap mengikuti `FRONTMATTER-SCHEDULE-CONTRACT.md`; jangan membuat nama field schedule alternatif.
 
 ## 5. Kontrak frontmatter dan progressive content
@@ -88,13 +88,13 @@ Setelah schema tersedia, record minimum hanya berisi field wajib schema, identit
 5. Masukkan satu kategori dan beberapa program contoh yang datanya dapat diverifikasi.
 6. Jalankan `npm run check` dan `npm run build`.
 7. Setelah lolos, lanjutkan pengisian kategori dan program secara batch kecil.
-8. Tambahkan jadwal hanya setelah relasi `trainingId` valid dan data batch faktual tersedia.
+8. Tambahkan jadwal hanya setelah relasi `trainingSlug` valid dan data batch faktual tersedia.
 
 ## 7. Kriteria selesai tahap katalog awal
 
 - Semua landing kategori yang disetujui memiliki URL dan frontmatter valid.
 - Semua program prioritas memiliki satu master record kanonis.
-- Tidak ada duplikasi ID, ULID, trainingId, atau slug.
+- Tidak ada duplikasi ID, ULID, trainingSlug, atau slug.
 - Relasi kategori-program dan schedule-training tervalidasi.
 - Program dapat dirender tanpa seluruh block selesai.
 - Build Astro berhasil.

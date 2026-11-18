@@ -4,7 +4,7 @@ id: 176334000075
 ulid: 01KCV100000000000000000075
 scheduleId: "pusattrainingk3_20190206_K3MIGAS_CILACAP"
 publisherId: "pusattrainingk3"
-trainingId: "training-ahli-k3-migas"
+trainingSlug: "training-ahli-k3-migas"
 batchNo: "01"
 slug: "selamat-dan-sukses-kepada-peserta-k3-migas-di-cilacap-06-14-feb-2019"
 title: "Pelaksanaan Pelatihan K3 Migas Operator dan Pengawas di Cilacap"

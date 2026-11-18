@@ -4,7 +4,7 @@ id: 689875783
 ulid: 01M1WJM900MGJZRJG5SCHQ88QT
 scheduleId: "pusattrainingk3_A425FC4A05CB237422FA"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "18"
 slug: "pelatihan-ahli-k3-umum-bnsp-tanggal-07-10-september-2026"
 title: "Pelatihan Ahli K3 Umum BNSP"

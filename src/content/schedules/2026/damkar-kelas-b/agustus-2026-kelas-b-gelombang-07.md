@@ -4,7 +4,7 @@ id: 920107
 ulid: 01KCV400000000000000000007
 scheduleId: damkar_01M7C6X13E7NEXPHZ8S1P5XEC6
 publisherId: damkar
-trainingId: damkar-kelas-b
+trainingSlug: damkar-kelas-b
 batchNo: '07'
 slug: agustus-2026-kelas-b-gelombang-07
 title: 'Jadwal Pelatihan Damkar Kelas B — 11–18 Agustus 2026'

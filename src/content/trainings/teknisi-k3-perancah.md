@@ -2,7 +2,7 @@
 type: training
 id: 3032
 ulid: 01KCV100000000000000000032
-trainingId: teknisi-k3-perancah
+trainingSlug: teknisi-k3-perancah
 slug: teknisi-k3-perancah
 title: "Pelatihan Teknisi K3 Perancah"
 description: "Pelatihan Teknisi K3 Perancah membahas pengetahuan dasar scaffolding, jenis dan komponen perancah, standar teknis, pemeriksaan, penilaian beban, prosedur pemasangan dan pembongkaran, serta pengendalian bahaya pekerjaan di ketinggian."

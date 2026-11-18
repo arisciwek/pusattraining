@@ -2,7 +2,7 @@
 type: training
 id: 3046
 ulid: 01KCV200000000000000000046
-trainingId: training-petroleum-for-non-petroleum-engineer
+trainingSlug: training-petroleum-for-non-petroleum-engineer
 slug: training-petroleum-for-non-petroleum-engineer
 title: "Training Petroleum for Non-Petroleum Engineer"
 description: "Pelatihan pengantar industri minyak dan gas serta aktivitas petroleum engineering bagi profesional non-petroleum, mencakup eksplorasi, reservoir, pemboran, evaluasi formasi, produksi, artificial lift, offshore technology, dan enhanced oil recovery."

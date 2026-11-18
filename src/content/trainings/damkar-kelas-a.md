@@ -2,7 +2,7 @@
 type: training
 id: 3003
 ulid: 01KCV100000000000000000003
-trainingId: damkar-kelas-a
+trainingSlug: damkar-kelas-a
 slug: damkar-kelas-a
 title: "Pemadam Kebakaran Kelas A"
 description: "Pelatihan Pemadam Kebakaran Kelas A mempersiapkan tenaga ahli K3 untuk merencanakan, menilai risiko, mengevaluasi, dan mengaudit sistem proteksi kebakaran di tempat kerja."

@@ -10,7 +10,7 @@
 
 Pusattraining **tidak membuat skema schedule sendiri**. Kontrak mengikuti arsitektur schedule bersama yang telah didokumentasikan pada repository Damkar, khususnya bagian *Kontrak frontmatter schedule bersama* dan addendum sumber data terpusat.
 
-Satu file Markdown mewakili satu penyelenggaraan/angkatan. Program induk disimpan terpisah pada collection `trainings`; schedule mengacu kepadanya melalui `trainingId`.
+Satu file Markdown mewakili satu penyelenggaraan/angkatan. Program induk disimpan terpisah pada collection `trainings`; schedule mengacu kepadanya melalui `trainingSlug`.
 
 Nama collection dan direktori kanonis:
 
@@ -42,7 +42,7 @@ type: schedule
 # Identitas dan relasi
 scheduleId: damkar_01M7C6X149Y76P9DM0BDKA0RDG
 publisherId: damkar
-trainingId: kelas-a
+trainingSlug: kelas-a
 batchNo: '11'
 slug: november-2026-kelas-a-gelombang-11
 
@@ -118,7 +118,7 @@ Contoh di atas menunjukkan bentuk field, bukan data pelatihan aktual. Nilai iden
 | `type` | literal `schedule` | Ya | Selalu bernilai `schedule`. |
 | `scheduleId` | string | Ya | ID global dan stabil untuk satu penyelenggaraan; tidak berasal dari tanggal/judul/slug. |
 | `publisherId` | string/enum ID situs | Ya | Penerbit atau penyelenggara asal, mis. `damkar`, `confinedspace`. Bukan daftar situs distribusi. |
-| `trainingId` | string | Ya | Relasi ke `trainingId` pada master `trainings`. |
+| `trainingSlug` | string | Ya | Relasi ke `trainingSlug` pada master `trainings`. |
 | `batchNo` | string | Ya | Nomor angkatan/gelombang; simpan sebagai string agar format seperti `01` tetap terjaga. |
 | `slug` | string | Ya | Slug URL schedule pada situs terkait; bukan primary key. |
 | `title` | string | Ya | Judul default schedule. |
@@ -168,7 +168,7 @@ Contoh di atas menunjukkan bentuk field, bukan data pelatihan aktual. Nilai iden
 - `updatedDate` tidak boleh lebih awal dari `pubDate`.
 - `dateLabel` tidak boleh dipakai untuk menghitung bulan arsip, tanggal Event, atau JSON-LD.
 - `sites.<siteId>` hanya boleh mengubah copy/CTA/URL distribusi. Jangan menaruh tanggal, status, lokasi, kapasitas, atau fakta penyelenggaraan berbeda di override situs.
-- Validasi relasi `trainingId` harus memastikan master training tersedia.
+- Validasi relasi `trainingSlug` harus memastikan master training tersedia.
 - `scheduleId` harus unik lintas sumber; `publisherId` harus berasal dari daftar ID situs yang disepakati.
 
 ## 4. Pemisahan tanggal: jangan pernah tertukar
@@ -185,15 +185,15 @@ Setelah pelatihan selesai, penambahan status, peserta, nomor sertifikat, atau ga
 
 ## 5. Relasi master training
 
-File schedule bukan tempat menyimpan ulang seluruh informasi program. Data program berada di `src/content/trainings/<training-slug>.md` dan memiliki `trainingId` stabil.
+File schedule bukan tempat menyimpan ulang seluruh informasi program. Data program berada di `src/content/trainings/<training-slug>.md` dan memiliki `trainingSlug` stabil.
 
 Ketentuan:
 
 - Satu training dapat memiliki banyak schedule.
-- Setiap schedule harus mengacu ke satu `trainingId` yang valid.
-- `trainingId` yang sama harus digunakan di semua situs untuk program yang benar-benar sama.
+- Setiap schedule harus mengacu ke satu `trainingSlug` yang valid.
+- `trainingSlug` yang sama harus digunakan di semua situs untuk program yang benar-benar sama.
 - Program yang sekilas mirip tetapi berbeda jenjang/definisi tidak boleh dipaksa memakai ID yang sama.
-- Nama atau SEO title boleh berubah; `trainingId` tidak berubah.
+- Nama atau SEO title boleh berubah; `trainingSlug` tidak berubah.
 
 ## 6. Identitas penerbit dan distribusi
 
@@ -211,7 +211,7 @@ Audit kode saat penulisan dokumen ini menunjukkan **implementasi saat ini belum 
 | Area | Damkar (main) | Confinedspace (main) | Target bersama |
 |---|---|---|---|
 | Collection | `schedules` | `schedule` | `schedules` |
-| Identity | `scheduleId`, `publisherId`, `trainingId` | `id`, `ulid`; belum ada tiga field identitas bersama | Gunakan tiga field identitas bersama |
+| Identity | `scheduleId`, `publisherId`, `trainingSlug` | `id`, `ulid`; belum ada tiga field identitas bersama | Gunakan tiga field identitas bersama |
 | Batch | `batchNo` | `batchNo` | `batchNo` |
 | Dates | `startDate`, `endDate`, `dateLabel`, `timezone` | `startDate`, `endDate`, `dateLabel`; belum ada `timezone` | Nama dan tipe disamakan |
 | Delivery | `delivery.mode`, `delivery.attendanceMode` | `mode`, `attendanceMode` di root | Gunakan object `delivery` |
@@ -230,7 +230,7 @@ Field lama tidak boleh dipertahankan sebagai variasi kedua dalam kontrak baru. S
 |---|---|
 | `id`, `ulid` | Tidak menggantikan identitas global; buat/isi `scheduleId` |
 | — | Isi `publisherId: confinedspace` |
-| — | Isi `trainingId` sesuai master training |
+| — | Isi `trainingSlug` sesuai master training |
 | `mode` | `delivery.mode` |
 | `attendanceMode` | `delivery.attendanceMode` |
 | `venue` string | `venue.name`; lengkapi properti venue lain jika datanya tersedia |
@@ -267,7 +267,7 @@ Sebelum implementasi schedule dimulai:
 
 - [ ] Collection bernama `schedules`.
 - [ ] Struktur folder `schedules/<YYYY>/<training-slug>/<schedule-slug>.md`.
-- [ ] Field identitas `scheduleId`, `publisherId`, `trainingId` tersedia.
+- [ ] Field identitas `scheduleId`, `publisherId`, `trainingSlug` tersedia.
 - [ ] Field `batchNo`, `slug`, `title`, `description` konsisten.
 - [ ] Field tanggal `startDate`, `endDate`, `dateLabel`, `timezone` konsisten.
 - [ ] Field editorial `pubDate`, `updatedDate`, `draft` konsisten.

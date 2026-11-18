@@ -4,7 +4,7 @@ id: 225491942
 ulid: 01DKQMAV00S9TP7WZSJV7A39YS
 scheduleId: "pusattrainingk3_CA7563F3F996CEA1A7D9"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "06"
 slug: "ahli-k3-umum-jogja-02-15-september-2019-siap-jalan"
 title: "Ahli K3 Umum Jogja Siap Jalan"

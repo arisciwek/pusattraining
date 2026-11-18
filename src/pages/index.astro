@@ -23,7 +23,7 @@ const categories = (await getCollection('pages', ({ data }) => data.pageType ===
 const now = new Date();
 const schedules = await getCollection('schedules', isMainSiteSchedule);
 const trainings = await getCollection('trainings', ({ data }) => !data.draft);
-const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
+const trainingsById = new Map(trainings.map((training) => [training.data.trainingSlug, training]));
 
 const todayInTimezone = (timezone: string) => new Intl.DateTimeFormat('en-CA', {
   timeZone: timezone,
@@ -49,7 +49,7 @@ const upcomingScheduleEntries = schedules
   })
   .sort((a, b) => Date.parse(b.data.startDate) - Date.parse(a.data.startDate))
   .reduce<Array<{ schedule: (typeof schedules)[number]; training: (typeof trainings)[number] }>>((items, schedule) => {
-    const training = trainingsById.get(schedule.data.trainingId);
+    const training = trainingsById.get(schedule.data.trainingSlug);
     if (!training || items.some((item) => item.training.data.slug === training.data.slug)) return items;
     items.push({ schedule, training });
     return items;

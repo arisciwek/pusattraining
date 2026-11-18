@@ -28,10 +28,10 @@ export async function getStaticPaths() {
     getCollection('schedules', isMainSiteSchedule),
     getCollection('trainings', ({ data }) => !data.draft),
   ]);
-  const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
+  const trainingsById = new Map(trainings.map((training) => [training.data.trainingSlug, training]));
 
   return schedules.flatMap((schedule) => {
-    const training = trainingsById.get(schedule.data.trainingId);
+    const training = trainingsById.get(schedule.data.trainingSlug);
     if (!training) return [];
 
     return [{
@@ -54,7 +54,7 @@ const [allSchedules, allTrainings] = await Promise.all([
   getCollection('trainings', ({ data }) => !data.draft),
 ]);
 const otherSchedules = allSchedules
-  .filter((item) => item.id !== schedule.id && item.data.trainingId === training.data.trainingId)
+  .filter((item) => item.id !== schedule.id && item.data.trainingSlug === training.data.trainingSlug)
   .sort((a, b) => {
     const now = Date.now();
     const distanceA = Math.abs(Date.parse(a.data.startDate) - now);
@@ -64,7 +64,7 @@ const otherSchedules = allSchedules
   .slice(0, 4);
 const relatedTrainings = allTrainings
   .filter((item) =>
-    item.data.trainingId !== training.data.trainingId &&
+    item.data.trainingSlug !== training.data.trainingSlug &&
     item.data.categoryIds.some((categoryId) => training.data.categoryIds.includes(categoryId))
   )
   .sort((a, b) => a.data.title.localeCompare(b.data.title, 'id'))

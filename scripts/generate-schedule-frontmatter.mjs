@@ -18,11 +18,11 @@ function yamlString(value) {
 function parseTrainingFiles(contents) {
   return contents.map(({ path, content }) => {
     const field = (name) => content.match(new RegExp('^' + name + ':\\s*(.+)$', 'm'))?.[1]?.trim().replace(/^["']|["']$/g, '');
-    const trainingId = field('trainingId');
+    const trainingSlug = field('trainingSlug');
     const slug = field('slug');
     const title = field('title');
-    if (!trainingId || !slug || !title) return null;
-    return { trainingId, slug, title, path };
+    if (!trainingSlug || !slug || !title) return null;
+    return { trainingSlug, slug, title, path };
   }).filter(Boolean);
 }
 
@@ -30,7 +30,7 @@ function matchTraining(candidate, mappings, trainings) {
   const text = `${candidate.sourceSlug} ${candidate.title}`.toLowerCase();
   const matches = mappings.filter((mapping) => new RegExp(mapping.pattern, 'i').test(text));
   if (matches.length !== 1) return { training: null, reason: matches.length ? 'multiple-mapping-rules' : 'no-mapping-rule' };
-  const training = trainings.find((item) => item.trainingId === matches[0].trainingId);
+  const training = trainings.find((item) => item.trainingSlug === matches[0].trainingSlug);
   return training ? { training, reason: null } : { training: null, reason: 'mapped-training-not-found' };
 }
 
@@ -67,12 +67,12 @@ function stableIdentity(candidate) {
 
 function assignBatchNumbers(candidates) {
   const sorted = [...candidates].sort((a, b) =>
-    a.training.trainingId.localeCompare(b.training.trainingId) ||
+    a.training.trainingSlug.localeCompare(b.training.trainingSlug) ||
     a.candidate.startDate.localeCompare(b.candidate.startDate) ||
     a.candidate.sourceUrl.localeCompare(b.candidate.sourceUrl));
   const counts = new Map();
   for (const item of sorted) {
-    const key = item.training.trainingId;
+    const key = item.training.trainingSlug;
     const next = (counts.get(key) ?? 0) + 1;
     counts.set(key, next);
     item.batchNo = String(next).padStart(2, '0');
@@ -91,7 +91,7 @@ function renderSchedule(candidate, training, batchNo, now) {
     `ulid: ${identity.ulid}`,
     `scheduleId: ${yamlString(identity.scheduleId)}`,
     `publisherId: ${yamlString(candidate.publisherId)}`,
-    `trainingId: ${yamlString(training.trainingId)}`,
+    `trainingSlug: ${yamlString(training.trainingSlug)}`,
     `batchNo: ${yamlString(batchNo)}`,
     `slug: ${yamlString(slug)}`,
     `title: ${yamlString(candidate.title)}`,
@@ -180,7 +180,7 @@ async function main() {
       if (error.code === 'EEXIST') throw new Error(`Output sudah ada, tidak ditimpa: ${target}`);
       throw error;
     });
-    generated.push({ path: target.replace(ROOT + '/', ''), sourceUrl: item.candidate.sourceUrl, sourceLastmod: item.candidate.sourceLastmod, title: item.candidate.title, trainingId: item.training.trainingId, batchNo: item.batchNo });
+    generated.push({ path: target.replace(ROOT + '/', ''), sourceUrl: item.candidate.sourceUrl, sourceLastmod: item.candidate.sourceLastmod, title: item.candidate.title, trainingSlug: item.training.trainingSlug, batchNo: item.batchNo });
   }
 
   const report = { generatedAt: now, registryPath: registryPath.replace(ROOT + '/', ''), generatedCount: generated.length, reviewCount: review.length, generated, review };

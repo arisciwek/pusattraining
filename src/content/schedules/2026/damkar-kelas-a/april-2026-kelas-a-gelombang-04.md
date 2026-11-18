@@ -4,7 +4,7 @@ id: 910004
 ulid: 01KCV300000000000000000040
 scheduleId: damkar_01M7C6X128X6ZQAG4VFGNAXGZZ
 publisherId: damkar
-trainingId: damkar-kelas-a
+trainingSlug: damkar-kelas-a
 batchNo: '04'
 slug: april-2026-kelas-a-gelombang-04
 title: 'Jadwal Pelatihan Damkar Kelas A — 27 April–5 Mei 2026'

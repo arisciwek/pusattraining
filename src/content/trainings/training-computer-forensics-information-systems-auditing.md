@@ -2,7 +2,7 @@
 type: training
 id: 3041
 ulid: 01KCV200000000000000000041
-trainingId: training-computer-forensics-information-systems-auditing
+trainingSlug: training-computer-forensics-information-systems-auditing
 slug: training-computer-forensics-information-systems-auditing
 title: "Training Computer Forensics and Information Systems Auditing"
 description: "Pelatihan pengantar computer forensics dan audit sistem informasi yang membahas bukti digital, risiko sistem terkomputerisasi, kerangka hukum, respons dugaan fraud atau kejahatan komputer, serta metodologi audit TI."

@@ -2,7 +2,7 @@
 type: training
 id: 3022
 ulid: 01KCV100000000000000000022
-trainingId: training-tkpk-2
+trainingSlug: training-tkpk-2
 slug: training-tkpk-2
 title: "Pelatihan Tenaga Kerja Pada Ketinggian Tingkat 2 (TKPK 2)"
 description: "Pelatihan TKPK Tingkat 2 merupakan pembinaan lanjutan bagi tenaga kerja yang telah memiliki kompetensi TKPK Tingkat 1. Program ini memperdalam teknik akses tali, pergerakan pada struktur, pemasangan angkur, pengangkatan barang, serta penyelamatan korban pada pekerjaan di ketinggian."

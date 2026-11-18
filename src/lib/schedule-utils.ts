@@ -102,7 +102,6 @@ export function getScheduleRouteParams(
 export function getScheduleSourcePathCandidates(
   startDate: string,
   trainingSlug: string,
-  trainingId: string,
   scheduleSlug: string,
 ): string[] {
   const year = /^(\d{4})-/.exec(startDate)?.[1];
@@ -110,10 +109,7 @@ export function getScheduleSourcePathCandidates(
     throw new Error(`startDate tidak memiliki tahun ISO yang valid: ${startDate}`);
   }
 
-  return [...new Set([
-    `${year}/${trainingSlug}/${scheduleSlug}`,
-    `${year}/${trainingId}/${scheduleSlug}`,
-  ])];
+  return [`${year}/${trainingSlug}/${scheduleSlug}`];
 }
 
 export function getScheduleHref(schedule: ScheduleEntry, trainingSlug: string): string {

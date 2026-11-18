@@ -65,7 +65,7 @@
    - var/schedule-discovery/registry.json (296 kandidat)
    - var/schedule-discovery/generation-report.json (laporan lengkap)
    - var/schedule-discovery/frontmatter/ (30 file MD draft)
-   - Setiap file draft berisi frontmatter lengkap: type: schedule, id, ulid, scheduleId, publisherId, trainingId, batchNo, slug, title, description, startDate, endDate, dateLabel, timezone, pubDate, updatedDate, draft: true, status: scheduled, sites.main.enabled: false
+   - Setiap file draft berisi frontmatter lengkap: type: schedule, id, ulid, scheduleId, publisherId, trainingSlug, batchNo, slug, title, description, startDate, endDate, dateLabel, timezone, pubDate, updatedDate, draft: true, status: scheduled, sites.main.enabled: false
    - .gitignore: baris 170 menambah "var/" agar output generator tidak ikut ter-commit (review manual sebelum dipindahkan ke src/content/schedules/)
 
 7. TEST RESULTS

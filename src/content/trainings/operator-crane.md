@@ -2,7 +2,7 @@
 type: training
 id: 3024
 ulid: 01KCV200000000000000000024
-trainingId: operator-crane
+trainingSlug: operator-crane
 slug: operator-crane
 title: "Pelatihan Operator Crane Kemnaker RI"
 description: "Pelatihan Operator Crane Kemnaker RI membahas pengoperasian pesawat angkat secara aman, pengenalan jenis dan kapasitas crane, pemeriksaan peralatan, pengikatan serta komunikasi pengangkatan, dan pengendalian risiko sesuai ketentuan K3."

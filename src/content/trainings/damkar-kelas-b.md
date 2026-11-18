@@ -2,7 +2,7 @@
 type: training
 id: 3009
 ulid: 01KCV100000000000000000009
-trainingId: damkar-kelas-b
+trainingSlug: damkar-kelas-b
 slug: damkar-kelas-b
 title: "Pemadam Kebakaran Kelas B"
 description: "Pelatihan Pemadam Kebakaran Kelas B membekali Ketua Regu dengan kompetensi pengawasan, manajemen, inspeksi, dan pengendalian risiko kebakaran di tempat kerja."

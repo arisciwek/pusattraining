@@ -4,7 +4,7 @@ id: 400680575
 ulid: 01DQ3S1100GKMWYH8BBYE9CF3G
 scheduleId: "pusattrainingk3_84E9CF450B5F9C963C70"
 publisherId: "pusattrainingk3"
-trainingId: "operator-gondola"
+trainingSlug: "operator-gondola"
 batchNo: "01"
 slug: "operator-gondola-14-19-oktober-2019-siap-jalan"
 title: "Operator Gondola Siap Jalan"

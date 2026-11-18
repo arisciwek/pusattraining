@@ -2,7 +2,7 @@
 type: training
 id: 3025
 ulid: 01KCV200000000000000000025
-trainingId: operator-genset
+trainingSlug: operator-genset
 slug: operator-genset
 title: "Pelatihan Operator Genset (Diesel) Kemnaker RI"
 description: "Pelatihan Operator Genset (Diesel) Kemnaker RI membekali operator dengan pemahaman motor diesel, sistem kelistrikan, pemeriksaan, pemeliharaan, troubleshooting, dan pengendalian risiko saat mengoperasikan generator set."

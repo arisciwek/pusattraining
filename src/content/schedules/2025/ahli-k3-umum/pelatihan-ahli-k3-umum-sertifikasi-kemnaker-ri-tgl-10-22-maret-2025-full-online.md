@@ -4,7 +4,7 @@ id: 153147627
 ulid: 01JNYNKV00YQ48VMMK5KJYZZRX
 scheduleId: "pusattrainingk3_F5C88DD2932CE5EFFF1D"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "16"
 slug: "pelatihan-ahli-k3-umum-sertifikasi-kemnaker-ri-tgl-10-22-maret-2025-full-online"
 title: "Pelatihan Ahli K3 Umum Sertifikasi Kemnaker Ri Tgl Full Online"

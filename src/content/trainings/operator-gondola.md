@@ -2,7 +2,7 @@
 type: training
 id: 3004
 ulid: 01KCV100000000000000000004
-trainingId: operator-gondola
+trainingSlug: operator-gondola
 slug: operator-gondola
 title: "Operator Gondola"
 description: "Pelatihan Operator Gondola membekali peserta dengan pengetahuan dan keterampilan untuk memeriksa, menyiapkan, serta mengoperasikan gondola secara aman sesuai prosedur K3 dan ketentuan yang berlaku."

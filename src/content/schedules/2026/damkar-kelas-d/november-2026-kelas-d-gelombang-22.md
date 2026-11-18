@@ -4,7 +4,7 @@ id: 900000022
 ulid: 01KCV200000000000000000022
 scheduleId: "pusattraining_sync_damkar_22"
 publisherId: "damkar"
-trainingId: "damkar-kelas-d"
+trainingSlug: "damkar-kelas-d"
 batchNo: "22"
 slug: "november-2026-kelas-d-gelombang-22"
 title: "Jadwal Pelatihan Damkar Kelas D — 30 November–2 Desember 2026"

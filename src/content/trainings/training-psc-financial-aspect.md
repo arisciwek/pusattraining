@@ -2,7 +2,7 @@
 type: training
 id: 3042
 ulid: 01KCV200000000000000000042
-trainingId: training-psc-financial-aspect
+trainingSlug: training-psc-financial-aspect
 slug: training-psc-financial-aspect
 title: "Training PSC Financial Aspect"
 description: "Pelatihan aspek keuangan Production Sharing Contract pada industri hulu migas, meliputi prinsip PSC, aktivitas eksplorasi hingga produksi, lifting-sharing, accounting procedure, fiscal terms, WP&B, AFE, FQR, dan keekonomian POD."

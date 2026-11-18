@@ -4,7 +4,7 @@ id: 900000012
 ulid: 01KCV200000000000000000012
 scheduleId: "pusattraining_sync_damkar_12"
 publisherId: "damkar"
-trainingId: "damkar-kelas-d"
+trainingSlug: "damkar-kelas-d"
 batchNo: "12"
 slug: "juli-2026-kelas-d-gelombang-12"
 title: "Jadwal Pelatihan Damkar Kelas D — 6–8 Juli 2026"

@@ -2,7 +2,7 @@
 type: training
 id: 3031
 ulid: 01KCV100000000000000000031
-trainingId: teknisi-k3-listrik
+trainingSlug: teknisi-k3-listrik
 slug: teknisi-k3-listrik
 title: "Pelatihan Teknisi K3 Listrik"
 description: "Pelatihan Teknisi K3 Listrik membahas keselamatan pemasangan, pengoperasian, pemeriksaan, dan pemeliharaan instalasi listrik, termasuk identifikasi bahaya, penggunaan alat ukur, pengujian, prosedur kerja aman, serta pertolongan pertama pada kecelakaan listrik."

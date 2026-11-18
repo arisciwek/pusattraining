@@ -2,7 +2,7 @@
 type: training
 id: 3006
 ulid: 01KCV100000000000000000006
-trainingId: operator-boiler-tingkat-2
+trainingSlug: operator-boiler-tingkat-2
 slug: operator-boiler-tingkat-2
 title: "Operator Boiler Tingkat 2"
 description: "Pelatihan Operator Boiler Tingkat 2 membekali calon operator dengan pengetahuan dan keterampilan untuk mengoperasikan pesawat uap secara aman pada instalasi yang membutuhkan kualifikasi operator kelas II."

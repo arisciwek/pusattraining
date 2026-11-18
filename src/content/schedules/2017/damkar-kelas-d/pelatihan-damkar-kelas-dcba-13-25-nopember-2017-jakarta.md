@@ -4,7 +4,7 @@ id: 682623315
 ulid: 01BYSASX006Y12TECG27Y26SGF
 scheduleId: "pusattrainingk3_37822D399011FC23660F"
 publisherId: "pusattrainingk3"
-trainingId: "damkar-kelas-d"
+trainingSlug: "damkar-kelas-d"
 batchNo: "01"
 slug: "pelatihan-damkar-kelas-dcba-13-25-nopember-2017-jakarta"
 title: "Pelatihan Damkar Kelas Dcba Jakarta"

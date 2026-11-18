@@ -2,7 +2,7 @@
 type: training
 id: 3034
 ulid: 01KCV200000000000000000034
-trainingId: training-hiperkes
+trainingSlug: training-hiperkes
 slug: training-hiperkes
 title: "Pelatihan Hiperkes Dokter dan Paramedis"
 description: "Pelatihan Hiperkes membekali dokter dan tenaga paramedis dengan pemahaman higiene perusahaan, ergonomi, kesehatan kerja, pengendalian bahaya, serta pencegahan penyakit akibat kerja."

@@ -4,7 +4,7 @@ id: 918273643
 ulid: 01KCV600000000000000000001
 scheduleId: "pusattrainingk3_OB1_20261130_08DEC"
 publisherId: "pusattrainingk3"
-trainingId: "operator-boiler-tingkat-1"
+trainingSlug: "operator-boiler-tingkat-1"
 batchNo: "21"
 slug: "operator-boiler-tingkat-1-30-november-08-desember-2026"
 title: "Pelatihan Operator Boiler Tingkat 1 — 30 November–8 Desember 2026"

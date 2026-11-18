@@ -4,7 +4,7 @@ id: 466082251
 ulid: 01H38F71006CEPET5N911KVS39
 scheduleId: "pusattrainingk3_331D6768B548433DE469"
 publisherId: "pusattrainingk3"
-trainingId: "operator-gondola"
+trainingSlug: "operator-gondola"
 batchNo: "02"
 slug: "inhouse-training-operator-gondola-pt-gerindo-indahtama-sukses-tgl-19-21-juni-2023-jakarta"
 title: "Inhouse Training Operator Gondola Pt Gerindo Indahtama Sukses Tgl Jakarta"

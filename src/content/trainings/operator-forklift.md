@@ -2,7 +2,7 @@
 type: training
 id: 3023
 ulid: 01KCV100000000000000000023
-trainingId: operator-forklift
+trainingSlug: operator-forklift
 slug: operator-forklift
 title: "Pelatihan Operator Forklift Kemnaker RI"
 description: "Pelatihan Operator Forklift membekali tenaga kerja dengan pengetahuan dan keterampilan untuk mengoperasikan forklift secara aman, memahami kapasitas dan stabilitas beban, serta melakukan pemeriksaan peralatan sesuai ketentuan K3 pesawat angkat dan angkut."

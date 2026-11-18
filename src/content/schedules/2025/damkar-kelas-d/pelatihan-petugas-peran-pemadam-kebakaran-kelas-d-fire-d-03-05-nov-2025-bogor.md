@@ -4,7 +4,7 @@ id: 179338485
 ulid: 01K93G6X0044X5G0AKFB1TD7CB
 scheduleId: "pusattrainingk3_213A5801537AC3A69D8B"
 publisherId: "pusattrainingk3"
-trainingId: "damkar-kelas-d"
+trainingSlug: "damkar-kelas-d"
 batchNo: "02"
 slug: "pelatihan-petugas-peran-pemadam-kebakaran-kelas-d-fire-d-03-05-nov-2025-bogor"
 title: "Pelatihan Petugas Peran Pemadam Kebakaran Kelas D Fire D Bogor"

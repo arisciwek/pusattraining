@@ -32,7 +32,7 @@ export async function GET() {
     getCollection('pages', ({ data }) => !data.draft && data.slug !== 'home'),
   ]);
 
-  const trainingsById = new Map(trainings.map((entry) => [entry.data.trainingId, entry]));
+  const trainingsById = new Map(trainings.map((entry) => [entry.data.trainingSlug, entry]));
   const categoryTitlesById = new Map(pages.filter((entry) => entry.data.pageType === 'category').map((entry) => [entry.data.id, entry.data.title]));
   const records: SearchRecord[] = [
     ...articles.map(({ data }) => ({
@@ -56,7 +56,7 @@ export async function GET() {
       content: collectText(data).join(' '),
     })),
     ...schedules.flatMap((schedule) => {
-      const training = trainingsById.get(schedule.data.trainingId);
+      const training = trainingsById.get(schedule.data.trainingSlug);
       if (!training) return [];
       const data = schedule.data;
       return [{

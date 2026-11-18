@@ -2,7 +2,7 @@
 type: training
 id: 3043
 ulid: 01KCV200000000000000000043
-trainingId: training-nodal-analysis-production-optimization
+trainingSlug: training-nodal-analysis-production-optimization
 slug: training-nodal-analysis-production-optimization
 title: "Training Nodal Analysis: Production and Optimization"
 description: "Pelatihan nodal analysis untuk memahami hubungan aliran reservoir, sumur, dan fasilitas produksi, mengidentifikasi bottleneck, mengevaluasi performa sumur, serta meninjau alternatif optimasi produksi minyak dan gas."

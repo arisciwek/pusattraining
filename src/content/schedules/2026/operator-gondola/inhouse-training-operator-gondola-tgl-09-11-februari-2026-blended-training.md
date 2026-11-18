@@ -4,7 +4,7 @@ id: 576226912
 ulid: 01KGZV5B00NCQNH5GGY4D1S4Q2
 scheduleId: "pusattrainingk3_AB2F589610F11A1C92E2"
 publisherId: "pusattrainingk3"
-trainingId: "operator-gondola"
+trainingSlug: "operator-gondola"
 batchNo: "04"
 slug: "inhouse-training-operator-gondola-tgl-09-11-februari-2026-blended-training"
 title: "Inhouse Training Operator Gondola Tgl Blended Training"

@@ -2,7 +2,7 @@
 type: training
 id: 3017
 ulid: 01KCV100000000000000000017
-trainingId: training-rigger-offshore
+trainingSlug: training-rigger-offshore
 slug: training-rigger-offshore
 title: "Pelatihan Rigger Offshore (Lifting and Rigging)"
 description: "Pelatihan Rigger Offshore membahas dasar pekerjaan juru ikat untuk kegiatan pengangkatan di lingkungan offshore, termasuk komunikasi kerja, pemilihan dan pemeriksaan alat bantu angkat, pengikatan beban, serta pengendalian risiko lifting."

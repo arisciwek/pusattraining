@@ -2,7 +2,7 @@
 type: training
 id: 3002
 ulid: 01KCV100000000000000000002
-trainingId: damkar-kelas-d
+trainingSlug: damkar-kelas-d
 slug: damkar-kelas-d
 title: "Pemadam Kebakaran Kelas D"
 description: "Pelatihan Damkar Kelas D untuk Petugas Pemadam, dengan pembelajaran teori dan praktik mengenai pencegahan kebakaran, sistem proteksi, serta prosedur darurat di tempat kerja."

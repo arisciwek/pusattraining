@@ -2,7 +2,7 @@
 type: training
 id: 3005
 ulid: 01KCV100000000000000000005
-trainingId: operator-boiler-tingkat-1
+trainingSlug: operator-boiler-tingkat-1
 slug: operator-boiler-tingkat-1
 title: "Operator Boiler Tingkat 1"
 description: "Pelatihan Operator Boiler Tingkat 1 membekali calon operator dengan pemahaman pengoperasian pesawat uap, pemeriksaan perlengkapan keselamatan, pengendalian bahaya, dan tanggung jawab operator sesuai ketentuan K3 yang berlaku."

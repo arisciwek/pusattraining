@@ -4,7 +4,7 @@ id: 883549153
 ulid: 01H8AP8A00ZGTWWRDTCN8H3H49
 scheduleId: "pusattrainingk3_FC35CE61BA655111C489"
 publisherId: "pusattrainingk3"
-trainingId: "operator-gondola"
+trainingSlug: "operator-gondola"
 batchNo: "03"
 slug: "inhouse-operator-gondola-pt-gerindo-indahtama-sukses-batch-2-tgl-21-23-agustus-2023"
 title: "Inhouse Operator Gondola Pt Gerindo Indahtama Sukses Batch 2 Tgl"

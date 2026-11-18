@@ -100,7 +100,7 @@ function makeCandidate(source, item) {
     endDate: dates.endDate,
     dateLabel,
     timezone: source.timezone ?? 'Asia/Jakarta',
-    trainingId: null,
+    trainingSlug: null,
     batchNo: null,
     status: 'needs-review',
     confidence: { title: 'slug-derived', dates: 'slug-derived', training: 'unmatched' },

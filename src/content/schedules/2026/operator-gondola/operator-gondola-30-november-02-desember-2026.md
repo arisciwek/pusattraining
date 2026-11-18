@@ -4,7 +4,7 @@ id: 918273641
 ulid: 01KCV300000000000000000001
 scheduleId: "pusattrainingk3_OG20261130A1B2C3D4"
 publisherId: "pusattrainingk3"
-trainingId: "operator-gondola"
+trainingSlug: "operator-gondola"
 batchNo: "06"
 slug: "operator-gondola-30-november-02-desember-2026"
 title: "Pelatihan Operator Gondola 30 November – 2 Desember 2026"

@@ -2,7 +2,7 @@
 type: training
 id: 3036
 ulid: 01KCV200000000000000000036
-trainingId: training-crisis-management-upstream-oil-gas
+trainingSlug: training-crisis-management-upstream-oil-gas
 slug: training-crisis-management-upstream-oil-gas
 title: "Training Crisis Management of the Upstream Oil & Gas Operation"
 description: "Pelatihan manajemen krisis untuk operasi hulu migas yang membahas klasifikasi keadaan darurat dan krisis, koordinasi KKKS, komunikasi dengan SKK Migas, notifikasi, pelaporan, evakuasi, dan penanganan pemangku kepentingan."

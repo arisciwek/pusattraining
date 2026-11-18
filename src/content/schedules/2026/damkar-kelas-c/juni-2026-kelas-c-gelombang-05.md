@@ -4,7 +4,7 @@ id: 930205
 ulid: 01KCV500000000000000000005
 scheduleId: damkar_01M7C6X12SP3SRWNCJXCYN2YT9
 publisherId: damkar
-trainingId: damkar-kelas-c
+trainingSlug: damkar-kelas-c
 batchNo: '05'
 slug: juni-2026-kelas-c-gelombang-05
 title: 'Jadwal Pelatihan Damkar Kelas C — 10–17 Juni 2026'

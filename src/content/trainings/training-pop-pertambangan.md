@@ -2,7 +2,7 @@
 type: training
 id: 3026
 ulid: 01KCV100000000000000000026
-trainingId: training-pop-pertambangan
+trainingSlug: training-pop-pertambangan
 slug: training-pop-pertambangan
 title: "Pelatihan Pengawas Operasional Pertama (POP) Pertambangan"
 description: "Pelatihan Pengawas Operasional Pertama (POP) Pertambangan membekali calon pengawas lini pertama dengan kompetensi pengawasan operasional, keselamatan pertambangan, pengendalian risiko, inspeksi, investigasi kecelakaan, dan tanggung jawab pengawas di area kerja tambang."

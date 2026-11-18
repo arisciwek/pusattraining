@@ -2,7 +2,7 @@
 type: training
 id: 3010
 ulid: 01KCV100000000000000000010
-trainingId: damkar-kelas-c
+trainingSlug: damkar-kelas-c
 slug: damkar-kelas-c
 title: "Pemadam Kebakaran Kelas C"
 description: "Pelatihan Pemadam Kebakaran Kelas C membekali Petugas Madya dengan kompetensi pencegahan kebakaran, pemeriksaan sarana proteksi, evakuasi, dan respons keadaan darurat."

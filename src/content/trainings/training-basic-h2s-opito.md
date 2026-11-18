@@ -2,7 +2,7 @@
 type: training
 id: 3020
 ulid: 01KCV100000000000000000020
-trainingId: training-basic-h2s-opito
+trainingSlug: training-basic-h2s-opito
 slug: training-basic-h2s-opito
 title: "Basic H2S Training Course – OPITO"
 description: "Basic H2S Training Course – OPITO membekali personel offshore dengan pemahaman bahaya hidrogen sulfida, penggunaan alat deteksi gas, perlengkapan pernapasan darurat, serta tindakan respons ketika alarm atau insiden H2S terjadi."

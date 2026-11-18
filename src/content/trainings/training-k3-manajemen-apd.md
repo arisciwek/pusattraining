@@ -2,7 +2,7 @@
 type: training
 id: 3012
 ulid: 01KCV100000000000000000012
-trainingId: training-k3-manajemen-apd
+trainingSlug: training-k3-manajemen-apd
 slug: training-k3-manajemen-apd
 title: "Training K3 Manajemen Alat Pelindung Diri (APD)"
 description: "Pelatihan manajemen Alat Pelindung Diri (APD) membahas pemilihan, distribusi, penggunaan, perawatan, evaluasi, dan pengembangan program APD berdasarkan bahaya serta kebutuhan pekerjaan."

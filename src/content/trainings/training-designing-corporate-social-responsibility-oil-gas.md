@@ -2,7 +2,7 @@
 type: training
 id: 3045
 ulid: 01KCV200000000000000000045
-trainingId: training-designing-corporate-social-responsibility-oil-gas
+trainingSlug: training-designing-corporate-social-responsibility-oil-gas
 slug: training-designing-corporate-social-responsibility-oil-gas
 title: "Training Designing Corporate Social Responsibility in the Oil and Gas Industry"
 description: "Pelatihan perancangan program corporate social responsibility pada industri minyak dan gas, meliputi pemetaan sosial, identifikasi kebutuhan masyarakat, penciptaan nilai sosial dan bisnis, kemitraan, perencanaan, komunikasi, pelaporan, serta keberlanjutan program."

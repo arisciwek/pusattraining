@@ -4,7 +4,7 @@ id: 546215544
 ulid: 01E42B0R007D6TAYEX4CE1JGVX
 scheduleId: "pusattrainingk3_3B4DA579DD231C19437D"
 publisherId: "pusattrainingk3"
-trainingId: "ahli-k3-umum"
+trainingSlug: "ahli-k3-umum"
 batchNo: "09"
 slug: "siap-jalan-pelatihan-ahli-k3-umum-tgl-23-maret-06-april-2020-jakarta"
 title: "Siap Jalan Pelatihan Ahli K3 Umum Tgl Jakarta"

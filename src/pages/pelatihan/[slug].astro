@@ -38,7 +38,7 @@ const relatedTrainings = kind === 'category'
   : [];
 const relatedSchedules = kind === 'training'
   ? schedules
-      .filter((schedule) => schedule.data.trainingId === entry.data.trainingId)
+      .filter((schedule) => schedule.data.trainingSlug === entry.data.trainingSlug)
       .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate))
   : [];
 const title = entry.data.title;

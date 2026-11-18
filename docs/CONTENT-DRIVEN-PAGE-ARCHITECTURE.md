@@ -70,7 +70,7 @@ Schedule tetap menggunakan scheduleId sesuai kontrak schedule bersama untuk iden
 - ulid: identitas global.
 - scheduleId: identitas schedule pada kontrak distribusi/sumber bersama.
 - publisherId: publisher asal.
-- trainingId: relasi ke master training.
+- trainingSlug: relasi ke master training.
 
 Ketiganya memiliki tujuan berbeda dan tidak boleh dipertukarkan.
 
@@ -206,7 +206,7 @@ Jika kebutuhan relasi berkembang, gunakan nama field eksplisit seperti relatedPa
 |---|---|---|---|
 | pages | Markdown | id, ulid, slug | Memiliki blocks dan dapat memiliki Markdown body. |
 | articles | Markdown | id, ulid, slug | Konten editorial; frontmatter menyimpan metadata dan relasi. |
-| trainings | Markdown | id, ulid, trainingId | Master program; trainingId dipakai schedule untuk relasi. |
+| trainings | Markdown | id, ulid, trainingSlug | Master program; trainingSlug dipakai schedule untuk relasi. |
 | schedules | Markdown | id, ulid, scheduleId | Mengikuti FRONTMATTER-SCHEDULE-CONTRACT.md; scheduleId tidak menggantikan identitas universal. |
 
 Setiap collection memiliki schema validasi sendiri. Kesamaan prinsip identitas tidak berarti semua collection harus memiliki seluruh field yang sama.

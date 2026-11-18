@@ -19,11 +19,11 @@ node scripts/generate-schedule-frontmatter.mjs --registry=var/schedule-discovery
 
 ## Pencocokan master training
 
-Aturan berada di `config/schedule-training-mappings.json`. Setiap aturan memetakan pola regex pada gabungan `sourceSlug` dan `title` ke `trainingId`. Hasil hanya diterima jika tepat satu aturan cocok dan master training dengan ID tersebut benar-benar ada di `src/content/trainings`.
+Aturan berada di `config/schedule-training-mappings.json`. Setiap aturan memetakan pola regex pada gabungan `sourceSlug` dan `title` ke `trainingSlug`. Hasil hanya diterima jika tepat satu aturan cocok dan master training dengan ID tersebut benar-benar ada di `src/content/trainings`.
 
 - Tidak ada aturan cocok: kandidat masuk laporan review.
 - Lebih dari satu aturan cocok: kandidat masuk laporan review.
-- trainingId tidak ditemukan: kandidat masuk laporan review.
+- trainingSlug tidak ditemukan: kandidat masuk laporan review.
 - Jangan membuat mapping luas yang berpotensi mencocokkan dua program berbeda.
 
 ## Data yang dihasilkan
@@ -31,7 +31,7 @@ Aturan berada di `config/schedule-training-mappings.json`. Setiap aturan memetak
 - `scheduleId`: deterministik dari publisher dan URL sumber.
 - `id`: angka positif dari hash URL; collision diperiksa terhadap schedule yang sudah ada.
 - `ulid`: ULID deterministik dari tanggal mulai dan hash URL.
-- `trainingId`: hanya dari mapping yang terverifikasi terhadap master.
+- `trainingSlug`: hanya dari mapping yang terverifikasi terhadap master.
 - `batchNo`: nomor urut dua digit berdasarkan training dan urutan tanggal dalam satu registry. Periksa ulang bila registry tidak memuat semua batch historis.
 - `slug`: slug sumber yang dinormalisasi.
 - `title`, `dateLabel`, tanggal, timezone: hasil discovery.

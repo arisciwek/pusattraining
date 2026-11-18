@@ -2,7 +2,7 @@
 type: training
 id: 3028
 ulid: 01KCV100000000000000000028
-trainingId: ahli-muda-k3-konstruksi
+trainingSlug: ahli-muda-k3-konstruksi
 slug: ahli-muda-k3-konstruksi
 title: "Pelatihan Ahli Muda K3 Konstruksi"
 description: "Pelatihan Ahli Muda K3 Konstruksi membekali personel proyek dengan kompetensi untuk mengenali bahaya, mengendalikan risiko, melakukan inspeksi, dan mendukung penerapan keselamatan kerja pada proyek konstruksi."

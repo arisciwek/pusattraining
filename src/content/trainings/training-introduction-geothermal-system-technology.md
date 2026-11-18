@@ -2,7 +2,7 @@
 type: training
 id: 3044
 ulid: 01KCV200000000000000000044
-trainingId: training-introduction-geothermal-system-technology
+trainingSlug: training-introduction-geothermal-system-technology
 slug: training-introduction-geothermal-system-technology
 title: "Training Introduction to Geothermal System and Technology"
 description: "Pelatihan pengantar sistem panas bumi yang membahas konsep geothermal, karakteristik reservoir, komponen sistem hidrotermal, tahapan pengembangan proyek, teknologi pembangkitan listrik, dan pemanfaatan langsung energi panas bumi."

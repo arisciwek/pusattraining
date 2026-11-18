@@ -2,7 +2,7 @@
 type: training
 id: 3019
 ulid: 01KCV100000000000000000019
-trainingId: training-bosiet-huet-basic-sea-survival
+trainingSlug: training-bosiet-huet-basic-sea-survival
 slug: training-bosiet-huet-basic-sea-survival
 title: "Pelatihan BOSIET, HUET, dan Basic Sea Survival"
 description: "Pelatihan BOSIET, HUET, dan Basic Sea Survival membekali personel offshore dengan pemahaman keselamatan helikopter, evakuasi darurat, pertolongan pertama, pemadaman kebakaran dasar, serta keterampilan bertahan hidup dan penyelamatan di laut."

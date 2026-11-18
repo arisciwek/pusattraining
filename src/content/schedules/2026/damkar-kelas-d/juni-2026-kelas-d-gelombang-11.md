@@ -4,7 +4,7 @@ id: 900000011
 ulid: 01KCV200000000000000000011
 scheduleId: "pusattraining_sync_damkar_11"
 publisherId: "damkar"
-trainingId: "damkar-kelas-d"
+trainingSlug: "damkar-kelas-d"
 batchNo: "11"
 slug: "juni-2026-kelas-d-gelombang-11"
 title: "Jadwal Pelatihan Damkar Kelas D — 22–24 Juni 2026"

@@ -18,11 +18,11 @@ export async function getStaticPaths() {
     getCollection('schedules', isMainSiteSchedule),
     getCollection('trainings', ({ data }) => !data.draft),
   ]);
-  const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
+  const trainingsById = new Map(trainings.map((training) => [training.data.trainingSlug, training]));
   const months = new Map<string, typeof schedules>();
 
   for (const schedule of schedules) {
-    if (!trainingsById.has(schedule.data.trainingId)) continue;
+    if (!trainingsById.has(schedule.data.trainingSlug)) continue;
     const month = getScheduleMonth(schedule.data);
     const entries = months.get(month) ?? [];
     entries.push(schedule);
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
     props: {
       month,
       schedules: entries.sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate)),
-      trainings: trainings.filter((training) => entries.some((schedule) => schedule.data.trainingId === training.data.trainingId)),
+      trainings: trainings.filter((training) => entries.some((schedule) => schedule.data.trainingSlug === training.data.trainingSlug)),
     },
   }));
 }
@@ -47,7 +47,7 @@ const monthLabel = new Intl.DateTimeFormat('id-ID', {
   year: 'numeric',
   timeZone: 'UTC',
 }).format(monthDate);
-const trainingsById = new Map(trainings.map((training) => [training.data.trainingId, training]));
+const trainingsById = new Map(trainings.map((training) => [training.data.trainingSlug, training]));
 const description = `Daftar jadwal training bulan ${monthLabel} beserta informasi program dan detail setiap angkatan.`;
 const scheduleListStructuredData = {
   '@context': 'https://schema.org',
@@ -56,7 +56,7 @@ const scheduleListStructuredData = {
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   numberOfItems: schedules.length,
   itemListElement: schedules.map((schedule, index) => {
-    const training = trainingsById.get(schedule.data.trainingId)!;
+    const training = trainingsById.get(schedule.data.trainingSlug)!;
     const url = Astro.site
       ? new URL(getScheduleHref(schedule, training.data.slug), Astro.site).toString()
       : undefined;
@@ -95,7 +95,7 @@ const safeScheduleListStructuredData = JSON.stringify(scheduleListStructuredData
         </div>
         <div class="schedule-archive__grid mt-6 grid gap-5 lg:grid-cols-2">
           {schedules.map((schedule) => {
-            const training = trainingsById.get(schedule.data.trainingId)!;
+            const training = trainingsById.get(schedule.data.trainingSlug)!;
             return <ScheduleCard schedule={schedule} trainingSlug={training.data.slug} trainingTitle={training.data.title} />;
           })}
         </div>
