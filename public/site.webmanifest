@@ -10,7 +10,7 @@
   "theme_color": "#020617",
   "icons": [
     {
-      "src": "/images/logo-betracom.png",
+      "src": "https://raw.githubusercontent.com/arisciwek/damkar/main/public/images/logo-betracom.png",
       "sizes": "151x151",
       "type": "image/png"
     }
