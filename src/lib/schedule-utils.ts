@@ -1,5 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
-import { DEFAULT_EVENT_LOCATION } from './site';
+import { DEFAULT_EVENT_LOCATION } from './site.ts';
 
 export type ScheduleEntry = CollectionEntry<'schedules'>;
 
