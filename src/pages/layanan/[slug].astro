@@ -26,7 +26,7 @@ const { data } = entry;
 
       <header class="service-detail__hero mt-8 overflow-hidden rounded-3xl bg-slate-950 px-6 py-12 text-white sm:px-10 sm:py-16">
         <div class="service-detail__hero-content max-w-3xl">
-          {data.hero.eyebrow && <p class="service-detail__eyebrow text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">{data.hero.eyebrow}</p>}
+          {data.hero.eyebrow && <p class="service-detail__eyebrow text-sm font-semibold text-sky-300">{data.hero.eyebrow}</p>}
           <h1 class="service-detail__title mt-3 text-3xl font-bold tracking-tight sm:text-5xl">{data.hero.title}</h1>
           <p class="service-detail__summary mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">{data.hero.description}</p>
           {data.hero.ctaLabel && data.hero.ctaHref && (
@@ -39,7 +39,7 @@ const { data } = entry;
         <div class="service-detail__sections mx-auto mt-14 max-w-4xl space-y-14">
           {data.sections.map((section, index) => (
             <section class="service-detail__section" id={section.id}>
-              {section.eyebrow && <p class="service-detail__section-eyebrow text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">{section.eyebrow}</p>}
+              {section.eyebrow && <p class="service-detail__section-eyebrow text-sm font-semibold text-sky-700">{section.eyebrow}</p>}
               <h2 class="service-detail__section-title mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">{section.title}</h2>
               {section.description && <p class="service-detail__section-description mt-4 max-w-3xl text-base leading-8 text-slate-600">{section.description}</p>}
               {section.items.length > 0 && (

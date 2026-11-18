@@ -7,11 +7,11 @@ interface Props {
 const { id = 'ringkasan-program', eyebrow = 'RINGKASAN PROGRAM', items } = Astro.props;
 ---
 <section id={id} class="training-summary mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8" aria-label="Ringkasan program pelatihan">
-  <p class="training-summary__eyebrow text-xs font-bold uppercase tracking-[0.16em] text-amber-700">{eyebrow}</p>
+  <p class="training-summary__eyebrow text-sm font-semibold text-amber-800">{eyebrow}</p>
   <dl class="training-summary__grid mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
     {items.map((item) => (
       <div class="training-summary__item border-l-2 border-amber-400 pl-4">
-        <dt class="training-summary__label text-xs font-semibold uppercase tracking-wide text-slate-500">{item.label}</dt>
+        <dt class="training-summary__label text-xs font-semibold text-slate-500">{item.label}</dt>
         <dd class="training-summary__value mt-2 text-lg font-bold leading-snug text-slate-950">{item.value}</dd>
         {item.detail && <p class="training-summary__detail mt-1 text-sm leading-6 text-slate-600">{item.detail}</p>}
       </div>

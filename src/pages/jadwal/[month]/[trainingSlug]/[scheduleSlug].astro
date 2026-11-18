@@ -149,9 +149,9 @@ const safeStructuredData = JSON.stringify(structuredData).replace(/</g, '\\u003c
         <header class="schedule-detail__header max-w-3xl">
           <div class="schedule-detail__eyebrow flex flex-wrap items-center gap-3">
             <span class="schedule-detail__status inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700">{getScheduleStatusLabel(data.status)}</span>
-            <span class="schedule-detail__batch text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Angkatan {data.batchNo}</span>
+            <span class="schedule-detail__batch text-xs font-semibold text-slate-500">Angkatan {data.batchNo}</span>
           </div>
-          <p class="schedule-detail__training mt-5 text-xs font-bold uppercase tracking-[0.14em] text-amber-700">
+          <p class="schedule-detail__training mt-5 text-xs font-bold text-amber-700">
             <a class="schedule-detail__training-link hover:text-amber-800" href={`/pelatihan/${training.data.slug}/`}>{training.data.title}</a>
           </p>
           <h1 class="schedule-detail__title mt-3 text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">{title}</h1>
@@ -165,11 +165,11 @@ const safeStructuredData = JSON.stringify(structuredData).replace(/</g, '\\u003c
               <p class="schedule-detail__date mt-4 text-lg font-semibold text-slate-800">{data.dateLabel}</p>
               <dl class="schedule-detail__date-meta mt-5 grid gap-4 sm:grid-cols-2">
                 <div class="schedule-detail__date-item">
-                  <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Mulai</dt>
+                  <dt class="text-xs font-semibold text-slate-500">Mulai</dt>
                   <dd class="mt-1 text-sm text-slate-800"><time datetime={data.startDate}>{formatScheduleDate(data.startDate, data.timezone)}</time></dd>
                 </div>
                 <div class="schedule-detail__date-item">
-                  <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Selesai</dt>
+                  <dt class="text-xs font-semibold text-slate-500">Selesai</dt>
                   <dd class="mt-1 text-sm text-slate-800"><time datetime={data.endDate}>{formatScheduleDate(data.endDate, data.timezone)}</time></dd>
                 </div>
               </dl>
@@ -181,19 +181,19 @@ const safeStructuredData = JSON.stringify(structuredData).replace(/</g, '\\u003c
                 <dl class="schedule-detail__facts mt-5 grid gap-5 sm:grid-cols-2">
                   {data.delivery?.mode && (
                     <div class="schedule-detail__fact">
-                      <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Metode</dt>
+                      <dt class="text-xs font-semibold text-slate-500">Metode</dt>
                       <dd class="mt-1 text-sm text-slate-800">{deliveryLabels[data.delivery.mode]}</dd>
                     </div>
                   )}
                   {data.delivery?.attendanceMode && (
                     <div class="schedule-detail__fact">
-                      <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Kehadiran</dt>
+                      <dt class="text-xs font-semibold text-slate-500">Kehadiran</dt>
                       <dd class="mt-1 text-sm text-slate-800">{attendanceLabels[data.delivery.attendanceMode]}</dd>
                     </div>
                   )}
                   {data.venue?.name && (
                     <div class="schedule-detail__fact sm:col-span-2">
-                      <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Tempat</dt>
+                      <dt class="text-xs font-semibold text-slate-500">Tempat</dt>
                       <dd class="mt-1 text-sm font-semibold text-slate-800">{data.venue.name}</dd>
                       {(data.venue.address || data.venue.city || data.venue.province) && (
                         <dd class="mt-1 text-sm leading-6 text-slate-600">{[data.venue.address, data.venue.city, data.venue.province].filter(Boolean).join(', ')}</dd>
@@ -251,7 +251,7 @@ const safeStructuredData = JSON.stringify(structuredData).replace(/</g, '\\u003c
 
           <aside class="schedule-detail__aside">
             <div class="schedule-detail__registration rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:sticky lg:top-24">
-              <p class="text-xs font-bold uppercase tracking-[0.14em] text-amber-700">INFORMASI PENDAFTARAN</p>
+              <p class="text-xs font-bold text-amber-700">INFORMASI PENDAFTARAN</p>
               <h2 class="mt-2 text-xl font-bold text-slate-950">Angkatan {data.batchNo}</h2>
               {data.registration ? (
                 <>

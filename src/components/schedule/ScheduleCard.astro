@@ -35,10 +35,10 @@ const statusLabel = timelineStatus === 'available' ? 'Tersedia' : timelineStatus
     <span class={['schedule-card__status inline-flex rounded-full px-3 py-1 text-xs font-bold', statusClass].join(' ')}>
       {statusLabel}
     </span>
-    <span class="schedule-card__batch text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Angkatan {data.batchNo}</span>
+    <span class="schedule-card__batch text-xs font-semibold text-slate-500">Angkatan {data.batchNo}</span>
   </div>
   <div class="schedule-card__body mt-5">
-    {trainingTitle && <p class="schedule-card__training text-xs font-semibold uppercase tracking-[0.12em] text-amber-700">{trainingTitle}</p>}
+    {trainingTitle && <p class="schedule-card__training text-xs font-semibold text-amber-700">{trainingTitle}</p>}
     <h3 class="schedule-card__title mt-2 text-xl font-bold leading-snug tracking-tight text-slate-950">
       <a class="schedule-card__link outline-offset-4 hover:text-amber-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-slate-900" href={href}>{title}</a>
     </h3>

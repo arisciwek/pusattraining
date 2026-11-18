@@ -15,7 +15,7 @@ const services = (await getCollection('services', ({ data }) => !data.draft))
     <Container>
       <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Layanan' }]} />
       <header class="service-index__header mx-auto mt-10 max-w-3xl text-center">
-        <p class="service-index__eyebrow text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">LAYANAN PROFESIONAL</p>
+        <p class="service-index__eyebrow text-sm font-semibold text-sky-700">LAYANAN PROFESIONAL</p>
         <h1 class="service-index__title mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl">Layanan untuk kebutuhan perusahaan Anda</h1>
         <p class="service-index__description mt-5 text-base leading-8 text-slate-600 sm:text-lg">Temukan informasi layanan, ruang lingkup pekerjaan, dan tahapan pendampingan sesuai kebutuhan perusahaan.</p>
       </header>
@@ -24,7 +24,7 @@ const services = (await getCollection('services', ({ data }) => !data.draft))
         <div class="service-index__grid mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map(({ data }) => (
             <article class="service-index__card group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-lg">
-              <p class="service-index__card-label text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">LAYANAN</p>
+              <p class="service-index__card-label text-xs font-semibold text-sky-700">LAYANAN</p>
               <h2 class="service-index__card-title mt-3 text-xl font-semibold leading-snug text-slate-950">{data.title}</h2>
               <p class="service-index__card-description mt-3 flex-1 text-sm leading-7 text-slate-600">{data.description}</p>
               <a class="service-index__card-link mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sky-700 transition group-hover:gap-3" href={`/layanan/${data.slug}/`}>

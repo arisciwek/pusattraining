@@ -32,7 +32,7 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
         { label: data.title },
       ]} />
       <header class="article-detail__header mx-auto mt-8 max-w-4xl border-b border-slate-200 pb-9">
-        <p class="article-detail__eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-sky-700">{data.category}</p>
+        <p class="article-detail__eyebrow text-sm font-semibold text-sky-700">{data.category}</p>
         <h1 class="article-detail__title mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl">{data.title}</h1>
         <p class="article-detail__description mt-5 text-lg leading-8 text-slate-600">{data.description}</p>
         <div class="article-detail__meta mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-500">
@@ -45,7 +45,7 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
         {data.blocks.map((block, index) => (
           block.type === 'intro' ? (
             <section class="article-detail__intro rounded-3xl bg-slate-950 px-6 py-8 text-white sm:px-9 sm:py-10">
-              {block.eyebrow && <p class="article-detail__intro-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">{block.eyebrow}</p>}
+              {block.eyebrow && <p class="article-detail__intro-eyebrow text-sm font-semibold text-sky-300">{block.eyebrow}</p>}
               <p class="article-detail__intro-lead mt-3 text-lg leading-8 text-slate-100 sm:text-xl">{block.lead}</p>
             </section>
           ) : block.type === 'section' ? (
@@ -65,12 +65,12 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
             </section>
           ) : block.type === 'schedule-note' ? (
             <section class="article-detail__schedule rounded-3xl border border-sky-200 bg-sky-50 p-6 sm:p-8">
-              <p class="article-detail__schedule-eyebrow text-xs font-semibold uppercase tracking-[0.16em] text-sky-800">{block.period}</p>
+              <p class="article-detail__schedule-eyebrow text-sm font-semibold text-sky-800">{block.period}</p>
               <h2 class="article-detail__schedule-title mt-2 text-2xl font-bold text-slate-950">{block.title}</h2>
               <dl class="article-detail__schedule-list mt-5 grid gap-3 sm:grid-cols-2">
                 {block.items.map((item) => (
                   <div class="article-detail__schedule-item rounded-xl bg-white p-4">
-                    <dt class="article-detail__schedule-label text-xs font-semibold uppercase tracking-wide text-slate-500">{item.label}</dt>
+                    <dt class="article-detail__schedule-label text-xs font-semibold text-slate-500">{item.label}</dt>
                     <dd class="article-detail__schedule-value mt-1 font-semibold text-slate-900">{item.value}</dd>
                   </div>
                 ))}
