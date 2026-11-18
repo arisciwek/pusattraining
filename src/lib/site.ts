@@ -1,7 +1,7 @@
 export const SITE_NAME = 'Pusat Training';
 export const COMPANY_NAME = 'PT Betracom Gemilang Nusa';
 
-export const COMPANY_URL = 'https://betracom.co.id/';
+export const COMPANY_URL = 'https://pusattrainingk3.com';
 export const COMPANY_EMAIL = 'betracomtraining@gmail.com';
 
 export const COMPANY_ADDRESS = {
