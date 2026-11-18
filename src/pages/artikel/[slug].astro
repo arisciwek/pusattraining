@@ -21,16 +21,15 @@ const trainings = await getCollection('trainings', ({ data: training }) => !trai
 const relatedTrainings = trainings.filter((training) => data.related.includes(training.data.id));
 const relatedTrainingTitles = relatedTrainings.map((training) => training.data.title);
 const relatedServiceTitles = relatedServices.map((service) => service.data.title);
-const footerDescription = relatedTrainingTitles.length || relatedServiceTitles.length
-  ? [
-      relatedTrainingTitles.length
-        ? `${COMPANY_NAME} menyelenggarakan pelatihan ${relatedTrainingTitles.join(', ')}`
-        : '',
-      relatedServiceTitles.length
-        ? `${COMPANY_NAME} menyediakan layanan ${relatedServiceTitles.join(', ')}`
-        : '',
-    ].filter(Boolean).join('. ') + '.'
-  : undefined;
+
+// Satu halaman artikel hanya boleh membuat satu klaim footer.
+// Pelatihan diprioritaskan; layanan hanya menjadi fallback jika tidak ada
+// pelatihan terkait pada artikel tersebut.
+const footerDescription = relatedTrainingTitles.length
+  ? `${COMPANY_NAME} menyelenggarakan pelatihan ${relatedTrainingTitles.join(', ')}.`
+  : relatedServiceTitles.length
+    ? `${COMPANY_NAME} menyediakan layanan ${relatedServiceTitles.join(', ')}.`
+    : undefined;
 const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID', {
   day: 'numeric',
   month: 'long',
