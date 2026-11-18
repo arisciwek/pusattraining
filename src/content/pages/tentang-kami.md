@@ -4,14 +4,14 @@ id: 1001
 ulid: 01KCV000000000000000000015
 pageType: standard
 slug: tentang
-title: Tentang Pusattraining
-description: Mengenal Pusattraining, portal informasi program dan jadwal pelatihan dari berbagai bidang serta penyelenggara.
+title: Tentang Pusat Training
+description: Mengenal Pusat Training, portal informasi program dan jadwal pelatihan dari berbagai bidang serta penyelenggara.
 pubDate: '2026-11-16T00:00:00+07:00'
-updatedDate: '2026-11-16T00:00:00+07:00'
+updatedDate: '2026-11-18T00:00:00+07:00'
 draft: false
 ---
 
-Pusattraining dikembangkan sebagai portal informasi yang membantu pengunjung menemukan program pengembangan kompetensi dan jadwal pelatihan dari berbagai bidang serta penyelenggara.
+Pusat Training merupakan portal informasi yang membantu pengunjung menemukan program pengembangan kompetensi dan jadwal pelatihan dari berbagai bidang serta penyelenggara.
 
 ## Informasi yang terstruktur
 
