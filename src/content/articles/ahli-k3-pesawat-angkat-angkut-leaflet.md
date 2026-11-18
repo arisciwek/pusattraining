@@ -1,5 +1,5 @@
 ---
-type: leaflet
+type: article
 id: 5104
 ulid: 01KCV510000000000000000004
 slug: ahli-k3-pesawat-angkat-angkut
