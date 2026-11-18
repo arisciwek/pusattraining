@@ -18,3 +18,10 @@
 - Write for the prospective participant or employer, not for the migration process. Public content must read as a finished, professionally edited article.
 - Preserve the source URL's search intent while improving usefulness: explain the role, equipment, competency, or training subject; describe the related training; then provide a relevant next step.
 - Keep article content in the repository's established frontmatter block format. Do not add ordinary Markdown body content or an `article-body` block unless the project architecture is explicitly changed.
+
+## Dynamic site identity in content
+
+- Use `{{COMPANY_NAME}}` for the legal/company identity and `{{SITE_NAME}}` for the public site name in Markdown body text and page frontmatter strings when the value should follow the central configuration.
+- The source values are `COMPANY_NAME` and `SITE_NAME` in `src/lib/site.ts`. Do not copy the current literal values into content when a dynamic token is appropriate.
+- Markdown body tokens are resolved by the `remarkSiteTokens` plugin configured in `astro.config.mjs`. Resolve frontmatter and block data with `resolveSiteTokensDeep` from `src/lib/site-tokens.ts` in the page route before rendering them.
+- Keep genuine third-party names, historical organization names, and quoted source material literal; only use tokens where the current site identity is intended.
