@@ -12,13 +12,13 @@ export function resolveSiteTokens(value: string): string {
 
 /** Resolve placeholders recursively in page frontmatter and block data. */
 export function resolveSiteTokensDeep<T>(value: T): T {
-  if (typeof value === 'string') return resolveSiteTokens(value) as T;
-  if (Array.isArray(value)) return value.map((item) => resolveSiteTokensDeep(item)) as T;
+  if (typeof value === 'string') return resolveSiteTokens(value) as unknown as T;
+  if (Array.isArray(value)) return value.map((item) => resolveSiteTokensDeep(item)) as unknown as T;
 
   if (value && typeof value === 'object') {
     return Object.fromEntries(
       Object.entries(value).map(([key, item]) => [key, resolveSiteTokensDeep(item)]),
-    ) as T;
+    ) as unknown as T;
   }
 
   return value;
