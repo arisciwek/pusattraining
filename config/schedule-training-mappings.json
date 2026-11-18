@@ -1,12 +1,12 @@
 {
   "mappings": [
-    { "pattern": "ahli[- ]?k3[- ]?umum", "trainingId": "ahli-k3-umum" },
-    { "pattern": "(pemadam|damkar)[- ]?kebakaran[- ]?kelas[- ]?a|damkar[- ]?kelas[- ]?a", "trainingId": "pemadam-kebakaran-kelas-a" },
-    { "pattern": "(pemadam|damkar)[- ]?kebakaran[- ]?kelas[- ]?d|damkar[- ]?kelas[- ]?d", "trainingId": "damkar-kelas-d" },
-    { "pattern": "operator[- ]?boiler[- ]?tingkat[- ]?1", "trainingId": "operator-boiler-tingkat-1" },
-    { "pattern": "operator[- ]?boiler[- ]?tingkat[- ]?2", "trainingId": "operator-boiler-tingkat-2" },
-    { "pattern": "operator[- ]?gondola", "trainingId": "operator-gondola" },
-    { "pattern": "emergency[- ]?response[- ]?plan", "trainingId": "training-emergency-response-plan" },
-    { "pattern": "confined[- ]?space", "trainingId": "training-k3-bahaya-confined-space" }
+    { "pattern": "ahli[- ]?k3[- ]?umum", "trainingSlug": "ahli-k3-umum" },
+    { "pattern": "(pemadam|damkar)[- ]?kebakaran[- ]?kelas[- ]?a|damkar[- ]?kelas[- ]?a", "trainingSlug": "damkar-kelas-a" },
+    { "pattern": "(pemadam|damkar)[- ]?kebakaran[- ]?kelas[- ]?d|damkar[- ]?kelas[- ]?d", "trainingSlug": "damkar-kelas-d" },
+    { "pattern": "operator[- ]?boiler[- ]?tingkat[- ]?1", "trainingSlug": "operator-boiler-tingkat-1" },
+    { "pattern": "operator[- ]?boiler[- ]?tingkat[- ]?2", "trainingSlug": "operator-boiler-tingkat-2" },
+    { "pattern": "operator[- ]?gondola", "trainingSlug": "operator-gondola" },
+    { "pattern": "emergency[- ]?response[- ]?plan", "trainingSlug": "training-emergency-response-plan" },
+    { "pattern": "confined[- ]?space", "trainingSlug": "training-k3-bahaya-confined-space" }
   ]
 }

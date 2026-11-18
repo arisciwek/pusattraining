@@ -15,6 +15,7 @@
     "test:schedules:discover": "node --test scripts/discover-schedules.test.mjs",
     "schedules:generate": "node scripts/generate-schedule-frontmatter.mjs",
     "test:schedules:generate": "node --test scripts/generate-schedule-frontmatter.test.mjs",
+    "test:schedules:mappings": "node --test scripts/schedule-mapping-config.test.mjs",
     "test:schedules:routing": "node --test scripts/schedule-routing.test.mjs",
     "test:schedules:sitemap": "node --test scripts/sitemap-lastmod.test.mjs"
   },
