@@ -1,6 +1,7 @@
 ---
 import Container from './Container.astro';
 import { CONTACT_PERSON, CONTACT_PHONE_DISPLAY, CONTACT_TEL_HREF, getContactWhatsAppHref } from '../../lib/contact';
+import { SITE_NAME } from '../../lib/site';
 
 interface LinkItem {
   label: string;
@@ -21,14 +22,14 @@ interface Props {
 }
 
 const {
-  brand = 'Pusattraining',
+  brand = SITE_NAME,
   description = 'Temukan program pengembangan kompetensi dan jadwal training dari berbagai penyelenggara dalam satu tempat.',
   groups = [
     { title: 'Jelajahi', links: [{ label: 'Semua Training', href: '/training/' }, { label: 'Jadwal Training', href: '/jadwal/' }] },
     { title: 'Informasi', links: [{ label: 'Tentang Kami', href: '/tentang/' }, { label: 'Kontak', href: '/kontak/' }] },
   ],
   email,
-  copyrightName = 'Pusattraining',
+  copyrightName = SITE_NAME,
 } = Astro.props;
 ---
 
