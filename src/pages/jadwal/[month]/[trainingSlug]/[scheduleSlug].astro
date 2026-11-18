@@ -15,6 +15,7 @@ import {
   getRegistrationStatusLabel,
 } from '../../../../lib/schedule-utils';
 import { validateContentRelations } from '../../../../lib/validate-content';
+import { COMPANY_NAME } from '../../../../lib/site';
 
 type ScheduleEntry = CollectionEntry<'schedules'>;
 type TrainingEntry = CollectionEntry<'trainings'>;
@@ -47,6 +48,7 @@ const { schedule, training } = Astro.props as Props;
 const data = schedule.data;
 const title = getScheduleTitle(schedule);
 const description = getScheduleDescription(schedule);
+const footerDescription = `${COMPANY_NAME} menyelenggarakan pelatihan ${training.data.title}.`;
 const month = getScheduleMonth(data);
 const completion = data.completion;
 const hasCompletion = Boolean(
@@ -132,7 +134,7 @@ const structuredData = {
 };
 const safeStructuredData = JSON.stringify(structuredData).replace(/</g, '\\u003c');
 ---
-<SiteLayout title={title} description={description}>
+<SiteLayout title={title} description={description} footerDescription={footerDescription}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={safeStructuredData} />
   </Fragment>
