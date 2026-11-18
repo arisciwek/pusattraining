@@ -4,6 +4,9 @@ export const COMPANY_NAME = 'PT Betracom Gemilang Nusa';
 export const COMPANY_URL = 'https://pusattrainingk3.com';
 export const COMPANY_EMAIL = 'betracomtraining@gmail.com';
 
+/** Gambar sosial/structured data bawaan untuk artikel tanpa gambar khusus. */
+export const DEFAULT_ARTICLE_IMAGE = '/images/default-article.svg';
+
 export const DEFAULT_EVENT_LOCATION = {
   name: 'Betracom Arena Training Center',
   address: 'Jl Raya Cifor, Cilubang Tonggoh, RT 01 RW 10, Kelurahan Situ Gede',
