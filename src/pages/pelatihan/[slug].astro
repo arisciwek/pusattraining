@@ -5,7 +5,6 @@ import Container from '../../components/shared/Container.astro';
 import Breadcrumb from '../../components/shared/Breadcrumb.astro';
 import BlockRenderer from '../../blocks/BlockRenderer.astro';
 import TrainingDetailRenderer from '../../blocks/training/TrainingDetailRenderer.astro';
-import LatestArticlesSection from '../../components/LatestArticlesSection.astro';
 import type { PageBlock, TrainingDetailBlock } from '../../blocks/types';
 import { isMainSiteSchedule } from '../../lib/schedule-utils';
 import { validateContentRelations } from '../../lib/validate-content';
@@ -87,5 +86,4 @@ const categoryTrainingCards = relatedTrainings.map((training) => ({
       )}
     </Container>
   </section>
-  <LatestArticlesSection offset={3} limit={3} />
 </SiteLayout>
