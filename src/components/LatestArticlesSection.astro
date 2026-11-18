@@ -34,7 +34,7 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
   <section class="latest-articles border-t border-slate-200 bg-gradient-to-b from-slate-50 to-white py-14 sm:py-20" aria-labelledby="latest-articles-title">
     <Container>
       <header class="latest-articles__header mx-auto mb-8 max-w-2xl text-center">
-        <p class="latest-articles__eyebrow text-sm font-bold uppercase tracking-[.14em] text-sky-800">Wawasan & informasi</p>
+        <p class="latest-articles__eyebrow text-sm font-bold uppercase tracking-[.14em] text-amber-800">Wawasan & informasi</p>
         <h2 class="latest-articles__title mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl" id="latest-articles-title">Artikel Terbaru</h2>
         <p class="latest-articles__intro mt-4 text-base leading-7 text-slate-600">
           Informasi, panduan, dan referensi seputar pelatihan serta pengembangan kompetensi.
@@ -43,23 +43,23 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
 
       <div class="latest-articles__grid grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {articles.map(({ data }) => (
-          <article class="latest-articles__card group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl hover:shadow-slate-200/60">
+          <article class="latest-articles__card group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-amber-300 hover:shadow-xl hover:shadow-slate-200/60">
             {data.image ? (
               <a class="latest-articles__image-link block aspect-[16/9] overflow-hidden bg-slate-100" href={`/artikel/${data.slug}/`} aria-label={`Baca ${data.title}`}>
                 <img class="latest-articles__image h-full w-full object-cover transition duration-300 group-hover:scale-105" src={data.image} alt={data.title} loading="lazy" />
               </a>
             ) : (
-              <div class="latest-articles__image-placeholder aspect-[16/9] bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900" aria-hidden="true"></div>
+              <div class="latest-articles__image-placeholder media-placeholder aspect-[16/9]" aria-hidden="true"></div>
             )}
             <div class="latest-articles__card-content flex flex-1 flex-col p-6">
-              <span class="latest-articles__category text-xs font-bold uppercase tracking-wide text-sky-800">{data.category}</span>
+              <span class="latest-articles__category text-xs font-bold uppercase tracking-wide text-amber-800">{data.category}</span>
               <h3 class="latest-articles__card-title mt-3 text-lg font-bold leading-snug tracking-tight text-slate-950">
-                <a class="latest-articles__card-link transition-colors group-hover:text-sky-800" href={`/artikel/${data.slug}/`}>{data.title}</a>
+                <a class="latest-articles__card-link transition-colors group-hover:text-amber-800" href={`/artikel/${data.slug}/`}>{data.title}</a>
               </h3>
               <p class="latest-articles__description mt-3 line-clamp-3 text-sm leading-7 text-slate-600">{data.description}</p>
               <div class="latest-articles__card-footer mt-auto flex items-center justify-between gap-3 pt-6">
                 <time class="latest-articles__date text-xs text-slate-500" datetime={data.pubDate}>{formatDate(data.pubDate)}</time>
-                <a class="latest-articles__read inline-flex shrink-0 items-center gap-2 text-sm font-bold text-sky-800" href={`/artikel/${data.slug}/`}>
+                <a class="latest-articles__read inline-flex shrink-0 items-center gap-2 text-sm font-bold text-amber-800" href={`/artikel/${data.slug}/`}>
                   Baca artikel <span aria-hidden="true">→</span>
                 </a>
               </div>
@@ -69,7 +69,7 @@ const formatDate = (value: string) => new Date(value).toLocaleDateString('id-ID'
       </div>
 
       <div class="latest-articles__footer mt-9 flex justify-center">
-        <a class="latest-articles__more inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 transition hover:border-sky-800 hover:bg-sky-800 hover:text-white" href="/artikel/">
+        <a class="latest-articles__more inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 transition hover:border-amber-800 hover:bg-amber-800 hover:text-white" href="/artikel/">
           Lihat semua artikel <span aria-hidden="true">→</span>
         </a>
       </div>

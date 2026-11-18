@@ -29,12 +29,12 @@ const categories = [...new Set(articles.map(({ data }) => data.category))]
         { label: 'Artikel' },
       ]} />
       <div class="article-index__hero mt-10 max-w-3xl">
-        <p class="article-index__eyebrow text-sm font-semibold text-sky-300">Wawasan & referensi</p>
+        <p class="article-index__eyebrow text-sm font-semibold text-amber-300">Wawasan & referensi</p>
         <h1 class="article-index__title mt-4 text-4xl font-black tracking-tight sm:text-5xl">Artikel dan Informasi Pelatihan</h1>
         <p class="article-index__description mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
           Temukan panduan, penjelasan program, dan informasi praktis seputar pelatihan serta sertifikasi kompetensi untuk mendukung pengembangan profesional.
         </p>
-        <p class="article-index__count mt-7 text-sm font-semibold text-sky-200">{articles.length} materi tersedia</p>
+        <p class="article-index__count mt-7 text-sm font-semibold text-amber-200">{articles.length} materi tersedia</p>
       </div>
     </Container>
   </section>
@@ -52,13 +52,13 @@ const categories = [...new Set(articles.map(({ data }) => data.category))]
       {articles.length > 0 ? (
         <div class="article-index__grid grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map(({ data }) => (
-            <article class="article-index__card group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl hover:shadow-slate-200/60">
+            <article class="article-index__card group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-amber-300 hover:shadow-xl hover:shadow-slate-200/60">
               {data.image ? (
                 <a class="article-index__card-image-link block aspect-[16/9] overflow-hidden bg-slate-100" href={`/artikel/${data.slug}/`} aria-label={`Baca ${data.title}`}>
                   <img class="article-index__card-image h-full w-full object-cover transition duration-300 group-hover:scale-105" src={data.image} alt={data.title} loading="lazy" />
                 </a>
               ) : (
-                <div class="article-index__card-placeholder flex aspect-[16/9] items-end bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900 p-6" aria-hidden="true">
+                <div class="article-index__card-placeholder media-placeholder aspect-[16/9]" aria-hidden="true">
                 </div>
               )}
               <div class="article-index__card-content flex flex-1 flex-col p-6">
@@ -66,12 +66,12 @@ const categories = [...new Set(articles.map(({ data }) => data.category))]
                   <span class="article-index__card-category">{data.category}</span>
                 </div>
                 <h2 class="article-index__card-title mt-4 text-xl font-bold leading-snug tracking-tight text-slate-950">
-                  <a class="article-index__card-title-link transition-colors group-hover:text-sky-800" href={`/artikel/${data.slug}/`}>{data.title}</a>
+                  <a class="article-index__card-title-link transition-colors group-hover:text-amber-800" href={`/artikel/${data.slug}/`}>{data.title}</a>
                 </h2>
                 <p class="article-index__card-description mt-3 line-clamp-3 text-sm leading-7 text-slate-600">{data.description}</p>
                 <div class="article-index__card-footer mt-auto flex items-center justify-between gap-4 pt-6">
                   <time class="article-index__card-date text-xs text-slate-500" datetime={data.pubDate}>{formatDate(data.pubDate)}</time>
-                  <a class="article-index__card-read inline-flex items-center gap-2 text-sm font-bold text-sky-800" href={`/artikel/${data.slug}/`}>
+                  <a class="article-index__card-read inline-flex items-center gap-2 text-sm font-bold text-amber-800" href={`/artikel/${data.slug}/`}>
                     Baca materi <span aria-hidden="true">→</span>
                   </a>
                 </div>

@@ -26,11 +26,11 @@ const { data } = entry;
 
       <header class="service-detail__hero mt-8 overflow-hidden rounded-3xl bg-slate-950 px-6 py-12 text-white sm:px-10 sm:py-16">
         <div class="service-detail__hero-content max-w-3xl">
-          {data.hero.eyebrow && <p class="service-detail__eyebrow text-sm font-semibold text-sky-300">{data.hero.eyebrow}</p>}
+          {data.hero.eyebrow && <p class="service-detail__eyebrow text-sm font-semibold text-amber-300">{data.hero.eyebrow}</p>}
           <h1 class="service-detail__title mt-3 text-3xl font-bold tracking-tight sm:text-5xl">{data.hero.title}</h1>
           <p class="service-detail__summary mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">{data.hero.description}</p>
           {data.hero.ctaLabel && data.hero.ctaHref && (
-            <a class="service-detail__hero-cta mt-8 inline-flex rounded-full bg-sky-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-300" href={data.hero.ctaHref}>{data.hero.ctaLabel}</a>
+            <a class="service-detail__hero-cta mt-8 inline-flex rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-300" href={data.hero.ctaHref}>{data.hero.ctaLabel}</a>
           )}
         </div>
       </header>
@@ -39,7 +39,7 @@ const { data } = entry;
         <div class="service-detail__sections mx-auto mt-14 max-w-4xl space-y-14">
           {data.sections.map((section, index) => (
             <section class="service-detail__section" id={section.id}>
-              {section.eyebrow && <p class="service-detail__section-eyebrow text-sm font-semibold text-sky-700">{section.eyebrow}</p>}
+              {section.eyebrow && <p class="service-detail__section-eyebrow text-sm font-semibold text-amber-700">{section.eyebrow}</p>}
               <h2 class="service-detail__section-title mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">{section.title}</h2>
               {section.description && <p class="service-detail__section-description mt-4 max-w-3xl text-base leading-8 text-slate-600">{section.description}</p>}
               {section.items.length > 0 && (
@@ -63,7 +63,7 @@ const { data } = entry;
           <ol class="service-detail__process-list mt-7 grid gap-4 sm:grid-cols-2">
             {data.process.map((step, index) => (
               <li class="service-detail__process-item rounded-2xl bg-slate-50 p-5">
-                <span class="service-detail__process-number text-sm font-bold text-sky-700">TAHAP {String(index + 1).padStart(2, '0')}</span>
+                <span class="service-detail__process-number text-sm font-bold text-amber-700">TAHAP {String(index + 1).padStart(2, '0')}</span>
                 <h3 class="service-detail__process-step-title mt-2 font-semibold text-slate-950">{step.title}</h3>
                 <p class="service-detail__process-step-description mt-2 text-sm leading-7 text-slate-600">{step.description}</p>
               </li>
@@ -87,7 +87,7 @@ const { data } = entry;
       )}
 
       <aside class="service-detail__back-link mx-auto mt-14 max-w-4xl">
-        <a class="service-detail__back-anchor text-sm font-semibold text-sky-700 hover:text-sky-900" href="/layanan/">← Kembali ke katalog layanan</a>
+        <a class="service-detail__back-anchor text-sm font-semibold text-amber-700 hover:text-amber-900" href="/layanan/">← Kembali ke katalog layanan</a>
       </aside>
     </Container>
   </article>
