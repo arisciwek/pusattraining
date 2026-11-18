@@ -88,7 +88,8 @@ export const DEFAULT_EVENT_LOCATION = {
 } as const;
 
 export const COMPANY_ADDRESS = {
-  street: 'Grand Slipi Tower Lt. 9 Unit O, CHR Office, Jl. Letjen S. Parman Kav. 22–24',
+  street: 'Grand Slipi Tower Lt. 9 Unit O, CHR Office',
+  road: 'Jl. Letjen S. Parman Kav. 22–24',
   city: 'Jakarta Barat',
   region: 'DKI Jakarta',
   country: 'Indonesia',
