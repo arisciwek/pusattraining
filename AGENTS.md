@@ -1,5 +1,19 @@
 # Repository Instructions
 
+## Content types: articles and brochures
+
+- Treat `docs/ARTICLE-AND-BROCHURE-CONTENT-CONTRACT.md` as the migration and implementation source of truth for distinguishing editorial articles from promotional brochures.
+- Use `type: article` for educational/editorial content; use `type: brochure` for a program offer designed to help visitors evaluate and register for training.
+- Do not classify content solely by its legacy filename, length, or whether it previously appeared as a PDF/image. Classify by purpose and substance.
+- A brochure must relate to its master training through `trainingId`. Schedules also relate to the same master through `trainingId`; retrieve related schedules dynamically by matching that identifier.
+- Do not normally add `scheduleId` or `scheduleIds` to brochure frontmatter and do not duplicate operational schedule facts there. A brochure describes a training program; a schedule describes one specific delivery/batch.
+- If legacy content describes one specific batch with dates and operational details, migrate it as a schedule according to `docs/FRONTMATTER-SCHEDULE-CONTRACT.md`, not as a brochure.
+- Keep article and brochure page structures, calls to action, Open Graph types, and JSON-LD appropriate to their distinct purposes.
+- Never invent missing program, certification, price, duration, prerequisite, venue, or schedule facts during migration.
+- When a brochure's `trainingId` cannot be confidently mapped to an existing master training, record it as an unresolved migration mapping; do not guess.
+
+# Repository Instructions
+
 ## Training detail pages
 
 - Treat `src/content/trainings/*.md` as the source of truth for each training detail page.
