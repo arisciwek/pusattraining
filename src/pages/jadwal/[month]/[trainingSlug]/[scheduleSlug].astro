@@ -298,37 +298,31 @@ const safeStructuredData = JSON.stringify(structuredData).replace(/</g, '\\u003c
                 Lihat semua jadwal
               </a>
             </div>
-
-            {otherSchedules.length > 0 && (
-              <nav class="schedule-detail__discover space-y-6" aria-label="Navigasi jadwal lainnya">
-                {otherSchedules.length > 0 && (
-                  <section class="schedule-detail__other-schedules rounded-2xl border border-slate-200 bg-white p-5" aria-labelledby="schedule-detail-other-schedules-title">
-                    <div class="schedule-detail__navigation-heading mb-4">
-                      <p class="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-amber-700">Program yang sama</p>
-                      <h2 id="schedule-detail-other-schedules-title" class="mt-1 text-lg font-bold text-slate-950">Jadwal lainnya</h2>
-                    </div>
-                    <ul class="schedule-detail__schedule-list divide-y divide-slate-100">
-                      {otherSchedules.map((item) => (
-                        <li class="schedule-detail__schedule-item py-3 first:pt-0 last:pb-0">
-                          <a class="schedule-detail__schedule-link group block rounded-lg outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-slate-900" href={getScheduleHref(item, training.data.slug)}>
-                            <span class="schedule-detail__schedule-date block text-xs font-semibold text-amber-700">{item.data.dateLabel}</span>
-                            <span class="schedule-detail__schedule-title mt-1 block text-sm font-semibold leading-5 text-slate-800 transition-colors group-hover:text-amber-700">Angkatan {item.data.batchNo}</span>
-                            <span class="schedule-detail__schedule-status mt-1 block text-xs text-slate-500">{getScheduleStatusLabel(item.data.status)}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                    <a class="schedule-detail__schedule-archive mt-4 inline-flex items-center gap-2 text-xs font-bold text-slate-700 transition-colors hover:text-amber-700" href={`/pelatihan/${training.data.slug}/`}>
-                      Semua jadwal program ini <span aria-hidden="true">→</span>
-                    </a>
-                  </section>
-                )}
-
-
-              </nav>
-            )}
           </aside>
         </div>
+
+        {otherSchedules.length > 0 && (
+          <section class="schedule-detail__other-schedules mt-8 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8" aria-labelledby="schedule-detail-other-schedules-title">
+            <div class="schedule-detail__navigation-heading mb-5">
+              <p class="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-amber-700">Program yang sama</p>
+              <h2 id="schedule-detail-other-schedules-title" class="mt-1 text-xl font-bold text-slate-950">Jadwal lainnya</h2>
+            </div>
+            <ul class="schedule-detail__schedule-list grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {otherSchedules.map((item) => (
+                <li class="schedule-detail__schedule-item">
+                  <a class="schedule-detail__schedule-link group block h-full rounded-xl border border-slate-100 bg-slate-50 px-4 py-4 transition-colors hover:border-amber-200 hover:bg-amber-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-slate-900" href={getScheduleHref(item, training.data.slug)}>
+                    <span class="schedule-detail__schedule-date block text-xs font-semibold text-amber-700">{item.data.dateLabel}</span>
+                    <span class="schedule-detail__schedule-title mt-2 block text-sm font-bold leading-5 text-slate-800 transition-colors group-hover:text-amber-700">Angkatan {item.data.batchNo}</span>
+                    <span class="schedule-detail__schedule-status mt-2 block text-xs text-slate-500">{getScheduleStatusLabel(item.data.status)}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a class="schedule-detail__schedule-archive mt-5 inline-flex items-center gap-2 text-sm font-bold text-slate-700 transition-colors hover:text-amber-700" href={`/pelatihan/${training.data.slug}/`}>
+              Semua jadwal program ini <span aria-hidden="true">→</span>
+            </a>
+          </section>
+        )}
 
         {relatedTrainings.length > 0 && (
           <section class="schedule-detail__other-trainings mt-8 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8" aria-labelledby="schedule-detail-other-trainings-title">
