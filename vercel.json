@@ -82,6 +82,36 @@
       "permanent": true
     },
     {
+      "source": "/pelatihan/pemadam-kebakaran-kelas-a/",
+      "destination": "/pelatihan/damkar-kelas-a/",
+      "permanent": true
+    },
+    {
+      "source": "/pelatihan/pemadam-kebakaran-kelas-b/",
+      "destination": "/pelatihan/damkar-kelas-b/",
+      "permanent": true
+    },
+    {
+      "source": "/pelatihan/pemadam-kebakaran-kelas-c/",
+      "destination": "/pelatihan/damkar-kelas-c/",
+      "permanent": true
+    },
+    {
+      "source": "/jadwal/:month/pemadam-kebakaran-kelas-a/:slug/",
+      "destination": "/jadwal/:month/damkar-kelas-a/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/jadwal/:month/pemadam-kebakaran-kelas-b/:slug/",
+      "destination": "/jadwal/:month/damkar-kelas-b/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/jadwal/:month/pemadam-kebakaran-kelas-c/:slug/",
+      "destination": "/jadwal/:month/damkar-kelas-c/:slug/",
+      "permanent": true
+    },
+    {
       "source": "/operator-k3/pelatihan-operator-boiler-tingkat-1/",
       "destination": "/pelatihan/operator-boiler-tingkat-1/",
       "permanent": true
