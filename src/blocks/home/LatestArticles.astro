@@ -1,6 +1,6 @@
 ---
-import LatestArticlesSection from '../../components/content/LatestArticlesSection.astro';
+import ArticleListSection from '../../components/content/ArticleListSection.astro';
 interface Props { articles: { title: string; description: string; href: string; category?: string; date?: Date | string; image?: string }[]; }
 const { articles } = Astro.props;
 ---
-<LatestArticlesSection articles={articles} />
+<ArticleListSection articles={articles} />
