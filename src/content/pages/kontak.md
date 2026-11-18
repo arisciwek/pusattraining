@@ -4,25 +4,26 @@ id: 1002
 ulid: 01KCV000000000000000000016
 pageType: standard
 slug: kontak
-title: Kontak {{COMPANY_NAME}}
-description: Hubungi {{COMPANY_NAME}} untuk pertanyaan mengenai program, jadwal, persyaratan, dan pendaftaran pelatihan.
+title: Hubungi Pusat Training
+description: Butuh informasi program, jadwal, persyaratan, atau pendaftaran pelatihan? Hubungi tim Pusat Training melalui Tiara.
 pubDate: '2026-11-16T00:00:00+07:00'
-updatedDate: '2026-11-16T00:00:00+07:00'
+updatedDate: '2026-11-18T00:00:00+07:00'
 draft: false
 ---
 
-## Ada yang ingin ditanyakan?
+## Kami siap membantu pertanyaan Anda
 
-{{COMPANY_NAME}} menyediakan informasi program dan jadwal pelatihan untuk membantu peserta menemukan pelatihan yang sesuai.
+Jika Anda sedang mempertimbangkan program pelatihan atau membutuhkan penjelasan sebelum mendaftar, silakan hubungi tim Pusat Training. Tiara menjadi kontak untuk membantu menindaklanjuti pertanyaan mengenai informasi program dan jadwal yang tersedia.
 
-Untuk pertanyaan mengenai suatu program atau batch, siapkan nama program dan jadwal yang dimaksud agar informasi yang ditanyakan dapat ditelusuri dengan tepat.
+## Hal yang dapat ditanyakan
 
-## Hubungi Tiara
+- Informasi materi dan ruang lingkup program pelatihan.
+- Jadwal, tanggal pelaksanaan, dan ketersediaan batch.
+- Persyaratan peserta serta dokumen yang perlu disiapkan.
+- Proses pendaftaran dan informasi lanjutan sebelum mengikuti pelatihan.
 
-Untuk pertanyaan mengenai program, jadwal, persyaratan, atau pendaftaran pelatihan, silakan hubungi {{COMPANY_NAME}} melalui kontak berikut:
+## Agar pertanyaan lebih cepat ditindaklanjuti
 
-- **Kontak:** Tiara
-- **Telepon / WhatsApp:** [0812-9805-3891](tel:+6281298053891)
-- **WhatsApp:** [Chat dengan Tiara](https://wa.me/6281298053891)
+Sertakan nama program atau tautan halaman pelatihan yang sedang Anda lihat. Jika pertanyaan berkaitan dengan jadwal tertentu, sampaikan juga tanggal atau nama batch-nya. Dengan begitu, informasi yang diminta dapat ditelusuri lebih tepat.
 
-Sampaikan nama program dan jadwal yang dimaksud agar pertanyaan dapat ditindaklanjuti dengan tepat.
+Untuk mengenal perusahaan pengelola portal, silakan kunjungi halaman [Tentang Pusat Training](/tentang/).
