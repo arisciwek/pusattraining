@@ -20,7 +20,10 @@ const {
   footerDescription,
 } = Astro.props;
 
-const pageTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+const normalizedTitle = title.replace(/Pusattraining/gi, SITE_NAME);
+const pageTitle = normalizedTitle.toLocaleLowerCase('id-ID').includes(SITE_NAME.toLocaleLowerCase('id-ID'))
+  ? normalizedTitle
+  : `${normalizedTitle} | ${SITE_NAME}`;
 const canonical = canonicalURL ?? (Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined);
 ---
 <!doctype html>
