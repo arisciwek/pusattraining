@@ -1,0 +1,188 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Container from '../../components/shared/Container.astro';
+import Breadcrumb from '../../components/shared/Breadcrumb.astro';
+
+const query = Astro.url.searchParams.get('q') ?? '';
+---
+<SiteLayout
+  title="Pencarian Informasi Pelatihan"
+  description="Cari artikel, program pelatihan, jadwal, layanan, dan informasi Pusat Training dalam satu tempat."
+>
+  <section class="site-search py-12 sm:py-16" data-site-search>
+    <Container>
+      <Breadcrumb items={[
+        { label: 'Beranda', href: '/' },
+        { label: 'Pencarian' },
+      ]} />
+      <header class="site-search__header mx-auto mt-10 max-w-3xl text-center">
+        <p class="site-search__eyebrow text-sm font-bold uppercase tracking-widest text-amber-700">Pusat informasi</p>
+        <h1 class="site-search__title mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">Apa yang ingin Anda cari?</h1>
+        <p class="site-search__description mt-4 text-base leading-7 text-slate-600">Temukan artikel, program pelatihan, jadwal, layanan, dan informasi lainnya.</p>
+      </header>
+
+      <form class="site-search__form mx-auto mt-8 flex max-w-3xl gap-2 rounded-2xl border border-slate-200 bg-white p-2 shadow-lg shadow-slate-200/60" role="search" action="/pencarian/" method="get">
+        <label class="site-search__label sr-only" for="site-search-query">Kata kunci pencarian</label>
+        <input class="site-search__input min-w-0 flex-1 rounded-xl px-4 py-3 text-base text-slate-900 outline-none placeholder:text-slate-400" id="site-search-query" name="q" type="search" value={query} placeholder="Contoh: Ahli K3 Umum, operator crane, jadwal..." autocomplete="off" />
+        <button class="site-search__submit inline-flex shrink-0 items-center justify-center rounded-xl bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-amber-700" type="submit">Cari</button>
+      </form>
+
+      <div class="site-search__filters mx-auto mt-6 flex max-w-3xl flex-wrap justify-center gap-2" aria-label="Filter jenis konten">
+        <button class="site-search__filter is-active" type="button" data-search-filter="Semua" aria-pressed="true">Semua</button>
+        <button class="site-search__filter" type="button" data-search-filter="Pelatihan" aria-pressed="false">Pelatihan</button>
+        <button class="site-search__filter" type="button" data-search-filter="Jadwal" aria-pressed="false">Jadwal</button>
+        <button class="site-search__filter" type="button" data-search-filter="Artikel" aria-pressed="false">Artikel</button>
+        <button class="site-search__filter" type="button" data-search-filter="Layanan" aria-pressed="false">Layanan</button>
+        <button class="site-search__filter" type="button" data-search-filter="Halaman" aria-pressed="false">Halaman</button>
+      </div>
+
+      <div class="site-search__status mx-auto mt-8 max-w-3xl text-sm text-slate-500" role="status" aria-live="polite" data-search-status>
+        {query ? 'Menyiapkan hasil pencarian…' : 'Masukkan kata kunci untuk mulai mencari.'}
+      </div>
+      <div class="site-search__results mx-auto mt-4 grid max-w-3xl gap-3" data-search-results></div>
+      <noscript><p class="site-search__noscript mx-auto mt-6 max-w-3xl rounded-xl bg-amber-50 p-4 text-sm text-amber-900">Aktifkan JavaScript untuk menggunakan pencarian.</p></noscript>
+    </Container>
+  </section>
+</SiteLayout>
+
+<script>
+  type SearchRecord = {
+    id: string;
+    type: string;
+    title: string;
+    description: string;
+    href: string;
+    category?: string;
+    date?: string;
+    content: string;
+  };
+
+  const root = document.querySelector<HTMLElement>('[data-site-search]');
+  const form = root?.querySelector<HTMLFormElement>('.site-search__form');
+  const input = root?.querySelector<HTMLInputElement>('#site-search-query');
+  const status = root?.querySelector<HTMLElement>('[data-search-status]');
+  const results = root?.querySelector<HTMLElement>('[data-search-results]');
+  const filters = [...(root?.querySelectorAll<HTMLButtonElement>('[data-search-filter]') ?? [])];
+  const initialQuery = new URLSearchParams(window.location.search).get('q') ?? '';
+  let records: SearchRecord[] = [];
+  let activeFilter = 'Semua';
+
+  const normalize = (value: string) => value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLocaleLowerCase('id-ID')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+
+  function scoreRecord(record: SearchRecord, query: string): number {
+    const terms = normalize(query).split(/\s+/).filter(Boolean);
+    if (!terms.length) return 0;
+    const title = normalize(record.title);
+    const description = normalize(record.description);
+    const content = normalize(record.content);
+    const category = normalize(record.category ?? '');
+    let score = 0;
+
+    for (const term of terms) {
+      if (title === term) score += 16;
+      else if (title.startsWith(term)) score += 10;
+      else if (title.includes(term)) score += 7;
+      if (description.includes(term)) score += 3;
+      if (category.includes(term)) score += 3;
+      if (content.includes(term)) score += 1;
+      if (!title.includes(term) && !description.includes(term) && !category.includes(term) && !content.includes(term)) {
+        return 0;
+      }
+    }
+    return score;
+  }
+
+  function render() {
+    if (!input || !status || !results) return;
+    const query = input.value.trim();
+    results.replaceChildren();
+
+    if (!query) {
+      status.textContent = 'Masukkan kata kunci untuk mencari seluruh informasi di Pusat Training.';
+      return;
+    }
+
+    const found = records
+      .filter((record) => activeFilter === 'Semua' || record.type === activeFilter)
+      .map((record) => ({ record, score: scoreRecord(record, query) }))
+      .filter((item) => item.score > 0)
+      .sort((a, b) => b.score - a.score || a.record.title.localeCompare(b.record.title, 'id'))
+      .slice(0, 50);
+
+    status.textContent = found.length
+      ? `Menampilkan ${found.length} hasil untuk “${query}”.`
+      : `Belum ada hasil untuk “${query}”. Coba kata kunci lain.`;
+
+    for (const { record } of found) {
+      const card = document.createElement('article');
+      card.className = 'site-search__result';
+      const link = document.createElement('a');
+      link.className = 'site-search__result-link';
+      link.href = record.href;
+      const meta = document.createElement('span');
+      meta.className = 'site-search__result-type';
+      meta.textContent = record.type;
+      const title = document.createElement('h2');
+      title.className = 'site-search__result-title';
+      title.textContent = record.title;
+      const description = document.createElement('p');
+      description.className = 'site-search__result-description';
+      description.textContent = record.description;
+      link.append(meta, title, description);
+      if (record.category) {
+        const detail = document.createElement('span');
+        detail.className = 'site-search__result-detail';
+        detail.textContent = record.category;
+        link.append(detail);
+      }
+      card.append(link);
+      results.append(card);
+    }
+  }
+
+  filters.forEach((button) => {
+    button.addEventListener('click', () => {
+      activeFilter = button.dataset.searchFilter ?? 'Semua';
+      filters.forEach((item) => {
+        const selected = item === button;
+        item.classList.toggle('is-active', selected);
+        item.setAttribute('aria-pressed', String(selected));
+      });
+      render();
+    });
+  });
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const query = input?.value.trim() ?? '';
+    const url = new URL(window.location.href);
+    if (query) url.searchParams.set('q', query);
+    else url.searchParams.delete('q');
+    window.history.replaceState({}, '', url);
+    render();
+  });
+
+  if (input) {
+    input.value = initialQuery;
+    input.addEventListener('input', render);
+  }
+
+  if (status) status.textContent = 'Memuat indeks pencarian…';
+  fetch('/search-index.json')
+    .then((response) => {
+      if (!response.ok) throw new Error('Indeks pencarian tidak dapat dimuat.');
+      return response.json() as Promise<SearchRecord[]>;
+    })
+    .then((data) => {
+      records = data;
+      render();
+    })
+    .catch(() => {
+      if (status) status.textContent = 'Pencarian belum dapat dimuat. Silakan coba beberapa saat lagi.';
+    });
+</script>
