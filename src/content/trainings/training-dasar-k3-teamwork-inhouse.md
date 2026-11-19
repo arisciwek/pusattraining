@@ -1,7 +1,7 @@
 ---
 type: training
-id: 3129
-ulid: 01KCV3000000000000000003129
+id: 3206
+ulid: 01KCV300000000000000000142
 trainingSlug: training-dasar-k3-teamwork-inhouse
 slug: training-dasar-k3-teamwork-inhouse
 title: "Training Dasar K3 dan Teamwork Building"
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Dasar K3 dan Teamwork Building"
   eyebrow: "INHOUSE TRAINING · BASIC SAFETY"
-  description: "Pelatihan dasar K3 yang menggabungkan pemahaman bahaya, perilaku aman, komunikasi, kerja sama tim dan tanggung jawab bersama."
+  description: "Training Dasar K3 dan Teamwork Building adalah pelatihan dasar K3 yang menggabungkan pemahaman bahaya, perilaku aman, komunikasi, kerja sama tim dan tanggung jawab bersama."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
