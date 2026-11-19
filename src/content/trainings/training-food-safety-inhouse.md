@@ -1,7 +1,7 @@
 ---
 type: training
 id: 3116
-ulid: 01KCV200000000000000000116
+ulid: 01KCV200000000000000000125
 trainingSlug: training-food-safety-inhouse
 slug: training-food-safety-inhouse
 title: "Training Food Safety"
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Food Safety"
   eyebrow: "INHOUSE TRAINING · FOOD SAFETY"
-  description: "Pelatihan prinsip keamanan pangan, higiene personal, pencegahan kontaminasi, dan pengendalian proses penanganan pangan."
+  description: "Training Food Safety adalah pelatihan prinsip keamanan pangan, higiene personal, pencegahan kontaminasi, dan pengendalian proses penanganan pangan."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
