@@ -141,3 +141,4 @@ blocks:
         answer: "Halaman sumber mencantumkan satu hari dengan sesi pukul 09.00–12.00. Konfirmasikan kembali durasi dan agenda angkatan terbaru."
       - question: "Apakah peserta menjadi tenaga medis?"
         answer: "Tidak. Pelatihan memberikan pembekalan pertolongan pertama sesuai ruang lingkupnya dan tidak menggantikan pendidikan atau kewenangan tenaga medis."
+---
