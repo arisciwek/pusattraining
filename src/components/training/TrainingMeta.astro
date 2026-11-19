@@ -1,4 +1,5 @@
 ---
+import { certificationName } from '../../lib/certification';
 interface Props {
   credential?: string;
   duration?: string;
@@ -9,7 +10,7 @@ interface Props {
 
 const { credential, duration, delivery, organizer, class: className = '' } = Astro.props;
 const items = [
-  credential && { label: 'Sertifikasi', value: credential },
+  credential && { label: 'Sertifikasi', value: certificationName(credential) },
   duration && { label: 'Durasi', value: duration },
   delivery && { label: 'Metode', value: delivery },
   organizer && { label: 'Penyelenggara', value: organizer },

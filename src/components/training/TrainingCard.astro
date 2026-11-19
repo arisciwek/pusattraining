@@ -1,6 +1,6 @@
 ---
 import TrainingMeta from './TrainingMeta.astro';
-import Button from '../shared/Button.astro';
+import { certificationLabel } from '../../lib/certification';
 
 interface Props {
   title: string;
@@ -22,25 +22,32 @@ const {
   credential, duration, delivery, organizer, featured = false,
   class: className = '',
 } = Astro.props;
+const certLabel = certificationLabel(credential);
 ---
 
-<article class={['training-card group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5', featured ? 'training-card--featured ring-1 ring-amber-300' : '', className].filter(Boolean).join(' ')}>
-  {image && (
-    <a class="training-card__media block aspect-[16/10] overflow-hidden bg-slate-100" href={href} tabindex="-1" aria-hidden="true">
-      <img class="training-card__image h-full w-full object-cover transition duration-500 group-hover:scale-105" src={image} alt={imageAlt} loading="lazy" decoding="async" />
-    </a>
-  )}
+<article class={['training-card group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/10', featured ? 'training-card--featured ring-1 ring-amber-300' : '', className].filter(Boolean).join(' ')}>
+  <a class="training-card__media media-placeholder aspect-[16/10]" href={href} tabindex="-1" aria-hidden="true">
+    {image && <img class="training-card__image relative z-[1] h-full w-full object-cover text-[0px] text-transparent transition duration-500 group-hover:scale-105" src={image} alt={imageAlt} loading="lazy" decoding="async" />}
+    {certLabel && (
+      <span class="training-card__badge absolute left-3 top-3 z-[2] inline-flex items-center gap-1.5 rounded-full bg-white/95 px-2.5 py-1 text-[.68rem] font-bold text-slate-900 shadow-sm">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Z"></path><path d="m8 12 3 3 5-6"></path></svg>{certLabel}
+      </span>
+    )}
+    {featured && <span class="training-card__featured absolute right-3 top-3 z-[2] rounded-full bg-amber-400 px-2.5 py-1 text-[.68rem] font-extrabold text-slate-950">Unggulan</span>}
+  </a>
   <div class="training-card__content flex flex-1 flex-col p-5 sm:p-6">
-    {category && <p class="training-card__category mb-3 text-xs font-bold text-amber-700">{category}</p>}
+    {category && <p class="training-card__category mb-2 text-xs font-bold text-amber-700">{category}</p>}
     <h3 class="training-card__title text-xl font-bold leading-snug tracking-tight text-slate-950">
       <a class="training-card__title-link outline-offset-4 transition-colors hover:text-amber-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-slate-900" href={href}>{title}</a>
     </h3>
     <p class="training-card__description mt-3 line-clamp-3 text-sm leading-6 text-slate-600">{description}</p>
-    <div class="training-card__meta mt-5 border-t border-slate-100 pt-4">
-      <TrainingMeta credential={credential} duration={duration} delivery={delivery} organizer={organizer} />
-    </div>
-    <div class="training-card__actions mt-auto flex flex-wrap gap-3 pt-6">
-      <Button href={href} variant="outline" size="sm">Detail program <span aria-hidden="true">→</span></Button>
-    </div>
+    {(duration || delivery || organizer) && (
+      <div class="training-card__meta mt-5 border-t border-slate-100 pt-4">
+        <TrainingMeta duration={duration} delivery={delivery} organizer={organizer} />
+      </div>
+    )}
+    <a class="training-card__cta mt-auto inline-flex items-center gap-2 pt-5 text-sm font-extrabold text-slate-950 no-underline transition-colors hover:text-amber-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900" href={href}>
+      Lihat program <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+    </a>
   </div>
 </article>
