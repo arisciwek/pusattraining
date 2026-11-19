@@ -1,38 +1,32 @@
-# Mengelola folder foto training dan layanan
+# Mengelola folder foto training, layanan, dan schedule
 
-Gunakan `scripts/create-media-folders.sh` untuk membuat folder foto berdasarkan slug, tanpa mengubah atau menghapus foto yang sudah ada.
+Gunakan `scripts/create-media-folders.sh` untuk membuat direktori foto berdasarkan slug. Script tidak menghapus atau mengubah file foto yang sudah ada.
 
-## Lokasi folder
-- Foto training: `public/images/training/<TrainingSlug>/`
-- Foto layanan: `public/images/service/<serviceSlug>/`
+## Struktur
+- Training: `public/images/training/<TrainingSlug>/`
+- Service: `public/images/service/<serviceSlug>/`
+- Schedule/batch: `public/images/schedule/<scheduleSlug>/`
 
 ## Penggunaan
+
 Dari root repo:
 
 ```bash
 chmod +x scripts/create-media-folders.sh
 
-# Slug secara langsung
 scripts/create-media-folders.sh --training operator-forklift ahli-k3-umum
 scripts/create-media-folders.sh --service riksa-uji-forklift riksa-uji-overhead-crane
+scripts/create-media-folders.sh --schedule slug-jadwal-1 slug-jadwal-2
 
-# File daftar slug (satu slug per baris, atau CSV dengan slug di kolom pertama)
+# File daftar slug: satu slug per baris (CSV kolom pertama juga diterima)
 scripts/create-media-folders.sh --training-file docs/training-slugs.txt
 scripts/create-media-folders.sh --service-file docs/service-slugs.txt
+scripts/create-media-folders.sh --schedule-file docs/schedule-slugs.txt
 
-# Kedua kategori dalam satu kali jalan
-scripts/create-media-folders.sh --training-file docs/training-slugs.txt --service-file docs/service-slugs.txt
+# Sekaligus
+scripts/create-media-folders.sh --training-file docs/training-slugs.txt --service-file docs/service-slugs.txt --schedule-file docs/schedule-slugs.txt
 ```
 
-File daftar slug dapat disimpan di repo atau di luar repo. Path relatif ditafsirkan dari working directory saat menjalankan script; path absolut juga dapat digunakan.
+Path relatif file daftar ditafsirkan dari working directory saat menjalankan script. Path absolut juga dapat digunakan.
 
-## Format daftar slug
-```text
-operator-forklift
-ahli-k3-umum
-operator-overhead-crane
-```
-
-Komentar yang diawali `#` dan baris kosong diabaikan. Untuk CSV, script mengambil kolom pertama; header `slug`, `TrainingSlug`, atau `serviceSlug` diabaikan.
-
-Script memvalidasi slug agar tidak menerima path traversal atau karakter path yang tidak diharapkan, dan aman dijalankan berulang kali.
+Baris kosong dan komentar `#` diabaikan. Header `slug`, `TrainingSlug`, `serviceSlug`, atau `scheduleSlug` dikenali. Script memvalidasi slug agar tidak menerima path traversal, dan aman dijalankan berulang kali.
