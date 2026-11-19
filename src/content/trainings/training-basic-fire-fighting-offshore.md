@@ -143,3 +143,4 @@ blocks:
         answer: "Halaman BETRACOM mencantumkan satu hari, pukul 08.00–16.00. Konfirmasikan kembali jadwal aktual."
       - question: "Apakah peserta akan praktik?"
         answer: "Ya, halaman sumber menyebut praktik kebakaran dasar. Jenis peralatan, skenario, dan lokasi praktik perlu dikonfirmasi kepada penyelenggara."
+---
