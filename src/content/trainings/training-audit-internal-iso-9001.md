@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Audit Internal ISO 9001"
   eyebrow: "INHOUSE TRAINING · QUALITY MANAGEMENT"
-  description: "Training Audit Internal ISO 9001 membekali peserta dengan keterampilan dasar merencanakan dan melakukan audit internal sistem manajemen mutu secara sistematis."
+  description: "Training Audit Internal ISO 9001 adalah pelatihan yang membekali peserta dengan keterampilan dasar merencanakan dan melakukan audit internal sistem manajemen mutu secara sistematis."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
