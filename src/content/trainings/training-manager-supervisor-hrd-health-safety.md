@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "The Role of Manager, Supervisor & HRD Professional in Health & Safety"
   eyebrow: "INHOUSE TRAINING · SAFETY LEADERSHIP"
-  description: "Pelatihan The Role of Manager, Supervisor & HRD Professional in Health & Safety membahas kontribusi kepemimpinan, pengawasan dan fungsi SDM dalam penerapan keselamatan kerja."
+  description: "The Role of Manager, Supervisor & HRD Professional in Health & Safety adalah pelatihan yang membahas kontribusi kepemimpinan, pengawasan dan fungsi SDM dalam penerapan keselamatan kerja."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
