@@ -16,7 +16,7 @@ hero:
   imageAlt: "Tim pemadam kebakaran industri berlatih menggunakan peralatan pemadaman"
   eyebrow: "KOMPETENSI PEMADAMAN KEBAKARAN · INDUSTRI DAN MIGAS"
   certBadge: "PEMBEKALAN DAN ASESMEN KOMPETENSI"
-  description: "Program Fireman disusun untuk mengembangkan kompetensi personel yang bertugas mencegah, menangani, dan mengendalikan kebakaran di lingkungan industri, khususnya sektor minyak dan gas. Pilihan jenjang meliputi Fireman 1, Fireman 2, dan Fire Officer. Cakupan kompetensi berkembang dari pelaksanaan pemadaman dan pengoperasian peralatan hingga penggunaan SCBA, pertolongan korban, koordinasi keadaan darurat, serta perencanaan dan evaluasi sistem proteksi kebakaran."
+  description: "Pelatihan Fireman 1, Fireman 2, dan Fire Officer adalah program Fireman yang disusun untuk mengembangkan kompetensi personel yang bertugas mencegah, menangani, dan mengendalikan kebakaran di lingkungan industri, khususnya sektor minyak dan gas. Pilihan jenjang meliputi Fireman 1, Fireman 2, dan Fire Officer. Cakupan kompetensi berkembang dari pelaksanaan pemadaman dan pengoperasian peralatan hingga penggunaan SCBA, pertolongan korban, koordinasi keadaan darurat, serta perencanaan dan evaluasi sistem proteksi kebakaran."
   deliveryMode: mixed
   ctaLabel: "Konsultasikan jenjang Fireman"
   ctaHref: "#jadwal-pelatihan"
