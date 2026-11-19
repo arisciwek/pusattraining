@@ -1,7 +1,7 @@
 ---
 type: training
 id: 3118
-ulid: 01KCV200000000000000000018
+ulid: 01KCV200000000000000000127
 trainingSlug: training-process-safety-management-inhouse
 slug: training-process-safety-management-inhouse
 title: "Training Process Safety Management (PSM)"
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Process Safety Management (PSM)"
   eyebrow: "INHOUSE TRAINING · PROCESS SAFETY"
-  description: "Pelatihan pengelolaan keselamatan proses untuk mengenali bahaya proses, mengendalikan risiko dan memperkuat sistem manajemen."
+  description: "Training Process Safety Management (PSM) adalah pelatihan pengelolaan keselamatan proses untuk mengenali bahaya proses, mengendalikan risiko dan memperkuat sistem manajemen."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
