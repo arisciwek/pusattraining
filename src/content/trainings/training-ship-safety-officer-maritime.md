@@ -11,7 +11,7 @@ hero:
   title: "Pelatihan Ship Safety Officer"
   imageAlt: "Pembelajaran peran petugas keselamatan kerja di kapal"
   eyebrow: "MARITIME SAFETY · SHIP SAFETY OFFICER"
-  description: "Pembekalan fungsi Ship Safety Officer dalam mendukung kebijakan keselamatan dan kesehatan kerja kapal melalui inspeksi, investigasi, komunikasi risiko, dan pencegahan."
+  description: "Pelatihan Ship Safety Officer adalah program pengantar fungsi Ship Safety Officer dalam mendukung kebijakan keselamatan dan kesehatan kerja kapal melalui inspeksi, investigasi, komunikasi risiko, dan pencegahan."
   ctaLabel: "Konsultasikan pelatihan Ship Safety Officer"
   ctaHref: "#jadwal-pelatihan"
   trustItems:
