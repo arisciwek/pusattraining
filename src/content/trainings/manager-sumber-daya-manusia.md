@@ -15,7 +15,7 @@ hero:
   imageAlt: "Tim manajemen sumber daya manusia menyusun strategi dan perencanaan tenaga kerja"
   eyebrow: "SERTIFIKASI KOMPETENSI · MANAJEMEN SUMBER DAYA MANUSIA"
   certBadge: "SKKNI MSDM · KEPMENAKER 149/2020"
-  description: "Pelatihan Manager Sumber Daya Manusia membekali profesional HR untuk mengelola fungsi SDM secara strategis dan terintegrasi dengan sasaran organisasi. Cakupan kompetensi meliputi perumusan strategi dan kebijakan MSDM, perencanaan tenaga kerja, desain organisasi, uraian jabatan, analisis beban kerja, remunerasi, indikator kinerja, pembelajaran dan pengembangan, program suksesi, serta hubungan industrial."
+  description: "Pelatihan dan Sertifikasi Manager Sumber Daya Manusia (HR) adalah program pembekalan yang membekali profesional HR untuk mengelola fungsi SDM secara strategis dan terintegrasi dengan sasaran organisasi. Cakupan kompetensi meliputi perumusan strategi dan kebijakan MSDM, perencanaan tenaga kerja, desain organisasi, uraian jabatan, analisis beban kerja, remunerasi, indikator kinerja, pembelajaran dan pengembangan, program suksesi, serta hubungan industrial."
   deliveryMode: mixed
   ctaLabel: "Konsultasikan program Manager HR"
   ctaHref: "#jadwal-pelatihan"
