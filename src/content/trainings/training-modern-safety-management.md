@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Modern Safety Management (MSM)"
   eyebrow: "INHOUSE TRAINING · SAFETY MANAGEMENT"
-  description: "Training Modern Safety Management membahas prinsip, teknik dan penerapan pengelolaan keselamatan untuk mengendalikan risiko serta kerugian secara proaktif."
+  description: "Training Modern Safety Management (MSM) adalah program yang membahas prinsip, teknik dan penerapan pengelolaan keselamatan untuk mengendalikan risiko serta kerugian secara proaktif."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
