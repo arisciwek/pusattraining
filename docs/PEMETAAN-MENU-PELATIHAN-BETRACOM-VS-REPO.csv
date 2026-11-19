@@ -9,12 +9,12 @@ Kemnaker - Kebakaran;Damkar Kelas D;damkar-kelas-d.md;SUDAH ADA
 Kemnaker - Kebakaran;Damkar Kelas C;damkar-kelas-c.md;SUDAH ADA
 Kemnaker - Kebakaran;Damkar Kelas B;damkar-kelas-b.md;SUDAH ADA
 Kemnaker - Kebakaran;Damkar Kelas A;damkar-kelas-a.md;SUDAH ADA
-Kemnaker - Kebakaran;Damkar Paket DC;;CEK - paket gabungan, bukan otomatis training baru
-Kemnaker - Kebakaran;Damkar Paket DCB;;CEK - paket gabungan, bukan otomatis training baru
-Kemnaker - Kebakaran;Damkar Paket DCBA;;CEK - paket gabungan, bukan otomatis training baru
-Kemnaker - Kebakaran;Damkar Paket CBA;;CEK - paket gabungan, bukan otomatis training baru
-Kemnaker - Kebakaran;Damkar Paket CB;;CEK - paket gabungan, bukan otomatis training baru
-Kemnaker - Kebakaran;Damkar Paket BA;;CEK - paket gabungan, bukan otomatis training baru
+Kemnaker - Kebakaran;Damkar Paket DC;damkar-kelas-d.md + damkar-kelas-c.md;PAKET GABUNGAN - kombinasi kelas D dan C, bukan kompetensi/halaman kelas baru
+Kemnaker - Kebakaran;Damkar Paket DCB;damkar-kelas-d.md + damkar-kelas-c.md + damkar-kelas-b.md;PAKET GABUNGAN - kombinasi kelas D, C, dan B
+Kemnaker - Kebakaran;Damkar Paket DCBA;damkar-kelas-d.md + damkar-kelas-c.md + damkar-kelas-b.md + damkar-kelas-a.md;PAKET GABUNGAN - kombinasi kelas D, C, B, dan A
+Kemnaker - Kebakaran;Damkar Paket CBA;damkar-kelas-c.md + damkar-kelas-b.md + damkar-kelas-a.md;PAKET GABUNGAN - kombinasi kelas C, B, dan A
+Kemnaker - Kebakaran;Damkar Paket CB;damkar-kelas-c.md + damkar-kelas-b.md;PAKET GABUNGAN - kombinasi kelas C dan B
+Kemnaker - Kebakaran;Damkar Paket BA;damkar-kelas-b.md + damkar-kelas-a.md;PAKET GABUNGAN - kombinasi kelas B dan A
 Kemnaker - Listrik;Teknisi K3 Listrik;teknisi-k3-listrik.md;SUDAH ADA
 Kemnaker - Listrik;Ahli K3 Listrik;ahli-k3-listrik.md;SUDAH ADA
 Kemnaker - Ketinggian;TKBT 2;training-tkbt-2.md;SUDAH ADA
@@ -78,8 +78,10 @@ BNSP - Pertambangan;Pengawas Operasional Madya (POM);training-pom-pertambangan.m
 BNSP - K3;Rigger;rigger-bnsp.md;SUDAH ADA - skema BNSP terpisah dari Rigger Kemnaker
 BNSP - K3;Sertifikasi BNSP Fireman;fireman-bnsp.md;SUDAH ADA - cek cakupan, jangan disamakan dengan Damkar Kemnaker
 BNSP - K3 Umum;Sertifikasi Ahli K3 Umum BNSP;ahli-k3-umum-bnsp.md;SUDAH ADA
-Offshore;Basic Sea Survival;training-bosiet-huet-basic-sea-survival.md;CEK KESETARAAN - repo menggabungkan beberapa topik
-Offshore;HUET;training-bosiet-huet-basic-sea-survival.md;CEK KESETARAAN - verifikasi kursus/sertifikasi tersendiri
+Offshore;Basic Sea Survival;training-bosiet-huet-basic-sea-survival.md;ADA - tercakup di halaman gabungan repo, tetapi sumber BETRACOM memiliki halaman BSS tersendiri sehingga belum 1:1
+Offshore;HUET (NON-OPITO);training-bosiet-huet-basic-sea-survival.md;ADA SEBAGIAN - sumber menu mengarah ke kursus HUET NON-OPITO tersendiri, sedangkan halaman repo masih menggabungkan BOSIET, HUET, dan BSS
+Offshore;HUET (OPITO Approved);;BELUM ADA - menu OPITO Approved mencantumkan HUET terpisah dari HUET NON-OPITO, jangan dipetakan ke kursus generik
+Offshore;T-HUET (OPITO Approved);;BELUM ADA - menu OPITO Approved mencantumkan Tropical HUET sebagai varian tersendiri, perlu verifikasi standar dan detail program sebelum dibuat
 Offshore;Rigger Offshore;training-rigger-offshore.md;SUDAH ADA
 Offshore;H2S;training-penanganan-h2s.md;SUDAH ADA - menu BETRACOM berada pada kelompok NON-OPITO, bukan Basic H2S OPITO
 Offshore;BOSIET;training-bosiet-opito.md;SUDAH ADA - cek OPITO dan varian tropical
