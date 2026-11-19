@@ -11,7 +11,7 @@ hero:
   title: "Pelatihan HUET NON-OPITO"
   imageAlt: "Banner pelatihan offshore BETRACOM"
   eyebrow: "OFFSHORE SAFETY · HELICOPTER ESCAPE"
-  description: "Pelatihan Helicopter Underwater Escape Training (HUET) NON-OPITO memberikan pembekalan mengenai tindakan keselamatan ketika helikopter yang membawa personel offshore mengalami pendaratan darurat di air. Peserta mempelajari persiapan sebelum penerbangan, penggunaan perlengkapan keselamatan, prosedur keluar dari kabin, teknik bertahan hidup di laut, dan prinsip penyelamatan."
+  description: "Pelatihan HUET NON-OPITO adalah program pembekalan mengenai tindakan keselamatan ketika helikopter yang membawa personel offshore mengalami pendaratan darurat di air. Peserta mempelajari persiapan sebelum penerbangan, penggunaan perlengkapan keselamatan, prosedur keluar dari kabin, teknik bertahan hidup di laut, dan prinsip penyelamatan."
   ctaLabel: "Konsultasikan pelatihan HUET"
   ctaHref: "#jadwal-pelatihan"
   duration: "1 hari menurut halaman program BETRACOM; konfirmasi agenda terbaru"
