@@ -11,7 +11,7 @@ hero:
   title: "Pelatihan FOET OPITO"
   imageAlt: "Pelatihan keselamatan offshore BETRACOM"
   eyebrow: "OFFSHORE SAFETY · OPITO REFRESHER"
-  description: "FOET adalah pelatihan lanjutan atau penyegaran bagi personel offshore untuk kembali mempraktikkan respons keadaan darurat yang tidak dapat sepenuhnya dilatih melalui drill rutin di fasilitas kerja. Pemilihan produk harus mengikuti jenis sertifikat awal, sistem emergency breathing yang digunakan, serta persyaratan operator."
+  description: "Pelatihan FOET OPITO adalah program lanjutan atau penyegaran bagi personel offshore untuk kembali mempraktikkan respons keadaan darurat yang tidak dapat sepenuhnya dilatih melalui drill rutin di fasilitas kerja. Pemilihan produk harus mengikuti jenis sertifikat awal, sistem emergency breathing yang digunakan, serta persyaratan operator."
   ctaLabel: "Konsultasikan pelatihan FOET"
   ctaHref: "#jadwal-pelatihan"
   duration: "Sekitar 8 jam untuk produk FOET with EBS atau CA-EBS; konfirmasi produk dan agenda"
