@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Electrical Safety di Industri"
   eyebrow: "INHOUSE TRAINING · ELECTRICAL SAFETY"
-  description: "Pelatihan keselamatan kerja listrik di lingkungan industri, termasuk pengenalan bahaya, pengendalian energi, dan praktik kerja aman."
+  description: "Training Electrical Safety di Industri adalah pelatihan keselamatan kerja listrik di lingkungan industri, termasuk pengenalan bahaya, pengendalian energi, dan praktik kerja aman."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
