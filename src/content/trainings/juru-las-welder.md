@@ -2,8 +2,8 @@
 type: training
 id: 3063
 ulid: 01KCV200000000000000000063
-trainingSlug: juru-las-welder
-slug: juru-las-welder
+trainingSlug: juru-las-smaw-gtaw
+slug: juru-las-smaw-gtaw
 title: "Pelatihan Juru Las (Welder) SMAW dan GTAW"
 description: "Pelatihan Juru Las (Welder) SMAW dan GTAW mengembangkan pengetahuan dan keterampilan pengelasan melalui pemahaman proses, material, persiapan sambungan, posisi pengelasan, prosedur kerja, keselamatan, serta praktik pengelasan pelat dan pipa."
 categoryIds: [2009]
