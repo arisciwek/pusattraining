@@ -78,8 +78,8 @@ BNSP - Pertambangan;Pengawas Operasional Madya (POM);training-pom-pertambangan.m
 BNSP - K3;Rigger;rigger-bnsp.md;SUDAH ADA - skema BNSP terpisah dari Rigger Kemnaker
 BNSP - K3;Sertifikasi BNSP Fireman;fireman-bnsp.md;SUDAH ADA - cek cakupan, jangan disamakan dengan Damkar Kemnaker
 BNSP - K3 Umum;Sertifikasi Ahli K3 Umum BNSP;ahli-k3-umum-bnsp.md;SUDAH ADA
-Offshore;Basic Sea Survival;training-bosiet-huet-basic-sea-survival.md;ADA - tercakup di halaman gabungan repo, tetapi sumber BETRACOM memiliki halaman BSS tersendiri sehingga belum 1:1
-Offshore;HUET (NON-OPITO);training-bosiet-huet-basic-sea-survival.md;ADA SEBAGIAN - sumber menu mengarah ke kursus HUET NON-OPITO tersendiri, sedangkan halaman repo masih menggabungkan BOSIET, HUET, dan BSS
+Offshore;Basic Sea Survival;training-basic-sea-survival.md;SUDAH ADA - halaman khusus BSS NON-OPITO
+Offshore;HUET (NON-OPITO);training-huet-non-opito.md;SUDAH ADA - halaman khusus HUET NON-OPITO, bukan sertifikasi OPITO
 Offshore;HUET (OPITO Approved);training-huet-opito.md;SUDAH ADA - halaman khusus OPITO, varian EBS/CA-EBS wajib dikonfirmasi berdasarkan persyaratan operator
 Offshore;T-HUET (OPITO Approved);training-thuet-opito.md;SUDAH ADA - halaman khusus OPITO, bedakan produk 5195 dan 5192
 Offshore;Rigger Offshore;training-rigger-offshore.md;SUDAH ADA
