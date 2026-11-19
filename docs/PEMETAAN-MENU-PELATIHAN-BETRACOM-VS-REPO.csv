@@ -80,8 +80,8 @@ BNSP - K3;Sertifikasi BNSP Fireman;fireman-bnsp.md;SUDAH ADA - cek cakupan, jang
 BNSP - K3 Umum;Sertifikasi Ahli K3 Umum BNSP;ahli-k3-umum-bnsp.md;SUDAH ADA
 Offshore;Basic Sea Survival;training-bosiet-huet-basic-sea-survival.md;ADA - tercakup di halaman gabungan repo, tetapi sumber BETRACOM memiliki halaman BSS tersendiri sehingga belum 1:1
 Offshore;HUET (NON-OPITO);training-bosiet-huet-basic-sea-survival.md;ADA SEBAGIAN - sumber menu mengarah ke kursus HUET NON-OPITO tersendiri, sedangkan halaman repo masih menggabungkan BOSIET, HUET, dan BSS
-Offshore;HUET (OPITO Approved);;BELUM ADA - menu OPITO Approved mencantumkan HUET terpisah dari HUET NON-OPITO, jangan dipetakan ke kursus generik
-Offshore;T-HUET (OPITO Approved);;BELUM ADA - menu OPITO Approved mencantumkan Tropical HUET sebagai varian tersendiri, perlu verifikasi standar dan detail program sebelum dibuat
+Offshore;HUET (OPITO Approved);training-huet-opito.md;DIBUAT - halaman khusus OPITO, varian EBS/CA-EBS wajib dikonfirmasi berdasarkan persyaratan operator
+Offshore;T-HUET (OPITO Approved);training-thuet-opito.md;DIBUAT - halaman khusus OPITO, bedakan produk 5195 dan 5192
 Offshore;Rigger Offshore;training-rigger-offshore.md;SUDAH ADA
 Offshore;H2S;training-penanganan-h2s.md;SUDAH ADA - menu BETRACOM berada pada kelompok NON-OPITO, bukan Basic H2S OPITO
 Offshore;BOSIET;training-bosiet-opito.md;SUDAH ADA - cek OPITO dan varian tropical
@@ -119,7 +119,6 @@ Menu repo saja;Petroleum for Non-Petroleum Engineer;training-petroleum-for-non-p
 Menu repo saja;PSC Cost Recovery Mechanism;training-psc-cost-recovery-mechanism.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;PSC Financial Aspect;training-psc-financial-aspect.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;Operator Boiler Tingkat 2;operator-boiler-tingkat-2.md;ADA DI REPO - daftar menu Betracom hanya menulis Operator Boiler
-Menu repo saja;Awareness Emergency Response Plan;training-awareness-emergency-response-plan.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;Juru Las (Welder) SMAW dan GTAW;juru-las-welder.md;ADA DI REPO - program gabungan, kelas SMAW/GTAW perlu diverifikasi
 Menu repo saja;Teknisi K3 Bidang Pesawat Tenaga dan Produksi;teknisi-k3-bidang-pesawat-tenaga-produksi.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;Basic H2S Training Course – OPITO;training-basic-h2s-opito.md;ADA DI REPO - standar OPITO 9014 terpisah dari H2S awareness NON-OPITO, verifikasi approval centre untuk delivery OPITO
