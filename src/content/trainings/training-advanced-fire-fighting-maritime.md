@@ -11,7 +11,7 @@ hero:
   title: "Pelatihan Advanced Fire Fighting (AFF) Maritim"
   imageAlt: "Pelatihan pemadaman kebakaran tingkat lanjut untuk keselamatan kapal"
   eyebrow: "MARITIME SAFETY · ADVANCED FIRE FIGHTING"
-  description: "Advanced Fire Fighting (AFF) adalah pelatihan tingkat lanjut dalam kerangka STCW untuk meningkatkan kemampuan pengendalian operasi pemadaman kebakaran di kapal, dengan penekanan pada organisasi, taktik, koordinasi, dan komando."
+  description: "Pelatihan Advanced Fire Fighting (AFF) Maritim adalah program tingkat lanjut dalam kerangka STCW untuk meningkatkan kemampuan pengendalian operasi pemadaman kebakaran di kapal, dengan penekanan pada organisasi, taktik, koordinasi, dan komando."
   ctaLabel: "Konsultasikan pelatihan Advanced Fire Fighting"
   ctaHref: "#jadwal-pelatihan"
   trustItems:
