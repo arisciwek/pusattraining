@@ -11,9 +11,9 @@ pubDate: '2026-11-19T00:00:00+07:00'
 updatedDate: '2026-11-19T00:00:00+07:00'
 draft: false
 hero:
-  title: "Training P2K3"
+  title: "Training P2K3 (Panitia Pembina Keselamatan dan Kesehatan Kerja)"
   eyebrow: "INHOUSE TRAINING · ORGANISASI K3"
-  description: "Training P2K3 adalah pembekalan bagi anggota dan pihak terkait untuk memperkuat peran organisasi P2K3 di perusahaan."
+  description: "Training P2K3 (Panitia Pembina Keselamatan dan Kesehatan Kerja) adalah pembekalan bagi anggota dan pihak terkait untuk memperkuat peran organisasi P2K3 di perusahaan."
   ctaLabel: "Konsultasikan P2K3"
   ctaHref: "#jadwal-pelatihan"
 blocks:
