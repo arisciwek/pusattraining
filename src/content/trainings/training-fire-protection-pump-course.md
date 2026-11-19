@@ -1,6 +1,6 @@
 ---
 type: training
-id: 3122
+id: 3202
 ulid: 01KCV300000000000000000122
 trainingSlug: training-fire-protection-pump-course
 slug: training-fire-protection-pump-course
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Fire Protection Pump Course"
   eyebrow: "INHOUSE TRAINING · FIRE PROTECTION SYSTEM"
-  description: "Fire Protection Pump Course membahas sistem pompa proteksi kebakaran, komponen, prinsip operasi, pemeriksaan, pengujian terencana, pemeliharaan, serta pencatatan kesiapan sistem berdasarkan desain dan standar yang digunakan fasilitas."
+  description: "Fire Protection Pump Course adalah pelatihan yang membahas sistem pompa proteksi kebakaran, komponen, prinsip operasi, pemeriksaan, pengujian terencana, pemeliharaan, serta pencatatan kesiapan sistem berdasarkan desain dan standar yang digunakan fasilitas."
   ctaLabel: "Konsultasikan program fire pump"
   ctaHref: "#jadwal-pelatihan"
 blocks:
