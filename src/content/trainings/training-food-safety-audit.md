@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Food Safety Audit"
   eyebrow: "INHOUSE TRAINING · FOOD SAFETY AUDIT"
-  description: "Training Food Safety Audit membekali peserta dengan pendekatan sistematis untuk merencanakan, melaksanakan, mendokumentasikan, dan menindaklanjuti audit keamanan pangan."
+  description: "Training Food Safety Audit adalah pelatihan yang membekali peserta dengan pendekatan sistematis untuk merencanakan, melaksanakan, mendokumentasikan, dan menindaklanjuti audit keamanan pangan."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
