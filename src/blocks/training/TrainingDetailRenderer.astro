@@ -6,11 +6,12 @@ import TrainingSummary from './TrainingSummary.astro';
 import TrainingContentSection from './TrainingContentSection.astro';
 import TrainingFaq from './TrainingFaq.astro';
 import TrainingCta from './TrainingCta.astro';
+import RelatedArticles from './RelatedArticles.astro';
 import type { TrainingDetailBlock } from '../types';
 import type { CollectionEntry } from 'astro:content';
 type ScheduleEntry = CollectionEntry<'schedules'>;
 interface Props {
-  blocks: TrainingDetailBlock[]; title: string; description: string; schedules: ScheduleEntry[]; trainingSlug: string;
+  blocks: TrainingDetailBlock[]; title: string; description: string; schedules: ScheduleEntry[]; relatedArticles?: CollectionEntry<'articles'>[]; trainingSlug: string;
   image?: string; imageAlt?: string;
   hero?: {
     title?: string; imageAlt?: string; eyebrow?: string; certBadge?: string; description?: string; deliveryMode?: 'online' | 'offline' | 'mixed';
@@ -18,7 +19,7 @@ interface Props {
     price?: string; priceNote?: string; duration?: string; imageSrcset?: string; imageSizes?: string; imageWidth?: string; imageHeight?: string;
   };
 }
-const { blocks, title, description, schedules, trainingSlug, image, imageAlt = title, hero } = Astro.props;
+const { blocks, title, description, schedules, relatedArticles = [], trainingSlug, image, imageAlt = title, hero } = Astro.props;
 function slugifySectionTitle(value: string): string {
   return value.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
@@ -31,6 +32,7 @@ const navigationItems = contentBlocks.flatMap((block) => {
   if (block.type === 'training-faq') return [{ id: block.id ?? 'faq-pelatihan', label: 'FAQ' }];
   return [];
 });
+if (relatedArticles.length > 0) navigationItems.push({ id: 'artikel-terkait', label: 'Artikel Terkait' });
 ---
 <div class="training-detail-renderer">
   {hero && <HeroTraining eyebrow={hero.eyebrow ?? 'PROGRAM PELATIHAN'} certBadge={hero.certBadge} title={hero.title ?? title} description={hero.description ?? description} image={image ?? ''} imageAlt={hero.imageAlt ?? imageAlt} imageSrcset={hero.imageSrcset} imageSizes={hero.imageSizes} imageWidth={hero.imageWidth} imageHeight={hero.imageHeight} deliveryMode={hero.deliveryMode} ctaLabel={hero.ctaLabel} ctaHref={hero.ctaHref} trustItems={hero.trustItems} price={hero.price} priceNote={hero.priceNote} duration={hero.duration} schedules={schedules} />}
@@ -56,6 +58,7 @@ const navigationItems = contentBlocks.flatMap((block) => {
     if (block.type === 'training-schedule-list') return <TrainingScheduleList id={block.id ?? 'jadwal-pelatihan'} title={block.title} eyebrow={block.eyebrow} allLabel={block.allLabel} emptyMessage={block.emptyMessage} schedules={schedules} trainingSlug={trainingSlug} />;
     return null;
   })}
+  <RelatedArticles articles={relatedArticles} />
   {!contentBlocks.some((block) => block.type === 'training-cta') && <TrainingCta eyebrow="KONSULTASI PROGRAM" title={`Tertarik mengikuti ${title}?`} description="Hubungi Tiara untuk menanyakan informasi program, jadwal, dan proses pendaftaran." actionLabel="Chat Tiara via WhatsApp" />}
 </div>
 <script>

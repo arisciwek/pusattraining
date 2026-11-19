@@ -41,6 +41,14 @@ const relatedSchedules = kind === 'training'
       .filter((schedule) => schedule.data.trainingSlug === entry.data.trainingSlug)
       .sort((a, b) => Date.parse(a.data.startDate) - Date.parse(b.data.startDate))
   : [];
+// Artikel dan brosur yang merujuk master training ini lewat trainingId.
+const relatedArticles = kind === 'training'
+  ? (await getCollection('articles', ({ data }) =>
+      !data.draft &&
+      (data.type === 'article' || data.type === 'brochure') &&
+      data.trainingId === entry.data.id,
+    )).sort((a, b) => Date.parse(b.data.pubDate) - Date.parse(a.data.pubDate))
+  : [];
 const title = entry.data.title;
 const description = entry.data.description;
 // Judul master bisa sudah diawali "Pelatihan"/"Training" (mis. "Pelatihan Ahli K3 Kimia").
@@ -85,6 +93,7 @@ const categoryTrainingCards = relatedTrainings.map((training) => ({
             title={title}
             description={description}
             schedules={relatedSchedules}
+            relatedArticles={relatedArticles}
             trainingSlug={entry.data.slug}
             image={entry.data.image}
             imageAlt={title}
