@@ -1,7 +1,7 @@
 ---
 type: training
-id: 3126
-ulid: 01KCV3000000000000000003126
+id: 3203
+ulid: 01KCV300000000000000000139
 trainingSlug: training-audit-k3-inhouse
 slug: training-audit-k3-inhouse
 title: "Training Audit K3 (Inhouse)"
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Audit K3 (Inhouse)"
   eyebrow: "INHOUSE TRAINING · AUDIT K3"
-  description: "Pelatihan audit K3 untuk memahami perencanaan, pelaksanaan, pencatatan temuan, evaluasi bukti dan tindak lanjut perbaikan di lingkungan kerja."
+  description: "Training Audit K3 (Inhouse) adalah pelatihan untuk memahami perencanaan, pelaksanaan, pencatatan temuan, evaluasi bukti dan tindak lanjut perbaikan di lingkungan kerja."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
