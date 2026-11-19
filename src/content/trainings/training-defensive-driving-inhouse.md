@@ -1,7 +1,7 @@
 ---
 type: training
 id: 3114
-ulid: 01KCV200000000000000000114
+ulid: 01KCV200000000000000000123
 trainingSlug: training-defensive-driving-inhouse
 slug: training-defensive-driving-inhouse
 title: "Training Defensive Driving"
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Defensive Driving"
   eyebrow: "INHOUSE TRAINING · ROAD SAFETY"
-  description: "Pelatihan berkendara defensif untuk mengenali risiko jalan, menjaga jarak, mengantisipasi bahaya, dan mengambil keputusan aman."
+  description: "Training Defensive Driving adalah pelatihan berkendara defensif untuk mengenali risiko jalan, menjaga jarak, mengantisipasi bahaya, dan mengambil keputusan aman."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
