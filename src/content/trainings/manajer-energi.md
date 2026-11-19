@@ -15,7 +15,7 @@ hero:
   imageAlt: "Pengelolaan penggunaan energi dan evaluasi kinerja energi di fasilitas industri"
   eyebrow: "SERTIFIKASI KOMPETENSI · MANAJEMEN ENERGI"
   certBadge: "SKKNI MANAJER ENERGI"
-  description: "Pelatihan Manajer Energi membekali personel yang bertanggung jawab mengelola penggunaan energi di organisasi. Cakupan kompetensi meliputi pemahaman konteks organisasi, kepemimpinan, perencanaan energi, dukungan sistem manajemen energi, pengendalian operasi, evaluasi kinerja, tindakan perbaikan, dan peningkatan berkelanjutan. Sertifikat kompetensi diperoleh melalui uji kompetensi oleh LSP berlisensi dengan skema yang sesuai."
+  description: "Pelatihan dan Sertifikasi Manajer Energi adalah program pembekalan yang membekali personel yang bertanggung jawab mengelola penggunaan energi di organisasi. Cakupan kompetensi meliputi pemahaman konteks organisasi, kepemimpinan, perencanaan energi, dukungan sistem manajemen energi, pengendalian operasi, evaluasi kinerja, tindakan perbaikan, dan peningkatan berkelanjutan. Sertifikat kompetensi diperoleh melalui uji kompetensi oleh LSP berlisensi dengan skema yang sesuai."
   deliveryMode: mixed
   ctaLabel: "Konsultasikan program Manajer Energi"
   ctaHref: "#jadwal-pelatihan"
