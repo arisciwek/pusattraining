@@ -1,7 +1,7 @@
 ---
 type: training
-id: 3020
-ulid: 01KCV100000000000000000020
+id: 3092
+ulid: 01KCV200000000000000000092
 trainingSlug: training-huet-opito
 slug: training-huet-opito
 title: "Pelatihan HUET OPITO"
@@ -11,7 +11,7 @@ hero:
   title: "Pelatihan HUET OPITO"
   imageAlt: "Banner pelatihan offshore BETRACOM"
   eyebrow: "OFFSHORE SAFETY · OPITO"
-  description: "HUET (Helicopter Underwater Escape Training) OPITO merupakan pelatihan keselamatan bagi personel yang melakukan perjalanan menuju atau dari fasilitas offshore menggunakan helikopter. Pembelajaran berfokus pada persiapan sebelum penerbangan, tindakan ketika terjadi pendaratan darurat di air, penggunaan perlengkapan keselamatan, dan evakuasi dari simulator helikopter."
+  description: "Pelatihan HUET OPITO adalah program keselamatan bagi personel yang melakukan perjalanan menuju atau dari fasilitas offshore menggunakan helikopter. Pembelajaran berfokus pada persiapan sebelum penerbangan, tindakan ketika terjadi pendaratan darurat di air, penggunaan perlengkapan keselamatan, dan evakuasi dari simulator helikopter."
   ctaLabel: "Konsultasikan pelatihan HUET OPITO"
   ctaHref: "#jadwal-pelatihan"
   duration: "1 hari menurut daftar program BETRACOM; guided learning hours mengikuti varian standar OPITO"
