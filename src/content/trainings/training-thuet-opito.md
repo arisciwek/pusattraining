@@ -1,7 +1,7 @@
 ---
 type: training
-id: 3021
-ulid: 01KCV100000000000000000021
+id: 3093
+ulid: 01KCV200000000000000000093
 trainingSlug: training-thuet-opito
 slug: training-thuet-opito
 title: "Pelatihan T-HUET OPITO"
@@ -11,7 +11,7 @@ hero:
   title: "Pelatihan T-HUET OPITO"
   imageAlt: "Banner pelatihan offshore BETRACOM"
   eyebrow: "OFFSHORE SAFETY · TROPICAL · OPITO"
-  description: "T-HUET (Tropical Helicopter Underwater Escape Training) merupakan pelatihan keselamatan helikopter untuk personel yang melakukan perjalanan menuju atau dari instalasi dan kapal offshore di lingkungan tropis. Program menekankan persiapan penerbangan, penggunaan perlengkapan keselamatan, respons keadaan darurat, dan evakuasi dari simulator helikopter setelah skenario ditching."
+  description: "Pelatihan T-HUET OPITO adalah program keselamatan helikopter untuk personel yang melakukan perjalanan menuju atau dari instalasi dan kapal offshore di lingkungan tropis. Program menekankan persiapan penerbangan, penggunaan perlengkapan keselamatan, respons keadaan darurat, dan evakuasi dari simulator helikopter setelah skenario ditching."
   ctaLabel: "Konsultasikan pelatihan T-HUET"
   ctaHref: "#jadwal-pelatihan"
   duration: "1 hari pada daftar program BETRACOM; guided learning hours mengikuti produk OPITO yang dipilih"
