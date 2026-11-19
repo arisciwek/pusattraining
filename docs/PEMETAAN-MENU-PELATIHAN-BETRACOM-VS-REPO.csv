@@ -26,7 +26,7 @@ Kemnaker - Ketinggian;Pelatihan K3 Ketinggian Jakarta;;MENU LOKASI - bukan train
 Kemnaker - Pesawat Angkat Angkut;Operator Crane;operator-crane.md;SUDAH ADA
 Kemnaker - Pesawat Angkat Angkut;Operator Gondola;operator-gondola.md;SUDAH ADA
 Kemnaker - Pesawat Angkat Angkut;Operator Lift;operator-lift.md;SUDAH ADA
-Kemnaker - Pesawat Angkat Angkut;Operator Rigger (Juru Ikat);training-rigger-kemnaker.md;CEK KESETARAAN - pastikan skema/judul sama
+Kemnaker - Pesawat Angkat Angkut;Operator Rigger (Juru Ikat);training-rigger-kemnaker.md;SUDAH ADA - program Kemnaker terpisah dari Rigger BNSP dan Rigger Offshore
 Kemnaker - Pesawat Angkat Angkut;Operator Forklift;operator-forklift.md;SUDAH ADA
 Kemnaker - Pesawat Angkat Angkut;Teknisi K3 PAA;teknisi-k3-paa.md;SUDAH ADA
 Kemnaker - Pesawat Angkat Angkut;Ahli K3 Pesawat Angkat Angkut;ahli-k3-paa.md;SUDAH ADA
@@ -35,7 +35,7 @@ Kemnaker - Pesawat Angkat Angkut;Pelatihan Forklift Jakarta;;MENU LOKASI - bukan
 Kemnaker - Pesawat Uap/Bejana Tekan;Operator Boiler;operator-boiler-tingkat-1.md;ADA - repo memecah tingkat 1 dan 2
 Kemnaker - Pesawat Uap/Bejana Tekan;Teknisi K3 Bejana Tekan & Tangki Timbun;teknisi-k3-bejana-tekanan-tangki-timbun.md;SUDAH ADA
 Kemnaker - Pesawat Uap/Bejana Tekan;Ahli K3 Pesawat Uap Bejana Tekan;ahli-k3-pesawat-uap-bejana-tekanan.md;SUDAH ADA
-Kemnaker - Pesawat Tenaga Produksi;Operator K3 Genset (Diesel);operator-genset.md;CEK KESETARAAN - verifikasi judul/otorisasi
+Kemnaker - Pesawat Tenaga Produksi;Operator K3 Genset (Diesel);operator-genset.md;SUDAH ADA - sepadan dengan Pelatihan Operator Genset (Diesel) Kemnaker RI
 Kemnaker - Pesawat Tenaga Produksi;Operator Mesin Produksi & Perkakas 1 (Otomatis);operator-mesin-produksi-perkakas-kelas-1.md;SUDAH ADA
 Kemnaker - Pesawat Tenaga Produksi;Operator Mesin Produksi & Perkakas 2 (Manual);operator-mesin-produksi-perkakas-kelas-2.md;SUDAH ADA
 Kemnaker - Pesawat Tenaga Produksi;Ahli K3 Pesawat Tenaga & Produksi;ahli-k3-pesawat-tenaga-produksi.md;SUDAH ADA
@@ -81,7 +81,7 @@ BNSP - K3 Umum;Sertifikasi Ahli K3 Umum BNSP;ahli-k3-umum-bnsp.md;SUDAH ADA
 Offshore;Basic Sea Survival;training-bosiet-huet-basic-sea-survival.md;CEK KESETARAAN - repo menggabungkan beberapa topik
 Offshore;HUET;training-bosiet-huet-basic-sea-survival.md;CEK KESETARAAN - verifikasi kursus/sertifikasi tersendiri
 Offshore;Rigger Offshore;training-rigger-offshore.md;SUDAH ADA
-Offshore;H2S;training-basic-h2s-opito.md;CEK KESETARAAN - repo juga punya training-penanganan-h2s.md
+Offshore;H2S;training-penanganan-h2s.md;SUDAH ADA - menu BETRACOM berada pada kelompok NON-OPITO, bukan Basic H2S OPITO
 Offshore;BOSIET;training-bosiet-opito.md;SUDAH ADA - cek OPITO dan varian tropical
 Offshore;T-BOSIET;training-bosiet-opito.md;SUDAH ADA - varian OPITO T-BOSIET tercakup, verifikasi terpisah untuk opsi non-OPITO
 Perpanjangan Lisensi K3;Semua Perpanjangan Lisensi K3;;MENU LAYANAN - perlu halaman layanan/katalog tersendiri
@@ -112,12 +112,13 @@ Menu repo saja;K3 Rumah Sakit;training-k3-rumah-sakit.md;ADA DI REPO - tidak ter
 Menu repo saja;Maintenance Management Oil & Gas Production Facilities;training-maintenance-management-oil-gas-production-facilities.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;Nodal Analysis & Production Optimization;training-nodal-analysis-production-optimization.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;Oil & Gas Law of Contract;training-oil-and-gas-law-of-contract.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
-Menu repo saja;Penanganan H2S;training-penanganan-h2s.md;ADA DI REPO - cek kesetaraan dengan Basic H2S OPITO
+Menu repo saja;Penanganan H2S;training-penanganan-h2s.md;SUDAH DIPETAKAN - mewakili menu Offshore H2S NON-OPITO
 Menu repo saja;Petroleum for Non-Petroleum Engineer;training-petroleum-for-non-petroleum-engineer.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;PSC Cost Recovery Mechanism;training-psc-cost-recovery-mechanism.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;PSC Financial Aspect;training-psc-financial-aspect.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
-Menu repo saja;Penanganan H2S;training-penanganan-h2s.md;ADA DI REPO - periksa pemisahan H2S umum dan OPITO
 Menu repo saja;Operator Boiler Tingkat 2;operator-boiler-tingkat-2.md;ADA DI REPO - daftar menu Betracom hanya menulis Operator Boiler
 Menu repo saja;Awareness Emergency Response Plan;training-awareness-emergency-response-plan.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;Juru Las (Welder) SMAW dan GTAW;juru-las-welder.md;ADA DI REPO - program gabungan, kelas SMAW/GTAW perlu diverifikasi
 Menu repo saja;Teknisi K3 Bidang Pesawat Tenaga dan Produksi;teknisi-k3-bidang-pesawat-tenaga-produksi.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
+
+Menu repo saja;Basic H2S Training Course – OPITO;training-basic-h2s-opito.md;ADA DI REPO - standar OPITO 9014 terpisah dari H2S awareness NON-OPITO; verifikasi approval centre untuk delivery OPITO
