@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Managing Stress in The Workplace"
   eyebrow: "INHOUSE TRAINING · WORKPLACE WELLBEING"
-  description: "Training Managing Stress in The Workplace membantu peserta memahami stres kerja dan mengembangkan strategi pengelolaan individu serta dukungan lingkungan kerja."
+  description: "Training Managing Stress in The Workplace adalah pelatihan yang membantu peserta memahami stres kerja dan mengembangkan strategi pengelolaan individu serta dukungan lingkungan kerja."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
