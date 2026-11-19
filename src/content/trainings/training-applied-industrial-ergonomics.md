@@ -1,6 +1,6 @@
 ---
 type: training
-id: 3121
+id: 3201
 ulid: 01KCV300000000000000000121
 trainingSlug: training-applied-industrial-ergonomics
 slug: training-applied-industrial-ergonomics
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Applied Industrial Ergonomics"
   eyebrow: "INHOUSE TRAINING · ERGONOMI INDUSTRI"
-  description: "Applied Industrial Ergonomics membekali peserta untuk mengenali faktor ergonomi pada pekerjaan, menilai tuntutan fisik dan kognitif, serta merancang perbaikan praktis pada tugas, alat, stasiun, dan lingkungan kerja."
+  description: "Applied Industrial Ergonomics adalah pelatihan yang membekali peserta untuk mengenali faktor ergonomi pada pekerjaan, menilai tuntutan fisik dan kognitif, serta merancang perbaikan praktis pada tugas, alat, stasiun, dan lingkungan kerja."
   ctaLabel: "Konsultasikan program ergonomi"
   ctaHref: "#jadwal-pelatihan"
 blocks:
