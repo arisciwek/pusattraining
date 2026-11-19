@@ -1,7 +1,7 @@
 ---
 type: training
 id: 3120
-ulid: 01KCV200000000000000000020
+ulid: 01KCV200000000000000000129
 trainingSlug: training-shift-work-health-safety-risk-inhouse
 slug: training-shift-work-health-safety-risk-inhouse
 title: "Training Managing Health & Safety Risks of Shift Work"
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Managing Health & Safety Risks of Shift Work"
   eyebrow: "INHOUSE TRAINING · FATIGUE MANAGEMENT"
-  description: "Pelatihan mengelola risiko kesehatan dan keselamatan akibat kerja shift, kelelahan, tidur dan pengaturan kerja."
+  description: "Training Managing Health & Safety Risks of Shift Work adalah pelatihan mengelola risiko kesehatan dan keselamatan akibat kerja shift, kelelahan, tidur dan pengaturan kerja."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
