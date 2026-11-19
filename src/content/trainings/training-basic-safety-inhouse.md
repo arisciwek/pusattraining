@@ -1,7 +1,7 @@
 ---
 type: training
 id: 3115
-ulid: 01KCV200000000000000000115
+ulid: 01KCV200000000000000000124
 trainingSlug: training-basic-safety-inhouse
 slug: training-basic-safety-inhouse
 title: "Training Basic Safety"
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Basic Safety"
   eyebrow: "INHOUSE TRAINING · BASIC SAFETY"
-  description: "Pelatihan dasar keselamatan kerja untuk membangun pemahaman bahaya, prosedur kerja aman, dan tindakan pencegahan di tempat kerja."
+  description: "Training Basic Safety adalah pelatihan dasar keselamatan kerja untuk membangun pemahaman bahaya, prosedur kerja aman, dan tindakan pencegahan di tempat kerja."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
