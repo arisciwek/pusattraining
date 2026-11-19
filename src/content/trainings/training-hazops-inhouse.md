@@ -11,9 +11,9 @@ pubDate: '2026-11-19T00:00:00+07:00'
 updatedDate: '2026-11-19T00:00:00+07:00'
 draft: false
 hero:
-  title: "Training HAZOPS"
+  title: "Training HAZOPS (Hazard and Operability Study)"
   eyebrow: "INHOUSE TRAINING · PROCESS HAZARD ANALYSIS"
-  description: "Pembekalan metode HAZOPS melalui guide words, parameter proses, deviasi, dan diskusi tim."
+  description: "Training HAZOPS (Hazard and Operability Study) adalah pembekalan metode HAZOPS melalui guide words, parameter proses, deviasi, dan diskusi tim."
   ctaLabel: "Konsultasikan HAZOPS"
   ctaHref: "#jadwal-pelatihan"
 blocks:
