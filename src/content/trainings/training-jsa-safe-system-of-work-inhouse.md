@@ -1,7 +1,7 @@
 ---
 type: training
 id: 3119
-ulid: 01KCV200000000000000000019
+ulid: 01KCV200000000000000000128
 trainingSlug: training-jsa-safe-system-of-work-inhouse
 slug: training-jsa-safe-system-of-work-inhouse
 title: "Training Job Safety Analysis (JSA) & Safe System of Work"
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Job Safety Analysis (JSA) & Safe System of Work"
   eyebrow: "INHOUSE TRAINING · SAFE WORK"
-  description: "Pelatihan penyusunan JSA dan sistem kerja aman untuk pekerjaan rutin maupun nonrutin."
+  description: "Training Job Safety Analysis (JSA) & Safe System of Work adalah pelatihan penyusunan JSA dan sistem kerja aman untuk pekerjaan rutin maupun nonrutin."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
