@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Behaviour Based Safety (BBS)"
   eyebrow: "INHOUSE TRAINING · PERILAKU DAN BUDAYA K3"
-  description: "Pembekalan pendekatan observasi dan komunikasi keselamatan yang partisipatif dan berorientasi perbaikan."
+  description: "Training Behaviour Based Safety (BBS) adalah pembekalan pendekatan observasi dan komunikasi keselamatan yang partisipatif dan berorientasi perbaikan."
   ctaLabel: "Konsultasikan BBS"
   ctaHref: "#jadwal-pelatihan"
 blocks:
