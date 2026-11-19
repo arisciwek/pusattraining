@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Fire Drill dan Evakuasi Kebakaran"
   eyebrow: "INHOUSE TRAINING · FIRE DRILL"
-  description: "Pelatihan kesiapsiagaan kebakaran, peran penghuni, komunikasi darurat, dan latihan evakuasi."
+  description: "Training Fire Drill dan Evakuasi Kebakaran adalah pelatihan kesiapsiagaan kebakaran, peran penghuni, komunikasi darurat, dan latihan evakuasi."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
