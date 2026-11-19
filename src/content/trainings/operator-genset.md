@@ -17,12 +17,12 @@ hero:
   eyebrow: "PROGRAM KOMPETENSI OPERATOR · PESAWAT TENAGA DAN PRODUKSI"
   certBadge: "KEMNAKER RI"
   description: "Pelatihan Operator Genset (Diesel) Kemnaker RI adalah program pembinaan bagi tenaga kerja yang bertugas mengoperasikan generator diesel. Peserta mempelajari dasar motor diesel, sistem pembangkitan dan kelistrikan, pemeriksaan, pemeliharaan, troubleshooting, serta pengendalian bahaya agar genset dapat dioperasikan secara aman sesuai prosedur dan ketentuan K3."
-  deliveryMode: offline
+  deliveryMode: mixed
   ctaLabel: "Lihat jadwal dan pendaftaran"
   ctaHref: "#jadwal-pelatihan"
   price: "Mulai dari Rp 5.500.000"
   priceNote: "Harga yang tercantum pada halaman penyelenggara; konfirmasikan kembali biaya, fasilitas, dan komponen sertifikasi untuk angkatan terbaru."
-  duration: "4 hari"
+  duration: "4 hari (variasi batch perlu dikonfirmasi)"
   trustItems:
     - icon: '<path d="M12 2 20 6v6c0 5-8 10-8 10S4 17 4 12V6Z"></path><path d="m8 12 3 3 5-6"></path>'
       label: "Program pembinaan operator K3"
@@ -34,7 +34,7 @@ blocks:
   - type: training-detail-intro
     eyebrow: PROGRAM KOMPETENSI OPERATOR
     noticeTitle: Pengoperasian generator diesel yang aman dan andal
-    noticeDescription: "Genset diesel menjadi sumber listrik utama maupun cadangan di fasilitas industri, gedung, rumah sakit, proyek konstruksi, dan lokasi operasional lainnya. Operator perlu memahami karakteristik mesin penggerak, generator, panel kendali, sistem bahan bakar, pendinginan, pelumasan, pembumian, serta prosedur operasi dan pemeliharaan. Informasi penyelenggara mencantumkan durasi empat hari dan program sertifikasi Kemnaker RI. Persyaratan peserta, skema pembinaan, evaluasi, dan penerbitan dokumen perlu dikonfirmasi untuk angkatan yang dipilih."
+    noticeDescription: "Genset diesel menjadi sumber listrik utama maupun cadangan di fasilitas industri, gedung, rumah sakit, proyek konstruksi, dan lokasi operasional lainnya. Operator perlu memahami karakteristik mesin penggerak, generator, panel kendali, sistem bahan bakar, pendinginan, pelumasan, pembumian, serta prosedur operasi dan pemeliharaan. Halaman BETRACOM menjelaskan metode blended, yaitu teori secara online dan praktik secara offline. Jadwal 2026 yang dipublikasikan memperlihatkan susunan batch yang bervariasi, umumnya empat hari dengan beberapa batch lima hari. Konfirmasikan durasi, persyaratan peserta, tahapan pembinaan, evaluasi, dan dokumen hasil untuk angkatan yang dipilih."
 
   - type: training-summary
     id: ringkasan-program
@@ -45,14 +45,14 @@ blocks:
       - label: Ruang lingkup
         value: "Motor diesel, sistem pembangkitan, kelistrikan, pengendalian, dan keselamatan operasi."
       - label: Durasi pada halaman sumber
-        value: "4 hari"
-        detail: "Konfirmasikan kembali durasi dan pembagian teori-praktik pada angkatan terbaru."
+        value: "Umumnya 4 hari; beberapa batch memiliki susunan 5 hari."
+        detail: "Jadwal BETRACOM 2026 menunjukkan variasi tanggal batch. Konfirmasikan durasi dan pembagian teori-praktik pada angkatan terbaru."
       - label: Metode
-        value: "Teori dan praktik lapangan"
-        detail: "Rincian lokasi dan porsi praktik mengikuti jadwal serta fasilitas penyelenggara."
+        value: "Blended — teori online dan praktik offline."
+        detail: "Porsi praktik dan lokasi mengikuti jadwal serta fasilitas penyelenggara."
       - label: Acuan regulasi
-        value: "Permenaker Nomor 38 Tahun 2016"
-        detail: "Mengatur K3 Pesawat Tenaga dan Produksi, termasuk ketentuan operator penggerak mula."
+        value: "Permenaker Nomor 38 Tahun 2016 tentang K3 Pesawat Tenaga dan Produksi."
+        detail: "JDIH Kemnaker mencatat peraturan ini berstatus berlaku. PER.04/MEN/1985 yang tercantum pada sebagian materi lama telah dicabut oleh peraturan ini."
       - label: Biaya pada halaman sumber
         value: "Mulai dari Rp 5.500.000 per peserta"
         detail: "Harga dapat berubah; minta penawaran dan rincian fasilitas terbaru sebelum mendaftar."
@@ -212,7 +212,7 @@ blocks:
       - question: "Apa itu Pelatihan Operator Genset (Diesel)?"
         answer: "Program pembinaan bagi tenaga kerja yang mengoperasikan generator diesel agar memahami motor diesel, sistem kelistrikan, pemeriksaan, pemeliharaan, dan pengendalian risiko K3."
       - question: "Berapa lama pelatihan berlangsung?"
-        answer: "Halaman program BETRACOM mencantumkan durasi empat hari. Konfirmasikan kembali jadwal dan pembagian teori-praktik untuk angkatan yang dipilih."
+        answer: "Jadwal BETRACOM 2026 memperlihatkan batch dengan susunan empat hingga lima hari. Konfirmasikan tanggal, durasi, serta pembagian teori online dan praktik offline kepada penyelenggara."
       - question: "Apa saja materi yang dipelajari?"
         answer: "Materinya mencakup dasar K3, motor diesel, pedoman teknis pesawat diesel, perhitungan kapasitas, dasar kelistrikan, panel hubung bagi, pembumian, pengoperasian aman, lingkungan kerja, troubleshooting, penyebab kecelakaan, pemeriksaan, pemeliharaan, dan observasi lapangan."
       - question: "Peraturan apa yang menjadi acuan K3?"
