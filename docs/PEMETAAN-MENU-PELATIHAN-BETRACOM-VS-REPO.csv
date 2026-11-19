@@ -84,8 +84,6 @@ Offshore;HUET (OPITO Approved);training-huet-opito.md;SUDAH ADA - halaman khusus
 Offshore;T-HUET (OPITO Approved);training-thuet-opito.md;SUDAH ADA - halaman khusus OPITO, bedakan produk 5195 dan 5192
 Offshore;Rigger Offshore;training-rigger-offshore.md;SUDAH ADA
 Offshore;H2S;training-penanganan-h2s.md;SUDAH ADA - menu BETRACOM berada pada kelompok NON-OPITO, bukan Basic H2S OPITO
-Offshore;BOSIET;training-bosiet-opito.md;SUDAH ADA - cek OPITO dan varian tropical
-Offshore;T-BOSIET;training-bosiet-opito.md;SUDAH ADA - varian OPITO T-BOSIET tercakup, verifikasi terpisah untuk opsi non-OPITO
 Perpanjangan Lisensi K3;Semua Perpanjangan Lisensi K3;;MENU LAYANAN - perlu halaman layanan/katalog tersendiri
 Perpanjangan Lisensi K3;Perpanjangan SIO Forklift;;MENU LAYANAN - perpanjangan lisensi, bukan pelatihan baru
 Perpanjangan Lisensi K3;Perpanjangan Lisensi K3 Ketinggian;;MENU LAYANAN - perpanjangan lisensi, bukan pelatihan baru
@@ -128,3 +126,13 @@ Offshore;T-FOET (OPITO Approved);training-tfoet-opito.md;SUDAH ADA - halaman khu
 Offshore;BASIC FIRST AID;training-basic-first-aid-offshore.md;SUDAH ADA - halaman khusus Basic First Aid NON-OPITO, bukan otomatis sertifikasi Petugas P3K Kemnaker
 Offshore;BASIC FIRE FIGHTING;training-basic-fire-fighting-offshore.md;SUDAH ADA - halaman khusus Basic Fire Fighting NON-OPITO, bukan sertifikasi Damkar Kemnaker atau Fireman BNSP
 Offshore;Crowd Management;training-crowd-management-offshore.md;SUDAH ADA - halaman khusus Crowd Management maritim, verifikasi fungsi peserta dan pengakuan dokumen STCW
+Offshore;BOSIET (OPITO Approved);training-bosiet-opito.md;SUDAH ADA - halaman khusus BOSIET OPITO
+Offshore;T-BOSIET (OPITO Approved);training-bosiet-opito.md;SUDAH ADA - varian OPITO tercakup, pastikan persyaratan operator
+Offshore;BOSIET (NON-OPITO);training-bosiet-huet-basic-sea-survival.md;SUDAH ADA - halaman gabungan BOSIET HUET dan BSS dari menu NON-OPITO. Konfirmasi jenis kursus dan dokumen
+Offshore;T-BOSIET (NON-OPITO);training-bosiet-huet-basic-sea-survival.md;SUDAH ADA - halaman gabungan memuat paket BOSIET. Varian tropis dan dokumen wajib dikonfirmasi
+Offshore;BST (Basic Safety Training);;BELUM DIBUAT - menu tercantum tetapi belum ditemukan silabus rinci yang dapat dijadikan dasar konten
+Offshore;Ship Safety Officer;;BELUM DIBUAT - tautan silabus pada menu saat ini tidak dapat diakses. Perlu sumber program yang valid
+Offshore;ADVANCE FIRST AID;;BELUM DIBUAT - menu tercantum tanpa silabus rinci. Perlu konfirmasi ruang lingkup dan prasyarat
+Offshore;ADVANCE FIRE FIGHTING;;BELUM DIBUAT - menu tercantum tanpa silabus rinci. Perlu konfirmasi tingkat kompetensi dan praktik
+Offshore;WORK PERMIT;training-work-permit-awareness-maritime.md;SUDAH ADA - Work Permit Awareness Maritime berdasarkan silabus BETRACOM
+Offshore;RIGGING & LIFTING;training-rigger-offshore.md;SUDAH ADA - cakupan satu hari Lifting and Rigging sepadan dengan halaman Rigger Offshore. Konfirmasi ruang lingkup kelas
