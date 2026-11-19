@@ -16,7 +16,7 @@ hero:
   imageAlt: "Pengawas operasional melakukan koordinasi keselamatan di area pertambangan"
   eyebrow: "K3 PERTAMBANGAN · SERTIFIKASI KOMPETENSI"
   certBadge: "PENGAWAS OPERASIONAL MADYA (POM)"
-  description: "Pengawas Operasional Madya (POM) menjalankan fungsi pengawasan pada tingkat menengah dalam kegiatan pertambangan mineral dan batubara. Program pembekalan membantu peserta memperkuat kemampuan mengelola keselamatan dan lingkungan pertambangan, keadaan darurat, konservasi sumber daya, penerapan kaidah teknis, serta pengawasan usaha jasa dan standardisasi pertambangan. Sertifikasi kompetensi dilakukan melalui asesmen oleh LSP berlisensi sesuai skema yang berlaku."
+  description: "Pelatihan Pengawas Operasional Madya (POM) Pertambangan adalah program pembekalan bagi Pengawas Operasional Madya (POM) yang menjalankan fungsi pengawasan pada tingkat menengah dalam kegiatan pertambangan mineral dan batubara. Program pembekalan membantu peserta memperkuat kemampuan mengelola keselamatan dan lingkungan pertambangan, keadaan darurat, konservasi sumber daya, penerapan kaidah teknis, serta pengawasan usaha jasa dan standardisasi pertambangan. Sertifikasi kompetensi dilakukan melalui asesmen oleh LSP berlisensi sesuai skema yang berlaku."
   deliveryMode: mixed
   ctaLabel: "Konsultasikan persyaratan POM"
   ctaHref: "#jadwal-pelatihan"
