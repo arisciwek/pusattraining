@@ -1,7 +1,7 @@
 ---
 type: training
-id: 3127
-ulid: 01KCV3000000000000000003127
+id: 3204
+ulid: 01KCV300000000000000000140
 trainingSlug: training-amdal-inhouse
 slug: training-amdal-inhouse
 title: "Training AMDAL dan Pengelolaan Lingkungan"
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training AMDAL dan Pengelolaan Lingkungan"
   eyebrow: "INHOUSE TRAINING · ENVIRONMENT"
-  description: "Pelatihan pemahaman AMDAL, proses penilaian dampak, pengelolaan dan pemantauan lingkungan serta integrasi komitmen lingkungan dalam operasi."
+  description: "Training AMDAL dan Pengelolaan Lingkungan adalah pelatihan pemahaman AMDAL, proses penilaian dampak, pengelolaan dan pemantauan lingkungan serta integrasi komitmen lingkungan dalam operasi."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
