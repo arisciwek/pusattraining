@@ -4,19 +4,19 @@ id: 3008
 ulid: 01KCV100000000000000000008
 trainingSlug: training-k3-bahaya-confined-space
 slug: training-k3-bahaya-confined-space
-title: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space)"
-description: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space) membahas identifikasi bahaya, pengendalian risiko, izin masuk, pengujian atmosfer, isolasi energi, dan penerapan prosedur K3 sesuai Permenaker Nomor 11 Tahun 2023."
+title: "Teknisi K3 Ruang Terbatas"
+description: "Teknisi K3 Ruang Terbatas membahas identifikasi bahaya, pengendalian risiko, izin masuk, pengujian atmosfer, isolasi energi, dan penerapan prosedur K3 sesuai Permenaker Nomor 11 Tahun 2023."
 image: "https://raw.githubusercontent.com/arisciwek/confinedspace/main/public/images/galeri-pelatihan-1.webp"
 categoryIds: [2005]
 pubDate: '2026-11-16T00:00:00+07:00'
 updatedDate: '2026-11-17T00:00:00+07:00'
 draft: false
 hero:
-  title: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space)"
+  title: "Teknisi K3 Ruang Terbatas"
   imageAlt: "Dokumentasi pelatihan Teknisi K3 Ruang Terbatas Betracom, angkatan 6–10 April 2026"
   eyebrow: "PROGRAM PEMBINAAN K3 RUANG TERBATAS"
   certBadge: "KEMNAKER RI"
-  description: "Pelatihan Teknisi K3 Ruang Terbatas (Confined Space) adalah program pembinaan bagi tenaga kerja yang ditugaskan pada pekerjaan pemasangan, perakitan, pemeliharaan, atau perbaikan komponen di ruang terbatas dengan pemahaman identifikasi bahaya, penilaian risiko, izin masuk, pengujian atmosfer, isolasi energi, penggunaan APD, komunikasi kerja, dan kesiapsiagaan darurat sesuai Permenaker Nomor 11 Tahun 2023. Kualifikasi personel dan dokumen akhir mengikuti persyaratan skema serta ketentuan angkatan."
+  description: "Teknisi K3 Ruang Terbatas adalah program pembinaan bagi tenaga kerja yang ditugaskan pada pekerjaan pemasangan, perakitan, pemeliharaan, atau perbaikan komponen di ruang terbatas dengan pemahaman identifikasi bahaya, penilaian risiko, izin masuk, pengujian atmosfer, isolasi energi, penggunaan APD, komunikasi kerja, dan kesiapsiagaan darurat sesuai Permenaker Nomor 11 Tahun 2023. Kualifikasi personel dan dokumen akhir mengikuti persyaratan skema serta ketentuan angkatan."
   deliveryMode: mixed
   ctaLabel: "Lihat jadwal dan pendaftaran"
   ctaHref: "#pendaftaran"

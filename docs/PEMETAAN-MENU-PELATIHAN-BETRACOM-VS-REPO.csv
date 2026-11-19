@@ -1,6 +1,6 @@
 Kategori Betracom;Menu/pelatihan pada situs Betracom;File pelatihan di repo (main);Status / tindak lanjut
 Kemnaker - Umum;Ahli K3 Umum;ahli-k3-umum.md;SUDAH ADA
-Kemnaker - Ruang Terbatas;Teknisi K3 Ruang Terbatas;;BELUM ADA - perlu konten tersendiri
+Kemnaker - Ruang Terbatas;Teknisi K3 Ruang Terbatas;training-k3-bahaya-confined-space.md;SUDAH ADA
 Kemnaker - Ruang Terbatas;Petugas Penyelamat K3 Ruang Terbatas;;BELUM ADA - perlu verifikasi nomenklatur dan skema
 Kemnaker - Kimia;Petugas K3 Kimia;;BELUM ADA - jangan disamakan dengan Ahli K3 Kimia
 Kemnaker - Kimia;Ahli K3 Kimia;ahli-k3-kimia.md;SUDAH ADA
@@ -105,7 +105,7 @@ Menu repo saja;Enhanced Oil Recovery (EOR);training-enhanced-oil-recovery-eor.md
 Menu repo saja;Incident Investigation;training-incident-investigation.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;Integrated Project Management Oil & Gas;training-integrated-project-management-oil-gas.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;Introduction to Geothermal System Technology;training-introduction-geothermal-system-technology.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
-Menu repo saja;K3 Bahaya Ruang Terbatas;training-k3-bahaya-confined-space.md;ADA DI REPO - cek kesetaraan dengan Teknisi/Petugas Penyelamat Ruang Terbatas
+Menu repo saja;K3 Bahaya Ruang Terbatas;training-k3-bahaya-confined-space.md;SUDAH ADA - sepadan dengan menu Betracom Teknisi K3 Ruang Terbatas
 Menu repo saja;K3 Manajemen APD;training-k3-manajemen-apd.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;K3 Rumah Sakit;training-k3-rumah-sakit.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
 Menu repo saja;Maintenance Management Oil & Gas Production Facilities;training-maintenance-management-oil-gas-production-facilities.md;ADA DI REPO - tidak terlihat sebagai menu utama Betracom
