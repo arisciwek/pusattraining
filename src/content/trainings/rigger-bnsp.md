@@ -84,7 +84,7 @@ blocks:
     id: standar-kompetensi
     eyebrow: "ACUAN KOMPETENSI"
     title: "Rujukan unit kompetensi dalam SKKNI"
-    description: "Kepmenaker Nomor 180 Tahun 2024 menetapkan SKKNI Bidang Operasi Pesawat Angkat, Angkut dan Ikat Beban serta menggantikan Kepmenaker Nomor 135 Tahun 2015. Di dalam standar tersebut terdapat unit-unit yang relevan dengan pekerjaan rigger, antara lain:"
+    description: "Kepmenaker Nomor 180 Tahun 2024 menetapkan SKKNI Bidang Operasi Pesawat Angkat, Angkut dan Ikat Beban serta menggantikan Kepmenaker Nomor 135 Tahun 2015. Di dalam standar tersebut terdapat unit-unit yang relevan dengan pekerjaan rigger, antara lain. Daftar ini merupakan rujukan SKKNI, bukan pernyataan bahwa seluruh unit otomatis masuk ke satu skema sertifikasi; LSP harus menunjukkan paket kompetensi dan kode skema yang berlaku."
     items:
       - title: "M.74OPA00.058.1 — Mempersiapkan Operasi Pemindahan Beban"
         description: "Pemeriksaan awal beban, persiapan alat bantu angkat, dan penyiapan lokasi penempatan beban."
@@ -98,7 +98,6 @@ blocks:
         description: "Persiapan alat bantu angkat dan pelaksanaan pengikatan beban."
       - title: "M.74OPA00.064.3 — Mengendalikan Beban"
         description: "Identifikasi kondisi beban dan pengendalian pemindahan sesuai lifting plan dan hand signal."
-    note: "Daftar ini merupakan rujukan SKKNI yang relevan, bukan pernyataan bahwa seluruh unit otomatis masuk ke satu skema sertifikasi. LSP harus menunjukkan paket kompetensi dan kode skema yang berlaku."
 
   - type: training-content-section
     id: sasaran-peserta
