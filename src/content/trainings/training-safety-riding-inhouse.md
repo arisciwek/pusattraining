@@ -1,7 +1,7 @@
 ---
 type: training
 id: 3117
-ulid: 01KCV200000000000000000117
+ulid: 01KCV200000000000000000126
 trainingSlug: training-safety-riding-inhouse
 slug: training-safety-riding-inhouse
 title: "Training Safety Riding"
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Safety Riding"
   eyebrow: "INHOUSE TRAINING · SAFETY RIDING"
-  description: "Pelatihan berkendara sepeda motor secara aman, antisipatif, dan bertanggung jawab untuk perjalanan kerja maupun aktivitas operasional."
+  description: "Training Safety Riding adalah pelatihan berkendara sepeda motor secara aman, antisipatif, dan bertanggung jawab untuk perjalanan kerja maupun aktivitas operasional."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
