@@ -1,7 +1,7 @@
 ---
 type: training
-id: 3128
-ulid: 01KCV3000000000000000003128
+id: 3205
+ulid: 01KCV300000000000000000141
 trainingSlug: training-emergency-planning-management-inhouse
 slug: training-emergency-planning-management-inhouse
 title: "Training Emergency Planning & Management"
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Emergency Planning & Management"
   eyebrow: "INHOUSE TRAINING · EMERGENCY MANAGEMENT"
-  description: "Pelatihan perencanaan dan pengelolaan kesiapsiagaan darurat untuk mengembangkan skenario, koordinasi, sumber daya, komunikasi, latihan dan evaluasi."
+  description: "Training Emergency Planning & Management adalah pelatihan perencanaan dan pengelolaan kesiapsiagaan darurat untuk mengembangkan skenario, koordinasi, sumber daya, komunikasi, latihan dan evaluasi."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
