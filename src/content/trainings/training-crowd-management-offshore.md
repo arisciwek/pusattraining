@@ -11,7 +11,7 @@ hero:
   title: "Pelatihan Crowd Management Offshore"
   imageAlt: "Pelatihan keselamatan maritim dan pengelolaan penumpang"
   eyebrow: "MARITIME SAFETY · CROWD MANAGEMENT"
-  description: "Pelatihan Crowd Management Offshore membekali personel dengan pemahaman untuk membantu penumpang dan mengelola kerumunan dalam keadaan darurat di kapal penumpang, termasuk komunikasi, muster, dan pengenalan perlengkapan keselamatan."
+  description: "Pelatihan Crowd Management Offshore adalah program pembekalan bagi personel untuk membantu penumpang dan mengelola kerumunan dalam keadaan darurat di kapal penumpang, termasuk komunikasi, muster, dan pengenalan perlengkapan keselamatan."
   ctaLabel: "Konsultasikan pelatihan Crowd Management"
   ctaHref: "#jadwal-pelatihan"
   duration: "1 hari menurut halaman program BETRACOM; konfirmasi agenda terbaru"
@@ -145,3 +145,4 @@ blocks:
         answer: "Halaman program menyebut STCW Regulation V/2, A-V/2, serta IMO Model Course 1.41 dan 1.44. Kesesuaian terhadap ketentuan dan pengakuan dokumen harus dikonfirmasi."
       - question: "Apakah kelas dilakukan secara online?"
         answer: "Halaman sumber menyebut pelaksanaan online melalui Zoom. Konfirmasikan metode, jadwal, dan mekanisme evaluasi untuk batch terbaru."
+---
