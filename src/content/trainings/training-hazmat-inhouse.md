@@ -1,7 +1,7 @@
 ---
 type: training
-id: 3120
-ulid: 01KCV300000000000000000120
+id: 3200
+ulid: 01KCV300000000000000000138
 trainingSlug: training-hazmat-inhouse
 slug: training-hazmat-inhouse
 title: "Training Hazmat (Hazardous Materials)"
@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Hazmat (Hazardous Materials)"
   eyebrow: "INHOUSE TRAINING · PENGELOLAAN BAHAN BERBAHAYA"
-  description: "Training Hazmat adalah pembekalan pengelolaan bahan berbahaya secara aman melalui identifikasi, pemahaman informasi bahaya, prosedur penanganan, penyimpanan, pengendalian paparan dan respons insiden."
+  description: "Training Hazmat (Hazardous Materials) adalah pembekalan pengelolaan bahan berbahaya secara aman melalui identifikasi, pemahaman informasi bahaya, prosedur penanganan, penyimpanan, pengendalian paparan dan respons insiden."
   ctaLabel: "Konsultasikan program Hazmat"
   ctaHref: "#jadwal-pelatihan"
 blocks:
