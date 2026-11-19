@@ -75,7 +75,7 @@ BNSP - Higiene Industri;Higiene Industri Madya (HIMA);higiene-industri-madya-him
 BNSP - Higiene Industri;Ahli Higiene Industri Utama (HIU);ahli-higiene-industri-utama-hiu.md;SUDAH ADA
 BNSP - Pertambangan;Pengawas Operasional Pertama (POP);training-pop-pertambangan.md;SUDAH ADA - verifikasi skema/level
 BNSP - Pertambangan;Pengawas Operasional Madya (POM);training-pom-pertambangan.md;SUDAH ADA
-BNSP - K3;Rigger;training-rigger-kemnaker.md;CEK KESETARAAN - menu BNSP, jangan diasumsikan sama dengan Kemnaker
+BNSP - K3;Rigger;rigger-bnsp.md;SUDAH ADA - skema BNSP terpisah dari Rigger Kemnaker
 BNSP - K3;Sertifikasi BNSP Fireman;fireman-bnsp.md;SUDAH ADA - cek cakupan, jangan disamakan dengan Damkar Kemnaker
 BNSP - K3 Umum;Sertifikasi Ahli K3 Umum BNSP;ahli-k3-umum-bnsp.md;SUDAH ADA
 Offshore;Basic Sea Survival;training-bosiet-huet-basic-sea-survival.md;CEK KESETARAAN - repo menggabungkan beberapa topik
