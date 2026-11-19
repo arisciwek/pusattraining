@@ -11,9 +11,9 @@ pubDate: '2026-11-19T00:00:00+07:00'
 updatedDate: '2026-11-19T00:00:00+07:00'
 draft: false
 hero:
-  title: "Training HIRA"
+  title: "Training HIRA (Hazard Identification and Risk Assessment)"
   eyebrow: "INHOUSE TRAINING · IDENTIFIKASI BAHAYA DAN PENILAIAN RISIKO"
-  description: "Pembekalan praktis untuk mengidentifikasi bahaya dan menilai risiko aktivitas kerja."
+  description: "Training HIRA (Hazard Identification and Risk Assessment) adalah pembekalan praktis untuk mengidentifikasi bahaya dan menilai risiko aktivitas kerja."
   ctaLabel: "Konsultasikan HIRA"
   ctaHref: "#jadwal-pelatihan"
 blocks:
