@@ -8,8 +8,8 @@ CSV ini digunakan untuk mencatat jadwal penyelenggaraan pelatihan. Setiap baris 
 
 | Kolom | Wajib | Fungsi |
 |---|---|---|
-| ID | Ya | ID unik pelatihan, untuk folder foto dan identifikasi pelatihan. |
-| TrainingSlug | Ya | Menghubungkan jadwal ke halaman pelatihan melalui slug. |
+| ID | Ya | ID numerik pelatihan dari data pelatihan, untuk identifikasi dan pencocokan baris. |
+| TrainingSlug | Ya | Menghubungkan jadwal ke halaman pelatihan melalui slug; juga dipakai sebagai nama folder foto training (`public/images/training/<TrainingSlug>/`). |
 | startDate | Ya | Tanggal mulai pelatihan, format `YYYY-MM-DD`. |
 | endDate | Ya | Tanggal selesai pelatihan, format `YYYY-MM-DD`. |
 | timezone | Tidak | Zona waktu jadwal, misalnya `Asia/Jakarta`. |
