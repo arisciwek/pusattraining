@@ -1,7 +1,7 @@
 ---
 type: training
-id: 3087
-ulid: 01KCV200000000000000000087
+id: 3088
+ulid: 01KCV200000000000000000088
 trainingSlug: ahli-k3-umum-bnsp
 slug: ahli-k3-umum-bnsp
 title: "Pelatihan dan Sertifikasi Ahli K3 Umum BNSP"
