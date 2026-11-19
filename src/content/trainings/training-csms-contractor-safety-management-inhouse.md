@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Contractor Safety Management System (CSMS)"
   eyebrow: "INHOUSE TRAINING · KESELAMATAN KONTRAKTOR"
-  description: "Pembekalan pengelolaan risiko K3 kontraktor dari seleksi hingga evaluasi."
+  description: "Training Contractor Safety Management System (CSMS) adalah pembekalan pengelolaan risiko K3 kontraktor dari seleksi hingga evaluasi."
   ctaLabel: "Konsultasikan CSMS"
   ctaHref: "#jadwal-pelatihan"
 blocks:
