@@ -4,7 +4,7 @@ Kemnaker - Ruang Terbatas;Teknisi K3 Ruang Terbatas;training-k3-bahaya-confined-
 Kemnaker - Ruang Terbatas;Petugas Penyelamat K3 Ruang Terbatas;training-petugas-penyelamat-ruang-terbatas.md;SUDAH ADA - cek nomenklatur dan skema
 Kemnaker - Kimia;Petugas K3 Kimia;training-petugas-k3-kimia.md;SUDAH ADA - jangan disamakan dengan Ahli K3 Kimia
 Kemnaker - Kimia;Ahli K3 Kimia;ahli-k3-kimia.md;SUDAH ADA
-Kemnaker - Lingkungan Kerja;Ahli Muda K3 Lingkungan Kerja;;BELUM ADA
+Kemnaker - Lingkungan Kerja;Ahli Muda K3 Lingkungan Kerja;higiene-industri-muda-himu.md;SUDAH ADA - jalur sertifikasi HIMU menjadi persyaratan lisensi Ahli K3 Muda Lingkungan Kerja menurut Permenaker 5/2018 Pasal 50
 Kemnaker - Kebakaran;Damkar Kelas D;damkar-kelas-d.md;SUDAH ADA
 Kemnaker - Kebakaran;Damkar Kelas C;damkar-kelas-c.md;SUDAH ADA
 Kemnaker - Kebakaran;Damkar Kelas B;damkar-kelas-b.md;SUDAH ADA
@@ -42,12 +42,12 @@ Kemnaker - Pesawat Tenaga Produksi;Ahli K3 Pesawat Tenaga & Produksi;ahli-k3-pes
 Kemnaker - Konstruksi;Ahli Muda K3 Konstruksi;ahli-muda-k3-konstruksi.md;SUDAH ADA
 Kemnaker - Konstruksi;Teknisi K3 Perancah;teknisi-k3-perancah.md;SUDAH ADA
 Kemnaker - Konstruksi;Supervisi K3 Perancah;supervisi-k3-perancah.md;SUDAH ADA
-Kemnaker - Juru Las;SMAW Kelas 1;;BELUM ADA
-Kemnaker - Juru Las;SMAW Kelas 2;;BELUM ADA
-Kemnaker - Juru Las;SMAW Kelas 3;;BELUM ADA
-Kemnaker - Juru Las;GTAW Kelas 1;;BELUM ADA
-Kemnaker - Juru Las;GTAW Kelas 2;;BELUM ADA
-Kemnaker - Juru Las;GTAW Kelas 3;;BELUM ADA
+Kemnaker - Juru Las;SMAW Kelas 1;juru-las-welder.md;SUDAH ADA - kelas tercakup pada program gabungan, verifikasi lingkup uji
+Kemnaker - Juru Las;SMAW Kelas 2;juru-las-welder.md;SUDAH ADA - kelas tercakup pada program gabungan, verifikasi lingkup uji
+Kemnaker - Juru Las;SMAW Kelas 3;juru-las-welder.md;SUDAH ADA - kelas tercakup pada program gabungan, verifikasi lingkup uji
+Kemnaker - Juru Las;GTAW Kelas 1;juru-las-welder.md;SUDAH ADA - kelas tercakup pada program gabungan, verifikasi lingkup uji
+Kemnaker - Juru Las;GTAW Kelas 2;juru-las-welder.md;SUDAH ADA - kelas tercakup pada program gabungan, verifikasi lingkup uji
+Kemnaker - Juru Las;GTAW Kelas 3;juru-las-welder.md;SUDAH ADA - kelas tercakup pada program gabungan, verifikasi lingkup uji
 Kemnaker - Kesehatan;Petugas P3K;petugas-p3k.md;SUDAH ADA
 Kemnaker - Kesehatan;MCU;;MENU LAYANAN - bukan otomatis training
 Kemnaker - Kesehatan;Hiperkes;training-hiperkes.md;SUDAH ADA - cek cakupan dan penamaan
@@ -83,11 +83,11 @@ Offshore;HUET;training-bosiet-huet-basic-sea-survival.md;CEK KESETARAAN - verifi
 Offshore;Rigger Offshore;training-rigger-offshore.md;SUDAH ADA
 Offshore;H2S;training-basic-h2s-opito.md;CEK KESETARAAN - repo juga punya training-penanganan-h2s.md
 Offshore;BOSIET;training-bosiet-opito.md;SUDAH ADA - cek OPITO dan varian tropical
-Offshore;T-BOSIET;;BELUM ADA - jangan digabung dengan BOSIET tanpa verifikasi
+Offshore;T-BOSIET;training-bosiet-opito.md;SUDAH ADA - varian OPITO T-BOSIET tercakup; verifikasi terpisah untuk opsi non-OPITO
 Perpanjangan Lisensi K3;Semua Perpanjangan Lisensi K3;;MENU LAYANAN - perlu halaman layanan/katalog tersendiri
-Perpanjangan Lisensi K3;Perpanjangan SIO Forklift;;BELUM ADA
-Perpanjangan Lisensi K3;Perpanjangan Lisensi K3 Ketinggian;;BELUM ADA
-Perpanjangan Lisensi K3;Perpanjangan SIO Operator Genset;;BELUM ADA
+Perpanjangan Lisensi K3;Perpanjangan SIO Forklift;;MENU LAYANAN - perpanjangan lisensi, bukan pelatihan baru
+Perpanjangan Lisensi K3;Perpanjangan Lisensi K3 Ketinggian;;MENU LAYANAN - perpanjangan lisensi, bukan pelatihan baru
+Perpanjangan Lisensi K3;Perpanjangan SIO Operator Genset;;MENU LAYANAN - perpanjangan lisensi, bukan pelatihan baru
 Menu informasi;Tentang Kami;;HALAMAN INFORMASI - bukan training
 Menu informasi;Berita Pelatihan;;HALAMAN INFORMASI - bukan training
 Menu informasi;Artikel;;HALAMAN INFORMASI - bukan training
