@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Total Preventive Maintenance (TPM)"
   eyebrow: "INHOUSE TRAINING · MAINTENANCE MANAGEMENT"
-  description: "Training Total Preventive Maintenance memperkenalkan prinsip dan praktik untuk mengurangi gangguan, meningkatkan keandalan peralatan, dan mengembangkan budaya pemeliharaan bersama."
+  description: "Training Total Preventive Maintenance (TPM) adalah program yang memperkenalkan prinsip dan praktik untuk mengurangi gangguan, meningkatkan keandalan peralatan, dan mengembangkan budaya pemeliharaan bersama."
   ctaLabel: "Konsultasikan program"
   ctaHref: "#jadwal-pelatihan"
 blocks:
