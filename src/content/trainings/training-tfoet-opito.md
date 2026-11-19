@@ -11,7 +11,7 @@ hero:
   title: "Pelatihan T-FOET OPITO"
   imageAlt: "Pelatihan keselamatan offshore BETRACOM"
   eyebrow: "OFFSHORE SAFETY · TROPICAL OPITO REFRESHER"
-  description: "T-FOET adalah pelatihan penyegaran Further Offshore Emergency Training untuk personel offshore di lingkungan tropis. Peserta kembali mempraktikkan prosedur keadaan darurat helikopter, pemadaman kebakaran dan self-rescue, serta pertolongan pertama dasar sesuai standar produk OPITO."
+  description: "Pelatihan T-FOET OPITO adalah program penyegaran Further Offshore Emergency Training untuk personel offshore di lingkungan tropis. Peserta kembali mempraktikkan prosedur keadaan darurat helikopter, pemadaman kebakaran dan self-rescue, serta pertolongan pertama dasar sesuai standar produk OPITO."
   ctaLabel: "Konsultasikan pelatihan T-FOET"
   ctaHref: "#jadwal-pelatihan"
   duration: "7 jam guided learning menurut standar OPITO T-FOET; konfirmasi agenda kelas"
