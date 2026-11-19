@@ -216,7 +216,7 @@ blocks:
       - question: "Apa saja materi yang dipelajari?"
         answer: "Materinya mencakup dasar K3, motor diesel, pedoman teknis pesawat diesel, perhitungan kapasitas, dasar kelistrikan, panel hubung bagi, pembumian, pengoperasian aman, lingkungan kerja, troubleshooting, penyebab kecelakaan, pemeriksaan, pemeliharaan, dan observasi lapangan."
       - question: "Peraturan apa yang menjadi acuan K3?"
-        answer: "Salah satu acuan utamanya adalah Permenaker Nomor 38 Tahun 2016 tentang K3 Pesawat Tenaga dan Produksi. Peraturan tersebut mengatur kewajiban kompetensi dan kewenangan operator K3, termasuk kelompok operator penggerak mula."
+        answer: "Salah satu acuan utamanya adalah Permenaker Nomor 38 Tahun 2016 tentang K3 Pesawat Tenaga dan Produksi. JDIH Kemnaker mencatat peraturan ini masih berlaku dan mencabut PER.04/MEN/1985. Persyaratan dan dokumen hasil tetap mengikuti proses resmi yang berlaku."
       - question: "Apakah peserta langsung memperoleh lisensi setelah pelatihan?"
         answer: "Kelulusan pelatihan tidak boleh disamakan dengan penerbitan lisensi secara otomatis. Persyaratan, evaluasi, dan penerbitan dokumen mengikuti proses resmi serta ketentuan instansi berwenang."
       - question: "Berapa biaya Pelatihan Operator Genset?"
