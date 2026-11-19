@@ -11,7 +11,7 @@ hero:
   title: "Pelatihan Work Permit Awareness (Maritime)"
   imageAlt: "Pelatihan keselamatan kerja dan pengendalian pekerjaan melalui sistem izin kerja"
   eyebrow: "MARITIME SAFETY · PERMIT TO WORK"
-  description: "Pelatihan Work Permit Awareness (Maritime) membahas cara kerja sistem Permit to Work (PTW) dan pengendalian pekerjaan. Peserta mempelajari kapan izin kerja diperlukan, dokumen pendukung, pembagian tanggung jawab, tahapan penerbitan, pengawasan, hingga penutupan izin kerja."
+  description: "Pelatihan Work Permit Awareness (Maritime) adalah program yang menjelaskan cara kerja sistem Permit to Work (PTW) dan pengendalian pekerjaan. Peserta mempelajari kapan izin kerja diperlukan, dokumen pendukung, pembagian tanggung jawab, tahapan penerbitan, pengawasan, hingga penutupan izin kerja."
   ctaLabel: "Konsultasikan pelatihan Work Permit Awareness"
   ctaHref: "#jadwal-pelatihan"
   trustItems:
