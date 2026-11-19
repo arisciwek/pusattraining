@@ -13,7 +13,7 @@ draft: false
 hero:
   title: "Training Lockout Tagout (LOTO)"
   eyebrow: "INHOUSE TRAINING · PENGENDALIAN ENERGI"
-  description: "Pembekalan isolasi, penguncian, penandaan, dan verifikasi energi."
+  description: "Training Lockout Tagout (LOTO) adalah pembekalan isolasi, penguncian, penandaan, dan verifikasi energi."
   ctaLabel: "Konsultasikan LOTO"
   ctaHref: "#jadwal-pelatihan"
 blocks:
